@@ -1,8 +1,8 @@
 # About Jellyfin
 
-The Jellyfin project was officially started on December 8th, 2018, in response to Emby's decision to take their 3.6 release closed-source, thus ending their remaining Free Software guise. The Jellyfin project history goes back further, to the first reports of GPL violations in Emby in late 2017, as well as the Nag screen issues in early 2017, as well as the over two-year trend of taking core pieces of Emby, including mobile apps and plugins, proprietary and refusing to release source.
+The Jellyfin project was officially started on December 8th, 2018, in response to Emby's decision to take their 3.6 release closed-source. Several of the core members had been considering a fork since the initial inclusion of nag screens in 2016, along with the repeated closing of app sources and GPL license violations, however the closing of source demonstrated a need to produce a full fork of Emby to continue open development.
 
-Jellyfin seeks to continue development of the original MediaBrowser project with a Free Software ethos. It is committed to bringing all its users access to the best possible Media System, developed entirely by the community.
+Jellyfin seeks to continue development of the original Emby project with a Free Software ethos. It is committed to bringing all its users access to the best possible Media System, developed entirely by the community. We welcome anyone who is interested in contributing!
 
 You can find our main repository [on GitHub](https://github.com/jellyfin/jellyfin) as well as [our main organization page](https://github.com/jellyfin).
 

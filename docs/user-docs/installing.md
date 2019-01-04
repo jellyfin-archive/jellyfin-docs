@@ -1,6 +1,6 @@
 # Installing Jellyfin from Binary Packages
 
-The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
+The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems. If you are migrating from Emby, [check out our migration guide as well](/user-docs/migrate-from-emby).
 
 ## Docker Hub <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
 

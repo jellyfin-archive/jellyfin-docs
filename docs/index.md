@@ -4,7 +4,7 @@ Jellyfin is a Free Software Media System that puts you in control of managing an
 
 Jellyfin is a community project, made up of volunteers who contribute code, documentation, translations, and support to the project. There are no strings attached, no premium licenses or features, and no hidden agendas: just a community of volunteers who want to build something better and work together to acheive it. We welcome you to help out as well, however you can!
 
-Note: Jellyfin is a fast moving project in its early stages, and this documentation as well as the code may change frequently. Please check back often and don't hesitate to contact us via our Matrix/Riot channels or our Subreddit.
+Note: Jellyfin is a fast moving project that is in its early stages, and this documentation as well as the code may change frequently. Please check back often and don't hesitate to contact us via our Matrix/Riot channels or our Subreddit!
 
 <p align="center">
 <a href="https://github.com/jellyfin/jellyfin"><img alt="GPL 2.0 License" src="https://img.shields.io/github/license/jellyfin/jellyfin.svg"></a>

@@ -1,3 +1,6 @@
+
+[//]: # (TODO: Convert this page into links to project specific build instructions)
+
 # Building Jellyfin from Source
 
 As an alternative to using [binary packages](/user-docs/installing), you can build Jellyfin from source.

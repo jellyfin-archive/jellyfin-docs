@@ -1,0 +1,10 @@
+site_name: Jellyfin Documentation
+theme: readthedocs
+markdown_extensions:
+  - toc:
+      permalink: yes
+nav:
+  - Home: 'index.md'
+  - About: 'about.md'
+  - User Docs: '/user-docs/index.md'
+  - Developer Docs: '/developer-docs/index.md'

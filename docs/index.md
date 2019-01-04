@@ -32,6 +32,7 @@ Have questions about how Jellyfin works or encountering an error? Check out the 
 
 * [Quick-start guide](/user-docs/quick-start): What to do after you've installed Jellyfin to get it up and running.
 * [Frequently asked questions](/user-docs/faqs): Frequently asked questions about running Jellyfin.
+* [Migrating from Emby](/user-docs/migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
 * [Getting help](/user-docs/getting-help): How to get help with Jellyfin.
 * [Client apps](/user-docs/apps): Details on the available client applications for Jellyfin.
 * [Plugins](/user-docs/plugins): How to install plugins in Jellyfin.

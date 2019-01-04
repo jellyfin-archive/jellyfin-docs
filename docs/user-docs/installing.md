@@ -13,9 +13,7 @@ An Unraid Docker template is available in the repository.
 1. Open the unRaid GUI (at least unRaid 6.5) and click on the "Docker" tab.
 
 1. Add the following line under "Template Repositories" and click "Save":  
-    ```
-    https://github.com/jellyfin/jellyfin/blob/master/unRaid/docker-templates
-    ```
+    `https://github.com/jellyfin/jellyfin/blob/master/unRaid/docker-templates`
 
 1. Click "Add Container" and select "jellyfin".
 
@@ -40,33 +38,21 @@ The Jellyfin team provides a Debian repository for installation on Debian and Ub
 **NOTE:** Ubuntu users may find that the ffmpeg dependency package is not present in their release or is simply a rebranded `libav` which is not directly compatible. Please obtain the `ffmpeg` package directly from [their repository](https://ffmpeg.org/) to use Jellyfin on Ubuntu.
 
 1. Import the GPG signing key (signed by the Jellyfin Team):  
-    ```
-    wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -
-    ```
+    `wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -`
 
     **NOTE:** If you still use the old key signed by Joshua from the initial releases, you can remove it after installing the new one:  
-    ```
-    sudo apt-key remove 99FD1406
-    ```
+        `sudo apt-key remove 99FD1406`
 
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
-    ```
-    echo "deb https://repo.jellyfin.org/debian <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
-    ```
+    `echo "deb https://repo.jellyfin.org/debian <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
     **NOTE:** Valid releases are: `jessie`, `stretch`, `buster`, and `ubuntu`. Ubuntu does not yet have different version releases.
 
     **NOTE:** Ensure you have the `apt-transport-https` package installed, as the Jellyfin repository supports only HTTPS:  
-    ```
-    sudo apt install apt-transport-https
-    ```
+        `sudo apt install apt-transport-https`
 
 1. Update APT repositories:  
-    ```
-    sudo apt update
-    ```
+    `sudo apt update`
 
 1. Install Jellyfin:  
-    ```
-    sudo apt install jellyfin
-    ```
+    `sudo apt install jellyfin`

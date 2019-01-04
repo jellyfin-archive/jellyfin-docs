@@ -20,6 +20,12 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
 
+#### bookshelf
+
+[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+[![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+
 #### channels
 
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-channels.svg)](https://github.com/jellyfin/jellyfin-plugin-channels)
@@ -56,6 +62,12 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-notifymyandroid.svg)](https://github.com/jellyfin/jellyfin-plugin-notifymyandroid)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-notifymyandroid.svg)](https://github.com/jellyfin/jellyfin-plugin-notifymyandroid)
 
+#### onedrive
+
+[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-onedrive.svg)](https://github.com/jellyfin/jellyfin-plugin-onedrive)
+[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-onedrive.svg)](https://github.com/jellyfin/jellyfin-plugin-onedrive)
+[![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-onedrive.svg)](https://github.com/jellyfin/jellyfin-plugin-onedrive)
+
 #### prowl
 
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-prowl.svg)](https://github.com/jellyfin/jellyfin-plugin-prowl)
@@ -91,6 +103,12 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-rokubif.svg)](https://github.com/jellyfin/jellyfin-plugin-rokubif)
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-rokubif.svg)](https://github.com/jellyfin/jellyfin-plugin-rokubif)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-rokubif.svg)](https://github.com/jellyfin/jellyfin-plugin-rokubif)
+
+#### rottentomatoes
+
+[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-rottentomatoes.svg)](https://github.com/jellyfin/jellyfin-plugin-rottentomatoes)
+[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-rottentomatoes.svg)](https://github.com/jellyfin/jellyfin-plugin-rottentomatoes)
+[![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-rottentomatoes.svg)](https://github.com/jellyfin/jellyfin-plugin-rottentomatoes)
 
 #### toutv
 

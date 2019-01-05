@@ -34,7 +34,7 @@ All package builds begin with the first two steps (for Linux/OSX; alter as neede
 ## Debian Packages via `dpkg-dev`
 
 3. Add the Microsoft .NET Core repository:       
-    `sudo apt-get install -y apt-transport-https debhelper gnupg wget devscripts`  
+    `sudo apt-get install -y apt-transport-https debhelper gnupg wget devscripts equivs`  
     `wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg`  
     `wget -qO- https://packages.microsoft.com/config/debian/9/prod.list | sudo tee /etc/apt/sources.list.d/microsoft-prod.list`  
     `sudo apt-get update`  

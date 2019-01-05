@@ -19,7 +19,7 @@ These are the colours used for the Jellyfin Logos and UI
 
 The design for the logo uses a gradient for the infill, and if the non transparent logo is chosen there is a background colour.
 
-* Gradient Sstart: #AA5CC3 
+* Gradient Start: #AA5CC3 
 * Gradient End: #00A4DC
 * Background Colour (optional): #000B25 
 

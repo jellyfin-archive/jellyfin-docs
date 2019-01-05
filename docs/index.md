@@ -46,4 +46,5 @@ Want to help out? Check out the pages below for how to contribute.
 * [Contributing guide](/developer-docs/contributing): General information on contributing to Jellyfin.
 * [Reporting bugs](/developer-docs/issues#reporting-bugs): How to use our issue tracker on GitHub to report bugs.
 * [Requesting features](/developer-docs/issues#requesting-features): How to use our issue tracker on GitHub to request new features or enhancements.
+* [Code style guide](/developer-docs/coding-style): Code and naming style guide.
 * [Full developer documentation](/developer-docs/index): The main developer documentation page.

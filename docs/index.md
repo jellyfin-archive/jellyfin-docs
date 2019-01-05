@@ -39,6 +39,12 @@ Have questions about how Jellyfin works or encountering an error? Check out the 
 * [Plugins](/user-docs/plugins): How to install plugins in Jellyfin.
 * [Full user documentation](/user-docs/index): The main user documentation page.
 
+## Administrator Documentation
+
+Want to know more about administering a Jellyfin server? Check out these pages!
+
+* [Port Bindings](/administrator-docs/port-bindings)
+
 ## Contributing to Jellyfin
 
 Want to help out? Check out the pages below for how to contribute.

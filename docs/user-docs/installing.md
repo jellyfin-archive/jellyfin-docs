@@ -31,6 +31,8 @@ The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/pac
 
 Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/archive).
 
+**NOTE:** When installing packages with `dpkg -i`, it won't attempt to resolve dependencies for you. Ensure you have `ffmpeg` installed already, or use `apt -f install` after attempting the `dpkg -i` to resolve and install the required dependencies.
+
 ## Debian Repository
 
 The Jellyfin team provides a Debian repository for installation on Debian and Ubuntu machines.

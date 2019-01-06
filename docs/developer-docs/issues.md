@@ -81,6 +81,7 @@ These labels help assist in managing the project and direction:
 * `roadmap`: A meta-issue related to the future roadmap of the project.
 * `documentation`: An issue related to the documentation of the project.
 * `fork`: An issue related to the forking from Emby.
+* `investigation`: An investigation-type issue into the codebase.
 
 ### PR Labels
 

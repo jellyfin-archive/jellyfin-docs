@@ -1,8 +1,8 @@
 # Welcome to Jellyfin
 
-Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices. Jellyfin is descended from the formerly-GPL Emby project's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. It aims to contain a server and client applications for every platform, to let you decide where and how you access your media on any of your devices.
+Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. It aims to contain a server and client applications for every platform, to let you decide where and how you access your media on any of your devices. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to acheive it. We welcome anyone who is interested in joining us in our quest!
 
-Jellyfin is a community project, made up of volunteers who contribute code, documentation, translations, and support to the project. There are no strings attached, no premium licenses or features, and no hidden agendas: just a community of volunteers who want to build something better and work together to acheive it. We welcome you to help out as well, however you can!
+For more information about us, please see our [about page](/about).
 
 Note: Jellyfin is a fast moving project that is in its early stages, and this documentation as well as the code may change frequently. Please check back often and don't hesitate to contact us via our Matrix/Riot channels or our Subreddit!
 

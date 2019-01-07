@@ -83,7 +83,7 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * Before submitting a PR, squash "junk" commits together to keep the overall history clean. A single commit should cover a single significant change: avoid squashing all your changes together, especially for large PRs that touch many files, but also don't leave "fixed this", "whoops typo" commits in your branch history as this is needless clutter.
 
-* Write a good title that quickly describes what has been changed. For example, "Adds LDAP support to Jellyfin".
+* Write a good title that quickly describes what has been changed. For example, "Add LDAP support to Jellyfin". Prefix the title with "WIP" while you're still working on the PR and remove that prefix when you feel it's ready to be merged and would like to receive final reviews.
 
 * For anything but the most trivial changes that can be described fully in the title, write a PR body to describe, in as much detail as possible:
 

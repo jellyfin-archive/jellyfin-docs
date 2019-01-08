@@ -97,7 +97,7 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 ### The Master branch
 
-The `master` branch is the current main branch of Jellyfin and its public face on GitHub, as opposed to the constantly-moving `dev` branch. Until we reach a first official release with our own versioning, releases are limited to build identifiers (i.g. `3.5.2-X`) based on `master`. Each update to `master` occurs through a roll-up PR made by an admin team member, on a semi-regular basis, which will identify the relevant PRs (and issues) that are fixed and help ensure there is a consistent trail of development work in the history. `master` merges must be approved by two administrative team members, thus ensuring a majority of the team accepts the changes.
+The `master` branch is the current main branch of Jellyfin and its public face on GitHub, as opposed to the constantly-moving `dev` branch. We are versioning in the x.y.z scheme and use -X for build identifiers where no source code was changed (e.g. the builds for debian). Each update to `master` occurs through a roll-up PR made by an admin team member, on a semi-regular basis, which will identify the relevant PRs (and issues) that are fixed and help ensure there is a consistent trail of development work in the history. `master` merges must be approved by two administrative team members, thus ensuring a majority of the team accepts the changes.
 
 ## Other Contributions to Jellyfin
 

@@ -99,9 +99,27 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 
-### The Master branch
+* All PR should be left to settle for at least 24h, with an exception for emergency bugfixes with immediate review by the core team. We have contributors from very diaspirate time zones, and this ensures that multiple sets of eyes have a chance to review each PR before it is merged. Always remember that we are in no rush, that there will always be a "next release", and that a bit of lingering breakage today is usually worth taking the time to fix right, rather than baking in more hacks.
 
-The `master` branch is the current main branch of Jellyfin and its public face on GitHub, as opposed to the constantly-moving `dev` branch. We are versioning in the x.y.z scheme and use -X for build identifiers where no source code was changed (e.g. the builds for debian). Each update to `master` occurs through a roll-up PR made by an admin team member, on a semi-regular basis, which will identify the relevant PRs (and issues) that are fixed and help ensure there is a consistent trail of development work in the history. `master` merges must be approved by two administrative team members, thus ensuring a majority of the team accepts the changes.
+### Official Branches
+
+#### The `dev` branch
+
+The `dev` branch is the current active work-in-progress branch of Jellyfin. Most pull requests should be targeted at `dev`, unless they are better suited to target a feature branch. `dev` should generally be kept in a working state, though temporary breakage and regression is sometimes unavoidable. For long-term work that cannot be completed in a single PR by a single contributor, a feature branch is a better option - please speak with the project administrators or open an issue for such work so that a feature branch may be created. All `dev` PRs require approval by at least one administrative team member before merge, and only administrative team members may perform the merge.
+
+If one is interested in testing the latest possible Jellyfin release, building from source on the `dev` branch is strongly recommended. Testing on this branch helps us avoid hotfix releases to `master` later!
+
+#### Feature branches
+
+From time to time, major projects may come up that require multiple PRs and contributions from multiple people. For these tasks, feature branches specific to the feature should be created, based off of `dev`. This helps allow the work to progress without breaking `dev` for long periods, and allowing those interested in that particular project the ability to work at their own pace instead of racing to fix a broken feature before the next `master` release. To create a feature branch, please communicate with an administrative team member and that can be arranged.
+
+Once the feature a feature branch was created for is ready, it can be merged in one shot into `dev` and the feature branch removed. Alternatively, for very-long-lived features, certain "stable" snapshots can be merged into `dev` as required.
+
+#### The Master branch
+
+The `master` branch is the primary face of the project and main stable branch. All official releases are based off of tagged releases in the `master` branch, and use a semantic versioning scheme starting from `10.0.0`.
+
+Updates to `master` occurr through `dev` roll-up PRs, titled `Master <release version>` and including a full changelog, at semi-regular intervals. The release timelines are fully dynamic, occurring "when needed" based on the amount of work done and the scope of the features included. Roll-up PRs require approval by at least two, and ideally all, administrative team members.
 
 ## Other Contributions to Jellyfin
 

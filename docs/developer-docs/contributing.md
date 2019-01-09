@@ -18,7 +18,7 @@ A list of issue types can be found on the [Issue guidelines](/developer-docs/iss
 
 #### What if there isn't an issue?
 
-If there isn't already an issue dealing with the changes you want to make, please [create an issue](/developer-docs/issues) to track it first, then ensure your PR(s) reference the issue in question. This is epecially useful for bugs that are found and then fixed by the author, so both the original issue and the fix can be documented and tracked in detail.
+If there isn't already an issue dealing with the changes you want to make, please [create an issue](/developer-docs/issues) to track it first, then ensure your PR(s) reference the issue in question. This is especially useful for bugs that are found and then fixed by the author, so both the original issue and the fix can be documented and tracked in detail.
 
 ### How should you make changes?
 
@@ -91,7 +91,7 @@ When submitting a new PR, please ensure you do the following things. If you have
 
     1. *How*, in broad strokes, you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
-    While this may not seem important, referencing issues with proper GitHub keywords helps ensure proper changelogs are written, that fixed issues are closed off in a timely manner and not lost, and ensures that there is good context for future readers of the history, especially should the PR or commit be referenced in the future. Please take some time to write a good PR body today, to avoid someone else having to decypher your rationale later.
+    While this may not seem important, referencing issues with proper GitHub keywords helps ensure proper changelogs are written, that fixed issues are closed off in a timely manner and not lost, and ensures that there is good context for future readers of the history, especially should the PR or commit be referenced in the future. Please take some time to write a good PR body today, to avoid someone else having to decipher your rationale later.
 
 * Manually update the target branch from `master` to `dev`; PRs against `master` are only considered in the most exceptional circumstances and all new work should go to `dev`. We intentionally keep `master` as the main face of the code on GitHub, so this must be done manually for each PR. Don't worry if you forget; this will be corrected before merging.
 
@@ -99,7 +99,7 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 
-* All PR should be left to settle for at least 24h, with an exception for emergency bugfixes with immediate review by the core team. We have contributors from very diaspirate time zones, and this ensures that multiple sets of eyes have a chance to review each PR before it is merged. Always remember that we are in no rush, that there will always be a "next release", and that a bit of lingering breakage today is usually worth taking the time to fix right, rather than baking in more hacks.
+* All PR should be left to settle for at least 24h, with an exception for emergency bugfixes with immediate review by the core team. We have contributors from very disparate time zones, and this ensures that multiple sets of eyes have a chance to review each PR before it is merged. Always remember that we are in no rush, that there will always be a "next release", and that a bit of lingering breakage today is usually worth taking the time to fix right, rather than baking in more hacks.
 
 ### Official Branches
 
@@ -119,7 +119,7 @@ Once the feature a feature branch was created for is ready, it can be merged in 
 
 The `master` branch is the primary face of the project and main stable branch. All official releases are based off of tagged releases in the `master` branch, and use a semantic versioning scheme starting from `10.0.0`.
 
-Updates to `master` occurr through `dev` roll-up PRs, titled `Master <release version>` and including a full changelog, at semi-regular intervals. The release timelines are fully dynamic, occurring "when needed" based on the amount of work done and the scope of the features included. Roll-up PRs require approval by at least two, and ideally all, administrative team members.
+Updates to `master` occur through `dev` roll-up PRs, titled `Master <release version>` and including a full changelog, at semi-regular intervals. The release timelines are fully dynamic, occurring "when needed" based on the amount of work done and the scope of the features included. Roll-up PRs require approval by at least two, and ideally all, administrative team members.
 
 ## Other Contributions to Jellyfin
 
@@ -135,4 +135,4 @@ We're still working to set up a translation system that will help automate this,
 
 ### Testing
 
-Testing is the easiest way to contribute. Simply use Jellyfin, and if you run into problems, [let us know](/user-docs/hetting-help). This is the most common way we uncover bugs, through a user doing something we hadn't thought of. If the issue does end up being related to the code, a [bug issue](/developer-docs/issues#reporting-bugs) can then be opened.
+Testing is the easiest way to contribute. Simply use Jellyfin, and if you run into problems, [let us know](/user-docs/getting-help). This is the most common way we uncover bugs, through a user doing something we hadn't thought of. If the issue does end up being related to the code, a [bug issue](/developer-docs/issues#reporting-bugs) can then be opened.

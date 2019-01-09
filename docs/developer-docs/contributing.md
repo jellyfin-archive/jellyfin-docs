@@ -83,15 +83,19 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * Before submitting a PR, squash "junk" commits together to keep the overall history clean. A single commit should cover a single significant change: avoid squashing all your changes together, especially for large PRs that touch many files, but also don't leave "fixed this", "whoops typo" commits in your branch history as this is needless clutter.
 
-* Write a good title that quickly describes what has been changed. For example, "Adds LDAP support to Jellyfin".
+* Write a good title that quickly describes what has been changed. For example, "Add LDAP support to Jellyfin". As mentioned in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), always use the imperative mood, and keep the title short but descriptive. Administrative team members may alter the title to better suit the final PR before merging if required, as this title will be used in the public changelog for the release that the PR is integrated into.
 
-* For anything but the most trivial changes that can be described fully in the title, write a PR body to describe, in as much detail as possible:
+* For anything but the most trivial changes that can be described fully in the (short) title, write a PR body to describe, in as much detail as possible:
 
     1. *Why* the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
 
     1. *How*, in broad strokes, you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
+    While this may not seem important, referencing issues with proper GitHub keywords helps ensure proper changelogs are written, that fixed issues are closed off in a timely manner and not lost, and ensures that there is good context for future readers of the history, especially should the PR or commit be referenced in the future. Please take some time to write a good PR body today, to avoid someone else having to decypher your rationale later.
+
 * Manually update the target branch from `master` to `dev`; PRs against `master` are only considered in the most exceptional circumstances and all new work should go to `dev`. We intentionally keep `master` as the main face of the code on GitHub, so this must be done manually for each PR. Don't worry if you forget; this will be corrected before merging.
+
+* Tag any work-in-progress commits with `[WIP]` at the beginning of the title. While this tag is in place, the PR will *not* be reviewed for inclusion. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development.
 
 * Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 

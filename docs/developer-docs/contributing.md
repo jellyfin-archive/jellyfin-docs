@@ -101,6 +101,17 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * All PR should be left to settle for at least 24h, with an exception for emergency bugfixes with immediate review by the core team. We have contributors from very disparate time zones, and this ensures that multiple sets of eyes have a chance to review each PR before it is merged. Always remember that we are in no rush, that there will always be a "next release", and that a bit of lingering breakage today is usually worth taking the time to fix right, rather than baking in more hacks.
 
+### Testing a Pull Request
+
+To test someone elses pull request you have to checkout the changes to your local repository.
+
+1. Fetch the changes in a pull request and link them to a local branch.  
+    `git fetch upstream pull/<PR_ID>/head:<branch>`  
+2. Checkout this local branch in the working tree.  
+    `git checkout <branch>`
+
+Here the `<PR_ID>` is the number of the pull request and the `<branch>` is the local name you want to give to that checkedout PR.
+
 ### Official Branches
 
 #### The `dev` branch

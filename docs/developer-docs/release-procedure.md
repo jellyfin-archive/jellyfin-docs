@@ -27,7 +27,7 @@ We will be following the guide [A successful Git branching model](https://nvie.c
 
 * The development branch is named `dev`.
 
-* Developers should, as described in [the contributing guidelines](/developer-docs/contributing-guidelines), do feature branch work on their own forked copies of repositories.
+* Developers should, as described in [the contributing guidelines](/developer-docs/contributing), do feature branch work on their own forked copies of repositories.
 
 * Standard review requirements as defined for each repo always apply.
 

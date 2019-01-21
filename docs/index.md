@@ -21,9 +21,9 @@ Note: Jellyfin is a fast moving project that is in its early stages, and this do
 
 Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin installed on your machine.
 
-* [Arch Linux](/user-docs/installing#arch-aur)
+* [Arch Linux](https://aur.archlinux.org/packages/jellyfin/)
 * [Debian / Ubuntu](/user-docs/installing#debian-ubuntu)
-* [Docker](/user-docs/installing#docker-hub)
+* [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
 * [Windows](/user-docs/installing#windows-archives)
 * [unRaid](/user-docs/installing#unraid-docker)
 

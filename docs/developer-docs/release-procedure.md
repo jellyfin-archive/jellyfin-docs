@@ -44,9 +44,10 @@ We will be following the guide [A successful Git branching model](https://nvie.c
 1. Perform initial testing builds and test the resulting binaries.
 
     Basic testing checklist:
-    1. Run through setup wizard and import small library.
-    1. Test playback, navigation, and subtitles in the Web UI.
-    1. Test playback, navigation, and subtitles in the Chromecast app.
+
+    1. Run through setup wizard and import small library.  
+    1. Test playback, navigation, and subtitles in the Web UI.  
+    1. Test playback, navigation, and subtitles in the Chromecast app.  
 
 1. Call to [jellyfin-dev](https://matrix.to/#/#jellyfin-dev:matrix.org) for any release-critical bug found; perform bugfix pull requests against the `release-X.Y.Z` branch.
 
@@ -54,10 +55,10 @@ We will be following the guide [A successful Git branching model](https://nvie.c
 
 1. Perform the release.
 
-    1. Create pull requests from release branch into `master` in both repositories.
-    1. Obtain approval from the Core team.
-    1. Merge release branch PR into `master` in both repositories.
-    1. Merge `master` into `dev` via local CLI and push (no PR) in both repositories.
-    1. Delete the release branch.
-    1. Create the GitHub release and tag from `master`.
-    1. Build new releases packages off of `master`.
+    1. Create pull requests from release branch into `master` in both repositories.  
+    1. Obtain approval from the Core team.  
+    1. Merge release branch PR into `master` in both repositories.  
+    1. Merge `master` into `dev` via local CLI and push (no PR) in both repositories.  
+    1. Delete the release branch.  
+    1. Create the GitHub release and tag from `master`.  
+    1. Build new releases packages off of `master`.  

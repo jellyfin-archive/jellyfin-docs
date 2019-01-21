@@ -8,3 +8,6 @@ nav:
   - About: 'about.md'
   - User Docs: '/user-docs/index.md'
   - Developer Docs: '/developer-docs/index.md'
+
+extra_css:
+  - static/overrides.css

@@ -58,7 +58,7 @@ We will be following the guide [A successful Git branching model](https://nvie.c
     1. Create pull requests from release branch into `master` in both repositories.  
     1. Obtain approval from the Core team.  
     1. Merge release branch PR into `master` in `jellyfin-web`.
-    1. Update submodule for `jellyfin-web` directly in release branch. Commit the resulting differences as `Update jellyfin-web submodule to X.Y.Z`.
+    1. Update submodule for `jellyfin-web` directly in release branch. Commit the resulting differences as `Update jellyfin-web submodule to X.Y.Z`.  
         `cd MediaBrowser.WebDashboard/jellyfin-web`  
         `git fetch --all`  
         `git checkout master`  

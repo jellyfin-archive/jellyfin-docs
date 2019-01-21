@@ -1,95 +1,46 @@
 # Jellyfin Apps
 
-Jellyfin has client applications for multiple platforms, forked from Emby where possible. A number of these require extensive work, so if you are able to contribute, [please see our guide](/developer-docs/contributing).
+A list of apps with support for Jellyfin.
 
-## Main Client Apps
+⚠ **Note** - Many of the official apps were forked from Emby and are not currently building and/or functional.
+If you interested in helping out, please see our [contribution guide](/developer-docs/contributing).
 
 ### Android
 
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-android.svg)](https://github.com/jellyfin/jellyfin-android)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-android.svg)](https://github.com/jellyfin/jellyfin-android)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-android.svg)](https://github.com/jellyfin/jellyfin-android)
-
-Corodova-based Android app.
-
-### iOS
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-ios.svg)](https://github.com/jellyfin/jellyfin-ios)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-ios.svg)](https://github.com/jellyfin/jellyfin-ios)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-ios.svg)](https://github.com/jellyfin/jellyfin-ios)
-
-Cordova-based Apple iOS app.
+- **[Jellyfin for Android](https://github.com/jellyfin/jellyfin-android)** - The official Jellyfin Android app.
+- **[Yatse](https://www.yatse.tv/)** - An Android remote control for Jellyfin with support for Chromecasts.
 
 ### Android TV
 
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-androidtv.svg)](https://github.com/jellyfin/jellyfin-androidtv)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-androidtv.svg)](https://github.com/jellyfin/jellyfin-androidtv)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-androidtv.svg)](https://github.com/jellyfin/jellyfin-androidtv)
+- **[Jellyfin for Android TV](https://github.com/jellyfin/jellyfin-androidtv)** - The official Jellyfin Android TV app.
 
-Android TV app.
+### Desktop
 
-### Kodi
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-kodi.svg)](https://github.com/jellyfin/jellyfin-kodi)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-kodi.svg)](https://github.com/jellyfin/jellyfin-kodi)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-kodi.svg)](https://github.com/jellyfin/jellyfin-kodi)
-
-Kodi app.
-
-### Roku
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-roku.svg)](https://github.com/jellyfin/jellyfin-roku)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-roku.svg)](https://github.com/jellyfin/jellyfin-roku)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-roku.svg)](https://github.com/jellyfin/jellyfin-roku)
-
-Roku app.
-
-### Samsung TV
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-samsungtv.svg)](https://github.com/jellyfin/jellyfin-samsungtv)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-samsungtv.svg)](https://github.com/jellyfin/jellyfin-samsungtv)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-samsungtv.svg)](https://github.com/jellyfin/jellyfin-samsungtv)
-
-Samsung TV app.
+- **[Jellyfin Theater (Electron)](https://github.com/jellyfin/jellyfin-theater-electron)** - A desktop media interface for Windows, macOS, and Linux.
+- **[Jellyfin Theater (Raspberry Pi)](https://github.com/jellyfin/jellyfin-theater-pi)** - A desktop media interface built for Raspberry Pi's.
+- **[Jellyfin Theater (Windows)](https://github.com/jellyfin/jellyfin-theater-windows)** - A desktop media interface for Windows.
 
 ### Google Chrome
 
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-chrome.svg)](https://github.com/jellyfin/jellyfin-chrome)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-chrome.svg)](https://github.com/jellyfin/jellyfin-chrome)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-chrome.svg)](https://github.com/jellyfin/jellyfin-chrome)
+- **[Jellyfin for Google Chrome](https://github.com/jellyfin/jellyfin-chrome)** - The official Jellyfin Google Chrome extension.
 
-Google Chrome app.
+### iOS
+
+- **[Jellyfin for iOS](https://github.com/jellyfin/jellyfin-ios)** - The official Jellyfin iOS app.
+
+
+### Kodi
+
+- **[Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)** - The official Jellyfin Kodi plugin.
+
+### Roku
+
+- **[Jellyfin for Roku](https://github.com/jellyfin/jellyfin-roku)** - The official Jellyfin Roku app.
+
+### Samsung TV
+
+- **[Jellyfin for Samsung TV](https://github.com/jellyfin/jellyfin-samsungtv)** - The official Jellyfin Samsung TV app.
 
 ### Windows Phone
 
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-windowsphone.svg)](https://github.com/jellyfin/jellyfin-windowsphone)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-windowsphone.svg)](https://github.com/jellyfin/jellyfin-windowsphone)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-windowsphone.svg)](https://github.com/jellyfin/jellyfin-windowsphone)
-
-Windows Phone app.
-
-## Theater Apps
-
-### Electron
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-theater-electron.svg)](https://github.com/jellyfin/jellyfin-theater-electron)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-theater-electron.svg)](https://github.com/jellyfin/jellyfin-theater-electron)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-theater-electron.svg)](https://github.com/jellyfin/jellyfin-theater-electron)
-
-Theater app for Electron, cross-platform.
-
-### Raspberry Pi
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-theater-pi.svg)](https://github.com/jellyfin/jellyfin-theater-pi)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-theater-pi.svg)](https://github.com/jellyfin/jellyfin-theater-pi)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-theater-pi.svg)](https://github.com/jellyfin/jellyfin-theater-pi)
-
-Theater app for Raspberry Pi.
-
-### Windows
-
-[![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-theater-windows.svg)](https://github.com/jellyfin/jellyfin-theater-windows)
-[![](https://img.shields.io/github/contributors/jellyfin/jellyfin-theater-windows.svg)](https://github.com/jellyfin/jellyfin-theater-windows)
-[![](https://img.shields.io/github/license/jellyfin/jellyfin-theater-windows.svg)](https://github.com/jellyfin/jellyfin-theater-windows)
-
-Theater app for Windows.
+- **[Jellyfin for Windows Phone](https://github.com/jellyfin/jellyfin-windowsphone)** - The official Jellyfin Windows Phone app.

@@ -27,19 +27,9 @@ Windows builds in ZIP archive format are available [here](https://repo.jellyfin.
 
 The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/packages/jellyfin-git/).
 
-## Debian Packages
+## Debian / Ubuntu
 
-Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/archive).
-
-**NOTE:** When installing packages with `dpkg -i`, it won't attempt to resolve dependencies for you. Ensure you have `ffmpeg` installed already, or use `apt -f install` after attempting the `dpkg -i` to resolve and install the required dependencies.
-
-When installed via Debian packages, Jellyfin is started as a service under either `systemd`, `upstart`, or `init`. To check on its status, use:  
-`sudo service jellyfin status`
-
-To restart the daemon, use:  
-`sudo service jellyfin restart`
-
-## Debian Repository
+### Repository
 
 The Jellyfin team provides a Debian repository for installation on Debian and Ubuntu machines.
 
@@ -64,6 +54,18 @@ The Jellyfin team provides a Debian repository for installation on Debian and Ub
 
 1. Install Jellyfin:  
     `sudo apt install jellyfin`
+
+When installed via Debian packages, Jellyfin is started as a service under either `systemd`, `upstart`, or `init`. To check on its status, use:  
+`sudo service jellyfin status`
+
+To restart the daemon, use:  
+`sudo service jellyfin restart`
+
+### Packages
+
+Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/archive).
+
+**NOTE:** When installing packages with `dpkg -i`, it won't attempt to resolve dependencies for you. Ensure you have `ffmpeg` installed already, or use `apt -f install` after attempting the `dpkg -i` to resolve and install the required dependencies.
 
 When installed via Debian packages, Jellyfin is started as a service under either `systemd`, `upstart`, or `init`. To check on its status, use:  
 `sudo service jellyfin status`

@@ -21,13 +21,13 @@ Note: Jellyfin is a fast moving project that is in its early stages, and this do
 
 Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin installed on your machine.
 
-* [Build from source](/user-docs/building): Build Jellyfin directly on your machine from the latest source code.
-* [Pull from Docker Hub](/user-docs/installing#docker-hub): Download a Docker image from Docker Hub to get up and running in minutes.
-* [Install from our Debian/Ubuntu repository](/user-docs/installing#debian-repository): Use your Debian/Ubuntu system's package manager to install Jellyfin.
-* [Download Debian packages](/user-docs/installing#debian-packages): For more advanced uses, download Debian/Ubuntu `.deb` packages directly.
-* [Download Windows archives](/user-docs/installing#windows-archives): Download ZIP archives for Microsoft Windows.
-* [Install from the Arch Linux AUR](/user-docs/installing#arch-aur): Install Jellyfin directly on Arch Linux via the AUR.
-* [Install from the unRaid Docker interface](/user-docs/installing#unraid-docker): Install Jellyfin directly on unRaid using their Docker interface.
+* [Arch Linux](https://aur.archlinux.org/packages/jellyfin/)
+* [Debian / Ubuntu](/user-docs/installing#debian-ubuntu)
+* [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
+* [Windows](/user-docs/installing#windows-archives)
+* [unRaid](/user-docs/installing#unraid-docker)
+
+Alternatively, Jellyfin may be built directly from the [source code](/user-docs/building).
 
 ## User Documentation
 

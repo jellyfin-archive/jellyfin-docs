@@ -26,6 +26,7 @@ Want to get starting using Jellyfin right now? Check out the pages below for how
 * [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
 * [Windows](/user-docs/installing#windows-archives)
 * [unRaid](/user-docs/installing#unraid-docker)
+* [Kubernetes](/user-docs/installing#kubernetes)
 
 Alternatively, Jellyfin may be built directly from the [source code](/user-docs/building).
 

@@ -19,14 +19,17 @@ Note: Jellyfin is a fast moving project that is in its early stages, and this do
 
 ## Getting Started
 
-Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin installed on your machine.
+Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin [installed](/user-docs/installing) on your machine.
 
 * [Arch Linux](https://aur.archlinux.org/packages/jellyfin/)
 * [Debian / Ubuntu](/user-docs/installing#debian-ubuntu)
 * [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
-* [Windows](/user-docs/installing#windows-archives)
 * [unRaid](/user-docs/installing#unraid-docker)
 * [Kubernetes](/user-docs/installing#kubernetes)
+* [Windows](/user-docs/installing#windows-x64x86)
+* [MacOS](/user-docs/installing#macos)
+* [Generic Linux](/user-docs/installing#linux-generic-amd64)
+* [Portable DLL](/user-docs/installing#portable-dll)
 
 Alternatively, Jellyfin may be built directly from the [source code](/user-docs/building).
 

@@ -1,12 +1,16 @@
 # Installing Jellyfin from Binary Packages
 
-The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems. If you are migrating from Emby, [check out our migration guide as well](/user-docs/migrate-from-emby).
+The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
-## Docker Hub <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
+## Containers
+
+### Docker Hub
+
+<a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/).
 
-## Unraid Docker
+### Unraid Docker
 
 An Unraid Docker template is available in the repository.
 
@@ -19,14 +23,30 @@ An Unraid Docker template is available in the repository.
 
 1. Adjust any required paths and save.
 
-## Kubernetes
+### Kubernetes
 
 A community project to deploy Jellyfin on Kubernetes-based platforms exists at `https://github.com/home-cluster/jellyfin-openshift`.
 Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
 
-## Windows Archives
+## Portable Binaries
 
-Windows builds in ZIP archive format are available [here](https://repo.jellyfin.org/windows).
+Portable binary packages containing a compiled Jellyfin instance are available for multiple platforms.
+
+### Windows (x64/x86)
+
+Windows builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
+
+### MacOS
+
+MacOS builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).
+
+### Linux (generic amd64)
+
+Generic amd64 Linux builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/linux).
+
+### Portable DLL
+
+Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
 ## Arch AUR
 
@@ -68,7 +88,7 @@ To restart the daemon, use:
 
 ### Packages
 
-Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/archive).
+Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/releases/server/debian).
 
 **NOTE:** When installing packages with `dpkg -i`, it won't attempt to resolve dependencies for you. Ensure you have `ffmpeg` installed already, or use `apt -f install` after attempting the `dpkg -i` to resolve and install the required dependencies.
 

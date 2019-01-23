@@ -44,9 +44,9 @@ MacOS builds in TAR archive format are available [here](https://repo.jellyfin.or
 
 Generic amd64 Linux builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/linux).
 
-### Framework
+### Portable DLL
 
-Platform-agnostic .NET Framework builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
+Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
 ## Arch AUR
 

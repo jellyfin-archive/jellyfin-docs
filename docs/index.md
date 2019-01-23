@@ -29,7 +29,7 @@ Want to get starting using Jellyfin right now? Check out the pages below for how
 * [Windows](/user-docs/installing#windows-x64x86)
 * [MacOS](/user-docs/installing#macos)
 * [Generic Linux](/user-docs/installing#linux-generic-amd64)
-* [Portable Framework](/user-docs/installing#framework)
+* [Portable DLL](/user-docs/installing#portable-dll)
 
 Alternatively, Jellyfin may be built directly from the [source code](/user-docs/building).
 

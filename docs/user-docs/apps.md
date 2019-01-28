@@ -14,7 +14,7 @@ Status: Unreleased but In Development
 
 **[Yatse](https://www.yatse.tv/)**
 
-An Android remote control for Jellyfin with support for Chromecasts.
+A third party remote control for Jellyfin with support for Chromecast playback.
 Status: In Development
 
 ### Android TV
@@ -29,7 +29,7 @@ Status: Unreleased but In Development
 **[Jellyfin Theater (Electron)](https://github.com/jellyfin/jellyfin-theater-electron)**
 
 A desktop media interface for Windows, macOS, and Linux.
-Status: No Maintainers
+Status: In Development
 
 **[Jellyfin Theater (Raspberry Pi)](https://github.com/jellyfin/jellyfin-theater-pi)**
 

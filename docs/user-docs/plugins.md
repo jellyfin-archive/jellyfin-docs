@@ -4,7 +4,7 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 
 ## Installing Plugins
 
-*todo*
+The plugin repo is currently still being reimplemented, but until then we do have a few plugins working manually such as the Anime and Trakt plugins. If you can build them yourself, simply move them to `var/lib/jellyfin/plugins` on Linux or the equivalent directory on your OS and restart your server. The folder itself will probably need to be created and the permissions need to be properly set so Jellyfin can access the files. Please note, we are still working on plugin support and cannot guarantee a painless install process.
 
 ## Plugins List
 

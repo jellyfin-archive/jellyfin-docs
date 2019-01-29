@@ -15,7 +15,8 @@ Specific examples include:
 * The logo may use either, depending on aesthetics and font choice.
 
 ## Jellyfin UX Repository
-All Jellyfin UI/UX resources can be found in the [jellyfin-ux repository](https://github.com/jellyfin/jellyfin-ux).
+
+All Jellyfin iconography and other resources can be found in the [jellyfin-ux repository](https://github.com/jellyfin/jellyfin-ux).
 
 This repository contains:
 
@@ -26,20 +27,20 @@ This repository contains:
 
 ## Jellyfin Colours
 
-These are the colours used for the Jellyfin Logos and UI:
+These are the colours used for the Jellyfin logos and other places throughout the interface.
 
 ### Logo Colours
 
-The design for the logo uses a gradient for the infill, and if the non transparent logo is chosen there is a background colour.
+The design for the logo uses a gradient for the infill, and if the non transparent logo is chosen there is a background colour which is optional.
 
-* Gradient Start: #AA5CC3 
+* Gradient Start: #AA5CC3
 * Gradient End: #00A4DC
-* Background Colour (optional): #000B25 
+* Background Colour: #000B25
 
-### UI Colours
+### Interface Colours
 
-* Background Colour: 
-* Accent Colour: 
+* Background Colour: #101010
+* Accent Colour: #00A4DC
 
 ## Jellyfin Fonts
 

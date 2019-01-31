@@ -1,8 +1,10 @@
 # Migrating from Emby to Jellyfin
 
-NOTICE: Direct database migration from Emby (of any version) to Jellyfin is NOT SUPPORTED. We have found many subtle bugs due to the inconsistent database schemas that result from trying to do this, and strongly recommend that all Jellyfin users migrating from Emby start with a fresh database and library scan.
+Direct database migration from Emby (of any version) to Jellyfin is NOT SUPPORTED. We have found many subtle bugs due to the inconsistent database schemas that result from trying to do this, and strongly recommend that all Jellyfin users migrating from Emby start with a fresh database and library scan.
 
-The original procedure is provided below for reference however we cannot support it nor guarantee that a system upgraded in this way will work properly, if at all. If anyone is interested in writing a database migration script which will correct the deficiencies in the existing database and properly import them into Jellyfin, we would welcome it however!
+The original procedure is provided below for reference however we cannot support it nor guarantee that a system upgraded in this way will work properly, if at all. If anyone is interested in writing a database migration script which will correct the deficiencies in the existing database and properly import them into Jellyfin, [we would welcome it however](contributor-docs/contributing)!
+
+## Unofficial procedure
 
 ~~Jellyfin offers a seamless migration from Emby version 3.5.2 or earlier. Emby versions 3.5.3 or 3.6+ cannot be easily migrated, and we recommend rebuilding your library instead.~~
 

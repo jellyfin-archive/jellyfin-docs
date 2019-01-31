@@ -1,84 +1,147 @@
 # Jellyfin Apps
 
-A list of apps with support for Jellyfin.
+Apps connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of apps, as well as their status, below.
 
-**Note**: Many of the official apps were forked from Emby and are not currently building and/or functional.
+**Note**: Many apps were direct forks of the latest available codebases of Emby apps, and some are not functional. 
 If you interested in helping out, please see our [contribution guide](/developer-docs/contributing).
 
-### Android
+Do you have an app that interfaces with Jellyfin and would like to see it listed here? Please [submit a PR](https://github.com/jellyfin/jellyfin-docs)!
 
-**[Jellyfin for Android](https://github.com/jellyfin/jellyfin-android)**
+## Android
 
-The official Jellyfin Android app.
-Status: Unreleased but In Development
+### Jellyfin for Android
 
-**[Yatse](https://www.yatse.tv/)**
+The official Jellyfin Android app supporting Android 4+.
 
-A third party remote control for Jellyfin with support for Chromecast playback.
-Status: In Development
+**Status:** ⭐ In Beta release
 
-### Android TV
+**Links:**
 
-**[Jellyfin for Android TV](https://github.com/jellyfin/jellyfin-androidtv)**
+* [GitHub](https://github.com/jellyfin/jellyfin-android)
+* [Binary repository](https://repo.jellyfin.org/releases/client/android)
+
+### Jellyfin for Android TV
 
 The official Jellyfin Android TV app.
-Status: Unreleased but In Development
 
-### Desktop
+**Status:** ⭐ In Beta release
 
-**[Jellyfin Theater (Electron)](https://github.com/jellyfin/jellyfin-theater-electron)**
+**Links:**
 
-A desktop media interface for Windows, macOS, and Linux.
-Status: In Development
+* [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
+* [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
 
-**[Jellyfin Theater (Raspberry Pi)](https://github.com/jellyfin/jellyfin-theater-pi)**
+### Yatse
 
-A desktop media interface built for Raspberry Pi's.
-Status: No Maintainers
+A third party remote control for Jellyfin with support for Chromecast playback.
 
-**[Jellyfin Theater (Windows)](https://github.com/jellyfin/jellyfin-theater-windows)**
+**Status:** ⭐ Active, 3rd-party
+
+**Links:**
+
+* [Yatse homepage](https://yatse.tv/)
+
+## Jellyfin Theater (Desktop)
+
+### Electron
+
+A cross-platform desktop media interface using Electron supporting Windows, MacOS and Linux.
+
+**Status:** ✅ In development
+
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-theater-electron)
+
+### Raspberry Pi
+
+A desktop media interface for the Raspberry Pi.
+
+**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
+
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-theater-pi)
+
+### Windows
 
 A desktop media interface for Windows.
-Status: No Maintainers
 
-### Google Chrome
+**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
 
-**[Jellyfin for Google Chrome](https://github.com/jellyfin/jellyfin-chrome)**
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-theater-windows)
+
+## Chrome
+
+### Jellyfin for Google Chrome
 
 The official Jellyfin Google Chrome extension.
-Status: No Maintainers
 
-### iOS
+**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
 
-**[Jellyfin for iOS](https://github.com/jellyfin/jellyfin-ios)**
+**Links:**
+
+[GitHub](https://github.com/jellyfin/jellyfin-chrome)
+
+
+## Apple
+
+### Jellyfin for Apple iOS
 
 The official Jellyfin iOS app.
-Status: Deprecated
 
-### Kodi
+**Status:** ❎ Deprecated and unreleasable - [rewrite required](/contributor-docs/contributing)
 
-**[Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)**
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-ios)
+
+## Kodi
+
+### Jellyfin for Kodi
 
 The official Jellyfin Kodi plugin.
-Status: No Maintainers
 
-### Roku
+**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
 
-**[Jellyfin for Roku](https://github.com/jellyfin/jellyfin-roku)**
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-kodi)
+
+## Roku
+
+### Jellyfin for Roku
 
 The official Jellyfin Roku app.
-Status: Deprecated
 
-### Samsung TV
+**Status:** ❎ Deprecated but salvageable - [major updates required](/contributor-docs/contributing)
 
-**[Jellyfin for Samsung TV](https://github.com/jellyfin/jellyfin-samsungtv)**
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-roku)
+
+## Samsung TV
+
+### Jellyfin for Samsung TV
 
 The official Jellyfin Samsung TV app.
-Status: No Maintainers
 
-### Windows Phone
+**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
 
-**[Jellyfin for Windows Phone](https://github.com/jellyfin/jellyfin-windowsphone)**
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-samsungtv)
+
+## Windows Phone
+
+### Jellyfin for Windows Phone
 
 The official Jellyfin Windows Phone app.
-Status: Deprecated
+
+**Status:** ❎ Deprecated - [dead platform but salvageable](/contributor-docs/contributing)
+
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-windowsphone)

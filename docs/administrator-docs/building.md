@@ -24,37 +24,23 @@ All package builds begin with the first two steps (for Linux/OSX; alter as neede
 4. Run the container:  
     `docker run -d -p 8096:8096 $USERNAME/jellyfin`
 
-## Debian Packages via Docker
+## Build script on Linux/MacOS
 
-3. Run the build script:  
-    `./build-deb.sh`
+3. Use the included `build` script to perform builds:
+    `./build --help`
+    `./build --list-platforms`
+    `./build <platform> all`
 
-4. Resulting packages will be in `../jellyfin*.deb`
+**NOTE:** This will very likely be split out into a separate repository at some point in the future.
 
-## Debian Packages via `dpkg-dev`
-
-3. Add the Microsoft .NET Core repository:       
-    `sudo apt-get install -y apt-transport-https debhelper gnupg wget devscripts`  
-    `wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg`  
-    `wget -qO- https://packages.microsoft.com/config/debian/9/prod.list | sudo tee /etc/apt/sources.list.d/microsoft-prod.list`  
-    `sudo apt-get update`  
-
-4. Install build dependencies:  
-    `sudo mk-build-deps -i`
-
-5. Build the packages:  
-    `dpkg-buildpackage -us -uc`
-
-6. Resulting packages will be in  `../jellyfin*.deb`
-
-## Windows (64 bit)
+## Windows (64 bit) on Windows
 
 3. Install the dotnet core SDK 2.2 from [Microsoft's Webpage](https://dotnet.microsoft.com/download/dotnet-core/2.2) and [install Git for Windows](https://gitforwindows.org/)
 
 4. Set `executionpolicy` to unrestricted.
 
 5. Run the Jellyfin build script:  
-    `build-jellyfin.ps1`
+    `deployment/win-generic/build-jellyfin.ps1`
 
     * The `-WindowsVersion` and `-Architecture` flags can optimize the build for your current environment; the default is generic Windows x64.
 
@@ -71,3 +57,5 @@ All package builds begin with the first two steps (for Linux/OSX; alter as neede
 
     * To start it from CMD, run:  
         `%APPDATA%\Jellyfin-Server\jellyfin.exe`
+
+**NOTE:** This will very likely be split out into a separate repository at some point in the future.

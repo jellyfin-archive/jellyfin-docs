@@ -21,7 +21,7 @@ Jellyfin uses [semantic versioning](https://semver.org). All releases will have 
 
 ## General Release Philosophy
 
-## Release procedure (major releases)
+## Release procedure (major/minor version releases)
 
 1. Announce release in the [jellyfin-dev](https://matrix.to/#/#jellyfin-dev:matrix.org) Matrix/Riot channel at least a few hours before releasing, to put a temporary freeze on merges.
 
@@ -62,7 +62,7 @@ Jellyfin uses [semantic versioning](https://semver.org). All releases will have 
 
 1. Delete any previous major release branches, as all future hotfix work should go against the new release branch, or master directly for inclusion in the next major release.
 
-## Release procedure (minor releases/hotfixes)
+## Release procedure (Hotfix version releases)
 
 1. Discover a major, breaking bug in the current release which must be immediately fixed and cannot wait for the next full feature release; discuss in the [jellyfin-dev](https://matrix.to/#/#jellyfin-dev:matrix.org) Matrix/Riot channel to coordinate hotfixes.
 

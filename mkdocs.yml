@@ -20,6 +20,7 @@ pages:
   - Contributor Docs:
     - Contributing to Jellyfin: 'contributor-docs/contributing.md'
     - GitHub Issues: 'contributor-docs/issues.md'
+    - Development procedures: 'contributor-docs/contributing-code.md'
     - Branding guide: 'contributor-docs/branding-guide.md'
     - Release procedure: 'contributor-docs/release-procedure.md'
   - Developer Docs:

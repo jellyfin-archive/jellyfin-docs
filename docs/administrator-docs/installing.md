@@ -25,8 +25,7 @@ An Unraid Docker template is available in the repository.
 
 ### Kubernetes
 
-A community project to deploy Jellyfin on Kubernetes-based platforms exists at `https://github.com/home-cluster/jellyfin-openshift`.
-Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
+A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift). Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
 
 ## Portable Binaries
 

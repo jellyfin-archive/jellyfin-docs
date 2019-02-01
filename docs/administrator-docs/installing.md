@@ -88,16 +88,16 @@ Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Debian, as it contains several dependencies as well.
 
-1. Download the desired `.deb` package from the repository:
+1. Download the desired `.deb` package from the repository:  
     `wget https://repo.jellyfin.org/releases/server/debian/jellyfin_latest_$(dpkg --print-architecture).deb`
 
-1. Install the required dependencies:
+1. Install the required dependencies:  
     `sudo apt install ffmpeg at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0`
 
-1. Install the downloaded `.deb` package:
+1. Install the downloaded `.deb` package:  
     `sudo dpkg -i jellyfin_latest_$(dpkg --print-architecture).deb`
 
-1. Manage the Jellyfin system service with your tool of choice:
+1. Manage the Jellyfin system service with your tool of choice:  
     `sudo service jellyfin status`
     `sudo systemctl restart jellyfin`
     `sudo /etc/init.d/jellyfin stop`

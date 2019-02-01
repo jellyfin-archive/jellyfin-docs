@@ -95,7 +95,7 @@ Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [
     `sudo apt install ffmpeg at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0`
 
 1. Install the downloaded `.deb` package:
-    `sudo dpkg -i jellyfin_10.1.0-1_amd64.deb`
+    `sudo dpkg -i jellyfin_latest_$(dpkg --print-architecture).deb`
 
 1. Manage the Jellyfin system service with your tool of choice:
     `sudo service jellyfin status`

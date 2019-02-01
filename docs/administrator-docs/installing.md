@@ -76,10 +76,10 @@ The Jellyfin team provides a Debian repository for installation on Debian and Ub
 1. Install Jellyfin:  
     `sudo apt install jellyfin`
 
-1. Manage the Jellyfin system service with your tool of choice:
-    `sudo service jellyfin status`
-    `sudo systemctl restart jellyfin`
-    `sudo /etc/init.d/jellyfin stop`
+1. Manage the Jellyfin system service with your tool of choice:  
+    `sudo service jellyfin status`  
+    `sudo systemctl restart jellyfin`  
+    `sudo /etc/init.d/jellyfin stop`  
 
 ### Packages
 
@@ -97,6 +97,6 @@ Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [
     `sudo dpkg -i jellyfin_latest_$(dpkg --print-architecture).deb`
 
 1. Manage the Jellyfin system service with your tool of choice:  
-    `sudo service jellyfin status`
-    `sudo systemctl restart jellyfin`
-    `sudo /etc/init.d/jellyfin stop`
+    `sudo service jellyfin status`  
+    `sudo systemctl restart jellyfin`  
+    `sudo /etc/init.d/jellyfin stop`  

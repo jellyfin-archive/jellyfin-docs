@@ -27,9 +27,9 @@ Jellyfin uses [semantic versioning](https://semver.org). All releases will have 
 
 1. Ensure any required PRs are merged into both the [jellyfin](https://github.com/jellyfin/jellyfin) and [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repositories.
 
-1. Create a release branch for the [jellyfin](https://github.com/jellyfin/jellyfin) and [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repositories with the format `release-X.Y.Z`, where `X.Y.` is the new version number and `Z` is a literal `Z` character, based off the current `master` branches. These will be somewhat long-lived branches to track particular releases and deal with hotfixes to those branches should they be required.
+1. Create a release branch for the [jellyfin](https://github.com/jellyfin/jellyfin) and [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repositories with the format `release-X.Y.Z`, where `X.Y` is the new minor + major version number and `Z` is a literal `Z` character, based off the current `master` branches. These will be somewhat long-lived branches to track particular releases and deal with hotfixes to those branches should they be required.
 
-1. Execute the `bump_version` script inside the release branch in the [jellyfin](https://github.com/jellyfin/jellyfin) local repository. Commit the resulting differences as `Bump version to X.Y.Z`.
+1. Execute the `bump_version` script inside the release branch in the [jellyfin](https://github.com/jellyfin/jellyfin) local repository. Commit the resulting differences as `Bump version to X.Y.Z`, where `X.Y.Z` is the full version number.
 
 1. Perform initial testing builds and test the resulting binaries.
 
@@ -68,7 +68,7 @@ Jellyfin uses [semantic versioning](https://semver.org). All releases will have 
 
 1. Create all hotfix PRs against the *previous release branch* in either the [jellyfin](https://github.com/jellyfin/jellyfin) and [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repositories; merge when completed.
 
-1. Execute the `bump_version` script inside the release branch in the [jellyfin](https://github.com/jellyfin/jellyfin) local repository. Commit the resulting differences as `Bump version to X.Y.Z`.
+1. Execute the `bump_version` script inside the release branch in the [jellyfin](https://github.com/jellyfin/jellyfin) local repository. Commit the resulting differences as `Bump version to X.Y.Z`, where `X.Y.Z` is the full version number.
 
 1. Perform the release.
 

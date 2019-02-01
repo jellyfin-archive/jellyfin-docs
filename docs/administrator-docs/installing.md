@@ -59,7 +59,7 @@ The Jellyfin team provides a Debian repository for installation on Debian and Ub
 
 **NOTE:** Ubuntu users may find that the ffmpeg dependency package is not present in their release or is simply a rebranded `libav` which is not directly compatible. Please obtain the `ffmpeg` package directly from [their repository](https://ffmpeg.org/) to use Jellyfin on Ubuntu.
 
-1. Install HTTPS transport for app if you haven't already:  
+1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
 
 1. Import the GPG signing key (signed by the Jellyfin Team):  

@@ -36,7 +36,7 @@ When writing an bug issue, please ensure you capture as much relevant detail as 
 
 * Any non-standard configurations you use
 
-Bugs should be tagged with `[bug]` at the beginning of their title. This will later be removed by the Jellyfin team when assigning labels. To assist in triaging, if you know which other [label(s)](/developer-docs/issues#issue-labels) should be applied to your issue, please add them after the `[bug]` label.
+Bugs should be tagged with `[bug]` at the beginning of their title. This will later be removed by the Jellyfin team when assigning labels. To assist in triaging, if you know which other [label(s)](/contributor-docs/issues#issue-labels) should be applied to your issue, please add them after the `[bug]` label.
 
 Bugs should be reproduceable. That is, you should be able to have determined through troubleshooting how to replicate the issue. While one-time bugs shouldn't be ignored, if they're difficult or impossible to reproduce, it's likely very hard to fix them. Please attempt to reproduce the bug before filing the issue, and include the smallest test case you can to demonstrate it.
 
@@ -46,7 +46,7 @@ If you ever need assistance for troubleshooting or opening an issue, please [con
 
 When writing a feature issue, please note that we distinguish between new features, tagged with `[feature]`, and enhancements to existing features, tagged with `[enhancement]`. Enhancement issues should be reserved only for modifications to existing functionality or features, with a default towards the `[feature]` tag.
 
-When requesting a feature, please include details about what you want to achieve with the feature, including a usecase if possible. This not only helps the Jellyfin team gauge how possible the issue is, but also helps other community members understand what you want to acheieve so that they can agree with it via the [upvote system](/developer-docs/issues#Searching-for-issues-and-upvoting).
+When requesting a feature, please include details about what you want to achieve with the feature, including a usecase if possible. This not only helps the Jellyfin team gauge how possible the issue is, but also helps other community members understand what you want to acheieve so that they can agree with it via the [upvote system](/contributor-docs/issues#Searching-for-issues-and-upvoting).
 
 Features are not explicitly prioritized; they are worked by those in the community who are able to and are interested. However community desire for a feature can greatly affect this, so ensure you upvote any features you are interested in seeing, or are interested in working on. Developers who are interested in taking on a feature requests should update the issue to indicate as much, and just as importantly indicate if they *stop* wanting to work on the feature - this helps avoid the appearance of ownership that doesn't exist.
 

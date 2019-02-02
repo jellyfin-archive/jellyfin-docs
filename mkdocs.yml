@@ -24,6 +24,6 @@ pages:
     - Branding guide: 'contributor-docs/branding-guide.md'
     - Release procedure: 'contributor-docs/release-procedure.md'
   - Developer Docs:
-    - Style guidelines: 'developer-docs/coding-style.md'
+    - Style guidelines: 'contributor-docs/coding-style.md'
 extra_css:
   - static/overrides.css

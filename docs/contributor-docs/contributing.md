@@ -12,7 +12,7 @@ Please see the [getting help](/user-docs/getting-help) page for help with troubl
 
 The Jellyfin project consists of a C# core server, a Javascript-based UI, and a number of client applications written in various languages and frameworks. If you have experience with these languages, we're always grateful for any contributions you might want to make!
 
-For general guidelines on how the project works, including how to set up your development copy, make changes, and guidelines on Pull Requests (PRs), please see the [documentation on contributing code](/contributor-docs/contributing-code). Jellyfin follows a "fork and PR" methodology; if you're not familiar with this, please see the [relevant section](/contributor-docs/pull-requests#set-up-your-copy-of-the-repo).
+For general guidelines on how the project works, including how to set up your development copy, make changes, and guidelines on Pull Requests (PRs), please see the [documentation on contributing code](/contributor-docs/contributing-code). Jellyfin follows a "fork and PR" methodology; if you're not familiar with this, please see the [relevant section](/contributor-docs/contributing-code#set-up-your-copy-of-the-repo).
 
 ## Other Contributions to Jellyfin
 

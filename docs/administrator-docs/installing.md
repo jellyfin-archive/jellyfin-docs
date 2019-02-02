@@ -29,7 +29,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 ## Portable Binaries
 
-Portable binary packages containing a compiled Jellyfin instance are available for multiple platforms. For all portable binaries, extract the relevant archive to a directory and launch `jellyfin.exe`.
+Portable binary packages containing a compiled Jellyfin instance are available for multiple platforms. For all portable binaries, extract the relevant archive to a directory and launch the binary (`jellyfin` on Linux/MacOS, `jellyfin.exe` on Windows).
 
 ### Windows (x64/x86)
 

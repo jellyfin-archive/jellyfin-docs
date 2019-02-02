@@ -29,7 +29,7 @@ The first step is to set up a copy of the Git repository of the project you want
 1. On GitHub, "Fork" the Jellyfin repository you wish to contribute to, to your own user account using the "Fork" button in the relevant repository.
 
 1. Clone your fork to your local machine and enter the directory:  
-    `git clone git@github.com:yourusername/projectname.git`
+    `git clone git@github.com:yourusername/projectname.git`  
     `cd projectname/`
 
 1. Add the "upstream" remote, which allows you to pull down changes from the main project easily:  
@@ -37,6 +37,8 @@ The first step is to set up a copy of the Git repository of the project you want
 
 1. Initialize the Git submodules; most projects have at least one:  
     `git submodule update --init`
+
+    **NOTE:** Avoid editing files inside of submodules; this may result in unintended side-effects including overwriting of your work. Always modify the submodule in its own cloned repository elsewhere.
 
 You will now be ready to begin building or modifying the project.
 
@@ -98,7 +100,7 @@ To test someone else's pull request, you must import the changes to your local r
     `git checkout my-testing-branch`
 
 1. Perform any testing or build required to test, then return to master and delete the branch:
-    `git checkout master
+    `git checkout master`  
     `git branch -D my-testing-branch`
 
 ## Pull Request guidelines
@@ -117,6 +119,8 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * Tag any work-in-progress commits with `[WIP]`, `WIP - `, or some variation at the beginning of the title. While this tag is in place, the PR should *not* be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
 
+* Avoid force-pushing to large or complex non-WIP pull requests, if at all possible, and especially after review. Doing so forces unneccessary re-review to verify the changes are still OK.
+
 * Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 
-* All PRs require review by at least 2 Core team members before being merged into `master`, though reviews from any contributor are welcome and helpful! After the second Core team member review, the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if require.
+* All PRs require review by at least 2 Core team members before being merged into `master`, though reviews from any contributor are welcome and helpful! After the second Core team member review, the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if required.

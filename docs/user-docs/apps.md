@@ -2,8 +2,7 @@
 
 Apps connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of apps, as well as their status, below.
 
-**Note**: Many apps were direct forks of the latest available codebases of Emby apps, and some are not functional. 
-If you interested in helping out, please see our [contribution guide](/developer-docs/contributing).
+**Note**: Many apps were direct forks of the latest available codebases of Emby apps, and some are not functional yet or are deprecated. If you interested in helping out, please see our [contribution guide](/developer-docs/contributing).
 
 Do you have an app that interfaces with Jellyfin and would like to see it listed here? Please [submit a PR](https://github.com/jellyfin/jellyfin-docs)!
 

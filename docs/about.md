@@ -12,8 +12,8 @@ You can find our main repository [on GitHub](https://github.com/jellyfin/jellyfi
 
 The core team of Jellyfin consists of:
 
-[Andrew Rabert (nvllsvm)](https://github.com/nvllsvm)
-[Joshua Boniface](https://github.com/joshuaboniface)
-[Vasily (JustAMan)](https://github.com/JustAMan)
-[Anthony Lavado](https://github.com/anthonylavado)
-[Bond-009](https://github.com/Bond-009)
+[Andrew Rabert (nvllsvm)](https://github.com/nvllsvm)  
+[Joshua Boniface (joshuaboniface)](https://github.com/joshuaboniface)  
+[Vasily (JustAMan)](https://github.com/JustAMan)  
+[Anthony Lavado (anthonylavado)](https://github.com/anthonylavado)  
+[Bond-009](https://github.com/Bond-009)  

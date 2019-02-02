@@ -1,6 +1,6 @@
 # Jellyfin Quick-Start Guide
 
-1. [Install Jellyfin on your system](/user-docs/installing).
+1. [Install Jellyfin on your system](/administrator-docs/installing).
 
 1. Browse to `https://<yourmachine>:8096`
 

@@ -3,11 +3,27 @@ theme: readthedocs
 markdown_extensions:
   - toc:
       permalink: yes
-nav:
+pages:
   - Home: 'index.md'
   - About: 'about.md'
-  - User Docs: '/user-docs/index.md'
-  - Developer Docs: '/developer-docs/index.md'
-
+  - FAQ: 'faq.md'
+  - User Docs:
+    - Getting help: 'user-docs/getting-help.md'
+    - Client apps: 'user-docs/apps.md'
+  - Administrator Docs:
+    - Installing Jellyfin: 'administrator-docs/installing.md'
+    - Building from source: 'administrator-docs/building.md'
+    - First-time configuration: 'administrator-docs/first-time.md'
+    - Migrating from Emby: 'administrator-docs/migrate-from-emby.md'
+    - Port bindings: 'administrator-docs/port-bindings.md'
+    - Plugins: 'administrator-docs/plugins.md'
+  - Contributor Docs:
+    - Contributing to Jellyfin: 'contributor-docs/contributing.md'
+    - GitHub Issues: 'contributor-docs/issues.md'
+    - Development procedures: 'contributor-docs/contributing-code.md'
+    - Branding guide: 'contributor-docs/branding-guide.md'
+    - Release procedure: 'contributor-docs/release-procedure.md'
+  - Developer Docs:
+    - Style guidelines: 'developer-docs/coding-style.md'
 extra_css:
   - static/overrides.css

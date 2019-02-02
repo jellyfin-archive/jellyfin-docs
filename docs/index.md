@@ -19,44 +19,42 @@ Note: Jellyfin is a fast moving project that is in its early stages, and this do
 
 ## Getting Started
 
-Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin [installed](/user-docs/installing) on your machine.
+Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin [installed](/administrator-docs/installing) on your machine.
 
 * [Arch Linux](https://aur.archlinux.org/packages/jellyfin/)
-* [Debian / Ubuntu](/user-docs/installing#debian-ubuntu)
+* [Debian / Ubuntu](/administrator-docs/installing#debian-ubuntu)
 * [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
-* [unRaid](/user-docs/installing#unraid-docker)
-* [Kubernetes](/user-docs/installing#kubernetes)
-* [Windows](/user-docs/installing#windows-x64x86)
-* [MacOS](/user-docs/installing#macos)
-* [Generic Linux](/user-docs/installing#linux-generic-amd64)
-* [Portable DLL](/user-docs/installing#portable-dll)
+* [unRaid](/administrator-docs/installing#unraid-docker)
+* [Kubernetes](/administrator-docs/installing#kubernetes)
+* [Windows](/administrator-docs/installing#windows-x64x86)
+* [MacOS](/administrator-docs/installing#macos)
+* [Generic Linux](/administrator-docs/installing#linux-generic-amd64)
+* [Portable DLL](/administrator-docs/installing#portable-dll)
 
-Alternatively, Jellyfin may be built directly from the [source code](/user-docs/building).
+Alternatively, Jellyfin may be built directly from the [source code](/administrator-docs/building).
 
 ## User Documentation
 
 Have questions about how Jellyfin works or encountering an error? Check out the pages below for documentation.
 
-* [Quick-start guide](/user-docs/quick-start): What to do after you've installed Jellyfin to get it up and running.
-* [Frequently asked questions](/user-docs/faq): Frequently asked questions about running Jellyfin.
-* [Migrating from Emby](/user-docs/migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
+* [Frequently asked questions](/faq): Frequently asked questions about running Jellyfin.
 * [Getting help](/user-docs/getting-help): How to get help with Jellyfin.
 * [Client apps](/user-docs/apps): Details on the available client applications for Jellyfin.
-* [Plugins](/user-docs/plugins): How to install plugins in Jellyfin.
-* [Full user documentation](/user-docs/index): The main user documentation page.
 
 ## Administrator Documentation
 
 Want to know more about administering a Jellyfin server? Check out these pages!
 
+* [Quick-start guide](/administrator-docs/first-time): What to do after you've installed Jellyfin to get it up and running.
+* [Migrating from Emby](/administrator-docs/migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
+* [Plugins](/administrator-docs/plugins): How to install plugins in Jellyfin.
 * [Port Bindings](/administrator-docs/port-bindings)
 
 ## Contributing to Jellyfin
 
 Want to help out? Check out the pages below for how to contribute.
 
-* [Contributing guide](/developer-docs/contributing): General information on contributing to Jellyfin.
-* [Reporting bugs](/developer-docs/issues#reporting-bugs): How to use our issue tracker on GitHub to report bugs.
-* [Requesting features](/developer-docs/issues#requesting-features): How to use our issue tracker on GitHub to request new features or enhancements.
+* [Contributing guide](/contributor-docs/contributing): General information on contributing to Jellyfin.
+* [Reporting bugs](/contributor-docs/issues#reporting-bugs): How to use our issue tracker on GitHub to report bugs.
+* [Requesting features](/contributor-docs/issues#requesting-features): How to use our issue tracker on GitHub to request new features or enhancements.
 * [Code style guide](/developer-docs/coding-style): Code and naming style guide.
-* [Full developer documentation](/developer-docs/index): The main developer documentation page.

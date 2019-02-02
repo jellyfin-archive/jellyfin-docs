@@ -28,4 +28,4 @@ We're still working to set up a translation system that will help automate this,
 
 ### Testing
 
-Testing is the easiest way to contribute. Simply use Jellyfin, and if you run into problems, [let us know](/user-docs/getting-help). This is the most common way we uncover bugs, through a user doing something we hadn't thought of. If the issue does end up being related to the code, a [bug issue](/developer-docs/issues#reporting-bugs) can then be opened.
+Testing is the easiest way to contribute. Simply use Jellyfin, and if you run into problems, [let us know](/user-docs/getting-help). This is the most common way we uncover bugs, through a user doing something we hadn't thought of. If the issue does end up being related to the code, a [bug issue](/contributor-docs/issues#reporting-bugs) can then be opened.

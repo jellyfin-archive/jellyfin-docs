@@ -14,14 +14,14 @@ Please see our [getting help](/user-docs/getting-help) page for details on where
 
 ### How can I help with this project?
 
-Please see our [contributing guide](/developer-docs/contributing) page for details on how to get started.
+Please see our [contributing guide](/contributor-docs/contributing) page for details on how to get started.
 
 We are always looking for C# and frontend developers, mobile app developers, translators, and documentation writers to help!
 
 ### How do I request a new feature?
 
-Please see our [requesting features](/developer-docs/issues#requesting-features) page for details in requesting a new feature in Jellyfin.
+Please see our [requesting features](/contributor-docs/issues#requesting-features) page for details in requesting a new feature in Jellyfin.
 
 ### How do I support this project?
 
-All we can ask is you [use Jellyfin](/user-docs/installing), [report any bugs](/developer-docs/issues#reporting-bugs), and tell your friends about us! Really, we're just people volunteering our time to help build a better media system, so joining the community is the best way to show your support.
+All we can ask is you [use Jellyfin](/administrator-docs/installing), [report any bugs](/contributor-docs/issues#reporting-bugs), and tell your friends about us! Really, we're just people volunteering our time to help build a better media system, so joining the community is the best way to show your support.

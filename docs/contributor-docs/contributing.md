@@ -24,7 +24,7 @@ Documentation is incredibly helpful! All these docs are written using `mkdocs` v
 
 ### Translations
 
-If you're interested in helping to translate Jellyfin into your local language, we use [Weblate](https://weblate.org/en/) running at [translate.jellyfin.org](https://translate.jellyfin.org) to handle translations. These are collected in the `translations` branch of the [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repository and are merged into master before each release.
+If you're interested in helping to translate Jellyfin into your local language, we use [Weblate](https://weblate.org/en/) running at [translate.jellyfin.org](https://translate.jellyfin.org) to handle translations. These are collected in the `translations` branchs of the various repositories and are merged into the `master` branches before each release.
 
 ### Testing
 

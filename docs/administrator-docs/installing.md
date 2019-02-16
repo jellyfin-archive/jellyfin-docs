@@ -51,6 +51,14 @@ Platform-agnostic .NET Core DLL builds in TAR archive format are available [here
 
 The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/packages/jellyfin-git/).
 
+## Fedora
+
+Fedora 27 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora). Coming soon: an official Fedora repository.
+
+## CentOS
+
+CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/centos). Coming soon: an official CentOS/RHEL repository.
+
 ## Debian
 
 ### Repository

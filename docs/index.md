@@ -28,6 +28,8 @@ Want to get starting using Jellyfin right now? Check out the pages below for how
 * [Arch Linux](https://aur.archlinux.org/packages/jellyfin/)
 * [Debian](/administrator-docs/installing#debian)
 * [Ubuntu](/administrator-docs/installing#ubuntu)
+* [Fedora](/administrator-docs/installing#fedora)
+* [CentOS](/administrator-docs/installing#centos)
 * [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
 * [unRaid](/administrator-docs/installing#unraid-docker)
 * [Kubernetes](/administrator-docs/installing#kubernetes)

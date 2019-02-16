@@ -57,11 +57,11 @@ The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/pac
 
 The Jellyfin team provides a Debian repository for installation on Debian Jessie/Stretch/Buster.
 
-1. If you are on Buster, remove any `ffmpeg` system packages as `4.1` is not compatible with Jellyfin at this time:
+**NOTE:** Only 64-bit (amd64) versions of Linux are supported as there is no Microsoft DotNET available for 32-bit (i386) Linux systems.
+
+1. If you are on Buster, remove any previous `ffmpeg` system packages as `4.1` is not compatible with Jellyfin at this time:
     `sudo apt remove ffmpeg`
     `sudo apt autoremove`
-
-**NOTE:** Only 64-bit (amd64) versions of Linux are supported as there is no Microsoft DotNET available for 32-bit (i386) Linux systems.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`

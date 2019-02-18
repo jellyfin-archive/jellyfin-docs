@@ -33,6 +33,7 @@ Three popular options for reverse proxy systems are [Apache](https://httpd.apach
     SSLEngine on
     SSLCertificateFile /etc/letsencrypt/jellyfin.example.com/fullchain.pem
     SSLCertificateKeyFile /etc/letsencrypt/jellyfin.example.com/privkey.pem
+    Protocols h2 http/1.1
 
     ErrorLog /var/log/apache2/jellyfin.example.com-error.log
     CustomLog /var/log/apache2/jellyfin.example.com-access.log combined
@@ -72,7 +73,7 @@ server {
 }
 
 server {
-    listen 443 ssl;
+    listen 443 ssl http2;
     server_name jellyfin.example.com;
     ssl_certificate /etc/letsencrypt/live/jellyfin.example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/jellyfin.example.com/privkey.pem;

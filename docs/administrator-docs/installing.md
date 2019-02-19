@@ -10,6 +10,19 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
 
+1. Get the latest image:  
+    `docker pull jellyfin/jellyfin`
+2. Create a directory on the host for persistent data storage:  
+    `mkdir /mnt/jellyfin_data`
+3. Start the server:  
+    `docker run -d \`  
+    `--name jellyfin \`  
+    `--volume /mnt/jellyfin_data:/config \`  
+    `--volume /path/to/media:/mnt/library \`  
+    `--publish 8096:8096 \`  
+    `--net=host \`  
+    `jellyfin/jellyfin:latest`
+
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.

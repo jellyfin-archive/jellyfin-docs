@@ -53,7 +53,7 @@ The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/pac
 
 ## Fedora
 
-Fedora 27 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora). Coming soon: an official Fedora repository.
+Fedora 29 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora). Coming soon: an official Fedora repository.
 
 ## CentOS
 

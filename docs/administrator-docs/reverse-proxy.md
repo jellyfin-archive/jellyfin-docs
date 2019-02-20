@@ -50,12 +50,14 @@ $ sudo a2enmod ssl
 ## Haproxy
 
 ```
-frontend https_proxy
+frontend jellyfin_proxy
     bind *:80
 # Note that haproxy requires you to concatenate the certificate and key into a single file
     bind *:443 ssl crt /etc/letsencrypt/live/jellyfin.example.com/complete.pem
-    default_backend jellyfin
     redirect scheme https if !{ ssl_fc }
+
+    acl jellyfin_server hdr(host) -i jellyfin.example.com
+    use_backend jellyfin if jellyfin_server
 
 backend jellyfin
     http-request set-header X-Forwarded-Port %[dst_port]

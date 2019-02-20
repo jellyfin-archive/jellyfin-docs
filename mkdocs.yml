@@ -17,6 +17,7 @@ pages:
     - Migrating from Emby: 'administrator-docs/migrate-from-emby.md'
     - Port bindings: 'administrator-docs/port-bindings.md'
     - Plugins: 'administrator-docs/plugins.md'
+    - Reverse proxy: 'administrator-docs/reverse-proxy.md'
   - Contributor Docs:
     - Contributing to Jellyfin: 'contributor-docs/contributing.md'
     - GitHub Issues: 'contributor-docs/issues.md'

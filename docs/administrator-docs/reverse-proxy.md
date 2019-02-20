@@ -53,6 +53,8 @@ $ sudo a2enmod ssl
 frontend jellyfin_proxy
     bind *:80
 # Note that haproxy requires you to concatenate the certificate and key into a single file
+## Note that if you're using haproxy 1.8+, you can enable http2 by swapping these lines
+##   bind *:443 ssl crt /etc/letsencrypt/live/jellyfin.example.com/complete.pem alpn h2,http/1.1
     bind *:443 ssl crt /etc/letsencrypt/live/jellyfin.example.com/complete.pem
     redirect scheme https if !{ ssl_fc }
 

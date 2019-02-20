@@ -12,12 +12,14 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
 
 1. Get the latest image:  
     `docker pull jellyfin/jellyfin`
-2. Create a directory on the host for persistent data storage:  
-    `mkdir /mnt/jellyfin_data`
+2. Create directories on the host for persistent data storage:  
+    `mkdir /mnt/jellyfin_config`  
+    `mkdir /mnt/jellyfin_cache`
 3. Start the server:  
     `docker run -d \`  
     `--name jellyfin \`  
-    `--volume /mnt/jellyfin_data:/config \`  
+    `--volume /mnt/jellyfin_config:/config \`  
+    `--volume /mnt/jellyfin_cache:/cache \`  
     `--volume /path/to/media:/mnt/library \`  
     `--publish 8096:8096 \`  
     `--net=host \`  

@@ -78,13 +78,9 @@ CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jel
 
 ### Repository
 
-The Jellyfin team provides a Debian repository for installation on Debian Jessie/Stretch/Buster.
+The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster.
 
 **NOTE:** Only 64-bit (amd64) versions of Linux are supported as there is no Microsoft DotNET available for 32-bit (i386) Linux systems.
-
-1. If you are on Buster, remove any previous `ffmpeg` system packages as `4.1` is not compatible with Jellyfin at this time:
-    `sudo apt remove ffmpeg`
-    `sudo apt autoremove`
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
@@ -95,7 +91,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Jessie
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
     `echo "deb [arch=amd64] https://repo.jellyfin.org/debian <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Valid releases are: `jessie`, `stretch`, and `buster`.
+    **NOTE:** Valid releases are: `stretch`, and `buster`.
 
 1. Update APT repositories:  
     `sudo apt update`
@@ -110,7 +106,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Jessie
 
 ### Packages
 
-Raw Debian packages, compatible with Debian 8+, are available [here](https://repo.jellyfin.org/releases/server/debian).
+Raw Debian packages, compatible with Debian 9+, are available [here](https://repo.jellyfin.org/releases/server/debian).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Debian, as it contains several dependencies as well.
 
@@ -140,9 +136,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 ### Repository
 
-The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Trusty/Xenial/Bionic/Cosmic.
-
-**NOTE:** Ubuntu users may find that the ffmpeg dependency package is not present in their release or is simply a rebranded `libav` which is not directly compatible. Please obtain the `ffmpeg` `4.0.3` package directly from [their repository](https://ffmpeg.org/), or install `jellyfin-ffmpeg`, to use Jellyfin.
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
@@ -153,7 +147,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Trust
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
     `echo "deb https://repo.jellyfin.org/ubuntu <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Valid releases are: `trusty`, `xenial`, `bionic`, and `cosmic`.
+    **NOTE:** Valid releases are: `xenial`, `bionic`, and `cosmic`.
 
 1. Update APT repositories:  
     `sudo apt update`
@@ -168,7 +162,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Trust
 
 ### Packages
 
-Raw Ubuntu packages, compatible with Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/releases/server/ubuntu).
+Raw Ubuntu packages, compatible with Ubuntu 16.04+, are available [here](https://repo.jellyfin.org/releases/server/ubuntu).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Ubuntu, as it contains several dependencies as well.
 

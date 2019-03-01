@@ -108,6 +108,7 @@ The official Jellyfin Kodi plugin.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-kodi)
+* [Install Guide](https://github.com/jellyfin/jellyfin-kodi#install-jellyfin-for-kodi)
 
 ## Roku
 

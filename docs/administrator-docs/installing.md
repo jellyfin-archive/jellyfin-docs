@@ -10,6 +10,21 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
 
+1. Get the latest image:  
+    `docker pull jellyfin/jellyfin`
+2. Create directories on the host for persistent data storage:  
+    `mkdir /mnt/jellyfin_config`  
+    `mkdir /mnt/jellyfin_cache`
+3. Start the server:  
+    `docker run -d \`  
+    `--name jellyfin \`  
+    `--volume /mnt/jellyfin_config:/config \`  
+    `--volume /mnt/jellyfin_cache:/cache \`  
+    `--volume /path/to/media:/mnt/library \`  
+    `--publish 8096:8096 \`  
+    `--net=host \`  
+    `jellyfin/jellyfin:latest`
+
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.
@@ -51,13 +66,19 @@ Platform-agnostic .NET Core DLL builds in TAR archive format are available [here
 
 The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/packages/jellyfin-git/).
 
-## Debian / Ubuntu
+## Fedora
+
+Fedora 29 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora). Coming soon: an official Fedora repository.
+
+## CentOS
+
+CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/centos). Coming soon: an official CentOS/RHEL repository.
+
+## Debian
 
 ### Repository
 
-The Jellyfin team provides a Debian repository for installation on Debian and Ubuntu machines.
-
-**NOTE:** Ubuntu users may find that the ffmpeg dependency package is not present in their release or is simply a rebranded `libav` which is not directly compatible. Please obtain the `ffmpeg` package directly from [their repository](https://ffmpeg.org/) to use Jellyfin on Ubuntu.
+The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster.
 
 **NOTE:** Only 64-bit (amd64) versions of Linux are supported as there is no Microsoft DotNET available for 32-bit (i386) Linux systems.
 
@@ -70,7 +91,7 @@ The Jellyfin team provides a Debian repository for installation on Debian and Ub
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
     `echo "deb [arch=amd64] https://repo.jellyfin.org/debian <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Valid releases are: `jessie`, `stretch`, `buster`, and `ubuntu`. Ubuntu does not yet have different version releases.
+    **NOTE:** Valid releases are: `stretch`, and `buster`.
 
 1. Update APT repositories:  
     `sudo apt update`
@@ -85,18 +106,73 @@ The Jellyfin team provides a Debian repository for installation on Debian and Ub
 
 ### Packages
 
-Raw Debian packages, compatible with Debian 8+ or Ubuntu 14.04+, are available [here](https://repo.jellyfin.org/releases/server/debian).
+Raw Debian packages, compatible with Debian 9+, are available [here](https://repo.jellyfin.org/releases/server/debian).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Debian, as it contains several dependencies as well.
 
-1. Download the desired `.deb` package from the repository:  
-    `wget https://repo.jellyfin.org/releases/server/debian/jellyfin_latest_$(dpkg --print-architecture).deb`
+1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
 
 1. Install the required dependencies:  
-    `sudo apt install ffmpeg at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0`
+    `sudo apt install at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0`
 
-1. Install the downloaded `.deb` package:  
-    `sudo dpkg -i jellyfin_latest_$(dpkg --print-architecture).deb`
+1. Install the downloaded `.deb` packages:  
+    `sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb`
+
+1. Manage the Jellyfin system service with your tool of choice:  
+    `sudo service jellyfin status`  
+    `sudo systemctl restart jellyfin`  
+    `sudo /etc/init.d/jellyfin stop`  
+
+## Ubuntu
+
+### Migrating to the new repository
+
+Previous versions of Jellyfin included Ubuntu under the Debian repository. This has now been split out into its own repository to better handle the separate binary packages. If you encounter errors about the `ubuntu` release not being found and you previously configured an `ubuntu` `jellyfin.list` file, please follow these steps.
+
+1. Remove the old `/etc/apt/sources.list.d/jellyfin.list` file:  
+    `sudo rm /etc/apt/sources.list.d/jellyfin.list`
+
+1. Proceed with the following section as written.
+
+### Repository
+
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic.
+
+1. Install HTTPS transport for APT if you haven't already:  
+    `sudo apt install apt-transport-https`
+
+1. Import the GPG signing key (signed by the Jellyfin Team):  
+    `wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -`
+
+1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
+    `echo "deb https://repo.jellyfin.org/ubuntu <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
+
+    **NOTE:** Valid releases are: `xenial`, `bionic`, and `cosmic`.
+
+1. Update APT repositories:  
+    `sudo apt update`
+
+1. Install Jellyfin:  
+    `sudo apt install jellyfin`
+
+1. Manage the Jellyfin system service with your tool of choice:  
+    `sudo service jellyfin status`  
+    `sudo systemctl restart jellyfin`  
+    `sudo /etc/init.d/jellyfin stop`  
+
+### Packages
+
+Raw Ubuntu packages, compatible with Ubuntu 16.04+, are available [here](https://repo.jellyfin.org/releases/server/ubuntu).
+
+**Note:** The repository is the preferred way to obtain Jellyfin on Ubuntu, as it contains several dependencies as well.
+
+1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
+
+1. Install the required dependencies:  
+    `sudo apt install at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0`
+
+1. Install the downloaded `.deb` packages:  
+    `sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb`
 
 1. Manage the Jellyfin system service with your tool of choice:  
     `sudo service jellyfin status`  

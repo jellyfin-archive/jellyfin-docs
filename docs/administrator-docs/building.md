@@ -7,7 +7,7 @@ As an alternative to using [binary packages](/administrator-docs/installing), yo
 
 Jellyfin supports several methods of building for different platforms and instructions for all supported platforms are below.
 
-All package builds begin with the first two steps (for Linux/OSX; alter as needed for Windows):
+All package builds begin with the first two steps:
 
 1. Clone the repository:  
     `git clone https://github.com/jellyfin/jellyfin.git`  
@@ -33,9 +33,9 @@ All package builds begin with the first two steps (for Linux/OSX; alter as neede
 
 **NOTE:** This will very likely be split out into a separate repository at some point in the future.
 
-## Windows (64 bit) on Windows
+## Windows on Windows
 
-3. Install the dotnet core SDK 2.2 from [Microsoft's Webpage](https://dotnet.microsoft.com/download/dotnet-core/2.2) and [install Git for Windows](https://gitforwindows.org/)
+3. Install the dotnet core SDK 2.2 from [Microsoft's Webpage](https://dotnet.microsoft.com/download/dotnet-core/2.2) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell version 3 or higher.
 
 4. Set `executionpolicy` to unrestricted.
 
@@ -47,6 +47,8 @@ All package builds begin with the first two steps (for Linux/OSX; alter as neede
     * The `-InstallLocation` flag lets you select where the compiled binaries go; the default is `$Env:AppData\Jellyfin-Server\` .
 
     * The `-InstallFFMPEG` flag will automatically pull the stable `ffmpeg` binaries appropriate to your architecture (x86/x64 only for now) from [Zeranoe](https://ffmpeg.zeranoe.com/builds/) and place them in your Jellyfin directory.
+    
+    * The '-InstallNSSM' flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory. 
 
 6. (Optional) Use [NSSM](https://nssm.cc/) to configure Jellyfin to run as a service
 

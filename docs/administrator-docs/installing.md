@@ -20,11 +20,23 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
     `--name jellyfin \`  
     `--volume /mnt/jellyfin_config:/config \`  
     `--volume /mnt/jellyfin_cache:/cache \`  
-    `--volume /path/to/media:/mnt/library \`  
-    `--publish 8096:8096 \`  
+    `--volume /path/to/media:/media:ro \`  
     `--net=host \`  
-    `jellyfin/jellyfin:latest`
-
+    `jellyfin/jellyfin:latest`  
+  
+Alternative docker-compose example:  
+```
+    version: "3"  
+    services:  
+        jellyfin:  
+          container_name: jellyfin  
+          image: jellyfin/jellyfin:latest  
+          network_mode: "host"  
+          volumes:  
+            - /mnt/jellyfin_config:/config  
+            - /mnt/jellyfin_cache:/cache  
+            - /path/to/media:/media:ro  
+```
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.

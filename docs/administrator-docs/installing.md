@@ -155,7 +155,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
     `wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -`
 
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
-    `echo "deb https://repo.jellyfin.org/ubuntu <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
+    `echo "deb [arch=amd64] https://repo.jellyfin.org/ubuntu <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
     **NOTE:** Valid releases are: `xenial`, `bionic`, and `cosmic`.
 

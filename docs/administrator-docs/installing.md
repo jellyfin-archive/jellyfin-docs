@@ -17,7 +17,6 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
     `mkdir /path/to/cache`
 3. Start the server:  
     `docker run -d \`  
-    `--name jellyfin \`  
     `--volume /path/to/config:/config \`  
     `--volume /path/to/cache:/cache \`  
     `--volume /path/to/media:/media \`  
@@ -29,7 +28,6 @@ Alternative docker-compose example:
     version: "3"  
     services:  
         jellyfin:  
-          container_name: jellyfin  
           image: jellyfin/jellyfin  
           network_mode: "host"  
           volumes:  

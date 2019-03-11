@@ -13,18 +13,28 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
 1. Get the latest image:  
     `docker pull jellyfin/jellyfin`
 2. Create directories on the host for persistent data storage:  
-    `mkdir /mnt/jellyfin_config`  
-    `mkdir /mnt/jellyfin_cache`
+    `mkdir /path/to/config`  
+    `mkdir /path/to/cache`
 3. Start the server:  
     `docker run -d \`  
-    `--name jellyfin \`  
-    `--volume /mnt/jellyfin_config:/config \`  
-    `--volume /mnt/jellyfin_cache:/cache \`  
-    `--volume /path/to/media:/mnt/library \`  
-    `--publish 8096:8096 \`  
+    `--volume /path/to/config:/config \`  
+    `--volume /path/to/cache:/cache \`  
+    `--volume /path/to/media:/media \`  
     `--net=host \`  
-    `jellyfin/jellyfin:latest`
-
+    `jellyfin/jellyfin`  
+  
+Alternative docker-compose example:  
+```
+    version: "3"  
+    services:  
+        jellyfin:  
+          image: jellyfin/jellyfin  
+          network_mode: "host"  
+          volumes:  
+            - /path/to/config:/config  
+            - /path/to/cache:/cache  
+            - /path/to/media:/media  
+```
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.

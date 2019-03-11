@@ -30,7 +30,7 @@ Want to get starting using Jellyfin right now? Check out the pages below for how
 * [Ubuntu](/administrator-docs/installing#ubuntu)
 * [Fedora](/administrator-docs/installing#fedora)
 * [CentOS](/administrator-docs/installing#centos)
-* [Docker](https://hub.docker.com/r/jellyfin/jellyfin)
+* [Docker](/administrator-docs/installing#docker-hub)
 * [unRaid](/administrator-docs/installing#unraid-docker)
 * [Kubernetes](/administrator-docs/installing#kubernetes)
 * [Windows](/administrator-docs/installing#windows-x64x86)

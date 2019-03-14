@@ -2,7 +2,7 @@
 
 1. [Install Jellyfin on your system](/administrator-docs/installing).
 
-1. Browse to `https://<yourmachine>:8096`
+1. Browse to `http://<yourmachine>:8096`
 
 1. Follow the initial setup wizard.
 

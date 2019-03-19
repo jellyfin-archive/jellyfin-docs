@@ -99,7 +99,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
     `wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -`
 
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
-    `echo "deb [arch=amd64] https://repo.jellyfin.org/debian <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
+    `echo "deb [arch=amd64] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
     **NOTE:** Valid releases are: `stretch`, and `buster`.
 

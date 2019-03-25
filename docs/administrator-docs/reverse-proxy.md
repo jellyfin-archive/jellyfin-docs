@@ -8,21 +8,21 @@ Three popular options for reverse proxy systems are [Apache](https://httpd.apach
 
 When following this guide, be sure to replace the following variables with your information:
 
-  * `DOMAIN_NAME` - Your public domain name
+  * `DOMAIN_NAME` - Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
   * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server
 
-In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/jellyfin.DOMAIN_NAME/` to the location of your certificate and key.
+In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
 
 ## Apache
 
 ```
 <VirtualHost *:80>
-    ServerName jellyfin.DOMAIN_NAME
+    ServerName DOMAIN_NAME
     
-    Redirect permanent / https://jellyfin.DOMAIN_NAME
+    Redirect permanent / https://DOMAIN_NAME
     
-    ErrorLog /var/log/apache2/jellyfin.DOMAIN_NAME-error.log
-    CustomLog /var/log/apache2/jellyfin.DOMAIN_NAME-access.log combined
+    ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
+    CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
 </VirtualHost>
 
 # Uncomment this section after you have acquired a SSL Certificate
@@ -30,7 +30,7 @@ In addition, the examples are configured for use with LetsEncrypt certificates. 
 # line above with all lines below starting with 'Proxy'
 #<IfModule mod_ssl.c>
 #<VirtualHost *:443>
-#    ServerName jellyfin.DOMAIN_NAME
+#    ServerName DOMAIN_NAME
 #
 #    ProxyPreserveHost On
 #
@@ -41,14 +41,14 @@ In addition, the examples are configured for use with LetsEncrypt certificates. 
 #    ProxyPassReverse "/" "http://SERVER_IP_ADDRESS:8096/"
 #
 #    SSLEngine on
-#    SSLCertificateFile /etc/letsencrypt/jellyfin.DOMAIN_NAME/fullchain.pem
-#    SSLCertificateKeyFile /etc/letsencrypt/jellyfin.DOMAIN_NAME/privkey.pem
+#    SSLCertificateFile /etc/letsencrypt/DOMAIN_NAME/fullchain.pem
+#    SSLCertificateKeyFile /etc/letsencrypt/DOMAIN_NAME/privkey.pem
 #    Protocols h2 http/1.1
 #
-#    ErrorLog /var/log/apache2/jellyfin.DOMAIN_NAME-error.log
-#    CustomLog /var/log/apache2/jellyfin.DOMAIN_NAME-access.log combined
+#    ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
+#    CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
 #</VirtualHost>
-</IfModule>
+#</IfModule>
 ```
 
 If you encouter errors, you may have to enable `mod_proxy` or `mod_ssl` support manually.
@@ -64,16 +64,16 @@ frontend jellyfin_proxy
 # Note that haproxy requires you to concatenate the certificate and key into a single file
 # Uncomment the appropriate lines after you have acquired a SSL Certificate
 ## Haproxy <1.7
-#    bind *:443 ssl crt /etc/ssl/jellyfin.DOMAIN_NAME.pem
+#    bind *:443 ssl crt /etc/ssl/DOMAIN_NAME.pem
 ## Haproxy >1.8
-#    bind *:443 ssl crt /etc/ssl/jellyfin.DOMAIN_NAME.pem alpn h2,http/1.1
+#    bind *:443 ssl crt /etc/ssl/DOMAIN_NAME.pem alpn h2,http/1.1
 #    redirect scheme https if !{ ssl_fc }
 
 # Uncomment these lines to allow LetsEncrypt authentication
 #    acl letsencrypt_auth path_beg /.well-known/acme-challenge/
 #    use_backend letsencrypt if letsencrypt_auth
 
-    acl jellyfin_server hdr(host) -i jellyfin.DOMAIN_NAME
+    acl jellyfin_server hdr(host) -i DOMAIN_NAME
     use_backend jellyfin if jellyfin_server
 
 backend jellyfin
@@ -91,7 +91,7 @@ backend jellyfin
 ```
 server {
     listen 80;
-    server_name jellyfin.DOMAIN_NAME;
+    server_name DOMAIN_NAME;
     return 301 https://$host$request_uri;
 }
 
@@ -100,23 +100,23 @@ server {
 # line above with the location block from the section below
 #server {
 #    listen 443 ssl http2;
-#    server_name jellyfin.DOMAIN_NAME;
-#    ssl_certificate /etc/letsencrypt/live/jellyfin.DOMAIN_NAME/fullchain.pem;
-#    ssl_certificate_key /etc/letsencrypt/live/jellyfin.DOMAIN_NAME/privkey.pem;
+#    server_name DOMAIN_NAME;
+#    ssl_certificate /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem;
+#    ssl_certificate_key /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem;
 #
 #    location / {
+#        # Proxy everything to Jellyfin, including Websockets traffic
 #        proxy_pass http://SERVER_IP_ADDRESS:8096;
-#        proxy_set_header X-Real-IP $remote_addr;
-#        proxy_set_header X-Forwarded-for $proxy_add_x_forwarded_for;
+#        proxy_http_version 1.1;
+#        proxy_redirect off;
 #        proxy_set_header Host $host;
+#        proxy_set_header Upgrade $http_upgrade;
+#        proxy_set_header Connection $http_connection;
+#        proxy_set_header X-Real-IP $remote_addr;
+#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 #        proxy_set_header X-Forwarded-Proto $remote_addr;
 #        proxy_set_header X-Forwarded-Protocol $scheme;
-#        proxy_redirect off;
-#    
-#        # Send websocket data to the backend aswell
-#        proxy_http_version 1.1;
-#        proxy_set_header Upgrade $http_upgrade;
-#        proxy_set_header Connection "upgrade";
+#        proxy_set_header X-Forwarded-Host $http_host;
 #    }
 #}
 ```
@@ -133,7 +133,7 @@ Once the packages are installed, you're ready to generate a new certificate.
 
 After installing certbot and the Apache plugin, certificate generation is accomplished by:
 
-`certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d jellyfin.DOMAIN_NAME`
+`certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
 
 Update the 'SSLCertificateFile' and 'SSLCertificateKeyFile' sections, then restart the service.
 
@@ -145,25 +145,25 @@ Add a job to cron so the certificate will be renwed automatically:
 
 Haproxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  Enable the frontend and backend in the config above, and then run:
 
-`certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d jellyfin.DOMAIN_NAME`
+`certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
 
 The port can be changed to anything you like, but be sure that the haproxy config and your certbot command match.
 
 Haproxy needs to have the certificate and key files concatenated into the same file to read it correctly.  This can be accomplished with the following command.
 
-`cat /etc/letsencrypt/live/jellyfin.DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/jellyfin.DOMAIN_NAME/privkey.pem > /etc/ssl/jellyfin.DOMAIN_NAME.pem`
+`cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem`
 
-Uncomment the appropriate 'bind *:443' and the redirect section in the config, then restart the service.
+Uncomment the appropriate `bind *:443` and the redirect section in the config, then restart the service.
 
 Add a job to cron so the certificate will be renwed automatically:
 
-`echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'cat /etc/letsencrypt/live/jellyfin.DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/jellyfin.DOMAIN_NAME/privkey.pem > /etc/ssl/jellyfin.DOMAIN_NAME.pem && systemctl reload haproxy'" | sudo tee -a /etc/cron.d/renew_certbot`
+`echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem && systemctl reload haproxy'" | sudo tee -a /etc/cron.d/renew_certbot`
 
 ### Nginx
 
 After installing certbot and the Nginx plugin, certificate generation is accomplished by:
 
-`certbot certonly --nginx --noninteractive --agree-tos --email YOUR_EMAIL -d jellyfin.DOMAIN_NAME`
+`certbot certonly --nginx --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
 
 Uncomment the SSL server block in the config and update the 'ssl_certificate' and 'ssl_certificate_key' fields, then restart the service.
 

@@ -13,3 +13,7 @@
 .rst-versions .rst-current-version {
     background-color: #000B25
 }
+
+.badge {
+    width: auto;
+}

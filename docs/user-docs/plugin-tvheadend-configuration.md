@@ -51,5 +51,3 @@ The objective of the guide is to configure the Jellyfin Tvheadend plugin to back
     * Refresh Guide data
     
 Once the update of the guide is finished, the Live TV will already be able to see the guide related to the synchronized channels and will be able to visualize the content.
-
-

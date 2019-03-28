@@ -2,10 +2,13 @@
 
 1. [Install Jellyfin on your system](/administrator-docs/installing).
 
-1. Browse to `http://<yourmachine>:8096`
+2. Browse to `http://<yourmachine>:8096`
 
-1. Follow the initial setup wizard.
+3. Follow the initial setup wizard.
 
-1. Set up a certificate for HTTPS and include it on the **Networking** page.
+4. Secure the server with a method of your choice.
+  * Create an SSL certificate and add it on the **Networking** page.
+  * Put your server behind a [reverse proxy](adminitrator-docs/reverse-proxy).
+  * Only allow local connections and refrain from forwarding any ports.
 
-1. Enjoy your media.
+5. Enjoy your media.

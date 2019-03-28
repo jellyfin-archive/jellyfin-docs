@@ -7,24 +7,25 @@ pages:
   - Home: 'index.md'
   - About: 'about.md'
   - FAQ: 'faq.md'
-  - User Docs:
+  - Users:
     - Getting help: 'user-docs/getting-help.md'
     - Client apps: 'user-docs/apps.md'
-  - Administrator Docs:
+  - Administrators:
     - Installing Jellyfin: 'administrator-docs/installing.md'
-    - Building from source: 'administrator-docs/building.md'
-    - First-time configuration: 'administrator-docs/first-time.md'
+    - Building from Source: 'administrator-docs/building.md'
+    - Quick Start: 'administrator-docs/quick-start.md'
     - Migrating from Emby: 'administrator-docs/migrate-from-emby.md'
-    - Port bindings: 'administrator-docs/port-bindings.md'
+    - Connectivity: 'administrator-docs/connectivity.md'
     - Plugins: 'administrator-docs/plugins.md'
-    - Reverse proxy: 'administrator-docs/reverse-proxy.md'
-  - Contributor Docs:
-    - Contributing to Jellyfin: 'contributor-docs/contributing.md'
+    - Reverse Proxy: 'administrator-docs/reverse-proxy.md'
+    - Users: 'administrator-docs/users.md'
+  - Contributors:
+    - Contributing: 'contributor-docs/contributing.md'
     - GitHub Issues: 'contributor-docs/issues.md'
-    - Development procedures: 'contributor-docs/contributing-code.md'
-    - Branding guide: 'contributor-docs/branding-guide.md'
-    - Release procedure: 'contributor-docs/release-procedure.md'
-  - Developer Docs:
-    - Style guidelines: 'developer-docs/coding-style.md'
+    - Development Procedure: 'contributor-docs/contributing-code.md'
+    - Branding: 'contributor-docs/branding-guide.md'
+    - Release Procedure: 'contributor-docs/release-procedure.md'
+  - Developers:
+    - Style Guidelines: 'developer-docs/coding-style.md'
 extra_css:
   - static/overrides.css

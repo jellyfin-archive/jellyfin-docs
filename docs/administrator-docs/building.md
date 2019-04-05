@@ -40,7 +40,7 @@ All package builds begin with the first two steps:
 4. Set `executionpolicy` to unrestricted.
 
 5. Run the Jellyfin build script:  
-    `deployment/win-generic/build-jellyfin.ps1`
+    `deployment/windows/build-jellyfin.ps1 -verbose`
 
     * The `-WindowsVersion` and `-Architecture` flags can optimize the build for your current environment; the default is generic Windows x64.
 
@@ -48,7 +48,7 @@ All package builds begin with the first two steps:
 
     * The `-InstallFFMPEG` flag will automatically pull the stable `ffmpeg` binaries appropriate to your architecture (x86/x64 only for now) from [Zeranoe](https://ffmpeg.zeranoe.com/builds/) and place them in your Jellyfin directory.
     
-    * The '-InstallNSSM' flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory. 
+    * The `-InstallNSSM` flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory. 
 
 6. (Optional) Use [NSSM](https://nssm.cc/) to configure Jellyfin to run as a service
 

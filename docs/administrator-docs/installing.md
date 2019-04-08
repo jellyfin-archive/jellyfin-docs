@@ -42,7 +42,7 @@ An Unraid Docker template is available in the repository.
 1. Open the unRaid GUI (at least unRaid 6.5) and click on the "Docker" tab.
 
 1. Add the following line under "Template Repositories" and click "Save":  
-    `https://github.com/jellyfin/jellyfin/blob/master/unRaid/docker-templates`
+    `https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates`
 
 1. Click "Add Container" and select "jellyfin".
 

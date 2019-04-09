@@ -88,9 +88,9 @@ CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jel
 
 ### Repository
 
-The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster, for both `amd64` and `armhf`.
+The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster, for both amd64 and armhf.
 
-**NOTE:** Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
+**NOTE:** Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the i386 architecture.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
@@ -98,10 +98,10 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 1. Import the GPG signing key (signed by the Jellyfin Team):  
     `wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -`
 
-1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:  
+1. Add a repository configuration at /etc/apt/sources.list.d/jellyfin.list:  
     `echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Supported releases are: `stretch` and `buster`.
+    **NOTE:** Supported releases are Stretch and Buster.
 
 1. Update APT repositories:  
     `sudo apt update`

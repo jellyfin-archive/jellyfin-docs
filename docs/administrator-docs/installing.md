@@ -88,9 +88,9 @@ CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jel
 
 ### Repository
 
-The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster.
+The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster, for both `amd64` and `armhf`.
 
-**NOTE:** Only 64-bit (amd64) versions of Linux are supported as there is no Microsoft DotNET available for 32-bit (i386) Linux systems.
+NOTE: Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
@@ -98,10 +98,10 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 1. Import the GPG signing key (signed by the Jellyfin Team):  
     `wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -`
 
-1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
-    `echo "deb [arch=amd64] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
+1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:  
+    `echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Valid releases are: `stretch`, and `buster`.
+    **NOTE:** Supported releases are: `stretch` and `buster`.
 
 1. Update APT repositories:  
     `sudo apt update`
@@ -146,7 +146,9 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 ### Repository
 
-The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic.
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic, for both `amd64` and `armhf`.
+
+NOTE: Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
@@ -154,10 +156,10 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 1. Import the GPG signing key (signed by the Jellyfin Team):  
     `wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -`
 
-1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`, changing `<release>` to match your system:  
-    `echo "deb [arch=amd64] https://repo.jellyfin.org/ubuntu <release> main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
+1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:  
+    `echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Valid releases are: `xenial`, `bionic`, and `cosmic`.
+    **NOTE:** Supported releases are: `xenial`, `bionic`, and `cosmic`.
 
 1. Update APT repositories:  
     `sudo apt update`

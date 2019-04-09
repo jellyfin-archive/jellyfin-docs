@@ -90,7 +90,7 @@ CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jel
 
 The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster, for both `amd64` and `armhf`.
 
-NOTE: Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
+**NOTE:** Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
@@ -148,7 +148,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic, for both `amd64` and `armhf`.
 
-NOTE: Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
+**NOTE:** Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`

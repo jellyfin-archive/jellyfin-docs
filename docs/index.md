@@ -1,7 +1,7 @@
 # Welcome to Jellyfin
 
 <p align="center">
-<img alt="Logo banner" src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true"/>
+<img alt="Banner Image" src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true"/>
 <br/><br/>
 <a href="https://github.com/jellyfin/jellyfin"><img class="badge" alt="GPL 2.0 License" src="https://img.shields.io/github/license/jellyfin/jellyfin.svg"/></a>
 <a href="https://github.com/jellyfin/jellyfin/releases"><img class="badge" alt="Current Release" src="https://img.shields.io/github/release/jellyfin/jellyfin.svg"/></a>
@@ -25,7 +25,7 @@ Note: Jellyfin is a fast moving project that is in its early stages, and this do
 
 Want to get starting using Jellyfin right now? Check out the pages below for how to get Jellyfin [installed](/administrator-docs/installing) on your machine.
 
-* [Arch Linux](https://aur.archlinux.org/packages/jellyfin/)
+* [Arch](/administrator-docs/installing#arch)
 * [Debian](/administrator-docs/installing#debian)
 * [Ubuntu](/administrator-docs/installing#ubuntu)
 * [Fedora](/administrator-docs/installing#fedora)
@@ -52,7 +52,7 @@ Have questions about how Jellyfin works or encountering an error? Check out the 
 
 Want to know more about administering a Jellyfin server? Check out these pages!
 
-* [Quick-start guide](/administrator-docs/first-time): What to do after you've installed Jellyfin to get it up and running.
+* [Quick-Start Guide](/administrator-docs/quick-start): What to do after you've installed Jellyfin to get it up and running.
 * [Migrating from Emby](/administrator-docs/migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
 * [Plugins](/administrator-docs/plugins): How to install plugins in Jellyfin.
 * [Port Bindings](/administrator-docs/port-bindings)
@@ -65,4 +65,4 @@ Want to help out? Check out the pages below for how to contribute.
 * [Plugin Guide](https://github.com/jellyfin/jellyfin-plugin-template): Documentation and resources to get started writing a plugin to extend Jellyfin functionality.
 * [Reporting bugs](/contributor-docs/issues#reporting-bugs): How to use our issue tracker on GitHub to report bugs.
 * [Requesting features](/contributor-docs/issues#requesting-features): How to use our issue tracker on GitHub to request new features or enhancements.
-* [Code style guide](/developer-docs/coding-style): Code and naming style guide.
+* [Code style guide](/contributor-docs/coding-style): Code and naming style guide.

@@ -35,6 +35,7 @@ Alternative docker-compose example:
             - /path/to/cache:/cache  
             - /path/to/media:/media  
 ```
+
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.
@@ -72,17 +73,17 @@ Generic amd64 Linux builds in TAR archive format are available [here](https://re
 
 Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
-## Arch AUR
+## Arch
 
-The Jellyfin package is in the AUR avilable [here](https://aur.archlinux.org/packages/jellyfin-git/).
+Jellyfin is not yet available in the official repository but can be found [here](https://aur.archlinux.org/packages/jellyfin-git/) in the user repository.
 
 ## Fedora
 
-Fedora 29 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora). Coming soon: an official Fedora repository.
+Fedora 29 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora) for now but an official Fedora repository is coming soon.
 
 ## CentOS
 
-CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/centos). Coming soon: an official CentOS/RHEL repository.
+CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/centos) and an official CentOS/RHEL repository is planned for the future.
 
 ## Debian
 

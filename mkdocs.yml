@@ -7,9 +7,8 @@ pages:
   - Home: 'index.md'
   - About: 'about.md'
   - FAQ: 'faq.md'
-  - Users:
-    - Getting Help: 'user-docs/getting-help.md'
-    - Client Apps: 'user-docs/apps.md'
+  - Clients: 'clients.md'
+  - Getting Help: 'getting-help.md'
   - Administrators:
     - Installing Jellyfin: 'administrator-docs/installing.md'
     - Building from Source: 'administrator-docs/building.md'

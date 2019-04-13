@@ -31,6 +31,8 @@ All package builds begin with the first two steps:
     `./build --list-platforms`
     `./build <platform> all`
 
+4. The resulting archives can be found at `../bin/<platform>`
+
 **NOTE:** This will very likely be split out into a separate repository at some point in the future.
 
 ## Windows on Windows

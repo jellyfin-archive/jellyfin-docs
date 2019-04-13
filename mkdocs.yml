@@ -7,9 +7,8 @@ pages:
   - Home: 'index.md'
   - About: 'about.md'
   - FAQ: 'faq.md'
-  - Users:
-    - Getting help: 'user-docs/getting-help.md'
-    - Client apps: 'user-docs/apps.md'
+  - Clients: 'clients.md'
+  - Getting Help: 'getting-help.md'
   - Administrators:
     - Installing Jellyfin: 'administrator-docs/installing.md'
     - Building from Source: 'administrator-docs/building.md'
@@ -18,6 +17,7 @@ pages:
     - Connectivity: 'administrator-docs/connectivity.md'
     - Plugins: 'administrator-docs/plugins.md'
     - Reverse Proxy: 'administrator-docs/reverse-proxy.md'
+    - Tasks: 'administrator-docs/tasks.md'
     - Users: 'administrator-docs/users.md'
   - Contributors:
     - Contributing: 'contributor-docs/contributing.md'
@@ -25,7 +25,8 @@ pages:
     - Development Procedure: 'contributor-docs/contributing-code.md'
     - Branding: 'contributor-docs/branding-guide.md'
     - Release Procedure: 'contributor-docs/release-procedure.md'
-  - Developers:
-    - Style Guidelines: 'developer-docs/coding-style.md'
+    - Style Guidelines: 'contributor-docs/coding-style.md'
+  - Plugins:
+    - TVHeadend: 'plugins/tvheadend.md'
 extra_css:
   - static/overrides.css

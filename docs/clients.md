@@ -1,10 +1,10 @@
-# Jellyfin Apps
+# Clients
 
-Apps connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of apps, as well as their status, below.
+Clients connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of clients below with their current development status.
 
-**Note**: Many apps were direct forks of the latest available codebases of Emby apps, and some are not functional yet or are deprecated. If you interested in helping out, please see our [contribution guide](/contributor-docs/contributing).
+**Note**: Many clients were direct forks of the latest available codebases from Emby, and some are not functional yet. If you interested in helping out, please see our [contribution guide](/contributor-docs/contributing).
 
-Do you have an app that interfaces with Jellyfin and would like to see it listed here? Please [submit a PR](https://github.com/jellyfin/jellyfin-docs)!
+Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a PR](https://github.com/jellyfin/jellyfin-docs)!
 
 ## Android
 
@@ -31,6 +31,7 @@ The official Jellyfin Android TV app.
 * [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
 
 #### Installation on Amazon Fire TV Stick
+
 Currently the Jellyfin app isn't listed on the Fire TV's app store. In order to install it, you need to use a process known as "side loading". 
 
 1. Install the [Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools.html) on your workstation
@@ -102,7 +103,6 @@ The official Jellyfin Google Chrome extension.
 
 [GitHub](https://github.com/jellyfin/jellyfin-chrome)
 
-
 ## Apple
 
 ### Jellyfin for Apple iOS
@@ -155,7 +155,6 @@ The official Jellyfin Kodi plugin.
 **Note: It's recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well**
 
 This will help keep your media libraries up to date without waiting for a periodic resync from Kodi.
-
 
 ## Roku
 

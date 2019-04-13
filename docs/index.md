@@ -56,6 +56,7 @@ Want to know more about administering a Jellyfin server? Check out these pages!
 * [Migrating from Emby](/administrator-docs/migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
 * [Plugins](/administrator-docs/plugins): How to install plugins in Jellyfin.
 * [Port Bindings](/administrator-docs/port-bindings)
+* [Hardware Acceleration](/administrator-docs/hardware-acceleration)
 
 ## Contributing to Jellyfin
 

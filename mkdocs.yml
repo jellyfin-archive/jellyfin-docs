@@ -19,6 +19,7 @@ pages:
     - Plugins: 'administrator-docs/plugins.md'
     - Reverse Proxy: 'administrator-docs/reverse-proxy.md'
     - Users: 'administrator-docs/users.md'
+    - Hardware Acceleration: 'administrator-docs/hardware-acceleration.md'
   - Contributors:
     - Contributing: 'contributor-docs/contributing.md'
     - GitHub Issues: 'contributor-docs/issues.md'

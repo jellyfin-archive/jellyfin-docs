@@ -97,7 +97,7 @@ server {
 
 # Uncomment this section after you have acquired a SSL Certificate
 # If you are not using a SSL certificate, replace the 'return 301'
-# line above with the location block from the section below
+# line above with the location blocks from the section below
 #server {
 #    listen 443 ssl http2;
 #    server_name DOMAIN_NAME;
@@ -105,12 +105,25 @@ server {
 #    ssl_certificate_key /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem;
 #
 #    location / {
-#        # Proxy everything to Jellyfin, including Websockets traffic
+#        # Proxy main Jellyfin traffic
 #        proxy_pass http://SERVER_IP_ADDRESS:8096;
 #        proxy_set_header Host $host;
 #        proxy_set_header X-Real-IP $remote_addr;
 #        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-#        proxy_set_header X-Forwarded-Proto $remote_addr;
+#        proxy_set_header X-Forwarded-Proto $scheme;
+#        proxy_set_header X-Forwarded-Protocol $scheme;
+#        proxy_set_header X-Forwarded-Host $http_host;
+#    }
+#    location /embywebsocket {
+#        # Proxy Jellyfin Websockets traffic
+#        proxy_pass http://SERVER_IP_ADDRESS:8096;
+#        proxy_http_version 1.1;
+#        proxy_set_header Upgrade $http_upgrade;
+#        proxy_set_header Connection "upgrade";
+#        proxy_set_header Host $host;
+#        proxy_set_header X-Real-IP $remote_addr;
+#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#        proxy_set_header X-Forwarded-Proto $scheme;
 #        proxy_set_header X-Forwarded-Protocol $scheme;
 #        proxy_set_header X-Forwarded-Host $http_host;
 #    }

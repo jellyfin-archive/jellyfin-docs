@@ -19,6 +19,7 @@ pages:
     - Reverse Proxy: 'administrator-docs/reverse-proxy.md'
     - Tasks: 'administrator-docs/tasks.md'
     - Users: 'administrator-docs/users.md'
+    - Hardware Acceleration: 'administrator-docs/hardware-acceleration.md'
   - Contributors:
     - Contributing: 'contributor-docs/contributing.md'
     - GitHub Issues: 'contributor-docs/issues.md'

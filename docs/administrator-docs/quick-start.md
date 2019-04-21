@@ -8,7 +8,7 @@
 
 4. Secure the server with a method of your choice.
   * Create an SSL certificate and add it on the **Networking** page.
-  * Put your server behind a [reverse proxy](adminitrator-docs/reverse-proxy).
+  * Put your server behind a [reverse proxy](/administrator-docs/reverse-proxy).
   * Only allow local connections and refrain from forwarding any ports.
 
 5. Enjoy your media.

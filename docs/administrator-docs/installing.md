@@ -129,6 +129,9 @@ Raw Debian packages, compatible with Debian 9+, are available [here](https://rep
 1. Install the downloaded `.deb` packages:  
     `sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb`
 
+1. Use `apt` to install any missing dependencies:  
+    `sudo apt -f install`
+
 1. Manage the Jellyfin system service with your tool of choice:  
     `sudo service jellyfin status`  
     `sudo systemctl restart jellyfin`  
@@ -153,6 +156,9 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 
 1. Install HTTPS transport for APT if you haven't already:  
     `sudo apt install apt-transport-https`
+
+1. Enable the Universe repository to obtain all the FFMpeg dependencies:  
+    `sudo add-apt-repository universe`
 
 1. Import the GPG signing key (signed by the Jellyfin Team):  
     `wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -`
@@ -179,6 +185,10 @@ Raw Ubuntu packages, compatible with Ubuntu 16.04+, are available [here](https:/
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Ubuntu, as it contains several dependencies as well.
 
+1. Enable the Universe repository to obtain all the FFMpeg dependencies, and update repositories:  
+    `sudo add-apt-repository universe`  
+    `sudo apt update`
+
 1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
 
 1. Install the required dependencies:  
@@ -186,6 +196,9 @@ Raw Ubuntu packages, compatible with Ubuntu 16.04+, are available [here](https:/
 
 1. Install the downloaded `.deb` packages:  
     `sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb`
+
+1. Use `apt` to install any missing dependencies:  
+    `sudo apt -f install`
 
 1. Manage the Jellyfin system service with your tool of choice:  
     `sudo service jellyfin status`  

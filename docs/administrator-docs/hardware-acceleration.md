@@ -1,14 +1,14 @@
-# Hardware Acceleration in Jellyfin
+# Hardware Acceleration
 
 Jellyfin supports hardware acceleration of video encoding/decoding/transcoding using FFMpeg. It supports multiple acceleration types, including  AMD AMF, Intel Quick Sync, OpenMax OMX, nVidia NVENC, Intel/AMD VAAPI, and others.
 
-## Enabling hardware acceleration
+## Enabling Hardware Acceleration
 
-Hardware acceleration options can be found in the Admin Dashboard under the Transcoding section. Select a valid "Hardware acceleration" from the drop-down, indicate a device if applicable, and, if supported, "Enable hardware encoding" as well as decoding.
+Hardware acceleration options can be found in the Admin Dashboard under the **Transcoding** section. Select a valid hardware acceleration option from the drop-down menu, indicate a device if applicable, and check `enable hardware encoding` as well as decoding if your hardware supports that as well.
 
-Once set, the acceleration is available immediately for playback; no server restart is required.
+The hardware acceleration is available immediately for media playback. No server restart is required.
 
-## Setting up hardware acceleration
+## Setup
 
 Each hardware acceleration type, as well as each Jellyfin installation type, requires different setup options before it can be used. It is always best to consult the FFMpeg documentation on the acceleration type you choose for the latest information.
 

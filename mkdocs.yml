@@ -27,7 +27,20 @@ pages:
     - Branding: 'contributor-docs/branding-guide.md'
     - Release Procedure: 'contributor-docs/release-procedure.md'
     - Style Guidelines: 'contributor-docs/coding-style.md'
+  - Media:
+    - Movies: 'media/movies.md'
+    - Music: 'media/music.md'
+    - Shows: 'media/shows.md'
+    - Subtitles: 'media/subtitles.md'
+  - Server:
+    - Devices: 'server/devices.md'
+    - Libraries: 'server/libraries.md'
+    - Live TV: 'server/live-tv.md'
+    - Notifications: 'server/notifications.md'
+    - Settings: 'server/settings.md'
+    - Transcoding: 'server/transcoding.md'
   - Plugins:
     - TVHeadend: 'plugins/tvheadend.md'
+    - Open Subtitles: 'plugins/open-subtitles.md'
 extra_css:
   - static/overrides.css

@@ -73,3 +73,7 @@ All plugins hosted on the repository can be built from source and manually added
 #### [antennas](https://github.com/TheJF/antennas)
 
 Takes your tuners in Tvheadend and emulates a HDHomeRun in order to connect to Jellyfin's DVR feature. That means any tuner whether dvb-t, dvb-c, dvb-s or ATSC can work with Jellyfin providing Tvheadend supports it (i.e you've installed the drivers for your tuner). It can be installed via binaries, Node or Docker. Set-up requires an anonymous user in Tvheadend with rights and streaming profiles as well as your channel list having the correct numbers. Configuration parameters are a URL that will show the status of Antennas, the URL of your Tvheadend installation with your username and password as well as the number of tuners you have. Then just setup your tuner in Jellyfin by selecting a HD Homerun then enter your Antennas URL. For setting up guide data, you have to use XMLTV. Either a link or .xml file will work. In the UK, I use the free xmltv.co.uk which gives me a link for 7 days guide data.
+
+#### [gotify](https://github.com/crobibero/Jellyfin.Plugins.Gotify)
+
+Sends notifications to your self-hosted [Gotify server](https://gotify.net/)

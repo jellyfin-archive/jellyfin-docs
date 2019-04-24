@@ -81,4 +81,12 @@ Takes your tuners in Tvheadend and emulates a HDHomeRun in order to connect to J
 
 #### [gotify](https://github.com/crobibero/Jellyfin.Plugins.Gotify)
 
-Sends notifications to your self-hosted [Gotify server](https://gotify.net/)
+Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
+
+#### [LazyMan](https://github.com/crobibero/Jellyfin.Channels.LazyMan)
+
+A channel to watch content from LazyMan on Jellyfin.
+
+#### [serverwmc](https://github.com/PrplHaz4/jellyfin-plugin-serverwmc)
+
+Jellyfin plugin for Windows MediaCenter with [ServerWMC](https://github.com/PrplHaz4/jellyfin-plugin-serverwmc) as the backend on the target machine.

@@ -4,7 +4,7 @@ Jellyfin supports hardware acceleration of video encoding/decoding/transcoding u
 
 ## Enabling Hardware Acceleration
 
-Hardware acceleration options can be found in the Admin Dashboard under the **Transcoding** section. Select a valid hardware acceleration option from the drop-down menu, indicate a device if applicable, and check `enable hardware encoding` as well as decoding if your hardware supports that as well.
+Hardware acceleration options can be found in the Admin Dashboard under the **Transcoding** section. Select a valid hardware acceleration option from the drop-down menu, indicate a device if applicable, and check `enable hardware encoding` to enable encoding as well as decoding, if your hardware supports this.
 
 The hardware acceleration is available immediately for media playback. No server restart is required.
 

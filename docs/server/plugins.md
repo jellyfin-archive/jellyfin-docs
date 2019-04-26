@@ -61,6 +61,8 @@ All plugins hosted on the repository can be built from source and manually added
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
 
+Jellyfin LiveTV plugin for Windows MediaCenter with [ServerWMC](https://github.com/jellyfin/jellyfin-plugin-serverwmc).
+
 #### trakt
 
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-trakt.svg)](https://github.com/jellyfin/jellyfin-plugin-trakt)
@@ -86,7 +88,3 @@ Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
 #### [LazyMan](https://github.com/crobibero/Jellyfin.Channels.LazyMan)
 
 A channel to watch content from LazyMan on Jellyfin.
-
-#### [serverwmc](https://github.com/PrplHaz4/jellyfin-plugin-serverwmc)
-
-Jellyfin plugin for Windows MediaCenter with [ServerWMC](https://github.com/PrplHaz4/jellyfin-plugin-serverwmc) as the backend on the target machine.

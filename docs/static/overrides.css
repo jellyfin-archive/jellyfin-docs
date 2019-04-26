@@ -17,3 +17,8 @@
 .badge {
     width: auto;
 }
+
+.current {
+    border-top: none;
+    border-bottom: none;
+}

@@ -15,10 +15,7 @@ pages:
     - Quick Start: 'administrator-docs/quick-start.md'
     - Migrating from Emby: 'administrator-docs/migrate-from-emby.md'
     - Connectivity: 'administrator-docs/connectivity.md'
-    - Plugins: 'administrator-docs/plugins.md'
     - Reverse Proxy: 'administrator-docs/reverse-proxy.md'
-    - Tasks: 'administrator-docs/tasks.md'
-    - Users: 'administrator-docs/users.md'
     - Hardware Acceleration: 'administrator-docs/hardware-acceleration.md'
   - Contributors:
     - Contributing: 'contributor-docs/contributing.md'
@@ -27,7 +24,23 @@ pages:
     - Branding: 'contributor-docs/branding-guide.md'
     - Release Procedure: 'contributor-docs/release-procedure.md'
     - Style Guidelines: 'contributor-docs/coding-style.md'
+  - Media:
+    - Movies: 'media/movies.md'
+    - Music: 'media/music.md'
+    - Shows: 'media/shows.md'
+    - Subtitles: 'media/subtitles.md'
+  - Server:
+    - Devices: 'server/devices.md'
+    - Libraries: 'server/libraries.md'
+    - Live TV: 'server/live-tv.md'
+    - Notifications: 'server/notifications.md'
+    - Plugins: 'server/plugins.md'
+    - Settings: 'server/settings.md'
+    - Tasks: 'server/tasks.md'
+    - Transcoding: 'server/transcoding.md'
+    - Users: 'server/users.md'
   - Plugins:
     - TVHeadend: 'plugins/tvheadend.md'
+    - Open Subtitles: 'plugins/open-subtitles.md'
 extra_css:
   - static/overrides.css

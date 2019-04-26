@@ -113,6 +113,9 @@ server {
 #        proxy_set_header X-Forwarded-Proto $scheme;
 #        proxy_set_header X-Forwarded-Protocol $scheme;
 #        proxy_set_header X-Forwarded-Host $http_host;
+#
+#        # Disable buffering when the nginx proxy gets very resource heavy upon streaming
+#        proxy_buffering off;
 #    }
 #    location /embywebsocket {
 #        # Proxy Jellyfin Websockets traffic

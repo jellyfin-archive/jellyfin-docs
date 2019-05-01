@@ -132,12 +132,12 @@ The official Jellyfin Kodi plugin.
 1. Download the repository installer as a [zip file](https://repo.jellyfin.org/releases/client/kodi/repository.jellyfin.kodi.zip)
     * It will be saved as `repository.jellyfin.kodi.zip`
 2. Install the Jellyfin repository
-    * Navigate to "Add-on Browser"
+    * Open Kodi and navigate to "Add-on Browser"
     * Select "Install from zip file"
         * If prompted, enter settings and enable "Unknown Sources", then go back
     * Select the newly downloaded file and it will be installed
 3. Install Jellyfin for Kodi
-    * Navigate to "Add-on Browser"
+    * From within Kodi, navigate back to "Add-on Browser"
     * Select "Install from repository"
     * Choose "Kodi Jellyfin Addons"
     * "Video Add-ons"

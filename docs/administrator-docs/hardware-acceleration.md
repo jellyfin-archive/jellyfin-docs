@@ -18,18 +18,18 @@ Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ens
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:
 
-    $ ls -l /dev/dri
-    total 0
-    drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path
-    crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0
-    crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1
+    > $ ls -l /dev/dri  
+    total 0  
+    drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path  
+    crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0  
+    crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1  
     crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
 
    **NOTE:** On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin:
 
-    sudo usermod -aG render jellyfin
+    > sudo usermod -aG render jellyfin  
     sudo systemctl restart jellyfin
 
 3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API Device` value.

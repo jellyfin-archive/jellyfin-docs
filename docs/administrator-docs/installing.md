@@ -23,17 +23,17 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
     `--net=host \`  
     `jellyfin/jellyfin`  
   
-Alternative docker-compose example:  
+Alternatively, using docker-compose:  
 ```
-    version: "3"  
-    services:  
-        jellyfin:  
-          image: jellyfin/jellyfin  
-          network_mode: "host"  
-          volumes:  
-            - /path/to/config:/config  
-            - /path/to/cache:/cache  
-            - /path/to/media:/media  
+version: "3"  
+services:  
+    jellyfin:  
+      image: jellyfin/jellyfin  
+      network_mode: "host"  
+      volumes:  
+        - /path/to/config:/config  
+        - /path/to/cache:/cache  
+        - /path/to/media:/media  
 ```
 
 ### Unraid Docker
@@ -89,7 +89,7 @@ CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jel
 
 ### Repository
 
-The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster, for both `amd64` and `armhf`.
+The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster. Supported architectures are `amd64`, `arm64`, and `armhf`.
 
 **NOTE:** Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
@@ -117,14 +117,11 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 
 ### Packages
 
-Raw Debian packages, compatible with Debian 9+, are available [here](https://repo.jellyfin.org/releases/server/debian).
+Raw Debian packages, including old versions, are available [here](https://repo.jellyfin.org/releases/server/debian).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Debian, as it contains several dependencies as well.
 
 1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
-
-1. Install the required dependencies:  
-    `sudo apt install at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0`
 
 1. Install the downloaded `.deb` packages:  
     `sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb`
@@ -150,7 +147,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 ### Repository
 
-The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic, for both `amd64` and `armhf`.
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic/Disco. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
 
 **NOTE:** Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
@@ -166,7 +163,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:  
     `echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list`
 
-    **NOTE:** Supported releases are: `xenial`, `bionic`, and `cosmic`.
+    **NOTE:** Supported releases are: `xenial`, `bionic`, `cosmic`, and `disco`.
 
 1. Update APT repositories:  
     `sudo apt update`
@@ -181,7 +178,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 
 ### Packages
 
-Raw Ubuntu packages, compatible with Ubuntu 16.04+, are available [here](https://repo.jellyfin.org/releases/server/ubuntu).
+Raw Ubuntu packages, including old versions, are available [here](https://repo.jellyfin.org/releases/server/ubuntu).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Ubuntu, as it contains several dependencies as well.
 

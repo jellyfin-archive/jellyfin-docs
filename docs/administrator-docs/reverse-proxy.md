@@ -9,7 +9,7 @@ Three popular options for reverse proxy systems are [Apache](https://httpd.apach
 When following this guide, be sure to replace the following variables with your information:
 
   * `DOMAIN_NAME` - Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
-  * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy it's in the same server, normally it's 127.0.0.1)
+  * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy it's in the same server use 127.0.0.1)
 
 In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
 Ports 80 and 443 (pointing to the proxy server) need to be opened in your Firewall/Router.

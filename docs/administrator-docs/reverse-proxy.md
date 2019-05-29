@@ -1,6 +1,6 @@
 # Running Jellyfin Behind a Reverse Proxy
 
-It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this alternative server handles all network traffic and proxies it back to Jellyfin.  This has the benefit of having nice DNS names and not having to remember port numbers, as well as easier integration with SSL certificates.
+It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this alternative server handles all network traffic and proxies it back to Jellyfin. This has the benefit of having nice DNS names and not having to remember port numbers, as well as easier integration with SSL certificates.
 
 Three popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), and [Nginx](https://www.nginx.com/).
 
@@ -9,9 +9,10 @@ Three popular options for reverse proxy systems are [Apache](https://httpd.apach
 When following this guide, be sure to replace the following variables with your information:
 
   * `DOMAIN_NAME` - Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
-  * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server
+  * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy it's in the same server, normally it's 127.0.0.1)
 
 In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
+Ports 80 and 443 (pointing to the proxy server) need to be opened in your Firewall/Router.
 
 ## Apache
 
@@ -87,6 +88,7 @@ backend jellyfin
 ```
 
 ## Nginx
+Create the following file with ``sudo nano /etc/nginx/conf.d/jellyfin.conf``
 
 ```
 server {
@@ -103,6 +105,12 @@ server {
 #    server_name DOMAIN_NAME;
 #    ssl_certificate /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem;
 #    ssl_certificate_key /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem;
+#    include /etc/letsencrypt/options-ssl-nginx.conf;
+#    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+#    add_header Strict-Transport-Security "max-age=31536000" always;
+#    ssl_trusted_certificate /etc/letsencrypt/live/DOMAIN_NAME/chain.pem;
+#    ssl_stapling on;
+#    ssl_stapling_verify on;
 #
 #    location / {
 #        # Proxy main Jellyfin traffic
@@ -132,7 +140,6 @@ server {
 #    }
 #}
 ```
-
 ## LetsEncrypt with Certbot
 
 LetsEncrypt is a service that provides free SSL/TLS certificates to users.  Certbot is a client that makes this easy to accomplish and automate.  In addition, it has plugins for Apache and Nginx that make automating certificate generation even easier.
@@ -173,12 +180,17 @@ Add a job to cron so the certificate will be renwed automatically:
 
 ### Nginx
 
-After installing certbot and the Nginx plugin, certificate generation is accomplished by:
+After installing certbot and the Nginx plugin with ``sudo apt install certbot python3-certbot-nginx``, certificate generation is accomplished by:
 
-`certbot certonly --nginx --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
+`sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN`
+(Add the ``--rsa-key-size 4096`` parameter if you want a 4096 bit key instead)
 
-Uncomment the SSL server block in the config and update the 'ssl_certificate' and 'ssl_certificate_key' fields, then restart the service.
+Copy and paste the whole Nginx sample configuration file from above, changing the parameters according to your setup and uncommenting the lines.
 
 Add a job to cron so the certificate will be renwed automatically:
 
 `echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload nginx'" | sudo tee -a /etc/cron.d/renew_certbot`
+
+# Final steps
+
+It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html)

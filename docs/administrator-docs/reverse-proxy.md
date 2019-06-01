@@ -293,7 +293,7 @@ watch = true
 
 ```
 
-Finally, create an empty acme.json : `touch acme.json`
+Finally, create an empty acme.json : `touch acme.json` `chmod 600 acme.json` 
 
 IMPORTANT ! Change ${DOMAIN} by your domain / subdomain name, and change the mail of the acme (yourmail@mail.com in traefik.toml)
 

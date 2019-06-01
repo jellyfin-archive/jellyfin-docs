@@ -197,7 +197,7 @@ Traefik is a modern HTTP reverse proxy and load balancer that makes deploying mi
 
 Traefik needs 3 files in the SAME directory (or you must change pathes in the volume section) : docker-compose.yml, traefik.toml and acme.json.
 
-This configuration is A+ (SSLabs)
+This configuration is A+ (SSLlabs)
 
 docker-compose.yml :
 

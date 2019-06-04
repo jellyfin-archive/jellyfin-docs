@@ -34,7 +34,7 @@ Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ens
 
 4. Watch a movie, and verify that transcoding is occurring by watching the `ffmpeg-transcode-*.txt` logs under `/var/log/jellyfin` and using `radeontop` or similar tools.
 
-### Hardware acceleration in a LXC/LXD container
+### Hardware acceleration in a LXC/LXD container (tested with LXC 3.0, may or may not work with version 2)
 
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 

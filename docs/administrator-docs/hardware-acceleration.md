@@ -33,3 +33,28 @@ Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ens
 3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API Device` value.
 
 4. Watch a movie, and verify that transcoding is occurring by watching the `ffmpeg-transcode-*.txt` logs under `/var/log/jellyfin` and using `radeontop` or similar tools.
+
+### Hardware acceleration in a LXC/LXD container (tested with LXC 3.0, may or may not work with version 2)
+
+Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
+
+1. Add your GPU to the container:
+    `$ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>`
+
+2. Make sure you have the card within the container:
+    `$ lxc exec jellyfin -- ls -l /dev/dri`
+    `total 0`
+    `crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0`
+    `crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64`
+    `crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128`
+
+3. Configure Jellyfin to use video acceleration, point it at the right device if the default option doesn't
+
+4. Try and play a video that requires transcoding and run the following, you should get a hit:
+   `$ ps aux | grep ffmpeg | grep accel`
+
+5. You can also try playing a video that requires transcoding, and if it plays you're good.
+
+Useful resources:
+- https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
+- https://stgraber.org/2017/03/21/cuda-in-lxd/

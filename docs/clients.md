@@ -161,6 +161,18 @@ The official Jellyfin Kodi plugin.
 
 This will help keep your media libraries up to date without waiting for a periodic resync from Kodi.
 
+## Mopidy
+
+### Mopidy-Jellyfin
+
+A third party plugin for Mopidy that uses Jellyfin as a backend.
+
+**Status:** ⭐ Active, 3rd-party
+
+**Links:**
+
+* [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
+
 ## Roku
 
 ### Jellyfin for Roku

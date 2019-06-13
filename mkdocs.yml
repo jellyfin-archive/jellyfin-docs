@@ -20,10 +20,9 @@ pages:
   - Contributors:
     - Contributing: 'contributor-docs/contributing.md'
     - GitHub Issues: 'contributor-docs/issues.md'
-    - Development Procedure: 'contributor-docs/contributing-code.md'
+    - Development: 'contributor-docs/contributing-code.md'
     - Branding: 'contributor-docs/branding-guide.md'
     - Release Procedure: 'contributor-docs/release-procedure.md'
-    - Style Guidelines: 'contributor-docs/coding-style.md'
   - Media:
     - Movies: 'media/movies.md'
     - Music: 'media/music.md'

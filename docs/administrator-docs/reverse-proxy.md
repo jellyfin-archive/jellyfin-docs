@@ -140,6 +140,111 @@ server {
 #    }
 #}
 ```
+
+## Nginx with subpath
+
+When connecting to server from app, enter http(s)://DOMAIN_NAME/jellyfin in the address field, and **clear the port field**.
+All apps may not currently handle this properly, but it works for web and Android.
+
+```
+# Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name DOMAIN_NAME;
+    # You can specify multiple domain names if you want
+    #server_name jellyfin.local;
+
+    # Uncomment and create directory to also host static content
+    #root /srv/http/media;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    ########
+    ## Jellyfin
+
+    location /jellyfin {
+        return 302 $scheme://$host/jellyfin/;
+    }
+
+    location /jellyfin/ {
+        # Proxy main Jellyfin traffic
+        # The / at the end is significant.
+        proxy_pass http://SERVER_IP_ADDRESS:8096/;
+
+        proxy_pass_request_headers on;
+
+        proxy_set_header Host $host;
+
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $http_host;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $http_connection;
+    }
+
+    ########
+    ## Ombi
+
+#    location /ombi/ {
+#        proxy_pass http://SERVER_IP_ADDRESS:3579;
+#        proxy_pass_request_headers on;
+#        proxy_set_header Host $host;
+#        proxy_set_header X-Real-IP $remote_addr;
+#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#        proxy_set_header X-Forwarded-Proto $scheme;
+#        proxy_set_header Upgrade $http_upgrade;
+#        proxy_set_header Connection $http_connection;
+#
+#        proxy_set_header X-Forwarded-Ssl on;
+#        proxy_read_timeout  90;
+#
+#    }
+
+    ########
+    ## Emby
+
+#    location /emby {
+#        return 302 $scheme://$host/emby/;
+#    }
+#
+#    location /emby/ {
+#        # The / at the end is significant.
+#        proxy_pass http://SERVER_IP_ADDRESS:8096/;
+#
+#        proxy_pass_request_headers on;
+#
+#        proxy_set_header Host $host;
+#
+#        proxy_set_header X-Real-IP $remote_addr;
+#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#        proxy_set_header X-Forwarded-Proto $scheme;
+#        proxy_set_header X-Forwarded-Host $http_host;
+#
+#        proxy_set_header Upgrade $http_upgrade;
+#        proxy_set_header Connection $http_connection;
+#    }
+
+
+    ########
+    ## SSL
+
+    # This section is managed by Certbot
+    # Follow the instructions on https://certbot.eff.org/ to enable https
+    # "I'm using nginx on os_name"
+
+}
+
+```
+
+
 ## LetsEncrypt with Certbot
 
 LetsEncrypt is a service that provides free SSL/TLS certificates to users.  Certbot is a client that makes this easy to accomplish and automate.  In addition, it has plugins for Apache and Nginx that make automating certificate generation even easier.

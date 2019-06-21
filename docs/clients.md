@@ -97,7 +97,7 @@ A desktop media interface for Windows.
 
 ### Web Scrobbler
 
-Extension for browsers based on chromium and firefox that allows scrobble services like libre.fm and last.fm
+Extension for browsers based on Chromium and Firefox that allows scrobble services like libre.fm and last.fm.
 
 **Status:** ⭐ Active, 3rd-party
 

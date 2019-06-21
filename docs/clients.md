@@ -93,7 +93,18 @@ A desktop media interface for Windows.
 
 * [GitHub](https://github.com/jellyfin/jellyfin-theater-windows)
 
-## Chrome
+## Web
+
+### Web Scrobbler
+
+Extension for browsers based on Chromium and Firefox that allows scrobble services like libre.fm and last.fm.
+
+**Status:** ⭐ Active, 3rd-party
+
+**Links:**
+
+* [Web](https://web-scrobbler.github.io/)
+* [GitHub](https://github.com/web-scrobbler/web-scrobbler)
 
 ### Jellyfin for Google Chrome
 
@@ -103,7 +114,7 @@ The official Jellyfin Google Chrome extension.
 
 **Links:**
 
-[GitHub](https://github.com/jellyfin/jellyfin-chrome)
+* [GitHub](https://github.com/jellyfin/jellyfin-chrome)
 
 ## Apple
 

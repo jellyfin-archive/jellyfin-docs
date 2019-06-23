@@ -4,7 +4,7 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 ## Containers
 
-### Docker Hub
+### Official Docker Hub
 
 <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
 
@@ -35,6 +35,10 @@ services:
         - /path/to/cache:/cache  
         - /path/to/media:/media  
 ```
+
+### Docker Hub maintained by LinuxServer.io
+
+<a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
 
 ### Unraid Docker
 

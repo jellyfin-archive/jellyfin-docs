@@ -17,3 +17,4 @@ The core team of Jellyfin consists of:
 [Vasily (JustAMan)](https://github.com/JustAMan)  
 [Anthony Lavado (anthonylavado)](https://github.com/anthonylavado)  
 [Bond-009](https://github.com/Bond-009)  
+[dkanada](https://github.com/dkanada)

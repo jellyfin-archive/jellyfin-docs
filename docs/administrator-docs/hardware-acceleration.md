@@ -58,3 +58,11 @@ Follow the steps above to add the jellyfin user to the `video` or `render` group
 Useful resources:
 - https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
 - https://stgraber.org/2017/03/21/cuda-in-lxd/
+
+### Hardware acceleration on Raspberry Pi (tested on RPi3)
+1. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin:  
+    `sudo usermod -a -G video jellyfin`
+    `sudo systemctl restart jellyfin`   
+2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard
+
+Note: In testing transcoding was not working fast enough to run in real time because the video was being resized. The Pi 3 is likely not fast enough to resize as part of the transcoding.

@@ -60,7 +60,7 @@ Useful resources:
 - https://stgraber.org/2017/03/21/cuda-in-lxd/
 
 ### Hardware acceleration on Raspberry Pi (tested on RPi3)
-1. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin:  
+1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin:  
     `sudo usermod -a -G video jellyfin`
     `sudo systemctl restart jellyfin`   
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard

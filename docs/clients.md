@@ -134,7 +134,7 @@ The official Jellyfin iOS app.
 
 The official Jellyfin Kodi plugin.
 
-**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
+**Status:** ⭐ Receiving patches
 
 **Links:**
 

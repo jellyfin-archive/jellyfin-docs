@@ -35,14 +35,15 @@ All package builds begin with the first two steps:
 
 **NOTE:** This will very likely be split out into a separate repository at some point in the future.
 
-## Windows on Windows
+## Build script on Windows
 
 3. Install the dotnet core SDK 2.2 from [Microsoft's Webpage](https://dotnet.microsoft.com/download/dotnet-core/2.2) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell version 3 or higher.
 
-4. Set `executionpolicy` to unrestricted.
+4. From Powershell set the execution policy to unrestricted:    
+`set-executionpolicy unrestricted`
 
 5. Run the Jellyfin build script:  
-    `deployment/windows/build-jellyfin.ps1 -verbose`
+    `deployment\windows\build-jellyfin.ps1 -verbose`
 
     * The `-WindowsVersion` and `-Architecture` flags can optimize the build for your current environment; the default is generic Windows x64.
 

@@ -22,7 +22,6 @@ This repository contains:
 
 * SVG files for icons
 * SVG files for banners
-* PNG files of icons and banners
 * Fonts
 
 ## Jellyfin Colours

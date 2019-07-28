@@ -4,7 +4,7 @@ This page discusses how to open issues, including the policies and procedures of
 
 Issues should detail software bug reports **only**.
 
-Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Issues created with the Feature or Enhancement tags will be automatically closed and migrated to the Fider instance.
+Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.
 
 All other discussions, including initial troubleshooting, should be directed towards [our help channels](/user-docs/getting-help).
 
@@ -57,8 +57,6 @@ These labels help determine how critical an issue is:
 
 * `regression`: An issue in need of immediate attention due to a regression from the last build.
 * `bug`: A bug in the code that affects normal usage.
-* `enhancement`: An issue that requests a modification of an existing feature. Migrates to [Fider](https://features.jellyfin.org) automatically.
-* `feature`: An issue that requests a new feature not present in Jellyfin. Migrates to [Fider](https://features.jellyfin.org) automatically.
 
 ### Management Labels
 

@@ -2,11 +2,9 @@
 
 This page discusses how to open issues, including the policies and procedures of the Jellyfin project around handling issues.
 
-Issues should detail one of three things:
+Issues should detail software bug reports **only**.
 
-   1. A software bug with Jellyfin.
-   1. A feature request or suggestion.
-   1. A task to be done with Jellyfin.
+Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.
 
 All other discussions, including initial troubleshooting, should be directed towards [our help channels](/user-docs/getting-help).
 
@@ -42,16 +40,6 @@ Bugs should be reproduceable. That is, you should be able to have determined thr
 
 If you ever need assistance for troubleshooting or opening an issue, please [contact the community](/user-docs/getting-help) and we'll try to help you out!
 
-### Requesting features
-
-When writing a feature issue, please note that we distinguish between new features, tagged with `[feature]`, and enhancements to existing features, tagged with `[enhancement]`. Enhancement issues should be reserved only for modifications to existing functionality or features, with a default towards the `[feature]` tag.
-
-When requesting a feature, please include details about what you want to achieve with the feature, including a usecase if possible. This not only helps the Jellyfin team gauge how possible the issue is, but also helps other community members understand what you want to acheieve so that they can agree with it via the [upvote system](/contributor-docs/issues#Searching-for-issues-and-upvoting).
-
-Features are not explicitly prioritized; they are worked by those in the community who are able to and are interested. However community desire for a feature can greatly affect this, so ensure you upvote any features you are interested in seeing, or are interested in working on. Developers who are interested in taking on a feature requests should update the issue to indicate as much, and just as importantly indicate if they *stop* wanting to work on the feature - this helps avoid the appearance of ownership that doesn't exist.
-
-Enhancements are smaller than features, and often involve small tweaks to existing functionality. They should be requested in the same way as other features and with the same details, including a description of how the functionality should appear after the tweak, and how it functions now. This helps steer discussion on how to make the enhancement.
-
 ## Issue Labels
 
 Jellyfin features a number of issue labels to assist in triaging and managing issues. Users cannot assign these themselves due to GitHub's permissions; they will be added by an administrative team member during triaging.
@@ -69,8 +57,6 @@ These labels help determine how critical an issue is:
 
 * `regression`: An issue in need of immediate attention due to a regression from the last build.
 * `bug`: A bug in the code that affects normal usage.
-* `enhancement`: An issue that requests a modification of an existing feature.
-* `feature`: An issue that requests a new feature not present in Jellyfin.
 
 ### Management Labels
 

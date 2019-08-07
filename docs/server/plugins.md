@@ -88,3 +88,7 @@ Jellyfin LiveTV plugin for Windows MediaCenter with [ServerWMC](https://github.c
 #### [antennas](https://github.com/TheJF/antennas)
 
 Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plug-in.
+
+#### [gotify](https://github.com/jellyfin/jellyfin-plugin-gotify)		
+
+  Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.

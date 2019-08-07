@@ -8,9 +8,17 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 
 Many plugins are available in a repository hosted on our servers, which can be easily installed using the plugin catalog in the settings. At the moment many of these are still being updated frequently so the version number may not be accurate. There are several different categories that can indicate what kind of functionality the plugins may provide.
 
+**Authentication:** Add new authentication providers, such as LDAP.
+
 **Channels:** Allow streaming remote audio or video content.
 
+**General:** Plugins that serve general purposes, such as sync with Trakt.tv, or Kodi.
+
+**Live TV:** Plugins that help with connecting to tuners, such as NextPVR, or TVHeadend.
+
 **Metadata:** Scrape metadata from a new source or modify existing metadata.
+
+**Notifications:** Allow notifications to connect to many different services, including Gotify and Slack.
 
 ### Manual
 
@@ -79,12 +87,4 @@ Jellyfin LiveTV plugin for Windows MediaCenter with [ServerWMC](https://github.c
 
 #### [antennas](https://github.com/TheJF/antennas)
 
-Takes your tuners in Tvheadend and emulates a HDHomeRun in order to connect to Jellyfin's DVR feature. That means any tuner whether dvb-t, dvb-c, dvb-s or ATSC can work with Jellyfin providing Tvheadend supports it (i.e you've installed the drivers for your tuner). It can be installed via binaries, Node or Docker. Set-up requires an anonymous user in Tvheadend with rights and streaming profiles as well as your channel list having the correct numbers. Configuration parameters are a URL that will show the status of Antennas, the URL of your Tvheadend installation with your username and password as well as the number of tuners you have. Then just setup your tuner in Jellyfin by selecting a HD Homerun then enter your Antennas URL. For setting up guide data, you have to use XMLTV. Either a link or .xml file will work. In the UK, I use the free xmltv.co.uk which gives me a link for 7 days guide data.
-
-#### [gotify](https://github.com/crobibero/Jellyfin.Plugins.Gotify)
-
-Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
-
-#### [LazyMan](https://github.com/crobibero/Jellyfin.Channels.LazyMan)
-
-A channel to watch content from LazyMan on Jellyfin.
+Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plug-in.

@@ -91,4 +91,4 @@ Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to 
 
 #### [gotify](https://github.com/jellyfin/jellyfin-plugin-gotify)		
 
-  Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
+Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.

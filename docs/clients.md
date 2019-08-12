@@ -40,7 +40,7 @@ The official Jellyfin Fire TV app.
 
 **Links**
 
-<a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'>img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
+<a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'><img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
 
 * [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
 * [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)

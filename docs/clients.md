@@ -32,24 +32,18 @@ The official Jellyfin Android TV app.
 * [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
 * [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
 
-#### Installation on Amazon Fire TV Stick
+### Jellyfin for Amazon Fire TV
 
-Currently the Jellyfin app isn't listed on the Fire TV's app store. In order to install it, you need to use a process known as "side loading". 
+The official Jellyfin Fire TV app.
 
-1. Install the [Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools.html) on your workstation
-2. [Enable debugging on your Fire TV](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html#turnondebugging)
-    * Make sure to turn on ADB debugging
-    * Make sure to allow apps from unknown sources
-3. Download a binary version of the Android TV app from the repository above. Make sure to download one marked `amazon-release`
-4. [Connect to your Fire TV over ADB](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html#connectingadboptions)
-    * You can either connect over USB or over a network connection. To connect over the local network, find out your Fire TV's IP address
-    * You'll need to confirm the connection over ADB on your Fire TV. A prompt will appear when your workstation attempts to connect
-5. You're now ready to install the Jellyfin app. Run the following command once connected to your Fire TV over ADB: `adb install <PATH-TO-JELLYFIN-BINARY-YOU-DOWNLOADED>`. After 30-60 seconds you should receive a message telling you the installation was successful
-6. You can now disconnect from ADB: `adb disconnect`
+**Status:** ⭐ In Beta release
 
-The Jellyfin app should now appear on your Fire TV device. Because the app isn't listed on the Fire TV store, you will have to repeat this process whenever you want to update the app. 
+**Links**
 
-While the steps above look a little complex, they should only take 15-30 minutes to complete, depending on your proficiency with the Android SDK. No knowledge of Android development outside of the steps above is required.
+<a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'>img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
+
+* [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
+* [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
 
 ### Yatse
 

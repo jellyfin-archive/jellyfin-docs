@@ -29,6 +29,8 @@ The official Jellyfin Android TV app.
 
 **Links:**
 
+<a href='https://play.google.com/store/apps/details?id=org.jellyfin.androidtv&hl=es_419'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
+
 * [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
 * [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
 

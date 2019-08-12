@@ -38,7 +38,7 @@ The official Jellyfin Fire TV app.
 
 **Status:** ⭐ In Beta release
 
-**Links**
+**Links:**
 
 <a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'><img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
 

@@ -65,6 +65,51 @@ Portable binary packages containing a compiled Jellyfin instance are available f
 
 Windows builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
 
+### Install via script
+
+1. Download and extract the latest version
+1. Run `install.bat` or `install-jellyfin.ps1`
+1. (optional) Enter a custom install location (default is `%appdata%`)
+1. (optional) Enter a custom libary/data location (default is `%localappdata%`) - Currently not working
+1. (optional) Select to install jellyfin as a service
+1. (optional) Import old libary - Not compatible with newer Emby versions
+1. (optional) Create a shortcut on your desktop
+1. (optional) Run Jellyfin after installation
+1. Press `Install`
+
+### Manual installation
+
+**Install**
+
+1. Download and extract the latest version
+1. Create a folder `jellyfin` at your preferred install location
+1. Copy the extracted folder into the `jellyfin` folder and rename it to `system`
+1. Create `jellyfin.bat` within your `jellyfin` folder containing:
+    - To use the default libary/data location at `%localappdata%`:  
+    `<--Your install path-->\jellyfin\system\jellyfin.exe`
+    - To use a custom libary/data location (Path after the -d paramenter):  
+    `<--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data`
+    - To use a custom libary/data location (Path after the -d paramenter) and disable the autostart of the webapp:  
+    `<--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data -noautorunwebapp`
+1. Run `jellyfin.bat`
+1. Open your browser at http://<--Server-IP-->:8096 (if autostart of webapp is disabled)
+
+
+**Update**
+
+1. Stop Jellyfin
+1. Rename the Jellyfin `system` folder to `system-bak`
+1. Download and extract the latest Jellyfin version
+1. Copy the extracted folder into the `jellyfin` folder and rename it to `system`
+1. Run `jellyfin.bat` to start the server again
+
+**Rollback**
+
+1. Stop Jellyfin
+1. Delete the `system` folder
+1. Rename `system-bak` to `system`
+1. Run `jellyfin.bat` to start the server again
+
 ### MacOS
 
 MacOS builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).

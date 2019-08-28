@@ -1,6 +1,6 @@
 # Running Jellyfin Behind a Reverse Proxy
 
-It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this alternative server handles all network traffic and proxies it back to Jellyfin. This has the benefit of having nice DNS names and not having to remember port numbers, as well as easier integration with SSL certificates.
+It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.
 
 Three popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), and [Nginx](https://www.nginx.com/).
 
@@ -9,19 +9,20 @@ Three popular options for reverse proxy systems are [Apache](https://httpd.apach
 When following this guide, be sure to replace the following variables with your information:
 
   * `DOMAIN_NAME` - Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
-  * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy it's in the same server use 127.0.0.1)
+  * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy is on the same server use 127.0.0.1)
 
 In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
-Ports 80 and 443 (pointing to the proxy server) need to be opened in your Firewall/Router.
+Ports 80 and 443 (pointing to the proxy server) need to be opened on your Firewall/Router.
 
 ## Apache
 
 ```
 <VirtualHost *:80>
     ServerName DOMAIN_NAME
-    
-    Redirect permanent / https://DOMAIN_NAME
-    
+
+    # Uncomment for HTTP to HTTPS redirect
+    # Redirect permanent / https://DOMAIN_NAME
+
     ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
     CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
 </VirtualHost>
@@ -57,11 +58,12 @@ If you encouter errors, you may have to enable `mod_proxy` or `mod_ssl` support 
 $ sudo a2enmod proxy proxy_http ssl
 ```
 
-## Haproxy
+## HAProxy
 
 ```
 frontend jellyfin_proxy
     bind *:80
+
 # Note that haproxy requires you to concatenate the certificate and key into a single file
 # Uncomment the appropriate lines after you have acquired a SSL Certificate
 ## Haproxy <1.7
@@ -88,18 +90,18 @@ backend jellyfin
 ```
 
 ## Nginx
-Create the following file with ``sudo nano /etc/nginx/conf.d/jellyfin.conf``
+Create the following file ``/etc/nginx/conf.d/jellyfin.conf``
 
 ```
 server {
     listen 80;
     server_name DOMAIN_NAME;
-    return 301 https://$host$request_uri;
+
+    # Uncomment to redirect HTTP to HTTPS
+    # return 301 https://$host$request_uri;
 }
 
 # Uncomment this section after you have acquired a SSL Certificate
-# If you are not using a SSL certificate, replace the 'return 301'
-# line above with the location blocks from the section below
 #server {
 #    listen 443 ssl http2;
 #    server_name DOMAIN_NAME;
@@ -143,8 +145,8 @@ server {
 
 ## Nginx with subpath
 
-When connecting to server from app, enter http(s)://DOMAIN_NAME/jellyfin in the address field, and **clear the port field**.
-All apps may not currently handle this properly, but it works for web and Android.
+When connecting to server from a client application, enter ``http(s)://DOMAIN_NAME/jellyfin`` in the address field, and **clear the port field**.
+Not all clients may handle this properly, but this is currently working for the web and Android client.
 
 ```
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
@@ -165,9 +167,7 @@ server {
         try_files $uri $uri/ =404;
     }
 
-    ########
-    ## Jellyfin
-
+    # Jellyfin
     location /jellyfin {
         return 302 $scheme://$host/jellyfin/;
     }
@@ -189,59 +189,7 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection $http_connection;
     }
-
-    ########
-    ## Ombi
-
-#    location /ombi/ {
-#        proxy_pass http://SERVER_IP_ADDRESS:3579;
-#        proxy_pass_request_headers on;
-#        proxy_set_header Host $host;
-#        proxy_set_header X-Real-IP $remote_addr;
-#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-#        proxy_set_header X-Forwarded-Proto $scheme;
-#        proxy_set_header Upgrade $http_upgrade;
-#        proxy_set_header Connection $http_connection;
-#
-#        proxy_set_header X-Forwarded-Ssl on;
-#        proxy_read_timeout  90;
-#
-#    }
-
-    ########
-    ## Emby
-
-#    location /emby {
-#        return 302 $scheme://$host/emby/;
-#    }
-#
-#    location /emby/ {
-#        # The / at the end is significant.
-#        proxy_pass http://SERVER_IP_ADDRESS:8096/;
-#
-#        proxy_pass_request_headers on;
-#
-#        proxy_set_header Host $host;
-#
-#        proxy_set_header X-Real-IP $remote_addr;
-#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-#        proxy_set_header X-Forwarded-Proto $scheme;
-#        proxy_set_header X-Forwarded-Host $http_host;
-#
-#        proxy_set_header Upgrade $http_upgrade;
-#        proxy_set_header Connection $http_connection;
-#    }
-
-
-    ########
-    ## SSL
-
-    # This section is managed by Certbot
-    # Follow the instructions on https://certbot.eff.org/ to enable https
-    # "I'm using nginx on os_name"
-
 }
-
 ```
 
 
@@ -254,34 +202,54 @@ Installation instructions for most Linux distributions can be found on the [Cert
 Once the packages are installed, you're ready to generate a new certificate.
 
 ### Apache
-
 After installing certbot and the Apache plugin, certificate generation is accomplished by:
 
-`certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
+``certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
 
 Update the 'SSLCertificateFile' and 'SSLCertificateKeyFile' sections, then restart the service.
 
 Add a job to cron so the certificate will be renwed automatically:
 
-`echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot`
+``echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot``
 
-### Haproxy
+### HAProxy
+Haproxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  
 
-Haproxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  Enable the frontend and backend in the config above, and then run:
+Enable the frontend and backend in the config above, and then run:
 
-`certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
+``certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
 
-The port can be changed to anything you like, but be sure that the haproxy config and your certbot command match.
+The port can be changed to anything you like, but be sure that the HAProxy config and your certbot command match.
 
 Haproxy needs to have the certificate and key files concatenated into the same file to read it correctly.  This can be accomplished with the following command.
 
-`cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem`
+``cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem``
 
-Uncomment the appropriate `bind *:443` and the redirect section in the config, then restart the service.
+Uncomment `bind *:443` and the redirect section in the configuration, then reload the service.
 
-Add a job to cron so the certificate will be renwed automatically:
+#### Autmoatic Certificate Renewal
+1. Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
 
-`echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem && systemctl reload haproxy'" | sudo tee -a /etc/cron.d/renew_certbot`
+    ```
+    SITE=DOMAIN_NAME
+
+    # move to the correct let's encrypt directory
+    cd /etc/letsencrypt/live/$SITE
+
+    # cat files to make combined .pem for haproxy
+    cat fullchain.pem privkey.pem > /etc/ssl/$SITE.pem
+
+    # reload haproxy
+    service haproxy reload
+    ```
+
+2. Make sure the script is executable
+
+   ``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
+
+3. Add a job to cron so the certificate will be renwed automatically:
+
+   ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
 
 ### Nginx
 

@@ -66,9 +66,9 @@ frontend jellyfin_proxy
 
 # Note that haproxy requires you to concatenate the certificate and key into a single file
 # Uncomment the appropriate lines after you have acquired a SSL Certificate
-## Haproxy <1.7
+## HAProxy <1.7
 #    bind *:443 ssl crt /etc/ssl/DOMAIN_NAME.pem
-## Haproxy >1.8
+## HAProxy >1.8
 #    bind *:443 ssl crt /etc/ssl/DOMAIN_NAME.pem alpn h2,http/1.1
 #    redirect scheme https if !{ ssl_fc }
 
@@ -216,7 +216,7 @@ Add a job to cron so the certificate will be renwed automatically:
 
 ### HAProxy
 
-Haproxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  
+HAProxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  
 
 Enable the frontend and backend in the config above, and then run:
 

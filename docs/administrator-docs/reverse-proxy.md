@@ -15,6 +15,7 @@ In addition, the examples are configured for use with LetsEncrypt certificates. 
 Ports 80 and 443 (pointing to the proxy server) need to be opened on your Firewall/Router.
 
 ## Apache
+
 ```
 <VirtualHost *:80>
     ServerName DOMAIN_NAME
@@ -58,6 +59,7 @@ $ sudo a2enmod proxy proxy_http ssl
 ```
 
 ## HAProxy
+
 ```
 frontend jellyfin_proxy
     bind *:80
@@ -88,6 +90,7 @@ backend jellyfin
 ```
 
 ## Nginx
+
 Create the following file ``/etc/nginx/conf.d/jellyfin.conf``
 
 ```
@@ -142,6 +145,7 @@ server {
 ```
 
 ## Nginx with subpath
+
 When connecting to server from a client application, enter ``http(s)://DOMAIN_NAME/jellyfin`` in the address field, and **clear the port field**.
 Not all clients may handle this properly, but this is currently working for the web and Android clients.
 
@@ -191,6 +195,7 @@ server {
 
 
 ## LetsEncrypt with Certbot
+
 LetsEncrypt is a service that provides free SSL/TLS certificates to users.  Certbot is a client that makes this easy to accomplish and automate.  In addition, it has plugins for Apache and Nginx that make automating certificate generation even easier.
 
 Installation instructions for most Linux distributions can be found on the [Certbot website](https://certbot.eff.org/docs/install.html#operating-system-packages).
@@ -198,6 +203,7 @@ Installation instructions for most Linux distributions can be found on the [Cert
 Once the packages are installed, you're ready to generate a new certificate.
 
 ### Apache
+
 After installing certbot and the Apache plugin, certificate generation is accomplished by:
 
 ``certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
@@ -209,6 +215,7 @@ Add a job to cron so the certificate will be renwed automatically:
 ``echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot``
 
 ### HAProxy
+
 Haproxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  
 
 Enable the frontend and backend in the config above, and then run:
@@ -224,6 +231,7 @@ Haproxy needs to have the certificate and key files concatenated into the same f
 Uncomment `bind *:443` and the redirect section in the configuration, then reload the service.
 
 #### Autmoatic Certificate Renewal
+
 1. Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
 
     ```
@@ -248,6 +256,7 @@ Uncomment `bind *:443` and the redirect section in the configuration, then reloa
    ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
 
 ### Nginx
+
 After installing certbot and the Nginx plugin with ``sudo apt install certbot python3-certbot-nginx``, certificate generation is accomplished by:
 
 `sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN`
@@ -260,6 +269,7 @@ Add a job to cron so the certificate will be renewed automatically:
 `echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload nginx'" | sudo tee -a /etc/cron.d/renew_certbot`
 
 ## Traefik (with docker-compose)
+
 Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need. (https://traefik.io/)
 
 Traefik needs 3 files in the SAME directory (or you must change pathes in the volume section) : docker-compose.yml, traefik.toml and acme.json.
@@ -414,4 +424,5 @@ networks:
 Go to jellyfin.mysite.xyz (in this case), and your Jellyfin is UP and HTTPS (AES 256).
 
 # Final steps
+
 It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html)

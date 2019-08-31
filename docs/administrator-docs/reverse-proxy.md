@@ -230,7 +230,7 @@ Haproxy needs to have the certificate and key files concatenated into the same f
 
 Uncomment `bind *:443` and the redirect section in the configuration, then reload the service.
 
-#### Autmoatic Certificate Renewal
+#### Automatic Certificate Renewal
 
 Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
 

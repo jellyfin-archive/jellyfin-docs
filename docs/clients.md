@@ -118,11 +118,11 @@ The official Jellyfin Google Chrome extension.
 
 The official Jellyfin iOS app.
 
-**Status:** ❎ Deprecated and unreleasable - [rewrite required](/contributor-docs/contributing)
+**Status:** ✅ In development
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-ios)
+* [GitHub](https://github.com/jellyfin/jellyfin-expo)
 
 ## Kodi
 

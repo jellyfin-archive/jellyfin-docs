@@ -232,7 +232,7 @@ Uncomment `bind *:443` and the redirect section in the configuration, then reloa
 
 #### Autmoatic Certificate Renewal
 
-1. Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
+Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
 
  ```
  SITE=DOMAIN_NAME
@@ -247,11 +247,11 @@ Uncomment `bind *:443` and the redirect section in the configuration, then reloa
  service haproxy reload
  ```
 
-2. Make sure the script is executable
+Make sure the script is executable
 
  ``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
 
-3. Add a job to cron so the certificate will be renewed automatically:
+Add a job to cron so the certificate will be renewed automatically:
 
  ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
 

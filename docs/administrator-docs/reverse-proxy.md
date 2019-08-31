@@ -234,18 +234,18 @@ Uncomment `bind *:443` and the redirect section in the configuration, then reloa
 
 Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
 
- ```
- SITE=DOMAIN_NAME
+```
+SITE=DOMAIN_NAME
 
- # move to the correct let's encrypt directory
- cd /etc/letsencrypt/live/$SITE
+# move to the correct let's encrypt directory
+cd /etc/letsencrypt/live/$SITE
 
- # cat files to make combined .pem for haproxy
- cat fullchain.pem privkey.pem > /etc/ssl/$SITE.pem
+# cat files to make combined .pem for haproxy
+cat fullchain.pem privkey.pem > /etc/ssl/$SITE.pem
 
- # reload haproxy
- service haproxy reload
- ```
+# reload haproxy
+service haproxy reload
+```
 
 Make sure the script is executable
 

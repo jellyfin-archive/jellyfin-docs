@@ -230,30 +230,30 @@ Haproxy needs to have the certificate and key files concatenated into the same f
 
 Uncomment `bind *:443` and the redirect section in the configuration, then reload the service.
 
-#### Autmoatic Certificate Renewal
+#### Automatic Certificate Renewal
 
-1. Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
+Place the following script in `/usr/local/bin/` to automatically update your SSL certificate:
 
-    ```
-    SITE=DOMAIN_NAME
+```
+SITE=DOMAIN_NAME
 
-    # move to the correct let's encrypt directory
-    cd /etc/letsencrypt/live/$SITE
+# move to the correct let's encrypt directory
+cd /etc/letsencrypt/live/$SITE
 
-    # cat files to make combined .pem for haproxy
-    cat fullchain.pem privkey.pem > /etc/ssl/$SITE.pem
+# cat files to make combined .pem for haproxy
+cat fullchain.pem privkey.pem > /etc/ssl/$SITE.pem
 
-    # reload haproxy
-    service haproxy reload
-    ```
+# reload haproxy
+service haproxy reload
+```
 
-2. Make sure the script is executable
+Make sure the script is executable
 
-   ``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
+ ``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
 
-3. Add a job to cron so the certificate will be renewed automatically:
+Add a job to cron so the certificate will be renewed automatically:
 
-   ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
+ ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
 
 ### Nginx
 

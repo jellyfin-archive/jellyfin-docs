@@ -14,6 +14,8 @@ pages:
     - Building from Source: 'administrator-docs/building.md'
     - Quick Start: 'administrator-docs/quick-start.md'
     - Migrating from Emby: 'administrator-docs/migrate-from-emby.md'
+    - Plugins: 'administrator-docs/plugins.md'
+    - Port Bindings: 'administrator-docs/port-bindings.md'
     - Connectivity: 'administrator-docs/connectivity.md'
     - Reverse Proxy: 'administrator-docs/reverse-proxy.md'
     - Hardware Acceleration: 'administrator-docs/hardware-acceleration.md'

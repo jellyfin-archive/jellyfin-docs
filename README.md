@@ -1,5 +1,5 @@
-# Jellyfin Documentation
-Part of the [Jellyfin Project](https://jellyfin.media)
+<h1 align="center">Jellyfin Documentation</h1>
+<h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 
 This repository houses all documentation for Jellyfin available at [](https://docs.jellyfin.org) and written in markdown.
 

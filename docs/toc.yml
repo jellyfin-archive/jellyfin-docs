@@ -1,0 +1,12 @@
+- name: Clients
+  href: clients/
+  homepage: clients/index.md
+- name: Server
+  href: server/
+  homepage: server/index.md
+- name: Administration
+  href: administration/
+  homepage: administration/index.md
+- name: Contributing
+  href: contributing/
+  homepage: contributing/index.md

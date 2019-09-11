@@ -1,0 +1,26 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+pr:
+  autoCancel: true
+
+trigger:
+  batch: true
+
+jobs:
+  - job: docs_build
+    displayName: Docs Build
+    pool:
+      vmImage: windows-latest    
+    steps:
+    - checkout: self
+      clean: true
+      submodules: true
+      persistCredentials: false
+
+    - powershell: |
+      choco install docfx -y
+      docfx docfx.json
+      if ($lastexitcode -ne 0){
+        throw ("Error generating document")
+      }
+    displayName: "DocFX Build"

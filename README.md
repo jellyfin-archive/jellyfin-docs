@@ -1,9 +1,8 @@
-<h1 align="center">Jellyfin Documentation</h1>
-<h3 align="center">Part of the [Jellyfin Project](https://jellyfin.media)</h3>
+# Jellyfin Documentation
+Part of the [Jellyfin Project](https://jellyfin.media)
 
-<p align="center">
 This repository houses all documentation for Jellyfin available at [](https://docs.jellyfin.org) and written in markdown.
-</p>
+
 
 # Layout
 This repository is built using [DocFX](https://dotnet.github.io/docfx/) using [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), for bit of a tutorial on writing, [see the Content section here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html).

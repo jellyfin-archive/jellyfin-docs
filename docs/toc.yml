@@ -1,70 +1,43 @@
-- name: Clients
-  href: clients/clients.md
+- uid: clients-index
+
+- name: Administration
+  items:
+  - uid: admin-installing
+  - uid: admin-building
+  - uid: admin-quick-start
+  - uid: admin-migrate-from-emby
+  - uid: admin-port-bindings
+  - uid: admin-connectivity
+  - uid: admin-reverse-proxy
+  - uid: admin-hardware-acceleration
+
+- uid: contrib-index
+  items:
+  - uid: contrib-issues
+  - uid: contrib-development
+  - uid: contrib-branding-guide
+  - uid: contrib-release-procedure
+
 - name: Server
   items:
   - name: Media
     items:
-    - name: Cloud Storage
-      href: server/media/cloud-storage.md
-    - name: Movies
-      href: server/media/movies.md
-    - name: Music
-      href: server/media/music.md
-    - name: Shows
-      href: server/media/shows.md
-    - name: Subtitles
-      href: server/media/subtitles.md
-  - name: Plugins
-    href: server/plugins/index.md
+    - uid: server-media-cloud-storage
+    - uid: server-media-movies
+    - uid: server-media-music
+    - uid: server-media-shows
+    - uid: server-media-subtitles
+  
+  - uid: server-devices
+  - uid: server-libraries
+  - uid: server-live-tv
+  - uid: server-notifications
+  - uid: server-settings
+  - uid: server-tasks
+  - uid: server-transcoding
+  - uid: server-users
+
+  - uid: server-plugins-index
     items:
-    - name: Open Subtitles
-      href: server/plugins/open-subtitles.md
-    - name: TVHeadend
-      href: server/plugins/tvheadend.md
-  - name: Devices
-    href: server/devices.md
-  - name: Libraries
-    href: server/libraries.md
-  - name: Live TV
-    href: server/live-tv.md
-  - name: Notifications
-    href: server/notifications.md
-  - name: Settings
-    href: server/settings.md
-  - name: Tasks
-    href: server/tasks.md
-  - name: Transcoding
-    href: server/transcoding.md
-  - name: Users
-    href: server/users.md
-- name: Administration
-  items:
-  - name: Quick Start
-    href: administration/quick-start.md
-  - name: Installing
-    href: administration/installing.md
-  - name: Building
-    href: administration/building.md
-  - name: Connectivity
-    href: administration/connectivity.md
-  - name: Hardware Acceleration
-    href: administration/hardware-acceleration.md
-  - name: Migrate from Emby
-    href: administration/migrate-from-emby.md
-  - name: Plugins
-    href: administration/plugins.md
-  - name: Port Bindings
-    href: administration/port-bindings.md
-  - name: Reverse Proxy
-    href: administration/reverse-proxy.md
-- name: Contributing
-  href: contributing/index.md
-  items:
-  - name: Branding Guide
-    href: contributing/branding-guide.md
-  - name: Contributing Code
-    href: contributing/contributing-code.md
-  - name: Issues
-    href: contributing/issues.md
-  - name: Release Procedure
-    href: contributing/release-procedure.md
+    - uid: server-plugins-open-subtitles
+    - uid: server-plugins-tvheadend

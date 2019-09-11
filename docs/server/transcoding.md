@@ -1,10 +1,15 @@
+---
+uid: server-transcoding
+title: Transcoding
+---
+
 ## Transcoding
 
 These settings will relate to backend options that modify how the server transcodes media. Some improve or change the media quality while others reduce the resources required to transcode the media from its original format.
 
 #### Hardware Acceleration
 
-If your hardware supports this you can enable [hardware acceleration](/docs/administration/hardware-acceleration.md) for much faster transcoding. Some of the supported methods are listed below.
+If your hardware supports this you can enable [hardware acceleration](xref:admin-hardware-acceleration) for much faster transcoding. Some of the supported methods are listed below.
 
   * VAAPI
   * NVENC

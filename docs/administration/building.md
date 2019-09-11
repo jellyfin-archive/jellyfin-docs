@@ -1,9 +1,14 @@
+---
+uid: admin-building
+title: Building from Source
+---
+
 
 [//]: # (TODO: Convert this page into links to project specific build instructions)
 
 # Building Jellyfin from Source
 
-As an alternative to using [binary packages](/docs/administration/installing.md), you can build Jellyfin from source.
+As an alternative to using [binary packages](xref:admin-installing), you can build Jellyfin from source.
 
 Jellyfin supports several methods of building for different platforms and instructions for all supported platforms are below.
 

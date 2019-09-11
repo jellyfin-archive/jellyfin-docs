@@ -1,3 +1,8 @@
+---
+uid: server-settings
+title: Settings
+---
+
 ## Settings
 
 The general settings include options that don't require their own link in the sidebar. Most of these are items that will change the interface or user experience.

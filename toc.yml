@@ -1,13 +1,10 @@
-- name: General Documentation
+- uid: general-docs
   href: docs/
-- name: Plugin API Documentation
+- uid: plugin-api-docs
   href: plugin-api/
-- name: Getting Help
-  href: docs/getting-help.md
-- name: FAQ
-  href: docs/faq.md
-- name: About
-  href: docs/about.md
+- uid: getting-help
+- uid: faq
+- uid: about
 - name: GitHub
   href: https://github.com/jellyfin
 - name: Website

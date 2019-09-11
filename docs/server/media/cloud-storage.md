@@ -1,3 +1,9 @@
+---
+uid: server-media-cloud-storage
+title: Cloud Storage
+---
+
+
 ## Cloud storage
 
 There is no native support for cloud storage of services such as Amazon S3, Dropbox, Google Drive.

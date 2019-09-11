@@ -1,3 +1,8 @@
+---
+uid: contrib-release-procedure
+title: Release Procedure
+---
+
 # Release Procedure
 
 This document is a Core team guide, provided publicly to ensure transparancy in the release process.

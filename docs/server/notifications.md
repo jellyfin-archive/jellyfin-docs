@@ -1,3 +1,8 @@
+---
+uid: server-notifications
+title: Notifications
+---
+
 ## Notifications
 
 You can use notifications to get alerts when certain events happen on your server. Some common notifications include plugin installations and different user events.

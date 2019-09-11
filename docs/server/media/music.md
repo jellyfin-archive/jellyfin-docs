@@ -1,3 +1,8 @@
+---
+uid: server-media-music
+title: Music
+---
+
 ## Music
 
 The most common organization scheme for music is separation by artist and then album.

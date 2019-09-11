@@ -1,3 +1,8 @@
+---
+uid: server-plugins-index
+title: Plugins
+---
+
 # Plugins
 
 Jellyfin has a collection of optional plugins that can be installed to provide additional features.

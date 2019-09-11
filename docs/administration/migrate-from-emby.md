@@ -1,8 +1,14 @@
+---
+uid: admin-migrate-from-emby
+title: Migrating from Emby
+---
+
+
 # Migrating from Emby to Jellyfin
 
 Direct database migration from Emby (of any version) to Jellyfin is NOT SUPPORTED. We have found many subtle bugs due to the inconsistent database schemas that result from trying to do this, and strongly recommend that all Jellyfin users migrating from Emby start with a fresh database and library scan.
 
-The original procedure is provided below for reference however we cannot support it nor guarantee that a system upgraded in this way will work properly, if at all. If anyone is interested in writing a database migration script which will correct the deficiencies in the existing database and properly import them into Jellyfin, [we would welcome it however](/docs/contributing/index.md)!
+The original procedure is provided below for reference however we cannot support it nor guarantee that a system upgraded in this way will work properly, if at all. If anyone is interested in writing a database migration script which will correct the deficiencies in the existing database and properly import them into Jellyfin, [we would welcome it however](xref:contrib-index)!
 
 ## Unofficial procedure
 
@@ -23,7 +29,7 @@ This procedure is written for Debian-based Linux distributions, but can be trans
 1. Remove or purge the `emby-server` package:  
     `sudo apt purge emby-server`
 
-1. Install the `jellyfin` package using the [installaton instructions](/docs/administration/installing.md).
+1. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
 
 1. Stop the `jellyfin` daemon:  
     `sudo service jellyfin stop`

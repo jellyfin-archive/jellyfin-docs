@@ -1,3 +1,8 @@
+---
+uid: server-live-tv
+title: Live TV
+---
+
 ## Live TV
 
 Jellyfin allows you to watch live television if you have the hardware to support it, and even handles DVR from the settings. The first step is setting up a tuner to send data to Jellyfin, and then configure a source for the guide data.

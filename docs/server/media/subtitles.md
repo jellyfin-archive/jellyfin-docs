@@ -1,3 +1,8 @@
+---
+uid: server-media-subtitles
+title: Subtitles
+---
+
 ## Subtitles
 
 Subtitles will usually be embedded in video files, but the server also supports external subtitles. Supported formats include ass, srt, ssa, sub, idx, and vtt files.

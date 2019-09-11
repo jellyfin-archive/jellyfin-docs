@@ -27,8 +27,7 @@
         "files": [
           "plugin-api/**.yml",
           "plugin-api/index.md"
-        ],
-        "group": "master"
+        ]
       },
       {
         "files": [
@@ -38,13 +37,7 @@
           "index.md"
         ]
       }
-    ],
-    "groups": {
-      "master": {
-        "dest": "plugin-api",
-        "rootTocPath": "toc.html"
-      }
-    },
+    ],    
     "resource": [
       {
         "files": [

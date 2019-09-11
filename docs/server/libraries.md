@@ -1,3 +1,8 @@
+---
+uid: server-libraries
+title: Libraries
+---
+
 ## Libraries
 
 You will see a page to add libraries when you first create the server, but they can also be added or removed at any time from the settings. Libraries are virtual collections of media and can contain files from several different locations on the server.

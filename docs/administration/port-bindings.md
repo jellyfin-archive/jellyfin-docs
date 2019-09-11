@@ -1,3 +1,9 @@
+---
+uid: admin-port-bindings
+title: Port Bindings
+---
+
+
 # Server port bindings
 
 This document aims to provide an admin with knowledge on what ports Jellyfin binds and what purpose they serve.

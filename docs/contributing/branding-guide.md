@@ -1,3 +1,8 @@
+---
+uid: contrib-branding-guide
+title: Branding
+---
+
 # Jellyfin Branding Guide
 
 ## Naming Conventions

@@ -1,3 +1,8 @@
+---
+uid: server-plugins-tvheadend
+title: TVHeadend
+---
+
 # TVHeadend
 
 The objective of the guide is to configure the Jellyfin Tvheadend plugin to backend a Tvheadend server.

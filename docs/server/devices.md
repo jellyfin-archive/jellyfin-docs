@@ -1,3 +1,8 @@
+---
+uid: server-devices
+title: Devices
+---
+
 ## Devices
 
 You can view all devices that have connected to the server from the settings. This will include both currently connected devices and any that have connected in the past. At the moment this page is really only useful to see connected devices and what users are registered to them.

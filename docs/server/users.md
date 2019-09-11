@@ -1,3 +1,8 @@
+---
+uid: server-users
+title: Users
+---
+
 # Users
 
 Many features are configurable for each user individually to allow administrators more granular control over a Jellyfin server. Keep in mind that Jellyfin users are entirely local and no information or metadata will ever be sent to remote servers during the login process.

@@ -1,8 +1,13 @@
+---
+uid: faq
+title: FAQ
+---
+
 # Frequently Asked Questions
 
 ### Why fork Emby? Why did we start this project?
 
-We explain our rationale on our [about page](/docs/about.md).
+We explain our rationale on our [about page](xref:about).
 
 ### My favorite client or feature is missing, why won't you support it?
 
@@ -10,18 +15,18 @@ We would love to support it! Unfortunately, no one has decided to develop it yet
 
 ### How do I get help?
 
-Please see our [getting help](/docs/getting-help.md) page for details on where to engage the community.
+Please see our [getting help](xref:getting-help) page for details on where to engage the community.
 
 ### How can I help with this project?
 
-Please see our [contributing guide](/docs/contributing/index.md) page for details on how to get started.
+Please see our [contributing guide](xref:contrib-index) page for details on how to get started.
 
 We are always looking for C# and frontend developers, mobile app developers, translators, and documentation writers to help!
 
 ### How do I request a new feature?
 
-Please see our [requesting features](/docs/contributing/issues.md#requesting-features) page for details in requesting a new feature in Jellyfin.
+Please see our [requesting features](xref:contrib-issues#requesting-features) page for details in requesting a new feature in Jellyfin.
 
 ### How do I support this project?
 
-All we can ask is you [use Jellyfin](/docs/administration/installing.md), [report any bugs](/docs/contributing/issues.md#reporting-bugs), and tell your friends about us! Really, we're just people volunteering our time to help build a better media system, so joining the community is the best way to show your support.
+All we can ask is you [use Jellyfin](xref:admin-installing), [report any bugs](xref:contrib-issues#reporting-bugs), and tell your friends about us! Really, we're just people volunteering our time to help build a better media system, so joining the community is the best way to show your support.

@@ -1,3 +1,8 @@
+---
+uid: contrib-development
+title: Development
+---
+
 # How to contribute code to Jellyfin
 
 This page details how our repositories are organized, how to get started editing the code and creating your first pull request, and some general procedures around pull requests in Jellyfin.
@@ -8,11 +13,11 @@ The best way to get going is to look through the [Issues list](https://github.co
 
 ### Major Issue Types
 
-A list of issue types can be found on the [Issue guidelines](/docs/contributing/issues.md#issue-labels) page.
+A list of issue types can be found on the [Issue guidelines](xref:contrib-issues#issue-labels) page.
 
 ### What if there isn't an issue?
 
-If there isn't already an issue dealing with the changes you want to make, please [create an issue](/docs/contributing/issues.md) to track it first, then ensure your PR(s) reference the issue in question. This is especially useful for bugs that are found and then fixed by the author, so both the original issue and the fix can be documented and tracked in detail.
+If there isn't already an issue dealing with the changes you want to make, please [create an issue](xref:contrib-issues) to track it first, then ensure your PR(s) reference the issue in question. This is especially useful for bugs that are found and then fixed by the author, so both the original issue and the fix can be documented and tracked in detail.
 
 ## How should you make changes?
 

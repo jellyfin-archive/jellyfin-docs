@@ -1,3 +1,8 @@
+---
+uid: getting-help
+title: Getting Help
+---
+
 # Getting Help
 
 If you are having trouble using or administrating Jellyfin, there are several ways to get help:

@@ -1,3 +1,8 @@
+---
+uid: server-tasks
+title: Tasks
+---
+
 # Tasks
 
 Tasks include any operations that are either too time consuming to always run within a library scan or not directly related to scanning media. One such example of a task is theoption to clean out old log files. They can either be run on demand by clicking the run button on the right of a task or at specific times by creating a trigger.

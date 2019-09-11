@@ -5,4 +5,4 @@ title: General Documentation
 
 # General Documentation
 
-Check out [](xref:BDInfo) for example.
+Check out our [quick start guide](xref:admin-quick-start) for example.

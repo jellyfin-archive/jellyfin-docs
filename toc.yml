@@ -1,12 +1,14 @@
 - name: General Documentation
   href: docs/
-  homepage: docs/index.md
 - name: Plugin API Documentation
   href: plugin-api/
-  homepage: plugin-api/index.md
 - name: Getting Help
   href: docs/getting-help.md
 - name: FAQ
   href: docs/faq.md
 - name: About
   href: docs/about.md
+- name: GitHub
+  href: https://github.com/jellyfin
+- name: Website
+  href: https://jellyfin.media

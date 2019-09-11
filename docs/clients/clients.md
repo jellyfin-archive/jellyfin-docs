@@ -2,7 +2,7 @@
 
 Clients connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of clients below with their current development status.
 
-**Note**: Many clients were direct forks of the latest available codebases from Emby, and some are not functional yet. If you interested in helping out, please see our [contribution guide](/contributor-docs/contributing).
+**Note**: Many clients were direct forks of the latest available codebases from Emby, and some are not functional yet. If you interested in helping out, please see our [contribution guide](/docs/contributing/index.md).
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a PR](https://github.com/jellyfin/jellyfin-docs)!
 
@@ -73,7 +73,7 @@ A cross-platform desktop media interface using Electron supporting Windows, MacO
 
 A desktop media interface for the Raspberry Pi.
 
-**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
+**Status:** ⭕ No Maintainers - [volunteer](/docs/contributing/index.md)
 
 **Links:**
 
@@ -83,7 +83,7 @@ A desktop media interface for the Raspberry Pi.
 
 A desktop media interface for Windows.
 
-**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
+**Status:** ⭕ No Maintainers - [volunteer](/docs/contributing/index.md)
 
 **Links:**
 
@@ -106,7 +106,7 @@ Extension for browsers based on Chromium and Firefox that allows scrobble servic
 
 The official Jellyfin Google Chrome extension.
 
-**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
+**Status:** ⭕ No Maintainers - [volunteer](/docs/contributing/index.md)
 
 **Links:**
 
@@ -188,7 +188,7 @@ A third party plugin for Mopidy that uses Jellyfin as a backend.
 
 The official Jellyfin Roku app.
 
-**Status:** ❎ Deprecated but salvageable - [major updates required](/contributor-docs/contributing)
+**Status:** ❎ Deprecated but salvageable - [major updates required](/docs/contributing/index.md)
 
 **Links:**
 
@@ -200,7 +200,7 @@ The official Jellyfin Roku app.
 
 The official Jellyfin Samsung TV app.
 
-**Status:** ⭕ No Maintainers - [volunteer](/contributor-docs/contributing)
+**Status:** ⭕ No Maintainers - [volunteer](/docs/contributing/index.md)
 
 **Links:**
 
@@ -212,7 +212,7 @@ The official Jellyfin Samsung TV app.
 
 The official Jellyfin Windows Phone app.
 
-**Status:** ❎ Deprecated - [dead platform but salvageable](/contributor-docs/contributing)
+**Status:** ❎ Deprecated - [dead platform but salvageable](/docs/contributing/index.md)
 
 **Links:**
 

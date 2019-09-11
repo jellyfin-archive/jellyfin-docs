@@ -53,7 +53,7 @@
     href: administration/migrate-from-emby.md
   - name: Plugins
     href: administration/plugins.md
-  - name: Port Binindgs
+  - name: Port Bindings
     href: administration/port-bindings.md
   - name: Reverse Proxy
     href: administration/reverse-proxy.md

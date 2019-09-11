@@ -4,7 +4,7 @@ These settings will relate to backend options that modify how the server transco
 
 #### Hardware Acceleration
 
-If your hardware supports this you can enable [hardware acceleration](/administrator-docs/hardware-acceleration) for much faster transcoding. Some of the supported methods are listed below.
+If your hardware supports this you can enable [hardware acceleration](/docs/administration/hardware-acceleration.md) for much faster transcoding. Some of the supported methods are listed below.
 
   * VAAPI
   * NVENC

@@ -62,7 +62,7 @@ Follow the steps above to add the jellyfin user to the `video` or `render` group
 5. You can also try playing a video that requires transcoding, and if it plays you're good.
 
 Useful resources:
-- https://github.com/lxc/lxd/blob/master/doc/containers#type-gpu
+- https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
 - https://stgraber.org/2017/03/21/cuda-in-lxd/
 
 ### Hardware acceleration on Raspberry Pi (tested on RPi3)

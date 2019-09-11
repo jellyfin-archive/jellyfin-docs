@@ -1,12 +1,70 @@
 - name: Clients
-  href: clients/
-  homepage: clients/index.md
+  href: clients/clients.md
 - name: Server
-  href: server/
-  homepage: server/index.md
+  items:
+  - name: Media
+    items:
+    - name: Cloud Storage
+      href: server/media/cloud-storage.md
+    - name: Movies
+      href: server/media/movies.md
+    - name: Music
+      href: server/media/music.md
+    - name: Shows
+      href: server/media/shows.md
+    - name: Subtitles
+      href: server/media/subtitles.md
+  - name: Plugins
+    href: server/plugins/index.md
+    items:
+    - name: Open Subtitles
+      href: server/plugins/open-subtitles.md
+    - name: TVHeadend
+      href: server/plugins/tvheadend.md
+  - name: Devices
+    href: server/devices.md
+  - name: Libraries
+    href: server/libraries.md
+  - name: Live TV
+    href: server/live-tv.md
+  - name: Notifications
+    href: server/notifications.md
+  - name: Settings
+    href: server/settings.md
+  - name: Tasks
+    href: server/tasks.md
+  - name: Transcoding
+    href: server/transcoding.md
+  - name: Users
+    href: server/users.md
 - name: Administration
-  href: administration/
-  homepage: administration/index.md
+  items:
+  - name: Quick Start
+    href: administration/quick-start.md
+  - name: Installing
+    href: administration/installing.md
+  - name: Building
+    href: administration/building.md
+  - name: Connectivity
+    href: administration/connectivity.md
+  - name: Hardware Acceleration
+    href: administration/hardware-acceleration.md
+  - name: Migrate from Emby
+    href: administration/migrate-from-emby.md
+  - name: Plugins
+    href: administration/plugins.md
+  - name: Port Binindgs
+    href: administration/port-bindings.md
+  - name: Reverse Proxy
+    href: administration/reverse-proxy.md
 - name: Contributing
-  href: contributing/
-  homepage: contributing/index.md
+  href: contributing/index.md
+  items:
+  - name: Branding Guide
+    href: contributing/branding-guide.md
+  - name: Contributing Code
+    href: contributing/contributing-code.md
+  - name: Issues
+    href: contributing/issues.md
+  - name: Release Procedure
+    href: contributing/release-procedure.md

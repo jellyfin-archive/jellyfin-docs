@@ -1,2 +1,3 @@
-# PLACEHOLDER
-TODO: Add .NET projects to the *src* folder and run `docfx` to generate **REAL** *API Documentation*!
+# Plugin API Documentation
+
+This is the documentation of all plguin APIs in the server.

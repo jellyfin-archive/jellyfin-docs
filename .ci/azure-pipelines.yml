@@ -20,15 +20,11 @@ jobs:
     - task: PowerShell@2
       displayName: "DocFX Build"
       inputs:
-        targetType: 'inline'        
-        script: |
-          'choco install docfx -y
-          docfx docfx.json
-          if ($lastexitcode -ne 0){
-            throw ("Error generating document")
-          }'
+        targetType: 'filePath'        
+        filePath: '.ci/build-in-ci.ps1'
     
     - task: CmdLine@2
+      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
       displayName: "Clone Website"
       inputs:
         script: 'git clone https://github.com/jellyfin/jellyfin.github.io jellyfin.github.io' 
@@ -36,6 +32,8 @@ jobs:
         #failOnStderr: false # Optional
 
     - task: CopyFiles@2
+      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      displayName: "Copy Generated Website"
       inputs:
         sourceFolder: '$(Build.SourcesDirectory)/_site'
         contents: '**' 
@@ -46,8 +44,9 @@ jobs:
         #preserveTimestamp: false # Optional
 
     - task: CmdLine@2
+      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
       displayName: "Add files to website"
       inputs:
-        script: 'git add docs && git commit -m "Documentation update" && git push origin' 
+        script: 'git add docs && git commit -m "Documentation update" && git push origin'
         workingDirectory: '$(Build.ArtifactStagingDirectory)/jellyfin.github.io'
         #failOnStderr: false # Optional

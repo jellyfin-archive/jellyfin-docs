@@ -25,15 +25,15 @@ jobs:
         workingDirectory: '$(Build.SourcesDirectory)'
     
     - task: CmdLine@2
-      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
       displayName: "Clone Website"
       inputs:
-        script: 'git clone https://github.com/jellyfin/jellyfin.github.io jellyfin.github.io' 
+        script: 'git clone git@github.com:jellyfin/jellyfin-docs.git jellyfin.github.io' 
         workingDirectory: '$(Build.ArtifactStagingDirectory)'
         #failOnStderr: false # Optional
 
     - task: CopyFiles@2
-      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
       displayName: "Copy Generated Website"
       inputs:
         sourceFolder: '$(Build.SourcesDirectory)/_site'
@@ -45,7 +45,7 @@ jobs:
         #preserveTimestamp: false # Optional
 
     - task: CmdLine@2
-      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
       displayName: "Add, Commit and Push files to website"
       inputs:
         script: 'git config --global core.autocrlf input && git add docs && git config --global user.email "team@jellyfin.org" && git config --global user.name "jellyfin-bot" && git commit -m "Documentation update" && git push origin'

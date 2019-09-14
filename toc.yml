@@ -1,5 +1,5 @@
 - uid: general-docs
-  href: docs/
+  href: general/
 - uid: plugin-api-docs
   href: plugin-api/
 - uid: getting-help
@@ -8,4 +8,4 @@
 - name: GitHub
   href: https://github.com/jellyfin
 - name: Website
-  href: https://jellyfin.media
+  href: https://jellyfin.org

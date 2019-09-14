@@ -17,7 +17,7 @@ Describe all available API surfaces and class from plugin development.
 ## Docs
 `docs` is the main custom documentation directory.
 All uids for the custom documentation are relative to this directory, with `administration` and `contributing` shortened to `admin` and `contrib` respectively.
-So for example to reference the file `docs/administration/installing.md` one would use `xref:admin-installing` with an optional anchor like `xref:admin-installing#arch`.
+So for example to reference the file `general/administration/installing.md` one would use `xref:admin-installing` with an optional anchor like `xref:admin-installing#arch`.
 
 ### Administration
 

@@ -31,8 +31,8 @@
       },
       {
         "files": [
-          "docs/**.md",
-          "docs/**/toc.yml",
+          "general/**.md",
+          "general/**/toc.yml",
           "toc.yml",
           "index.md"
         ]
@@ -70,7 +70,7 @@
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
     "sitemap":{
-      "baseUrl": "https://docs.jellyfin.org",
+      "baseUrl": "https://jellyfin.org/docs/",
       "priority": 0.1,
       "changefreq": "daily"
     }

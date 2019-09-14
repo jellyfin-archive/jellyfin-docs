@@ -23,31 +23,39 @@ jobs:
         targetType: 'filePath'
         filePath: '.ci/build-in-ci.ps1'
         workingDirectory: '$(Build.SourcesDirectory)'
-    
-    - task: CmdLine@2
-      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
-      displayName: "Clone Website"
-      inputs:
-        script: 'git clone git@github.com:jellyfin/jellyfin-docs.git jellyfin.github.io' 
-        workingDirectory: '$(Build.ArtifactStagingDirectory)'
-        #failOnStderr: false # Optional
 
-    - task: CopyFiles@2
-      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
-      displayName: "Copy Generated Website"
+    - task: ArchiveFiles@2
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+      displayName: "Package Documentation Website"
       inputs:
-        sourceFolder: '$(Build.SourcesDirectory)/_site'
-        contents: '**' 
-        targetFolder: '$(Build.ArtifactStagingDirectory)/jellyfin.github.io/docs'
-        cleanTargetFolder: true # Optional
-        overWrite: true # Optional
-        #flattenFolders: false # Optional
-        #preserveTimestamp: false # Optional
+        rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
+        includeRootFolder: false 
+        archiveType: 'tar' # Options: zip, 7z, tar, wim
+        tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+        archiveFile: '$(Build.ArtifactStagingDirectory)/docs-$(Build.BuildId).tar.gz' 
+        replaceExistingArchive: true 
+        #verbose: # Optional
+        #quiet: # Optional
 
-    - task: CmdLine@2
-      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
-      displayName: "Add, Commit and Push files to website"
+    - task: GitHubRelease@0
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+      displayName: "Create GitHub release"
       inputs:
-        script: 'git config --global core.autocrlf input && git add docs && git config --global user.email "team@jellyfin.org" && git config --global user.name "jellyfin-bot" && git commit -m "Documentation update" && git push origin'
-        workingDirectory: '$(Build.ArtifactStagingDirectory)/jellyfin.github.io'
-        #failOnStderr: false # Optional
+        gitHubConnection: jellyfin
+        repositoryName: '$(Build.Repository.Name)' 
+        action: 'create' # Options: create, edit, delete
+        target: '$(Build.SourceVersion)' # Required when action == Create || Action == Edit
+        tagSource: 'auto' # Required when action == Create# Options: auto, manual
+        #tagPattern: # Optional
+        #tag: # Required when action == Edit || Action == Delete || TagSource == Manual
+        #title: # Optional
+        #releaseNotesSource: 'file' # Optional. Options: file, input
+        #releaseNotesFile: # Optional
+        #releaseNotes: # Optional
+        assets: '$(Build.ArtifactStagingDirectory)/docs-$(Build.BuildId).tar.gz' # Optional
+        #assetUploadMode: 'delete' # Optional. Options: delete, replace
+        #isDraft: false # Optional
+        #isPreRelease: false # Optional
+        addChangeLog: true # Optional
+        compareWith: 'lastFullRelease' # Required when addChangeLog == True. Options: lastFullRelease, lastRelease, lastReleaseByTag
+        #releaseTag: # Required when compareWith == LastReleaseByTag

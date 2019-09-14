@@ -21,7 +21,8 @@ jobs:
       displayName: "DocFX Build"
       inputs:
         targetType: 'inline'        
-        script: 'choco install docfx -y
+        script: |
+          'choco install docfx -y
           docfx docfx.json
           if ($lastexitcode -ne 0){
             throw ("Error generating document")

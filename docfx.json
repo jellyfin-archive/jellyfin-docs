@@ -1,0 +1,78 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "**.csproj"
+          ],
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**",
+            "**/**Test.csproj",
+            "**/Mono**.csproj",            
+            "**/RSSDP.csproj"
+          ],
+          "src": "src/jellyfin"
+        }
+      ],
+      "dest": "plugin-api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "plugin-api/**.yml",
+          "plugin-api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "general/**.md",
+          "general/**/toc.yml",
+          "toc.yml",
+          "index.md"
+        ]
+      }
+    ],    
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "overwrite": "apispec/*.md",
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "Documentation - Jellyfin Project",
+      "_appLogoPath": "images/header-icon.svg",
+      "_appFaviconPath": "images/favicon.png",
+      "_gitContribute": {
+        "repo": "https://github.com/jellyfin/jellyfin-docs",
+        "branch": "master",
+        "apiSpecFolder": "apispec"
+      },
+      "_enableSearch": true
+    },
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default"
+    ],
+    "postProcessors": [],
+    "markdownEngineName": "dfm",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false,
+    "sitemap":{
+      "baseUrl": "https://jellyfin.org/docs/",
+      "priority": 0.1,
+      "changefreq": "daily"
+    }
+  }  
+}

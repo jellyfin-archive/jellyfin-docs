@@ -1,0 +1,11 @@
+- uid: general-docs
+  href: general/
+- uid: plugin-api-docs
+  href: plugin-api/
+- uid: getting-help
+- uid: faq
+- uid: about
+- name: GitHub
+  href: https://github.com/jellyfin
+- name: Website
+  href: https://jellyfin.org

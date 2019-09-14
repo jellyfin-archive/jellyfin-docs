@@ -1,0 +1,43 @@
+- uid: clients-index
+
+- name: Administration
+  items:
+  - uid: admin-installing
+  - uid: admin-building
+  - uid: admin-quick-start
+  - uid: admin-migrate-from-emby
+  - uid: admin-port-bindings
+  - uid: admin-connectivity
+  - uid: admin-reverse-proxy
+  - uid: admin-hardware-acceleration
+
+- uid: contrib-index
+  items:
+  - uid: contrib-issues
+  - uid: contrib-development
+  - uid: contrib-branding-guide
+  - uid: contrib-release-procedure
+
+- name: Server
+  items:
+  - name: Media
+    items:
+    - uid: server-media-cloud-storage
+    - uid: server-media-movies
+    - uid: server-media-music
+    - uid: server-media-shows
+    - uid: server-media-subtitles
+  
+  - uid: server-devices
+  - uid: server-libraries
+  - uid: server-live-tv
+  - uid: server-notifications
+  - uid: server-settings
+  - uid: server-tasks
+  - uid: server-transcoding
+  - uid: server-users
+
+  - uid: server-plugins-index
+    items:
+    - uid: server-plugins-open-subtitles
+    - uid: server-plugins-tvheadend

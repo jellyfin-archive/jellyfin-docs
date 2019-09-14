@@ -1,0 +1,52 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+pr:
+  autoCancel: true
+
+trigger:
+  batch: true
+
+jobs:
+  - job: docs_build
+    displayName: Docs Build
+    pool:
+      vmImage: windows-latest    
+    steps:
+    - checkout: self
+      clean: true
+      submodules: true
+      persistCredentials: true
+
+    - task: PowerShell@2
+      displayName: "DocFX Build"
+      inputs:
+        targetType: 'inline'        
+        script: 'choco install docfx -y
+          docfx docfx.json
+          if ($lastexitcode -ne 0){
+            throw ("Error generating document")
+          }'
+    
+    - task: CmdLine@2
+      displayName: "Clone Website"
+      inputs:
+        script: 'git clone https://github.com/jellyfin/jellyfin.github.io jellyfin.github.io' 
+        workingDirectory: '$(Build.ArtifactStagingDirectory)'
+        #failOnStderr: false # Optional
+
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: '$(Build.SourcesDirectory)/_site'
+        contents: '**' 
+        targetFolder: '$(Build.ArtifactStagingDirectory)/jellyfin.github.io/docs'
+        cleanTargetFolder: true # Optional
+        overWrite: true # Optional
+        #flattenFolders: false # Optional
+        #preserveTimestamp: false # Optional
+
+    - task: CmdLine@2
+      displayName: "Add files to website"
+      inputs:
+        script: 'git add docs && git commit -m "Documentation update" && git push origin' 
+        workingDirectory: '$(Build.ArtifactStagingDirectory)/jellyfin.github.io'
+        #failOnStderr: false # Optional

@@ -1,0 +1,4 @@
+[submodule "jellyfin"]
+	path = src/jellyfin
+	branch = master
+	url = https://github.com/jellyfin/jellyfin

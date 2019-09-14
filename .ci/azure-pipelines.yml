@@ -20,11 +20,12 @@ jobs:
     - task: PowerShell@2
       displayName: "DocFX Build"
       inputs:
-        targetType: 'filePath'        
+        targetType: 'filePath'
         filePath: '.ci/build-in-ci.ps1'
+        workingDirectory: '$(Build.SourcesDirectory)'
     
     - task: CmdLine@2
-      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
       displayName: "Clone Website"
       inputs:
         script: 'git clone https://github.com/jellyfin/jellyfin.github.io jellyfin.github.io' 
@@ -32,7 +33,7 @@ jobs:
         #failOnStderr: false # Optional
 
     - task: CopyFiles@2
-      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
       displayName: "Copy Generated Website"
       inputs:
         sourceFolder: '$(Build.SourcesDirectory)/_site'
@@ -44,9 +45,9 @@ jobs:
         #preserveTimestamp: false # Optional
 
     - task: CmdLine@2
-      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
-      displayName: "Add files to website"
+      #condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      displayName: "Add, Commit and Push files to website"
       inputs:
-        script: 'git add docs && git commit -m "Documentation update" && git push origin'
+        script: 'git config --global core.autocrlf input && git add docs && git config --global user.email "team@jellyfin.org" && git config --global user.name "jellyfin-bot" && git commit -m "Documentation update" && git push origin'
         workingDirectory: '$(Build.ArtifactStagingDirectory)/jellyfin.github.io'
         #failOnStderr: false # Optional

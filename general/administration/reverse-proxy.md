@@ -49,8 +49,8 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your Firewa
 #    ProxyPassReverse "/" "http://SERVER_IP_ADDRESS:8096/"
 #
 #    SSLEngine on
-#    SSLCertificateFile /etc/letsencrypt/DOMAIN_NAME/fullchain.pem
-#    SSLCertificateKeyFile /etc/letsencrypt/DOMAIN_NAME/privkey.pem
+#    SSLCertificateFile /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem
+#    SSLCertificateKeyFile /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem
 #    Protocols h2 http/1.1
 #
 #    ErrorLog /var/log/apache2/DOMAIN_NAME-error.log

@@ -17,6 +17,12 @@ jobs:
       submodules: true
       persistCredentials: true
 
+    - task: CmdLine@2
+      displayName: "Update submodules"
+      inputs:
+        script: 'git submodule update --recursive --remote'
+        workingDirectory: '$(Build.SourcesDirectory)'
+
     - task: PowerShell@2
       displayName: "DocFX Build"
       inputs:
@@ -25,7 +31,7 @@ jobs:
         workingDirectory: '$(Build.SourcesDirectory)'
 
     - task: ArchiveFiles@2
-      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI', 'BuildCompletion'))
       displayName: "Package Documentation Website"
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
@@ -38,7 +44,7 @@ jobs:
         #quiet: # Optional
 
     - task: GitHubRelease@0
-      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI', 'BuildCompletion'))
       displayName: "Create GitHub release"
       inputs:
         gitHubConnection: Jellyfin Release Download

@@ -73,6 +73,7 @@
       "baseUrl": "https://jellyfin.org/docs/",
       "priority": 0.1,
       "changefreq": "daily"
-    }
+    },
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
   }  
 }

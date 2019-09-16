@@ -175,6 +175,8 @@ The official Jellyfin Kodi plugin.
 
 This will help keep your media libraries up to date without waiting for a periodic resync from Kodi.
 
+**Note: Kodi's default skin does not display all unicode characters. To display unicode characters the skins font must be changed**
+
 ## Mopidy
 
 ### Mopidy-Jellyfin

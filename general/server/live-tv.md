@@ -16,12 +16,18 @@ Jellyfin has support for the following tuners but can support additional tuners 
 
 HDHomerun is a special case because they will usually get detected automatically by the server. Otherwise you can manually add tuners by navigating to **Live TV** in the settings and adding one there.
 
+Note:  Docker users using HDHomerun devices should set networking to host mode as Jellyfin needs to connect to a changing UDP port
+
 ### Guide
 
 The guides available below are included with the server but additional guides could eventually be installed through the plugin catalog.
 
   * Schedules Direct
   * XML TV
+
+Guide data will need to be mapped to their corresponding channels after a guide data provider is configured.  This can be accessed by going to
+
+Admin Dashboard-> Live TV -> TV Guide Data Providers -> Your Provider -> ... -> Map Channels
 
 ### Status
 

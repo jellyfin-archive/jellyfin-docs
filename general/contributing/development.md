@@ -34,16 +34,20 @@ The first step is to set up a copy of the Git repository of the project you want
 1. On GitHub, "Fork" the Jellyfin repository you wish to contribute to, to your own user account using the "Fork" button in the relevant repository.
 
 1. Clone your fork to your local machine and enter the directory:  
-    `git clone git@github.com:yourusername/projectname.git`  
-    `cd projectname/`
+   `git clone git@github.com:yourusername/projectname.git`  
+   `cd projectname/`
 
 1. Add the "upstream" remote, which allows you to pull down changes from the main project easily:  
-    `git remote add upstream git@github.com:jellyfin/projectname.git`
+   `git remote add upstream git@github.com:jellyfin/projectname.git`
 
 1. Initialize the Git submodules; most projects have at least one:  
-    `git submodule update --init`
+   `git submodule update --init`
 
     **NOTE:** Avoid editing files inside of submodules; this may result in unintended side-effects including overwriting of your work. Always modify the submodule in its own cloned repository elsewhere.
+
+1. To get the `Jellyfin.Server` project to run successfully, checkout both the main [Jellyfin project](https://github.com/jellyfin/jellyfin), as well as the [Jellyfin Web](https://github.com/jellyfin/jellyfin-web) project.
+
+1. Build the Jellyfin Web project with Yarn or NPM, and copy the location of the resulting `dist` folder. In your `Jellyfin.Server` project add an environment variable named `JELLYFIN_WEB_DIR` with the value set to the full path of your `dist` folder.
 
 You will now be ready to begin building or modifying the project.
 
@@ -52,29 +56,29 @@ You will now be ready to begin building or modifying the project.
 Once you have your repository, you can get to work.
 
 1. Rebase your local branches against upstream `master` so you are working off the latest changes:  
-    `git fetch --all`  
-    `git rebase upstream/master`  
+   `git fetch --all`  
+   `git rebase upstream/master`
 
 1. Create a local feature branch off of `master` to make your changes:  
-    `git checkout -b my-feature master`
+   `git checkout -b my-feature master`
 
 1. Make your changes and commits to this local feature branch.
 
 1. Repeat step 1 on your local feature branch once you're done your work, to ensure you have no conflicts with other work done since you stated.
 
 1. Push up your local feature branch to your GitHub fork:  
-    `git push --set-upstream origin my-feature`
+   `git push --set-upstream origin my-feature`
 
 1. On GitHub, create a new PR against the upstream `master` branch following the advice below.
 
 1. Once your PR is merged, ensure you keep your local branches up-to-date:  
-    `git fetch --all`  
-    `git checkout master`  
-    `git rebase upstream/master`  
-    `git push -u origin master`  
+   `git fetch --all`  
+   `git checkout master`  
+   `git rebase upstream/master`  
+   `git push -u origin master`
 
 1. Delete your local feature branch if you no longer need it:
-    `git branch -d my-feature`
+   `git branch -d my-feature`
 
 ## CONTRIBUTORS.md
 
@@ -97,35 +101,35 @@ The `master` branch is the primary face of the project and main development bran
 To test someone else's pull request, you must import the changes to your local repository:
 
 1. Fetch the changes in a pull request and link them to a new local branch:
-    `git fetch upstream pull/<PR_ID>/head:my-testing-branch`  
+   `git fetch upstream pull/<PR_ID>/head:my-testing-branch`
 
     **NOTE:** `<PR_ID>` is pull request ID number on GitHub.
 
 1. Checkout the new local branch:  
-    `git checkout my-testing-branch`
+   `git checkout my-testing-branch`
 
 1. Perform any testing or build required to test, then return to master and delete the branch:
-    `git checkout master`  
-    `git branch -D my-testing-branch`
+   `git checkout master`  
+   `git branch -D my-testing-branch`
 
 ## Pull Request guidelines
 
 When submitting a new PR, please ensure you do the following things. If you haven't, please read [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) as it is a great resource for writing useful commit messages.
 
-* Before submitting a PR, squash "junk" commits together to keep the overall history clean. A single commit should cover a single significant change: avoid squashing all your changes together, especially for large PRs that touch many files, but also don't leave "fixed this", "whoops typo" commits in your branch history as this is needless clutter in the final history of the project.
+-   Before submitting a PR, squash "junk" commits together to keep the overall history clean. A single commit should cover a single significant change: avoid squashing all your changes together, especially for large PRs that touch many files, but also don't leave "fixed this", "whoops typo" commits in your branch history as this is needless clutter in the final history of the project.
 
-* Write a good title that quickly describes what has been changed. For example, "Add LDAP support to Jellyfin". As mentioned in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), always use the imperative mood, and keep the title short but descriptive. The title will eventually be a changelog entry, so please try to use proper capitalization but no punctuation; note that the Core team may alter titles to better confirm to this standard before merging.
+-   Write a good title that quickly describes what has been changed. For example, "Add LDAP support to Jellyfin". As mentioned in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), always use the imperative mood, and keep the title short but descriptive. The title will eventually be a changelog entry, so please try to use proper capitalization but no punctuation; note that the Core team may alter titles to better confirm to this standard before merging.
 
-* For anything but the most trivial changes that can be described fully in the (short) title, follow the PR template and write a PR body to describe, in as much detail as possible:
+-   For anything but the most trivial changes that can be described fully in the (short) title, follow the PR template and write a PR body to describe, in as much detail as possible:
 
-    1. *Why* the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
+    1. _Why_ the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
 
-    1. *How*, in broad strokes, you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
+    1. _How_, in broad strokes, you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
-* Tag any work-in-progress commits with `[WIP]`, `WIP - `, or some variation at the beginning of the title. While this tag is in place, the PR should *not* be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
+-   Tag any work-in-progress commits with `[WIP]`, `WIP -`, or some variation at the beginning of the title. While this tag is in place, the PR should _not_ be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
 
-* Avoid force-pushing to large or complex non-WIP pull requests, if at all possible, and especially after review. Doing so forces unneccessary re-review to verify the changes are still OK.
+-   Avoid force-pushing to large or complex non-WIP pull requests, if at all possible, and especially after review. Doing so forces unneccessary re-review to verify the changes are still OK.
 
-* Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
+-   Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 
-* All PRs require review by at least 2 Core team members before being merged into `master`, though reviews from any contributor are welcome and helpful! After the second Core team member review, the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if required.
+-   All PRs require review by at least 2 Core team members before being merged into `master`, though reviews from any contributor are welcome and helpful! After the second Core team member review, the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if required.

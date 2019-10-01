@@ -30,7 +30,11 @@
   
   - uid: server-devices
   - uid: server-libraries
-  - uid: server-live-tv
+  - name: Live TV
+    items:
+    - uid: server-live-tv
+    - uid: server-live-tv-setup
+  
   - uid: server-notifications
   - uid: server-settings
   - uid: server-tasks

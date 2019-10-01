@@ -32,8 +32,8 @@
   - uid: server-libraries
   - name: Live TV
     items:
-    - uid: server-live-tv-general
-    - uid: server-live-tv-setup
+    - uid: server-live-tv-index
+    - uid: server-live-tv-setup-guide
   
   - uid: server-notifications
   - uid: server-settings

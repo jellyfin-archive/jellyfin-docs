@@ -1,5 +1,5 @@
 ---
-uid: server-live-tv
+uid: server-live-tv-general
 title: Live TV
 ---
 

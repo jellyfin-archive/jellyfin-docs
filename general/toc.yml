@@ -32,7 +32,7 @@
   - uid: server-libraries
   - name: Live TV
     items:
-    - uid: server-live-tv
+    - uid: server-live-tv-general
     - uid: server-live-tv-setup
   
   - uid: server-notifications

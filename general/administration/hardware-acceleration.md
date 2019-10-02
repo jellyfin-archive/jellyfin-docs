@@ -72,3 +72,72 @@ Useful resources:
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard
 
 Note: In testing transcoding was not working fast enough to run in real time because the video was being resized. The Pi 3 is likely not fast enough to resize as part of the transcoding.
+
+### Hardware acceleration using NVIDIA in Docker
+##### Tested with P2000 on Debian 9 (stretch)
+
+1. Install nvidia drivers    
+    a.   [https://www.nvidia.com/Download/index.aspx](https://www.nvidia.com/Download/index.aspx) for latest
+    b.   To test drivers run `nvidia-smi`        
+     c.   Expected output:
+```
+> nvidia-smi
+$Date
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 410.66 Driver Version: 410.66 CUDA Version: 10.0 |
+|-------------------------------+----------------------+----------------------+
+| GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC |
+| Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. |
+|===============================+======================+======================|
+| 0 Quadro P2000 Off | 00000000:83:00.0 Off | N/A |
+| 68% 40C P0 19W / 75W | 0MiB / 5059MiB | 0% Default |
++-------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------+
+| Processes: GPU Memory |
+| GPU PID Type Process name Usage |
+|=============================================================================|
+| No running processes found |
++-----------------------------------------------------------------------------+
+```
+2.  Install `nvidia-docker2`    
+   a.   [https://github.com/NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
+   b.   Either edit docker daemon or set runtime argument       
+    ```
+    cat /etc/docker/daemon.json
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+        "default-runtime": "nvidia"
+    }
+    
+    ```
+    
+    c.   Required Docker environment variables    
+    -   NVIDIA_VISIBLE_DEVICES=all
+    -   NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+ 
+ #### docker-compose example
+ ```
+jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    hostname: jellyfin
+    runtime: nvidia
+    restart: always
+    ports:
+      - '8096:8096/tcp'
+    volumes:
+      - ~/config/jellyfin:/config
+      - ~/cache:/cache
+      - ~/media:/media
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
+    devices:
+      - "/dev/dri:/dev/dri"
+```
+
+- If you can run `nvidia-smi` within your docker container NVENC/NVDEC should be available. 

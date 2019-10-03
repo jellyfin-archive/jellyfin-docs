@@ -63,14 +63,17 @@ An Unraid Docker template is available in the repository.
 
 A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift). Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
 
-## Windows (x64)
+## Windows (x86/x64)
 
 Windows installers and builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
 
 [!WARNING]
-> If you installed a version prior to 10.4.0 using a powershell script, you will need to manually remove the service and uninstall the server. Also one might need to move the data files to the correct location, or point the installer at the old location.
+> If you installed a version prior to 10.4.0 using a powershell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually. Also one might need to move the data files to the correct location, or point the installer at the old location.
 
-### Install using installer
+[!WARNING]
+> The 32-bit or x86 version is not recommended. `ffmpeg` and its video encoders generally perform better as a 64-bit executable due to the extra registers provided. This means that the 32-bit version of Jellyfin is deprecated.
+
+### Install using installer (x64)
 
 Only available for versions 10.4.0+.
 
@@ -96,7 +99,7 @@ Only available for versions 10.4.0+.
 1. Click Uninstall
 
 
-### Manual installation
+### Manual installation (x86/x64)
 
 **Install**
 
@@ -129,7 +132,7 @@ Only available for versions 10.4.0+.
 1. Rename `system-bak` to `system`
 1. Run `jellyfin.bat` to start the server again
 
-### Install using legacy script
+### Install using legacy script (x86/x64)
 
 Only for versions 10.3.x and earlier.
 

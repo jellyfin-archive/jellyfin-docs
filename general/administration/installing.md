@@ -63,10 +63,6 @@ An Unraid Docker template is available in the repository.
 
 A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift). Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
 
-## Portable Binaries
-
-Portable binary packages containing a compiled Jellyfin instance are available for multiple platforms. For all portable binaries, extract the relevant archive to a directory and launch the binary (`jellyfin` on Linux/MacOS, `jellyfin.exe` on Windows).
-
 ## Windows (x64)
 
 Windows installers and builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
@@ -133,15 +129,35 @@ Only available for versions 10.4.0+.
 1. Rename `system-bak` to `system`
 1. Run `jellyfin.bat` to start the server again
 
-### MacOS
+## MacOS
 
-MacOS builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).
+MacOS Application packages and builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).
 
-### Linux (generic amd64)
+**Install**
+
+1. Download the latest version.
+1. Drag the `.app` package into the Applications folder
+1. Start the application
+1. Open your browser at http://localhost:8096
+
+**Upgrade**
+
+1. Download the latest version.
+1. Stop the currently running server either via the dahsboard or using the application icon.
+1. Drag the new `.app` package into the Applications folder and click yes to replace the files.
+1. Start the application
+1. Open your browser at http://localhost:8096
+
+**Uninstall**
+
+1. Stop the currently running server either via the dahsboard or using the application icon.
+1. Move the `.app` package to the Trash.
+
+## Linux (generic amd64)
 
 Generic amd64 Linux builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/linux).
 
-### Portable DLL
+## Portable DLL
 
 Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 

@@ -129,6 +129,20 @@ Only available for versions 10.4.0+.
 1. Rename `system-bak` to `system`
 1. Run `jellyfin.bat` to start the server again
 
+### Install using legacy script
+
+Only for versions 10.3.x and earlier.
+
+1. Download and extract the latest version
+1. Run `install.bat` or `install-jellyfin.ps1`
+1. (optional) Enter a custom install location (default is `%appdata%`)
+1. (optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
+1. (optional) Select to install jellyfin as a service
+1. (optional) Import old library - Not compatible with newer Emby versions
+1. (optional) Create a shortcut on your desktop
+1. (optional) Run Jellyfin after installation
+1. Press `Install`
+
 ## MacOS
 
 MacOS Application packages and builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).

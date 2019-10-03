@@ -3,7 +3,9 @@ uid: server-live-tv-setup-guide
 title: Live TV Setup Guide
 ---
 
-# Add a TV tuner to Jellyfin (Automatic Discovery)
+# Live TV Setup Guide
+
+## Add a TV tuner to Jellyfin (Automatic Discovery)
 
 Click on the Admin Panel Icon in the top right corner (1)
 Click 'Live TV' (2) under the 'Live TV' section
@@ -21,13 +23,13 @@ Click on the device you'd like to set up then set any options then click 'Save'
 
 ![](~/images/live-tv-setup-tuner3.png)
 
-# Add a TV tuner to Jellyfin (Manual setup)
+## Add a TV tuner to Jellyfin (Manual setup)
 
 You can set up your tuners manually if they were not automatically discovered.  Click the 'Tuner Type' pull down.  Choose between 'HD Homerun', 'M3U Tuner', and 'Other'
 
 ![](~/images/live-tv-setup-tuner4.png)
 
-## HD Homerun specific options:
+### HD Homerun specific options:
 
 * Tuner IP Address is the URL of your HD Homerun device.  Format will be http://YOUR.IP.ADDRESS
 
@@ -41,7 +43,7 @@ To set a favorite, go to http://my.hdhomerun.com , select your tuner and then cl
 
 
 
-## M3U Tuner specific options:
+### M3U Tuner specific options:
 
 This tuner allows you to add IPTV channel to Jellyfin by using the appropriate M3U8 playlist file.
 
@@ -54,7 +56,7 @@ This tuner allows you to add IPTV channel to Jellyfin by using the appropriate M
 * Auto-loop live streams is sometimes necessary for some IPTV channels.  Turn this on only if your streams are not playing correctly
 
 
-# Adding guide data:
+## Adding guide data:
 
 Guide data is necessary for scheduling tv recordings and for browsing what's currently playing and what will air later.  Follow these steps once you have a tuner device set up.  Click on the Admin Panel Icon in the top right corner, Click 'Live TV' (2) under the 'Live TV' section, Click the '+' button next to 'TV Guide Data Providers' :
 
@@ -65,7 +67,7 @@ Choose between 'Schedules Direct' and 'Xml TV'
  
 **Schedules Direct:**
 
-Schedules Direct is a pay service that provides U.S./Canadian guide data for use in OSS projects.  The price is $25 a year and has not increased since it began in 2007.  The guide data is highly reliable.  Create an account at http://www.schedulesdirect.org
+Schedules Direct is a payed service that provides U.S./Canadian guide data for use in OSS projects.  The price is $25 a year and has not increased since it began in 2007.  The guide data is highly reliable.  Create an account at http://www.schedulesdirect.org
 
 **Xml TV:**
 

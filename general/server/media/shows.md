@@ -3,7 +3,7 @@ uid: server-media-shows
 title: Shows
 ---
 
-## Shows
+# Shows
 
 The most common naming scheme for shows is categorizing the files by series and then season. Another common method is simply using series folders, especially for shows that are organized by air date and those without seasons.
 

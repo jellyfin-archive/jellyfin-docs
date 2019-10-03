@@ -3,13 +3,13 @@ uid: server-media-subtitles
 title: Subtitles
 ---
 
-## Subtitles
+# Subtitles
 
 Subtitles will usually be embedded in video files, but the server also supports external subtitles. Supported formats include ass, srt, ssa, sub, idx, and vtt files.
 
 Normally the server will only attempt to scan for local files, but if any subtitle plugins are installed there is also support for downloading remote subtitles automatically.
 
-### Formatting
+## Formatting
 
 Jellyfin will search for subtitles that exactly match the video filename. They can optionally include a language code or name that will get picked up as well.
 
@@ -22,7 +22,7 @@ Jellyfin will search for subtitles that exactly match the video filename. They c
         Film.german.vtt
 ```
 
-### Default
+## Default
 
 Subtitles can be labeled as default by appending `.default` at the end of the filename.
 

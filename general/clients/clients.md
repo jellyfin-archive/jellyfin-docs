@@ -24,7 +24,7 @@ The official Jellyfin Android app supporting Android 5+.
 <a href='https://play.google.com/store/apps/details?id=org.jellyfin.mobile&utm_source=docs&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
 
 * [GitHub](https://github.com/jellyfin/jellyfin-android)
-* [Binary repository](https://repo.jellyfin.org/releases/client/android)
+* [Binary repository](https://jellyfin.org/downloads/clients/#android)
 
 ### Jellyfin for Android TV
 
@@ -37,7 +37,7 @@ The official Jellyfin Android TV app.
 <a href='https://play.google.com/store/apps/details?id=org.jellyfin.androidtv'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
 
 * [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
-* [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
+* [Binary repository](https://jellyfin.org/downloads/clients/#androidtv)
 
 ### Jellyfin for Amazon Fire TV
 
@@ -50,7 +50,7 @@ The official Jellyfin Fire TV app.
 <a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'><img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
 
 * [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
-* [Binary repository](https://repo.jellyfin.org/releases/client/androidtv)
+* [Binary repository](https://jellyfin.org/downloads/clients/#androidtv)
 
 ### Yatse
 
@@ -143,7 +143,7 @@ The official Jellyfin Kodi plugin.
 
 #### Installing
 
-1. Download the repository installer as a [zip file](https://repo.jellyfin.org/releases/client/kodi/repository.jellyfin.kodi.zip)
+1. Download the repository installer [here](https://jellyfin.org/downloads/clients/#kodi-repository)
     * It will be saved as `repository.jellyfin.kodi.zip`
 2. Install the Jellyfin repository
     * Open Kodi and navigate to "Add-on Browser"

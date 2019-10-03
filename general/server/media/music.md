@@ -3,7 +3,7 @@ uid: server-media-music
 title: Music
 ---
 
-## Music
+# Music
 
 The most common organization scheme for music is separation by artist and then album.
 
@@ -28,7 +28,7 @@ You can also separate your music into artist folders or with no folder structure
 
 Individual songs have no required parameters for filenames since the information will be scraped from metadata.
 
-### Discs
+## Discs
 
 Albums with several discs will be fine with the metadata tags, but you can also use subfolders for the discs. The number can be appended after a space, hyphen, or directly after one of the following keywords.
 
@@ -50,22 +50,22 @@ Albums with several discs will be fine with the metadata tags, but you can also 
                 02 - Song.mp3
 ```
 
-### Images
+## Images
 
 Images will be scraped from album or artist folders, and they can also be embedded in the music files themselves. The supported filenames are listed below for each respective image.
 
-#### Primary
+### Primary
 
   * folder
   * poster
   * cover
   * default
 
-#### Art
+### Art
 
   * clearart
 
-#### Backdrop
+### Backdrop
 
 Multiple backdrop images can be used to cycle through several over time. Simply append a number to the end of the filename directly after or after a hyphen.
 
@@ -75,20 +75,20 @@ Multiple backdrop images can be used to cycle through several over time. Simply 
   * art
   * extrafanart
 
-#### Banner
+### Banner
 
   * banner
 
-#### Disc
+### Disc
 
   * disc
   * cdart
 
-#### Logo
+### Logo
 
   * logo
 
-#### Thumb
+### Thumb
 
   * thumb
   * landscape

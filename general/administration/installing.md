@@ -67,21 +67,38 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 Portable binary packages containing a compiled Jellyfin instance are available for multiple platforms. For all portable binaries, extract the relevant archive to a directory and launch the binary (`jellyfin` on Linux/MacOS, `jellyfin.exe` on Windows).
 
-### Windows (x64/x86)
+## Windows (x64)
 
-Windows builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
+Windows installers and builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
 
-### Install via script
+[!WARNING]
+> If you installed a version prior to 10.4.0 using a powershell script, you will need to manually remove the service and uninstall the server. Also one might need to move the data files to the correct location, or point the installer at the old location.
 
-1. Download and extract the latest version
-1. Run `install.bat` or `install-jellyfin.ps1`
-1. (optional) Enter a custom install location (default is `%appdata%`)
-1. (optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
-1. (optional) Select to install jellyfin as a service
-1. (optional) Import old library - Not compatible with newer Emby versions
-1. (optional) Create a shortcut on your desktop
-1. (optional) Run Jellyfin after installation
-1. Press `Install`
+### Install using installer
+
+Only available for versions 10.4.0+.
+
+**Install**
+
+1. Download the latest version
+1. Run the installer
+1. (optional) When installing as a service, pick the service account type.
+1. If everything was completed succesfully, the Jellyfin service is now running
+1. Open your browser at http://localhost:8096 to finish setting up Jellyfin
+
+
+**Update**
+1. Download the latest version
+1. Run the installer
+1. If everything was completed succesfully, the Jellyfin service is now running as the new version.
+
+
+**Uninstall**
+
+1. Go to `Add or remove programs` in Windows
+1. Search for Jellyfin
+1. Click Uninstall
+
 
 ### Manual installation
 

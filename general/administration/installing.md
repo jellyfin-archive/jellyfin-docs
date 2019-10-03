@@ -63,27 +63,43 @@ An Unraid Docker template is available in the repository.
 
 A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift). Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
 
-## Portable Binaries
+## Windows (x86/x64)
 
-Portable binary packages containing a compiled Jellyfin instance are available for multiple platforms. For all portable binaries, extract the relevant archive to a directory and launch the binary (`jellyfin` on Linux/MacOS, `jellyfin.exe` on Windows).
+Windows installers and builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
 
-### Windows (x64/x86)
+[!WARNING]
+> If you installed a version prior to 10.4.0 using a PowerShell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually. Also one might need to move the data files to the correct location, or point the installer at the old location.
 
-Windows builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
+[!WARNING]
+> The 32-bit or x86 version is not recommended. `ffmpeg` and its video encoders generally perform better as a 64-bit executable due to the extra registers provided. This means that the 32-bit version of Jellyfin is deprecated.
 
-### Install via script
+### Install using installer (x64)
 
-1. Download and extract the latest version
-1. Run `install.bat` or `install-jellyfin.ps1`
-1. (optional) Enter a custom install location (default is `%appdata%`)
-1. (optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
-1. (optional) Select to install jellyfin as a service
-1. (optional) Import old library - Not compatible with newer Emby versions
-1. (optional) Create a shortcut on your desktop
-1. (optional) Run Jellyfin after installation
-1. Press `Install`
+Only available for versions 10.4.0+.
 
-### Manual installation
+**Install**
+
+1. Download the latest version
+1. Run the installer
+1. (optional) When installing as a service, pick the service account type.
+1. If everything was completed successfully, the Jellyfin service is now running
+1. Open your browser at http://localhost:8096 to finish setting up Jellyfin
+
+
+**Update**
+1. Download the latest version
+1. Run the installer
+1. If everything was completed successfully, the Jellyfin service is now running as the new version.
+
+
+**Uninstall**
+
+1. Go to `Add or remove programs` in Windows
+1. Search for Jellyfin
+1. Click Uninstall
+
+
+### Manual installation (x86/x64)
 
 **Install**
 
@@ -93,12 +109,12 @@ Windows builds in ZIP archive format are available [here](https://repo.jellyfin.
 1. Create `jellyfin.bat` within your `jellyfin` folder containing:
     - To use the default library/data location at `%localappdata%`:  
     `<--Your install path-->\jellyfin\system\jellyfin.exe`
-    - To use a custom library/data location (Path after the -d paramenter):  
+    - To use a custom library/data location (Path after the -d parameter):  
     `<--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data`
-    - To use a custom library/data location (Path after the -d paramenter) and disable the autostart of the webapp:  
+    - To use a custom library/data location (Path after the -d parameter) and disable the auto-start of the webapp:  
     `<--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data -noautorunwebapp`
 1. Run `jellyfin.bat`
-1. Open your browser at http://<--Server-IP-->:8096 (if autostart of webapp is disabled)
+1. Open your browser at http://<--Server-IP-->:8096 (if auto-start of webapp is disabled)
 
 
 **Update**
@@ -116,15 +132,49 @@ Windows builds in ZIP archive format are available [here](https://repo.jellyfin.
 1. Rename `system-bak` to `system`
 1. Run `jellyfin.bat` to start the server again
 
-### MacOS
+### Install using legacy script (x86/x64)
 
-MacOS builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).
+Only for versions 10.3.x and earlier.
 
-### Linux (generic amd64)
+1. Download and extract the latest version
+1. Run `install.bat` or `install-jellyfin.ps1`
+1. (optional) Enter a custom install location (default is `%appdata%`)
+1. (optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
+1. (optional) Select to install Jellyfin as a service
+1. (optional) Import old library - Not compatible with newer Emby versions
+1. (optional) Create a shortcut on your desktop
+1. (optional) Run Jellyfin after installation
+1. Press `Install`
+
+## MacOS
+
+MacOS Application packages and builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).
+
+**Install**
+
+1. Download the latest version.
+1. Drag the `.app` package into the Applications folder
+1. Start the application
+1. Open your browser at http://localhost:8096
+
+**Upgrade**
+
+1. Download the latest version.
+1. Stop the currently running server either via the dashboard or using the application icon.
+1. Drag the new `.app` package into the Applications folder and click yes to replace the files.
+1. Start the application
+1. Open your browser at http://localhost:8096
+
+**Uninstall**
+
+1. Stop the currently running server either via the dashboard or using the application icon.
+1. Move the `.app` package to the Trash.
+
+## Linux (generic amd64)
 
 Generic amd64 Linux builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/linux).
 
-### Portable DLL
+## Portable DLL
 
 Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 

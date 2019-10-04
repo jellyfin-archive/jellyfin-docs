@@ -42,8 +42,8 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your Firewa
 #
 #    ProxyPreserveHost On
 #
-#    ProxyPass "/embywebsocket" "ws://SERVER_IP_ADDRESS:8096/embywebsocket"
-#    ProxyPassReverse "/embywebsocket" "ws://SERVER_IP_ADDRESS:8096/embywebsocket"
+#    ProxyPass "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"
+#    ProxyPassReverse "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"
 #
 #    ProxyPass "/" "http://SERVER_IP_ADDRESS:8096/"
 #    ProxyPassReverse "/" "http://SERVER_IP_ADDRESS:8096/"
@@ -134,7 +134,7 @@ server {
 #        # Disable buffering when the nginx proxy gets very resource heavy upon streaming
 #        proxy_buffering off;
 #    }
-#    location /embywebsocket {
+#    location /socket {
 #        # Proxy Jellyfin Websockets traffic
 #        proxy_pass http://SERVER_IP_ADDRESS:8096;
 #        proxy_http_version 1.1;

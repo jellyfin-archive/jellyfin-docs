@@ -3,7 +3,7 @@ uid: server-media-movies
 title: Movies
 ---
 
-## Movies
+# Movies
 
 Movies should usually be in the library root directory or in a subfolder for the individual films. The subfolders allow for organization of metadata and images. Adding the year at the end in parentheses will yield the best results when scraping metadata.
 

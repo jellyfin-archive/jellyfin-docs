@@ -65,7 +65,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 ## Windows (x86/x64)
 
-Windows installers and builds in ZIP archive format are available [here](https://repo.jellyfin.org/releases/server/windows).
+Windows installers and builds in ZIP archive format are available [here](https://jellyfin.org/downloads/#windows).
 
 [!WARNING]
 > If you installed a version prior to 10.4.0 using a PowerShell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually. Also one might need to move the data files to the correct location, or point the installer at the old location.
@@ -148,7 +148,7 @@ Only for versions 10.3.x and earlier.
 
 ## MacOS
 
-MacOS Application packages and builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/macos).
+MacOS Application packages and builds in TAR archive format are available [here](https://jellyfin.org/downloads/#macos).
 
 **Install**
 
@@ -172,11 +172,11 @@ MacOS Application packages and builds in TAR archive format are available [here]
 
 ## Linux (generic amd64)
 
-Generic amd64 Linux builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/linux).
+Generic amd64 Linux builds in TAR archive format are available [here](https://jellyfin.org/downloads/#linux).
 
 ## Portable DLL
 
-Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://repo.jellyfin.org/releases/server/portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
+Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://jellyfin.org/downloads/#portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
 ## Arch
 
@@ -184,11 +184,11 @@ Jellyfin is not yet available in the official repository but can be found [here]
 
 ## Fedora
 
-Fedora 29 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/fedora) for now but an official Fedora repository is coming soon.
+Fedora 29 builds in RPM package format are available [here](https://jellyfin.org/downloads/#fedora) for now but an official Fedora repository is coming soon.
 
 ## CentOS
 
-CentOS/RHEL 7 builds in RPM package format are available [here](https://repo.jellyfin.org/releases/server/centos) and an official CentOS/RHEL repository is planned for the future.
+CentOS/RHEL 7 builds in RPM package format are available [here](https://jellyfin.org/downloads/#centos) and an official CentOS/RHEL repository is planned for the future.
 
 ## Debian
 
@@ -222,7 +222,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 
 ### Packages
 
-Raw Debian packages, including old versions, are available [here](https://repo.jellyfin.org/releases/server/debian).
+Raw Debian packages, including old versions, are available [here](https://jellyfin.org/downloads/#debian).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Debian, as it contains several dependencies as well.
 
@@ -283,7 +283,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 
 ### Packages
 
-Raw Ubuntu packages, including old versions, are available [here](https://repo.jellyfin.org/releases/server/ubuntu).
+Raw Ubuntu packages, including old versions, are available [here](https://jellyfin.org/downloads/#ubuntu).
 
 **Note:** The repository is the preferred way to obtain Jellyfin on Ubuntu, as it contains several dependencies as well.
 

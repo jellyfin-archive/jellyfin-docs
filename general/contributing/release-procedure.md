@@ -5,7 +5,7 @@ title: Release Procedure
 
 # Release Procedure
 
-This document is a Core team guide, provided publicly to ensure transparancy in the release process.
+This document is a Core team guide, provided publicly to ensure transparency in the release process.
 
 ## Versioning
 
@@ -26,7 +26,7 @@ Jellyfin uses [semantic versioning](https://semver.org). All releases will have 
 
 ## General Release Philosophy
 
-Releases will generally be performed on Sundays "when ready". For Major/Minor releases, the "when ready" is generally quite flexable and is whenever the release is truly ready without major breaking bugs. After a major release, each Sunday the Admin team should review the recently merged PRs and, if backports are required, perform a Hotfix release containing those PRs.
+Releases will generally be performed on Sundays "when ready". For Major/Minor releases, the "when ready" is generally quite flexible and is whenever the release is truly ready without major breaking bugs. After a major release, each Sunday the Admin team should review the recently merged PRs and, if backports are required, perform a Hotfix release containing those PRs.
 
 ### Release procedure (Major/Minor version releases)
 

@@ -18,7 +18,7 @@ If your hardware supports this you can enable [hardware acceleration](xref:admin
 
 This option will manually set the amount of threads to use when transcoding. If you're not using the server for anything else it's best to leave this option alone.
 
-#### Types of Transcoding
+## Types of Transcoding
 There are three types of transcoding. The type being used will be listed in the dashboard when playing a file. They are ordered below from lowest to highest load on the server:
 
    * Direct Play - delivers file as-is with no modifications. Almost no additional load on the server.

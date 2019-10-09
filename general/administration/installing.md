@@ -169,6 +169,36 @@ MacOS Application packages and builds in TAR archive format are available [here]
 
 1. Stop the currently running server either via the dashboard or using the application icon.
 1. Move the `.app` package to the Trash.
+1. Delete the folder `~/.config/jellyfin/`
+1. Delete the folder `~/.local/share/jellyfin/`
+
+**Portable Version**
+1. Download the latest version
+1. Extract it into the Applications folder
+1. Open Terminal and type `cd` followed with a space then drag the jellyfin folder into the terminal.
+1. Type `./jellyfin` to run jellyfin.
+1. Open your browser at http://localhost:8096
+
+Closing the terminal window will end jellyfin. Running jellyfin in screen or tmux can prevent this from happening.
+
+**Upgrading the Portable Version**
+1. Download the latest version.
+1. Stop the currently running server either via the dashboard or using CTRL+C in the terminal window.
+1. Extract the latest version into Applications
+1. Open Terminal and type `cd` followed with a space then drag the jellyfin folder into the terminal.
+1. Type `./jellyfin` to run jellyfin.
+1. Open your browser at http://localhost:8096
+
+**Uninstalling the Portable Version**
+1. Stop the currently running server either via the dashboard or using CTRL+C in the terminal window.
+1. Move `/Application/jellyfin-version` folder to the Trash. Replace version with the actual version number you are trying to delete.
+1. Delete the folder `~/.config/jellyfin/`
+1. Delete the folder `~/.local/share/jellyfin/`
+
+**Using FFmpeg with the Portable Version**
+The portable version doesn't come with FFmpeg by default. To install FFmpeg you can use homebrew or download the build from [Zeranoe](https://ffmpeg.zeranoe.com/builds/macos64/static/) (Recommended).
+If using Zeranoe's build, extract it to the `/Applications/` folder.
+Navigate to Playback tab in the Dashboard and set the path to FFmpeg under FFmpeg Path.
 
 ## Linux (generic amd64)
 

@@ -39,4 +39,4 @@ Guide data will need to be mapped to their corresponding channels after a guide 
 
 You can view the status of each tuner connected to the server in the settings. There are also buttons to manually refresh the tuners if they experience problems.
 
-The guide data can be refreshed manually if you run into problems. This isn't normally required since the data is refreshed periodically. 
+The guide data can be refreshed manually if you run into problems. This isn't normally required since the data is refreshed periodically.

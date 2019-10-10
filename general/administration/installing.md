@@ -172,7 +172,7 @@ MacOS Application packages and builds in TAR archive format are available [here]
 
 **Deleting Configuation**
 
-This will delete all settings and user information.
+This will delete all settings and user information. This Applies for the .app package and the Portable Version.
 
 1. Delete the folder `~/.config/jellyfin/`
 1. Delete the folder `~/.local/share/jellyfin/`

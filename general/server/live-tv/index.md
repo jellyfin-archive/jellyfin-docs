@@ -22,9 +22,11 @@ Note:  Docker users using HDHomerun devices should set networking to host mode a
 
 M3U allows you to add IPTV channel playlists which you can view and record in Jellyfin.
 
+Additional tuner types are available via plugins.
+
 ## Guide
 
-Guide data will need to be mapped to their corresponding channels after a guide data provider is configured.  The guides available below are included with the server:
+Guide data will need to be mapped to their corresponding channels after a guide data provider is configured.  The guide data formats below are included with the server:
 
   * Schedules Direct
   * XMLTV
@@ -37,4 +39,4 @@ Guide data will need to be mapped to their corresponding channels after a guide 
 
 You can view the status of each tuner connected to the server in the settings. There are also buttons to manually refresh the tuners if they experience problems.
 
-The guide data can be refreshed manually if you run into problems. This isn't normally required since the data is refreshed periodically.
+The guide data can be refreshed manually if you run into problems. This isn't normally required since the data is refreshed periodically. 

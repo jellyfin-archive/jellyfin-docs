@@ -62,7 +62,7 @@ These allow a user to download media. Syncing and Transcoding are currently not 
 
 `Disable this user` Blocks the user from logging in, existing connections will be abruptly terminated.
 
-`Hide this user from login screens` Useful for private or hidden administrator accounts. The user will need to sign in manually by entering their username and password.
+`Hide this user from login screens` Useful for private or hidden administrator accounts. The user will need to sign in manually by entering their username and password. All newly created users are hidden by default.
 
 `Failed login attempts before user is locked out` Determines how many incorrect login attempts can be made before lockout occurs, disabling the user. 0 means inheriting the default of 3 for non-admin and 5 for admin, -1 disables lockout
 

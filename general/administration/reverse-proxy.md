@@ -121,6 +121,14 @@ server {
 #    ssl_stapling on;
 #    ssl_stapling_verify on;
 #
+#    # Security / XSS Mitigation Headers
+#    add_header X-Frame-Options "SAMEORIGIN";
+#    add_header X-XSS-Protection "1; mode=block";
+#
+#    # Content Security Policy
+#    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+#    add_header Content-Security-Policy "default-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src * data:; media-src *; script-src 'self' 'unsafe-inline' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js blob:; object-src 'none'; connect-src 'self'";
+#
 #    location / {
 #        # Proxy main Jellyfin traffic
 #        proxy_pass http://SERVER_IP_ADDRESS:8096;

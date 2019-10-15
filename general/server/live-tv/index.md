@@ -5,12 +5,13 @@ title: Live TV
 
 # Live TV
 
-Jellyfin allows you to watch live television if you have the hardware to support it, and even handles DVR from the settings. The first step is setting up a tuner to send data to Jellyfin, and then configure a source for the guide data.
+Jellyfin allows you to watch and record live television using supported hardware.  The first step is setting up a tuner to send data to Jellyfin, and then configure a source for the program guide data.
+
 [Click here](xref:server-live-tv-setup-guide) for the general setup guide.
 
 ## Tuner
 
-Jellyfin has support for the following tuners but can support additional tuners through the plugin catalog.
+Jellyfin has support for the following tuners: 
 
   * HDHomerun
   * M3U
@@ -19,16 +20,20 @@ HDHomerun is a special case because they will usually get detected automatically
 
 Note:  Docker users using HDHomerun devices should set networking to host mode as Jellyfin needs to connect to a changing UDP port
 
+M3U allows you to add IPTV channel playlists which you can view and record in Jellyfin.
+
+Additional tuner types are available via plugins.
+
 ## Guide
 
-The guides available below are included with the server but additional guides could eventually be installed through the plugin catalog.
+Guide data will need to be mapped to their corresponding channels after a guide data provider is configured.  The guide data formats below are included with the server:
 
   * Schedules Direct
-  * XML TV
+  * XMLTV
 
-Guide data will need to be mapped to their corresponding channels after a guide data provider is configured.  This can be accessed by going to
+[Schedules Direct](http://www.schedulesdirect.org) is a pay service providing electronic program guide data to the United States and Canada.
 
-Admin Dashboard-> Live TV -> TV Guide Data Providers -> Your Provider -> ... -> Map Channels
+[XMLTV](http://wiki.xmltv.org/index.php/Main_Page) is "... an XML based file format for describing TV listings. IPTV providers use XMLTV as the base reference template in their systems, and extend it internally according to their business needs."
 
 ## Status
 

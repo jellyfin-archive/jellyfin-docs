@@ -27,19 +27,22 @@
     - uid: server-media-music
     - uid: server-media-shows
     - uid: server-media-subtitles
-  
+
   - uid: server-devices
   - uid: server-libraries
   - name: Live TV
     items:
     - uid: server-live-tv-index
     - uid: server-live-tv-setup-guide
-  
+
   - uid: server-notifications
   - uid: server-settings
   - uid: server-tasks
   - uid: server-transcoding
-  - uid: server-users
+  - name: Users
+    items:
+    - uid: server-users-index
+    - uid: server-users-adding-managing
 
   - uid: server-plugins-index
     items:

@@ -37,7 +37,7 @@ For the following options it should be noted that if you never set up Live TV, u
 `Allow media playback` Unchecking this option will block the user's access to media libraries, this does not include Live TV.
 
 > [!NOTE]
-> More information about transcoding can be found on it's own page - [Transcoding](https://jellyfin.org/docs/general/server/transcoding.html)
+> More information about transcoding can be found on it's own page - [Transcoding](xref:server-transcoding).
 
 `Allow audio/video playback that requires transcoding` Unchecking this option will block the user's access to video playback that requires transcoding.
 

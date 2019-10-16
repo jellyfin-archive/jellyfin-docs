@@ -59,9 +59,9 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your Firewa
 #</IfModule>
 ```
 
-If you encouter errors, you may have to enable `mod_proxy` or `mod_ssl` support manually.
+If you encouter errors, you may have to enable `mod_proxy`, `mod_ssl` or `proxy_wstunnel` support manually.
 ```
-$ sudo a2enmod proxy proxy_http ssl
+$ sudo a2enmod proxy proxy_http ssl proxy_wstunnel
 ```
 
 ## HAProxy

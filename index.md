@@ -61,4 +61,4 @@ Want to help out? Check out the pages below for how to contribute.
 * [Plugin Guide](https://github.com/jellyfin/jellyfin-plugin-template): Documentation and resources to get started writing a plugin to extend Jellyfin functionality.
 * [Reporting Bugs](xref:contrib-issues#reporting-bugs): How to use our issue tracker on GitHub to report bugs.
 * [Requesting Features](xref:contrib-issues#requesting-features): How to use our issue tracker on GitHub to request new features or enhancements.
-* [Coding Style](xref:contrib-coding-style): Code and naming style guide.
+* [Coding Style](xref:contrib-coding-style-404): Code and naming style guide.

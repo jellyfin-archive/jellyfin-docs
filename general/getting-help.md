@@ -31,5 +31,5 @@ We are also active on social media:
 
 ## IRC Channels
 Some channels are bridged from Matrix to freenode.net channels.
-* [#jellyfin on freenode.net]ircs://chat.freenode.net:6697/#jellyfin) - [freenode Webchat](https://webchat.freenode.net/#jellyfin)
+* [#jellyfin on freenode.net](ircs://chat.freenode.net:6697/#jellyfin) - [freenode Webchat](https://webchat.freenode.net/#jellyfin)
 * [#jellyfin-dev on freenode.net](ircs://chat.freenode.net:6697/#jellyfin-dev) - [freenode Webchat](https://webchat.freenode.net/#jellyfin-dev)

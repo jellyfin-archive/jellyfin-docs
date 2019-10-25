@@ -121,6 +121,17 @@ server {
 #    ssl_stapling on;
 #    ssl_stapling_verify on;
 #
+#    # Security / XSS Mitigation Headers
+#    add_header X-Frame-Options "SAMEORIGIN";
+#    add_header X-XSS-Protection "1; mode=block";
+#    add_header X-Content-Type-Options "nosniff";
+#
+#    # Content Security Policy
+#    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+#    # Enforces https content and restricts JS/CSS to origin
+#    # External Javascript (such as cast_sender.js for Chromecast) must be whitelisted.
+#    add_header Content-Security-Policy "default-src https: data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'";
+#
 #    location / {
 #        # Proxy main Jellyfin traffic
 #        proxy_pass http://SERVER_IP_ADDRESS:8096;

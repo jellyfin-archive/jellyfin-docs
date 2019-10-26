@@ -8,9 +8,9 @@ title: Reverse Proxy
 
 It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.
 
-Three popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), and [Nginx](https://www.nginx.com/).
+Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), [Caddy](https://caddyserver.com/), and [Nginx](https://www.nginx.com/).
 
-**Important:** In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired.
+**Important:** In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. Running Jellyfin in a subpath (example.com/jellyfin/) is supported by the Android and Web clients.
 
 When following this guide, be sure to replace the following variables with your information:
 
@@ -210,6 +210,31 @@ server {
 }
 ```
 
+## Caddy
+Add this to your `Caddyfile`:
+
+```
+# Jellyfin
+DOMAIN_NAME/jellyfin/ {
+    proxy / localhost:8096 {
+        transparent
+        websocket
+    }
+}
+```
+Using DOMAIN_NAME only, or sub.DOMAIN_NAME would also work, as would using multiple at once.
+
+Caddy will automatically attempt to obtain a free HTTPS certificate if possible, and handle renewal, making the below section unecessary.
+
+If using a subpath, note that `DOMAIN_NAME/jellyfin` will not resolve, the ending slash is needed. To get around this, you can add the following to your `Caddyfile`. This is only helpful for the web client, just one less character to type in the browser.
+
+```
+DOMAIN_NAME {
+    redir {
+        /jellyfin /jellyfin/
+    }
+}
+```
 
 ## LetsEncrypt with Certbot
 

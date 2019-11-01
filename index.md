@@ -49,9 +49,9 @@ Want to know more about administering a Jellyfin server? Check out these pages!
 
 * [Quick-Start Guide](xref:admin-quick-start): What to do after you've installed Jellyfin to get it up and running.
 * [Migrating from Emby](xref:admin-migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
-* [Plugins](xref:server-plugins-index): How to install plugins in Jellyfin.
-* [Port Bindings](xref:admin-port-bindings)
-* [Hardware Acceleration](xref:admin-hardware-acceleration)
+* [Plugins](xref:server-plugins-index): How to install and manage plugins.
+* [Port Bindings](xref:admin-port-bindings): All ports used when running the server.
+* [Hardware Acceleration](xref:admin-hardware-acceleration): Improve transcoding performance on supported hardware.
 
 ## Contributing to Jellyfin
 
@@ -61,4 +61,3 @@ Want to help out? Check out the pages below for how to contribute.
 * [Plugin Guide](https://github.com/jellyfin/jellyfin-plugin-template): Documentation and resources to get started writing a plugin to extend Jellyfin functionality.
 * [Reporting Bugs](xref:contrib-issues#reporting-bugs): How to use our issue tracker on GitHub to report bugs.
 * [Requesting Features](xref:contrib-issues#requesting-features): How to use our issue tracker on GitHub to request new features or enhancements.
-* [Coding Style](xref:contrib-coding-style): Code and naming style guide.

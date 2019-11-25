@@ -70,5 +70,11 @@ Useful resources:
     `sudo usermod -a -G video jellyfin`
     `sudo systemctl restart jellyfin`   
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard
+3. Change the amount of memory allocated to the GPU, as the Pi's GPU can't handle accelerated decoding and encoding simultaneously:
+    `sudo nano /boot/config.txt`
+    
+    Find the line that starts with `gpu_mem=` and replace it with `gpu_mem=256`.
+    
+    You can set any value, but 256 was thoroughly tested to be the minimum recommended for the best results.
 
 Note: In testing transcoding was not working fast enough to run in real time because the video was being resized. The Pi 3 is likely not fast enough to resize as part of the transcoding.

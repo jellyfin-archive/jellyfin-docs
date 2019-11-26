@@ -135,7 +135,7 @@ The official Jellyfin iOS app.
 
 The official Jellyfin Kodi plugin.
 
-**Status:** ⭐ Receiving patches
+**Status:** ⭐ Active
 
 **Links:**
 
@@ -143,7 +143,7 @@ The official Jellyfin Kodi plugin.
 
 #### Installing
 
-1. Download the repository installer [here](https://jellyfin.org/downloads/clients/#kodi-repository)
+1. Download the repository installer [here](https://repo.jellyfin.org/releases/client/kodi/repository.jellyfin.kodi.zip)
     * It will be saved as `repository.jellyfin.kodi.zip`
 2. Install the Jellyfin repository
     * Open Kodi and navigate to "Add-on Browser"
@@ -159,10 +159,11 @@ The official Jellyfin Kodi plugin.
 4. Within a few seconds you should be prompted for your server-details.
     * If a Jellyfin server is detected on your local network, it will displayed in the popup
     * If a Jellyfin server is not detected on your local network, select "Manually add server"
+        * Note that `/jellyfin` in these examples should match the `baseurl` field in the server (defaults to `/jellyfin`)
         * Enter the server name or IP address and the port number (default is 8096)
+            * Host: `192.168.1.10:8096/jellyfin`
         * If using SSL and a reverse proxy, enter the full URL scheme in the "Host" field
-            * Host: https://jellyfin.example.com
-            * Port: 443
+            * Host: `https://jellyfin.example.com/jellyfin`
     * Select user account and input password
 5. Once you're succesfully authenticated with the Jellyfin server, you'll be asked about your preferences for this device
     * Choose your preferences for each options

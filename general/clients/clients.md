@@ -159,11 +159,11 @@ The official Jellyfin Kodi plugin.
 4. Within a few seconds you should be prompted for your server-details.
     * If a Jellyfin server is detected on your local network, it will displayed in the popup
     * If a Jellyfin server is not detected on your local network, select "Manually add server"
-        * Note that `/jellyfin` in these examples should match the `baseurl` field in the server (defaults to `/jellyfin`)
+        * Note that if you have a baseurl set, you should append that value to the end of the host field.  ie: `192.168.0.10:8096/jellyfin`
         * Enter the server name or IP address and the port number (default is 8096)
-            * Host: `192.168.1.10:8096/jellyfin`
+            * Host: `192.168.1.10:8096`
         * If using SSL and a reverse proxy, enter the full URL scheme in the "Host" field
-            * Host: `https://jellyfin.example.com/jellyfin`
+            * Host: `https://jellyfin.example.com`
     * Select user account and input password
 5. Once you're succesfully authenticated with the Jellyfin server, you'll be asked about your preferences for this device
     * Choose your preferences for each options

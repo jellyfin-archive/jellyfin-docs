@@ -341,7 +341,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.toml:/traefik.toml
       - ./acme.json:/acme.json
-    restart: always
     labels:
       traefik.enable: "true"
       traefik.backend: traefik
@@ -361,6 +360,7 @@ services:
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
       traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://${DOMAINNAME}'
+    restart: unless-stopped
 
 networks:
   traefik:
@@ -495,7 +495,7 @@ services:
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
       traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://${DOMAINNAME}'
-    restart: always
+    restart: unless-stopped
 
 networks:
   traefik:

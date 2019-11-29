@@ -19,8 +19,6 @@ The most common organization scheme for books is separation by Audiobook then by
             Book2.mp3
 ```
 
-```
-
 ### Primary
 
   * folder

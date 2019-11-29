@@ -10,11 +10,16 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 ## Containers
 
+Note: There is currently an [issue](https://github.com/docker/for-linux/issues/788) for read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable. 
+
+Use host mode for networking in order to use DLNA or an HDHomeRun. 
+
 ### Official Docker Hub
 
 <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
+
 
 1. Get the latest image:  
     `docker pull jellyfin/jellyfin`
@@ -27,24 +32,58 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
     `--volume /path/to/cache:/cache \`  
     `--volume /path/to/media:/media \`  
     `--net=host \`  
-    `jellyfin/jellyfin`  
+    `jellyfin/jellyfin:latest`  
   
 Alternatively, using docker-compose:  
 ```
 version: "3"  
 services:  
-    jellyfin:  
-      image: jellyfin/jellyfin  
-      network_mode: "host"  
-      volumes:  
-        - /path/to/config:/config  
-        - /path/to/cache:/cache  
-        - /path/to/media:/media  
+  jellyfin:  
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: "host"  
+    volumes:  
+      - /path/to/config:/config  
+      - /path/to/cache:/cache  
+      - /path/to/media:/media  
+    environment:
+      APP_UID: 1000
+      APP_UID: 1000
+      TZ: Europe/Paris
+      UMASK_SET: 022
+      GIDLIST=100 #A comma-separated list of additional GIDs to run emby as (default 2)#
+    restart: unless-stopped
 ```
 
 ### Docker Hub maintained by LinuxServer.io
 
 <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
+
+```
+---
+version: "3"
+services:
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=022 #optional
+    volumes:
+      - /path/to/library:/config
+      - /path/to/tvseries:/data/tvshows
+      - /path/to/movies:/data/movies
+      - /path for transcoding:/transcode #optional
+    ports:
+      - 8096:8096
+      - 8920:8920 #optional
+    devices:
+      - /dev/dri:/dev/dri #optional
+    restart: unless-stopped
+```
+Note: The linuxserver example does not call out host_mode for networking so a bridge is created. DLNA and HDHomeRun will not work in bridged mode. Add network_mode: host and remove the ports if host mode is wanted.
 
 ### Unraid Docker
 

@@ -449,7 +449,9 @@ Congratulation, your RP is UP !
 
 For Jellyfin, just launch your Jellyfin server with this docker-compose `docker-compose up -d`.
 
-Note you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun, use network_mode: host, remove the traefik network information for proper building of the yaml.
+Note: you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun, use network_mode: host, remove the traefik network information for proper building of the yaml. 
+
+Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in traefik, you cannot dynamically route to containers, you must set a static route in your toml/file.
 
 ```
 
@@ -504,8 +506,50 @@ networks:
 
 ```
 
-Go to jellyfin.mysite.xyz (in this case), and your jellyfin is UP with HTTPS (AES 256).
+Here's an example of a static route.
+```
+[backends]
+  [backends.jellyfin]
+    [backends.jellyfin.servers]
+      [backends.jellyfin.servers.server-jellyfin-ext]
+        url = "http://192.168.1.100:8086"
+		weight = 10
+
+  [frontends.jellyfin]
+    backend = "jellyfin"
+    passHostHeader = true
+	priority = 1
+#	basicAuth = [
+#      "username:pas$worde$capedwithnoextra$",
+#    ]
+#      [traefik.frontend.jellyfin.auth.basic.usersFile]
+#        usersFile = "/.htpasswd"
+#      [frontends.jellyfin.auth]
+#        headerField = "X-WebAuth-User"
+#        [frontends.cockpit.auth.forward]
+#          address = "http://oauth:4181"
+#          trustForwardHeader = true
+#          authResponseHeaders = ["X-Auth-User"]
+      [frontends.jellyfin.routes]
+        [frontends.jellyfin.routes.route-jellyfin-ext]
+          rule = "Host:jellyfin.domain.com;"
+      [frontends.jellyfin.headers]
+        SSLRedirect = true
+        SSLHost = "jellyfin.domain.com"
+        SSLForceHost = true
+        STSSeconds = 315360000
+        STSIncludeSubdomains = true
+        STSPreload = true
+        forceSTSHeader = true
+        frameDeny = false
+        contentTypeNosniff = true
+        browserXSSFilter = true
+```
+
+
+Go to jellyfin.domain.com (in this case), and your jellyfin is UP with HTTPS (AES 256).
 
 # Final steps
 
 It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html)
+

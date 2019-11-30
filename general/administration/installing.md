@@ -27,6 +27,7 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
     `--volume /path/to/cache:/cache \`  
     `--volume /path/to/media:/media \`  
     `--net=host \`  
+    `--restart=unless-stopped \`  
     `jellyfin/jellyfin`  
   
 Alternatively, using docker-compose:  

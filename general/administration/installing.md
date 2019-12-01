@@ -39,25 +39,21 @@ Alternatively, using docker-compose:
 version: "3"  
 services:  
   jellyfin:  
-    image: jellyfin/jellyfin:latest
+    image: jellyfin/jellyfin
     container_name: jellyfin
     network_mode: "host"  
     volumes:  
       - /path/to/config:/config  
       - /path/to/cache:/cache  
       - /path/to/media:/media  
-    environment:
-      APP_UID: 1000
-      APP_UID: 1000
-      TZ: Europe/Paris
-      UMASK_SET: 022
-      GIDLIST=100 #A comma-separated list of additional GIDs to run emby as (default 2)#
     restart: unless-stopped
 ```
 
-### Docker Hub maintained by LinuxServer.io
+### [Docker Hub](https://hub.docker.com/r/linuxserver/jellyfin) image maintained by LinuxServer.io
 
 <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
+
+Docker-compose example of the linuxserver.io image. 
 
 ```
 ---
@@ -83,7 +79,8 @@ services:
       - /dev/dri:/dev/dri #optional
     restart: unless-stopped
 ```
-Note: The linuxserver example does not call out host_mode for networking so a bridge is created. DLNA and HDHomeRun will not work in bridged mode. Add network_mode: host and remove the ports if host mode is wanted.
+
+Note: The linuxserver example does not call out host_mode for networking so a bridge is created. DLNA and HDHomeRun will not work in bridged mode. Add network_mode: host and remove the ports if host mode is wanted. If a reverse proxy is wanted in host_mode refer to the [reverse proxy](https://jellyfin.org/docs/general/administration/reverse-proxy.html) page.
 
 ### Unraid Docker
 

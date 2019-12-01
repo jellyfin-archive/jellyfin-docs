@@ -441,7 +441,7 @@ network = "traefik_network_name"
 
 Finally, create an empty acme.json : `touch acme.json` `chmod 600 acme.json` 
 
-IMPORTANT ! Change domain.tld by your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not a proper email address.
+IMPORTANT ! Change domain.tld by your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not being a proper email address.
 
 Launch Traefik : `docker-compose up -d`
 
@@ -451,7 +451,7 @@ For Jellyfin, just launch your Jellyfin server with this docker-compose `docker-
 
 Note: you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun, use network_mode: host, remove the traefik network information for proper building of the yaml. 
 
-Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in traefik, you cannot dynamically route to containers, you must set a static route in your toml/file.
+Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in traefik, you cannot dynamically route to containers in host_mode, you must set a static route in your toml/file.
 
 ```
 
@@ -472,12 +472,6 @@ services:
       - /path/to/data:/share:rw
       - ./conf:/config:rw
       - /etc/localtime:/etc/localtime:ro
-    environment:
-      APP_UID: 1000
-      APP_UID: 1000
-      TZ: Europe/Paris
-      UMASK_SET: 022
-      GIDLIST=100 #A comma-separated list of additional GIDs to run emby as (default 2)#
     labels:
       traefik.enable: "true"
       traefik.backend: jellyfin
@@ -506,7 +500,8 @@ networks:
 
 ```
 
-Here's an example of a static route.
+Here's an example of a static route. If a static route is used, disable or remove the traefik labels  and remove the ports from your compose file.
+
 ```
 [backends]
   [backends.jellyfin]
@@ -519,17 +514,6 @@ Here's an example of a static route.
     backend = "jellyfin"
     passHostHeader = true
 	priority = 1
-#	basicAuth = [
-#      "username:pas$worde$capedwithnoextra$",
-#    ]
-#      [traefik.frontend.jellyfin.auth.basic.usersFile]
-#        usersFile = "/.htpasswd"
-#      [frontends.jellyfin.auth]
-#        headerField = "X-WebAuth-User"
-#        [frontends.cockpit.auth.forward]
-#          address = "http://oauth:4181"
-#          trustForwardHeader = true
-#          authResponseHeaders = ["X-Auth-User"]
       [frontends.jellyfin.routes]
         [frontends.jellyfin.routes.route-jellyfin-ext]
           rule = "Host:jellyfin.domain.com;"

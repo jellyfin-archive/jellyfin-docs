@@ -53,35 +53,6 @@ services:
 
 <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
 
-Docker-compose example of the linuxserver.io image. 
-
-```
----
-version: "3"
-services:
-  jellyfin:
-    image: linuxserver/jellyfin
-    container_name: jellyfin
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - UMASK_SET=022 #optional
-    volumes:
-      - /path/to/library:/config
-      - /path/to/tvseries:/data/tvshows
-      - /path/to/movies:/data/movies
-      - /path for transcoding:/transcode #optional
-    ports:
-      - 8096:8096
-      - 8920:8920 #optional
-    devices:
-      - /dev/dri:/dev/dri #optional
-    restart: unless-stopped
-```
-
-Note: The linuxserver example does not call out host_mode for networking so a bridge is created. DLNA and HDHomeRun will not work in bridged mode. Add network_mode: host and remove the ports if host mode is wanted. If a reverse proxy is wanted in host_mode refer to the [reverse proxy](https://jellyfin.org/docs/general/administration/reverse-proxy.html) page.
-
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.

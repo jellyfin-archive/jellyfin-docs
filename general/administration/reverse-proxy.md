@@ -330,7 +330,7 @@ services:
   traefik:
     container_name: traefik
     hostname: traefik
-    image: traefik:traefik:v1.7.19
+    image: traefik:v1.7.19
     networks:
       - traefik
     ports:
@@ -364,7 +364,6 @@ services:
 
 networks:
   traefik:
-    external: true
 ```
 
  For security, add a password to the traefik interface (DOMAIN_OF_THE_WEB_ADMIN_INTERFACE, traefik.mysite.com for exemple) :
@@ -495,12 +494,9 @@ services:
 
 networks:
   traefik:
-    external: true
-
-
 ```
 
-Here's an example of a static route. If a static route is used, disable or remove the traefik labels  and remove the ports from your compose file.
+Here's an example of a static backend. If a static backend is used, disable or remove the traefik labels and ports from your compose file.
 
 ```
 [backends]
@@ -510,6 +506,7 @@ Here's an example of a static route. If a static route is used, disable or remov
         url = "http://192.168.1.100:8086"
 		weight = 10
 
+[frontends]
   [frontends.jellyfin]
     backend = "jellyfin"
     passHostHeader = true

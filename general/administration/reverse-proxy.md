@@ -330,7 +330,7 @@ services:
   traefik:
     container_name: traefik
     hostname: traefik
-    image: traefik:traefik:v1.7.19
+    image: traefik:v1.7.19
     networks:
       - traefik
     ports:
@@ -449,7 +449,7 @@ Congratulation, your RP is UP !
 
 For Jellyfin, just launch your Jellyfin server with this docker-compose `docker-compose up -d`.
 
-Note you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun, use network_mode: host, remove the traefik network information for proper building of the yaml.
+Note you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun or DLNA, use network_mode: host, remove the traefik network information for proper building of the yaml.
 
 ```
 
@@ -458,7 +458,7 @@ version: '3'
 services:
   jellyfin:
     image: jellyfin/jellyfin:latest
-    container_name: Jellyfin
+    container_name: jellyfin
     hostname: jellyfin
 #    network_mode: host
     networks:

@@ -451,7 +451,7 @@ For Jellyfin, just launch your Jellyfin server with this docker-compose `docker-
 
 Note: you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun, use network_mode: host, remove the traefik network information for proper building of the yaml. 
 
-Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in traefik, you cannot dynamically route to containers in host_mode, you must set a static route in your toml/file.
+Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in traefik, you cannot dynamically route to containers in host_mode, you must set a static route in your toml/file. Using host_mode is required to use DLNA or an HdHomeRun.
 
 ```
 

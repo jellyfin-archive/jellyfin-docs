@@ -317,26 +317,24 @@ Add a job to cron so the certificate will be renewed automatically:
 
 Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need. (https://traefik.io/). 
 
-Traefik needs 3 files in the SAME directory (or you must change pathes in the volume section) : docker-compose.yml, traefik.toml and acme.json.
+Create these 3 files in the SAME directory (or change their paths in the volume section) : docker-compose.yml, traefik.toml and acme.json.
 
 This configuration is A+ (SSLlabs)
 
 docker-compose.yml :
 
 ```
-version: '3'
+version: '3.5'
 
 services:
   traefik:
     container_name: traefik
-    hostname: traefik
-    image: traefik:v1.7.19
+    image: traefik:v1.7
     networks:
       - traefik
     ports:
       - 80:80
       - 443:443
-      - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.toml:/traefik.toml
@@ -344,12 +342,13 @@ services:
     labels:
       traefik.enable: "true"
       traefik.backend: traefik
+      traefik.docker.network: traefik
       traefik.port: 8080
-      traefik.frontend.rule: Host:traefik.${DOMAINNAME},
-      traefik.frontend.entryPoints: http
+      traefik.frontend.rule: Host:traefik.domain.tld,
+      traefik.frontend.entryPoints: https
       traefik.frontend.passHostHeader: "true"
       traefik.frontend.headers.SSLForceHost: "true"
-      traefik.frontend.headers.SSLHost: traefik.${DOMAINNAME}
+      traefik.frontend.headers.SSLHost: traefik.domain.tld
       traefik.frontend.headers.SSLRedirect: "true"
       traefik.frontend.headers.browserXSSFilter: "true"
       traefik.frontend.headers.contentTypeNosniff: "true"
@@ -359,34 +358,29 @@ services:
       traefik.frontend.headers.STSPreload: "true"
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
-      traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://${DOMAINNAME}'
+      traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://domain.tld'
+    restart: unless-stopped
+
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    network_mode: "host"
+    volumes:
+      - /path/to/config:/config
+      - /path/to/cache:/cache
+      - /path/to/media:/media
     restart: unless-stopped
 
 networks:
   traefik:
-    external: true
+    name: traefik
 ```
 
- For security, add a password to the traefik interface (DOMAIN_OF_THE_WEB_ADMIN_INTERFACE, traefik.mysite.com for exemple) :
- 
- `echo $(htpasswd -nbB <USER> "<PASS>") | sed -e s/\\$/\\$\\$/g`
- 
- The output will be for example (it will be a different result for each time you run the command above):
-
- `<USER>:$$apr1$$ryHGa8yK$$5lRELezhgkUtJxiJ.XTfZ.`
-
-This output needs to be placed in our docker-compose.yml now as a (traefik) label and add this label :
-
-` - "traefik.frontend.auth.basic=<USER-PASSWORD-OUTPUT>"`
-
-Note: all dollar signs in the hash need to be doubled for escaping inside the yaml. If placed in a static file such as /etc/environment or an .env file, double escaping is not required.
-
-The toml can't support environment variables, ensure you don't attempt to use variables.
+This toml file can't support environment variables, ensure you don't attempt to use variables.
 
 traefik.toml : 
  
 ```
-
 logLevel = "WARN"
 defaultEntryPoints = ["http", "https"]
 
@@ -409,103 +403,69 @@ defaultEntryPoints = ["http", "https"]
       "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
       "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
     ]
-  [entryPoints.monitor]
-  address = ":8080"
 
 [retry]
 
+[api]
+
 [acme]
 acmeLogging = true
-email = "user@example.com"
-storage = "/acme.json"
+email = "user@domain.tld"
+storage = "acme.json"
 entryPoint = "https"
   [acme.dnsChallenge]
     provider = "provider"
     delayBeforeCheck = "60"
-#[acme.httpChallenge]
-#  entryPoint = "http"
 
-[[acme.domains]]
-  main = "domain.tld"
 [[acme.domains]]
   main = "*.domain.tld"
   
 [docker]
-endpoint = "unix:///var/run/docker.sock"
 domain = "domain.tld"
-watch = true
+network = "traefik"
 exposedbydefault = false
-network = "traefik_network_name"
+
+[backends]
+  [backends.backend-jellyfin]
+    [backends.backend-jellyfin.servers]
+      [backends.backend-jellyfin.servers.server-1]
+        url = "http://172.17.0.1:8096"
+[frontends]
+  [frontends.jellyfin]
+    backend = "backend-jellyfin"
+    passHostHeader = true
+    [frontends.jellyfin.routes]
+      [frontends.jellyfin.routes.route-jellyfin-ext]
+        rule = "Host:jellyfin.domain.tld"
+    [frontends.jellyfin.headers]
+      SSLRedirect = true
+      SSLHost = "jellyfin.domain.tld"
+      SSLForceHost = true
+      STSSeconds = 315360000
+      STSIncludeSubdomains = true
+      STSPreload = true
+      forceSTSHeader = true
+      frameDeny = true
+      contentTypeNosniff = true
+      browserXSSFilter = true
+      customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
+      customFrameOptionsValue = "allow-from https://domain.tld"
 
 ```
 
 Finally, create an empty acme.json : `touch acme.json` `chmod 600 acme.json` 
 
-IMPORTANT ! Change domain.tld by your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not a proper email address.
+IMPORTANT ! Change domain.tld to your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not being a proper email address.
 
-Launch Traefik : `docker-compose up -d`
+Launch your Traefik/Jellyfin services : `docker-compose up -d`
 
-Congratulation, your RP is UP !
+Congratulations, your stack with Traefik and Jellyfin is UP !
 
-For Jellyfin, just launch your Jellyfin server with this docker-compose `docker-compose up -d`.
+Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
 
-Note you must change the ${JELLYFIN_DOMAIN} for your domain, like jellyfin.mydomain.xyz for example. If using an HDHomeRun or DLNA, use network_mode: host, remove the traefik network information for proper building of the yaml.
-
-```
-
-version: '3'
-
-services:
-  jellyfin:
-    image: jellyfin/jellyfin:latest
-    container_name: jellyfin
-    hostname: jellyfin
-#    network_mode: host
-    networks:
-      - traefik
-    ports:
-      - "8096:8096"
-      - "8920:8920"
-    volumes:
-      - /path/to/data:/share:rw
-      - ./conf:/config:rw
-      - /etc/localtime:/etc/localtime:ro
-    environment:
-      APP_UID: 1000
-      APP_UID: 1000
-      TZ: Europe/Paris
-      UMASK_SET: 022
-      GIDLIST=100 #A comma-separated list of additional GIDs to run emby as (default 2)#
-    labels:
-      traefik.enable: "true"
-      traefik.backend: jellyfin
-      traefik.port: 8096
-      traefik.frontend.rule: Host:jellyfin.${DOMAINNAME},
-      traefik.frontend.entryPoints: http
-      traefik.frontend.passHostHeader: "true"
-      traefik.frontend.headers.SSLForceHost: "true"
-      traefik.frontend.headers.SSLHost: jellyfin.${DOMAINNAME}
-      traefik.frontend.headers.SSLRedirect: "true"
-      traefik.frontend.headers.browserXSSFilter: "true"
-      traefik.frontend.headers.contentTypeNosniff: "true"
-      traefik.frontend.headers.forceSTSHeader: "true"
-      traefik.frontend.headers.STSSeconds: 315360000
-      traefik.frontend.headers.STSIncludeSubdomains: "true"
-      traefik.frontend.headers.STSPreload: "true"
-      traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
-      traefik.frontend.headers.frameDeny: "true"
-      traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://${DOMAINNAME}'
-    restart: unless-stopped
-
-networks:
-  traefik:
-    external: true
-
-
-```
-
-Go to jellyfin.mysite.xyz (in this case), and your jellyfin is UP with HTTPS (AES 256).
+Go to jellyfin.domain.com (in this case), and your jellyfin is UP with HTTPS (AES 256).
 
 # Final steps
 
-It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html)
+It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html) if you are exposing these service to the internet.
+

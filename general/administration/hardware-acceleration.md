@@ -30,7 +30,7 @@ Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comment
 
 [RPi 3 failing to transcode](https://github.com/jellyfin/jellyfin/issues/1546) <br>
 [RPi 4 failing to transcode](https://trac.ffmpeg.org/ticket/8018) <br>
-[
+
 
 ## Enabling Hardware Acceleration
 

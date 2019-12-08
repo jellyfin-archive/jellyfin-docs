@@ -8,6 +8,19 @@ title: Hardware Acceleration
 
 Jellyfin supports hardware acceleration of video encoding/decoding/transcoding using FFMpeg. It supports multiple acceleration types, including  AMD AMF, Intel Quick Sync, OpenMax OMX, nVidia NVENC, Intel/AMD VAAPI, and others.
 
+
+OS | Order of Preference
+------------ | -------------
+Linux/GNU | VAAPI, NVENC,
+Windows| Quick Sync Video (QSV), VAAPI, NVENC, 
+MacOS| None (videotoolbox support coming)
+
+Here is the official list of supported Codecs for [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows.
+
+List of supported Codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
+
+FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
+
 ## Enabling Hardware Acceleration
 
 Hardware acceleration options can be found in the Admin Dashboard under the **Transcoding** section. Select a valid hardware acceleration option from the drop-down menu, indicate a device if applicable, and check `enable hardware encoding` to enable encoding as well as decoding, if your hardware supports this.

@@ -6,20 +6,31 @@ title: Hardware Acceleration
 
 # Hardware Acceleration
 
-Jellyfin supports hardware acceleration of video encoding/decoding/transcoding using FFMpeg. It supports multiple acceleration types, including  AMD AMF, Intel Quick Sync, OpenMax OMX, nVidia NVENC, Intel/AMD VAAPI, and others.
+Jellyfin supports hardware acceleration of video encoding/decoding using FFMpeg. FFMpeg can support multiple hardware acceleration implementations like Intel Quicksync (QSV), AMD AMF, OpenMax OMX, nVidia NVENC/NVDEC through the Video Acceleration API (VAAPI), and others.
 
-
-OS | Order of Preference
+OS | Recommended HW Acceleration
 ------------ | -------------
-Linux/GNU | VAAPI, NVENC,
-Windows| Quick Sync Video (QSV), VAAPI, NVENC, 
+Linux/GNU | VAAPI (recommended), NVENC
+Windows| QSV, NVENC, AMF, VAAPI
 MacOS| None (videotoolbox support coming)
+Android| MediaCodec, OMX
+RPi|OMX
 
 Here is the official list of supported Codecs for [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows.
 
 List of supported Codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
+List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us/en/ark.html#@Processors)
+
 FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
+
+Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/)
+
+#### Known Issues
+
+[RPi 3 failing to transcode](https://github.com/jellyfin/jellyfin/issues/1546) <br>
+[RPi 4 failing to transcode](https://trac.ffmpeg.org/ticket/8018) <br>
+[
 
 ## Enabling Hardware Acceleration
 

@@ -20,7 +20,7 @@ The easiest way to check for issues is by checking the logs, which can be access
 
 ## Debug Mode
 
-To enable debugging for Jellyfin, it is currently required to be manually emabled. Go to Jellyfin-directory/config, in the `logging.json` file, change:
+To enable debugging for Jellyfin, it is currently required to be manually enabled. Go to Jellyfin-directory/config, in the `logging.json` file, change:
 
 `"MinimumLevel": "Information",`
 

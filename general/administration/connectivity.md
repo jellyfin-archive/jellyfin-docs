@@ -28,7 +28,7 @@ to
 
 `"MinimumLevel": "Debug",`
 
-And then restart Jellyfin. The debug messages show up in the log with the tag DBG.
+Jellyfin 10.4.1 and above will auto-reload the new configuration. The debug messages show up in the log with the tag DBG.
 
 ## DLNA
 

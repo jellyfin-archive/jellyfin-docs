@@ -40,14 +40,13 @@ version: "3"
 services:  
   jellyfin:  
     image: jellyfin/jellyfin
-    container_name: jellyfin
     network_mode: "host"  
     volumes:  
       - /path/to/config:/config  
       - /path/to/cache:/cache  
       - /path/to/media:/media  
-    restart: unless-stopped
 ```
+
 
 ### [Docker Hub](https://hub.docker.com/r/linuxserver/jellyfin) image maintained by LinuxServer.io
 

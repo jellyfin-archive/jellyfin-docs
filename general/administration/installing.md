@@ -10,11 +10,16 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 ## Containers
 
+Note: There is currently an [issue](https://github.com/docker/for-linux/issues/788) for read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable. 
+
+Use host mode for networking in order to use DLNA or an HDHomeRun. 
+
 ### Official Docker Hub
 
 <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
+
 
 1. Get the latest image:  
     `docker pull jellyfin/jellyfin`
@@ -34,16 +39,17 @@ Alternatively, using docker-compose:
 ```
 version: "3"  
 services:  
-    jellyfin:  
-      image: jellyfin/jellyfin  
-      network_mode: "host"  
-      volumes:  
-        - /path/to/config:/config  
-        - /path/to/cache:/cache  
-        - /path/to/media:/media  
+  jellyfin:  
+    image: jellyfin/jellyfin
+    network_mode: "host"  
+    volumes:  
+      - /path/to/config:/config  
+      - /path/to/cache:/cache  
+      - /path/to/media:/media  
 ```
 
-### Docker Hub maintained by LinuxServer.io
+
+### [Docker Hub](https://hub.docker.com/r/linuxserver/jellyfin) image maintained by LinuxServer.io
 
 <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
 

@@ -68,7 +68,15 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 A cross-platform app using React.
 
-**Status:** ✅ In development
+**Status:** 
+
+Android:	✅ In development
+
+Web/Desktop:	✅ In development
+
+iOS:		⭕ Planned
+
+Android TV:	⭕ Planned
 
 **Links:**
 

@@ -66,16 +66,6 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 ### Jellyfin MPP
 
-**Status:** ✅ In development
-
-**Links:**
-
-* [GitHub](https://github.com/cromefire/jellyfin-mpp)
-
-### Jellyfin React Client
-
-A cross-platform app using React.
-
 **Status:** 
 
 Android:	✅ In development
@@ -85,6 +75,17 @@ Web/Desktop:	✅ In development
 iOS:		⭕ Planned
 
 Android TV:	⭕ Planned
+
+**Links:**
+
+* [GitHub](https://github.com/cromefire/jellyfin-mpp)
+
+### Jellyfin React Client
+
+A cross-platform app using React.
+
+**Status:** ✅ In development
+
 
 **Links:**
 

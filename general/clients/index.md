@@ -62,7 +62,15 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 * [Yatse homepage](https://yatse.tv/)
 
-## Jellyfin Cross-Platform
+## Jellyfin Cross-Platform Clients
+
+### Jellyfin MPP
+
+**Status:** ✅ In development
+
+**Links:**
+
+* [GitHub](https://github.com/cromefire/jellyfin-mpp)
 
 ### Jellyfin React Client
 
@@ -81,6 +89,16 @@ Android TV:	⭕ Planned
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-react-client)
+
+### Jellyfin Xamarin Client
+
+Xamarin cross-platform client for Jellyfin.
+
+**Status:** ✅ In development
+
+**Links:**
+
+* [GitHub](https://github.com/chaosinnovator/jellyfin-xamarin)
 
 ## Jellyfin Theater (Desktop)
 
@@ -209,6 +227,18 @@ The official Jellyfin Samsung TV app.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-samsungtv)
+
+## UWP
+
+### Jellyfin UWP Client
+
+A wrapper around Jellyfin's web interface for UWP devices (Windows 10, Windows Phone 10, Xbox One, Windows IOT, etc.)
+
+**Status:** ✅ In development
+
+**Links:**
+
+* [GitHub](https://github.com/chaosinnovator/jellyfin-uwp)
 
 ## Windows Phone
 

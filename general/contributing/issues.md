@@ -2,6 +2,9 @@
 uid: contrib-issues
 title: GitHub Issues
 ---
+# Requesting Features
+
+Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.
 
 
 # Issue Guidelines
@@ -9,8 +12,6 @@ title: GitHub Issues
 This page discusses how to open issues, including the policies and procedures of the Jellyfin project around handling issues.
 
 Issues should detail software bug reports **only**.
-
-Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.
 
 All other discussions, including initial troubleshooting, should be directed towards [our help channels](xref:getting-help).
 

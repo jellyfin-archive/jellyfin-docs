@@ -62,6 +62,18 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 * [Yatse homepage](https://yatse.tv/)
 
+## Jellyfin Cross-Platform
+
+#### Jellyfin React Client
+
+A cross-platform app using React
+
+**Status:** ✅ In development
+
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-react-client)
+
 ## Jellyfin Theater (Desktop)
 
 ### Electron
@@ -191,6 +203,17 @@ This will help keep your media libraries up to date without waiting for a period
 
 **Note: Kodi's default skin does not display all unicode characters. To display unicode characters the skins font must be changed**
 
+## LG WebOS
+
+### Jellyfin for WebOS
+
+The official Jellyfin WebOS app.
+
+**Status:** ⭐ Active
+
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-webos)
 ## Mopidy
 
 ### Mopidy-Jellyfin

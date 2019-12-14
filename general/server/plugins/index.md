@@ -113,7 +113,7 @@ Authenticate your Jellyfin users against an LDAP database, and optionally create
 
 Provides access to LiveTV, Program Guide and Recordings from NextPVR
 
-#### Open Subtitles
+#### [Open Subtitles](xref:server-plugins-open-subtitles)
 
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-opensubtitles.svg)](https://github.com/jellyfin/jellyfin-plugin-opensubtitles)
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-opensubtitles.svg)](https://github.com/jellyfin/jellyfin-plugin-opensubtitles)

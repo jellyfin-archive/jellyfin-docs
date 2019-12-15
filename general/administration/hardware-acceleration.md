@@ -16,7 +16,7 @@ MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
 RPi | OMX
 
-Here is the official list of supported Codecs for [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows.
+[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported Codecs. 
 
 List of supported Codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
@@ -25,6 +25,8 @@ List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us
 FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
 
 Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
+
+Here's [additional information](https://github.com/jellyfin/jellyfin-docs/pull/169#issuecomment-565702145) to learn more. 
 
 #### Known Issues
 

@@ -16,9 +16,9 @@ MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
 RPi | OMX
 
-[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported Codecs. 
+[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. 
 
-List of supported Codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
+List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
 List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
 
@@ -32,7 +32,6 @@ Here's [additional information](https://github.com/jellyfin/jellyfin-docs/pull/1
 
 [RPi 3 failing to transcode](https://github.com/jellyfin/jellyfin/issues/1546)<br/>
 [RPi 4 failing to transcode](https://trac.ffmpeg.org/ticket/8018)<br/>
-
 
 ## Enabling Hardware Acceleration
 

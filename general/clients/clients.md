@@ -128,6 +128,7 @@ The official Jellyfin iOS app.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-expo)
+* [TestFlight Beta](https://testflight.apple.com/join/TcFUEVEb)
 
 ## Kodi
 

@@ -14,7 +14,7 @@ Linux/GNU | VAAPI (recommended), NVENC, QSV, AMF
 Windows | QSV, NVENC, AMF, VAAPI
 MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
-RPi |OMX
+RPi | OMX
 
 Here is the official list of supported Codecs for [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows.
 

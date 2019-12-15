@@ -79,7 +79,7 @@ Scrape poster images for movies, shows, and artists in your library from [fanart
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-gotify.svg)](https://github.com/jellyfin/jellyfin-plugin-gotify)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-gotify.svg)](https://github.com/jellyfin/jellyfin-plugin-gotify)
 
-Sends notifications to your Gotify server.
+Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
 
 #### IPTV
 
@@ -189,7 +189,3 @@ Manage TVHeadend from Jellyfin.
 #### [antennas](https://github.com/TheJF/antennas)
 
 Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plug-in.
-
-#### [gotify](https://github.com/jellyfin/jellyfin-plugin-gotify)
-
-Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.

@@ -20,7 +20,7 @@ Here is the official list of supported Codecs for [NVIDIA Graphics Cards](https:
 
 List of supported Codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
-List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us/en/ark.html#@Processors)
+List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
 
 FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
 

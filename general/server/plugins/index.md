@@ -176,7 +176,7 @@ Automatically create movie box sets based on TMDb collections.
 
 Record your watched media with [Trakt](https://trakt.tv). 
 
-#### TVHeadend
+#### [TVHeadend](xref:server-plugins-tvheadend)
 
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)

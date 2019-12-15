@@ -2,7 +2,7 @@
 uid: clients-installing-kodi
 title: Installing Kodi
 ---
-#Installing Kodi
+# Installing Kodi
 
 ## Installation Process
 
@@ -22,7 +22,7 @@ title: Installing Kodi
 4. Within a few seconds you should be prompted for your server-details.
     * If a Jellyfin server is detected on your local network, it will displayed in the popup
     * If a Jellyfin server is not detected on your local network, select "Manually add server"
-        * Note that if you have a baseurl set, you should append that value to the end of the host field.  ie: `192.168.0.10:8096/jellyfin`
+        * Note that if you have a baseurl set, you should append that value to the end of the host field.  ie: `192.168.0.10:8096`
         * Enter the server name or IP address and the port number (default is 8096)
             * Host: `192.168.1.10:8096`
         * If using SSL and a reverse proxy, enter the full URL scheme in the "Host" field
@@ -51,4 +51,4 @@ The benefit of Native mode over Add-On mode is that nothing will be transcoded, 
 
 This will help keep your media libraries up to date without waiting for a periodic resync from Kodi.
 
-**Note: Kodi's default skin does not display all unicode characters. To display unicode characters the skins font must be changed**
+**Note: Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed**

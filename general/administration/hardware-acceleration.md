@@ -24,7 +24,7 @@ List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us
 
 FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
 
-Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/)
+Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
 #### Known Issues
 

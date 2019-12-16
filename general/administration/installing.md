@@ -254,7 +254,7 @@ Type:
     
     sudo nano jellyfin.sh
     
-Then paste the following and modify and needed:
+Then paste the following commands and modify as needed.
 
     #!/bin/bash
     JELLYFINDIR="/opt/jellyfin"

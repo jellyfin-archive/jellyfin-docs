@@ -18,9 +18,9 @@ If you can access the server locally but not outside of your LAN, then you likel
 
 The easiest way to check for issues is by checking the logs, which can be accessed through the settings on the web frontend or in the log directory on your server. If there are no logs at all relating to web traffic, even over a LAN connection, then the server hasn't been reached at all yet. This would indicate either an incorrect address or an issue somewhere else on the network.
 
-## Debug Mode
+## Debug (more verbose) Logging
 
-To enable debugging for Jellyfin, it is currently required to be manually enabled. Go to Jellyfin-directory/config, in the `logging.json` file, change:
+To enable debug (much more verbose) logging for Jellyfin, it is currently required to manually edit config files - no UI options exist yet. Go to Jellyfin-directory/config, in the `logging.json` file, change:
 
 `"MinimumLevel": "Information",`
 
@@ -32,7 +32,7 @@ Jellyfin 10.4.1 and above will auto-reload the new configuration. The debug mess
 
 ## DLNA
 
-DLNA is based on uPnP. DLNA will send a broadcast signal from Jellyfin. This broadcast is limited to Jellyfin's current subnet. If using Docker Host Mode is required, otherwise the broadcast signal will only be sent in the bridged network inside of docker. 
+DLNA is based on uPnP. DLNA will send a broadcast signal from Jellyfin. This broadcast is limited to Jellyfin's current subnet. If using Docker, the network should use Host Mode, otherwise the broadcast signal will only be sent in the bridged network inside of docker. 
 
 If DLNA fails to bind properly, `[ERR] Failed to bind to port 1900: "Address already in use". DLNA will be unavailable` should appear in the logs.
 

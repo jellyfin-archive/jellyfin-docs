@@ -1,4 +1,8 @@
-- uid: clients-index
+- name: Clients
+  items:
+  - uid: clients-index
+    items:
+    - uid: clients-installing-kodi
 
 - name: Administration
   items:

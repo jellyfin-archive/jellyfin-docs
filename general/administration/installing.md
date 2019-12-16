@@ -220,7 +220,7 @@ Generic amd64 Linux builds in TAR archive format are available [here](https://je
 
 ### Installation Process
 
-Create a directory in /opt for jellyfin and it's files, and cd into it. The following assumes the directory is called "jellyfin"
+Create a directory in /opt for jellyfin and its files, and enter that directory.
     
     sudo mkdir /opt/jellyfin 
     cd /opt/jellyfin
@@ -238,7 +238,7 @@ Create four sub-directories for Jellyfin data:
     
     sudo mkdir data cache config log
 
-If you are running Debian or a derivative, you must also download and install the Jellyfin specific ffmpeg. Be sure to download the latest release that matches your OS (4.2.1-3 for Debian Stretch assumed below).
+If you are running Debian or a derivative, you can also download and install an ffmpeg release built specifically for Jellyfin. Be sure to download the latest release that matches your OS (4.2.1-3 for Debian Stretch assumed below).
 
     sudo wget https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v4.2.1-3/jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
     sudo dpkg --install jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
@@ -254,7 +254,7 @@ Type:
     
     sudo nano jellyfin.sh
     
-Then paste the following and modify and needed:
+Then paste the following commands and modify as needed.
 
     #!/bin/bash
     JELLYFINDIR="/opt/jellyfin"

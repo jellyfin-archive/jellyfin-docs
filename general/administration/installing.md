@@ -220,7 +220,7 @@ Generic amd64 Linux builds in TAR archive format are available [here](https://je
 
 ### Installation Process
 
-Create a directory in /opt for jellyfin and it's files, and cd into it. The following assumes the directory is called "jellyfin"
+Create a directory in /opt for jellyfin and its files, and enter that directory.
     
     sudo mkdir /opt/jellyfin 
     cd /opt/jellyfin

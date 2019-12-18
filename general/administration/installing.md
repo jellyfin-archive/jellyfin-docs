@@ -256,16 +256,18 @@ Type:
     
 Then paste the following commands and modify as needed.
 
-    #!/bin/bash
-    JELLYFINDIR="/opt/jellyfin"
-    FFMPEGDIR="/usr/share/jellyfin-ffmpeg"
+```bash
+#!/bin/bash
+JELLYFINDIR="/opt/jellyfin"
+FFMPEGDIR="/usr/share/jellyfin-ffmpeg"
 
-    $JELLYFINDIR/jellyfin/jellyfin \
-    -d $JELLYFINDIR/data \
-    -C $JELLYFINDIR/cache \
-    -c $JELLYFINDIR/config \
-    -l $JELLYFINDIR/log \
-    --ffmpeg $FFMPEGDIR/ffmpeg 
+$JELLYFINDIR/jellyfin/jellyfin \
+-d $JELLYFINDIR/data \
+-C $JELLYFINDIR/cache \
+-c $JELLYFINDIR/config \
+-l $JELLYFINDIR/log \
+--ffmpeg $FFMPEGDIR/ffmpeg 
+````
 
 Assuming you desire Jellyfin to run as a non-root user, chmod all files and directories to your normal login user and group. Also make the startup script above executable.
 

@@ -222,38 +222,51 @@ Generic amd64 Linux builds in TAR archive format are available [here](https://je
 
 Create a directory in /opt for jellyfin and its files, and enter that directory.
     
-    sudo mkdir /opt/jellyfin 
-    cd /opt/jellyfin
+```bash
+sudo mkdir /opt/jellyfin 
+cd /opt/jellyfin
+```
 
 Download the latest generic linux build from the [Jellyfin release page](https://github.com/jellyfin/jellyfin/releases). The generic linux build ends with "linux-amd64.tar.gz". The rest of these instructions assume version 10.4.3 is being installed (i.e. jellyfin_10.4.3_linux-amd64.tar.gz). Download the generic build, then extract the archive:
 
-    sudo wget https://github.com/jellyfin/jellyfin/releases/download/v10.4.3/jellyfin_10.4.3_linux-amd64.tar.gz
-    sudo tar xvzf jellyfin_10.4.3_linux-amd64.tar.gz
+```bash
+sudo wget https://github.com/jellyfin/jellyfin/releases/download/v10.4.3/jellyfin_10.4.3_linux-amd64.tar.gz
+sudo tar xvzf jellyfin_10.4.3_linux-amd64.tar.gz
+```
 
 Create a symbolic link to the Jellyfin 10.4.3 directory. This allows an upgrade by repeating the above steps and enabling it by simply re-creating the symbolic link to the new version.
 
-    sudo ln -s jellyfin_10.4.3 jellyfin
+```bash
+sudo ln -s jellyfin_10.4.3 jellyfin
+```
 
 Create four sub-directories for Jellyfin data:
     
-    sudo mkdir data cache config log
+```bash
+sudo mkdir data cache config log
+```
 
 If you are running Debian or a derivative, you can also download and install an ffmpeg release built specifically for Jellyfin. Be sure to download the latest release that matches your OS (4.2.1-3 for Debian Stretch assumed below).
 
-    sudo wget https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v4.2.1-3/jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
-    sudo dpkg --install jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
-    
+```bash
+sudo wget https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v4.2.1-3/jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
+sudo dpkg --install jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
+```
+
 If you run into any dependency errors, run this and it will install them and jellyfin-ffmpeg:
 
-    sudo apt install -f
-
+```bash
+sudo apt install -f
+```
     
 Due to the number of command line options that must be passed, it is easiest to create a small script (here called jellyfin.sh) to run Jellyfin.
 
 Type:
-    
-    sudo nano jellyfin.sh
-    
+
+```bash
+sudo nano jellyfin.sh
+```
+
 Then paste the following commands and modify as needed.
 
 ```bash
@@ -271,12 +284,16 @@ $JELLYFINDIR/jellyfin/jellyfin \
 
 Assuming you desire Jellyfin to run as a non-root user, chmod all files and directories to your normal login user and group. Also make the startup script above executable.
 
-    sudo chown -R user:group *
-    sudo chmod u+x jellyfin.sh
+```bash
+sudo chown -R user:group *
+sudo chmod u+x jellyfin.sh
+```
 
 Finally you can run it. You will see lots of log information when run, this is normal. Setup is as usual in the web browser.
-    
-    ./jellyfin.sh
+
+```bash
+./jellyfin.sh
+```
 
 ## Portable DLL
 

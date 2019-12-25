@@ -43,6 +43,40 @@ The hardware acceleration is available immediately for media playback. No server
 
 Each hardware acceleration type, as well as each Jellyfin installation type, requires different setup options before it can be used. It is always best to consult the FFMpeg documentation on the acceleration type you choose for the latest information.
 
+### Acceleration on Docker
+
+In order to use Hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo`
+
+ Docker run configuration example:
+ 
+   `docker run -d \`  
+    `--volume /path/to/config:/config \`  
+    `--volume /path/to/cache:/cache \`  
+    `--volume /path/to/media:/media \`  
+    `--net=host \`  
+    `--restart=unless-stopped \`  
+    `--device /dev/dri/renderD128:/dev/dri/renderD128 \`  
+    `--device /dev/dri/card0:/dev/dri/card0 \`  
+    `jellyfin/jellyfin`
+  
+Alternatively, using docker-compose:  
+
+```
+version: "3"  
+services:  
+  jellyfin:  
+    image: jellyfin/jellyfin
+    network_mode: "host"  
+    volumes:  
+      - /path/to/config:/config  
+      - /path/to/cache:/cache  
+      - /path/to/media:/media  
+    devices: 
+      - /dev/dri/renderD128:/dev/dri/renderD128
+      - /dev/dri/card0:/dev/dri/card0
+      
+```
+
 ### Configuring VAAPI acceleration on Debian/Ubuntu from `.deb` packages
 
 Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ensure permissions are correct.

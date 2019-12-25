@@ -47,6 +47,8 @@ Each hardware acceleration type, as well as each Jellyfin installation type, req
 
 In order to use Hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo`
 
+Note: [NVIDIA GPU's](https://github.com/docker/compose/issues/6691) currently aren't supported in Docker-compose. 
+
  Docker run configuration example:
  
    `docker run -d \`  

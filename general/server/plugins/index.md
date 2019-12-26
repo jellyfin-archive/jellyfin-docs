@@ -51,7 +51,7 @@ Manage your Anime in Jellyfin. Supports several different metadata providers and
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
 
-Automatically organizes your media.
+Automatically organizes your media by monitoring a folder and moving or copying new media files into your library folder.
 
 **Links:** 
 
@@ -111,7 +111,7 @@ Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
 
-Enable IPTV support in Jellyfin.
+Allows you to add IPTV feeds to Jellyfin so users can watch IPTV feeds.
 
 **Links:** 
 
@@ -147,7 +147,7 @@ Authenticate your Jellyfin users against an LDAP database, and optionally create
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-nextpvr.svg)](https://github.com/jellyfin/jellyfin-plugin-nextpvr)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-nextpvr.svg)](https://github.com/jellyfin/jellyfin-plugin-nextpvr)
 
-Provides access to LiveTV, Program Guide and Recordings from NextPVR.
+Provides access to LiveTV, Program Guide and Recordings from [NextPVR](https://www.nextpvr.com/).
 
 **Links:** 
 
@@ -159,7 +159,7 @@ Provides access to LiveTV, Program Guide and Recordings from NextPVR.
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-opensubtitles.svg)](https://github.com/jellyfin/jellyfin-plugin-opensubtitles)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-opensubtitles.svg)](https://github.com/jellyfin/jellyfin-plugin-opensubtitles)
 
-Download subtitles from the internet to use with your media files from [Open Subtitles](https://www.opensubtitles.org/).
+Download subtitles from the internet to use with your media files from [Open Subtitles](https://www.opensubtitles.org/). You can configure the languages it downloads on a per-library basis.
 
 **Links:** 
 
@@ -171,7 +171,7 @@ Download subtitles from the internet to use with your media files from [Open Sub
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-playbackreporting.svg)](https://github.com/jellyfin/jellyfin-plugin-playbackreporting)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-playbackreporting.svg)](https://github.com/jellyfin/jellyfin-plugin-playbackreporting)
 
-Collect and show user playback statistics.
+Collect and show user playback statistics, such as total time watched, media watched, time of day watched and time of week watched. Can keep information for as long as you want, or can cull older information automatically. Also allows you to manually query the data collected so you can generate your own reports.
 
 **Links:** 
 
@@ -230,7 +230,7 @@ Get notifications via Slack.
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-tmdbboxsets.svg)](https://github.com/jellyfin/jellyfin-plugin-tmdbboxsets)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-tmdbboxsets.svg)](https://github.com/jellyfin/jellyfin-plugin-tmdbboxsets)
 
-Automatically create movie box sets based on TMDb collections.
+Automatically create movie box sets based on TMDb collections. Configerable minimum number of films to be considered a boxset. Boxsets are created as collections, and includes a schedueld task to ensure that new media is automatically put into boxsets.
 
 **Links:** 
 

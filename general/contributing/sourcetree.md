@@ -35,7 +35,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
 22. benches/Jellyfin.Common.Benches:
 
 
-### [Jellyfin WebOS](https://github.com/jellyfin/jellyfin-web)
+### [Web Client](https://github.com/jellyfin/jellyfin-web)
 1.  Src: 
     - components:
     - controllers:

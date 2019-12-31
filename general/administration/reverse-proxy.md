@@ -15,7 +15,7 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 When following this guide, be sure to replace the following variables with your information:
 
   * `DOMAIN_NAME` - Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
-  * `domain.tld` - The domain name Jellyfin services will run under (e.g. example.com)
+  * `example.com` - The domain name Jellyfin services will run under (e.g. example.com)
   * `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy is on the same server use 127.0.0.1)
 
 In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
@@ -271,11 +271,11 @@ services:
       traefik.backend: traefik
       traefik.docker.network: traefik
       traefik.port: 8080
-      traefik.frontend.rule: Host:traefik.domain.tld,
+      traefik.frontend.rule: Host:traefik.example.com,
       traefik.frontend.entryPoints: https
       traefik.frontend.passHostHeader: "true"
       traefik.frontend.headers.SSLForceHost: "true"
-      traefik.frontend.headers.SSLHost: traefik.domain.tld
+      traefik.frontend.headers.SSLHost: traefik.example.com
       traefik.frontend.headers.SSLRedirect: "true"
       traefik.frontend.headers.browserXSSFilter: "true"
       traefik.frontend.headers.contentTypeNosniff: "true"
@@ -285,7 +285,7 @@ services:
       traefik.frontend.headers.STSPreload: "true"
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
-      traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://domain.tld'
+      traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://example.com'
     restart: unless-stopped
 
   jellyfin:
@@ -337,7 +337,7 @@ defaultEntryPoints = ["http", "https"]
 
 [acme]
 acmeLogging = true
-email = "user@domain.tld"
+email = "user@example.com"
 storage = "acme.json"
 entryPoint = "https"
   [acme.dnsChallenge]
@@ -345,10 +345,10 @@ entryPoint = "https"
     delayBeforeCheck = "60"
 
 [[acme.domains]]
-  main = "*.domain.tld"
+  main = "*.example.com"
   
 [docker]
-domain = "domain.tld"
+domain = "example.com"
 network = "traefik"
 exposedbydefault = false
 
@@ -363,10 +363,10 @@ exposedbydefault = false
     passHostHeader = true
     [frontends.jellyfin.routes]
       [frontends.jellyfin.routes.route-jellyfin-ext]
-        rule = "Host:jellyfin.domain.tld"
+        rule = "Host:jellyfin.example.com"
     [frontends.jellyfin.headers]
       SSLRedirect = true
-      SSLHost = "jellyfin.domain.tld"
+      SSLHost = "jellyfin.example.com"
       SSLForceHost = true
       STSSeconds = 315360000
       STSIncludeSubdomains = true
@@ -376,13 +376,13 @@ exposedbydefault = false
       contentTypeNosniff = true
       browserXSSFilter = true
       customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
-      customFrameOptionsValue = "allow-from https://domain.tld"
+      customFrameOptionsValue = "allow-from https://example.com"
 
 ```
 
 Finally, create an empty acme.json : `touch acme.json` `chmod 600 acme.json` 
 
-IMPORTANT ! Change domain.tld to your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not being a proper email address.
+IMPORTANT ! Change example.com to your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not being a proper email address.
 
 Launch your Traefik/Jellyfin services : `docker-compose up -d`
 
@@ -390,7 +390,7 @@ Congratulations, your stack with Traefik and Jellyfin is UP !
 
 Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
 
-Go to jellyfin.domain.tld (in this case), and your jellyfin is UP with HTTPS (AES 256).
+Go to jellyfin.example.com (in this case), and your jellyfin is UP with HTTPS (AES 256).
 
 ## LetsEncrypt with Certbot
 

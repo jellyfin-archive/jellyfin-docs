@@ -137,4 +137,4 @@ Useful resources:
     
     You can set any value, but 256 was thoroughly tested to be the minimum recommended for the best results.
 
-Note: In testing transcoding was not working fast enough on Rpi3 to run in real time because the video was being resized. Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264
+Note:  Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264. Active cooling (fan) is required, passive cooling is insufficient for HWA. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.

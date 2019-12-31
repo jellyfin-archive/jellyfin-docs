@@ -139,6 +139,6 @@ Useful resources:
     
     Add the line `gpu_mem=320`. [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
     
-    You can set any value, but 256 was thoroughly tested to be the minimum recommended for the best results.
+    You can set any value, but 320 is recommended amount for [HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt)
 
 Note:  Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264. Active cooling (fan) is required, passive cooling is insufficient for HWA. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.

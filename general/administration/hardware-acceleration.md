@@ -150,3 +150,19 @@ Useful resources:
     Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
 
 Note:  Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+
+### Verifying Transcodes
+
+To verify that you are using the proper libraries, run this command against your transcoding log. This can be found at Admin Dashboard > Logs, and /var/log/jellyfin if instead via the repository.
+
+grep -A2 'Stream mapping:' /var/log/jellyfin/ffmpeg-transcode-85a68972-7129-474c-9c5d-2d9949021b44.txt
+
+This returned the result:
+
+Stream mapping:    
+Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))    
+Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame)) 
+
+stream #0:0 used software to decode hevc and used HWA to encode.
+
+stream #0:1 used software to transcode completely. That's fine, it doesn't consume as much processing power. 

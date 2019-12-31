@@ -6,11 +6,13 @@ title: Hardware Acceleration
 
 # Hardware Acceleration
 
-Jellyfin supports hardware acceleration of video encoding/decoding using FFMpeg. FFMpeg can support multiple hardware acceleration implementations like Intel Quicksync (QSV), AMD AMF, OpenMax OMX, nVidia NVENC/NVDEC through the Video Acceleration API (VAAPI), and others.
+Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) (HWA) of video encoding/decoding using FFMpeg. FFMpeg and Jellyfin can support multiple hardware acceleration implementations such as Intel Quicksync (QSV), AMD AMF, nVidia NVENC/NVDEC, OpenMax OMX, and MediaCodec through the Video Acceleration API (VAAPI), and others.
+
+[VAAPI](https://en.wikipedia.org/wiki/Video_Acceleration_API) is a VA-API (video accelerated API) that uses [libva](https://github.com/intel/libva/blob/master/README.md) to interface with local drivers to provide HWA. [QSV](https://trac.ffmpeg.org/wiki/Hardware/QuickSync) uses a modified (forked) version of VAAPI and interfaces it with [libmfx](https://github.com/intel/media-driver/blob/master/README.md), their proprietary drivers [(list of supported processors for QSV)](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
 
 OS | Recommended HW Acceleration
 ------------ | -------------
-Linux/GNU | VAAPI (recommended), NVENC, QSV, AMF
+Linux/GNU | QSV, NVENC, VAAPI 
 Windows | QSV, NVENC, AMF, VAAPI
 MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
@@ -20,18 +22,11 @@ RPi | OMX
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
-List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
-
-FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
-
 Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
-Here's [additional information](https://github.com/jellyfin/jellyfin-docs/pull/169#issuecomment-565702145) to learn more. 
+On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx, and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not part of Jellyfin. 
 
-#### Known Issues
-
-[RPi 3 failing to transcode](https://github.com/jellyfin/jellyfin/issues/1546)<br/>
-[RPi 4 failing to transcode](https://trac.ffmpeg.org/ticket/8018)<br/>
+Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more. 
 
 ## Enabling Hardware Acceleration
 
@@ -83,6 +78,8 @@ services:
 
 Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ensure permissions are correct.
 
+To check information about VAAPI on your system install and run `vainfo`
+
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:  
     `$ ls -l /dev/dri`  
     `total 0`  
@@ -126,16 +123,18 @@ Useful resources:
 - https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
 - https://stgraber.org/2017/03/21/cuda-in-lxd/
 
-### Hardware acceleration on Raspberry Pi (tested on RPi3)
+### Hardware acceleration on Raspberry Pi3 and 4
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin:  
-    `sudo usermod -a -G video jellyfin`
+    `sudo usermod -aG video jellyfin`
     `sudo systemctl restart jellyfin`   
+    On Rpi4, update the firmware and kernel.
+    `sudo rpi-update`   
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard
 3. Change the amount of memory allocated to the GPU, as the Pi's GPU can't handle accelerated decoding and encoding simultaneously:
     `sudo nano /boot/config.txt`
     
-    Find the line that starts with `gpu_mem=` and replace it with `gpu_mem=256`.
+    Add the line `gpu_mem=320`. [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
     
     You can set any value, but 256 was thoroughly tested to be the minimum recommended for the best results.
 
-Note: In testing transcoding was not working fast enough to run in real time because the video was being resized. The Pi 3 is likely not fast enough to resize as part of the transcoding.
+Note: In testing transcoding was not working fast enough on Rpi3 to run in real time because the video was being resized. Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264

@@ -165,4 +165,4 @@ Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 
 stream #0:0 used software to decode hevc and used HWA to encode.
 
-stream #0:1 used software to transcode completely. That's fine, it doesn't consume as much processing power. 
+stream #0:1 had the same results. Decoding is easier than encoding so these are overall good results.

@@ -26,6 +26,8 @@ Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comment
 
 AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
 
+Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need APU or dGPU. It will be a while before AV1 hardware acceleration shows up though (realistically 2020+).
+
 On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx, and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not part of Jellyfin. 
 
 Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more. 

@@ -137,8 +137,10 @@ Useful resources:
 3. Change the amount of memory allocated to the GPU, as the Pi's GPU can't handle accelerated decoding and encoding simultaneously:
     `sudo nano /boot/config.txt`
     
-    Add the line `gpu_mem=320`. [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
+    Add the line `gpu_mem=320` [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
     
-    You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt)
+    You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt). 
+    
+    Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
 
 Note:  Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264. Active cooling (fan) is required, passive cooling is insufficient for HWA. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.

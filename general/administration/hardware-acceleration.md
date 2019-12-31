@@ -24,6 +24,8 @@ List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardwa
 
 Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
+AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
+
 On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx, and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not part of Jellyfin. 
 
 Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more. 

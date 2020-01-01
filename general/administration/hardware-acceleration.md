@@ -18,19 +18,17 @@ MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
 RPi | OMX
 
-[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. 
+[Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
+
+[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
-Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
-
 AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
 
-Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html)
-
-[Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
-
 Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need APU or dGPU. It will be a while before AV1 hardware acceleration shows up though (realistically 2020+).
+
+Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html)
 
 On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx, and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not part of Jellyfin. 
 
@@ -165,4 +163,4 @@ Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 
 stream #0:0 used software to decode hevc and used HWA to encode.
 
-stream #0:1 had the same results. Decoding is easier than encoding so these are overall good results.
+stream #0:1 had the same results. Decoding is easier than encoding so these are overall good results. HWA decoding is a work in progress.

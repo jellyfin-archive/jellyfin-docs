@@ -32,6 +32,8 @@ Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-co
 
 On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx, and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not part of Jellyfin. 
 
+CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV
+
 Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more. 
 
 ## Enabling Hardware Acceleration

@@ -26,7 +26,7 @@ List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardwa
 
 AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
 
-Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need APU or dGPU. It will be a while before AV1 hardware acceleration shows up though (realistically 2020+).
+Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need an APU or dGPU for hardware acceleration.
 
 Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html)
 

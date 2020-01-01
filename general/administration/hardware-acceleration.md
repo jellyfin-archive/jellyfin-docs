@@ -66,7 +66,7 @@ Note: [NVIDIA GPU's](https://github.com/docker/compose/issues/6691) currently ar
   
 Alternatively, using docker-compose:  
 
-```
+```yaml
 version: "3"  
 services:  
   jellyfin:  

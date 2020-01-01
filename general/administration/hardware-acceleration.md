@@ -77,8 +77,9 @@ services:
       - /path/to/cache:/cache  
       - /path/to/media:/media  
     devices: 
-      - /dev/dri/renderD128:/dev/dri/renderD128
+      - /dev/dri/renderD128:/dev/dri/renderD128 # VAAPI devices, may be D128, D129, etc.
       - /dev/dri/card0:/dev/dri/card0
+      - /dev/vchiq:/dev/qchiq  # Rpi4
       
 ```
 

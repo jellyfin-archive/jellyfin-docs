@@ -38,6 +38,8 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
 ### [Web Client](https://github.com/jellyfin/jellyfin-web)
 1.  Src: 
     - components: `custom elements used for different sections of the user interface`
+      - playerstats:
+        - playerstats.js: `Code for displaying Playback Info during playback`
     - controllers: `scripts that handle the logic for different pages`
     - css:
     - img:

@@ -6,32 +6,35 @@ title: Hardware Acceleration
 
 # Hardware Acceleration
 
-Jellyfin supports hardware acceleration of video encoding/decoding using FFMpeg. FFMpeg can support multiple hardware acceleration implementations like Intel Quicksync (QSV), AMD AMF, OpenMax OMX, nVidia NVENC/NVDEC through the Video Acceleration API (VAAPI), and others.
+Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) (HWA) of video encoding/decoding using FFMpeg. FFMpeg and Jellyfin can support multiple hardware acceleration implementations such as Intel Quicksync (QSV), AMD AMF, nVidia NVENC/NVDEC, OpenMax OMX and MediaCodec through Video Acceleration API's.
+
+[VAAPI](https://en.wikipedia.org/wiki/Video_Acceleration_API) is a Video Acceleration API that uses [libva](https://github.com/intel/libva/blob/master/README.md) to interface with local drivers to provide HWA. [QSV](https://trac.ffmpeg.org/wiki/Hardware/QuickSync) uses a modified (forked) version of VAAPI and interfaces it with [libmfx](https://github.com/intel/media-driver/blob/master/README.md) and their proprietary drivers [(list of supported processors for QSV)](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
 
 OS | Recommended HW Acceleration
 ------------ | -------------
-Linux/GNU | VAAPI (recommended), NVENC, QSV, AMF
+Linux/GNU | QSV, NVENC, VAAPI
 Windows | QSV, NVENC, AMF, VAAPI
 MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
 RPi | OMX
 
-[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. 
+[Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
+
+[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
-List of Intel Processors that support [QSV](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
+AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
 
-FFmpeg Hardware Acceleration support [list](https://trac.ffmpeg.org/wiki/HWAccelIntro).
+Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need an APU or dGPU for hardware acceleration.
 
-Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
+Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html)
 
-Here's [additional information](https://github.com/jellyfin/jellyfin-docs/pull/169#issuecomment-565702145) to learn more. 
+On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not supported by of Jellyfin. 
 
-#### Known Issues
+CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV
 
-[RPi 3 failing to transcode](https://github.com/jellyfin/jellyfin/issues/1546)<br/>
-[RPi 4 failing to transcode](https://trac.ffmpeg.org/ticket/8018)<br/>
+Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more. 
 
 ## Enabling Hardware Acceleration
 
@@ -43,9 +46,48 @@ The hardware acceleration is available immediately for media playback. No server
 
 Each hardware acceleration type, as well as each Jellyfin installation type, requires different setup options before it can be used. It is always best to consult the FFMpeg documentation on the acceleration type you choose for the latest information.
 
+### Acceleration on Docker
+
+In order to use Hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo`
+
+Note: [NVIDIA GPU's](https://github.com/docker/compose/issues/6691) currently aren't supported in Docker-compose. 
+
+ Docker run configuration example:
+ 
+   `docker run -d \`  
+    `--volume /path/to/config:/config \`  
+    `--volume /path/to/cache:/cache \`  
+    `--volume /path/to/media:/media \`  
+    `--net=host \`  
+    `--restart=unless-stopped \`  
+    `--device /dev/dri/renderD128:/dev/dri/renderD128 \`  
+    `--device /dev/dri/card0:/dev/dri/card0 \`  
+    `jellyfin/jellyfin`
+  
+Alternatively, using docker-compose:  
+
+```yaml
+version: "3"  
+services:  
+  jellyfin:  
+    image: jellyfin/jellyfin
+    network_mode: "host"  
+    volumes:  
+      - /path/to/config:/config  
+      - /path/to/cache:/cache  
+      - /path/to/media:/media  
+    devices: 
+      - /dev/dri/renderD128:/dev/dri/renderD128 # VAAPI devices, may be D128, D129, etc.
+      - /dev/dri/card0:/dev/dri/card0
+      - /dev/vchiq:/dev/qchiq  # Rpi4
+      
+```
+
 ### Configuring VAAPI acceleration on Debian/Ubuntu from `.deb` packages
 
 Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ensure permissions are correct.
+
+To check information about VAAPI on your system install and run `vainfo`
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:  
     `$ ls -l /dev/dri`  
@@ -90,16 +132,38 @@ Useful resources:
 - https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
 - https://stgraber.org/2017/03/21/cuda-in-lxd/
 
-### Hardware acceleration on Raspberry Pi (tested on RPi3)
+### Hardware acceleration on Raspberry Pi3 and 4
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin:  
-    `sudo usermod -a -G video jellyfin`
+    `sudo usermod -aG video jellyfin`
     `sudo systemctl restart jellyfin`   
+    On Rpi4, update the firmware and kernel.
+    `sudo rpi-update`   
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard
 3. Change the amount of memory allocated to the GPU, as the Pi's GPU can't handle accelerated decoding and encoding simultaneously:
     `sudo nano /boot/config.txt`
     
-    Find the line that starts with `gpu_mem=` and replace it with `gpu_mem=256`.
+    For Rpi4, add the line `gpu_mem=320` [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
     
-    You can set any value, but 256 was thoroughly tested to be the minimum recommended for the best results.
+    For Rpi3, add the line `gpu_mem=256`
+    
+    You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt). 
+    
+    Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
 
-Note: In testing transcoding was not working fast enough to run in real time because the video was being resized. The Pi 3 is likely not fast enough to resize as part of the transcoding.
+Note:  Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+
+### Verifying Transcodes
+
+To verify that you are using the proper libraries, run this command against your transcoding log. This can be found at Admin Dashboard > Logs, and /var/log/jellyfin if instead via the repository.
+
+grep -A2 'Stream mapping:' /var/log/jellyfin/ffmpeg-transcode-85a68972-7129-474c-9c5d-2d9949021b44.txt
+
+This returned the result:
+
+Stream mapping:    
+Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))    
+Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame)) 
+
+stream #0:0 used software to decode hevc and used HWA to encode.
+
+stream #0:1 had the same results. Decoding is easier than encoding so these are overall good results. HWA decoding is a work in progress.

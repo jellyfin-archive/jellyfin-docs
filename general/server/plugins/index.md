@@ -111,7 +111,7 @@ Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
 
-Allows you to add IPTV feeds to Jellyfin so users can watch IPTV feeds.
+Allows you to add IPTV feeds to Jellyfin.
 
 **Links:** 
 

@@ -3,10 +3,9 @@ uid: server-media-cloud-storage
 title: Cloud Storage
 ---
 
+# Cloud Storage
 
-# Cloud storage
-
-There is no native support for cloud storage of services such as Amazon S3, Dropbox, Google Drive.
+There is no native support for cloud storage on services such as Amazon S3, Dropbox, and Google Drive.
 
 One way to use your cloud storage with Jellyfin is to use Rclone.
 

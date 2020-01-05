@@ -3,7 +3,7 @@ uid: contrib-branding-guide
 title: Branding
 ---
 
-# Jellyfin Branding Guide
+# Branding
 
 ## Naming Conventions
 
@@ -17,35 +17,29 @@ Specific examples include:
 * The Git repository and non-C# files inside of it should use lowercase `jellyfin` for convenience on case-sensitive filesystems. `build-jellyfin.ps1`
 * The final output binary, initscrips, and package names should use lowercase `jellyfin` for similar reasons as above. `jellyfin.dll`, `jellyfin_3.5.2-1_all.deb`, `jellyfin.zip`
 * Configuration directories can use either, depending on operating system conventions. `/var/lib/jellyfin`, `AppData/Jellyfin`
-* The logo may use either, depending on aesthetics and font choice.
+* The logo has no strict rules for capitalization, the style is dependent on aesthetics and font choice.
 
-## Jellyfin UX Repository
+## Icons and Other Assets
 
-All Jellyfin iconography and other resources can be found in the [jellyfin-ux repository](https://github.com/jellyfin/jellyfin-ux).
+All iconography and other resources can be found in the [jellyfin-ux](https://github.com/jellyfin/jellyfin-ux) repository.
 
-This repository contains:
-
-* SVG files for icons
-* SVG files for banners
+* Icons
+* Banners
 * Fonts
 
-## Jellyfin Colours
+### Logo
 
-These are the colours used for the Jellyfin logos and other places throughout the interface.
-
-### Logo Colours
-
-The design for the logo uses a gradient for the infill, and if the non transparent logo is chosen there is a background colour which is optional.
+The design for the logo uses a gradient for the infill, and if the non-transparent logo is chosen there is an optional background color.
 
 * Gradient Start: #AA5CC3
 * Gradient End: #00A4DC
 * Background Colour: #000B25
 
-### Interface Colours
+### Theme
 
 * Background Colour: #101010
 * Accent Colour: #00A4DC
 
-## Jellyfin Fonts
+### Fonts
 
-The banner uses the font [Quicksand](https://fonts.google.com/specimen/Quicksand).
+The banner uses the [Quicksand](https://fonts.google.com/specimen/Quicksand) font.

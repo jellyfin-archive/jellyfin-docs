@@ -2,6 +2,7 @@
 uid: contrib-issues
 title: GitHub Issues
 ---
+
 # Requesting Features
 
 Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.

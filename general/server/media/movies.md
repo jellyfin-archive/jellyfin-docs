@@ -42,4 +42,5 @@ Movies
     ├── Best_Movie_Ever (2019) - [720P].mp4
     └── Best_Movie_Ever (2019) - [Directors Cut].mp4
 ```
+
 If labels are not added to the end of filenames, as shown above, each file will be treated as a unique movie and not a version of the same movie.

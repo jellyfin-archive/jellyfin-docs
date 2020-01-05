@@ -1,8 +1,8 @@
 ---
 uid: general-docs
-title: General Documentation
+title: General
 ---
 
-# General Documentation
+# General
 
-Check out our [quick start guide](xref:admin-quick-start) for example.
+Check out our [quick start guide](xref:admin-quick-start).

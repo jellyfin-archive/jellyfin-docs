@@ -11,7 +11,6 @@ Click on the Admin Panel Icon in the top right corner (1)
 Click 'Live TV' (2) under the 'Live TV' section
 Click the '+' button (3) next to 'Tuner Devices'
 
-
 ![](~/images/live-tv-setup-tuner1.png)
 
 Click 'Detect My Devices' from the 'Live TV Tuner Setup' page that opens

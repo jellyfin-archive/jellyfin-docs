@@ -3,7 +3,6 @@ uid: admin-hardware-acceleration
 title: Hardware Acceleration
 ---
 
-
 # Hardware Acceleration
 
 Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) (HWA) of video encoding/decoding using FFMpeg. FFMpeg and Jellyfin can support multiple hardware acceleration implementations such as Intel Quicksync (QSV), AMD AMF, nVidia NVENC/NVDEC, OpenMax OMX and MediaCodec through Video Acceleration API's.
@@ -50,9 +49,9 @@ Each hardware acceleration type, as well as each Jellyfin installation type, req
 
 In order to use Hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo`
 
-Note: [NVIDIA GPU's](https://github.com/docker/compose/issues/6691) currently aren't supported in Docker-compose. 
+**Note:** [NVIDIA GPUs](https://github.com/docker/compose/issues/6691) aren't currently supported in docker-compose.
 
- Docker run configuration example:
+Docker run configuration example:
  
    `docker run -d \`  
     `--volume /path/to/config:/config \`  
@@ -80,7 +79,6 @@ services:
       - /dev/dri/renderD128:/dev/dri/renderD128 # VAAPI devices, may be D128, D129, etc.
       - /dev/dri/card0:/dev/dri/card0
       - /dev/vchiq:/dev/qchiq  # Rpi4
-      
 ```
 
 ### Configuring VAAPI acceleration on Debian/Ubuntu from `.deb` packages
@@ -97,7 +95,7 @@ To check information about VAAPI on your system install and run `vainfo`
     `crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1`  
     `crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128`  
 
-    **NOTE:** On some releases, the group may be `video` instead of `render`.
+**NOTE:** On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin:  
     `sudo usermod -aG render jellyfin`  
@@ -107,7 +105,9 @@ To check information about VAAPI on your system install and run `vainfo`
 
 4. Watch a movie, and verify that transcoding is occurring by watching the `ffmpeg-transcode-*.txt` logs under `/var/log/jellyfin` and using `radeontop` or similar tools.
 
-### Hardware acceleration in a LXC/LXD container (tested with LXC 3.0, may or may not work with version 2)
+### LXC or LXD Container
+
+This has been tested with LXC 3.0 and may or may not work with older versions.
 
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 
@@ -121,49 +121,53 @@ Follow the steps above to add the jellyfin user to the `video` or `render` group
     `crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64`
     `crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128`
 
-3. Configure Jellyfin to use video acceleration, point it at the right device if the default option doesn't
+3. Configure Jellyfin to use video acceleration, point it at the right device if the default option is wrong.
 
 4. Try and play a video that requires transcoding and run the following, you should get a hit:
-   `$ ps aux | grep ffmpeg | grep accel`
+    `$ ps aux | grep ffmpeg | grep accel`
 
 5. You can also try playing a video that requires transcoding, and if it plays you're good.
 
 Useful resources:
-- https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
-- https://stgraber.org/2017/03/21/cuda-in-lxd/
+* https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
+* https://stgraber.org/2017/03/21/cuda-in-lxd/
 
-### Hardware acceleration on Raspberry Pi3 and 4
-1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin:  
+### Raspberry Pi 3 and 4
+1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin.
     `sudo usermod -aG video jellyfin`
-    `sudo systemctl restart jellyfin`   
+    `sudo systemctl restart jellyfin`
     On Rpi4, update the firmware and kernel.
-    `sudo rpi-update`   
-2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard
-3. Change the amount of memory allocated to the GPU, as the Pi's GPU can't handle accelerated decoding and encoding simultaneously:
+    `sudo rpi-update`
+2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard.
+3. Change the amount of memory allocated to the GPU. The GPU can't handle accelerated decoding and encoding simultaneously.
     `sudo nano /boot/config.txt`
-    
-    For Rpi4, add the line `gpu_mem=320` [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
-    
-    For Rpi3, add the line `gpu_mem=256`
-    
-    You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt). 
-    
+
+    For RPi4, add the line `gpu_mem=320` [See more Here](https://www.raspberrypi.org/documentation/configuration/config-txt/)
+
+    For RPi3, add the line `gpu_mem=256`
+
+    You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt).
+
     Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
 
-Note:  Rpi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+**Note:** RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Verifying Transcodes
 
 To verify that you are using the proper libraries, run this command against your transcoding log. This can be found at Admin Dashboard > Logs, and /var/log/jellyfin if instead via the repository.
 
+```bash
 grep -A2 'Stream mapping:' /var/log/jellyfin/ffmpeg-transcode-85a68972-7129-474c-9c5d-2d9949021b44.txt
+```
 
-This returned the result:
+This returned the following results.
 
-Stream mapping:    
-Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))    
-Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame)) 
+```bash
+Stream mapping:
+Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))
+Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
+```
 
-stream #0:0 used software to decode hevc and used HWA to encode.
+Stream #0:0 used software to decode hevc and used HWA to encode.
 
-stream #0:1 had the same results. Decoding is easier than encoding so these are overall good results. HWA decoding is a work in progress.
+Stream #0:1 had the same results. Decoding is easier than encoding so these are good results overall. HWA decoding is a work in progress.

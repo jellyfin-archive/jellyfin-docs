@@ -3,7 +3,6 @@ uid: admin-installing
 title: Installing Jellyfin
 ---
 
-
 # Installing
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.

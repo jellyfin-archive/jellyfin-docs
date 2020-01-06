@@ -13,5 +13,5 @@ With Rclone you can synchronize and mount your files and directories from multip
 
 For more information visit the following links:
 
-* [Rclone homepage](https://rclone.org/)
-* [Github](https://github.com/rclone/rclone)
+* [Website](https://rclone.org/)
+* [GitHub](https://github.com/rclone/rclone)

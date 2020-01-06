@@ -48,8 +48,10 @@ The benefit of Native mode over Add-On mode is that nothing will be transcoded, 
 4. Select your libraries to add in using the Jellyfin plugin's menu, proceed to import your library.
 5. Your files should now be accessible in Kodi and function the same way as Add-On mode, if not, enable debug logging in the Jellyfin plugin in Kodi and if in a Unix-like OS, set the **log level** of Samba to 2 to see if there are issues authenticating.
 
-**Note:** It's recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
+> [!NOTE]
+> It's recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
 
-This will help keep your media libraries up to date without waiting for a periodic resync from Kodi.
+This will help keep your media libraries up to date without waiting for a periodic re-sync from Kodi.
 
-**Note:** Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed.
+> [!NOTE]
+> Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed.

@@ -49,7 +49,8 @@ Each hardware acceleration type, as well as each Jellyfin installation type, req
 
 In order to use Hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo`
 
-**Note:** [NVIDIA GPUs](https://github.com/docker/compose/issues/6691) aren't currently supported in docker-compose.
+> [!NOTE]
+> [NVIDIA GPUs](https://github.com/docker/compose/issues/6691) aren't currently supported in docker-compose.
 
 Docker run configuration example:
  
@@ -95,7 +96,8 @@ To check information about VAAPI on your system install and run `vainfo`
     `crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1`  
     `crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128`  
 
-**NOTE:** On some releases, the group may be `video` instead of `render`.
+> [!NOTE]
+> On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin:  
     `sudo usermod -aG render jellyfin`  
@@ -150,7 +152,8 @@ Useful resources:
 
     Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
 
-**Note:** RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+> [!NOTE]
+> RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Verifying Transcodes
 

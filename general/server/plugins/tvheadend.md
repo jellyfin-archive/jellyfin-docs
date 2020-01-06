@@ -34,7 +34,8 @@ The objective of the guide is to configure the Jellyfin TVHeadend plugin to back
         * Password: *The password for the user created previously* (for example: Jellyfin_password)
         * Press Save
 
-**Note:** The parameters Change parameters, Streaming and Video recoder must be marked as shown. Otherwise, Jellyfin can connect to TVHeadend but problems may arise when reproducing the content.
+> [!NOTE]
+> The parameters Change parameters, Streaming and Video recoder must be marked as shown. Otherwise, Jellyfin can connect to TVHeadend but problems may arise when reproducing the content.
 
 2. Adjust the Jellyfin TVHeadend plugin to establish the connection.
     * Go to Dashboard > Plugins > TVHeadend > Settings
@@ -43,7 +44,8 @@ The objective of the guide is to configure the Jellyfin TVHeadend plugin to back
         * Username: *The user created previously* (for example: Jellyfin)
         * Password: *The password created previously* (for example: Jellyfin_password)
       
-**Note:** By default the the *TVHeadend Hostname or IP Address* section is configured by default with the hostname *localhost*, it is preferable to use the IP address *127.0.0.1* instead of *localhost*. [Reference](https://emby.media/community/index.php?/topic/55768-tv-headend-plugin-where-does-it-store-data/)
+> [!NOTE]
+> By default the the *TVHeadend Hostname or IP Address* section is configured by default with the hostname *localhost*, it is preferable to use the IP address *127.0.0.1* instead of *localhost*. [Reference](https://emby.media/community/index.php?/topic/55768-tv-headend-plugin-where-does-it-store-data/)
       
 3. Configure the channels for viewing in Jellyfin: even if Jellyfin manages to connect to TVHeadend, the guide will not be synchronized because there has to be a number assigned to the channels in TVHeadend. [Reference](https://emby.media/community/index.php?/topic/64583-no-channels-with-tvheadend-plugin/#ipboard_body)
     * Go to Configuration > Channel/EPG > Channels

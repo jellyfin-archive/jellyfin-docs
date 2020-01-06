@@ -1,5 +1,5 @@
 ---
-uid: server-users-adding-managing
+uid: server-users-managing
 title: Managing Users
 ---
 

@@ -46,7 +46,7 @@
   - name: Users
     items:
     - uid: server-users-index
-    - uid: server-users-adding-managing
+    - uid: server-users-managing
 
   - uid: server-plugins-index
     items:

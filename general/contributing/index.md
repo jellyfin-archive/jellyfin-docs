@@ -3,7 +3,6 @@ uid: contrib-index
 title: Contributing
 ---
 
-
 # Contributing to Jellyfin
 
 Thank you for your interest in contributing to the Jellyfin project! This page and its children desribe the ways you can contribute, as well as some of our policies. This should help guide you through your first Issue or PR.

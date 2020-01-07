@@ -1,8 +1,8 @@
 ---
 uid: plugin-api-docs
-title: Plugin API Documentation
+title: Plugin API
 ---
 
-# Plugin API Documentation
+# Plugin API
 
-This is the documentation of all plugin APIs in the server.
+This is the documentation for all interfaces plugins can use in the server.

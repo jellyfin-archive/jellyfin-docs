@@ -8,6 +8,7 @@ title: Getting Help
 If you are having trouble using or administrating Jellyfin, there are several ways to get help:
 
 * The Jellyfin [Matrix channels](https://matrix.to/#/+jellyfin:matrix.org): For chat and real-time discussions.
+
   * Some channels are bridged to IRC.
 
 * The Jellyfin [forums](https://forum.jellyfin.org): For long-term discussions.
@@ -30,6 +31,8 @@ We are also active on social media:
 * <a href="https://matrix.to/#/#jellyfin-offtopic:matrix.org"><img alt="jellyfin-offtopic" src="https://img.shields.io/matrix/jellyfin-offtopic:matrix.org.svg?logo=matrix&label=jellyfin-offtopic"></a>: Chat about anything
 
 ## IRC Channels
+
 Some channels are bridged from Matrix to freenode.net channels.
+
 * [#jellyfin on freenode.net](ircs://chat.freenode.net:6697/#jellyfin) - [freenode Webchat](https://webchat.freenode.net/#jellyfin)
 * [#jellyfin-dev on freenode.net](ircs://chat.freenode.net:6697/#jellyfin-dev) - [freenode Webchat](https://webchat.freenode.net/#jellyfin-dev)

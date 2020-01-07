@@ -3,7 +3,6 @@ uid: admin-migrate-from-emby
 title: Migrating from Emby
 ---
 
-
 # Migrating from Emby to Jellyfin
 
 Direct database migration from Emby (of any version) to Jellyfin is NOT SUPPORTED. We have found many subtle bugs due to the inconsistent database schemas that result from trying to do this, and strongly recommend that all Jellyfin users migrating from Emby start with a fresh database and library scan.

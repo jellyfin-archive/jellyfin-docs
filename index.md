@@ -11,7 +11,7 @@ title: Home
 <a href="https://translate.jellyfin.org/engage/jellyfin/?utm_source=widget"><img class="badge" alt="Translations" src="https://translate.jellyfin.org/widgets/jellyfin/-/svg-badge.svg"/></a>
 <a href="https://cloud.drone.io/jellyfin/jellyfin"><img class="badge" alt="Build Status" src="https://cloud.drone.io/api/badges/jellyfin/jellyfin/status.svg"/></a>
 <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img class="badge" alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"/></a>
-<br>
+<br/>
 <a href="https://opencollective.com/jellyfin"><img class="badge" alt="Donate" src="https://img.shields.io/opencollective/all/jellyfin.svg?label=backers"/></a>
 <a href="https://forum.jellyfin.org"/><img class="badge" alt="Discuss on our Forum" src="https://img.shields.io/discourse/https/forum.jellyfin.org/users.svg"/></a>
 <a href="https://matrix.to/#/+jellyfin:matrix.org"><img class="badge" alt="Chat on Matrix" src="https://img.shields.io/matrix/jellyfin:matrix.org.svg?logo=matrix"/></a>

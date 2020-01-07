@@ -202,6 +202,7 @@ Generate reports of your media library.
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-reports)
 
 #### ServerWMC
+
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
@@ -226,6 +227,7 @@ Get notifications via Slack.
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-slack)
 
 #### TMDb Box Sets
+
 [![](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-tmdbboxsets.svg)](https://github.com/jellyfin/jellyfin-plugin-tmdbboxsets)
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-tmdbboxsets.svg)](https://github.com/jellyfin/jellyfin-plugin-tmdbboxsets)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-tmdbboxsets.svg)](https://github.com/jellyfin/jellyfin-plugin-tmdbboxsets)
@@ -260,12 +262,11 @@ Manage TVHeadend from Jellyfin.
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 
-
-### 3rd Party Plugins
+### 3rd-Party Plugins
 
 #### Antennas
 
-Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plug-in.
+Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plugin.
 
 **Links:** 
 

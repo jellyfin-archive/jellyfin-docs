@@ -3,7 +3,6 @@ uid: admin-quick-start
 title: Quick Start
 ---
 
-
 # Quick-Start
 
 1. [Install Jellyfin on your system](xref:admin-installing).

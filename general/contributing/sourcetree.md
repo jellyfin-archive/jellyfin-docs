@@ -71,3 +71,16 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
        - assets/fonts:
        - java/org/jellyfin/androidtv:
        - res:
+
+### [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
+1. jellyfin_kodi
+   - database: `manipulating the local Jellyfin sqlite database`
+   - dialogs: `code behind popup menus for user interaction`
+   - entrypoint: `main addon settings page`
+   - helper: `small helper functions, mostly formatting or reused functions`
+   - jellyfin: `interacting with remote Jellyfin server`
+   - objects
+     - kodi: `handling local Kodi media types and database`
+2. resources:
+   - language: `string files for localization`
+   - skins: `design of popup menus for user interaction`

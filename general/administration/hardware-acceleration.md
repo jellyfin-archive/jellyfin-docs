@@ -151,6 +151,8 @@ Useful resources:
     You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt).
 
     Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
+    
+    Use `vcgencmd measure_temp && vcgencmd measure_clock arm` to monitor the temperature and clock speed of the CPU.
 
 > [!NOTE]
 > RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.

@@ -8,6 +8,7 @@ title: Source Tree
 The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Jellyfin's new code intermixed together. To help with this, this Source Tree guide was created.
 
 ### [Jellyfin Server](https://github.com/jellyfin/jellyfin)
+
 1.  BDInfo: `Blu-Ray Analyzer`
     - Properties: `Assembly Info`
 2.  DvdLib: `DVD Anaylzer`
@@ -35,6 +36,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
 22. benches/Jellyfin.Common.Benches:
 
 ### [Web Client](https://github.com/jellyfin/jellyfin-web)
+
 1.  src: 
     - components: `custom elements used for different sections of the user interface`
       - playerstats:
@@ -53,6 +55,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
     - themes: `all themes will exist in this folder, including custom themes at some point`
     
 ### [Android](https://github.com/jellyfin/jellyfin-android)
+
 1. res:
    - android:
 2. src:
@@ -64,6 +67,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
    - cordova:
    
 ### [Android-tv](https://github.com/jellyfin/jellyfin-androidtv)
+
 1. app:
    - src:
      - main:
@@ -72,6 +76,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
        - res:
 
 ### [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
+
 1. jellyfin_kodi
    - database: `manipulating the local Jellyfin sqlite database`
    - dialogs: `code behind popup menus for user interaction`

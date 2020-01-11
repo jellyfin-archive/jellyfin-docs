@@ -35,7 +35,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
 22. benches/Jellyfin.Common.Benches:
 
 ### [Web Client](https://github.com/jellyfin/jellyfin-web)
-1.  Src: 
+1.  src: 
     - components: `custom elements used for different sections of the user interface`
       - playerstats:
         - playerstats.js: `Code for displaying Playback Info during playback`

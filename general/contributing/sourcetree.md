@@ -60,7 +60,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
    - NativeShell:
      - res:
      - src:
-       - RemotePlayerService.java: `Remote Notifier such as for BlueTooth`
+       - RemotePlayerService.java: `Remote Notifier such as for BlueTooth` ***unconfirmed***
      - www:
    - cordova:
    

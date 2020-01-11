@@ -42,10 +42,10 @@ If the container is unsupported, this will result in remuxing. The video and aud
 ||WebOS|Android|AndroidTV|Kodi|Roku
 |:---:|:---:|:---:|:---:|:---:|:---:
 |[mp4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)|✅|✅|✅|✅|✅
-|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>1, 2</sup>|🔶|🔶|🔶|🔶|🔶
-|[ts](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
+|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>1, 2</sup>|❌|🔶|🔶|🔶|🔶
+|[ts](https://en.wikipedia.org/wiki/MPEG_transport_stream)|❌|✅|✅|✅|✅
 
 
-<sup>1</sup>MKV containers can hold nearly any codec. *support not verified, initial testing is showing that all containers convert to ts using hls streaming protocol*
+<sup>1</sup>MKV containers can hold nearly any codec. *support not verified, initial testing is showing that all containers convert to ts using hls streaming protocol* Mp4 successfully streamed using http protocol instead of hls protocol and did not remux.
 
 <sup>2</sup>webm containers that have file extension mkv are marked as mkv on the media info page, and properly labeled as webm during playback. 

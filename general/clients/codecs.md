@@ -18,7 +18,7 @@ title: Codec Compatibility
 
 <sup>1</sup>HEVC support is potentially possible by offloading to the OS. *untested*
 
-<sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Directstream it.
+<sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Direct Stream.
 
 <sup>3</sup>H.264 10Bit is unsupported.
 

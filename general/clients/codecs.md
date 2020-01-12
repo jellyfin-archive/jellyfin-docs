@@ -18,7 +18,7 @@ title: Codec Compatibility
 
 <sup>1</sup>HEVC support is potentially possible by offloading to the OS. *untested*
 
-<sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Direct Stream.
+<sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Directstream it.
 
 <sup>3</sup>H.264 10Bit is unsupported.
 
@@ -53,28 +53,28 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 ||Format|TS|MP4|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |SubRip Text (SRT)|Formatted Text|❌|🔶|✅|🔶|
-|ASS/SSA|Formatted Text|❌|❌|✅|🔶|
+|ASS/SSA<sup>1</sup>|Formatted Text|❌|❌|✅|🔶|
 |VobSub|Picture|❌|✅|✅|🔶|
 |DVB-SUB|Picture|✅|❌|✅|❌|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
-|PGSSUB|Picture|❌|❌|❌|❌|
+|PGSSUB|Picture|❌|❌|✅|❌|
 
 
-Note: ASS Subtitles are only supported by mkv files. Mkv files can't natively be streamed therefore ASS subtitles will always inherently be burned into the video. This is not a limitation of JF. 
+<sup>1</sup>ASS Subtitles are only supported by mkv files. Mkv files can't natively be streamed therefore ASS subtitles will always inherently be burned into the video. This is not a limitation of JF. 
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 
 If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a container that is supported. This is the least intensive process. Most video containers will be remuxed to use the hls streaming protocol and ts containers. Remuxing shouldn't be a concern even for a Rpi3.
 
-||WebOS|Android|AndroidTV|Kodi|Roku
+||Browser|Android|AndroidTV|Kodi|Roku
 |:---:|:---:|:---:|:---:|:---:|:---:
-|[mp4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
+|[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|🔶|✅|🔶
-|[ts](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
-|[webM](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|||||
+|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
+|[webM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|||||
 
-<sup>1</sup>mp4 containers are one of the few containers that will not remux.
+<sup>1</sup>MP4 containers are one of the few containers that will not remux.
 
-<sup>2</sup>mkv containers can hold nearly any codec, but are not compatible with streaming in browsers and will remux.
+<sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in browsers and will remux.
 
-<sup>3</sup>mkv containers are improperly labeled as webm during playback. 
+<sup>3</sup>MKV containers are improperly labeled as webM during playback. 

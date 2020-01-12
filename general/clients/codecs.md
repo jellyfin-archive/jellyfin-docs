@@ -9,9 +9,9 @@ title: Codec Compatibility
  
 ## [Video Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats "Wikipedia's video codec tables")
 
-||WebOS|Android|AndroidTV|Kodi|[Roku](https://developer.roku.com/docs/specs/streaming.md)|
+||Browser|Android|AndroidTV|Kodi|[Roku](https://developer.roku.com/docs/specs/streaming.md)|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|[H.262/Xvid](https://en.wikipedia.org/wiki/MPEG-4_Part_2)|✅|✅|✅|✅|✅|
+|[MPEG4 ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2)<sup>4</sup>|❌|❌|❌|✅|✅|
 |[H.262/DivX](https://en.wikipedia.org/wiki/DivX)|✅|✅|✅|✅|✅|
 |[H.264/AVC](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|🔶<sup>3</sup>|✅|✅|✅|✅|
 |[H.265/HEVC](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌<sup>1</sup>|🔶<sup>2</sup>|❌|✅|❌|
@@ -22,22 +22,27 @@ title: Codec Compatibility
 
 <sup>3</sup>H.264 10Bit is unsupported.
 
+<sup>4</sup>This is the codec format for Xvid encodes.
+
 ## [Audio Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Audio_coding_formats_support "Wikipedia's audio codec tables")
 
 If the audio codec is unsupported or incompatible (such as playing a 5.1 channel stream on a stereo device), the audio codec must be transcoded. This is not nearly as intensive as video coding.
 
-||WebOS|Android|AndroidTV|Kodi|Roku
-|:---:|:---:|:---:|:---:|:---:|:---:
-|MP3|🔶<sup>1</sup>|✅|✅|✅|✅
-|AAC|✅|✅|✅|✅|✅
-|AC3|✅|✅|✅|✅|✅
-|EAC3<sup>2</sup>|✅|✅|✅|✅|✅
-|VORBIS|❌|✅|✅|✅|✅
+||Browser|Android|AndroidTV|Kodi|Roku|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+FLAC|✅|✅|✅|✅|✅|
+|MP3|🔶<sup>1</sup>|✅|✅|✅|✅|
+|AAC|🔶<sup>2</sup>|✅|✅|✅|✅|
+|AC3|✅|❌|✅|✅|✅|
+|EAC3<sup>3/sup>|✅|✅|✅|✅|✅|
+|VORBIS|❌|✅|✅|✅|✅|
 
 
-<sup>1</sup>MP3 Mono is incorrectly reported as unsupported.
+<sup>1</sup>MP3 Mono is incorrectly reported as unsupported and will transcode to AAC.
 
-<sup>2</sup>Only EAC3 2.0 has been tested.
+<sup>2</sup> AAC is incorrectly reported as unsupported and will transcode to MP3.
+
+<sup>3</sup>Only EAC3 2.0 has been tested.
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 
@@ -50,21 +55,24 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |VobSub|Picture|❌|✅|✅|🔶|
 |DVB-SUB|Picture|✅|❌|✅|❌|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
+|PGSSUB|Picture|❌||❌|❌|
+
 
 Note: ASS Subtitles are only supported by mkv files. Mkv files can't natively be streamed therefore ASS subtitles will always inherently be burned into the video. This is not a limitation of JF. 
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 
-If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a container that is supported. This is the least intensive process. Most video containers will be remuxed to use the hls streaming protocol and ts containers. Remuxing shouldn't be a concern even for a RPi3.
+If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a container that is supported. This is the least intensive process. Most video containers will be remuxed to use the hls streaming protocol and ts containers. Remuxing shouldn't be a concern even for a Rpi3.
 
 ||WebOS|Android|AndroidTV|Kodi|Roku
 |:---:|:---:|:---:|:---:|:---:|:---:
 |[mp4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|🔶|✅|🔶
 |[ts](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
+|[webM](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|||||
 
 <sup>1</sup>mp4 containers are one of the few containers that will not remux.
 
-<sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in browsers and will remux.
+<sup>2</sup>mkv containers can hold nearly any codec, but are not compatible with streaming in browsers and will remux.
 
 <sup>3</sup>mkv containers are improperly labeled as webm during playback. 

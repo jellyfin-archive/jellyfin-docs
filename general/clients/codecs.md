@@ -67,4 +67,4 @@ If the container is unsupported, this will result in remuxing. The video and aud
 
 <sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in browsers and will remux.
 
-<sup>3</sup>webm containers that have file extension mkv are marked as mkv on the media info page, and properly labeled as webm during playback. 
+<sup>3</sup>mkv containers are improperly labeled as webm during playback. 

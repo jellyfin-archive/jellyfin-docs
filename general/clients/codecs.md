@@ -36,13 +36,15 @@ FLAC|✅|✅|✅|✅|✅|
 |AC3|✅|❌|✅|✅|✅|
 |EAC3<sup>3/sup>|✅|✅|✅|✅|✅|
 |VORBIS|❌|✅|✅|✅|✅|
-
+|DTS<sup>4</sup>|❌|❌|❌|✅|✅|
 
 <sup>1</sup>MP3 Mono is incorrectly reported as unsupported and will transcode to AAC.
 
 <sup>2</sup> AAC is incorrectly reported as unsupported and will transcode to MP3.
 
 <sup>3</sup>Only EAC3 2.0 has been tested.
+
+<sup>4</sup> Only DTS Mono has been tested.
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 

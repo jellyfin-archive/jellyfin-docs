@@ -13,7 +13,7 @@ title: Codec Compatibility
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |[H.262/Xvid](https://en.wikipedia.org/wiki/MPEG-4_Part_2)|✅|✅|✅|✅|✅|
 |[H.262/DivX](https://en.wikipedia.org/wiki/DivX)|✅|✅|✅|✅|✅|
-|[H.264/AVC](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅<sup>3</sup>|✅|✅|✅|✅|
+|[H.264/AVC](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|🔶<sup>3</sup>|✅|✅|✅|✅|
 |[H.265/HEVC](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌<sup>1</sup>|🔶<sup>2</sup>|❌|✅|❌|
 
 <sup>1</sup>HEVC support is potentially possible by offloading to the OS. *untested*
@@ -43,6 +43,14 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format (text-based subtitles) or burned into the video (image/lossless based and ASS based) due to the subtitles transcoding not being supported. This is the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer. 
 
+||Format|TS|MP4|MKV|AVI|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|SubRip Text (SRT)|Formatted Text|❌|🔶|✅|🔶|
+|ASS/SSA|Formatted Text|❌|❌|✅|🔶|
+|VobSub|Picture|❌|✅|✅|🔶|
+|DVB-SUB|Picture|✅|❌|✅|❌|
+|MP4TT/TXTT|XML|❌|✅|❌|❌|
+
 Note: ASS Subtitles are only supported by mkv files. Mkv files can't natively be streamed therefore ASS subtitles will always inherently be burned into the video. This is not a limitation of JF. 
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
@@ -51,11 +59,12 @@ If the container is unsupported, this will result in remuxing. The video and aud
 
 ||WebOS|Android|AndroidTV|Kodi|Roku
 |:---:|:---:|:---:|:---:|:---:|:---:
-|[mp4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)|✅|✅|✅|✅|✅
-|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>1, 2</sup>|❌|🔶|🔶|🔶|🔶
+|[mp4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
+|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|🔶|✅|🔶
 |[ts](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
 
+<sup>1</sup>mp4 containers are one of the few containers that will not remux.
 
-<sup>1</sup>MKV containers can hold nearly any codec. *support not verified, initial testing is showing that all containers convert to ts using hls streaming protocol* Mp4 successfully streamed using http protocol instead of hls protocol and did not remux.
+<sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in browsers and will remux.
 
-<sup>2</sup>webm containers that have file extension mkv are marked as mkv on the media info page, and properly labeled as webm during playback. 
+<sup>3</sup>webm containers that have file extension mkv are marked as mkv on the media info page, and properly labeled as webm during playback. 

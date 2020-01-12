@@ -55,7 +55,7 @@ Note: ASS Subtitles are only supported by mkv files. Mkv files can't natively be
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 
-If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a container that is supported. This is the least intensive process. Most video containers will be remuxed to use the hls streaming protocol and ts containers. Remuxing shouldn't be a concern even for a Rpi3.
+If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a container that is supported. This is the least intensive process. Most video containers will be remuxed to use the hls streaming protocol and ts containers. Remuxing shouldn't be a concern even for a RPi3.
 
 ||WebOS|Android|AndroidTV|Kodi|Roku
 |:---:|:---:|:---:|:---:|:---:|:---:

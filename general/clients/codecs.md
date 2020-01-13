@@ -40,10 +40,10 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 ||Chrome|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 FLAC|✅|❌|✅|✅|✅|✅|✅|
-|MP3|🔶<sup>1</sup>|✅|✅|✅|✅|✅|✅|
-|AAC|🔶<sup>2</sup>|✅|✅|✅|✅|✅|✅|
+|MP3|🔶<sup>1</sup>|🔶|✅|✅|✅|✅|✅|
+|AAC|🔶<sup>2</sup>|🔶|✅|✅|✅|✅|✅|
 |AC3|✅|❌|✅|✅|✅|✅|✅|
-|EAC3<sup>3/sup>|✅|✅|✅|✅|✅|✅|✅|
+|EAC3<sup>3</sup>|✅|✅|✅|✅|✅|✅|✅|
 |VORBIS|❌|✅|✅|✅|✅|✅|✅|
 |DTS<sup>4</sup>|❌|❌|❌|✅|✅|✅|✅|
 
@@ -57,7 +57,7 @@ FLAC|✅|❌|✅|✅|✅|✅|✅|
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 
-Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format (text-based subtitles) or burned into the video (image/lossless based and ASS based) due to the subtitles transcoding not being supported. This is the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer. 
+Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format (text-based subtitles) or burned into the video (image/lossless based and ASS based) due to the subtitles transcoding not being supported. This is the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer.
 
 ||Format|TS|MP4|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -69,7 +69,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |PGSSUB|Picture|❌|❌|✅|❌|
 
 
-<sup>1</sup>ASS Subtitles are only supported by mkv files. MKV files aren't supported by Firefox.They will always inherently be burned into the video. This is not a limitation of Jellyfin.
+<sup>1</sup>ASS Subtitles are only supported by MKV files. MKV files aren't supported by Firefox.They will always inherently be burned into the video. This is not a limitation of Jellyfin.
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 
@@ -86,4 +86,4 @@ If the container is unsupported, this will result in remuxing. The video and aud
 
 <sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in Firefox and will remux.
 
-<sup>3</sup>MKV containers are improperly labeled as webM in Firefox during playback. 
+<sup>3</sup>MKV containers are improperly labeled as webM in Firefox during playback.

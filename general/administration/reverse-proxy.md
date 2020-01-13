@@ -387,7 +387,8 @@ Launch your Traefik/Jellyfin services : `docker-compose up -d`
 
 Congratulations, your stack with Traefik and Jellyfin is UP !
 
-Note: Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
+> [!NOTE]
+> Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
 
 Go to jellyfin.example.com (in this case), and your jellyfin is UP with HTTPS (AES 256).
 

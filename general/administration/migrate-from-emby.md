@@ -9,10 +9,10 @@ Direct database migration from Emby (of any version) to Jellyfin is NOT SUPPORTE
 
 The original procedure is provided below for reference however we cannot support it nor guarantee that a system upgraded in this way will work properly, if at all. If anyone is interested in writing a database migration script which will correct the deficiencies in the existing database and properly import them into Jellyfin, [we would welcome it however](xref:contrib-index)!
 
-## Unofficial procedure
+## Unofficial Procedure
 
-> [!NOTE]
-> Jellyfin offers a seamless migration from Emby version 3.5.2 or earlier. Emby versions 3.5.3 or 3.6+ cannot be easily migrated, and we recommend rebuilding your library instead.
+> [!WARNING]
+> While it is technically possible to migrate existing configuration of Emby version 3.5.2 or earlier, due to subtle and weird bugs reported after such attempts we do not recommend this migration. Emby versions 3.5.3 or 3.6+ cannot be migrated. Thus we recommend creating a new Jellyfin configuration and rebuilding your library instead.
 
 Windows users may take advantage of the `install-jellyfin.ps1` script in the [Jellyfin repository](https://github.com/jellyfin/jellyfin) which includes an automatic upgrade option.
 

@@ -128,9 +128,9 @@ When submitting a new PR, please ensure you do the following things. If you have
 
     1. How you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
-* Tag any work-in-progress commits with `[WIP]`, `WIP -`, or some variation at the beginning of the title. While this tag is in place, the PR should _not_ be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
+* Tag any work-in-progress commits with `[WIP]`, `WIP -`, or some variation at the beginning of the title, or mark your PR as "draft" using Github Web UI. While this tag is in place, the PR should _not_ be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
 
-* Avoid force-pushing to large or complex pull requests if at all possible, and especially after reviews. It forces unnecessary reviews to verify the changes are still okay and build properly.
+* Avoid rebasing and force-pushing to large or complex pull requests if at all possible, and especially after reviews. It forces unnecessary reviews to verify the changes are still okay and build properly.
 
 * Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 

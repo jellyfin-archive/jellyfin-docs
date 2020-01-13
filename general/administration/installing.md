@@ -223,7 +223,7 @@ sudo mkdir /opt/jellyfin
 cd /opt/jellyfin
 ```
 
-Download the latest generic linux build from the [release page](https://github.com/jellyfin/jellyfin/releases). The generic linux build ends with "linux-amd64.tar.gz". The rest of these instructions assume version 10.4.3 is being installed (i.e. jellyfin_10.4.3_linux-amd64.tar.gz). Download the generic build, then extract the archive:
+Download the latest generic Linux build from the [release page](https://github.com/jellyfin/jellyfin/releases). The generic Linux build ends with "linux-amd64.tar.gz". The rest of these instructions assume version 10.4.3 is being installed (i.e. `jellyfin_10.4.3_linux-amd64.tar.gz`). Download the generic build, then extract the archive:
 
 ```bash
 sudo wget https://github.com/jellyfin/jellyfin/releases/download/v10.4.3/jellyfin_10.4.3_linux-amd64.tar.gz

@@ -7,7 +7,7 @@ title: Quick Start
 
 1. [Install Jellyfin on your system](xref:admin-installing).
 
-2. Browse to `http://<yourmachine>:8096`.
+2. Browse to `http://127.0.0.1:8096`.
 
 3. Follow the initial setup wizard.
 

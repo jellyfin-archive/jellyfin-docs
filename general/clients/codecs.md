@@ -61,7 +61,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 ||Format|TS|MP4|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|SubRip Text (.srt)|Formatted Text|❌|🔶|✅|🔶|
+|SubRip Text (.srt)|Text|❌|🔶|✅|🔶|
 |ASS/SSA<sup>1</sup>|Formatted Text|❌|❌|✅|🔶|
 |VobSub|Picture|❌|✅|✅|🔶|
 |DVB-SUB [(.sub/.idx)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file)|Picture|✅|❌|✅|❌|
@@ -69,7 +69,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |PGSSUB|Picture|❌|❌|✅|❌|
 
 
-<sup>1</sup>ASS Subtitles are only supported by mkv files. Mkv files aren't supported by browsers.They will always inherently be burned into the video. This is not a limitation of JF. 
+<sup>1</sup>ASS Subtitles are only supported by mkv files. Mkv files aren't supported by Firefox.They will always inherently be burned into the video. This is not a limitation of JF. 
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 

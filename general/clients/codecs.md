@@ -69,7 +69,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |PGSSUB|Picture|❌|❌|✅|❌|
 
 
-<sup>1</sup>ASS Subtitles are only supported by mkv files. Mkv files aren't supported by Firefox.They will always inherently be burned into the video. This is not a limitation of JF. 
+<sup>1</sup>ASS Subtitles are only supported by mkv files. MKV files aren't supported by Firefox.They will always inherently be burned into the video. This is not a limitation of Jellyfin.
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 

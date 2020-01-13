@@ -7,7 +7,6 @@ title: GitHub Issues
 
 Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.
 
-
 # Issue Guidelines
 
 This page discusses how to open issues, including the policies and procedures of the Jellyfin project around handling issues.
@@ -55,6 +54,7 @@ Jellyfin features a number of issue labels to assist in triaging and managing is
 ### Category Labels
 
 These first three labels are broad categories for which part of Jellyfin the issue affects:
+
 * `UI`: An issue that mainly relates to the UI frontend code.
 * `Backend`: An issue that mainly relates to the server backend code.
 * `build/platform`: An issue that mainly relates to building or packaging the project.
@@ -83,4 +83,3 @@ These labels apply only to Pull Requests for administrative purposes:
 
 * `WIP`: A Work-in-progress PR that is not yet ready to be merged, usually blocked by further work from the contributor or a testing requirement.
 * `requires testing`: A PR that has not been tested in a live environment yet. Any major backend-affecting PRs should be tested before being merged to avoid regressions.
-

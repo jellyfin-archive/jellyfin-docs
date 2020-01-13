@@ -11,7 +11,8 @@ The original procedure is provided below for reference however we cannot support
 
 ## Unofficial procedure
 
-~~Jellyfin offers a seamless migration from Emby version 3.5.2 or earlier. Emby versions 3.5.3 or 3.6+ cannot be easily migrated, and we recommend rebuilding your library instead.~~
+> [!NOTE]
+> Jellyfin offers a seamless migration from Emby version 3.5.2 or earlier. Emby versions 3.5.3 or 3.6+ cannot be easily migrated, and we recommend rebuilding your library instead.
 
 Windows users may take advantage of the `install-jellyfin.ps1` script in the [Jellyfin repository](https://github.com/jellyfin/jellyfin) which includes an automatic upgrade option.
 

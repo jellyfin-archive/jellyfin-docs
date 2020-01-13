@@ -19,7 +19,6 @@ Use host mode for networking in order to use DLNA or an HDHomeRun.
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
 
-
 1. Get the latest image:  
     `docker pull jellyfin/jellyfin`
 2. Create directories on the host for persistent data storage:  
@@ -34,19 +33,19 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
     `--restart=unless-stopped \`  
     `jellyfin/jellyfin`  
   
-Alternatively, using docker-compose:  
-```
-version: "3"  
-services:  
-  jellyfin:  
-    image: jellyfin/jellyfin
-    network_mode: "host"  
-    volumes:  
-      - /path/to/config:/config  
-      - /path/to/cache:/cache  
-      - /path/to/media:/media  
-```
+Alternatively, using docker-compose:
 
+```
+version: "3"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    network_mode: "host"
+    volumes:
+      - /path/to/config:/config
+      - /path/to/cache:/cache
+      - /path/to/media:/media
+```
 
 ### [Docker Hub](https://hub.docker.com/r/linuxserver/jellyfin) image maintained by LinuxServer.io
 
@@ -59,7 +58,8 @@ An Unraid Docker template is available in the repository.
 1. Open the unRaid GUI (at least unRaid 6.5) and click on the "Docker" tab.
 
 1. Add the following line under "Template Repositories" and click "Save":  
-    `https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates`
+
+`https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates`
 
 1. Click "Add Container" and select "jellyfin".
 
@@ -79,33 +79,31 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 [!WARNING]
 > The 32-bit or x86 version is not recommended. `ffmpeg` and its video encoders generally perform better as a 64-bit executable due to the extra registers provided. This means that the 32-bit version of Jellyfin is deprecated.
 
-### Install using installer (x64)
+### Install using Installer (x64)
 
 Only available for versions 10.4.0+.
 
 **Install**
 
 1. Download the latest version
-1. Run the installer
-1. (optional) When installing as a service, pick the service account type.
-1. If everything was completed successfully, the Jellyfin service is now running
-1. Open your browser at http://localhost:8096 to finish setting up Jellyfin
-
+2. Run the installer
+3. (optional) When installing as a service, pick the service account type.
+4. If everything was completed successfully, the Jellyfin service is now running
+5. Open your browser at http://localhost:8096 to finish setting up Jellyfin
 
 **Update**
-1. Download the latest version
-1. Run the installer
-1. If everything was completed successfully, the Jellyfin service is now running as the new version.
 
+1. Download the latest version
+2. Run the installer
+3. If everything was completed successfully, the Jellyfin service is now running as the new version.
 
 **Uninstall**
 
 1. Go to `Add or remove programs` in Windows
-1. Search for Jellyfin
-1. Click Uninstall
+2. Search for Jellyfin
+3. Click Uninstall
 
-
-### Manual installation (x86/x64)
+### Manual Installation (x86/x64)
 
 **Install**
 
@@ -121,7 +119,6 @@ Only available for versions 10.4.0+.
     `<--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data -noautorunwebapp`
 1. Run `jellyfin.bat`
 1. Open your browser at http://<--Server-IP-->:8096 (if auto-start of webapp is disabled)
-
 
 **Update**
 
@@ -220,13 +217,13 @@ Generic amd64 Linux builds in TAR archive format are available [here](https://je
 ### Installation Process
 
 Create a directory in /opt for jellyfin and its files, and enter that directory.
-    
+
 ```bash
-sudo mkdir /opt/jellyfin 
+sudo mkdir /opt/jellyfin
 cd /opt/jellyfin
 ```
 
-Download the latest generic linux build from the [Jellyfin release page](https://github.com/jellyfin/jellyfin/releases). The generic linux build ends with "linux-amd64.tar.gz". The rest of these instructions assume version 10.4.3 is being installed (i.e. jellyfin_10.4.3_linux-amd64.tar.gz). Download the generic build, then extract the archive:
+Download the latest generic linux build from the [release page](https://github.com/jellyfin/jellyfin/releases). The generic linux build ends with "linux-amd64.tar.gz". The rest of these instructions assume version 10.4.3 is being installed (i.e. jellyfin_10.4.3_linux-amd64.tar.gz). Download the generic build, then extract the archive:
 
 ```bash
 sudo wget https://github.com/jellyfin/jellyfin/releases/download/v10.4.3/jellyfin_10.4.3_linux-amd64.tar.gz
@@ -239,8 +236,8 @@ Create a symbolic link to the Jellyfin 10.4.3 directory. This allows an upgrade 
 sudo ln -s jellyfin_10.4.3 jellyfin
 ```
 
-Create four sub-directories for Jellyfin data:
-    
+Create four sub-directories for Jellyfin data.
+
 ```bash
 sudo mkdir data cache config log
 ```
@@ -252,15 +249,13 @@ sudo wget https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v4.2.1-3
 sudo dpkg --install jellyfin-ffmpeg_4.2.1-3-stretch_amd64.deb
 ```
 
-If you run into any dependency errors, run this and it will install them and jellyfin-ffmpeg:
+If you run into any dependency errors, run this and it will install them and jellyfin-ffmpeg.
 
 ```bash
 sudo apt install -f
 ```
-    
-Due to the number of command line options that must be passed, it is easiest to create a small script (here called jellyfin.sh) to run Jellyfin.
 
-Type:
+Due to the number of command line options that must be passed, it is easiest to create a small script (here called jellyfin.sh) to run Jellyfin.
 
 ```bash
 sudo nano jellyfin.sh
@@ -278,8 +273,8 @@ $JELLYFINDIR/jellyfin/jellyfin \
 -C $JELLYFINDIR/cache \
 -c $JELLYFINDIR/config \
 -l $JELLYFINDIR/log \
---ffmpeg $FFMPEGDIR/ffmpeg 
-````
+--ffmpeg $FFMPEGDIR/ffmpeg
+```
 
 Assuming you desire Jellyfin to run as a non-root user, chmod all files and directories to your normal login user and group. Also make the startup script above executable.
 
@@ -375,7 +370,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 ### Repository
 
-The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial/Bionic/Cosmic/Disco. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, and Disco. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
 
 > [!NOTE]
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.

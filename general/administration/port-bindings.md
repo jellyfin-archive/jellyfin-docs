@@ -15,4 +15,4 @@ This document aims to provide an admin with knowledge on what ports Jellyfin bin
 
 ### Dynamic Ports
 
-* Completely random UDP port bind. It picks any UDP port that is unused on startup. It is used for specific LiveTV setups involving HD Homerun devices.
+* Completely random UDP port bind. It picks any UDP port that is unused on startup. It is used for Live TV setups involving HDHomeRun devices.

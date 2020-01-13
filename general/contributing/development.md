@@ -44,9 +44,9 @@ The first step is to set up a copy of the Git repository of the project you want
     `git submodule update --init`
 
 > [!NOTE]
-> Avoid editing files inside of submodules; this may result in unintended side-effects including overwriting of your work. Always modify the submodule in its own cloned repository elsewhere.
+> Avoid editing files inside of submodules. Doing so may result in unintended side effects, including overwriting of your work. Always modify the submodule in its own cloned repository elsewhere.
 
-1. To get the `Jellyfin.Server` project to run successfully, checkout both the main [Jellyfin project](https://github.com/jellyfin/jellyfin), as well as the [Jellyfin Web](https://github.com/jellyfin/jellyfin-web) project.
+1. To get the `Jellyfin.Server` project to run successfully, checkout both the [server](https://github.com/jellyfin/jellyfin), as well as the [web client](https://github.com/jellyfin/jellyfin-web) project.
 
 1. Build the Jellyfin Web project with Yarn or NPM, and copy the location of the resulting `dist` folder. In your `Jellyfin.Server` project add an environment variable named `JELLYFIN_WEB_DIR` with the value set to the full path of your `dist` folder.
 
@@ -118,20 +118,20 @@ To test someone else's pull request, you must import the changes to your local r
 
 When submitting a new PR, please ensure you do the following things. If you haven't, please read [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) as it is a great resource for writing useful commit messages.
 
--   Before submitting a PR, squash "junk" commits together to keep the overall history clean. A single commit should cover a single significant change: avoid squashing all your changes together, especially for large PRs that touch many files, but also don't leave "fixed this", "whoops typo" commits in your branch history as this is needless clutter in the final history of the project.
+* Before submitting a PR, squash "junk" commits together to keep the overall history clean. A single commit should cover a single significant change: avoid squashing all your changes together, especially for large PRs that touch many files, but also don't leave "fixed this", "whoops typo" commits in your branch history as this is needless clutter in the final history of the project.
 
--   Write a good title that quickly describes what has been changed. For example, "Add LDAP support to Jellyfin". As mentioned in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), always use the imperative mood, and keep the title short but descriptive. The title will eventually be a changelog entry, so please try to use proper capitalization but no punctuation; note that the Core team may alter titles to better confirm to this standard before merging.
+* Write a good title that quickly describes what has been changed. For example, "Add LDAP support to Jellyfin". As mentioned in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), always use the imperative mood, and keep the title short but descriptive. The title will eventually be a changelog entry, so please try to use proper capitalization but no punctuation; note that the Core team may alter titles to better confirm to this standard before merging.
 
--   For anything but the most trivial changes that can be described fully in the (short) title, follow the PR template and write a PR body to describe, in as much detail as possible:
+* For anything but the most trivial changes that can be described fully in the (short) title, follow the PR template and write a PR body to describe, in as much detail as possible:
 
     1. Why the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
 
     1. How you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
--   Tag any work-in-progress commits with `[WIP]`, `WIP -`, or some variation at the beginning of the title. While this tag is in place, the PR should _not_ be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
+* Tag any work-in-progress commits with `[WIP]`, `WIP -`, or some variation at the beginning of the title, or mark your PR as "draft" using Github Web UI. While this tag is in place, the PR should _not_ be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
 
--   Avoid force-pushing to large or complex pull requests if at all possible, and especially after reviews. It forces unnecessary reviews to verify the changes are still okay and build properly.
+* Avoid rebasing and force-pushing to large or complex pull requests if at all possible, and especially after reviews. It forces unnecessary reviews to verify the changes are still okay and build properly.
 
--   Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
+* Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 
--   All PRs require review by at least two team members before being merged into `master`, though reviews from any contributor are welcome! After the second team member review the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if required.
+* All PRs require review by at least two team members before being merged into `master`, though reviews from any contributor are welcome! After the second team member review the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if required.

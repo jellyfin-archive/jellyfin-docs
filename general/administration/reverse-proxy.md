@@ -8,7 +8,6 @@ title: Reverse Proxy
 It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.
 
 Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), [Nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/) and [Traefik](https://traefik.io/).
-
 **Important:** In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. Running Jellyfin in a subpath (example.com/jellyfin/) is supported by the Android and Web clients.
 
 When following this guide, be sure to replace the following variables with your information:
@@ -60,7 +59,8 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your Firewa
 ```
 
 If you encouter errors, you may have to enable `mod_proxy`, `mod_ssl` or `proxy_wstunnel` support manually.
-```
+
+```bash
 $ sudo a2enmod proxy proxy_http ssl proxy_wstunnel
 ```
 
@@ -97,7 +97,7 @@ backend jellyfin
 
 ## Nginx
 
-Create the following file ``/etc/nginx/conf.d/jellyfin.conf``
+Create the file `/etc/nginx/conf.d/jellyfin.conf`.
 
 ```
 server {
@@ -214,6 +214,7 @@ server {
 ```
 
 ## Caddy
+
 Add this to your `Caddyfile`:
 
 ```
@@ -225,6 +226,7 @@ DOMAIN_NAME/jellyfin/ {
     }
 }
 ```
+
 Using DOMAIN_NAME only, or sub.DOMAIN_NAME would also work, as would using multiple at once.
 
 Caddy will automatically attempt to obtain a free HTTPS certificate if possible, and handle renewal, making the below section unecessary.
@@ -247,7 +249,7 @@ Create these 3 files in the SAME directory (or change their paths in the volume 
 
 This configuration is A+ (SSLlabs)
 
-docker-compose.yml :
+docker-compose.yml:
 
 ```
 version: '3.5'
@@ -304,7 +306,7 @@ networks:
 
 This toml file can't support environment variables, ensure you don't attempt to use variables.
 
-traefik.toml : 
+traefik.toml:
  
 ```
 logLevel = "WARN"
@@ -376,21 +378,25 @@ exposedbydefault = false
       browserXSSFilter = true
       customResponseHeaders = "X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
       customFrameOptionsValue = "allow-from https://example.com"
-
 ```
 
-Finally, create an empty acme.json : `touch acme.json` `chmod 600 acme.json` 
+Finally, create an empty acme.json.
+
+```bash
+touch acme.json
+chmod 600 acme.json
+```
 
 IMPORTANT ! Change example.com to your domain / subdomain name, and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not being a proper email address.
 
 Launch your Traefik/Jellyfin services : `docker-compose up -d`
 
-Congratulations, your stack with Traefik and Jellyfin is UP !
+Congratulations, your stack with Traefik and Jellyfin is running!
 
 > [!NOTE]
 > Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
 
-Go to jellyfin.example.com (in this case), and your jellyfin is UP with HTTPS (AES 256).
+Go to jellyfin.example.com (in this case), and your jellyfin is running with HTTPS (AES 256).
 
 ## LetsEncrypt with Certbot
 
@@ -469,4 +475,3 @@ Add a job to cron so the certificate will be renewed automatically:
 # Final steps
 
 It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html) if you are exposing these service to the internet.
-

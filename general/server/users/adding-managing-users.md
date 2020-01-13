@@ -106,7 +106,7 @@ If the user has a password, additional options are shown.
 
 `Easy Pin Code` The user's easy pin code is used for offline access with supported clients, and can also be used for easy in-network sign in.
 
-`Enable in-network sign in with my easy pin code` If enabled, the user will be able to use their easy pin code to sign in to Jellyfin apps from inside the local network. Their regular password will only be needed outside the local network. If the pin code is left blank, they won't need a password within the local network. By default, the local network will only be the subnet assigned to your network, but more can be added. <!--More information about this can be found [on the docs page for `Expert` » `Advanced`](https://linktopage?) (not written yet)-->
+`Enable in-network sign in with my easy pin code` If enabled, the user will be able to use their easy pin code to sign in to Jellyfin apps from inside the local network. Their regular password will only be needed outside the local network. If the pin code is left blank, they won't need a password within the local network. By default, the local network will only be the subnet assigned to your network, but more can be added.
 
 > [!NOTE]
 > [Pin-less Sign in Bug](https://github.com/jellyfin/jellyfin/issues/2125#issuecomment-566400711)

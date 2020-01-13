@@ -19,13 +19,9 @@ The easiest way to check for issues is by checking the logs, which can be access
 
 ## Debug Logging
 
-To enable debug (much more verbose) logging for Jellyfin, it is currently required to manually edit config files - no UI options exist yet. Go to Jellyfin-directory/config, in the `logging.json` file, change the minimum level to debug as seen below.
+To enable debug (much more verbose) logging, it is currently required to manually edit config files - no UI options exist yet. Go to Jellyfin-directory/config, in the `logging.json` file, change the minimum level to debug as seen below.
 
-`"MinimumLevel": "Information",`
-
-to
-
-`"MinimumLevel": "Debug",`
+`"MinimumLevel": "Debug"`
 
 Jellyfin 10.4.1 and above will automatically reload the new configuration. The debug messages show up in the log with the `DBG` tag.
 

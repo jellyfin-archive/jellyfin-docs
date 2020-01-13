@@ -11,7 +11,7 @@ Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIn
 
 OS | Recommended HW Acceleration
 ------------ | -------------
-Linux/GNU | QSV, NVENC, VAAPI
+Linux | QSV, NVENC, VAAPI
 Windows | QSV, NVENC, AMF, VAAPI
 MacOS | None (videotoolbox support coming)
 Android | MediaCodec, OMX
@@ -19,7 +19,7 @@ RPi | OMX
 
 [Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
 
-[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux/GNU and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
+[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
@@ -53,17 +53,19 @@ In order to use Hardware acceleration in Docker, the devices must be passed to t
 > [NVIDIA GPUs](https://github.com/docker/compose/issues/6691) aren't currently supported in docker-compose.
 
 Docker run configuration example:
- 
-   `docker run -d \`  
-    `--volume /path/to/config:/config \`  
-    `--volume /path/to/cache:/cache \`  
-    `--volume /path/to/media:/media \`  
-    `--net=host \`  
-    `--restart=unless-stopped \`  
-    `--device /dev/dri/renderD128:/dev/dri/renderD128 \`  
-    `--device /dev/dri/card0:/dev/dri/card0 \`  
-    `jellyfin/jellyfin`
-  
+
+```bash
+docker run -d \
+ --volume /path/to/config:/config \
+ --volume /path/to/cache:/cache \
+ --volume /path/to/media:/media \
+ --net=host \
+ --restart=unless-stopped \
+ --device /dev/dri/renderD128:/dev/dri/renderD128 \
+ --device /dev/dri/card0:/dev/dri/card0 \
+ jellyfin/jellyfin
+```
+
 Alternatively, using docker-compose:  
 
 ```yaml
@@ -89,19 +91,25 @@ Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ens
 To check information about VAAPI on your system install and run `vainfo`
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:  
-    `$ ls -l /dev/dri`  
-    `total 0`  
-    `drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path`  
-    `crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0`  
-    `crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1`  
-    `crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128`  
+
+```bash
+$ ls -l /dev/dri
+total 0
+drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path
+crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0
+crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1
+crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
+```
 
 > [!NOTE]
 > On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin:  
-    `sudo usermod -aG render jellyfin`  
-    `sudo systemctl restart jellyfin`  
+
+```bash
+sudo usermod -aG render jellyfin
+sudo systemctl restart jellyfin
+```
 
 3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API Device` value.
 
@@ -114,23 +122,29 @@ This has been tested with LXC 3.0 and may or may not work with older versions.
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 
 1. Add your GPU to the container:
-    `$ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>`
+
+`$ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>`
 
 2. Make sure you have the card within the container:
-    `$ lxc exec jellyfin -- ls -l /dev/dri`
-    `total 0`
-    `crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0`
-    `crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64`
-    `crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128`
 
-3. Configure Jellyfin to use video acceleration, point it at the right device if the default option is wrong.
+```bash
+$ lxc exec jellyfin -- ls -l /dev/dri
+total 0
+crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
+crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
+crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
+```
+
+3. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
 
 4. Try and play a video that requires transcoding and run the following, you should get a hit:
-    `$ ps aux | grep ffmpeg | grep accel`
+
+`$ ps aux | grep ffmpeg | grep accel`
 
 5. You can also try playing a video that requires transcoding, and if it plays you're good.
 
-Useful resources:
+Useful Resources:
+
 * https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
 * https://stgraber.org/2017/03/21/cuda-in-lxd/
 
@@ -140,7 +154,9 @@ Useful resources:
     `sudo systemctl restart jellyfin`
     On Rpi4, update the firmware and kernel.
     `sudo rpi-update`
+
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard.
+
 3. Change the amount of memory allocated to the GPU. The GPU can't handle accelerated decoding and encoding simultaneously.
     `sudo nano /boot/config.txt`
 
@@ -173,6 +189,6 @@ Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))
 Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 ```
 
-Stream #0:0 used software to decode hevc and used HWA to encode.
+Stream #0:0 used software to decode HEVC and used HWA to encode.
 
 Stream #0:1 had the same results. Decoding is easier than encoding so these are good results overall. HWA decoding is a work in progress.

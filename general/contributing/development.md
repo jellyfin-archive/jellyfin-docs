@@ -135,3 +135,43 @@ When submitting a new PR, please ensure you do the following things. If you have
 * Expect review and discussion. If you can't back up your changes with a good description and through review, please reconsider whether it should be done at all. All PRs to `dev` require at least one approving review from an administrative team member, however we welcome and encourage reviews from any contributor, especially if it's in an area you are knowledgeable about. More eyes are always better.
 
 * All PRs require review by at least two team members before being merged into `master`, though reviews from any contributor are welcome! After the second team member review the PR may be merged immediately, or more review or feedback requested explicitly from other contributors if required.
+
+## Building and Testing Inside a Docker Container
+
+We need to install all development dependencies and pull down the code inside the container before we can compile and run.
+
+> [!NOTE]
+> Run each commmand on a separate line.
+> The container we'll test in is named `jftest`
+> Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue.  This is also why we explicitly kill it to reload the new version.
+
+### Build and Run master Inside Docker
+
+```
+docker exec -ti jftest bash
+apt-get update && apt-get install git gnupg wget apt-transport-https
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg && mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
+wget -q https://packages.microsoft.com/config/debian/10/prod.list && mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+apt-get update && apt-get install dotnet-sdk-3.1 yarn
+cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
+mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish Jellyfin.Server --configuration Release --output="/jellyfin" --self-contained --runtime linux-x64
+cd /opt/jellyfin-web && yarn install && yarn build && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
+kill -15 6
+```
+
+### Test a PR Inside Docker
+
+First complete the steps above to setup your container for building Jellyfin master.
+
+> [!NOTE]
+> `<PR_ID>` is pull request number on GitHub.
+
+```
+docker exec -ti jftest bash
+cd /opt/jellyfin
+git fetch upstream pull/<PR_ID>/head:my-testing-branch
+git merge my-testing-branch
+dotnet publish Jellyfin.Server --configuration Release --output="/jellyfin" --self-contained --runtime linux-x64
+kill -15 6
+```

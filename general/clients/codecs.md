@@ -49,7 +49,7 @@ FLAC|✅|❌|✅|✅|✅|✅|✅|
 
 <sup>1</sup>MP3 Mono is incorrectly reported as unsupported and will transcode to AAC.
 
-<sup>2</sup> AAC is incorrectly reported as unsupported and will transcode to MP3.
+<sup>2</sup>AAC is incorrectly reported as unsupported and will transcode to MP3.
 
 <sup>3</sup>Only EAC3 2.0 has been tested.
 

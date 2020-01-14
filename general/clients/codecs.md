@@ -80,7 +80,7 @@ If the container is unsupported, this will result in remuxing. The video and aud
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|🔶|✅|🔶
 |[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
-|[webM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|||||
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|||||
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 

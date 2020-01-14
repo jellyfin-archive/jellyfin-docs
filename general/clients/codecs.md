@@ -53,7 +53,7 @@ FLAC|✅|❌|✅|✅|✅|✅|✅|
 
 <sup>3</sup>Only EAC3 2.0 has been tested.
 
-<sup>4</sup> Only DTS Mono has been tested.
+<sup>4</sup>Only DTS Mono has been tested.
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 

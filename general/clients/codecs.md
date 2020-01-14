@@ -17,7 +17,7 @@ title: Codec Compatibility
 |[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅|✅|✅|✅|
 |[H.265](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>|❌|✅|❌|
 
-<sup>1</sup>HEVC support is potentially possible by offloading to the OS. *untested*
+<sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
 <sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Direct Stream.
 

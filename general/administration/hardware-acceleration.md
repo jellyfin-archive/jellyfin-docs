@@ -59,6 +59,7 @@ docker run -d \
  --volume /path/to/config:/config \
  --volume /path/to/cache:/cache \
  --volume /path/to/media:/media \
+ --user 1000:1000 \
  --net=host \
  --restart=unless-stopped \
  --device /dev/dri/renderD128:/dev/dri/renderD128 \
@@ -73,6 +74,7 @@ version: "3"
 services:
   jellyfin:
     image: jellyfin/jellyfin
+    user: 1000:1000
     network_mode: "host"
     volumes:
       - /path/to/config:/config

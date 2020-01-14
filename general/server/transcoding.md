@@ -25,4 +25,4 @@ There are three types of transcoding. The type being used will be listed in the 
 * Direct Play: Delivers the file with no modifications. Almost no additional load on the server.
 * Remux: Changes the container but leaves both audio and video streams untouched.
 * Direct Stream: Transcodes audio but leaves original video untouched.
-* Transcode: Transcodes both audio and video.
+* Transcode: Transcodes the video stream.

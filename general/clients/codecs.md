@@ -41,13 +41,13 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 ||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Kodi|Roku|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-FLAC|✅|❌|✅|✅||✅|✅||
-|MP3|🔶<sup>1</sup>|🔶|✅|✅||✅|✅||
-|AAC|🔶<sup>2</sup>|🔶|✅|✅||✅|✅||
-|AC3|✅|❌|✅|✅||✅|✅||
-|EAC3<sup>3</sup>|✅|✅|✅|✅||✅|✅||
-|VORBIS|❌|✅|✅|✅||✅|✅||
-|DTS<sup>4</sup>|❌|❌|❌|✅||✅|✅||
+FLAC|✅|❌|✅|✅|||✅||
+|MP3|🔶<sup>1</sup>|🔶|✅|✅|||✅||
+|AAC|🔶<sup>2</sup>|🔶|✅|✅|||✅||
+|AC3|✅|❌|✅|✅|||✅||
+|EAC3<sup>3</sup>|✅|✅|✅|✅|||✅||
+|VORBIS|❌|✅|✅|✅|||✅||
+|DTS<sup>4</sup>|❌|❌|❌|✅|||✅||
 
 <sup>1</sup>MP3 Mono is incorrectly reported as unsupported and will transcode to AAC.
 
@@ -77,12 +77,12 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a supported container. This is the least intensive process. Most video containers will be remuxed to use the HLS streaming protocol and TS containers. Remuxing shouldn't be a concern even for an RPi3.
 
-||Browser|Android|AndroidTV|Kodi|Roku
-|:---:|:---:|:---:|:---:|:---:|:---:
-|[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
-|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|🔶|✅|🔶
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|✅||||
-|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅
+||Chrome|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|
+|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅||
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|✅|||||✅||
+|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 
@@ -90,4 +90,4 @@ If the container is unsupported, this will result in remuxing. The video and aud
 
 <sup>3</sup>MKV containers are improperly labeled as WebM in Firefox during playback.
 
-<sup>4</sup>TS is one of the primary containers for streaming using Jellyfin. 
+<sup>4</sup>TS is one of the primary containers for streaming for Jellyfin. 

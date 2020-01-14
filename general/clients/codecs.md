@@ -61,7 +61,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 ||Format|TS|MP4|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|SubRip Text (.srt)|Text|❌|🔶|✅|🔶|
+|SubRip Text (SRT)|Text|❌|🔶|✅|🔶|
 |ASS/SSA<sup>1</sup>|Formatted Text|❌|❌|✅|🔶|
 |VobSub|Picture|❌|✅|✅|🔶|
 |DVB-SUB [(.sub/.idx)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file)|Picture|✅|❌|✅|❌|

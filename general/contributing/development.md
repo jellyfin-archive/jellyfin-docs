@@ -141,13 +141,11 @@ When submitting a new PR, please ensure you do the following things. If you have
 We need to install all development dependencies and pull down the code inside the container before we can compile and run.
 
 > [!NOTE]
-> Run each commmand on a separate line.
-> The container we'll test in is named `jftest`
-> Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue.  This is also why we explicitly kill it to reload the new version.
+> Run each commmand on a separate line. The container we'll test in is named `jftest`. Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue. This is also why we explicitly kill it to reload the new version.
 
-### Build and Run master Inside Docker
+### Master Branch
 
-```
+```bash
 docker exec -ti jftest bash
 apt-get update && apt-get install git gnupg wget apt-transport-https
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg && mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
@@ -160,14 +158,14 @@ cd /opt/jellyfin-web && yarn install && yarn build && cp -r /opt/jellyfin-web/di
 kill -15 6
 ```
 
-### Test a PR Inside Docker
+### Pull Request
 
-First complete the steps above to setup your container for building Jellyfin master.
+First, complete the steps above to setup your container to build the master branch.
 
 > [!NOTE]
 > `<PR_ID>` is pull request number on GitHub.
 
-```
+```bash
 docker exec -ti jftest bash
 cd /opt/jellyfin
 git fetch upstream pull/<PR_ID>/head:my-testing-branch

@@ -9,9 +9,10 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 ## Containers
 
-Note: There is currently an [issue](https://github.com/docker/for-linux/issues/788) for read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable. 
+> [!Note]
+> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
-Use host mode for networking in order to use DLNA or an HDHomeRun. 
+Use host mode for networking in order to use DLNA or an HDHomeRun.
 
 ### Official Docker Hub
 
@@ -19,20 +20,25 @@ Use host mode for networking in order to use DLNA or an HDHomeRun.
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
 
-1. Get the latest image:  
+1. Get the latest image.
     `docker pull jellyfin/jellyfin`
-2. Create directories on the host for persistent data storage:  
+
+2. Create directories on the host for persistent data storage.
     `mkdir /path/to/config`  
     `mkdir /path/to/cache`
-3. Start the server:  
-    `docker run -d \`  
-    `--volume /path/to/config:/config \`  
-    `--volume /path/to/cache:/cache \`  
-    `--volume /path/to/media:/media \`  
-    `--net=host \`  
-    `--restart=unless-stopped \`  
-    `jellyfin/jellyfin`  
-  
+
+3. Start the server.
+
+```
+docker run -d \
+ --volume /path/to/config:/config \
+ --volume /path/to/cache:/cache \
+ --volume /path/to/media:/media \
+ --net=host \
+ --restart=unless-stopped \
+ jellyfin/jellyfin
+```
+
 Alternatively, using docker-compose:
 
 ```
@@ -57,13 +63,13 @@ An Unraid Docker template is available in the repository.
 
 1. Open the unRaid GUI (at least unRaid 6.5) and click on the "Docker" tab.
 
-1. Add the following line under "Template Repositories" and click "Save":  
+2. Add the following line under "Template Repositories" and save the options.
 
 `https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates`
 
-1. Click "Add Container" and select "jellyfin".
+3. Click "Add Container" and select "jellyfin".
 
-1. Adjust any required paths and save.
+4. Adjust any required paths and save.
 
 ### Kubernetes
 
@@ -73,10 +79,10 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 Windows installers and builds in ZIP archive format are available [here](https://jellyfin.org/downloads/#windows).
 
-[!WARNING]
+> [!WARNING]
 > If you installed a version prior to 10.4.0 using a PowerShell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually. Also one might need to move the data files to the correct location, or point the installer at the old location.
 
-[!WARNING]
+> [!WARNING]
 > The 32-bit or x86 version is not recommended. `ffmpeg` and its video encoders generally perform better as a 64-bit executable due to the extra registers provided. This means that the 32-bit version of Jellyfin is deprecated.
 
 ### Install using Installer (x64)
@@ -85,31 +91,31 @@ Only available for versions 10.4.0+.
 
 **Install**
 
-1. Download the latest version
-2. Run the installer
-3. (optional) When installing as a service, pick the service account type.
-4. If everything was completed successfully, the Jellyfin service is now running
-5. Open your browser at http://localhost:8096 to finish setting up Jellyfin
+1. Download the latest version.
+2. Run the installer.
+3. (Optional) When installing as a service, pick the service account type.
+4. If everything was completed successfully, the Jellyfin service is now running.
+5. Open your browser at http://localhost:8096 to finish setting up Jellyfin.
 
 **Update**
 
-1. Download the latest version
-2. Run the installer
+1. Download the latest version.
+2. Run the installer.
 3. If everything was completed successfully, the Jellyfin service is now running as the new version.
 
 **Uninstall**
 
-1. Go to `Add or remove programs` in Windows
-2. Search for Jellyfin
-3. Click Uninstall
+1. Go to `Add or remove programs` in Windows.
+2. Search for Jellyfin.
+3. Click Uninstall.
 
 ### Manual Installation (x86/x64)
 
 **Install**
 
-1. Download and extract the latest version
-1. Create a folder `jellyfin` at your preferred install location
-1. Copy the extracted folder into the `jellyfin` folder and rename it to `system`
+1. Download and extract the latest version.
+1. Create a folder `jellyfin` at your preferred install location.
+1. Copy the extracted folder into the `jellyfin` folder and rename it to `system`.
 1. Create `jellyfin.bat` within your `jellyfin` folder containing:
     - To use the default library/data location at `%localappdata%`:  
     `<--Your install path-->\jellyfin\system\jellyfin.exe`
@@ -130,10 +136,10 @@ Only available for versions 10.4.0+.
 
 **Rollback**
 
-1. Stop Jellyfin
-1. Delete the `system` folder
-1. Rename `system-bak` to `system`
-1. Run `jellyfin.bat` to start the server again
+1. Stop Jellyfin.
+1. Delete the `system` folder.
+1. Rename `system-bak` to `system`.
+1. Run `jellyfin.bat` to start the server again.
 
 ### Install using legacy script (x86/x64)
 
@@ -141,12 +147,12 @@ Only for versions 10.3.x and earlier.
 
 1. Download and extract the latest version
 1. Run `install.bat` or `install-jellyfin.ps1`
-1. (optional) Enter a custom install location (default is `%appdata%`)
-1. (optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
-1. (optional) Select to install Jellyfin as a service
-1. (optional) Import old library - Not compatible with newer Emby versions
-1. (optional) Create a shortcut on your desktop
-1. (optional) Run Jellyfin after installation
+1. (Optional) Enter a custom install location (default is `%appdata%`)
+1. (Optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
+1. (Optional) Select to install Jellyfin as a service
+1. (Optional) Import old library - Not compatible with newer Emby versions
+1. (Optional) Create a shortcut on your desktop
+1. (Optional) Run Jellyfin after installation
 1. Press `Install`
 
 ## MacOS
@@ -156,26 +162,26 @@ MacOS Application packages and builds in TAR archive format are available [here]
 **Install**
 
 1. Download the latest version.
-1. Drag the `.app` package into the Applications folder
-1. Start the application
-1. Open your browser at http://localhost:8096
+1. Drag the `.app` package into the Applications folder.
+1. Start the application.
+1. Open your browser at `http://127.0.0.1:8096`.
 
 **Upgrade**
 
 1. Download the latest version.
 1. Stop the currently running server either via the dashboard or using the application icon.
 1. Drag the new `.app` package into the Applications folder and click yes to replace the files.
-1. Start the application
-1. Open your browser at http://localhost:8096
+1. Start the application.
+1. Open your browser at `http://127.0.0.1:8096`.
 
 **Uninstall**
 
 1. Stop the currently running server either via the dashboard or using the application icon.
-1. Move the `.app` package to the Trash.
+1. Move the `.app` package to the trash.
 
 **Deleting Configuation**
 
-This will delete all settings and user information. This Applies for the .app package and the Portable Version.
+This will delete all settings and user information. This applies for the .app package and the portable version.
 
 1. Delete the folder `~/.config/jellyfin/`
 1. Delete the folder `~/.local/share/jellyfin/`
@@ -188,7 +194,7 @@ This will delete all settings and user information. This Applies for the .app pa
 1. Type `./jellyfin` to run jellyfin.
 1. Open your browser at http://localhost:8096
 
-Closing the terminal window will end jellyfin. Running jellyfin in screen or tmux can prevent this from happening.
+Closing the terminal window will end Jellyfin. Running Jellyfin in screen or tmux can prevent this from happening.
 
 **Upgrading the Portable Version**
 
@@ -206,9 +212,11 @@ Closing the terminal window will end jellyfin. Running jellyfin in screen or tmu
 
 **Using FFmpeg with the Portable Version**
 
-The portable version doesn't come with FFmpeg by default. To install FFmpeg you can use homebrew or download the build from [Zeranoe](https://ffmpeg.zeranoe.com/builds/macos64/static/) (Recommended).
+The portable version doesn't come with FFmpeg by default. To install FFmpeg you can use homebrew or download the build from [Zeranoe](https://ffmpeg.zeranoe.com/builds/macos64/static/).
+
 If using Zeranoe's build, extract it to the `/Applications/` folder.
-Navigate to Playback tab in the Dashboard and set the path to FFmpeg under FFmpeg Path.
+
+Navigate to the Playback tab in the Dashboard and set the path to FFmpeg under FFmpeg Path.
 
 ## Linux (generic amd64)
 
@@ -255,7 +263,7 @@ If you run into any dependency errors, run this and it will install them and jel
 sudo apt install -f
 ```
 
-Due to the number of command line options that must be passed, it is easiest to create a small script (here called jellyfin.sh) to run Jellyfin.
+Due to the number of command line options that must be passed, it is easiest to create a small script to run Jellyfin.
 
 ```bash
 sudo nano jellyfin.sh
@@ -269,11 +277,11 @@ JELLYFINDIR="/opt/jellyfin"
 FFMPEGDIR="/usr/share/jellyfin-ffmpeg"
 
 $JELLYFINDIR/jellyfin/jellyfin \
--d $JELLYFINDIR/data \
--C $JELLYFINDIR/cache \
--c $JELLYFINDIR/config \
--l $JELLYFINDIR/log \
---ffmpeg $FFMPEGDIR/ffmpeg
+ -d $JELLYFINDIR/data \
+ -C $JELLYFINDIR/cache \
+ -c $JELLYFINDIR/config \
+ -l $JELLYFINDIR/log \
+ --ffmpeg $FFMPEGDIR/ffmpeg
 ```
 
 Assuming you desire Jellyfin to run as a non-root user, chmod all files and directories to your normal login user and group. Also make the startup script above executable.

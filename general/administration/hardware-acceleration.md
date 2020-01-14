@@ -27,13 +27,13 @@ AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSD
 
 Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need an APU or dGPU for hardware acceleration.
 
-Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html)
+Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html).
 
-On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not supported by of Jellyfin. 
+On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not supported by of Jellyfin.
 
-CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV
+CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV.
 
-Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more. 
+Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more.
 
 ## Enabling Hardware Acceleration
 
@@ -47,12 +47,12 @@ Each hardware acceleration type, as well as each Jellyfin installation type, req
 
 ### Acceleration on Docker
 
-In order to use Hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo`
+In order to use hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo` on your machine.
 
 > [!NOTE]
 > [NVIDIA GPUs](https://github.com/docker/compose/issues/6691) aren't currently supported in docker-compose.
 
-Docker run configuration example:
+You can use `docker run` to start the server with a command like the one below.
 
 ```bash
 docker run -d \
@@ -66,29 +66,31 @@ docker run -d \
  jellyfin/jellyfin
 ```
 
-Alternatively, using docker-compose:  
+Alternatively, you can use docker-compose with a configuration file so you don't need to run a long command every time you restart your server.
 
 ```yaml
-version: "3"  
-services:  
-  jellyfin:  
+version: "3"
+services:
+  jellyfin:
     image: jellyfin/jellyfin
-    network_mode: "host"  
-    volumes:  
-      - /path/to/config:/config  
-      - /path/to/cache:/cache  
-      - /path/to/media:/media  
-    devices: 
-      - /dev/dri/renderD128:/dev/dri/renderD128 # VAAPI devices, may be D128, D129, etc.
+    network_mode: "host"
+    volumes:
+      - /path/to/config:/config
+      - /path/to/cache:/cache
+      - /path/to/media:/media
+    devices:
+      # VAAPI Devices
+      - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
-      - /dev/vchiq:/dev/qchiq  # Rpi4
+      # RPi 4
+      - /dev/vchiq:/dev/qchiq
 ```
 
 ### Configuring VAAPI acceleration on Debian/Ubuntu from `.deb` packages
 
 Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ensure permissions are correct.
 
-To check information about VAAPI on your system install and run `vainfo`
+To check information about VAAPI on your system install and run `vainfo` from the command line.
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:  
 
@@ -104,7 +106,7 @@ crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
 > [!NOTE]
 > On some releases, the group may be `video` instead of `render`.
 
-2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin:  
+2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin.
 
 ```bash
 sudo usermod -aG render jellyfin
@@ -121,7 +123,7 @@ This has been tested with LXC 3.0 and may or may not work with older versions.
 
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 
-1. Add your GPU to the container:
+1. Add your GPU to the container.
 
 `$ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>`
 
@@ -137,7 +139,7 @@ crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
 
 3. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
 
-4. Try and play a video that requires transcoding and run the following, you should get a hit:
+4. Try and play a video that requires transcoding and run the following, you should get a hit.
 
 `$ ps aux | grep ffmpeg | grep accel`
 
@@ -149,11 +151,13 @@ Useful Resources:
 * https://stgraber.org/2017/03/21/cuda-in-lxd/
 
 ### Raspberry Pi 3 and 4
+
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin.
     `sudo usermod -aG video jellyfin`
     `sudo systemctl restart jellyfin`
-    On Rpi4, update the firmware and kernel.
-    `sudo rpi-update`
+
+> [!NOTE]
+> If you are using a Raspberry Pi 4, you might need to run `sudo rpi-update` for kernel and firmware updates.
 
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard.
 
@@ -171,7 +175,7 @@ Useful Resources:
     Use `vcgencmd measure_temp && vcgencmd measure_clock arm` to monitor the temperature and clock speed of the CPU.
 
 > [!NOTE]
-> RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For Rpi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+> RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Verifying Transcodes
 

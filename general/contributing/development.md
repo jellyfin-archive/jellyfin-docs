@@ -126,9 +126,9 @@ When submitting a new PR, please ensure you do the following things. If you have
 
     1. Why the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
 
-    1. How you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
+    2. How you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
-* Tag any work-in-progress commits with `[WIP]`, `WIP -`, or some variation at the beginning of the title, or mark your PR as "draft" using Github Web UI. While this tag is in place, the PR should _not_ be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
+* If your pull request isn't finished yet please mark it as a "draft" when you open it. While this tag is in place, the pull request won't be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
 
 * Avoid rebasing and force-pushing to large or complex pull requests if at all possible, and especially after reviews. It forces unnecessary reviews to verify the changes are still okay and build properly.
 

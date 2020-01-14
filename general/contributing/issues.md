@@ -51,24 +51,24 @@ If you ever need assistance for troubleshooting or opening an issue, please [con
 
 Jellyfin features a number of issue labels to assist in triaging and managing issues. Users cannot assign these themselves due to GitHub's permissions; they will be added by an administrative team member during triaging.
 
-### Category Labels
+### Categories
 
-These first three labels are broad categories for which part of Jellyfin the issue affects:
+These first three labels are broad categories for which part of Jellyfin the issue affects.
 
 * `UI`: An issue that mainly relates to the UI frontend code.
 * `Backend`: An issue that mainly relates to the server backend code.
 * `build/platform`: An issue that mainly relates to building or packaging the project.
                                                      
-### Criticality Labels
+### Criticality
                                                                                 
-These labels help determine how critical an issue is:
+These labels help determine how critical an issue is.
 
 * `regression`: An issue in need of immediate attention due to a regression from the last build.
 * `bug`: A bug in the code that affects normal usage.
 
-### Management Labels
+### Management
 
-These labels help assist in managing the project and direction:
+These labels help assist in managing the project and direction.
 
 * `Good first issue`: Something that should be very straightforward to do, and is a great place to get started.
 * `help wanted`: An issue that currently has no clear expert within the project and could use outside assistance.
@@ -77,9 +77,8 @@ These labels help assist in managing the project and direction:
 * `fork`: An issue related to the forking from Emby.
 * `investigation`: An investigation-type issue into the codebase.
 
-### PR Labels
+### Pull Requests
 
-These labels apply only to Pull Requests for administrative purposes:
+These labels apply only to Pull Requests for administrative purposes.
 
-* `WIP`: A Work-in-progress PR that is not yet ready to be merged, usually blocked by further work from the contributor or a testing requirement.
 * `requires testing`: A PR that has not been tested in a live environment yet. Any major backend-affecting PRs should be tested before being merged to avoid regressions.

@@ -8,9 +8,9 @@ title: Clients
 Clients connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of clients below with their current development status.
 
 > [!NOTE]
-> Many clients were direct forks of the latest available codebases from Emby, and some are not functional yet. If you interested in helping out, please see our [contribution guide](xref:contrib-index).
+> Many clients have no active maintainers at the moment. If you interested in helping out, please see our [contribution guide](xref:contrib-index) and feel free to contact us for more information!
 
-Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a PR](https://github.com/jellyfin/jellyfin-docs)!
+Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 
 ## Android
 

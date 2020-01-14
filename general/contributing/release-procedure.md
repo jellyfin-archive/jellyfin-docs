@@ -5,22 +5,22 @@ title: Release Procedure
 
 # Release Procedure
 
-This document is a Core team guide, provided publicly to ensure transparency in the release process.
+This document is a guide for the core team, provided publicly to ensure transparency in the release process.
 
 ## Versioning
 
 Jellyfin uses [semantic versioning](https://semver.org). All releases will have versions in the `X.Y.Z` format, starting from `10.0.0`. Note however that the `10.Y.Z` release chain represents the "cleanup" of the codebase, so it should be accepted that `10.Y.Z` breaks all compatibility, at some point, with previous Emby-compatible interfaces, and may also break compatibility with previous `10.Y` releases if required for later cleanup work. Our versioning will typically follow the patterns below:
 
-#### `X` - Major breaking versions
+#### `X` - Major Versions
 
 * Breaks compatibility with the HTTP and/or plugin APIs.
 
-#### `Y` - Minor versions
+#### `Y` - Minor Versions
 
 * Introduces new features.
 * Makes minor backwards-compatible API changes.
 
-#### `Z` - Hotfix versions
+#### `Z` - Hotfix Versions
 
 * Introduces critical bugfixes or otherwise changes `master` branch code since the last release.
 
@@ -28,7 +28,7 @@ Jellyfin uses [semantic versioning](https://semver.org). All releases will have 
 
 Releases will generally be performed on Sundays "when ready". For Major/Minor releases, the "when ready" is generally quite flexible and is whenever the release is truly ready without major breaking bugs. After a major release, each Sunday the Admin team should review the recently merged PRs and, if backports are required, perform a Hotfix release containing those PRs.
 
-### Release procedure (Major/Minor version releases)
+### Major Release Procedure
 
 #### Preparation
 
@@ -44,7 +44,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Once all testing is complete and the release remains stable, proceed.
 
-#### Web release
+#### Web Client
 
 1. Create a release branch on the [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repository via CLI from `master`, named `release-X.Y.z`, where `X` and `Y` are the new version number, and `z` is a literal `z`. Push the new branch to GitHub.
 
@@ -56,7 +56,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Publish the release.
 
-#### Main release
+#### Server
 
 1. Create a release branch on the [jellyfin](https://github.com/jellyfin/jellyfin) repository via CLI from `master`, named `release-X.Y.z`, where `X` and `Y` are the new version number, and `z` is a literal `z`. Push the new branch to GitHub.
 
@@ -78,7 +78,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Announce the new release in the [jellyfin-announce](https://matrix.to/#/#jellyfin-announce:matrix.org) Matrix/Riot channel and anywhere else required (e.g. Reddit, etc.).
 
-### Release procedure (Hotfix version releases)
+### Hotfix Release Procedure
 
 1. During normal work on the `master` branch, select PRs suitable for backporting by tagging them with the `stable-backport` label during the PR lifecycle. All PRs will target `master` and thus bugfixes for the stable release must include this label to be included.
 
@@ -100,7 +100,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
    1. Push the updated release branch to GitHub.
    
-#### Web release
+#### Web Client
 
 1. Create a GitHub release for the new version, based on the relevant `release-X.Y.z` branch. The tag should be named `vX.Y.Z` and the release named "Release X.Y.Z". The release body should contain the following link only, replacing the version as required:
 
@@ -110,7 +110,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Publish the release.
 
-#### Main release
+#### Server
 
 1. Create a GitHub release for the new version, based on the relevant `release-X.Y.z` branch. The tag should be named `vX.Y.Z` and the release named "Release X.Y.Z". The release body should contain the following components:
 

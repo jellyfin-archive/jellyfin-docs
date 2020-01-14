@@ -5,17 +5,19 @@ title: Codec Compatibility
 
  # [Codec Tables](https://en.wikipedia.org/wiki/List_of_codecs "Wikipedia's list of all codecs")
  
- The goal is to Direct Play all media. This means the container, video, audio and subtitles are all compatible with the client. Direct Stream will occur if the audio, container or subtitles happen to not be supported. Subtitles can be tricky because they can cause Direct Stream (subtitles are remuxed) or video transcoding (burning in subtitles) to occur. If the video codec is unsupported, this will result in video transcoding. This is the most intensive CPU component of transcoding. Decoding is less intensive than encoding.
- 
+The goal is to Direct Play all media. This means the container, video, audio and subtitles are all compatible with the client. Direct Stream will occur if the audio, container or subtitles happen to not be supported. Subtitles can be tricky because they can cause Direct Stream (subtitles are remuxed) or video transcoding (burning in subtitles) to occur. If the video codec is unsupported, this will result in video transcoding. This is the most intensive CPU component of transcoding. Decoding is less intensive than encoding.
+
 ## [Video Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats "Wikipedia's video codec tables")
 
-||Chrome|Firefox|Safari|Android|AndroidTV|Kodi|[Roku](https://developer.roku.com/docs/specs/streaming.md)|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌|❌|✅|✅|
-|[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌|❌|✅|✅|
-|[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅|✅|✅|✅|
-|[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅|✅|✅|✅|
-|[H.265](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>|❌|✅|❌|
+[Breakdown of video codecs.](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
+
+||Chrome|Firefox|Safari|Android|iOS|AndroidTV|Kodi|[Roku](https://developer.roku.com/docs/specs/streaming.md)|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌|✅||
+|[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌|✅||
+|[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅||✅|✅||
+|[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅|✅||
+|[H.265](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌|✅||
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
@@ -37,15 +39,15 @@ title: Codec Compatibility
 
 If the audio codec is unsupported or incompatible (such as playing a 5.1 channel stream on a stereo device), the audio codec must be transcoded. This is not nearly as intensive as video coding.
 
-||Chrome|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-FLAC|✅|❌|✅|✅|✅|✅|✅|
-|MP3|🔶<sup>1</sup>|🔶|✅|✅|✅|✅|✅|
-|AAC|🔶<sup>2</sup>|🔶|✅|✅|✅|✅|✅|
-|AC3|✅|❌|✅|✅|✅|✅|✅|
-|EAC3<sup>3</sup>|✅|✅|✅|✅|✅|✅|✅|
-|VORBIS|❌|✅|✅|✅|✅|✅|✅|
-|DTS<sup>4</sup>|❌|❌|❌|✅|✅|✅|✅|
+||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Kodi|Roku|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+FLAC|✅|❌|✅|✅||✅|✅||
+|MP3|🔶<sup>1</sup>|🔶|✅|✅||✅|✅||
+|AAC|🔶<sup>2</sup>|🔶|✅|✅||✅|✅||
+|AC3|✅|❌|✅|✅||✅|✅||
+|EAC3<sup>3</sup>|✅|✅|✅|✅||✅|✅||
+|VORBIS|❌|✅|✅|✅||✅|✅||
+|DTS<sup>4</sup>|❌|❌|❌|✅||✅|✅||
 
 <sup>1</sup>MP3 Mono is incorrectly reported as unsupported and will transcode to AAC.
 
@@ -79,11 +81,13 @@ If the container is unsupported, this will result in remuxing. The video and aud
 |:---:|:---:|:---:|:---:|:---:|:---:
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|🔶|✅|🔶
-|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)|✅|✅|✅|✅|✅
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|||||
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|✅||||
+|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 
 <sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in Firefox and will remux.
 
 <sup>3</sup>MKV containers are improperly labeled as WebM in Firefox during playback.
+
+<sup>4</sup>TS is one of the primary containers for streaming using Jellyfin. 

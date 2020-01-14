@@ -11,13 +11,14 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 [Breakdown of video codecs.](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 
-||Chrome|Firefox|Safari|Android|iOS|AndroidTV|Kodi|[Roku](https://developer.roku.com/docs/specs/streaming.md)|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌|✅||
-|[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌|✅||
-|[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅||✅|✅||
-|[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅|✅||
-|[H.265](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌|✅||
+||Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[MPV Shim](https://jellyfin.org/docs/general/clients/index.html#jellyfin-mpv-shim)|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌||✅|✅|
+|[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌||✅|✅|
+|[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅||✅||✅|✅|
+|[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅||✅|✅|
+|[H.265](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
+|[VP9](https://caniuse.com/#search=vp9 "V9 Browser Support Reference")|✅|✅|❌|||||||
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
@@ -39,21 +40,21 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 If the audio codec is unsupported or incompatible (such as playing a 5.1 channel stream on a stereo device), the audio codec must be transcoded. This is not nearly as intensive as video coding.
 
-||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Kodi|Roku|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-FLAC|✅|❌|✅|✅|||✅||
-|MP3|🔶<sup>1</sup>|🔶|✅|✅|||✅||
-|AAC|🔶<sup>2</sup>|🔶|✅|✅|||✅||
-|AC3|✅|❌|✅|✅|||✅||
-|EAC3<sup>3</sup>|✅|✅|✅|✅|||✅||
-|VORBIS|❌|✅|✅|✅|||✅||
-|DTS<sup>4</sup>|❌|❌|❌|✅|||✅||
+||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Roku|Kodi|MPV Shim|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|FLAC|✅|❌|✅|✅||||✅|✅|
+|MP3|🔶<sup>1</sup>|🔶|✅|✅||||✅|✅|
+|AAC|✅|✅|✅|✅||||✅|✅|
+|AC3|✅|❌|✅|✅||||✅|✅|
+|EAC3<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
+|VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
+|DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
 
 <sup>1</sup>MP3 Mono is incorrectly reported as unsupported and will transcode to AAC.
 
-<sup>2</sup>AAC is incorrectly reported as unsupported and will transcode to MP3.
+<sup>2</sup>Only EAC3 2.0 has been tested.
 
-<sup>3</sup>Only EAC3 2.0 has been tested.
+<sup>3</sup>OGG containers are not supported and will cause VORBIS to convert.
 
 <sup>4</sup>Only DTS Mono has been tested.
 
@@ -63,15 +64,17 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 ||Format|TS|MP4|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|SubRip Text (SRT)|Text|❌|🔶|✅|🔶|
+|[SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip)|Text|❌|🔶|✅|🔶|
+|[WebVTT (VTT)](https://en.wikipedia.org/wiki/WebVTT)|Text|❌<sup>1</sup>|❌<sup>1</sup>|✅|🔶|
 |ASS/SSA<sup>1</sup>|Formatted Text|❌|❌|✅|🔶|
 |VobSub|Picture|❌|✅|✅|🔶|
-|DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file)|Picture|✅|❌|✅|❌|
+|DVB-SUB [(.sub/.idx)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file)|Picture|✅|❌|✅|❌|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
 
+<sup>1</sup>VTT are supported in an [HLS Stream](https://helpx.adobe.com/adobe-media-server/dev/webvtt-subtitles-captions.html).
 
-<sup>1</sup>ASS Subtitles are only supported by MKV files. MKV files aren't supported by Firefox. They will always inherently be burned into the video. This is not a limitation of Jellyfin.
+<sup>2</sup>ASS Subtitles are only supported by MKV files. MKV files aren't supported by Firefox. They will always inherently be burned into the video. This is not a limitation of Jellyfin.
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 
@@ -81,8 +84,9 @@ If the container is unsupported, this will result in remuxing. The video and aud
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅||
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|✅|||||✅||
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|✅|✅||||✅||
 |[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|
+|[OGG](https://en.wikipedia.org/wiki/Ogg)|❌|❌|❌|❌|❌|❌|❌|
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 

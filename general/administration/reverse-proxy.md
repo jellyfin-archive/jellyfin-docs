@@ -10,7 +10,7 @@ It's possible to run Jellyfin behind another server acting as a reverse proxy.  
 Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), [Nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/) and [Traefik](https://traefik.io/).
 
 > [!WARNING]
-> In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. Running Jellyfin in a subpath (example.com/jellyfin/) is supported by the Android and web clients.
+> In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. Running Jellyfin in a Path (example.com/jellyfin/) is supported by the Android and web clients. Sonarr and Radarr currently do not support Paths and their APIs will fail to communicate with Jellyfin.
 
 When following this guide, be sure to replace the following variables with your information:
 

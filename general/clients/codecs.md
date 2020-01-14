@@ -86,4 +86,4 @@ If the container is unsupported, this will result in remuxing. The video and aud
 
 <sup>2</sup>MKV containers can hold nearly any codec, but are not compatible with streaming in Firefox and will remux.
 
-<sup>3</sup>MKV containers are improperly labeled as webM in Firefox during playback.
+<sup>3</sup>MKV containers are improperly labeled as WebM in Firefox during playback.

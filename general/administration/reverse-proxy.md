@@ -20,7 +20,7 @@ When following this guide, be sure to replace the following variables with your 
 
 In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
 
-Ports 80 and 443 (pointing to the proxy server) need to be opened on your firewall or router.
+Ports 80 and 443 (pointing to the proxy server) need to be opened on your router and firewall.
 
 ## Apache
 

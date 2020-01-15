@@ -3,6 +3,7 @@
   - uid: clients-index
     items:
     - uid: clients-installing-kodi
+  - uid: codecs
 
 - name: Administration
   items:

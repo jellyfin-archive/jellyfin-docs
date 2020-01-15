@@ -1,5 +1,5 @@
 ---
-uid: codecs
+uid: codec-support
 title: Codec Compatibility
 ---
 

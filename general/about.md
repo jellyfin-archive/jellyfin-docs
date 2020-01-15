@@ -11,7 +11,7 @@ Jellyfin seeks to continue development of the original Emby project with a Free 
 
 The Jellyfin project was started in early December 2018 as a result of Emby's decision to take their 3.6 release closed-source, as well as various philosophical differences with the core developers. Jellyfin seeks to be the free software alternative to Emby and Plex to provide media management and streaming from a dedicated server to end-user devices.
 
-You can find our main repository [on GitHub](https://github.com/jellyfin/jellyfin) as well as [our main organization page](https://github.com/jellyfin).
+You can find our main repository on [GitHub](https://github.com/jellyfin/jellyfin) as well as our [organization](https://github.com/jellyfin) page.
 
 ## Core Team
 

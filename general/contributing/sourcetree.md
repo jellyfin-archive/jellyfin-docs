@@ -24,6 +24,8 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
 10. Jellyfin.Drawing.Skia:
 11. Jellyfin.Server:
 12. MediaBrowser.Api:
+    - Playback:
+      - BaseStreamingService.cs: Logic for the Stream Builder itself, this determines how transcoding will occur.
 13. MediaBrowser.Common:
 14. MediaBrowser.Controller:
 15. MediaBrowser.LocalMetadata:

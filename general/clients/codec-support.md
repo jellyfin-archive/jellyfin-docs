@@ -69,19 +69,21 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format (text-based subtitles) or burned into the video (image/lossless based and ASS based) due to the subtitles transcoding not being supported. This is the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer.
 
-||Format|TS|MP4|MKV|AVI|
+||Format|TS|MP4<sup>3</sup>|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |[SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip)|Text|❌|🔶|✅|🔶|
 |[WebVTT (VTT)](https://en.wikipedia.org/wiki/WebVTT)|Text|❌<sup>1</sup>|❌<sup>1</sup>|✅|🔶|
 |ASS/SSA<sup>1</sup>|Formatted Text|❌|❌|✅|🔶|
 |VobSub|Picture|❌|✅|✅|🔶|
-|DVB-SUB [(SUB + IDX](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file)|Picture|✅|❌|✅|❌|
+|DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file)|Picture|✅|✅|✅|❌|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
 
 <sup>1</sup>VTT are supported in an [HLS Stream](https://helpx.adobe.com/adobe-media-server/dev/webvtt-subtitles-captions.html).
 
 <sup>2</sup>ASS Subtitles are only supported by MKV files. MKV files aren't supported by Firefox. They will always inherently be burned into the video. This is not a limitation of Jellyfin.
+
+<sup>3</sup>MP4 containers can only support one embedded subtitle stream. This does not affect external subtitles.
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 

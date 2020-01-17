@@ -19,6 +19,8 @@ For general use computers, such as workstations or laptops, it's recommended to 
 3. Configure your `mopidy.conf` located at `$HOME/.config/mopidy/mopidy.conf`  
     See [Config File](xref:clients-installing-mopidy#config-file)
 4. There may be a need to install extra gstreamer codecs if they're not already on your system, but these are highly variable and depend on your hardware and distro
+5. Start the program by running `mopidy` from a terminal
+6. See [Usage](xref:clients-installing-mopidy#usage)
 
 ## Raspberry Pi (Remote Controlled Speakers)
 
@@ -35,6 +37,7 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
     See [Config File](xref:clients-installing-mopidy#config-file)
 7. Enable and start the mopidy service:  
     `sudo systemctl enable --now mopidy`
+8. See [Usage](xref:clients-installing-mopidy#usage)
 
 ## Config File
 
@@ -59,10 +62,18 @@ Other options that may be useful to include:
 enabled = true
 # Useful if you want to control this instance from a remote mpd client
 hostname = 0.0.0.0
+port = 6600
 # If you have artists or folders with large amounts of files, this helps avoid timeout errors
 connection_timeout = 300
 
 # Used in the event you want to control this system from a web browser
 [http]
 hostname = 0.0.0.0
+port = 6680
 ```
+
+Be aware that Mopidy provides no security on open ports, so if you'll be running this in a public place you'll likely want to change `0.0.0.0` to `127.0.0.1` to prevent somebody else hijacking your listening sesion.
+
+## Usage
+
+Once Mopidy is running, you can connect and control it with your client of choice.  MPD clients will connect using port 6600 by default.  Tested MPD clients include [ncmpcpp](https://github.com/arybczak/ncmpcpp) and [M.A.L.P](https://play.google.com/store/apps/details?id=org.gateshipone.malp).  Web clients can be reached at `http://localhost:6680`, or `http://$IP_ADDRESS:6680` if this is a remote system.

@@ -47,6 +47,10 @@ This setting can also be modified from the **Networking** page to use a differen
 
 Since client auto-discover would break if this option were configurable, you cannot change this in the settings at this time.
 
+**Client Discovery:** 7359 UDP
+
+Allows clients to discover the Jellyfin Server on the local network.  A broadcast message to this port with `Who is JellyfinServer?` will get a json response that includes the server Address, ID and Name.
+
 ## Dynamic Ports
 
 Live TV devices will often use a random UDP port for HD Homerun devices. The server will select an unused port on startup to connect to these tuner devices.

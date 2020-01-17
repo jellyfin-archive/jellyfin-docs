@@ -2,6 +2,7 @@
   items:
   - uid: codec-support
   - uid: clients-installing-kodi
+  - uid: clients-installing-mopidy
 
 - name: Administration
   items:

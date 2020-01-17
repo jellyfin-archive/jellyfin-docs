@@ -29,7 +29,7 @@ Zen is CPU only. No hardware acceleration for any form of video decoding/encodin
 
 Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html).
 
-On Windows you can use DXVA2/D3D11VA libraries for decoding instead of libmfx and HWA encoding on Windows requires libmfx. The DXVA2/D3D11VA libraries are currently not supported by of Jellyfin.
+On Windows, you can use the DXVA2/D3D11VA libraries for decoding and the libmfx library for encoding.
 
 CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV.
 

@@ -77,3 +77,10 @@ Be aware that Mopidy provides no security on open ports, so if you'll be running
 ## Usage
 
 Once Mopidy is running, you can connect and control it with your client of choice.  MPD clients will connect using port 6600 by default.  Tested MPD clients include [ncmpcpp](https://github.com/arybczak/ncmpcpp) and [M.A.L.P](https://play.google.com/store/apps/details?id=org.gateshipone.malp).  Web clients can be reached at `http://localhost:6680`, or `http://$IP_ADDRESS:6680` if this is a remote system.
+
+## Upgrading
+
+When a new version of Mopidy Jellyfin is released, you can upgrade via pip using the `--upgrade` flag.  Using the install examples from above:  
+    `pip3 install --user --upgrade mopidy-jellyfin`  
+or  
+    `sudo pip3 install --upgrade mopidy-jellyfin`

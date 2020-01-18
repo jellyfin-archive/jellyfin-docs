@@ -11,7 +11,7 @@ The Mopidy Jellyfin plugin is available to install from [PyPi](https://pypi.org/
 
 For general use computers, such as workstations or laptops, it's recommended to install Mopidy plugins in user mode.  Installing python packages from pip using sudo or root permissions can lead to conflicts with your package manager in the future.
 
-1. Install Mopidy using your method of choice using the [official docs](https://docs.mopidy.com/en/latest/installation/)
+1. Install Mopidy using your method of choice using the [official documentation](https://docs.mopidy.com/en/latest/installation/)
 1. Install the Jellyfin plugin for Mopidy:  
     `pip3 install --user mopidy-jellyfin`
 2. (Optional) Install other mopidy related packages:  
@@ -27,7 +27,7 @@ For general use computers, such as workstations or laptops, it's recommended to 
 Utilizing a Raspberry Pi (or other small form factor computer) it's possible to use Mopidy to build a set of standalone smart speakers connected to your Jellyfin server.
 
 1. Grab the latest [raspbian image](https://www.raspberrypi.org/downloads/raspbian/).  Unless you have a need for a GUI, the 'Lite' image is plenty for this project.
-2. Install the image to the sd card (See the [official docs](https://www.raspberrypi.org/documentation/installation/installing-images/README.md))
+2. Install the image to the SD card (See the [official documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md))
 3. Install Mopidy from their [apt repo](https://docs.mopidy.com/en/latest/installation/debian/#install-from-apt-mopidy-com) to ensure we get the latest version
 4. Install required OS packages:  
     `sudo apt install mopidy mopidy-mpd gstreamer1.0-plugins-bad python3-pip`
@@ -41,7 +41,7 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
 
 ## Config File
 
-The config file for mopidy is divided into sections in an ini format.  An example Jellyfin example is shown here.
+The config file for mopidy is divided into sections in an INI format.  An example for Jellyfin is shown here.
 
 ```ini
 [jellyfin]
@@ -60,10 +60,10 @@ Other options that may be useful to include:
 ```ini
 [mpd]
 enabled = true
-# Useful if you want to control this instance from a remote mpd client
+# Useful if you want to control this instance from a remote MPD client
 hostname = 0.0.0.0
 port = 6600
-# If you have artists or folders with large amounts of files, this helps avoid timeout errors
+# This will help avoid timeout errors for  artists or folders with large amounts of files
 connection_timeout = 300
 
 # Used in the event you want to control this system from a web browser
@@ -72,7 +72,7 @@ hostname = 0.0.0.0
 port = 6680
 ```
 
-Be aware that Mopidy provides no security on open ports, so if you'll be running this in a public place you'll likely want to change `0.0.0.0` to `127.0.0.1` to prevent somebody else hijacking your listening sesion.
+Be aware that Mopidy provides no security on open ports, so if you'll be running this in a public place you'll likely want to change `0.0.0.0` to `127.0.0.1` to prevent somebody else from hijacking your listening session.
 
 ## Usage
 

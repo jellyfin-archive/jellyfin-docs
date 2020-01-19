@@ -1,7 +1,7 @@
 <h1 align="center">Jellyfin Documentation</h1>
 <h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 
-This repository houses all documentation for Jellyfin available at [jellyfin.org](https://jellyfin.org/docs/) and written in markdown.
+This repository houses all documentation for Jellyfin available at [jellyfin.org](https://docs.jellyfin.org/) and written in markdown.
 
 # Layout
 

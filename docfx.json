@@ -71,7 +71,7 @@
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
     "sitemap":{
-      "baseUrl": "https://jellyfin.org/docs/",
+      "baseUrl": "https://docs.jellyfin.org/",
       "priority": 0.1,
       "changefreq": "daily"
     }

@@ -191,6 +191,7 @@ The official Jellyfin Kodi plugin.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-kodi)
+* [Installing](xref:clients-installing-kodi)
 
 ## LG WebOS
 
@@ -208,13 +209,14 @@ The official Jellyfin WebOS app.
 
 ### Mopidy-Jellyfin
 
-A third party plugin for Mopidy that uses Jellyfin as a backend.
+An official plugin for Mopidy that uses Jellyfin as a backend.
 
-**Status:** ⭐ Active, 3rd-Party
+**Status:** ⭐ Active
 
 **Links:**
 
 * [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
+* [Installing](xref:clients-installing-mopidy)
 
 ## Roku
 

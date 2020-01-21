@@ -55,6 +55,13 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your router
 #    SSLCertificateKeyFile /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem
 #    Protocols h2 http/1.1
 #
+#    Enable only strong encryption ciphers and prefer versions with Forward Secrecy
+#    SSLCipherSuite HIGH:RC4-SHA:AES128-SHA:!aNULL:!MD5
+#    SSLHonorCipherOrder on
+#
+#    Disable insecure SSL and TLS versions
+#    SSLProtocol all -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+#
 #    ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
 #    CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
 #</VirtualHost>

@@ -168,7 +168,7 @@ First, complete the steps above to setup your container to build the master bran
 ```bash
 docker exec -ti jftest bash
 cd /opt/jellyfin
-git fetch upstream pull/<PR_ID>/head:my-testing-branch
+git fetch origin pull/<PR_ID>/head:my-testing-branch
 git merge my-testing-branch
 dotnet publish Jellyfin.Server --configuration Release --output="/jellyfin" --self-contained --runtime linux-x64
 kill -15 6

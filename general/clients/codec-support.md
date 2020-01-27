@@ -75,7 +75,6 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |[WebVTT (VTT)](https://en.wikipedia.org/wiki/WebVTT)<sup>2</sup>|Text|❌|❌|✅|🔶|
 |ASS/SSA<sup>3</sup>|Formatted Text|❌|❌|✅|🔶|
 |VobSub<sup>4</sup>|Picture|✅|✅|✅|🔶|
-||Picture|✅|✅|✅|❌|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
 

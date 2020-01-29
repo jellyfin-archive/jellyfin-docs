@@ -28,3 +28,11 @@ Before:<br>
 
 Green Mod:<br>
 ![image](https://user-images.githubusercontent.com/20715731/73392302-86659f80-42a7-11ea-9a9a-222cbbe466c6.png)
+
+
+More Community Links:
+https://www.reddit.com/r/jellyfin/comments/bqa065/sharing_my_custom_css_for_modifying_the_ui/
+
+https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css/
+
+https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app/

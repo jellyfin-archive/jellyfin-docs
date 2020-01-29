@@ -5,7 +5,9 @@ title: CSS Customization
 
 # CSS Customization
 
-To provide customization within Jellyfin such as changing colors or modifying behavior. Here are a collection of community scripts available. While the css scripts should work between all clients, there may be differences in behavior between the different clients.
+To provide customization within Jellyfin such as changing colors or modifying behavior. Here are a collection of community scripts available. While the css scripts should work between all clients, there may be differences in behavior between the different clients. To implement these changes, go to Dashboard > General > Custom CSS.
+
+![image](https://user-images.githubusercontent.com/20715731/73392971-d1cc7d80-42a8-11ea-8552-3d311655ea37.png)
 
 ## Color Modifications
 

@@ -19,7 +19,7 @@ Blue: `#0000d0`<br>
 Red: `#d00000`<br>
 
 
-#### Change Played Icon: 
+#### Change Played Icon (Web Only): 
 
 `.playedIndicator { background: #5dd000 !important; }`
 

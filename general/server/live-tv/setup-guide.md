@@ -1,9 +1,9 @@
 ---
 uid: server-live-tv-setup-guide
-title: Live TV Setup Guide
+title: Setup Guide
 ---
 
-# Live TV Setup Guide
+# Setup Guide
 
 ## Add a TV tuner to Jellyfin (Automatic Discovery)
 

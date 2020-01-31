@@ -20,6 +20,7 @@ The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Je
 6.  Emby.Notifications:
 7.  Emby.Photos:
 8.  Emby.Server.Implementations:
+    - ScheduledTasks: Scheduled Tasks are created and maintained here
 9.  Jellyfin.Api:
 10. Jellyfin.Drawing.Skia:
 11. Jellyfin.Server:

@@ -86,7 +86,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
    - entrypoint: `main addon settings page`
    - helper: `small helper functions, mostly formatting or reused functions`
    - jellyfin: `interacting with the server`
-   - objects
+   - objects:
      - kodi: `handling local Kodi media types and database`
 2. resources:
    - language: `string files for localization`

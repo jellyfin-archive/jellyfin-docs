@@ -8,7 +8,6 @@
   items:
   - uid: admin-installing
   - uid: admin-building
-  - uid: admin-quick-start
   - uid: admin-migrate-from-emby
   - uid: admin-port-bindings
   - uid: admin-connectivity
@@ -31,23 +30,18 @@
     - uid: server-media-music
     - uid: server-media-shows
     - uid: server-media-subtitles
-
   - uid: server-devices
   - uid: server-libraries
-  - name: Live TV
+  - uid: server-live-tv-index
     items:
-    - uid: server-live-tv-index
     - uid: server-live-tv-setup-guide
-
   - uid: server-notifications
   - uid: server-settings
   - uid: server-tasks
   - uid: server-transcoding
-  - name: Users
+  - uid: server-users-index
     items:
-    - uid: server-users-index
     - uid: server-users-managing
-
   - uid: server-plugins-index
     items:
     - uid: server-plugins-open-subtitles

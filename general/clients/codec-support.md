@@ -28,7 +28,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 |[MPEG-2<br>Part 2](https://en.wikipedia.org/wiki/H.262/MPEG-2_Part_2)|[MPEG-4<br>Part-2](https://en.wikipedia.org/wiki/MPEG-4_Part_2)<sup>1</sup>|[MPEG-4<br>Part-10](https://en.wikipedia.org/wiki/Advanced_Video_Coding)|[MPEG-4<br>Part-14](https://en.wikipedia.org/wiki/MPEG-4_Part_14)|[MPEG-H<br>Part 2](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding)|
 |:---:|:---:|:---:|:---:|:---:|
-|H.262|MPEG4 SP/ASP|H.264|MP4 Container<sup>2</sup>|H.265|
+|H.262|MPEG-4 SP/ASP|H.264|MP4 Container<sup>2</sup>|H.265|
 |MPEG-2 Video|DivX|MPEG-4 AVC||HEVC|
 |DVD-Video|DX50||||
 

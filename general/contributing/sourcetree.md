@@ -65,7 +65,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
    - NativeShell:
      - res:
      - src:
-       - RemotePlayerService.java: `Remote Notifier such as for BlueTooth` ***unconfirmed***
+       - RemotePlayerService.java: `handles the notification tile that can control playback`
      - www:
    - cordova:
    

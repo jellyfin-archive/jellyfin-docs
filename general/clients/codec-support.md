@@ -42,7 +42,7 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 ||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Roku|Kodi|MPV Shim|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|FLAC|✅|❌|✅|✅||||✅|✅|
+|FLAC|✅|✅|✅|✅||||✅|✅|
 |MP3|🔶<sup>1</sup>|🔶|✅|✅||||✅|✅|
 |AAC|✅|✅|✅|✅||||✅|✅|
 |AC3|✅|❌|✅|✅||||✅|✅|

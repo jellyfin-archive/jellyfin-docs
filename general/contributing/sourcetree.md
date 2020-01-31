@@ -85,7 +85,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
    - dialogs: `code behind popup menus for user interaction`
    - entrypoint: `main addon settings page`
    - helper: `small helper functions, mostly formatting or reused functions`
-   - jellyfin: `interacting with remote Jellyfin server`
+   - jellyfin: `interacting with the server`
    - objects
      - kodi: `handling local Kodi media types and database`
 2. resources:

@@ -15,6 +15,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
     - Ifo: 
     - Properties:
 3.  Emby.Dlna: 
+    - Profiles: `DLNA Profiles for clients`
 4.  Emby.Drawing:
 5.  Emby.Naming:
 6.  Emby.Notifications:

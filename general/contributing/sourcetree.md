@@ -26,7 +26,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
 11. Jellyfin.Server:
 12. MediaBrowser.Api:
     - Playback:
-      - BaseStreamingService.cs: Logic for the Stream Builder itself, this determines how transcoding will occur.
+      - BaseStreamingService.cs: `logic for the stream builder that determines how transcoding will occur`
 13. MediaBrowser.Common:
 14. MediaBrowser.Controller:
 15. MediaBrowser.LocalMetadata:

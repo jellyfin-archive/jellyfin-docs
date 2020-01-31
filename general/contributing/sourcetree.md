@@ -5,7 +5,7 @@ title: Source Tree
 
 # Source Tree
 
-The Jellyfin Source Tree is a maze of many projects. With Emby's old code and Jellyfin's new code intermixed together. To help with this, this Source Tree guide was created.
+The Jellyfin Source Tree is a maze of many projects. These source trees can serve as an excellent tool to inform new developers about the structure of several projects.
 
 ### [Jellyfin Server](https://github.com/jellyfin/jellyfin)
 

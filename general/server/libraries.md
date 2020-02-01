@@ -18,3 +18,5 @@ You can add multiple paths that will all be shown under the same library. The pa
 ## Real Time Monitoring
 
 This will let Jellyfin automatically update libraries when files are added or modified. Unfortunately this feature is only supported on certain filesystems.
+
+For Linux systems, this is performed by [inotify](https://en.wikipedia.org/wiki/Inotify). NFS and rclone do not support inotify, but support can be provided by using a union file system such as [mergerfs](https://github.com/trapexit/mergerfs) with your networked file systems.

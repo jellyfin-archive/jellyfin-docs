@@ -28,9 +28,9 @@ Before:<br>
 Green Mod:<br>
 ![image](https://user-images.githubusercontent.com/20715731/73392302-86659f80-42a7-11ea-9a9a-222cbbe466c6.png)
 
-#### Background:
+#### Background Color:
 
-`.backgroundContainer, .dialog, html { background-color: #0000d0; !important }`
+`.backgroundContainer, .dialog, html { background-color: #0fd0d0 !important; }`
 
 #### Hotdogs with some catsup (let's not use these colors lol)
 

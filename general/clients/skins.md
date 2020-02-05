@@ -11,7 +11,7 @@ Custom CSS provides interface customization such as changing colors or modifying
 
 ## Color Modifications
 
-### Colors Codes:<br>
+### Colors Codes:
 
 Here are a few examples, see [here](https://htmlcolorcodes.com/color-picker/) for a hex color chart.<br>
 Green: `#5dd000`<br>

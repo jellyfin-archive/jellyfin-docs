@@ -32,6 +32,43 @@ Green Mod:<br>
 
 `.backgroundContainer,.dialog,html { background-color: #0000d0; !important }`
 
+#### Hotdogs with some catsup (let's not use these colors lol)
+
+```
+.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
+	background: #ff9475;
+}
+.emby-input, .emby-textarea, .emby-select {
+	border-color:#fdbe7d;
+}
+
+.backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer{
+	background: #fdbe7d;
+}
+
+#myPreferencesMenuPage .listItemBodyText,
+.emby-tab-button[data-index="0"],
+#myPreferencesMenuPage > div > div > div > a:nth-child(odd),
+.button-submit,
+.mainAnimatedPage *:nth-child(odd),
+.dashboardGeneralForm *:nth-child(odd),
+.mainDrawer-scrollContainer *:nth-child(odd),
+.headerRight *:nth-child(odd) {
+	color: red;
+}
+
+#myPreferencesMenuPage .listItemIcon,
+.emby-tab-button[data-index="1"],
+#myPreferencesMenuPage > div > div > div > a:nth-child(even),
+.mainAnimatedPage *:nth-child(even),
+.dashboardGeneralForm *:nth-child(even),
+.mainDrawer-scrollContainer *:nth-child(even),
+.headerRight *:nth-child(even)
+.cancel {
+	color: yellow;
+}
+```
+
 
 More Community Links:
 

@@ -18,7 +18,7 @@ Green: `#5dd000`<br>
 Blue: `#0000d0`<br>
 Red: `#d00000`<br>
 
-#### Change Played Icon: 
+#### Played Indicator: 
 
 `.playedIndicator { background: #5dd000 !important; }`
 
@@ -27,6 +27,11 @@ Before:<br>
 
 Green Mod:<br>
 ![image](https://user-images.githubusercontent.com/20715731/73392302-86659f80-42a7-11ea-9a9a-222cbbe466c6.png)
+
+#### Background:
+
+`.backgroundContainer,.dialog,html { background-color: #0000d0; !important }`
+
 
 More Community Links:
 

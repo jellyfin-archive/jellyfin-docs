@@ -48,7 +48,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
       - splash:
     - components: `custom elements used for different sections of the user interface`
       - playerstats:
-        - playerstats.js: `Code for displaying Playback Info during playback`
+        - playerstats.js: `display playback info in browsers and other clients that include the web source`
     - controllers: `scripts that handle the logic for different pages`
     - elements: `custom UI components that are used globally such as buttons or menus`
     - legacy: `currently used for all polyfills and scripts related to backwards compatibility`

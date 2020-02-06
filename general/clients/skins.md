@@ -72,7 +72,6 @@ Green Mod:
 }
 ```
 
-
 More Community Links:
 
 https://www.reddit.com/r/jellyfin/comments/bqa065/sharing_my_custom_css_for_modifying_the_ui/

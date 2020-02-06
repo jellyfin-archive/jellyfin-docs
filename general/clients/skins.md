@@ -5,7 +5,7 @@ title: CSS Customization
 
 # CSS Customization
 
-Custom CSS provides interface customization such as changing colors or modifying behavior. Here are a collection of community scripts available. Currently, the CSS modifications only work on the web client. To implement these changes, go to Dashboard > General > Custom CSS.
+[Custom CSS](https://www.w3schools.com/cssref/css3_browsersupport.asp) provides interface customization such as changing colors or modifying behavior. Here are a collection of community scripts available. Currently, the CSS modifications only work on the web client. To implement these changes, go to Dashboard > General > Custom CSS.
 
 ![image](https://user-images.githubusercontent.com/20715731/73392971-d1cc7d80-42a8-11ea-8552-3d311655ea37.png)
 
@@ -35,18 +35,30 @@ Green Mod:
 
 `.backgroundContainer, .dialog, html { background-color: #0fd0d0 !important; }`
 
+#### Header Color
+
+`.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { 	background: #ff9475 !important; }`
+
+![image](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
+
+#### Border Color
+
+`.emby-input, .emby-textarea, .emby-select { border-color:#fdbe7d !important; }`
+
+![image](https://user-images.githubusercontent.com/20715731/73950017-39965000-48c9-11ea-9c0e-7687420a282e.png)
+
 #### Hotdogs and Catsup:
 
 ```
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
-	background: #ff9475;
+	background: #ff9475 !important;
 }
 .emby-input, .emby-textarea, .emby-select {
-	border-color:#fdbe7d;
+	border-color:#fdbe7d !important;
 }
 
 .backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer{
-	background: #fdbe7d;
+	background: #fdbe7d !important;
 }
 
 #myPreferencesMenuPage .listItemBodyText,
@@ -71,6 +83,9 @@ Green Mod:
 	color: yellow;
 }
 ```
+
+Sample:
+![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
 
 More Community Links:
 

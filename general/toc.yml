@@ -1,9 +1,9 @@
 - uid: clients-index
   items:
+  - uid: css-customization
   - uid: codec-support
   - uid: clients-installing-kodi
   - uid: clients-installing-mopidy
-  - uid: css-customization
 
 - name: Administration
   items:

@@ -55,7 +55,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
     - libraries: `dependencies that we eventually want to remove and include during the build step`
     - scripts: `any script that isn't tied to a UI element or page but rather general functionality`
     - strings: `translations for the entire interface`
-    - themes: `all themes will exist in this folder, including custom themes at some point`
+    - themes: `custom and bundled themes can be found here in their own directories`
     
 ### [Android](https://github.com/jellyfin/jellyfin-android)
 

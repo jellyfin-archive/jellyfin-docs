@@ -5,7 +5,7 @@ title: Source Tree
 
 # Source Tree
 
-The Jellyfin Source Tree is a maze of many projects. These source trees can serve as an excellent tool to inform new developers about the structure of several projects.
+Jellyfin is a maze of clients, plugins, and other useful projects. These source trees can serve as an excellent tool to inform new developers about the structure of several projects.
 
 ### [Jellyfin Server](https://github.com/jellyfin/jellyfin)
 

@@ -5,7 +5,7 @@ title: CSS Customization
 
 # CSS Customization
 
-Custom CSS provides interface customization such as changing colors or modifying behavior. Here are a collection of community scripts available. Currently, the css modifications only work on WEBUI. To implement these changes, go to Dashboard > General > Custom CSS.
+Custom CSS provides interface customization such as changing colors or modifying behavior. Here are a collection of community scripts available. Currently, the CSS modifications only work on the web client. To implement these changes, go to Dashboard > General > Custom CSS.
 
 ![image](https://user-images.githubusercontent.com/20715731/73392971-d1cc7d80-42a8-11ea-8552-3d311655ea37.png)
 

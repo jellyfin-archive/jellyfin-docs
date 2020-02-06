@@ -22,7 +22,8 @@ Red: `#d00000`<br>
 
 `.playedIndicator { background: #5dd000 !important; }`
 
-Before:<br>
+Before:
+
 ![image](https://user-images.githubusercontent.com/20715731/73392328-97aeac00-42a7-11ea-817f-7234b8a78783.png)
 
 Green Mod:

@@ -42,19 +42,19 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
 ### [Web Client](https://github.com/jellyfin/jellyfin-web)
 
 1.  src: 
+    - assets: `images, styles, splash screens, and any other static assets`
+      - css:
+      - img:
+      - splash:
     - components: `custom elements used for different sections of the user interface`
       - playerstats:
         - playerstats.js: `Code for displaying Playback Info during playback`
     - controllers: `scripts that handle the logic for different pages`
-    - css:
-    - img:
+    - elements: `custom UI components that are used globally such as buttons or menus`
     - legacy: `currently used for all polyfills and scripts related to backwards compatibility`
     - libraries: `dependencies that we eventually want to remove and include during the build step`
     - scripts: `any script that isn't tied to a UI element or page but rather general functionality`
-    - splashscreens:
     - strings: `translations for the entire interface`
-    - assets: `images, styles, splash screens, and any other static assets`
-    - elements: `custom UI components that are used globally such as buttons or menus`
     - themes: `all themes will exist in this folder, including custom themes at some point`
     
 ### [Android](https://github.com/jellyfin/jellyfin-android)

@@ -53,7 +53,6 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
     - scripts: `any script that isn't tied to a UI element or page but rather general functionality`
     - splashscreens:
     - strings: `translations for the entire interface`
-    <br>Future Implementations:
     - assets: `images, styles, splash screens, and any other static assets`
     - elements: `custom UI components that are used globally such as buttons or menus`
     - themes: `all themes will exist in this folder, including custom themes at some point`

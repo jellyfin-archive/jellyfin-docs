@@ -32,7 +32,7 @@ Green Mod:<br>
 
 `.backgroundContainer, .dialog, html { background-color: #0fd0d0 !important; }`
 
-#### Hotdogs with some catsup (let's not use these colors lol)
+#### Hotdogs and Catsup:
 
 ```
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {

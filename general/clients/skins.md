@@ -25,7 +25,8 @@ Red: `#d00000`<br>
 Before:<br>
 ![image](https://user-images.githubusercontent.com/20715731/73392328-97aeac00-42a7-11ea-817f-7234b8a78783.png)
 
-Green Mod:<br>
+Green Mod:
+
 ![image](https://user-images.githubusercontent.com/20715731/73392302-86659f80-42a7-11ea-9a9a-222cbbe466c6.png)
 
 #### Background Color:

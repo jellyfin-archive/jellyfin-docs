@@ -1,5 +1,6 @@
 - uid: clients-index
   items:
+  - uid: css-customization
   - uid: codec-support
   - uid: clients-installing-kodi
   - uid: clients-installing-mopidy
@@ -25,6 +26,7 @@
   items:
   - name: Media
     items:
+    - uid: server-media-books
     - uid: server-media-cloud-storage
     - uid: server-media-movies
     - uid: server-media-music

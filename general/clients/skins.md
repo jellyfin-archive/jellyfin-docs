@@ -1,5 +1,5 @@
 ---
-uid: css-custom
+uid: css-customization
 title: CSS Customization
 ---
 

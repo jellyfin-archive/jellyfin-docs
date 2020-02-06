@@ -33,6 +33,8 @@ If DLNA fails to bind properly, `[ERR] Failed to bind to port 1900: "Address alr
 
 Setting `Alive message interval (seconds)` to 30 seconds also appears to help discovery for some clients.
 
+If a base URL is set, try removing the base Url and restarting the Jellyfin service. 
+
 ## Static Ports
 
 **HTTP Traffic:** 8096

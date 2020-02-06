@@ -45,7 +45,7 @@ The Jellyfin Source Tree is a maze of many projects. These source trees can serv
     - assets: `images, styles, splash screens, and any other static assets`
       - css:
       - img: `images for things like device icons and logos`
-      - splash:
+      - splash: `progressive web apps will show these splash screens`
     - components: `custom elements used for different sections of the user interface`
       - playerstats:
         - playerstats.js: `display playback info in browsers and other clients that include the web source`

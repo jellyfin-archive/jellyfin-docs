@@ -362,6 +362,7 @@ domain = "example.com"
 network = "traefik"
 exposedbydefault = false
 
+[file]
 [backends]
   [backends.backend-jellyfin]
     [backends.backend-jellyfin.servers]

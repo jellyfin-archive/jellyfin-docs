@@ -252,11 +252,19 @@ DOMAIN_NAME {
 
 ## Traefik (with docker-compose)
 
-Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need. (https://traefik.io/). 
+Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need. (https://traefik.io/). This configuration is A+. Test your setup here at [SSLlabs](https://www.ssllabs.com/ssltest/).
 
 Create these 3 files in the SAME directory (or change their paths in the volume section) : docker-compose.yml, traefik.toml and acme.json.
 
-This configuration is A+ (SSLlabs)
+> [!NOTE]
+> Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet. 
+
+```
+sudo apt install apache2-utils
+echo $(htpasswd -nb username mystrongpassword) | sed -e s/\\$/\\$\\$/g
+```
+
+This command automatically escapes all $ inside the password for the yml. If using an environmental file, it does not need the $ escaped since it will not be interpreted by the shell
 
 docker-compose.yml:
 
@@ -296,6 +304,7 @@ services:
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
       traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://example.com'
+      traefik.frontend.auth.basic.users: "user:passwordwithe$$capedha$$he$$"
     restart: unless-stopped
 
   jellyfin:

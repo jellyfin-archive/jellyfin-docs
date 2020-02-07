@@ -27,7 +27,8 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 11. Jellyfin.Server:
 12. MediaBrowser.Api:
     - Playback:
-      - BaseStreamingService.cs: `logic for the stream builder that determines how transcoding will occur`
+      - BaseStreamingService.cs: `receives client information and reads media info and feeds this info to MediaInfoService`
+      - MediaInfoService.cs: `logic for the stream builder that determines method of playback such as Direct Play or Transcoding`
 13. MediaBrowser.Common:
 14. MediaBrowser.Controller:
 15. MediaBrowser.LocalMetadata:

@@ -3,11 +3,15 @@ uid: network-main
 title: Networking
 ---
 
-# Port Bindings
+# Connectivity
+
+Many clients will automatically discover servers running on the same LAN and display them on login. If you are outside the network when you connect you can type in the complete IP address or domain name in the server field with the correct port to continue to the login page. You can find the default ports below to access the web frontend.
+
+## Port Bindings
 
 This document aims to provide an admin with knowledge on what ports Jellyfin binds and what purpose they serve.
 
-## Static Ports
+### Static Ports
 
 * 8096/tcp is used by default for HTTP traffic. This is admin configurable.
 * 8920/tcp is used by default for HTTPS traffic. This is admin configurable.

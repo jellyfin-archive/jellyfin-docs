@@ -49,7 +49,7 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 * [Nginx](xref:network-reverse-proxy-nginx)
 * [Traefik](xref:network-reverse-proxy-traefik)
 
-While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL capability.
+While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL certificates.
 * [Let's Encrypt](xref:network-letsencrypt )
 
 

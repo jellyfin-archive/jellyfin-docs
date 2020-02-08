@@ -31,7 +31,7 @@ Allows clients to discover the Jellyfin Server on the local network.  A broadcas
 
 ### Dynamic Ports
 
-* Completely random UDP port bind. It picks any UDP port that is unused on startup. It is used for Live TV setups involving HDHomeRun devices.
+Live TV devices will often use a random UDP port for HD Homerun devices. The server will select an unused port on startup to connect to these tuner devices.
 
 # Running Jellyfin Behind a Reverse Proxy
 

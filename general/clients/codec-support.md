@@ -17,7 +17,8 @@ The goal is to Direct Play all media. This means the container, video, audio and
 |[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌||✅|✅|
 |[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅||✅||✅|✅|
 |[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅||✅|✅|
-|[H.265](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
+|[H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
+|[H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
 |[VP9](https://caniuse.com/#search=vp9 "V9 Browser Support Reference")|✅|✅|❌|||||||
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.

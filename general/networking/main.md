@@ -43,6 +43,16 @@ It's possible to run Jellyfin behind another server acting as a reverse proxy.  
 
 Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), [Nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/) and [Traefik](https://traefik.io/).
 
+* [Apache](xref:network-reverse-proxy-apache)
+* [Caddy](xref:network-reverse-proxy-caddy)
+* [HAProxy](xref:network-reverse-proxy-haproxy)
+* [Nginx](xref:network-reverse-proxy-nginx)
+* [Traefik](xref:network-reverse-proxy-traefik)
+
+While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL capability.
+* [Let's Encrypt](xref:network-letsencrypt )
+
+
 > [!WARNING]
 > In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. 
 

@@ -63,7 +63,7 @@ Guide data is necessary for scheduling tv recordings and for browsing what's cur
 
 ![](~/images/live-tv-setup-guide1.png)
 
-Choose between 'Schedules Direct' and 'Xml TV'
+Choose between 'Schedules Direct' and 'Xml TV'. You currently cannot use both at the same time.
  
 **Schedules Direct:**
 

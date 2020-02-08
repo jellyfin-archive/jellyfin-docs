@@ -41,7 +41,10 @@ Live TV devices will often use a random UDP port for HD Homerun devices. The ser
 
 It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.
 
-Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Haproxy](https://www.haproxy.com/), [Nginx](https://www.nginx.com/), [Caddy](https://caddyserver.com/) and [Traefik](https://traefik.io/).
+> [!WARNING]
+> In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. 
+
+Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Caddy](https://caddyserver.com/), [Haproxy](https://www.haproxy.com/), [Nginx](https://www.nginx.com/) and [Traefik](https://traefik.io/).
 
 * [Apache](xref:network-reverse-proxy-apache)
 * [Caddy](xref:network-reverse-proxy-caddy)
@@ -51,10 +54,6 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 
 While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL certificates.
 * [Let's Encrypt](xref:network-letsencrypt )
-
-
-> [!WARNING]
-> In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired. 
 
 When following this guide, be sure to replace the following variables with your information:
 

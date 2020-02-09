@@ -173,8 +173,9 @@ server {
 
 ## Nginx with subpath
 
-When connecting to server from a client application, enter ``http(s)://DOMAIN_NAME/jellyfin`` in the address field, and **clear the port field**.
-Not all clients may handle this properly, but this is currently working for the web and Android clients.
+When connecting to server from a client application, enter ``http(s)://DOMAIN_NAME/jellyfin`` in the address field.
+
+Set the base URL field in the Jellyfin server.  This can be done by navigating to the Admin Dashboard -> Networking -> Base URL in the Jellyfin Web UI.  Fill in this box with `/jellyfin` and click Save.  The server will need to be restarted before this change takes effect.
 
 ```
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
@@ -197,13 +198,8 @@ server {
 
     # Jellyfin
     location /jellyfin {
-        return 302 $scheme://$host/jellyfin/;
-    }
-
-    location /jellyfin/ {
         # Proxy main Jellyfin traffic
-        # The / at the end is significant.
-        proxy_pass http://SERVER_IP_ADDRESS:8096/;
+        proxy_pass http://SERVER_IP_ADDRESS:8096;
 
         proxy_pass_request_headers on;
 

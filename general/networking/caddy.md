@@ -5,7 +5,7 @@ title: Caddy Reverse Proxy
 
 ## Caddy
 
-"[Caddy 2](https://caddyserver.com/) is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go" - Caddy Home Page
+"[Caddy](https://caddyserver.com/), sometimes clarified as the Caddy web server, is an open source, HTTP/2-enabled web server written in Go. It uses the Go standard library for its HTTP functionality." - [Wikipedia](https://en.wikipedia.org/wiki/Caddy_(web_server))
 
 Add this to your `Caddyfile`:
 

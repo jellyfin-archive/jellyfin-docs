@@ -5,6 +5,8 @@ title: Nginx Reverse Proxy
 
 ## Nginx
 
+"[Nginx](https://www.nginx.com/) (pronounced "engine X") is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004.[9] A company of the same name was founded in 2011 to provide support and Nginx plus paid software." - [Wikipedia](https://en.wikipedia.org/wiki/Nginx)
+
 Create the file `/etc/nginx/conf.d/jellyfin.conf`.
 
 ```

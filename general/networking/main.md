@@ -67,7 +67,7 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your router
 
 ## Subdomains vs Paths
 
-Running Jellyfin in a Path (example.com/jellyfin/) is supported by the Android and web clients.
+Running Jellyfin with a path (example.com/jellyfin/) is supported by the Android and web clients.
 
 > [!WARNING]
 > Paths, also known as Base URL, are known to break HD HomeRun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.

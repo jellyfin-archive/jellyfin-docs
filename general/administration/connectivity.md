@@ -61,7 +61,7 @@ Live TV devices will often use a random UDP port for HD Homerun devices. The ser
 
 > [!WARNING]
 
-> Base URL is known to break HD Homerun, DLNA, Sonarr, Radarr, Chromecast, and MrMC, 
+> Base URL is known to break HD Homerun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.
 
 The Base URL setting in the **Networking** page is an advanced setting used to specify the URL prefix that your Jellyfin instance can be accessed at. In effect, it adds this URL fragment to the start of any URL path. For instance, if you have a Jellyfin server at `http://myserver` and access its main page `http://myserver/web/index.html`, setting a Base URL of `/jellyfin` will alter this main page to `http://myserver/jellyfin/web/index.html`. This can be useful if administrators want to access multiple Jellyfin instances under a single domain name, or if the Jellyfin instance lives only at a subpath to another domain with other services listening on `/`.
 

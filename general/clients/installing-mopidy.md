@@ -57,8 +57,6 @@ album_format = {ProductionYear} - {Name} (Optional: will default to "{Name}" if 
 * `albumartistsort` changes whether the media library populates based on "Artist" or "Album Artist" metadata
 * `album_format` can be used to change the display format of music albums when using the file browser view.  Currently the only really usable fields are ProductionYear and Name
 
-The `libraries` option determines what is populated into Mopidy's internal library.  All of your audio libraries will be available from the browse menu regardless of what is entered here.
-
 Other options that may be useful to include:
 
 ```ini

@@ -191,6 +191,17 @@ docker run -d \
 --restart unless-stopped \
 jellyfin/jellyfin
 ```
+If using user env parameters as:
+```
+--user 1000:1000
+```
+
+You may need to add this user to the video group:
+
+```
+usermod -aG video user
+```
+
 Once container is started you can again validate access to host ressources:
 
 ```

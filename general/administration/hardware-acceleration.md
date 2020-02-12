@@ -179,8 +179,6 @@ A complete run command would looks like:
 ```
 docker run -d \
 --name=jellyfin \
--e PUID=1000 \
--e PGID=100 \
 -e NVIDIA_DRIVER_CAPABILITIES=all \
 -e NVIDIA_VISIBLE_DEVICES=all \
 --gpus all \

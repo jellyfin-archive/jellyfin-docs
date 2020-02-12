@@ -197,7 +197,7 @@ server {
     }
 
     # Jellyfin
-    location /jellyfin {
+    location /jellyfin/ {
         # Proxy main Jellyfin traffic
         proxy_pass http://SERVER_IP_ADDRESS:8096/jellyfin/;
 

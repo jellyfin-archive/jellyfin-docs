@@ -87,10 +87,9 @@ services:
       # RPi 4
       - /dev/vchiq:/dev/qchiq
 ```
-## Debian Docker Nvidia Hardware acceleration:
+## Debian Docker Nvidia:
 
-In order to achieve Hardware decode inside docker containers, some steps are needed:
-Thoses steps where wrote for Debian Stretch.
+In order to achieve Hardware acceleration using docker, some steps are needed:
 
 Prerequisits:
 https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)

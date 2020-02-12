@@ -134,8 +134,9 @@ Else to use stretch-backports:
 
 Install Nvidia docker2:
 ```apt-get install nvidia-docker2```
+When prompted to choose to keep or install the maintainer package file say "y" to install maintainer version
 
-After install edit your docker /etc/docker/daemon.json file to looks like this:
+OPTIONAL: After install you may want to add nvidia as default runtime: editing /etc/docker/daemon.json like this:
 ```
 {
     "default-runtime": "nvidia",

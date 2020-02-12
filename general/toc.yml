@@ -17,12 +17,14 @@
 
 - name: Networking
   items:
-  - uid: network-reverse-proxy
-  - uid: network-reverse-proxy-apache
-  - uid: network-reverse-proxy-caddy
-  - uid: network-reverse-proxy-haproxy
-  - uid: network-reverse-proxy-nginx
-  - uid: network-reverse-proxy-traefik
+  - uid: network-main
+  - name: Reverse Proxies
+    items:
+    - uid: network-reverse-proxy-apache
+    - uid: network-reverse-proxy-caddy
+    - uid: network-reverse-proxy-haproxy
+    - uid: network-reverse-proxy-nginx
+    - uid: network-reverse-proxy-traefik
   - uid: network-letsencrypt 
   - uid: network-dlna
   - uid: network-troubleshoot

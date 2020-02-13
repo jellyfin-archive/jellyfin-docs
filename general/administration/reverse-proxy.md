@@ -198,7 +198,15 @@ server {
 
     # Jellyfin
     location /jellyfin/ {
+        return 302 $scheme://$host/jellyfin/;
+    }
+
+    location /jellyfin/ {
         # Proxy main Jellyfin traffic
+
+        # The / at the end is significant.
+        # https://www.acunetix.com/blog/articles/a-fresh-look-on-reverse-proxy-related-attacks/
+
         proxy_pass http://SERVER_IP_ADDRESS:8096/jellyfin/;
 
         proxy_pass_request_headers on;

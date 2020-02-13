@@ -108,7 +108,7 @@ Update your host:
 Install curl:
 ```apt-get install curl```
 
-Edit sources.list in /ect/apt/sources.list:
+Edit sources.list in /etc/apt/sources.list:
 Add "non-free contrib" to every sources already configured when needed:
 
 ```deb http://ftp.ch.debian.org/debian/ stretch main```

@@ -31,10 +31,11 @@
 
 - uid: contrib-index
   items:
-  - uid: contrib-issues
-  - uid: contrib-development
   - uid: contrib-branding-guide
+  - uid: contrib-development
+  - uid: contrib-issues
   - uid: contrib-release-procedure
+  - uid: contrib-source
 
 - name: Server
   items:

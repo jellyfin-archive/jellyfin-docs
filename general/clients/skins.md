@@ -5,7 +5,7 @@ title: CSS Customization
 
 # CSS Customization
 
-[Custom CSS](https://www.w3schools.com/cssref/css3_browsersupport.asp) provides interface customization such as changing colors or modifying behavior. Here are a collection of community scripts available. Currently, the CSS modifications only work on the web client. To implement these changes, go to Dashboard > General > Custom CSS.
+[Custom CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) provides interface customization such as changing colors or modifying behavior. Here are a collection of community scripts available. Currently, the CSS modifications only work on the web client. The code will apply the code in order that it is written so code can override previously stated custom CSS. To learn more see [CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity). To implement these changes, go to Dashboard > General > Custom CSS. An additional source for specificity is [specifishity](https://specifishity.com/).
 
 ![image](https://user-images.githubusercontent.com/20715731/73392971-d1cc7d80-42a8-11ea-8552-3d311655ea37.png)
 
@@ -21,7 +21,7 @@ Red: `#d00000`<br>
 
 #### Played Indicator: 
 
-`.playedIndicator { background: #5dd000 !important; }`
+`.playedIndicator { background: #5dd000; }`
 
 Before:
 
@@ -33,32 +33,54 @@ Green Mod:
 
 #### Background Color:
 
-`.backgroundContainer, .dialog, html { background-color: #0fd0d0 !important; }`
+`.backgroundContainer, .dialog, html { background-color: #0fd0d0; }`
 
-#### Header Color
+#### Right Header
 
-`.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { 	background: #ff9475 !important; }`
+`.headerRight { color: yellow; }`
 
-![image](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
+![image](https://user-images.githubusercontent.com/20715731/73962770-0d84ca00-48dd-11ea-9b50-563f8b4aa33b.png)
+
+#### Console Panel
+
+`.mainDrawer-scrollContainer { color: yellow; }`
+
+![image](https://user-images.githubusercontent.com/20715731/73963663-c13a8980-48de-11ea-9342-d1e89690e7b1.png)
+
+#### General Page
+
+`.dashboardGeneralForm { color: yellow; }`
+
+![image](https://user-images.githubusercontent.com/20715731/73964979-49ba2980-48e1-11ea-8ddf-51e1c54e32d4.png)
+
+### CSS Chaining
+
+CSS can be chained together to modify different sections together. 
 
 #### Border Color
 
-`.emby-input, .emby-textarea, .emby-select { border-color:#fdbe7d !important; }`
+`.emby-input, .emby-textarea, .emby-select { border-color:#fdbe7d; }`
 
 ![image](https://user-images.githubusercontent.com/20715731/73950017-39965000-48c9-11ea-9c0e-7687420a282e.png)
+
+#### Full Header Mod
+
+`.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { 	background: #ff9475; }`
+
+![image](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
 
 #### Hotdogs and Catsup:
 
 ```
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
-	background: #ff9475 !important;
+	background: #ff9475;
 }
 .emby-input, .emby-textarea, .emby-select {
-	border-color:#fdbe7d !important;
+	border-color:#fdbe7d;
 }
 
 .backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer{
-	background: #fdbe7d !important;
+	background: #fdbe7d;
 }
 
 #myPreferencesMenuPage .listItemBodyText,

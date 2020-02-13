@@ -197,7 +197,7 @@ server {
     }
 
     # Jellyfin
-    location /jellyfin/ {
+    location /jellyfin {
         return 302 $scheme://$host/jellyfin/;
     }
 

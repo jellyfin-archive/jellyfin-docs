@@ -157,7 +157,7 @@ server {
 #    }
 #    location /socket {
 #        # Proxy Jellyfin Websockets traffic
-#        proxy_pass http://SERVER_IP_ADDRESS:8096/;
+#        proxy_pass http://SERVER_IP_ADDRESS:8096/socket;
 #        proxy_http_version 1.1;
 #        proxy_set_header Upgrade $http_upgrade;
 #        proxy_set_header Connection "upgrade";

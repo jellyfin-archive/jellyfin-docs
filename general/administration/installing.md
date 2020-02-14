@@ -9,6 +9,8 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 
 ## Containers
 
+[Open Container Initiative](https://stackoverflow.com/questions/31213126/libcontainer-vs-docker-vs-ocf-vs-runc#31219102) is a form of virtualization. An image is similar to an ISO while a container is akin to a running VM.
+
 > [!Note]
 > There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 

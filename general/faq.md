@@ -5,11 +5,11 @@ title: FAQ
 
 # Frequently Asked Questions
 
-### Why fork Emby? Why did we start this project?
+### Why fork Emby? Why did you start this project?
 
 We explain our rationale on our [about page](xref:about).
 
-### My favorite client or feature is missing, why won't you support it?
+### Why don't you support my favorite client or feature?
 
 We would love to support it! Unfortunately, no one has decided to develop it yet, so there isn't much we can do. This is an open source project maintained by developers working entirely in their free time, which usually results in each person working on things they are personally familiar with or plan to use frequently. If you know a developer that would enjoy your favorite feature send them our way, we will gladly help them get familiar with the project workflow!
 
@@ -17,7 +17,7 @@ We would love to support it! Unfortunately, no one has decided to develop it yet
 
 Please see our [getting help](xref:getting-help) page for details on where to engage the community.
 
-### How can I help with this project?
+### How can I contribute to this project?
 
 Please see our [contributing guide](xref:contrib-index) page for details on how to get started.
 

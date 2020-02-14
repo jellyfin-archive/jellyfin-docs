@@ -1,7 +1,7 @@
 - uid: clients-index
   items:
-  - uid: css-customization
-  - uid: codec-support
+  - uid: clients-css-customization
+  - uid: clients-codec-support
   - uid: clients-installing-kodi
   - uid: clients-installing-mopidy
 
@@ -17,11 +17,11 @@
 
 - uid: contrib-index
   items:
-  - uid: contrib-branding-guide
+  - uid: contrib-branding
   - uid: contrib-development
   - uid: contrib-issues
   - uid: contrib-release-procedure
-  - uid: contrib-source
+  - uid: contrib-source-tree
 
 - name: Server
   items:

@@ -51,7 +51,7 @@ title: Apache Reverse Proxy
 #</IfModule>
 ```
 
-If you encouter errors, you may have to enable `mod_proxy`, `mod_ssl` or `proxy_wstunnel` support manually.
+If you encouter errors, you may have to enable `mod_proxy`, `mod_ssl`, or `proxy_wstunnel` support manually.
 
 ```bash
 $ sudo a2enmod proxy proxy_http ssl proxy_wstunnel

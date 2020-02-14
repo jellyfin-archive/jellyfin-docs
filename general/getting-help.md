@@ -5,7 +5,7 @@ title: Getting Help
 
 # Getting Help
 
-If you are having trouble using or administrating Jellyfin, there are several ways to get help:
+If you are having trouble using or configuring Jellyfin, there are several ways to get help:
 
 * The Jellyfin [Matrix channels](https://matrix.to/#/+jellyfin:matrix.org): For chat and real-time discussions.
 
@@ -32,7 +32,7 @@ We are also active on social media:
 
 ## IRC Channels
 
-Some channels are bridged from Matrix to freenode.net channels.
+Some channels are bridged from Matrix to IRC on [Freenode](https://freenode.net) for convenience.
 
 * [#jellyfin](ircs://chat.freenode.net:6697/#jellyfin) - [Webchat](https://webchat.freenode.net/#jellyfin)
 * [#jellyfin-dev](ircs://chat.freenode.net:6697/#jellyfin-dev) - [Webchat](https://webchat.freenode.net/#jellyfin-dev)

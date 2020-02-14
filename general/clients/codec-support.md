@@ -1,6 +1,6 @@
 ---
-uid: codec-support
-title: Codec Compatibility
+uid: clients-codec-support
+title: Codec Support
 ---
 
  # [Codec Tables](https://en.wikipedia.org/wiki/List_of_codecs "Wikipedia's list of all codecs")

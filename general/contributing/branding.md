@@ -1,5 +1,5 @@
 ---
-uid: contrib-branding-guide
+uid: contrib-branding
 title: Branding
 ---
 

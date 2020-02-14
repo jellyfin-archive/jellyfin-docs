@@ -1,5 +1,5 @@
 ---
-uid: css-customization
+uid: clients-css-customization
 title: CSS Customization
 ---
 
@@ -59,7 +59,7 @@ CSS can be chained together to modify different sections together.
 
 #### Border Color
 
-`.emby-input, .emby-textarea, .emby-select { border-color:#fdbe7d; }`
+`.emby-input, .emby-textarea, .emby-select { border-color: #fdbe7d; }`
 
 ![image](https://user-images.githubusercontent.com/20715731/73950017-39965000-48c9-11ea-9c0e-7687420a282e.png)
 
@@ -75,11 +75,12 @@ CSS can be chained together to modify different sections together.
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
 	background: #ff9475;
 }
+
 .emby-input, .emby-textarea, .emby-select {
-	border-color:#fdbe7d;
+	border-color: #fdbe7d;
 }
 
-.backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer{
+.backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer {
 	background: #fdbe7d;
 }
 

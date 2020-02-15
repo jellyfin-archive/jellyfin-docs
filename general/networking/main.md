@@ -1,5 +1,5 @@
 ---
-uid: network-main
+uid: network-index
 title: Networking
 ---
 

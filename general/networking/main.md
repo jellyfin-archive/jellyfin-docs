@@ -9,7 +9,7 @@ Many clients will automatically discover servers running on the same LAN and dis
 
 ## Port Bindings
 
-This document aims to provide an admin with knowledge on what ports Jellyfin binds and what purpose they serve.
+This document aims to provide an administrator with knowledge on what ports Jellyfin binds to and what purpose they serve.
 
 ### Static Ports
 

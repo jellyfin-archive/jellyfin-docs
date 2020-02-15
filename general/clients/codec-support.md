@@ -46,8 +46,8 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 |FLAC|✅|✅|✅|✅||||✅|✅|
 |MP3|🔶<sup>1</sup>|🔶|✅|✅||||✅|✅|
 |AAC|✅|✅|✅|✅||||✅|✅|
-|AC3|✅|❌|✅|✅||||✅|✅|
-|EAC3<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
+|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|✅|❌|✅|✅||||✅|✅|
+|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
 |VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
 |DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
 
@@ -65,6 +65,8 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 <sup>3</sup>OGG containers are not supported and will cause VORBIS to convert.
 
 <sup>4</sup>Only DTS Mono has been tested.
+
+ATSC Standard for [AC-3 and E-AC-3](https://www.atsc.org/wp-content/uploads/2015/03/A52-201212-17.pdf).
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 

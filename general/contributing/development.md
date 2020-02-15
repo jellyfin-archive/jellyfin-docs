@@ -29,7 +29,7 @@ If you aren't familiar with Git, we recommend the [official documentation](https
 
 ### Set up your copy of the repo
 
-The first step is to set up a copy of the Git repository of the project you want to contribute tom. Jellyfin follows a "fork, feature-branch, and PR" model for contributions.
+The first step is to set up a copy of the Git repository of the project you want to contribute to. Jellyfin follows a "fork, feature-branch, and PR" model for contributions.
 
 1. On GitHub, "Fork" the Jellyfin repository you wish to contribute to, to your own user account using the "Fork" button in the relevant repository.
 

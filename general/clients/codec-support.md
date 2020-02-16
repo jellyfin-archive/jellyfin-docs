@@ -66,7 +66,7 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 <sup>4</sup>Only DTS Mono has been tested.
 
-ATSC Standard for [AC-3 and E-AC-3](https://www.atsc.org/wp-content/uploads/2015/03/A52-201212-17.pdf).
+ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/03/A52-201212-17.pdf).
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 

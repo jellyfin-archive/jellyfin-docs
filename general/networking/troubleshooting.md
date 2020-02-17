@@ -1,5 +1,5 @@
 ---
-uid: network-troubleshoot
+uid: admin-troubleshoot
 title: Troubleshooting
 ---
 

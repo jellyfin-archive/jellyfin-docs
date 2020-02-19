@@ -27,7 +27,7 @@ This setting can also be modified from the **Networking** page to use a differen
 
 **Service Discovery:** 1900
 
-Since client auto-discover would break if this option were configurable, you cannot change this in the settings at this time.
+Since client auto-discover would break if this option were configurable, you cannot change this in the settings at this time. DLNA also uses this port and is required to be in the local subnet.
 
 **Client Discovery:** 7359 UDP
 

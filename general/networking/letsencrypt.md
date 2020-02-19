@@ -7,13 +7,13 @@ title: Let's Encrypt
 
 LetsEncrypt is a service that provides free SSL/TLS certificates to users.  Certbot is a client that makes this easy to accomplish and automate.  In addition, it has plugins for Apache and Nginx that make automating certificate generation even easier.
 
-Installation instructions for most Linux distributions can be found on the [Certbot website](https://certbot.eff.org/docs/install.html#operating-system-packages).
+Installation instructions for most Linux distributions can be found on the [Certbot](https://certbot.eff.org/docs/install.html#operating-system-packages) website.
 
 Once the packages are installed, you're ready to generate a new certificate.
 
 ### Apache
 
-After installing certbot and the Apache plugin, certificate generation is accomplished by:
+After installing Certbot and the Apache plugin, certificate generation is accomplished by:
 
 ``certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
 

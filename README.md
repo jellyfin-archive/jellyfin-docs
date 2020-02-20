@@ -5,13 +5,14 @@ This repository houses all documentation for Jellyfin available at [jellyfin.org
 
 # Layout
 
-This repository is built using [DocFX](https://dotnet.github.io/docfx/) using [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), for bit of a tutorial on writing, [see the Content section here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html).
+This repository is built using [DocFX](https://dotnet.github.io/docfx/) and [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html). See the content section [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) for a quick tutorial.
 
 ## Plugin API
 
 Describe all available API surfaces and class from plugin development.
 
 ## ApiSpec
+
 `apispec` is used to overwrite specific plugin API page contexts.
 
 ## Docs

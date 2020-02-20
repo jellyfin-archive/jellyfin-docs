@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Download the latest release.
+# Download the latest release
 curl -s https://api.github.com/repos/jellyfin/jellyfin-docs/releases/latest | grep "browser_download_url.*docs-.*\.tar\.gz" | cut -d : -f 2,3 | tr -d \" | wget -O /tmp/docs.tar.gz -qi -
 
 # Clean any old files

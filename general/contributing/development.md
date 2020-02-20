@@ -147,7 +147,7 @@ We need to install all development dependencies and pull down the code inside th
 
 ```bash
 docker exec -ti jftest bash
-apt-get update && apt-get install git gnupg wget apt-transport-https
+apt-get update && apt-get install git gnupg wget apt-transport-https curl
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg && mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
 wget -q https://packages.microsoft.com/config/debian/10/prod.list && mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list

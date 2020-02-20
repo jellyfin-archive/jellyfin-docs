@@ -8,12 +8,11 @@ trigger:
 
 jobs:
   - job: docs_build
-    displayName: Docs Build
+    displayName: "Main Build"
     pool:
       vmImage: windows-latest    
     steps:
     - checkout: self
-      displayName: "Checkout"
       clean: true
       submodules: true
       persistCredentials: true

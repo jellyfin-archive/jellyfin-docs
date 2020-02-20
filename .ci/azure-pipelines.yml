@@ -13,12 +13,13 @@ jobs:
       vmImage: windows-latest    
     steps:
     - checkout: self
+      displayName: "Checkout"
       clean: true
       submodules: true
       persistCredentials: true
 
     - task: CmdLine@2
-      displayName: "Update submodules"
+      displayName: "Update Submodules"
       inputs:
         script: 'git submodule update --recursive --remote'
         workingDirectory: '$(Build.SourcesDirectory)'
@@ -32,7 +33,7 @@ jobs:
 
     - task: ArchiveFiles@2
       condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI', 'BuildCompletion'))
-      displayName: "Package Documentation Website"
+      displayName: "Package Documentation"
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
         includeRootFolder: false 
@@ -45,7 +46,7 @@ jobs:
 
     - task: GitHubRelease@0
       condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI', 'BuildCompletion'))
-      displayName: "Create GitHub release"
+      displayName: "Create GitHub Release"
       inputs:
         gitHubConnection: Jellyfin Release Download
         repositoryName: '$(Build.Repository.Name)' 

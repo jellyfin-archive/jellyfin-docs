@@ -155,7 +155,7 @@ apt-get update && apt-get install dotnet-sdk-3.1 yarn
 cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
 mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
 cd /opt/jellyfin-web && yarn install && yarn build && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
-kill -15 6
+kill -15 $(pidof jellyfin)
 ```
 
 ### Pull Request
@@ -171,5 +171,5 @@ cd /opt/jellyfin
 git fetch origin pull/<PR_ID>/head:my-testing-branch
 git merge my-testing-branch
 dotnet publish Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
-kill -15 6
+kill -15 $(pidof jellyfin)
 ```

@@ -12,9 +12,9 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 1.  BDInfo: `Blu-Ray Analyzer`
     - Properties: `Assembly Info`
 2.  DvdLib: `DVD Anaylzer`
-    - Ifo: 
+    - Ifo:
     - Properties:
-3.  Emby.Dlna: 
+3.  Emby.Dlna:
     - Profiles: `DLNA Profiles for clients`
 4.  Emby.Drawing:
 5.  Emby.Naming:
@@ -42,7 +42,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 
 ### [Web Client](https://github.com/jellyfin/jellyfin-web)
 
-1.  src: 
+1.  src:
     - assets: `images, styles, splash screens, and any other static assets`
       - css: `all global stylesheets used throughout the client`
       - img: `images for things like device icons and logos`
@@ -57,7 +57,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
     - scripts: `any script that isn't tied to a UI element or page but rather general functionality`
     - strings: `translations for the entire interface`
     - themes: `custom and bundled themes can be found here in their own directories`
-    
+
 ### [Android](https://github.com/jellyfin/jellyfin-android)
 
 1. res:
@@ -69,7 +69,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
        - RemotePlayerService.java: `handles the notification tile that can control playback`
      - www:
    - cordova:
-   
+
 ### [Android-tv](https://github.com/jellyfin/jellyfin-androidtv)
 
 1. app:

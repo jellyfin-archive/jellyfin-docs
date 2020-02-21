@@ -41,7 +41,7 @@ All plugins hosted on the repository can be built from source and manually added
 
 Manage your Anime in Jellyfin. Supports several different metadata providers and options for organizing your collection.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-anime)
 
@@ -53,7 +53,7 @@ Manage your Anime in Jellyfin. Supports several different metadata providers and
 
 Automatically organizes your media by monitoring a folder and moving or copying new media files into your library folder.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
 
@@ -63,9 +63,9 @@ Automatically organizes your media by monitoring a folder and moving or copying 
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
 
-Supports several different metadata providers and options for organizing your collection. 
+Supports several different metadata providers and options for organizing your collection.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
 
@@ -77,7 +77,7 @@ Supports several different metadata providers and options for organizing your co
 
 Send SMTP email notifications.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
 
@@ -89,7 +89,7 @@ Send SMTP email notifications.
 
 Scrape poster images for movies, shows, and artists in your library from [fanart.tv](https://fanart.tv).
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-fanart)
 
@@ -101,7 +101,7 @@ Scrape poster images for movies, shows, and artists in your library from [fanart
 
 Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-gotify)
 
@@ -113,7 +113,7 @@ Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
 
 Allows you to add IPTV feeds to Jellyfin.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-iptv)
 
@@ -125,7 +125,7 @@ Allows you to add IPTV feeds to Jellyfin.
 
 Helps keep Jellyfin for Kodi in sync with the library without needing to run periodic full scans.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-kodisyncqueue)
 
@@ -135,9 +135,9 @@ Helps keep Jellyfin for Kodi in sync with the library without needing to run per
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-ldapauth.svg)](https://github.com/jellyfin/jellyfin-plugin-ldapauth)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-ldapauth.svg)](https://github.com/jellyfin/jellyfin-plugin-ldapauth)
 
-Authenticate your Jellyfin users against an LDAP database, and optionally create users who do not yet exist automatically. Allows the administrator to customize most aspects of the LDAP authentication process, including customizable search attributes, username attribute, and a search filter for administrative users (set on user creation). The user, via the "Manual Login" process, can enter any valid attribute value, which will be mapped back to the specified username attribute automatically as well. 
+Authenticate your Jellyfin users against an LDAP database, and optionally create users who do not yet exist automatically. Allows the administrator to customize most aspects of the LDAP authentication process, including customizable search attributes, username attribute, and a search filter for administrative users (set on user creation). The user, via the "Manual Login" process, can enter any valid attribute value, which will be mapped back to the specified username attribute automatically as well.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-ldapauth)
 
@@ -149,7 +149,7 @@ Authenticate your Jellyfin users against an LDAP database, and optionally create
 
 Provides access to LiveTV, Program Guide and Recordings from [NextPVR](https://www.nextpvr.com/).
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-nextpvr)
 
@@ -161,7 +161,7 @@ Provides access to LiveTV, Program Guide and Recordings from [NextPVR](https://w
 
 Download subtitles from the internet to use with your media files from [Open Subtitles](https://www.opensubtitles.org/). You can configure the languages it downloads on a per-library basis.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-opensubtitles)
 
@@ -173,7 +173,7 @@ Download subtitles from the internet to use with your media files from [Open Sub
 
 Collect and show user playback statistics, such as total time watched, media watched, time of day watched and time of week watched. Can keep information for as long as you want, or can cull older information automatically. Also allows you to manually query the data collected so you can generate your own reports.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-playbackreporting)
 
@@ -185,7 +185,7 @@ Collect and show user playback statistics, such as total time watched, media wat
 
 Get notifications via Pushbullet.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-pushbullet)
 
@@ -197,7 +197,7 @@ Get notifications via Pushbullet.
 
 Generate reports of your media library.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-reports)
 
@@ -210,7 +210,7 @@ Generate reports of your media library.
 Provides access to LiveTV, Program Guide and Recordings from your Windows MediaCenter Server running ServerWMC.
 Requires [ServerWMC](https://serverwmc.github.io/) to be installed and running on your Windows MediaCenter machine.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
 
@@ -222,7 +222,7 @@ Requires [ServerWMC](https://serverwmc.github.io/) to be installed and running o
 
 Get notifications via Slack.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-slack)
 
@@ -234,7 +234,7 @@ Get notifications via Slack.
 
 Automatically create movie box sets based on TMDb collections. Configerable minimum number of films to be considered a boxset. Boxsets are created as collections, and includes a schedueld task to ensure that new media is automatically put into boxsets.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-tmdbboxsets)
 
@@ -244,9 +244,9 @@ Automatically create movie box sets based on TMDb collections. Configerable mini
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-trakt.svg)](https://github.com/jellyfin/jellyfin-plugin-trakt)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-trakt.svg)](https://github.com/jellyfin/jellyfin-plugin-trakt)
 
-Record your watched media with [Trakt](https://trakt.tv). 
+Record your watched media with [Trakt](https://trakt.tv).
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-trakt)
 
@@ -258,7 +258,7 @@ Record your watched media with [Trakt](https://trakt.tv).
 
 Manage TVHeadend from Jellyfin.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 
@@ -268,6 +268,6 @@ Manage TVHeadend from Jellyfin.
 
 Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plugin.
 
-**Links:** 
+**Links:**
 
 * [GitHub](https://github.com/TheJF/antennas)

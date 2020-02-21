@@ -1,5 +1,5 @@
 ---
-uid: network-letsencrypt 
+uid: network-letsencrypt
 title: Let's Encrypt
 ---
 
@@ -25,7 +25,7 @@ Add a job to cron so the certificate will be renwed automatically:
 
 ### HAProxy
 
-HAProxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  
+HAProxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.
 
 Enable the frontend and backend in the config above, and then run:
 

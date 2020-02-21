@@ -11,19 +11,19 @@ Jellyfin supports several methods of building for different platforms and instru
 
 All package builds begin with these two steps:
 
-1. Clone the repository:  
-    `git clone https://github.com/jellyfin/jellyfin.git`  
+1. Clone the repository:
+    `git clone https://github.com/jellyfin/jellyfin.git`<br/>
     `cd jellyfin`
 
-2. Initialize the submodules:  
+2. Initialize the submodules:
     `git submodule update --init`
 
 ## Docker
 
-3. Build the Docker image:  
+3. Build the Docker image:
     `docker build -t $USERNAME/jellyfin .`
 
-4. Run the container:  
+4. Run the container:
     `docker run -d -p 8096:8096 $USERNAME/jellyfin`
 
 ## Linux or MacOS
@@ -56,7 +56,7 @@ All package builds begin with these two steps:
     * The `-InstallLocation` flag lets you select where the compiled binaries go; the default is `$Env:AppData\Jellyfin-Server\`.
 
     * The `-InstallFFMPEG` flag will automatically pull the stable `ffmpeg` binaries appropriate to your architecture (x86/x64 only for now) from [Zeranoe](https://ffmpeg.zeranoe.com/builds/) and place them in your Jellyfin directory.
-    
+
     * The `-InstallNSSM` flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory.
 
 6. (Optional) Use [NSSM](https://nssm.cc/) to configure Jellyfin to run as a service.

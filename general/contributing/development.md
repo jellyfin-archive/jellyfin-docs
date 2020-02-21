@@ -33,14 +33,14 @@ The first step is to set up a copy of the Git repository of the project you want
 
 1. On GitHub, "Fork" the Jellyfin repository you wish to contribute to, to your own user account using the "Fork" button in the relevant repository.
 
-1. Clone your fork to your local machine and enter the directory:  
-    `git clone git@github.com:yourusername/projectname.git`
+1. Clone your fork to your local machine and enter the directory:
+    `git clone git@github.com:yourusername/projectname.git`<br/>
     `cd projectname/`
 
-1. Add the "upstream" remote, which allows you to pull down changes from the main project easily:  
+1. Add the "upstream" remote, which allows you to pull down changes from the main project easily:
     `git remote add upstream git@github.com:jellyfin/projectname.git`
 
-1. Initialize the Git submodules; most projects have at least one:  
+1. Initialize the Git submodules; most projects have at least one:
     `git submodule update --init`
 
 > [!NOTE]
@@ -56,26 +56,26 @@ You will now be ready to begin building or modifying the project.
 
 Once you have your repository, you can get to work.
 
-1. Rebase your local branches against upstream `master` so you are working off the latest changes:  
-    `git fetch --all`
+1. Rebase your local branches against upstream `master` so you are working off the latest changes:
+    `git fetch --all`<br/>
     `git rebase upstream/master`
 
-1. Create a local feature branch off of `master` to make your changes:  
+1. Create a local feature branch off of `master` to make your changes:
     `git checkout -b my-feature master`
 
 1. Make your changes and commits to this local feature branch.
 
 1. Repeat step 1 on your local feature branch once you're done your work, to ensure you have no conflicts with other work done since you stated.
 
-1. Push up your local feature branch to your GitHub fork:  
+1. Push up your local feature branch to your GitHub fork:
     `git push --set-upstream origin my-feature`
 
 1. On GitHub, create a new PR against the upstream `master` branch following the advice below.
 
-1. Once your PR is merged, ensure you keep your local branches up-to-date:  
-    `git fetch --all`
-    `git checkout master`
-    `git rebase upstream/master`
+1. Once your PR is merged, ensure you keep your local branches up-to-date:
+    `git fetch --all`<br/>
+    `git checkout master`<br/>
+    `git rebase upstream/master`<br/>
     `git push -u origin master`
 
 1. Delete your local feature branch if you no longer need it:
@@ -107,11 +107,11 @@ To test someone else's pull request, you must import the changes to your local r
 > [!NOTE]
 > `<PR_ID>` is pull request number on GitHub.
 
-1. Checkout the new local branch:  
+1. Checkout the new local branch:
     `git checkout my-testing-branch`
 
 1. Perform any testing or build required to test, then return to master and delete the branch:
-    `git checkout master`
+    `git checkout master`<br/>
     `git branch -D my-testing-branch`
 
 ## Pull Request Guidelines

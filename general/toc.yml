@@ -22,7 +22,7 @@
     - uid: network-reverse-proxy-haproxy
     - uid: network-reverse-proxy-nginx
     - uid: network-reverse-proxy-traefik
-  - uid: network-letsencrypt 
+  - uid: network-letsencrypt
   - uid: network-dlna
 
 - uid: contrib-index

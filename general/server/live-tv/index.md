@@ -11,7 +11,7 @@ Jellyfin allows you to watch and record live television using supported hardware
 
 ## Tuner
 
-Jellyfin has support for the following tuners: 
+Jellyfin has support for the following tuners:
 
   * HDHomeRun
   * M3U

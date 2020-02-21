@@ -14,7 +14,7 @@ Click the '+' button (3) next to 'Tuner Devices'
 ![](~/images/live-tv-setup-tuner1.png)
 
 Click 'Detect My Devices' from the 'Live TV Tuner Setup' page that opens
-JF will search and hopefully find your tuner automatically:
+Jellyfin will search and hopefully find your tuner automatically:
 
 ![](~/images/live-tv-setup-tuner2.png)
 
@@ -22,25 +22,25 @@ Click on the device you'd like to set up then set any options then click 'Save'
 
 ![](~/images/live-tv-setup-tuner3.png)
 
-## Add a TV tuner to Jellyfin (Manual setup)
+## Add a TV tuner to Jellyfin (Manual Setup)
 
 You can set up your tuners manually if they were not automatically discovered.  Click the 'Tuner Type' pull down.  Choose between 'HD Homerun', 'M3U Tuner', and 'Other'
 
 ![](~/images/live-tv-setup-tuner4.png)
 
-### HD Homerun specific options:
+### HDHomeRun Specific Options
 
-* Tuner IP Address is the URL of your HD Homerun device.  Format will be http://YOUR.IP.ADDRESS
+* Tuner IP Address is the URL of your HDHomeRun device. The format will be http://YOUR.IP.ADDRESS
 
-* Allow hardware transcoding will allow the tuner to transcode the video on the fly which can reduce server load.  Not all HD Homeruns support hardware transcoding.
+* Allow hardware transcoding will allow the tuner to transcode the video on the fly which can reduce server load.  Not all HDHomeRun devices support hardware transcoding.
 
 * Restrict to channels marked as favorite will only import channels that are designated as favorite channels on the tuner.  This helps if your tuner autoscans and adds new channels that you do not want and/or adds channels that you are able to receive due to atmospheric conditions but later are not accessible.
 
-To set a favorite, go to http://my.hdhomerun.com , select your tuner and then click on the grey star next to the channel name to change the star to yellow.  The yellow star indicates a favorited channel.  In this example, only the channels with yellow stars will be imported into Jellyfin
+To set a favorite, go to http://my.hdhomerun.com, select your tuner and then click on the grey star next to the channel name to change the star to yellow.  The yellow star indicates a favorited channel.  In this example, only the channels with yellow stars will be imported into Jellyfin
 
 ![](~/images/live-tv-setup-hdhr_opt1.png)
 
-### M3U Tuner specific options:
+### M3U Tuner Specific Options
 
 This tuner allows you to add IPTV channel to Jellyfin by using the appropriate M3U8 playlist file.
 

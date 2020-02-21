@@ -41,7 +41,7 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
 
 ## Config File
 
-The config file for mopidy is divided into sections in an INI format.  An example for Jellyfin is shown here.
+The config file for mopidy is divided into sections in an INI format. An example for Jellyfin is shown here.
 
 ```ini
 [jellyfin]

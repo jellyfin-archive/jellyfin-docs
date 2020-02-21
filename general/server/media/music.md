@@ -32,11 +32,11 @@ Individual songs have no required parameters for filenames since the information
 
 Albums with several discs will be fine with the metadata tags, but you can also use subfolders for the discs. The number can be appended after a space, hyphen, or directly after one of the following keywords.
 
-  * Disc
-  * Disk
-  * CD
-  * Vol
-  * Volume
+* Disc
+* Disk
+* CD
+* Vol
+* Volume
 
 ```
 /Music
@@ -56,39 +56,39 @@ Images will be scraped from album or artist folders, and they can also be embedd
 
 ### Primary
 
-  * folder
-  * poster
-  * cover
-  * default
+* folder
+* poster
+* cover
+* default
 
 ### Art
 
-  * clearart
+* clearart
 
 ### Backdrop
 
 Multiple backdrop images can be used to cycle through several over time. Simply append a number to the end of the filename directly after or after a hyphen.
 
-  * backdrop
-  * fanart
-  * background
-  * art
-  * extrafanart
+* backdrop
+* fanart
+* background
+* art
+* extrafanart
 
 ### Banner
 
-  * banner
+* banner
 
 ### Disc
 
-  * disc
-  * cdart
+* disc
+* cdart
 
 ### Logo
 
-  * logo
+* logo
 
 ### Thumb
 
-  * thumb
-  * landscape
+* thumb
+* landscape

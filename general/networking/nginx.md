@@ -71,9 +71,9 @@ server {
 #}
 ```
 
-## Nginx with subpath
+## Nginx with Subpath
 
-When connecting to server from a client application, enter ``http(s)://DOMAIN_NAME/jellyfin`` in the address field.
+When connecting to server from a client application, enter `http(s)://DOMAIN_NAME/jellyfin` in the address field.
 
 Set the base URL field in the Jellyfin server.  This can be done by navigating to the Admin Dashboard -> Networking -> Base URL in the Jellyfin Web UI.  Fill in this box with `/jellyfin` and click Save.  The server will need to be restarted before this change takes effect.
 

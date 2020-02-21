@@ -15,7 +15,7 @@ This document aims to provide an administrator with knowledge on what ports Jell
 
 * 8096/tcp is used by default for HTTP traffic. This is admin configurable.
 * 8920/tcp is used by default for HTTPS traffic. This is admin configurable.
-* 1900/udp is used for service autodiscovery. This is _not_ admin configurable as it would break client autodiscover.
+* 1900/udp is used for service autodiscovery. This is not admin configurable since it would break client auto-discover.
 
 **HTTP Traffic:** 8096
 
@@ -35,7 +35,7 @@ Allows clients to discover the Jellyfin Server on the local network.  A broadcas
 
 ### Dynamic Ports
 
-Live TV devices will often use a random UDP port for HD Homerun devices. The server will select an unused port on startup to connect to these tuner devices.
+Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
 
 # Running Jellyfin Behind a Reverse Proxy
 
@@ -57,11 +57,11 @@ While not a reverse proxy, Let's Encrypt can be used independently or with a Rev
 
 When following this guide, be sure to replace the following variables with your information:
 
-* `DOMAIN_NAME` - Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
-* `example.com` - The domain name Jellyfin services will run under (e.g. example.com)
-* `SERVER_IP_ADDRESS` - The IP address of your Jellyfin server (if the reverse proxy is on the same server use 127.0.0.1)
+* `DOMAIN_NAME`: Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
+* `example.com`: The domain name Jellyfin services will run under (e.g. example.com)
+* `SERVER_IP_ADDRESS`: The IP address of your Jellyfin server (if the reverse proxy is on the same server use 127.0.0.1)
 
-In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the ssl configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
+In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the SSL configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
 
 Ports 80 and 443 (pointing to the proxy server) need to be opened on your router and firewall.
 
@@ -70,15 +70,15 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your router
 Running Jellyfin with a path (https://example.com/jellyfin) is supported by the Android and web clients.
 
 > [!WARNING]
-> Base URL is known to break HD HomeRun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.
+> Base URL is known to break HDHomeRun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.
 
 The Base URL setting in the **Networking** page is an advanced setting used to specify the URL prefix that your Jellyfin instance can be accessed at. In effect, it adds this URL fragment to the start of any URL path. For instance, if you have a Jellyfin server at `http://myserver` and access its main page `http://myserver/web/index.html`, setting a Base URL of `/jellyfin` will alter this main page to `http://myserver/jellyfin/web/index.html`. This can be useful if administrators want to access multiple Jellyfin instances under a single domain name, or if the Jellyfin instance lives only at a subpath to another domain with other services listening on `/`.
 
-The entered value on the configuration page will be normalized to include a leading`/` if this is missing.
+The entered value on the configuration page will be normalized to include a leading `/` if this is missing.
 
-This setting requires a server restart to change, in order to avoid invalidating existing paths until the administrator is ready to.
+This setting requires a server restart to change, in order to avoid invalidating existing paths until the administrator is ready.
 
-There are three main caveats to this setting:
+There are three main caveats to this setting.
 
 1. When setting a new Base URL (i.e. from `/` to `/baseurl`) or changing a Base URL (i.e. from `/baseurl` to `/newbaseurl`), the Jellyfin web server will automatically handle redirects to avoid displaying users invalid pages. For instance, accessing a server with a Base URL of `/jellyfin` on the `/` path will automatically append the `/jellyfin` Base URL. However, entirely removing a Base URL (i.e. from `/baseurl` to `/`, an empty value in the configuration) will not - all URLs with the old Base URL path will become invalid and throw 404 errors. This should be kept in mind when removing an existing Base URL.
 

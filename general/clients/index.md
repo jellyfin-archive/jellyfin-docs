@@ -67,7 +67,7 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 ### Jellyfin MPP
 
-**Status:** 
+**Status:**
 
 Android:	✅ In Development
 

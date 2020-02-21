@@ -19,7 +19,7 @@ Green: `#5dd000`<br>
 Blue: `#0000d0`<br>
 Red: `#d00000`<br>
 
-#### Played Indicator: 
+#### Played Indicator:
 
 `.playedIndicator { background: #5dd000; }`
 
@@ -55,7 +55,7 @@ Green Mod:
 
 ### CSS Chaining
 
-CSS can be chained together to modify different sections together. 
+CSS can be chained together to modify different sections together.
 
 #### Border Color
 

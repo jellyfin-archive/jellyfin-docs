@@ -261,7 +261,7 @@ Traefik is a modern HTTP reverse proxy and load balancer that makes deploying mi
 Create these 3 files in the SAME directory (or change their paths in the volume section) : docker-compose.yml, traefik.toml and acme.json.
 
 > [!NOTE]
-> Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet. 
+> Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet.
 
 ```
 sudo apt install apache2-utils
@@ -329,7 +329,7 @@ networks:
 This toml file can't support environment variables, ensure you don't attempt to use variables.
 
 traefik.toml:
- 
+
 ```
 logLevel = "WARN"
 defaultEntryPoints = ["http", "https"]
@@ -369,7 +369,7 @@ entryPoint = "https"
 
 [[acme.domains]]
   main = "*.example.com"
-  
+
 [docker]
 domain = "example.com"
 network = "traefik"
@@ -433,27 +433,27 @@ Once the packages are installed, you're ready to generate a new certificate.
 
 After installing certbot and the Apache plugin, certificate generation is accomplished by:
 
-``certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
+`certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
 
 Update the 'SSLCertificateFile' and 'SSLCertificateKeyFile' sections, then restart the service.
 
 Add a job to cron so the certificate will be renwed automatically:
 
-``echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot``
+`echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot`
 
 ### HAProxy
 
-HAProxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.  
+HAProxy doesn't currently have a certbot plugin.  To get around this, run certbot in standalone mode and proxy traffic back to it.
 
 Enable the frontend and backend in the config above, and then run:
 
-``certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
+`certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME`
 
 The port can be changed to anything you like, but be sure that the HAProxy config and your certbot command match.
 
 Haproxy needs to have the certificate and key files concatenated into the same file to read it correctly.  This can be accomplished with the following command.
 
-``cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem``
+`cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem`
 
 Uncomment `bind *:443` and the redirect section in the configuration, then reload the service.
 
@@ -476,18 +476,18 @@ service haproxy reload
 
 Make sure the script is executable
 
- ``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
+ `chmod u+x /usr/local/bin/letsencrypt-renew.sh`
 
 Add a job to cron so the certificate will be renewed automatically:
 
- ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
+ `@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log`
 
 ### Nginx
 
-After installing certbot and the Nginx plugin with ``sudo apt install certbot python3-certbot-nginx``, certificate generation is accomplished by:
+After installing certbot and the Nginx plugin with `sudo apt install certbot python3-certbot-nginx`, certificate generation is accomplished by:
 
 `sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN`
-(Add the ``--rsa-key-size 4096`` parameter if you want a 4096 bit key instead)
+(Add the `--rsa-key-size 4096` parameter if you want a 4096 bit key instead)
 
 Copy and paste the whole Nginx sample configuration file from above, changing the parameters according to your setup and uncommenting the lines.
 

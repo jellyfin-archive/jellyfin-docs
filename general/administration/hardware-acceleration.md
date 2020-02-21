@@ -223,7 +223,7 @@ Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ens
 
 To check information about VAAPI on your system install and run `vainfo` from the command line.
 
-1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:  
+1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:
 
 ```bash
 $ ls -l /dev/dri
@@ -284,7 +284,7 @@ Useful Resources:
 ### Raspberry Pi 3 and 4
 
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin.
-    `sudo usermod -aG video jellyfin`
+    `sudo usermod -aG video jellyfin`<br/>
     `sudo systemctl restart jellyfin`
 
 > [!NOTE]
@@ -302,7 +302,7 @@ Useful Resources:
     You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt).
 
     Use `vcgencmd get_mem arm && vcgencmd get_mem gpu` to verify the split between CPU and GPU memory.
-    
+
     Use `vcgencmd measure_temp && vcgencmd measure_clock arm` to monitor the temperature and clock speed of the CPU.
 
 > [!NOTE]

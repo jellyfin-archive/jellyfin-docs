@@ -15,7 +15,7 @@ The most common organization scheme for books is separation by Audiobook then by
           Book2.flac
           /Book
             Chapter1.flac
-            Chapter2.flac       
+            Chapter2.flac
     /Books
         /Author
             Book1.epub

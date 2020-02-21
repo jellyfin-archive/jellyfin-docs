@@ -1,3 +1,8 @@
+---
+uid: network-reverse-proxy-traefik
+title: Traefik Reverse Proxy
+---
+
 ## Traefik (with docker-compose)
 
 [Traefik](https://traefik.io/) is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need. This configuration is A+. Test your setup here at [SSLlabs](https://www.ssllabs.com/ssltest/).

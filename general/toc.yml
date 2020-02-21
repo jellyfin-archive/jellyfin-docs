@@ -10,10 +10,20 @@
   - uid: admin-installing
   - uid: admin-building
   - uid: admin-migrate-from-emby
-  - uid: admin-port-bindings
-  - uid: admin-connectivity
-  - uid: admin-reverse-proxy
   - uid: admin-hardware-acceleration
+  - uid: admin-troubleshoot
+
+- uid: network-index
+  items:
+  - name: Reverse Proxies
+    items:
+    - uid: network-reverse-proxy-apache
+    - uid: network-reverse-proxy-caddy
+    - uid: network-reverse-proxy-haproxy
+    - uid: network-reverse-proxy-nginx
+    - uid: network-reverse-proxy-traefik
+  - uid: network-letsencrypt 
+  - uid: network-dlna
 
 - uid: contrib-index
   items:

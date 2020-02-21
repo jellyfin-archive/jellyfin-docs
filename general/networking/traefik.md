@@ -5,7 +5,7 @@
 Create these 3 files in the SAME directory (or change their paths in the volume section) : docker-compose.yml, traefik.toml and acme.json.
 
 > [!NOTE]
-> Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet. 
+> Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet.
 
 ```
 sudo apt install apache2-utils
@@ -75,7 +75,7 @@ This toml file can't support environment variables, ensure you don't attempt to 
 > Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
 
 traefik.toml:
- 
+
 ```
 logLevel = "WARN"
 defaultEntryPoints = ["http", "https"]
@@ -115,7 +115,7 @@ entryPoint = "https"
 
 [[acme.domains]]
   main = "*.example.com"
-  
+
 [docker]
 domain = "example.com"
 network = "traefik"

@@ -24,18 +24,18 @@ The most common organization scheme for books is separation by Audiobook then by
 
 ### Primary
 
-  * folder
-  * poster
+* folder
+* poster
 
 ### Banner
 
-  * banner
+* banner
 
 ### Logo
 
-  * logo
+* logo
 
 ### Thumb
 
-  * thumb
-  * landscape
+* thumb
+* landscape

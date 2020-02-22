@@ -11,4 +11,4 @@ If DLNA fails to bind properly, the message `[ERR] Failed to bind to port 1900: 
 
 Setting `Alive message interval (seconds)` to 30 seconds also appears to help discovery for some clients.
 
-If a base URL is set, try removing the base URL and restarting the server.
+If a base URL is set, try removing it and restarting the server.

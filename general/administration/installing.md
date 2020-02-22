@@ -31,7 +31,7 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
 
 3. Start the server.
 
-```
+```bash
 docker run -d \
  --volume /path/to/config:/config \
  --volume /path/to/cache:/cache \
@@ -44,7 +44,7 @@ docker run -d \
 
 Alternatively, using docker-compose:
 
-```
+```json
 version: "3"
 services:
   jellyfin:
@@ -144,20 +144,6 @@ Only available for versions 10.4.0+.
 1. Delete the `system` folder.
 1. Rename `system-bak` to `system`.
 1. Run `jellyfin.bat` to start the server again.
-
-### Install using legacy script (x86/x64)
-
-Only for versions 10.3.x and earlier.
-
-1. Download and extract the latest version
-1. Run `install.bat` or `install-jellyfin.ps1`
-1. (Optional) Enter a custom install location (default is `%appdata%`)
-1. (Optional) Enter a custom library/data location (default is `%localappdata%`) - Currently not working
-1. (Optional) Select to install Jellyfin as a service
-1. (Optional) Import old library - Not compatible with newer Emby versions
-1. (Optional) Create a shortcut on your desktop
-1. (Optional) Run Jellyfin after installation
-1. Press `Install`
 
 ## MacOS
 

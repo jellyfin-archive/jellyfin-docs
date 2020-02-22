@@ -13,9 +13,7 @@ The Jellyfin project was started in early December 2018 as a result of Emby's de
 
 You can find our main repository on [GitHub](https://github.com/jellyfin/jellyfin) as well as our [organization](https://github.com/jellyfin) page.
 
-## Core Team
-
-The core team of Jellyfin consists of:
+# Core Team
 
 [Andrew Rabert (nvllsvm)](https://github.com/nvllsvm)<br/>
 [Joshua Boniface (joshuaboniface)](https://github.com/joshuaboniface)<br/>

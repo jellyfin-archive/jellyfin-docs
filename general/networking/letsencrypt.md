@@ -58,17 +58,18 @@ service haproxy reload
 
 Make sure the script is executable
 
- ``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
+``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
 
 Add a job to cron so the certificate will be renewed automatically:
 
- ``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
+``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
 
 ### Nginx
 
-After installing certbot and the Nginx plugin with ``sudo apt install certbot python3-certbot-nginx``, certificate generation is accomplished by:
+After installing certbot and the Nginx plugin with `sudo apt install certbot python3-certbot-nginx`, certificate generation is accomplished by:
 
 `sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN`
+
 (Add the ``--rsa-key-size 4096`` parameter if you want a 4096 bit key instead)
 
 Copy and paste the whole Nginx sample configuration file from above, changing the parameters according to your setup and uncommenting the lines.

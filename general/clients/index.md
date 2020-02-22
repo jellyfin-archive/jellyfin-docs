@@ -16,7 +16,7 @@ Do you have a client that interfaces with Jellyfin and want to see it listed her
 
 ### Jellyfin for Android
 
-The official Jellyfin Android app supporting Android 5+.
+The official Jellyfin Android app, which supports Android 5 and above.
 
 **Status:** ⭐ Active
 
@@ -83,7 +83,7 @@ Android TV:	⭕ Planned
 
 ### Jellyfin React Client
 
-A cross-platform app using React.
+A cross-platform app built with React.
 
 **Status:** ✅ In Development
 

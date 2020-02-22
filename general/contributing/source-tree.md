@@ -70,7 +70,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
      - www:
    - cordova:
 
-### [Android-tv](https://github.com/jellyfin/jellyfin-androidtv)
+### [Android TV](https://github.com/jellyfin/jellyfin-androidtv)
 
 1. app:
    - src:

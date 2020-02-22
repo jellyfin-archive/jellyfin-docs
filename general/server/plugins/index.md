@@ -147,7 +147,7 @@ Authenticate your Jellyfin users against an LDAP database, and optionally create
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-nextpvr.svg)](https://github.com/jellyfin/jellyfin-plugin-nextpvr)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-nextpvr.svg)](https://github.com/jellyfin/jellyfin-plugin-nextpvr)
 
-Provides access to LiveTV, Program Guide and Recordings from [NextPVR](https://www.nextpvr.com/).
+Provides access to Live TV, Program Guide, and Recordings from [NextPVR](https://www.nextpvr.com/).
 
 **Links:**
 
@@ -256,7 +256,7 @@ Record your watched media with [Trakt](https://trakt.tv).
 [![](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 [![](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 
-Manage TVHeadend from Jellyfin.
+Manage TVHeadEnd from Jellyfin.
 
 **Links:**
 
@@ -266,7 +266,7 @@ Manage TVHeadend from Jellyfin.
 
 #### Antennas
 
-Takes your tuners in TVHeadend and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadend plugin.
+Takes your tuners in TVHeadEnd and emulates a HDHomeRun, in order to connect to Jellyfin's Live TV and DVR features. It requires additional setup and configuration, but is a useful alternative to the TVHeadEnd plugin.
 
 **Links:**
 

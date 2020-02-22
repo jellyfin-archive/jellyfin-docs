@@ -11,7 +11,7 @@ Feature and enhancement requests should be directed towards [our Fider intance](
 
 This page discusses how to open issues, including the policies and procedures of the Jellyfin project around handling issues.
 
-Issues should detail software bug reports **only**.
+Issues should **only** detail software bug reports.
 
 All other discussions, including initial troubleshooting, should be directed towards [our help channels](xref:getting-help).
 
@@ -55,7 +55,6 @@ Jellyfin features a number of issue labels to assist in triaging and managing is
 
 These labels are broad categories for which part of the codebase is affected.
 
-* `frontend`: An issue that mainly relates to the UI frontend code.
 * `backend`: An issue that mainly relates to the server backend code.
 * `build`: An issue that mainly relates to the build process.
                                                      

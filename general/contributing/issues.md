@@ -1,11 +1,11 @@
 ---
 uid: contrib-issues
-title: GitHub Issues
+title: Issues
 ---
 
 # Requesting Features
 
-Feature and enhancement requests should be directed towards [our Fider intance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not the GitHub issues.
+Feature and enhancement requests should be directed towards [our Fider instance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not GitHub issues.
 
 # Issue Guidelines
 
@@ -57,9 +57,9 @@ These labels are broad categories for which part of the codebase is affected.
 
 * `backend`: An issue that mainly relates to the server backend code.
 * `build`: An issue that mainly relates to the build process.
-                                                     
+
 ### Criticality
-                                                                                
+
 These labels help determine how critical an issue is.
 
 * `regression`: An issue in need of immediate attention due to a regression from the last build.

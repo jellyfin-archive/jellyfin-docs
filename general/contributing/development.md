@@ -13,7 +13,7 @@ The best way to get going is to look through the [Issues list](https://github.co
 
 ### Major Issue Types
 
-A list of issue types can be found on the [Issue guidelines](xref:contrib-issues#issue-labels) page.
+A list of issue types can be found on the [issue guidelines](xref:contrib-issues#issue-labels) section.
 
 ### What if there isn't an issue?
 

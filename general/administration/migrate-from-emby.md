@@ -21,24 +21,38 @@ This procedure is written for Debian-based Linux distributions, but can be trans
 1. Upgrade to Emby version 3.5.2, so that the database schema is fully up-to-date and consistent. While this is not required, it can help reduce the possibility of obscure bugs in the database.
 
 1. Stop the `emby-server` daemon:
-    `sudo service emby-server stop`
+    ```sh
+    sudo service emby-server stop
+    ```
 
 1. Move your existing Emby data directory out of the way:
-    `sudo mv /var/lib/emby /var/lib/emby.backup`
+    ```sh
+    sudo mv /var/lib/emby /var/lib/emby.backup
+    ```
 
 1. Remove or purge the `emby-server` package:
-    `sudo apt purge emby-server`
+    ```sh
+    sudo apt purge emby-server
+    ```
 
 1. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
 
 1. Stop the `jellyfin` daemon:
-    `sudo service jellyfin stop`
+    ```sh
+    sudo service jellyfin stop
+    ```
 
 1. Copy over all the data files from the Emby backup data directory:
-    `sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/`
+    ```sh
+    sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/
+    ```
 
 1. Correct ownership on the new data directory:
-    `sudo chown -R jellyfin:jellyfin /var/lib/jellyfin`
+    ```sh
+    sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
+    ```
 
 1. Start the `jellyfin` daemon:
-    `sudo service jellyfin start`
+    ```sh
+    sudo service jellyfin start
+    ```

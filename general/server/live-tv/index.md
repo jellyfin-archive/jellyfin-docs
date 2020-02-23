@@ -13,8 +13,8 @@ Jellyfin allows you to watch and record live television using supported hardware
 
 Jellyfin has support for the following tuners:
 
-  * HDHomeRun
-  * M3U
+* HDHomeRun
+* M3U
 
 HDHomeRun is a special case because they will usually get detected automatically by the server. Otherwise you can manually add tuners by navigating to **Live TV** in the settings and adding one there.
 
@@ -29,8 +29,8 @@ Additional tuner types are available via plugins.
 
 Guide data will need to be mapped to their corresponding channels after a guide data provider is configured. The guide data formats below are included with the server:
 
-  * Schedules Direct
-  * XMLTV
+* Schedules Direct
+* XMLTV
 
 [Schedules Direct](http://www.schedulesdirect.org) is a paid service providing electronic program guide data to the United States and Canada.
 

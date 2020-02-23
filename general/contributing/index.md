@@ -5,15 +5,15 @@ title: Contributing
 
 # Contributing to Jellyfin
 
-Thank you for your interest in contributing to the Jellyfin project! This page and its children desribe the ways you can contribute, as well as some of our policies. This should help guide you through your first Issue or PR.
+Thank you for your interest in contributing to the Jellyfin project! This page and its children describe the ways you can contribute, as well as some of our policies. This should help guide you through your first Issue or PR.
 
-Even if you can't contribute code, you can still help Jellyfin! The two main things you can help with are testing and creating Issues, and contributing to documentation, translations, and other non-code components.
+Even if you can't contribute code, you can still help Jellyfin! The two main things you can help with are testing and creating issues, and contributing to documentation, translations, and other non-code components.
 
 ## Issues
 
-We use GitHub Issues extensively to track open problems, new enhancements or features, and other aspects of the development of Jellyfin.
+We use GitHub extensively to track open issues, new enhancements or features, and other aspects of development.
 
-Please see the [getting help](xref:getting-help) page for help with troubleshooting and finding bugs, and the [documentation on Issues](xref:contrib-issues) for more information on how to submit good Issues.
+Please see the [getting help](xref:getting-help) page for help with troubleshooting and finding bugs, and the [documentation on issues](xref:contrib-issues) for more information on how to submit good issues.
 
 ## Code
 

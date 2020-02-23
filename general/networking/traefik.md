@@ -3,11 +3,11 @@ uid: network-reverse-proxy-traefik
 title: Traefik Reverse Proxy
 ---
 
-## Traefik (with docker-compose)
+## Traefik
 
 [Traefik](https://traefik.io/) is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically. Pointing Traefik at your orchestrator should be the only configuration step you need. This configuration is A+. Test your setup here at [SSLlabs](https://www.ssllabs.com/ssltest/).
 
-Create these three files in the **same** directory or change their paths in the volume section: docker-compose.yml, traefik.toml and acme.json.
+Create docker-compose.yml, traefik.toml and acme.json in the **same** directory or change their paths in the volume section.
 
 > [!NOTE]
 > Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet.
@@ -19,7 +19,7 @@ $ echo $(htpasswd -nb username mystrongpassword) | sed -e s/\\$/\\$\\$/g
 
 This command automatically escapes all $ inside the password for the YML file. If using an environment file, it does not need the $ escaped since it will not be interpreted by the shell.
 
-docker-compose.yml:
+### docker-compose.yml
 
 ```
 version: '3.5'
@@ -79,7 +79,7 @@ This TOML file can't support environment variables, so don't attempt to use vari
 > [!WARNING]
 > Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host, so we have created a static route to the docker host (172.17.0.1:8096) in `traefik.toml`. Using host networking (or macvlan) is required to use DLNA or an HdHomeRun as it supports multicast networking.
 
-traefik.toml:
+### traefik.toml
 
 ```toml
 logLevel = "WARN"
@@ -154,7 +154,7 @@ exposedbydefault = false
       customFrameOptionsValue = "allow-from https://example.com"
 ```
 
-Finally, create an empty acme.json.
+Finally, create an empty acme.json file to handle the certificate.
 
 ```bash
 $ touch acme.json
@@ -162,9 +162,9 @@ $ chmod 600 acme.json
 ```
 
 > [!WARNING]
-> Change example.com to your domain name and change the mail of the acme (user@example.com in traefik.toml). Let's Encrypt does not require a valid email address however example.com will be flagged as not being a proper email address.
+> Change example.com to your domain name and update the acme.json file with your email address. Let's Encrypt does not require a valid email but example.com will be flagged as fake.
 
-Launch your Traefik/Jellyfin services.
+Launch the Traefik and Jellyfin services.
 
 ```bash
 $ docker-compose up -d

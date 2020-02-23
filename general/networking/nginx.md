@@ -7,7 +7,7 @@ title: Nginx Reverse Proxy
 
 "[Nginx](https://www.nginx.com/) (pronounced "engine X") is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004.[9] A company of the same name was founded in 2011 to provide support and Nginx plus paid software." - [Wikipedia](https://en.wikipedia.org/wiki/Nginx)
 
-Create the file `/etc/nginx/conf.d/jellyfin.conf`.
+Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to Jellyfin.
 
 ```
 server {
@@ -75,7 +75,7 @@ server {
 
 When connecting to server from a client application, enter `http(s)://DOMAIN_NAME/jellyfin` in the address field.
 
-Set the base URL field in the Jellyfin server.  This can be done by navigating to the Admin Dashboard -> Networking -> Base URL in the Jellyfin Web UI.  Fill in this box with `/jellyfin` and click Save.  The server will need to be restarted before this change takes effect.
+Set the base URL field in the Jellyfin server.  This can be done by navigating to the Admin Dashboard -> Networking -> Base URL in the web client.  Fill in this box with `/jellyfin` and click Save.  The server will need to be restarted before this change takes effect.
 
 ```
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin

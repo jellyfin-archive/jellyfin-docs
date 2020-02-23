@@ -5,7 +5,7 @@ title: Setup Guide
 
 # Setup Guide
 
-## Add a TV tuner to Jellyfin (Automatic Discovery)
+## Add a TV Tuner to Jellyfin (Automatic Discovery)
 
 Click on the Admin Panel Icon in the top right corner (1)
 Click 'Live TV' (2) under the 'Live TV' section
@@ -22,7 +22,7 @@ Click on the device you'd like to set up then set any options then click 'Save'
 
 ![](~/images/live-tv-setup-tuner3.png)
 
-## Add a TV tuner to Jellyfin (Manual Setup)
+## Add a TV Tuner to Jellyfin (Manual Setup)
 
 You can set up your tuners manually if they were not automatically discovered.  Click the 'Tuner Type' pull down.  Choose between 'HD Homerun', 'M3U Tuner', and 'Other'
 
@@ -57,14 +57,14 @@ This tuner allows you to add IPTV channel to Jellyfin by using the appropriate M
 >
 > https://raw.githubusercontent.com/notanewbie/LegalStream/master/packages/news/live.m3u8
 
-## Adding Guide Data:
+## Adding Guide Data
 
 Guide data is necessary for scheduling tv recordings and for browsing what's currently playing and what will air later.  Follow these steps once you have a tuner device set up.  Click on the Admin Panel Icon in the top right corner, Click 'Live TV' (2) under the 'Live TV' section, Click the '+' button next to 'TV Guide Data Providers' :
 
 ![](~/images/live-tv-setup-guide1.png)
 
-Choose between 'Schedules Direct' and 'Xml TV'. You currently cannot use both at the same time.
- 
+Choose between 'Schedules Direct' and 'XMLTV'. You currently cannot use both at the same time.
+
 **Schedules Direct:**
 
 Schedules Direct is a paid service that provides U.S. and Canadian guide data for use in OSS projects. The price is $25 a year and has not increased since it began in 2007. The guide data is highly reliable. You will have to create an account at their [website](http://www.schedulesdirect.org).
@@ -73,7 +73,7 @@ Schedules Direct is a paid service that provides U.S. and Canadian guide data fo
 
 This option allows for downloading of guide data in the [XMLTV](http://wiki.xmltv.org/index.php/XMLTVFormat) format.
 
-# Mapping Channels:
+## Mapping Channels
 
 Guide data from the 'TV Guide Data Providers' will need to be mapped to the physical channel from the tuner. Click the '...' next to the guide provider you set up and select 'Map Channels'
 

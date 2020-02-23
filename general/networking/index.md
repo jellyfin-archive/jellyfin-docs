@@ -31,7 +31,7 @@ Since client auto-discover would break if this option were configurable, you can
 
 **Client Discovery:** 7359 UDP
 
-Allows clients to discover the Jellyfin Server on the local network.  A broadcast message to this port with `Who is JellyfinServer?` will get a json response that includes the server Address, ID and Name.
+Allows clients to discover Jellyfin on the local network. A broadcast message to this port with `Who is JellyfinServer?` will get a JSON response that includes the server address, ID, and name.
 
 ### Dynamic Ports
 
@@ -53,15 +53,15 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 * [Traefik](xref:network-reverse-proxy-traefik)
 
 While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL certificates.
-* [Let's Encrypt](xref:network-letsencrypt )
+* [Let's Encrypt](xref:network-letsencrypt)
 
-When following this guide, be sure to replace the following variables with your information:
+When following this guide, be sure to replace the following variables with your information.
 
 * `DOMAIN_NAME`: Your public domain name to access Jellyfin on (e.g. jellyfin.example.com)
 * `example.com`: The domain name Jellyfin services will run under (e.g. example.com)
 * `SERVER_IP_ADDRESS`: The IP address of your Jellyfin server (if the reverse proxy is on the same server use 127.0.0.1)
 
-In addition, the examples are configured for use with LetsEncrypt certificates.  If you have a certificate from another source, change the SSL configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
+In addition, the examples are configured for use with Let's Encrypt certificates. If you have a certificate from another source, change the SSL configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
 
 Ports 80 and 443 (pointing to the proxy server) need to be opened on your router and firewall.
 
@@ -88,4 +88,4 @@ There are three main caveats to this setting.
 
 ## Final Steps
 
-It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html) if you are exposing these service to the internet.
+It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html) if you are exposing these services to the internet.

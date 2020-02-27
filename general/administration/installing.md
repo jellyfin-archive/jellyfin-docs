@@ -243,7 +243,7 @@ sudo mkdir data cache config log
 If you are running Debian or a derivative, you can also download and install an ffmpeg release built specifically for Jellyfin. Be sure to download the latest release that matches your OS (4.2.1-4 for Debian Stretch assumed below).
 
 ```bash
-sudo wget https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v4.2.1-3/jellyfin-ffmpeg_4.2.1-4-stretch_amd64.deb
+sudo wget https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v4.2.1-4/jellyfin-ffmpeg_4.2.1-4-stretch_amd64.deb
 sudo dpkg --install jellyfin-ffmpeg_4.2.1-4-stretch_amd64.deb
 ```
 

@@ -112,6 +112,16 @@ Cast videos from other Jellyfin applications to the MPV media player on Windows 
 * [Github](https://github.com/iwalton3/jellyfin-mpv-shim)
 * [Windows Release](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
 
+### Jellycli
+
+Terminal player for Jellyfin, only for music at the moment.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+* [Github](https://github.com/tryffel/jellycli)
+
 ## Jellyfin Theater (Desktop)
 
 ### Electron

@@ -67,7 +67,7 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
 
 The intent of the Jellyfin image is to provide the capability of building from source using Docker. The native image is [compiled](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile) inside the container whereas the LinuxServer image [installs](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile) Jellyfin as a package. This can lead to larger image size and more space consumption since there isn't a common base image for the official Jellyfin image, [Jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/tags) vs [LinuxServer](https://hub.docker.com/r/linuxserver/jellyfin/tags) sizes. The Jellyfin image does not support environmentals except for $TZ. No other environmental parameter works. If switching between images, the folder locations are not the same, so you have to move config folders around before spinning up the alternative image.
 
-For arm-based hardware and Rpi, it is recommended to use the Linuxserver image rather than the native image due to Hardware Acceleration Support not yet available on the native image. 
+For ARM hardware and RPi, it is recommended to use the LinuxServer image since hardware acceleration support is not yet available on the native image. 
 
 ### Unraid Docker
 

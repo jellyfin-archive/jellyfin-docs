@@ -2,7 +2,7 @@
   items:
   - uid: clients-css-customization
   - uid: clients-codec-support
-  - uid: clients-installing-kodi
+  - uid: clients-kodi
   - uid: clients-installing-mopidy
 
 - name: Administration

@@ -15,13 +15,17 @@ Once the packages are installed, you're ready to generate a new certificate.
 
 After installing Certbot and the Apache plugin, certificate generation is accomplished by with the following command.
 
-``certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
+```sh
+certbot certonly --apache --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME
+```
 
 Update the 'SSLCertificateFile' and 'SSLCertificateKeyFile' sections, then restart the service.
 
 Add a job to cron so the certificate will be renewed automatically.
 
-``echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot``
+```sh
+echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload apache2'" | sudo tee -a /etc/cron.d/renew_certbot
+```
 
 ### HAProxy
 
@@ -29,13 +33,17 @@ HAProxy doesn't currently have a Certbot plugin. To get around this, run Certbot
 
 Enable the frontend and backend in the config above, and then run Certbot.
 
-``certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME``
+```sh
+certbot certonly --standalone --preferred-challenges http-01 --http-01-port 8888 --noninteractive --agree-tos --email YOUR_EMAIL -d DOMAIN_NAME
+```
 
 The port can be changed to anything you like, but be sure that the HAProxy config and your Certbot command match.
 
 HAProxy needs to have the certificate and key files concatenated into the same file to read it correctly. This can be accomplished with the following command.
 
-``cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem``
+```sh
+cat /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem > /etc/ssl/DOMAIN_NAME.pem
+```
 
 Uncomment `bind *:443` and the redirect section in the configuration, then reload the service.
 
@@ -43,7 +51,7 @@ Uncomment `bind *:443` and the redirect section in the configuration, then reloa
 
 Place the following script in `/usr/local/bin/` to automatically update your SSL certificate.
 
-```
+```sh
 SITE=DOMAIN_NAME
 
 # move to the correct let's encrypt directory
@@ -58,17 +66,23 @@ service haproxy reload
 
 Make sure the script is executable.
 
-``chmod u+x /usr/local/bin/letsencrypt-renew.sh``
+```sh
+chmod u+x /usr/local/bin/letsencrypt-renew.sh
+```
 
 Add a job to cron so the certificate will be renewed automatically.
 
-``@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log``
+```data
+@monthly /usr/bin/certbot renew --renew-hook "/usr/local/bin/letsencrypt-renew.sh" >> /var/log/letsencrypt-renewal.log
+```
 
 ### Nginx
 
 After installing Certbot and the Nginx plugin with `sudo apt install certbot python3-certbot-nginx`, generate the certificate.
 
-`sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN`
+```sh
+sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN
+```
 
 Add the `--rsa-key-size 4096` parameter if you want a 4096 bit key instead.
 
@@ -76,4 +90,6 @@ Copy and paste the whole Nginx sample configuration file from above, changing th
 
 Add a job to cron so the certificate will be renewed automatically.
 
-`echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload nginx'" | sudo tee -a /etc/cron.d/renew_certbot`
+```sh
+echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'systemctl reload nginx'" | sudo tee -a /etc/cron.d/renew_certbot
+```

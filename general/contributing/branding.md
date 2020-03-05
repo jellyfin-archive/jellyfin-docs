@@ -31,14 +31,14 @@ All iconography and other resources can be found in the [jellyfin-ux](https://gi
 
 The design for the logo uses a gradient for the infill, and if the non-transparent logo is chosen there is an optional background color.
 
-* Gradient Start: #AA5CC3
-* Gradient End: #00A4DC
-* Background Colour: #000B25
+* Gradient Start: `#AA5CC3`
+* Gradient End: `#00A4DC`
+* Background Colour: `#000B25`
 
 ### Theme
 
-* Background Colour: #101010
-* Accent Colour: #00A4DC
+* Background Colour: `#101010`
+* Accent Colour: `#00A4DC`
 
 ### Fonts
 

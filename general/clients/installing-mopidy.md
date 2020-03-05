@@ -12,14 +12,24 @@ The Mopidy Jellyfin plugin is available to install from [PyPi](https://pypi.org/
 For general use computers, such as workstations or laptops, it's recommended to install Mopidy plugins in user mode.  Installing python packages from pip using sudo or root permissions can lead to conflicts with your package manager in the future.
 
 1. Install Mopidy using your method of choice using the [official documentation](https://docs.mopidy.com/en/latest/installation/)
+
 1. Install the Jellyfin plugin for Mopidy:
-    `pip3 install --user mopidy-jellyfin`
+```sh
+pip3 install --user mopidy-jellyfin
+```
+
 2. (Optional) Install other mopidy related packages:
-    `pip3 install --user mopidy-mpd mopidy-musicbox-webclient`
+    ```sh
+    pip3 install --user mopidy-mpd mopidy-musicbox-webclient
+    ```
+
 3. Configure your `mopidy.conf` located at `$HOME/.config/mopidy/mopidy.conf`
     See [Config File](xref:clients-installing-mopidy#config-file)
-4. There may be a need to install extra gstreamer codecs if they're not already on your system, but these are highly variable and depend on your hardware and distro
+
+4. There may be a need to install extra `gstreamer` codecs if they're not already on your system, but these are highly variable and depend on your hardware and distro
+
 5. Start the program by running `mopidy` from a terminal
+
 6. See [Usage](xref:clients-installing-mopidy#usage)
 
 ## Raspberry Pi (Remote Controlled Speakers)
@@ -27,16 +37,29 @@ For general use computers, such as workstations or laptops, it's recommended to 
 Utilizing a Raspberry Pi (or other small form factor computer) it's possible to use Mopidy to build a set of standalone smart speakers connected to your Jellyfin server.
 
 1. Grab the latest [raspbian image](https://www.raspberrypi.org/downloads/raspbian/).  Unless you have a need for a GUI, the 'Lite' image is plenty for this project.
+
 2. Install the image to the SD card (See the [official documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md))
+
 3. Install Mopidy from their [apt repo](https://docs.mopidy.com/en/latest/installation/debian/#install-from-apt-mopidy-com) to ensure we get the latest version
+
 4. Install required OS packages:
-    `sudo apt install mopidy mopidy-mpd gstreamer1.0-plugins-bad python3-pip`
+    ```sh
+    sudo apt install mopidy mopidy-mpd gstreamer1.0-plugins-bad python3-pip
+    ```
+
 5. Install the Jellyfin plugin and any other Mopidy related packages you may want:
-    `sudo pip3 install mopidy-jellyfin mopidy-musicbox-webclient`
+    ```sh
+    sudo pip3 install mopidy-jellyfin mopidy-musicbox-webclient
+    ```
+
 6. Configure your `mopidy.conf` located at `/etc/mopidy/mopidy.conf`:
     See [Config File](xref:clients-installing-mopidy#config-file)
+
 7. Enable and start the mopidy service:
-    `sudo systemctl enable --now mopidy`
+    ```sh
+    sudo systemctl enable --now mopidy
+    ```
+
 8. See [Usage](xref:clients-installing-mopidy#usage)
 
 ## Config File

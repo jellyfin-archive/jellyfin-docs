@@ -21,7 +21,9 @@ Red: `#d00000`<br>
 
 #### Played Indicator:
 
-`.playedIndicator { background: #5dd000; }`
+```css
+.playedIndicator { background: #5dd000; }
+```
 
 Before:
 
@@ -33,23 +35,31 @@ Green Mod:
 
 #### Background Color:
 
-`.backgroundContainer, .dialog, html { background-color: #0fd0d0; }`
+```css
+.backgroundContainer, .dialog, html { background-color: #0fd0d0; }
+```
 
 #### Right Header
 
-`.headerRight { color: yellow; }`
+```css
+.headerRight { color: yellow; }
+```
 
 ![image](https://user-images.githubusercontent.com/20715731/73962770-0d84ca00-48dd-11ea-9b50-563f8b4aa33b.png)
 
 #### Console Panel
 
-`.mainDrawer-scrollContainer { color: yellow; }`
+```css
+.mainDrawer-scrollContainer { color: yellow; }
+```
 
 ![image](https://user-images.githubusercontent.com/20715731/73963663-c13a8980-48de-11ea-9342-d1e89690e7b1.png)
 
 #### General Page
 
-`.dashboardGeneralForm { color: yellow; }`
+```css
+.dashboardGeneralForm { color: yellow; }
+```
 
 ![image](https://user-images.githubusercontent.com/20715731/73964979-49ba2980-48e1-11ea-8ddf-51e1c54e32d4.png)
 
@@ -59,13 +69,17 @@ CSS can be chained together to modify different sections together.
 
 #### Border Color
 
-`.emby-input, .emby-textarea, .emby-select { border-color: #fdbe7d; }`
+```css
+.emby-input, .emby-textarea, .emby-select { border-color: #fdbe7d; }
+```
 
 ![image](https://user-images.githubusercontent.com/20715731/73950017-39965000-48c9-11ea-9c0e-7687420a282e.png)
 
 #### Full Header Mod
 
-`.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { 	background: #ff9475; }`
+```css
+.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { 	background: #ff9475; }
+```
 
 ![image](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
 

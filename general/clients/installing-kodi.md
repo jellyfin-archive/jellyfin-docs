@@ -1,9 +1,9 @@
 ---
-uid: clients-installing-kodi
-title: Installing Kodi
+uid: clients-kodi
+title: Kodi
 ---
 
-# Installing Kodi
+# Kodi
 
 ## Installation Process
 
@@ -55,3 +55,7 @@ This will help keep your media libraries up to date without waiting for a period
 
 > [!NOTE]
 > Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed.
+
+### Multiple Profiles
+
+First, create two profiles inside Kodi. Next, install the Jellyfin add-on in each profile, and assign a different username in each profile. When you switch Kodi profiles, you will also switch Jellyfin profiles. You can tell Kodi to bring you to a profile login screen during startup.

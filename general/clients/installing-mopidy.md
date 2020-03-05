@@ -106,6 +106,10 @@ Once Mopidy is running, you can connect and control it with your client of choic
 ## Upgrading
 
 When a new version of Mopidy Jellyfin is released, you can upgrade via pip using the `--upgrade` flag.  Using the install examples from above:
-    `pip3 install --user --upgrade mopidy-jellyfin`<br/>
+```sh
+pip3 install --user --upgrade mopidy-jellyfin
+```
 or
-    `sudo pip3 install --upgrade mopidy-jellyfin`
+```sh
+sudo pip3 install --upgrade mopidy-jellyfin
+```

@@ -411,7 +411,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 ### Repository
 
-The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, and Disco. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, Disco, and Eoan. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
 
 > [!NOTE]
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
@@ -437,7 +437,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
     ```
 
     > [!NOTE]
-    > Supported releases are `xenial`, `bionic`, `cosmic`, and `disco`.
+    > Supported releases are `xenial`, `bionic`, `cosmic`, `disco`, and `eoan`.
 
 1. Update APT repositories:
     ```sh

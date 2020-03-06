@@ -14,7 +14,9 @@ There are many projects under the [Jellyfin organization on Github](https://gith
 * [Jellyfin Server](https://github.com/jellyfin/jellyfin) - The back-end server of the Jellyfin application. It is built using .NET Core 3.1 and C#.
 * [Jellyfin Web](https://github.com/jellyfin/jellyfin-web) - The main client application for Jellyfin. Built for the web, but also used in some of our other clients that are just wrappers around this web client.
 
-The best way to get going is to look through the [issues list](https://github.com/jellyfin/jellyfin/issues) of the associated repository, find an issue you would like to work on, and start hacking! Issues are triaged regularly by the administrative team, and labels assigned that should help you find issues within your skill-set. Once you start working on an issue, please comment on it stating your intent to work on the issue, to avoid unnecessary duplication of work.
+Note that each of the repositories also has it's own documentation on how to get started with that project, generally found in the repository README. You can also view the organization [source tree](xref:contrib-source-tree) to see how some of the bigger projects are structured.
+
+The best way to get going on some actual development is to look through the [issues list](https://github.com/jellyfin/jellyfin/issues) of the associated repository, find an issue you would like to work on, and start hacking! Issues are triaged regularly by the administrative team, and labels assigned that should help you find issues within your skill-set. Once you start working on an issue, please comment on it stating your intent to work on the issue, to avoid unnecessary duplication of work.
 
 ### Major Issue Types
 

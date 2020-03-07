@@ -18,6 +18,34 @@ DOMAIN_NAME/jellyfin/ {
 }
 ```
 
+DuckDNS config
+```
+domain.duckdns.org {
+ 
+    tls user@example.com
+   
+    timeouts none
+ 
+    proxy / localhost:8096 {
+    websocket
+    transparent
+    }
+ 
+    # Optional security headers
+    header / {
+    -Server
+    Strict-Transport-Security "max-age=31536000;"
+    Referrer-Policy "strict-origin"
+    X-XSS-Protection "1; mode=block"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    }
+ 
+    # Optional logging
+    log JellyfinProxy.log
+}
+```
+
 Using DOMAIN_NAME or sub.DOMAIN_NAME would also work, as would using multiple at once.
 
 Caddy will automatically attempt to obtain a free HTTPS certificate and handle renewals, making the section below unnecessary.

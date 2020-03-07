@@ -177,6 +177,18 @@ The official Jellyfin Google Chrome extension.
 
 * [GitHub](https://github.com/jellyfin/jellyfin-chrome)
 
+## Linux
+
+### jftui
+
+A terminal client for Jellyfin built as a REPL interface, that uses mpv for multimedia playback.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+* [GitHub](https://github.com/Aanok/jftui)
+
 ## Apple
 
 ### Jellyfin for Apple iOS

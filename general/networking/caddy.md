@@ -18,7 +18,8 @@ DOMAIN_NAME/jellyfin/ {
 }
 ```
 
-DuckDNS config
+DuckDNS Config
+
 ```
 domain.duckdns.org {
  

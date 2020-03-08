@@ -32,14 +32,14 @@ domain.duckdns.org {
         transparent
     }
  
-    # Optional security headers
+    # optional security headers
     header / {
-    -Server
-    Strict-Transport-Security "max-age=31536000;"
-    Referrer-Policy "strict-origin"
-    X-XSS-Protection "1; mode=block"
-    X-Content-Type-Options "nosniff"
-    X-Frame-Options "DENY"
+        -Server
+        Strict-Transport-Security "max-age=31536000;"
+        Referrer-Policy "strict-origin"
+        X-XSS-Protection "1; mode=block"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
     }
  
     # Optional logging

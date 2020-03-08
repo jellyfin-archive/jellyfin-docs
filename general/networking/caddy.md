@@ -28,8 +28,8 @@ domain.duckdns.org {
     timeouts none
  
     proxy / localhost:8096 {
-    websocket
-    transparent
+        websocket
+        transparent
     }
  
     # Optional security headers

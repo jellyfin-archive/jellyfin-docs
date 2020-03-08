@@ -42,7 +42,7 @@ domain.duckdns.org {
         X-Frame-Options "DENY"
     }
  
-    # Optional logging
+    # optional logging
     log JellyfinProxy.log
 }
 ```

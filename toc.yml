@@ -3,8 +3,6 @@
 - uid: getting-help
 - uid: contrib-index
   href: general/contributing/
-- uid: plugin-api-docs
-  href: plugin-api/
 - uid: faq
 - uid: about
 - name: GitHub

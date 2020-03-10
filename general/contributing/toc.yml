@@ -4,5 +4,5 @@
 - uid: contrib-source-tree
 - uid: contrib-branding
 - name: Plugin API
-  href: plugin-api/toc.yml
-  topicHref: plugin-api/index.md
+  href: ../../plugin-api/toc.yml
+  topicHref: ../../plugin-api/index.md

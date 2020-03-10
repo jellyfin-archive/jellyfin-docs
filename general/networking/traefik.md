@@ -19,10 +19,19 @@ $ echo $(htpasswd -nb username mystrongpassword) | sed -e s/\\$/\\$\\$/g
 
 This command automatically escapes all $ inside the password for the YML file. If using an environment file, it does not need the $ escaped since it will not be interpreted by the shell.
 
+Create the docker network for traefik.
+
+```bash
+$ sudo docker network create traefik
+```
+
 ### docker-compose.yml
 
 ```
-version: '3.5'
+version: '2'
+networks:
+  traefik:
+    name: traefik
 
 services:
   traefik:
@@ -57,6 +66,7 @@ services:
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
       traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://example.com'
+#      traefik.frontend.auth.basic.users: xxx:xxx
     restart: unless-stopped
 
   jellyfin:
@@ -68,10 +78,6 @@ services:
       - /path/to/cache:/cache
       - /path/to/media:/media
     restart: unless-stopped
-
-networks:
-  traefik:
-    name: traefik
 ```
 
 This TOML file can't support environment variables, so don't attempt to use variables.

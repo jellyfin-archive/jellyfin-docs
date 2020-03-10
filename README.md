@@ -11,7 +11,13 @@ Since the site is mostly written with simple Markdown files, the easiest and fas
 
 Editing directly on GitHub provides a feature to preview your changes for the current document, but if you want to see your changes within the context of the actual website or make more advanced changes to the site, you will need to run a copy of the site locally.
 
-To run the site locally, you can start by following the instructions to install DocFx as a [command line tool](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool). Once installed, you can run the following command from the repository root directory.
+To run the site locally, you will first need to clone this repository using git.
+
+```bash
+git clone https://github.com/jellyfin/jellyfin-docs.git
+```
+
+Next, you will need to install DocFx as a [command line tool](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool). Once installed, you can run the following command from the root directory of your cloned repository.
 
 ```bash
 docfx --serve

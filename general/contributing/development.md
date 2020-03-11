@@ -9,7 +9,14 @@ This page details how our repositories are organized, how to get started editing
 
 ## What should you work on?
 
-The best way to get going is to look through the [Issues list](https://github.com/jellyfin/jellyfin/issues), find an issue you would like to work on, and start hacking. Issues are triaged regularly by the administrative team, and labels assigned that should help you find issues within your skill-set. Once you start working on an issue, please comment on it stating your intent to work on the issue, to avoid unnecessary duplication of work.
+There are many projects under the [Jellyfin organization on Github](https://github.com/jellyfin/) to browse through and contribute to. Summarized here are the two biggest ones, one for back-end devs and one for front-end:
+
+* [Jellyfin Server](https://github.com/jellyfin/jellyfin) - The back-end server of the Jellyfin application. It is built using .NET Core 3.1 and C#.
+* [Jellyfin Web](https://github.com/jellyfin/jellyfin-web) - The main client application for Jellyfin. Built for the web, but also used in some of our other clients that are just wrappers around this web client.
+
+Note that each of the repositories also has its own documentation on how to get started with that project, generally found in the repository README. You can also view the organization [source tree](xref:contrib-source-tree) to see how some of the bigger projects are structured.
+
+The best way to get going on some actual development is to look through the [issues list](https://github.com/jellyfin/jellyfin/issues) of the associated repository, find an issue you would like to work on, and start hacking! Issues are triaged regularly by the administrative team, and labels assigned that should help you find issues within your skill-set. Once you start working on an issue, please comment on it stating your intent to work on the issue, to avoid unnecessary duplication of work.
 
 ### Major Issue Types
 

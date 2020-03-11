@@ -314,9 +314,9 @@ Finally you can run it. You will see lots of log information when run, this is n
 
 Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://jellyfin.org/downloads/#portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
-## Arch
+## Arch Linux
 
-Jellyfin is not yet available in the official repository but can be found [here](https://aur.archlinux.org/packages/jellyfin-git/) in the user repository.
+Jellyfin can be found in the AUR as [`jellyfin`](https://aur.archlinux.org/packages/jellyfin/) and [`jellyfin-git`](https://aur.archlinux.org/packages/jellyfin-git/).
 
 ## Fedora
 

@@ -5,7 +5,7 @@ title: Plugins
 
 # Plugins
 
-Jellyfin has a collection of optional plugins that can be installed to provide additional features. To create a plug-in, see the [plug-in template](https://github.com/jellyfin/jellyfin-plugin-template) repo.
+Jellyfin has a collection of optional plugins that can be installed to provide additional features. To create a plugin, see the [plugin template](https://github.com/jellyfin/jellyfin-plugin-template) repository.
 
 ## Installing
 

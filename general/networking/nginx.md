@@ -23,11 +23,11 @@ server {
     # listen 443 ssl http2;
     server_name DOMAIN_NAME;
 
-   # use a variable to store the upstream proxy
-   # in this example we are using a hostname which is resolved via DNS
-   # (if you aren't using DNS remove the resolver line and change the variable to point to an IP address e.g `set $jellyfin 127.0.0.1`)
-   set $jellyfin jellyfin;
-   resolver 127.0.0.1 valid=30;
+    # use a variable to store the upstream proxy
+    # in this example we are using a hostname which is resolved via DNS
+    # (if you aren't using DNS remove the resolver line and change the variable to point to an IP address e.g `set $jellyfin 127.0.0.1`)
+    set $jellyfin jellyfin;
+    resolver 127.0.0.1 valid=30;
 
     #ssl_certificate /etc/letsencrypt/live/DOMAIN_NAME/fullchain.pem;
     #ssl_certificate_key /etc/letsencrypt/live/DOMAIN_NAME/privkey.pem;
@@ -43,11 +43,11 @@ server {
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Content-Type-Options "nosniff";
 
-     # Content Security Policy
-     # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-     # Enforces https content and restricts JS/CSS to origin
-     # External Javascript (such as cast_sender.js for Chromecast) must be whitelisted.
-     #add_header Content-Security-Policy "default-src https: data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'";
+    # Content Security Policy
+    # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+    # Enforces https content and restricts JS/CSS to origin
+    # External Javascript (such as cast_sender.js for Chromecast) must be whitelisted.
+    #add_header Content-Security-Policy "default-src https: data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'";
 
     location / {
         # Proxy main Jellyfin traffic
@@ -108,11 +108,11 @@ server {
     # You can specify multiple domain names if you want
     #server_name jellyfin.local;
 
-   # use a variable to store the upstream proxy
-   # in this example we are using a hostname which is resolved via DNS
-   # (if you aren't using DNS remove the resolver line and change the variable to point to an IP address e.g `set $jellyfin 127.0.0.1`)
-   set $jellyfin jellyfin;
-   resolver 127.0.0.1 valid=30;
+    # use a variable to store the upstream proxy
+    # in this example we are using a hostname which is resolved via DNS
+    # (if you aren't using DNS remove the resolver line and change the variable to point to an IP address e.g `set $jellyfin 127.0.0.1`)
+    set $jellyfin jellyfin;
+    resolver 127.0.0.1 valid=30;
 
     # Uncomment and create directory to also host static content
     #root /srv/http/media;

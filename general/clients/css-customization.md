@@ -159,7 +159,7 @@ This will drastically change the style of cast info. Into something very similar
 
 #### Darken the background
 
-This darkens the background on blue radiance/purple haze, edit the percentage depending how dark you want it. Lower is darker.
+This darkens the background on blue radiance and purple haze, edit the percentage depending how dark you want it. Lower is darker.
 
 ```css
 /* Darken background, only works with blue radiance */

@@ -42,7 +42,7 @@ CSS can be chained together to modify different sections together. An example of
 
 ## Modifications list
 
-To apply any one of these, copy paste the CSS code into the "Custom CSS" field. To use multiple modifications, simply add them one after another into the field. Any applied code will remain in the field. To remove a modification remove the code for it from the field. Changes apply immediately when the settings page is saved, and do not require a restart of the server.
+To apply any one of these, copy paste the CSS code into the "Custom CSS" field. To use multiple modifications, simply add them one after another into the field. Any applied code will remain in the field. To remove a modification, delete or comment out the code for it from the field. Changes apply immediately when the settings page is saved and doesn't require restarting.
 
 #### Played Indicator
 

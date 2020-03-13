@@ -13,7 +13,7 @@ If you have little or no experience with CSS, various resources and tutorials ca
 
 ![](~/images/custom-css-customcssfield.png)
 
-## General information about CSS
+## General Information About CSS
 
 You can learn more about CSS using sites like [w3school](https://www.w3schools.com/css/default.asp). Below are some very basic details that will let you do rudimentary edits to the ready made modifications below. 
 
@@ -34,13 +34,13 @@ Go [here](https://htmlcolorcodes.com/color-picker/) for a hex color chart.
 
 A section of code or text inbetween `/*` and `*/` indicate a comment, and will be ignored. This allows you to add descriptions for what any particular section of code does to make it easily identifiable. It can also be used to disable code without deleting it. For example
 
-`/*This might be added above code to tell you what it does*/`
+`/* This might be added above code to tell you what it does */`
 
 ### CSS Chaining
 
 CSS can be chained together to modify different sections together. An example of this is the "Border color" mod. It lists elements to be modified, and performs a change that is applied to all of them.
 
-## Modifications list
+## Modifications List
 
 To apply any one of these, copy paste the CSS code into the "Custom CSS" field. To use multiple modifications, simply add them one after another into the field. Any applied code will remain in the field. To remove a modification, delete or comment out the code for it from the field. Changes apply immediately when the settings page is saved and doesn't require restarting.
 
@@ -63,7 +63,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 **Transparent dark using RGBA hex value**
 
 ```css
-/*Make watched icon dark and transparent*/
+/* Make watched icon dark and transparent */
 .playedIndicator {background: #00000058;}
 ```
 
@@ -74,17 +74,17 @@ This will affect the played/watched indicator. Replace the color hex with any va
 Self explanatory
 
 ```css
-/*Top menu transparency*/
+/* Top menu transparency */
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {background:none; background-color:rgba(0, 0, 0, 0);}
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {background:none; background-color:rgba(0, 0, 0, 0);}
 ```
 
-#### Enlarge tab buttons
+#### Enlarge Tab Buttons
 
 Enlarges the tab buttons, suggested, genres, etc. By default they are really damn tiny, especially on mobile.
 
 ```css
-/*Adjust both "size-adjust" and "size" to modify size*/
+/* Adjust both "size-adjust" and "size" to modify size */
 .headerTabs.sectionTabs {text-size-adjust: 110%;  font-size: 110%;}
 .pageTitle {margin-top: auto; margin-bottom: auto;}
 .emby-tab-button {padding: 1.75em 1.7em;}
@@ -93,31 +93,31 @@ Enlarges the tab buttons, suggested, genres, etc. By default they are really dam
 **The enlarged tab buttons and transparent menu look like this:**
 ![](~/images/custom-css-transparenttopbarenlargedtabs.png)
 
-#### Minimalistic login page
+#### Minimalistic Login Page
 
 This looks even better together with the transparent top menu.
 
 ```css
-/*Narrow the login form*/
+/* Narrow the login form */
 #loginPage .readOnlyContent, #loginPage form {max-width: 22em;}
 
-/*Hide "please login" text, margin is to prevent login form moving too far up*/
+/* Hide "please login" text, margin is to prevent login form moving too far up */
 #loginPage h1 {display: none}
 #loginPage .padded-left.padded-right.padded-bottom-page {margin-top: 50px}
 
-/*Hide "manual" and "forgot" buttons*/
+/* Hide "manual" and "forgot" buttons */
 #loginPage .raised.cancel.block.btnManual.emby-button {display: none}
 #loginPage .raised.cancel.block.btnForgotPassword.emby-button {display: none}
 ```
 
 ![](~/images/custom-css-minimallogin.png)
 
-#### Stylized episode previews
+#### Stylized Episode Previews
 
 The episode previews in season view are sized based on horizontal resolution, this leads to a lot of wasted space on the episode summary and a high vertical page requiring a lot of scrolling to browse. This code reduces the height of episode entries to reduce the need for vertical scrolling on large screens.
 
 ```css
-/*Size episode preview images in a more compact way*/
+/* Size episode preview images in a more compact way */
 .listItemImage.listItemImage-large.itemAction.lazy {height: 110px;}
 .listItem-content {height: 115px;}
 .secondary.listItem-overview.listItemBodyText {height: 61px; margin: 0;}
@@ -125,16 +125,16 @@ The episode previews in season view are sized based on horizontal resolution, th
 
 ![](~/images/custom-css-episodepreview.png)
 
-#### Stylized and smaller cast info
+#### Stylized and Smaller Cast Info
 
 This will drastically change the style of cast info. Into something very similar to how plex does it. The Purple Haze theme already has rounded cast info, but at the same large size as everything else, this override will lead to somewhat smaller thumbnails, and also works with all other themes.
 
 ```css
-/*Shrink and square (or round) cast thumnails*/
+/* Shrink and square (or round) cast thumnails */
 #castContent .card.overflowPortraitCard.personCard.card-hoverable.card-withuserdata {width: 4.2cm !important; font-size: 90% !important;}
 #castContent .card.overflowPortraitCard.personCard.card-withuserdata {width: 4.2cm !important; font-size: 90% !important;}
 
-/*Correct image aspect ratio behaviour, set border-radius to zero for square tiles*/
+/* Correct image aspect ratio behaviour, set border-radius to zero for square tiles */
 #castContent .cardContent-button.cardImageContainer.coveredImage.cardContent.cardContent-shadow.itemAction.lazy {background-size: cover; !important; border-radius: 2.5cm;}
 #castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground1.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; border-radius: 2.5cm;}
 #castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground2.cardContent.cardContent-shadow.itemAction {background-size: cover; !important; border-radius: 2.5cm;}
@@ -144,7 +144,7 @@ This will drastically change the style of cast info. Into something very similar
 #castContent .cardScalable {width: 3.8cm !important; height: 3.8cm !important; border-radius: 2.5cm;}
 #castContent .cardOverlayContainer.itemAction {border-radius: 2.5cm;}
 
-/*Center the mouseover buttons*/
+/* Center the mouseover buttons */
 #castContent .cardOverlayButton-br {bottom: 4%; right: 15%; width: 70%;}
 #castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {margin:auto;}
 ```
@@ -157,7 +157,7 @@ This will drastically change the style of cast info. Into something very similar
 .backgroundContainer, .dialog, html { background-color: #0fd0d0; }
 ```
 
-#### Darken the background
+#### Darken the Background
 
 This darkens the background on blue radiance and purple haze, edit the percentage depending how dark you want it. Lower is darker.
 

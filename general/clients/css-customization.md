@@ -127,7 +127,7 @@ The episode previews in season view are sized based on horizontal resolution, th
 
 #### Stylized and Smaller Cast Info
 
-This will drastically change the style of cast info. Into something very similar to how plex does it. The Purple Haze theme already has rounded cast info, but at the same large size as everything else, this override will lead to somewhat smaller thumbnails, and also works with all other themes.
+This will drastically change the style of cast info into something very similar to how plex does it. The Purple Haze theme already has rounded cast info, but at the same large size as everything else, this override will lead to somewhat smaller thumbnails, and also works with all other themes.
 
 ```css
 /* Shrink and square (or round) cast thumnails */

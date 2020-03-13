@@ -13,6 +13,7 @@ Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to
 # Uncomment the commented sections after you have acquired a SSL Certificate
 server {
     listen 80;
+    listen [::]:80;
     # server_name DOMAIN_NAME;
 
     # Uncomment to redirect HTTP to HTTPS
@@ -21,6 +22,7 @@ server {
 
 #server {
     # listen 443 ssl http2;
+    # listen [::]:443 ssl http2;
     server_name DOMAIN_NAME;
 
     # use a variable to store the upstream proxy
@@ -51,7 +53,7 @@ server {
 
     location / {
         # Proxy main Jellyfin traffic
-        proxy_pass http://$jellyfin:8096/;
+        proxy_pass http://$jellyfin:8096;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

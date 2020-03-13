@@ -162,7 +162,7 @@ This will drastically change the style of cast info. Into something very similar
 This darkens the background on blue radiance/purple haze, edit the percentage depending how dark you want it. Lower is darker.
 
 ```css
-/*Darken background, only works with blue radiance*/
+/* Darken background, only works with blue radiance */
 .backgroundContainer {background-color: #000000; filter: brightness(50%);}
 ```
 

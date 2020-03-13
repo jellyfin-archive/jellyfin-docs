@@ -19,16 +19,16 @@ You can learn more about CSS using sites like [w3school](https://www.w3schools.c
 
 ### Colors
 
-CSS supports multiple color formats, most typically hex is used. But simply text works too. To get "yellow" you can simply write "yellow", this will use preset yellow color. For more specificity, see below.
+CSS supports multiple color formats, most typically hex is used. But simply text works too. To get "yellow" you can simply write "yellow", this will use a preset yellow color. To get a speciphic color, exact color data such as the hex codes below have to be used.
 
-Some examples of hex color codes.
+Some examples of hex color codes:
 
 `#5dd000` Green <br> 
 `#0000d0` Blue <br>
 `#d00000` Red <br>
 `#00000058` Transparent black
 
-Go [here](https://htmlcolorcodes.com/color-picker/) for a hex color chart.
+Go [here](https://htmlcolorcodes.com/color-picker/) for a hex color chart to get a code for any given color.
 
 ### Comments
 

@@ -38,7 +38,7 @@ A section of code or text inbetween `/*` and `*/` indicate a comment, and will b
 
 ### CSS Chaining
 
-CSS can be chained together to modify different sections together. An example of this is the "Border color" mod. It lists elements to be modified, and then ends with a change that gets applied to them all.
+CSS can be chained together to modify different sections together. An example of this is the "Border color" mod. It lists elements to be modified, and performs a change that is applied to all of them.
 
 ## Modifications list
 

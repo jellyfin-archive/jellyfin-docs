@@ -69,7 +69,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ![](~/images/custom-css-transparentwatched.png)
 
-#### Make top menu transparent
+#### Transparent Top Menu
 
 Self explanatory
 

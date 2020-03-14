@@ -13,9 +13,9 @@ This document aims to provide an administrator with knowledge on what ports Jell
 
 ### Static Ports
 
-* 8096/tcp is used by default for HTTP traffic. This is admin configurable.
-* 8920/tcp is used by default for HTTPS traffic. This is admin configurable.
-* 1900/udp is used for service autodiscovery. This is not admin configurable since it would break client auto-discover.
+* 8096/tcp is used by default for HTTP traffic. You can change this in the dashboard.
+* 8920/tcp is used by default for HTTPS traffic. You can change this in the dashboard.
+* 1900/udp is used for service auto-discovery. This is not configurable.
 
 **HTTP Traffic:** 8096
 
@@ -53,6 +53,7 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 * [Traefik](xref:network-reverse-proxy-traefik)
 
 While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL certificates.
+
 * [Let's Encrypt](xref:network-letsencrypt)
 
 When following this guide, be sure to replace the following variables with your information.

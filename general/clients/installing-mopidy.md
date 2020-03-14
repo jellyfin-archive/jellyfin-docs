@@ -14,11 +14,13 @@ For general use computers, such as workstations or laptops, it's recommended to 
 1. Install Mopidy using your method of choice using the [official documentation](https://docs.mopidy.com/en/latest/installation/)
 
 1. Install the Jellyfin plugin for Mopidy:
+
 ```sh
 pip3 install --user mopidy-jellyfin
 ```
 
 2. (Optional) Install other mopidy related packages:
+
     ```sh
     pip3 install --user mopidy-mpd mopidy-musicbox-webclient
     ```
@@ -43,11 +45,13 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
 3. Install Mopidy from their [apt repo](https://docs.mopidy.com/en/latest/installation/debian/#install-from-apt-mopidy-com) to ensure we get the latest version
 
 4. Install required OS packages:
+
     ```sh
     sudo apt install mopidy mopidy-mpd gstreamer1.0-plugins-bad python3-pip
     ```
 
 5. Install the Jellyfin plugin and any other Mopidy related packages you may want:
+
     ```sh
     sudo pip3 install mopidy-jellyfin mopidy-musicbox-webclient
     ```
@@ -56,6 +60,7 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
     See [Config File](xref:clients-installing-mopidy#config-file)
 
 7. Enable and start the mopidy service:
+
     ```sh
     sudo systemctl enable --now mopidy
     ```
@@ -106,10 +111,13 @@ Once Mopidy is running, you can connect and control it with your client of choic
 ## Upgrading
 
 When a new version of Mopidy Jellyfin is released, you can upgrade via pip using the `--upgrade` flag.  Using the install examples from above:
+
 ```sh
 pip3 install --user --upgrade mopidy-jellyfin
 ```
+
 or
+
 ```sh
 sudo pip3 install --upgrade mopidy-jellyfin
 ```

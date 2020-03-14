@@ -9,13 +9,13 @@ Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIn
 
 [VAAPI](https://en.wikipedia.org/wiki/Video_Acceleration_API) is a Video Acceleration API that uses [libva](https://github.com/intel/libva/blob/master/README.md) to interface with local drivers to provide HWA. [QSV](https://trac.ffmpeg.org/wiki/Hardware/QuickSync) uses a modified (forked) version of VAAPI and interfaces it with [libmfx](https://github.com/intel/media-driver/blob/master/README.md) and their proprietary drivers [(list of supported processors for QSV)](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
 
-OS | Recommended HW Acceleration
------------- | -------------
-Linux | QSV, NVENC, VAAPI
+OS      | Recommended HW Acceleration
+------- | -------------
+Linux   | QSV, NVENC, VAAPI
 Windows | QSV, NVENC, AMF, VAAPI
-MacOS | None (videotoolbox support coming)
+MacOS   | None (VideoToolbox Coming Soon)
 Android | MediaCodec, OMX
-RPi | OMX
+RPi     | OMX
 
 [Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
 
@@ -23,9 +23,9 @@ RPi | OMX
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
-AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
+AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on Linux.
 
-Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need an APU or dGPU for hardware acceleration.
+Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
 
 Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html).
 
@@ -88,9 +88,9 @@ services:
       - /dev/vchiq:/dev/qchiq
 ```
 
-## Debian Docker Nvidia:
+## Debian Docker Nvidia
 
-In order to achieve Hardware acceleration using docker, some steps are needed:
+In order to achieve hardware acceleration using docker, several steps are required.
 
 Prerequisites:
 
@@ -101,38 +101,37 @@ https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
     NVIDIA GPU with Architecture > Fermi (2.1)
     NVIDIA drivers ~= 361.93 (untested on older versions)
 
-Double check your GPU show on debian:
+Confirm that your GPU shows up with this command.
 
 ```sh
 lspci | grep VGA
 ```
 
-Update your host:
+Update your host so there is no chance of outdated software causing issues.
 
 ```sh
 apt-get update && apt-get dist-upgrade -y
 ```
 
-Install curl:
+Install curl which will be used to download the required files.
 
 ```sh
 apt-get install curl
 ```
 
-Edit `sources.list` in `/etc/apt/sources.list`:
-Add "`non-free contrib`" to every sources already configured when needed:
+Edit `sources.list` in `/etc/apt/sources.list` and add `non-free contrib` to each source as required.
 
 ```data
 deb http://ftp.ch.debian.org/debian/ stretch main
 ```
 
-become
+The line above should be modified to match the following line as an example.
 
 ```data
 deb http://ftp.ch.debian.org/debian/ stretch main non-free contrib
 ```
 
-Add sources for Nvidia-container:
+Download and add the sources for the Nvidia docker container.
 
 ```sh
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add
@@ -140,33 +139,34 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 ```
 
-Update your package list:
+Update your package list again to download the latest software available from the new repository.
 
 ```sh
 apt-get update
 ```
 
-Install linux-headers:
+Install linux-headers and run the following command.
 
 ```sh
-apt-get install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//')
+apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Else to use stretch-backports:
+Alternatively, run this command if you are on stretch for compatibility.
 
 ```sh
-apt-get install -t stretch-backports linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//')
+apt-get install -t stretch-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Install Nvidia docker2:
+Install Nvidia docker2 from the repository.
 
 ```sh
 apt-get install nvidia-docker2
 ```
 
-When prompted to choose to keep or install the maintainer package file say "`y`" to install the maintainer version.
+When prompted to choose to keep or install the maintainer package file type `y` to install the maintainer version.
 
 After the install you may want to add nvidia as default runtime: editing `/etc/docker/daemon.json` like this:
+
 ```json
 {
     "default-runtime": "nvidia",
@@ -179,40 +179,39 @@ After the install you may want to add nvidia as default runtime: editing `/etc/d
 }
 ```
 
-Restart docker services
+Restart any docker services currently running.
 
 ```sh
 sudo pkill -SIGHUP docker
 ```
 
-Install nvidia drivers and dependencies:
+Install nvidia drivers and dependencies.
 
 ```sh
 apt-get install -t stretch-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
 ```
 
-Reboot your host:
+Reboot your host to apply all changes.
 
 ```sh
 reboot now
 ```
 
-Validate your driver and docker are correctly set up.
-Driver test from host and docker side:
+Validate that your driver and docker are correctly set up with this driver test.
 
 ```sh
 nvidia-smi
 docker run --gpus 0 nvidia/cuda:9.0-base nvidia-smi
 ```
 
-Validate access to needed ressources from host and docker:
+Validate access to needed ressources from host and docker.
 
 ```sh
 ldconfig -p | grep cuvid
 ldconfig -p | grep libnvidia-encode.so.1
 ```
 
-Start your Jellyfin container adding thoses environement parameters:
+Start your container adding those environement parameters.
 
 ```sh
 -e "NVIDIA_DRIVER_CAPABILITIES=all" \
@@ -221,37 +220,37 @@ Start your Jellyfin container adding thoses environement parameters:
 --gpus all \
 ```
 
-A complete run command would looks like:
+A complete run command would look like this.
 
 ```sh
 docker run -d \
---name=jellyfin \
--e NVIDIA_DRIVER_CAPABILITIES=all \
--e NVIDIA_VISIBLE_DEVICES=all \
---gpus all \
---runtime=nvidia \
--p 8096:8096 \
--p 8920:8920 \
--v /config:/config \
--v /media:/media \
--v /cache:/cache \
---restart unless-stopped \
-jellyfin/jellyfin
+ --name=jellyfin \
+ -e NVIDIA_DRIVER_CAPABILITIES=all \
+ -e NVIDIA_VISIBLE_DEVICES=all \
+ --gpus all \
+ --runtime=nvidia \
+ -p 8096:8096 \
+ -p 8920:8920 \
+ -v /config:/config \
+ -v /media:/media \
+ -v /cache:/cache \
+ --restart unless-stopped \
+ jellyfin/jellyfin
 ```
 
-If using user env parameters as:
+There are some special steps when running with the following option.
 
 ```sh
 --user 1000:1000
 ```
 
-You may need to add this user to the video group:
+You may need to add this user to the video group.
 
 ```sh
 usermod -aG video user
 ```
 
-Once container is started you can again validate access to host ressources:
+Once the container is started you can again validate access to the host ressources.
 
 ```sh
 docker exec -it jellyfin ldconfig -p | grep cuvid
@@ -259,9 +258,9 @@ docker exec -it jellyfin ldconfig -p | grep libnvidia-encode.so.1
 ```
 
 Now go in Jellyfin playback settings, enable Nvidia NVENC and select target codecs depending on what your GPU support
-try to play any file needing a transcode (change bitrate is a good way to try)
+try to play any file needing a transcode. Changing the bitrate is a good way to try this.
 
-Check the transcode logs to make sure everything is working proprely.
+Check the transcode logs to make sure everything is working properly.
 
 ```data
 Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
@@ -289,6 +288,7 @@ To check information about VAAPI on your system install and run `vainfo` from th
   > On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin.
+
 ```sh
 sudo usermod -aG render jellyfin
 sudo systemctl restart jellyfin
@@ -305,11 +305,13 @@ This has been tested with LXC 3.0 and may or may not work with older versions.
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 
 1. Add your GPU to the container.
+
 ```sh
 $ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
 ```
 
 2. Make sure you have the card within the container:
+
 ```sh
 $ lxc exec jellyfin -- ls -l /dev/dri
 total 0
@@ -321,6 +323,7 @@ crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
 3. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
 
 4. Try and play a video that requires transcoding and run the following, you should get a hit.
+
 ```sh
 $ ps aux | grep ffmpeg | grep accel
 ```
@@ -335,6 +338,7 @@ Useful Resources:
 ### Raspberry Pi 3 and 4
 
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin.
+
     ```sh
     sudo usermod -aG video jellyfin
     sudo systemctl restart jellyfin
@@ -346,6 +350,7 @@ Useful Resources:
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard.
 
 3. Change the amount of memory allocated to the GPU. The GPU can't handle accelerated decoding and encoding simultaneously.
+
     ```sh
     sudo nano /boot/config.txt
     ```
@@ -357,11 +362,13 @@ Useful Resources:
     You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt).
 
     Verify the split between CPU and GPU memory:
+
     ```sh
     vcgencmd get_mem arm && vcgencmd get_mem gpu
     ```
 
     Monitor the temperature and clock speed of the CPU:
+
     ```sh
     vcgencmd measure_temp && vcgencmd measure_clock arm
     ```

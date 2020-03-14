@@ -131,6 +131,7 @@ Terminal player for Jellyfin, written in Python.
 **Links:**
 
 * [Github](https://github.com/marios8543/Jellyfin-CLI)
+* [PyPI](https://pypi.org/project/Jellyfin-CLI/)
 
 ## Jellyfin Theater (Desktop)
 

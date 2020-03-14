@@ -16,6 +16,8 @@ title: Installing Kodi Add-On
 
 The recommended install method is to use the official Jellyfin add-on repository.  This allows for easy install of the Jellyfin for Kodi add-on, as well as automatically keeping the add-on up to date with the latest version.  Any other Jellyfin related add-ons that may be built in the future will also be available in this repository.
 
+The installation method for the repository varies depending on what kind of device you're using, outlined below.
+
 #### General Use Devices (PCs and Tablets)
 
 1. Download the repository installer found [here](https://repo.jellyfin.org/releases/client/kodi/repository.jellyfin.kodi.zip).
@@ -25,6 +27,7 @@ The recommended install method is to use the official Jellyfin add-on repository
     * Select "Install from Zip File"
         * If prompted, enter settings and enable "Unknown Sources", then go back to the Add-On Browser
     * Select the newly downloaded file and it will be installed
+3. Proceed to [Install Jellyfin for Kodi Add-On](xref:clients-kodi#install-jellyfin-for-kodi-add-on)
 
 #### "Embedded" Devices (Android TV, Firestick, and other TV Boxes)
 
@@ -37,6 +40,7 @@ The recommended install method is to use the official Jellyfin add-on repository
         * If prompted, enter settings and enable "Unknown Sources", then go back to the Add-On Browser
     * Select the data source you just added
     * Install `repository.jellyfin.kodi.zip`
+3. Proceed to [Install Jellyfin for Kodi Add-On](xref:clients-kodi#install-jellyfin-for-kodi-add-on)
 
 ### Install Jellyfin for Kodi Add-On
 
@@ -61,7 +65,7 @@ The recommended install method is to use the official Jellyfin add-on repository
 
 Add-on mode uses the Jellyfin server to translate media files from the filesystem to Kodi.  This is the default setting for the add-on, and is sufficient for most use cases.  It will work both on the local network and over the Internet through a reverse proxy or VPN connection.  Providing network speed is sufficient, Kodi will direct play nearly all files and put little overhead on the Jellyfin server.  Exceptions to this rule are files with 7.1 audio tracks and some 4k content, which will be transcoded by the server.
 
-To use Add-on mode, simply choose "Add-on" at the dialog and proceed to library selection.
+To use Add-on mode, simply choose "Add-on" at the dialog and proceed to [Library Syncing](xref:clients-kodi#library-syncing)
 
 #### Native Mode
 
@@ -89,8 +93,17 @@ To use Native mode, first set up your libraries in Jellyfin with a remote path.
     * Select your newly created location and choose "Ok"
     * Give your media source a name and choose "Ok"
     * Go to Add-Ons -> Jellyfin -> Manage Libraries -> Add Libraries
-    * Select which media libraries you would like synced
-3. Your files should now be accessible in Kodi and function the same way as Add-On mode, if not, enable debug logging in the Jellyfin plugin in Kodi and if in a Unix-like OS, set the **log level** of Samba to 2 to see if there are issues authenticating.
+3. Proceed to [Library Syncing](xref:clients-kodi#library-syncing)
+
+### Library Syncing
+
+This screen allows you to choose which libraries to sync to your Kodi install.  This process will copy metadata for your media into the local Kodi database, allowing you to browse through your media libraries as if they were native to your device.
+
+Either choose "All" or select individual libraries you'd like synced, and select OK.  Syncing the metadata will start automatically.  The duration of this process varies greatly depending on the size of your library, the power of your local device, and the connection speed to the server.
+
+You can still access any libraries that haven't been synced by going through the Jellyfin add-on menu.  These unsynced libraries will be labeled as "dynamic."
+
+If an error occurs during syncing, enable debug logging in the Jellyfin add-on in Kodi and if in a Unix-like OS, set the **log level** of Samba to 2 to see if there are issues authenticating.
 
 ### Multiple User Accounts
 

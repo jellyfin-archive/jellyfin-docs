@@ -7,6 +7,11 @@ title: Nginx Reverse Proxy
 
 "[Nginx](https://www.nginx.com/) (pronounced "engine X") is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004.[9] A company of the same name was founded in 2011 to provide support and Nginx plus paid software." - [Wikipedia](https://en.wikipedia.org/wiki/Nginx)
 
+## Nginx from a subdomain (jellyfin.example.org)
+
+> [!WARNING]
+> HTTP is insecure. The following configuration is provided for ease of use only. If you are planning on exposing your server over the Internet you should setup HTTPS. [Let's Encrypt](https://letsencrypt.org/getting-started/) can provide free TLS certificates which can be installed easily via [certbot](https://certbot.eff.org/).
+
 Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to Jellyfin.
 
 ```
@@ -93,11 +98,14 @@ server {
 }
 ```
 
-## Nginx with Subpath
+## Nginx with Subpath (example.org/jellyfin)
 
 When connecting to server from a client application, enter `http(s)://DOMAIN_NAME/jellyfin` in the address field.
 
 Set the base URL field in the Jellyfin server.  This can be done by navigating to the Admin Dashboard -> Networking -> Base URL in the web client.  Fill in this box with `/jellyfin` and click Save.  The server will need to be restarted before this change takes effect.
+
+> [!WARNING]
+> HTTP is insecure. The following configuration is provided for ease of use only. If you are planning on exposing your server over the Internet you should setup HTTPS. [Let's Encrypt](https://letsencrypt.org/getting-started/) can provide free TLS certificates which can be installed easily via [certbot](https://certbot.eff.org/).
 
 ```
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin

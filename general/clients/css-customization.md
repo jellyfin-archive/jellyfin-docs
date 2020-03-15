@@ -356,6 +356,7 @@ An example of a color theme.
      top: var(--element-fixed-top);
 }
 ```
+
 ![image]https://ibb.co/xfVVCp9
 
 ## Community Links

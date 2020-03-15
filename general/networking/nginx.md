@@ -9,6 +9,9 @@ title: Nginx Reverse Proxy
 
 Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to Jellyfin.
 
+> [!WARNING]
+> This is just an example! Please read up on networking and port forwarding before you expose anything past your router.
+
 ```
 server {
     listen 80;

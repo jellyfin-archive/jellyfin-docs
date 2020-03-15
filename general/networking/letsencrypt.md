@@ -29,7 +29,7 @@ echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'syst
 
 ### HAProxy
 
-HAProxy doesn't currently have a Certbot plugin. To get around this, run Certbot in standalone mode and proxy traffic back to it.
+HAProxy doesn't currently have a Certbot plugin. To get around this, run Certbot in standalone mode and proxy traffic through your network.
 
 Enable the frontend and backend in the config above, and then run Certbot.
 

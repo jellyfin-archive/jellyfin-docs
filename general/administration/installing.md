@@ -23,11 +23,13 @@ Use host mode for networking in order to use DLNA or an HDHomeRun.
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
 
 1. Get the latest image.
+
     ```sh
     docker pull jellyfin/jellyfin
     ```
 
 2. Create directories on the host for persistent data storage.
+
     ```sh
     mkdir /path/to/config
     mkdir /path/to/cache
@@ -77,13 +79,13 @@ An Unraid Docker template is available in the repository.
 
 2. Add the following line under "Template Repositories" and save the options.
 
-  ```data
- https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates
-  ````
+```data
+https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates
+```
 
 3. Click "Add Container" and select "jellyfin".
 
-4. Adjust any required paths and save.
+4. Adjust any required paths and save your changes.
 
 ### Kubernetes
 
@@ -100,8 +102,6 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 > The 32-bit or x86 version is not recommended. `ffmpeg` and its video encoders generally perform better as a 64-bit executable due to the extra registers provided. This means that the 32-bit version of Jellyfin is deprecated.
 
 ### Install using Installer (x64)
-
-Only available for versions 10.4.0+.
 
 **Install**
 
@@ -156,17 +156,17 @@ Only available for versions 10.4.0+.
 **Update**
 
 1. Stop Jellyfin
-1. Rename the Jellyfin `system` folder to `system-bak`
-1. Download and extract the latest Jellyfin version
-1. Copy the extracted folder into the `jellyfin` folder and rename it to `system`
-1. Run `jellyfin.bat` to start the server again
+2. Rename the Jellyfin `system` folder to `system-bak`
+3. Download and extract the latest Jellyfin version
+4. Copy the extracted folder into the `jellyfin` folder and rename it to `system`
+5. Run `jellyfin.bat` to start the server again
 
 **Rollback**
 
 1. Stop Jellyfin.
-1. Delete the `system` folder.
-1. Rename `system-bak` to `system`.
-1. Run `jellyfin.bat` to start the server again.
+2. Delete the `system` folder.
+3. Rename `system-bak` to `system`.
+4. Run `jellyfin.bat` to start the server again.
 
 ## MacOS
 
@@ -175,37 +175,37 @@ MacOS Application packages and builds in TAR archive format are available [here]
 **Install**
 
 1. Download the latest version.
-1. Drag the `.app` package into the Applications folder.
-1. Start the application.
-1. Open your browser at `http://127.0.0.1:8096`.
+2. Drag the `.app` package into the Applications folder.
+3. Start the application.
+4. Open your browser at `http://127.0.0.1:8096`.
 
 **Upgrade**
 
 1. Download the latest version.
-1. Stop the currently running server either via the dashboard or using the application icon.
-1. Drag the new `.app` package into the Applications folder and click yes to replace the files.
-1. Start the application.
-1. Open your browser at `http://127.0.0.1:8096`.
+2. Stop the currently running server either via the dashboard or using the application icon.
+3. Drag the new `.app` package into the Applications folder and click yes to replace the files.
+4. Start the application.
+5. Open your browser at `http://127.0.0.1:8096`.
 
 **Uninstall**
 
 1. Stop the currently running server either via the dashboard or using the application icon.
-1. Move the `.app` package to the trash.
+2. Move the `.app` package to the trash.
 
 **Deleting Configuation**
 
 This will delete all settings and user information. This applies for the .app package and the portable version.
 
 1. Delete the folder `~/.config/jellyfin/`
-1. Delete the folder `~/.local/share/jellyfin/`
+2. Delete the folder `~/.local/share/jellyfin/`
 
 **Portable Version**
 
 1. Download the latest version
-1. Extract it into the Applications folder
-1. Open Terminal and type `cd` followed with a space then drag the jellyfin folder into the terminal.
-1. Type `./jellyfin` to run jellyfin.
-1. Open your browser at http://localhost:8096
+2. Extract it into the Applications folder
+3. Open Terminal and type `cd` followed with a space then drag the jellyfin folder into the terminal.
+4. Type `./jellyfin` to run jellyfin.
+5. Open your browser at http://localhost:8096
 
 Closing the terminal window will end Jellyfin. Running Jellyfin in screen or tmux can prevent this from happening.
 
@@ -336,16 +336,19 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:
+
     ```sh
     sudo apt install apt-transport-https
     ```
 
 1. Import the GPG signing key (signed by the Jellyfin Team):
+
     ```sh
     wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -
     ```
 
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:
+
     ```sh
     echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
     ```
@@ -354,16 +357,19 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
     > Supported releases are `stretch` and `buster`.
 
 1. Update APT repositories:
+
     ```sh
     sudo apt update
     ```
 
 1. Install Jellyfin:
+
     ```sh
     sudo apt install jellyfin
     ```
 
 1. Manage the Jellyfin system service with your tool of choice:
+
     ```sh
     sudo service jellyfin status
     sudo systemctl restart jellyfin
@@ -380,16 +386,19 @@ Raw Debian packages, including old versions, are available [here](https://jellyf
 1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
 
 1. Install the downloaded `.deb` packages:
+
     ```sh
     sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb
     ```
 
 1. Use `apt` to install any missing dependencies:
+
     ```sh
     sudo apt -f install
     ```
 
 1. Manage the Jellyfin system service with your tool of choice:
+
     ```sh
     sudo service jellyfin status
     sudo systemctl restart jellyfin
@@ -403,6 +412,7 @@ Raw Debian packages, including old versions, are available [here](https://jellyf
 Previous versions of Jellyfin included Ubuntu under the Debian repository. This has now been split out into its own repository to better handle the separate binary packages. If you encounter errors about the `ubuntu` release not being found and you previously configured an `ubuntu` `jellyfin.list` file, please follow these steps.
 
 1. Remove the old `/etc/apt/sources.list.d/jellyfin.list` file:
+
     ```sh
     sudo rm /etc/apt/sources.list.d/jellyfin.list
     ```

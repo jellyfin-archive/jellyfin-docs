@@ -357,8 +357,6 @@ An example of a color theme.
 }
 ```
 
-![image]https://ibb.co/xfVVCp9
-
 ## Community Links
 
 Some links to places where custom CSS has been discussed and shared.

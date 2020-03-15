@@ -223,6 +223,8 @@ This will affect the border color of highlighet(selected) text fields and drop d
 
 An example of a color theme.
 
+![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
+
 ```css
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
 	background: #ff9475;
@@ -259,9 +261,98 @@ An example of a color theme.
 }
 ```
 
-**Sample:**
+#### Floating Now Playing Controls
 
-![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
+![](~/images/custom-css-floatingnowplaying.png)
+
+```
+/* fixed height for the bottom row */
+:root {
+  --element-fixed-top: 95px;
+}
+
+/* Now playing bar in the footer */
+.nowPlayingBar {
+       width: 650px; 
+       z-index: 10; 
+       position: fixed;
+       top: 300px; 
+       height: 120px;
+      border-style: solid;
+      border-color: white;
+      background-color: black;
+      margin-left: 50%;
+}
+
+/* Only child of nowPlayingBar */
+.nowPlayingBarTop {
+     height: 5px !important;
+     max-width: 500px
+     top: 10px;
+}
+
+/* Song progress seekbar */
+.nowPlayingBarPositionContainer {
+     position: relative;
+     top: 1.0em !important;
+}
+
+/* Container that holds album thumbnail, artist and album name */
+.nowPlayingBarInfoContainer {
+     position: fixed !important;
+     left: 12px;
+     top: 34px;
+     height: 60px;
+     width: 1100px;
+}
+
+/* Holds the next, previous track, play/pause, next and time elements */
+.nowPlayingBarCenter {
+     position: relative !important;
+     left: 32px;
+     top: var(--element-fixed-top);
+     min-width: 500px;
+}
+
+/* Hold mute, volume slider container, repeat, favorite and remote control buttons */
+.nowPlayingBarRight {
+     width: 402px !important;
+     left: -60px;
+}
+
+/* Mute button */
+.muteButton {
+    position: relative;
+    top: var(--element-fixed-top);
+}
+
+/* Volume slider */
+.nowPlayingBarVolumeSliderContainer {
+     position: relative;
+     left: -4px;
+     top: var(--element-fixed-top);
+}
+
+/* Toggle repeat */
+.toggleRepeatButton {
+     position: relative !important;
+     left: -20px;
+     top: var(--element-fixed-top);
+}
+
+/* Favorite */
+.nowPlayingBarUserDataButtons {
+     position: relative;
+     left: -4px;
+     top: var(--element-fixed-top);
+}
+
+/* Remote control */
+.remoteControlButton {
+     left: -110px;
+     top: var(--element-fixed-top);
+}
+```
 
 ## Community Links
 

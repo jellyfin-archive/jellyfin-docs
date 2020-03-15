@@ -258,6 +258,7 @@ An example of a color theme.
 	color: yellow;
 }
 ```
+
 **Sample:**
 
 ![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)

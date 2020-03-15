@@ -266,7 +266,7 @@ An example of a color theme.
 
 #### Floating Now Playing Controls
 
-![](~/images/floatingnowplaying.png)
+![](~/images/custom-css-floatingnowplaying.png)
 
 ```
 /* fixed height for the bottom row */

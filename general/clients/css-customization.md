@@ -223,6 +223,8 @@ This will affect the border color of highlighet(selected) text fields and drop d
 
 An example of a color theme.
 
+![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
+
 ```css
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
 	background: #ff9475;
@@ -258,11 +260,6 @@ An example of a color theme.
 	color: yellow;
 }
 ```
-
-**Sample:**
-
-![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
-
 
 #### Floating Now Playing Controls
 

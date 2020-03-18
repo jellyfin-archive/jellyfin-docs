@@ -206,12 +206,13 @@ A terminal client for Jellyfin built as a REPL interface, that uses mpv for mult
 
 The official Jellyfin iOS app.
 
-**Status:** ⭐ Beta Release
+**Status:** ⭐ Active
 
 **Links:**
 
+<a href='https://apps.apple.com/us/app/jellyfin-mobile/id1480192618'><img alt='Download on the App Store' src='https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png'/></a>
+
 * [GitHub](https://github.com/jellyfin/jellyfin-expo)
-* [TestFlight Beta](https://testflight.apple.com/join/TcFUEVEb)
 
 ## Kodi
 

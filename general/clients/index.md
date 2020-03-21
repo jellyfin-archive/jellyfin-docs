@@ -213,7 +213,7 @@ The official Jellyfin Kodi plugin.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-kodi)
-* [Installing](xref:clients-installing-kodi)
+* [Installing](xref:clients-kodi)
 
 ## LG WebOS
 

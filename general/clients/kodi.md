@@ -1,9 +1,9 @@
 ---
 uid: clients-kodi
-title: Installing Kodi Add-On
+title: Kodi
 ---
 
-# Installing Kodi Add-On
+# Jellyfin for Kodi
 
 > [!NOTE]
 > It's highly recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
@@ -105,7 +105,7 @@ You can still access any libraries that haven't been synced by going through the
 
 If an error occurs during syncing, enable debug logging in the Jellyfin add-on in Kodi and if in a Unix-like OS, set the **log level** of Samba to 2 to see if there are issues authenticating.
 
-### Multiple User Accounts
+## Multiple User Accounts
 
 The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  Fortunately, Kodi has a built in method of handling this called profiles.  Information about this can be found on the Profiles page of the [Kodi Wiki](https://kodi.wiki/view/Profiles).  Once profiles have been created, you must install the Jellyfin add-on and go through the installation steps above for each user profile.  When you switch Kodi profiles, you will also switch Jellyfin users. You can tell Kodi to bring you to a profile login screen during startup by going to the Profiles section inside of the Settings page and checking the box for "Show login screen on startup."
 

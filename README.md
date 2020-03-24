@@ -1,10 +1,10 @@
-<!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD041 first-line-heading -->
 <h1 align="center">Jellyfin Documentation</h1>
 <h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 
 This repository houses all documentation for Jellyfin available at [jellyfin.org](https://docs.jellyfin.org/) and written in markdown.
 
-## Contributing
+## Getting Started
 
 The site is built with [DocFX](https://dotnet.github.io/docfx/) using [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html). See the content section [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) for a quick tutorial on DocFX.
 

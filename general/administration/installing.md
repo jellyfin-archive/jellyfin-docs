@@ -2,6 +2,7 @@
 uid: admin-installing
 title: Installing Jellyfin
 ---
+<!-- markdownlint-disable MD036 no-emphasis-as-heading -->
 
 # Installing
 

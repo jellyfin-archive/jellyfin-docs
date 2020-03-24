@@ -332,8 +332,8 @@ Follow the steps above to add the jellyfin user to the `video` or `render` group
 
 Useful Resources:
 
-* https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
-* https://stgraber.org/2017/03/21/cuda-in-lxd/
+- [LXD Documentation - GPU instance configuration](https://github.com/lxc/lxd/blob/master/doc/instances.md#type-gpu)
+- [NVidia CUDA inside a LXD container](https://stgraber.org/2017/03/21/cuda-in-lxd/)
 
 ### Raspberry Pi 3 and 4
 

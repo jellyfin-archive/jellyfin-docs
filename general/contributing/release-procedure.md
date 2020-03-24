@@ -44,7 +44,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Once all testing is complete and the release remains stable, proceed.
 
-#### Web Client
+#### Release Web Client
 
 1. Create a release branch on the [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repository via CLI from `master`, named `release-X.Y.z`, where `X` and `Y` are the new version number, and `z` is a literal `z`. Push the new branch to GitHub.
 
@@ -56,7 +56,7 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 3. Publish the release.
 
-#### Server
+#### Release Server
 
 1. Create a release branch on the [jellyfin](https://github.com/jellyfin/jellyfin) repository via CLI from `master`, named `release-X.Y.z`, where `X` and `Y` are the new version number, and `z` is a literal `z`. Push the new branch to GitHub.
 
@@ -104,9 +104,9 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Create a GitHub release for the new version, based on the relevant `release-X.Y.z` branch. The tag should be named `vX.Y.Z` and the release named "Release X.Y.Z". The release body should contain the following link only, replacing the version as required:
 
-```
-[Please see the release announcement on the main repository.](https://github.com/jellyfin/jellyfin/releases/tag/vX.Y.Z)
-```
+    ```md
+    [Please see the release announcement on the main repository.](https://github.com/jellyfin/jellyfin/releases/tag/vX.Y.Z)
+    ```
 
 2. Publish the release on GitHub and the archive repository.
 

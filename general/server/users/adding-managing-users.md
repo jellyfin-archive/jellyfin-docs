@@ -11,7 +11,7 @@ User management can be done under `Users` in the `Dashboard`. Here you can see y
 
 To add a new user, click the `+` symbol at the top of the page. This will open a new page where you can enter the user's name as it will be either displayed on, or has to be typed into login screen. By default, this will be displayed, but this can be changed at any point by modifying the user, explained further down.
 
-### Library Access
+### Manage User Library Access
 
 By default the `enables access to all libraries` option will be enabled, disabling this option will enable you to give the user access rights per library, libraries can consist of several folders. When adding new libraries any user that did not have access to `all libraries` will not receive the rights to open the new library, but this can be changed at any point by modifying the user, explained further down.
 

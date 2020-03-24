@@ -11,22 +11,22 @@ Click on the Admin Panel Icon in the top right corner (1)
 Click 'Live TV' (2) under the 'Live TV' section
 Click the '+' button (3) next to 'Tuner Devices'
 
-![](~/images/live-tv-setup-tuner1.png)
+![How to access the 'Tuner Devices' page](~/images/live-tv-setup-tuner1.png)
 
 Click 'Detect My Devices' from the 'Live TV Tuner Setup' page that opens
 Jellyfin will search and hopefully find your tuner automatically:
 
-![](~/images/live-tv-setup-tuner2.png)
+![An example of detected TV tuner devices](~/images/live-tv-setup-tuner2.png)
 
 Click on the device you'd like to set up then set any options then click 'Save'
 
-![](~/images/live-tv-setup-tuner3.png)
+![Saving TV tuner setup](~/images/live-tv-setup-tuner3.png)
 
 ## Add a TV Tuner to Jellyfin (Manual Setup)
 
 You can set up your tuners manually if they were not automatically discovered.  Click the 'Tuner Type' pull down.  Choose between 'HD Homerun', 'M3U Tuner', and 'Other'
 
-![](~/images/live-tv-setup-tuner4.png)
+![Manually adding a TV tuner](~/images/live-tv-setup-tuner4.png)
 
 ### HDHomeRun Specific Options
 
@@ -38,7 +38,7 @@ You can set up your tuners manually if they were not automatically discovered.  
 
 To set a favorite, go to http://my.hdhomerun.com, select your tuner and then click on the grey star next to the channel name to change the star to yellow.  The yellow star indicates a favorited channel.  In this example, only the channels with yellow stars will be imported into Jellyfin
 
-![](~/images/live-tv-setup-hdhr_opt1.png)
+![Selecting favorites in HDHomeRun](~/images/live-tv-setup-hdhr_opt1.png)
 
 ### M3U Tuner Specific Options
 
@@ -61,7 +61,7 @@ This tuner allows you to add IPTV channel to Jellyfin by using the appropriate M
 
 Guide data is necessary for scheduling tv recordings and for browsing what's currently playing and what will air later.  Follow these steps once you have a tuner device set up.  Click on the Admin Panel Icon in the top right corner, Click 'Live TV' (2) under the 'Live TV' section, Click the '+' button next to 'TV Guide Data Providers' :
 
-![](~/images/live-tv-setup-guide1.png)
+![How to add guide data](~/images/live-tv-setup-guide1.png)
 
 Choose between 'Schedules Direct' and 'XMLTV'. You currently cannot use both at the same time.
 
@@ -77,10 +77,10 @@ This option allows for downloading of guide data in the [XMLTV](http://wiki.xmlt
 
 Guide data from the 'TV Guide Data Providers' will need to be mapped to the physical channel from the tuner. Click the '...' next to the guide provider you set up and select 'Map Channels'
 
-![](~/images/live-tv-setup-channels1.png)
+![Step 1 of mapping channels](~/images/live-tv-setup-channels1.png)
 
 The list of physical channels will be displayed. Click the pencil icon to the right of the channel and then select the corresponding channel from the guide provider to map the channel. Do this for all channels. Click the left arrow at the top left of the window to exit and save the information.
 
-![](~/images/live-tv-setup-channels2.png)
+![Step 2 of mapping channels](~/images/live-tv-setup-channels2.png)
 
 The guide data will now automatically imported. You can check that the data has been imported correctly by going to the 'Live TV Guide' page from the main Jellyfin web page on your server.

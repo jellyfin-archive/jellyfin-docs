@@ -22,20 +22,20 @@ The most common organization scheme for books is separation by Audiobook then by
             Book2.mp3
 ```
 
-### Primary
+## Primary
 
 * folder
 * poster
 
-### Banner
+## Banner
 
 * banner
 
-### Logo
+## Logo
 
 * logo
 
-### Thumb
+## Thumb
 
 * thumb
 * landscape

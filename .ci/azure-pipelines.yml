@@ -18,6 +18,12 @@ jobs:
       persistCredentials: true
 
     - task: CmdLine@2
+      displayName: "Markdownlint"
+      inputs:
+        script: 'npm install markdownlint-cli && npx markdownlint **/*.md --ignore node_modules --ignore src'
+        workingDirectory: '$(Build.SourcesDirectory)'
+
+    - task: CmdLine@2
       displayName: "Update Submodules"
       inputs:
         script: 'git submodule update --recursive --remote'

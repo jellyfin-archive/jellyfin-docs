@@ -24,7 +24,7 @@ Next, you will need to install DocFx as a [command line tool](https://dotnet.git
 docfx --serve
 ```
 
-This will build the site and start up a development server to test out your changes available at http://localhost:8080.
+This will build the site and start up a development server to test out your changes available at <http://localhost:8080>.
 
 ### Linting
 

@@ -94,7 +94,7 @@ In order to achieve hardware acceleration using docker, several steps are requir
 
 Prerequisites:
 
-https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
+[NVIDIA Docker Installation](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
 
 - GNU/Linux x86_64 with kernel version > 3.10
 - Docker >= 1.12

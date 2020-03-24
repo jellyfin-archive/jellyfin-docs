@@ -3,11 +3,11 @@ uid: network-reverse-proxy-caddy
 title: Caddy Reverse Proxy
 ---
 
-## Caddy
+# Caddy
 
 "[Caddy](https://caddyserver.com/), sometimes clarified as the Caddy web server, is an open source, HTTP/2-enabled web server written in Go. It uses the Go standard library for its HTTP functionality." - [Wikipedia](https://en.wikipedia.org/wiki/Caddy_(web_server))
 
-### Caddyfile
+## Caddyfile
 
 ```txt
 DOMAIN_NAME/jellyfin/ {
@@ -32,6 +32,6 @@ DOMAIN_NAME {
 }
 ```
 
-Community Links:
+## Community Links
 
-https://www.reddit.com/r/jellyfin/comments/ek8ugr/windows_reverse_proxy_guide/
+- [Windows Reverse Proxy Guide](https://www.reddit.com/r/jellyfin/comments/ek8ugr/windows_reverse_proxy_guide/)

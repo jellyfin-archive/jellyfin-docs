@@ -26,6 +26,15 @@ docfx --serve
 
 This will build the site and start up a development server to test out your changes available at http://localhost:8080.
 
+### Linting
+
+This repository is configured to use [markdownlint](https://github.com/DavidAnson/markdownlint/) for linting Markdown files. You can run the linter using the associated [markdownlint CLI](https://github.com/igorshubovych/markdownlint-cli).
+
+```bash
+npm install -g markdownlint-cli
+markdownlint **/*.md --ignore node_modules --ignore src
+```
+
 # Layout
 
 The following sections explain the documentation content available for each area of the site.

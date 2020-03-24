@@ -69,13 +69,13 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 **Status:**
 
-Android:	✅ In Development
+Android: ✅ In Development
 
-Web/Desktop:	✅ In Development
+Web/Desktop: ✅ In Development
 
-iOS:		⭕ Planned
+iOS: ⭕ Planned
 
-Android TV:	⭕ Planned
+Android TV: ⭕ Planned
 
 **Links:**
 

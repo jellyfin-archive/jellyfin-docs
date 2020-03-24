@@ -15,7 +15,7 @@ If you have little or no experience with CSS, various resources and tutorials ca
 
 ## General Information About CSS
 
-You can learn more about CSS using sites like [w3school](https://www.w3schools.com/css/default.asp). Below are some very basic details that will let you do rudimentary edits to the ready made modifications below. 
+You can learn more about CSS using sites like [w3school](https://www.w3schools.com/css/default.asp). Below are some very basic details that will let you do rudimentary edits to the ready made modifications below.
 
 ### Colors
 
@@ -23,7 +23,7 @@ CSS supports multiple color formats, most typically hex is used. But simply text
 
 Some examples of hex color codes:
 
-`#5dd000` Green <br> 
+`#5dd000` Green <br>
 `#0000d0` Blue <br>
 `#d00000` Red <br>
 `#00000058` Transparent black
@@ -194,7 +194,6 @@ Modifies the color of the left menu panel.
 
 ![](~/images/custom-css-generalcolor.png)
 
-
 #### Border Color
 
 This will change the border color for text fields and drop down menus.
@@ -227,15 +226,15 @@ An example of a color theme.
 
 ```css
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
-	background: #ff9475;
+    background: #ff9475;
 }
 
 .emby-input, .emby-textarea, .emby-select {
-	border-color: #fdbe7d;
+    border-color: #fdbe7d;
 }
 
 .backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer {
-	background: #fdbe7d;
+    background: #fdbe7d;
 }
 
 #myPreferencesMenuPage .listItemBodyText,
@@ -246,7 +245,7 @@ An example of a color theme.
 .dashboardGeneralForm *:nth-child(odd),
 .mainDrawer-scrollContainer *:nth-child(odd),
 .headerRight *:nth-child(odd) {
-	color: red;
+    color: red;
 }
 
 #myPreferencesMenuPage .listItemIcon,
@@ -257,7 +256,7 @@ An example of a color theme.
 .mainDrawer-scrollContainer *:nth-child(even),
 .headerRight *:nth-child(even)
 .cancel {
-	color: yellow;
+    color: yellow;
 }
 ```
 
@@ -265,7 +264,7 @@ An example of a color theme.
 
 ![](~/images/custom-css-floatingnowplaying.png)
 
-```
+```css
 /* fixed height for the bottom row */
 :root {
   --element-fixed-top: 95px;
@@ -273,10 +272,10 @@ An example of a color theme.
 
 /* Now playing bar in the footer */
 .nowPlayingBar {
-       width: 650px; 
-       z-index: 10; 
+       width: 650px;
+       z-index: 10;
        position: fixed;
-       top: 300px; 
+       top: 300px;
        height: 120px;
       border-style: solid;
       border-color: white;

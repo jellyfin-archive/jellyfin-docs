@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 <h1 align="center">Jellyfin Documentation</h1>
 <h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 

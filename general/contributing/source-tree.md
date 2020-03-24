@@ -7,22 +7,22 @@ title: Source Tree
 
 Jellyfin is a maze of clients, plugins, and other useful projects. These source trees can serve as an excellent tool to inform new developers about the structure of several projects.
 
-### [Jellyfin Server](https://github.com/jellyfin/jellyfin)
+## [Jellyfin Server](https://github.com/jellyfin/jellyfin)
 
-1.  BDInfo: `Blu-Ray Analyzer`
+01. BDInfo: `Blu-Ray Analyzer`
     - Properties: `Assembly Info`
-2.  DvdLib: `DVD Anaylzer`
+02. DvdLib: `DVD Anaylzer`
     - Ifo:
     - Properties:
-3.  Emby.Dlna:
+03. Emby.Dlna:
     - Profiles: `DLNA Profiles for clients`
-4.  Emby.Drawing:
-5.  Emby.Naming:
-6.  Emby.Notifications:
-7.  Emby.Photos:
-8.  Emby.Server.Implementations:
+04. Emby.Drawing:
+05. Emby.Naming:
+06. Emby.Notifications:
+07. Emby.Photos:
+08. Emby.Server.Implementations:
     - ScheduledTasks: `all scheduled tasks can be found here`
-9.  Jellyfin.Api:
+09. Jellyfin.Api:
 10. Jellyfin.Drawing.Skia:
 11. Jellyfin.Server:
 12. MediaBrowser.Api:
@@ -40,15 +40,15 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 21. RSSDP:
 22. benches/Jellyfin.Common.Benches:
 
-### [Web Client](https://github.com/jellyfin/jellyfin-web)
+## [Web Client](https://github.com/jellyfin/jellyfin-web)
 
-1.  src:
+1. src:
     - assets: `images, styles, splash screens, and any other static assets`
-      - css: `all global stylesheets used throughout the client`
-      - img: `images for things like device icons and logos`
-      - splash: `progressive web apps will show these splash screens`
+        - css: `all global stylesheets used throughout the client`
+        - img: `images for things like device icons and logos`
+        - splash: `progressive web apps will show these splash screens`
     - components: `custom elements used for different sections of the user interface`
-      - playerstats:
+        - playerstats:
         - playerstats.js: `display playback info in browsers and other clients that include the web source`
     - controllers: `scripts that handle the logic for different pages`
     - elements: `custom UI components that are used globally such as buttons or menus`
@@ -58,7 +58,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
     - strings: `translations for the entire interface`
     - themes: `custom and bundled themes can be found here in their own directories`
 
-### [Android](https://github.com/jellyfin/jellyfin-android)
+## [Android](https://github.com/jellyfin/jellyfin-android)
 
 1. res:
    - android:
@@ -70,7 +70,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
      - www:
    - cordova:
 
-### [Android TV](https://github.com/jellyfin/jellyfin-androidtv)
+## [Android TV](https://github.com/jellyfin/jellyfin-androidtv)
 
 1. app:
    - src:
@@ -79,7 +79,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
        - java/org/jellyfin/androidtv:
        - res:
 
-### [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
+## [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
 
 1. jellyfin_kodi
    - database: `manipulating the local Jellyfin sqlite database`

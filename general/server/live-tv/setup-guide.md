@@ -30,7 +30,7 @@ You can set up your tuners manually if they were not automatically discovered.  
 
 ### HDHomeRun Specific Options
 
-* Tuner IP Address is the URL of your HDHomeRun device. The format will be http://YOUR.IP.ADDRESS
+* Tuner IP Address is the URL of your HDHomeRun device. The format will be `http://YOUR.IP.ADDRESS`
 
 * Allow hardware transcoding will allow the tuner to transcode the video on the fly which can reduce server load.  Not all HDHomeRun devices support hardware transcoding.
 

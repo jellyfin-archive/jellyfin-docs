@@ -13,26 +13,26 @@ For general use computers, such as workstations or laptops, it's recommended to 
 
 1. Install Mopidy using your method of choice using the [official documentation](https://docs.mopidy.com/en/latest/installation/)
 
-1. Install the Jellyfin plugin for Mopidy:
+2. Install the Jellyfin plugin for Mopidy:
 
-```sh
-pip3 install --user mopidy-jellyfin
-```
+    ```sh
+    pip3 install --user mopidy-jellyfin
+    ```
 
-2. (Optional) Install other mopidy related packages:
+3. (Optional) Install other mopidy related packages:
 
     ```sh
     pip3 install --user mopidy-mpd mopidy-musicbox-webclient
     ```
 
-3. Configure your `mopidy.conf` located at `$HOME/.config/mopidy/mopidy.conf`
+4. Configure your `mopidy.conf` located at `$HOME/.config/mopidy/mopidy.conf`
     See [Config File](xref:clients-installing-mopidy#config-file)
 
-4. There may be a need to install extra `gstreamer` codecs if they're not already on your system, but these are highly variable and depend on your hardware and distro
+5. There may be a need to install extra `gstreamer` codecs if they're not already on your system, but these are highly variable and depend on your hardware and distro
 
-5. Start the program by running `mopidy` from a terminal
+6. Start the program by running `mopidy` from a terminal
 
-6. See [Usage](xref:clients-installing-mopidy#usage)
+7. See [Usage](xref:clients-installing-mopidy#usage)
 
 ## Raspberry Pi (Remote Controlled Speakers)
 

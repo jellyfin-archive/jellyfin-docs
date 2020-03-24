@@ -96,10 +96,10 @@ Prerequisites:
 
 https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
 
-    GNU/Linux x86_64 with kernel version > 3.10
-    Docker >= 1.12
-    NVIDIA GPU with Architecture > Fermi (2.1)
-    NVIDIA drivers ~= 361.93 (untested on older versions)
+- GNU/Linux x86_64 with kernel version > 3.10
+- Docker >= 1.12
+- NVIDIA GPU with Architecture > Fermi (2.1)
+- NVIDIA drivers ~= 361.93 (untested on older versions)
 
 Confirm that your GPU shows up with this command.
 
@@ -275,24 +275,24 @@ To check information about VAAPI on your system install and run `vainfo` from th
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:
 
-  ```sh
-  $ ls -l /dev/dri
-  total 0
-  drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path
-  crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0
-  crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1
-  crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
-  ```
+    ```sh
+    $ ls -l /dev/dri
+    total 0
+    drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path
+    crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0
+    crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1
+    crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
+    ```
 
-  > [!NOTE]
-  > On some releases, the group may be `video` instead of `render`.
+    > [!NOTE]
+    > On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin.
 
-```sh
-sudo usermod -aG render jellyfin
-sudo systemctl restart jellyfin
-```
+    ```sh
+    sudo usermod -aG render jellyfin
+    sudo systemctl restart jellyfin
+    ```
 
 3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API Device` value.
 
@@ -306,27 +306,27 @@ Follow the steps above to add the jellyfin user to the `video` or `render` group
 
 1. Add your GPU to the container.
 
-```sh
-$ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
-```
+    ```sh
+    lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
+    ```
 
 2. Make sure you have the card within the container:
 
-```sh
-$ lxc exec jellyfin -- ls -l /dev/dri
-total 0
-crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
-crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
-crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
-```
+    ```sh
+    $ lxc exec jellyfin -- ls -l /dev/dri
+    total 0
+    crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
+    crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
+    crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
+    ```
 
 3. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
 
 4. Try and play a video that requires transcoding and run the following, you should get a hit.
 
-```sh
-$ ps aux | grep ffmpeg | grep accel
-```
+    ```sh
+    ps aux | grep ffmpeg | grep accel
+    ```
 
 5. You can also try playing a video that requires transcoding, and if it plays you're good.
 
@@ -344,8 +344,8 @@ Useful Resources:
     sudo systemctl restart jellyfin
     ```
 
-  > [!NOTE]
-  > If you are using a Raspberry Pi 4, you might need to run `sudo rpi-update` for kernel and firmware updates.
+    > [!NOTE]
+    > If you are using a Raspberry Pi 4, you might need to run `sudo rpi-update` for kernel and firmware updates.
 
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard.
 

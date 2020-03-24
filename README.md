@@ -30,9 +30,9 @@ This will build the site and start up a development server to test out your chan
 
 This repository is configured to use [markdownlint](https://github.com/DavidAnson/markdownlint/) for linting Markdown files.
 
-If you are editing files using Visual Studio Code, you can installed the markdownlint [extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) to see the linting errors as you work.
+If you are editing files within Visual Studio Code, you can install the markdownlint [extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) to see the linting errors as you work.
 
-You can also easily run the linter manually using the associated [markdownlint CLI](https://github.com/igorshubovych/markdownlint-cli).
+You can also easily run the linter manually using the associated markdownlint [CLI](https://github.com/igorshubovych/markdownlint-cli).
 
 ```bash
 npm install -g markdownlint-cli

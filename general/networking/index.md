@@ -5,7 +5,7 @@ title: Networking
 
 # Networking
 
-This section describes how to get basic connectivity to a Jellyfin server, and also more advanced networking scenarios.
+This section describes how to get basic connectivity to a Jellyfin server, and also some more advanced networking scenarios.
 
 ## Connectivity
 

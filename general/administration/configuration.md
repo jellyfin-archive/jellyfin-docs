@@ -79,9 +79,9 @@ The main server configuration is built upon the ASP .NET [configuration framewor
 
 This section lists all the configuration options available and explains their function.
 
-|Key|Value|
-|---|-----|
-|`hostwebclient`|Set to `True` if the server should host the web client, otherwise `False`|
-|`FFmpeg:probesize`|The FFmpeg probe size|
-|`FFmpeg:analyzeduration`|The FFmpeg analyze duration|
-|`playlists:allowDuplicates`|Whether playlists should allow duplicate items. When false, duplicates will be automatically filtered out when adding items to playlists.|
+|Key|Default Value|Description|
+|---|-------------|-----------|
+|`hostwebclient`|`True`|Set to `True` if the server should host the web client, otherwise `False`.|
+|`FFmpeg:probesize`|`"1G"`|Value to set for the FFmpeg `probesize` format option. See the FFmpg [documentation](https://ffmpeg.org/ffmpeg-formats.html#Format-Options) for more details.|
+|`FFmpeg:analyzeduration`|`"200M"`|The value to set for the FFmpeg `analyzeduration` format option. See the FFmpg [documentation](https://ffmpeg.org/ffmpeg-formats.html#Format-Options) for more details.|
+|`playlists:allowDuplicates`|`True`|Whether playlists should allow duplicate items. When false, duplicates will be automatically filtered out when adding items to playlists.|

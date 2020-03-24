@@ -3,7 +3,11 @@ uid: admin-troubleshoot
 title: Troubleshooting
 ---
 
-## Troubleshooting
+# Troubleshooting
+
+This page outlines some solutions to common issues beginners may encounter when running a Jellyfin server.
+
+## Connection Issues
 
 If you can access the web interface over HTTP but not HTTPS, then you likely have an error with the certificate. Jellyfin uses a PFX file to handle HTTPS traffic. If you created the file with a password, then you will have to enter that value on the **Networking** page in the settings.
 

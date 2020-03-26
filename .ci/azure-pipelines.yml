@@ -18,9 +18,15 @@ jobs:
       persistCredentials: true
 
     - task: CmdLine@2
-      displayName: "Markdownlint"
+      displayName: "Install Markdownlint CLI"
       inputs:
-        script: 'npm install -g markdownlint-cli && markdownlint **/*.md --ignore node_modules --ignore src'
+        script: 'npm install markdownlint-cli'
+        workingDirectory: '$(Build.SourcesDirectory)'
+
+    - task: CmdLine@2
+      displayName: "Run Markdownlint"
+      inputs:
+        script: 'npx markdownlint **/*.md --ignore node_modules --ignore src'
         workingDirectory: '$(Build.SourcesDirectory)'
 
     - task: CmdLine@2

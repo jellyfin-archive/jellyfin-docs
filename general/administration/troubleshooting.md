@@ -3,7 +3,11 @@ uid: admin-troubleshoot
 title: Troubleshooting
 ---
 
-## Troubleshooting
+# Troubleshooting
+
+This page outlines some solutions to common issues beginners may encounter when running a Jellyfin server.
+
+## Connection Issues
 
 If you can access the web interface over HTTP but not HTTPS, then you likely have an error with the certificate. Jellyfin uses a PFX file to handle HTTPS traffic. If you created the file with a password, then you will have to enter that value on the **Networking** page in the settings.
 
@@ -15,6 +19,14 @@ The easiest way to check for issues is by checking the logs, which can be access
 
 To enable debug (much more verbose) logging, it is currently required to manually edit config files since no options exist yet on the frontend. Go to the Jellyfin configuration directory, find the `logging.json` file, and change the minimum level to debug as seen below.
 
-`"MinimumLevel": "Debug"`
+```json
+{
+    "Serilog": {
+        "MinimumLevel": {
+            "Default": "Debug"
+        }
+    }
+}
+```
 
 Jellyfin 10.4.1 and above will automatically reload the new configuration. The debug messages show up in the log with the `DBG` tag.

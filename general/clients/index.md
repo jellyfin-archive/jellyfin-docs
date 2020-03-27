@@ -243,14 +243,14 @@ The official Jellyfin WebOS app.
 
 ### Mopidy-Jellyfin
 
-An official plugin for Mopidy that uses Jellyfin as a backend.
+An official extension for Mopidy that uses Jellyfin as a backend.
 
 **Status:** ⭐ Active
 
 **Links:**
 
-* [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
-* [Installing](xref:clients-installing-mopidy)
+* [GitHub](https://github.com/jellyfin/mopidy-jellyfin)
+* [Installing](xref:clients-mopidy)
 
 ## Roku
 

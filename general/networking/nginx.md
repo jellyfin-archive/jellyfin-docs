@@ -12,7 +12,7 @@ Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to
 > [!WARNING]
 > This is just an example! Please read up on networking and port forwarding before you expose anything past your router.
 
-```
+```conf
 server {
     listen 80;
     server_name DOMAIN_NAME;
@@ -80,7 +80,7 @@ When connecting to server from a client application, enter `http(s)://DOMAIN_NAM
 
 Set the base URL field in the Jellyfin server.  This can be done by navigating to the Admin Dashboard -> Networking -> Base URL in the web client.  Fill in this box with `/jellyfin` and click Save.  The server will need to be restarted before this change takes effect.
 
-```
+```conf
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
 
 server {

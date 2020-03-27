@@ -2,6 +2,7 @@
 uid: admin-installing
 title: Installing Jellyfin
 ---
+<!-- markdownlint-disable MD036 no-emphasis-as-heading -->
 
 # Installing
 
@@ -69,7 +70,7 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
 
 The intent of the Jellyfin image is to provide the capability of building from source using Docker. The native image is [compiled](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile) inside the container whereas the LinuxServer image [installs](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile) Jellyfin as a package. This can lead to larger image size and more space consumption since there isn't a common base image for the official Jellyfin image, [Jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/tags) vs [LinuxServer](https://hub.docker.com/r/linuxserver/jellyfin/tags) sizes. The Jellyfin image does not support environmentals except for $TZ. No other environmental parameter works. If switching between images, the folder locations are not the same, so you have to move config folders around before spinning up the alternative image.
 
-For ARM hardware and RPi, it is recommended to use the LinuxServer image since hardware acceleration support is not yet available on the native image. 
+For ARM hardware and RPi, it is recommended to use the LinuxServer image since hardware acceleration support is not yet available on the native image.
 
 ### Unraid Docker
 
@@ -79,9 +80,9 @@ An Unraid Docker template is available in the repository.
 
 2. Add the following line under "Template Repositories" and save the options.
 
-```data
-https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates
-```
+    ```data
+    https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates
+    ```
 
 3. Click "Add Container" and select "jellyfin".
 
@@ -109,7 +110,7 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 2. Run the installer.
 3. (Optional) When installing as a service, pick the service account type.
 4. If everything was completed successfully, the Jellyfin service is now running.
-5. Open your browser at http://localhost:8096 to finish setting up Jellyfin.
+5. Open your browser at <http://localhost:8096> to finish setting up Jellyfin.
 
 **Update**
 
@@ -144,13 +145,17 @@ Windows installers and builds in ZIP archive format are available [here](https:/
     ```
 
     - To use a custom library/data location (Path after the -d parameter) and disable the auto-start of the webapp:
+
     ```cmd
     <--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data -noautorunwebapp
-    ````
+    ```
+
 1. Run
+
     ```cmd
     jellyfin.bat
     ```
+
 1. Open your browser at `http://<--Server-IP-->:8096` (if auto-start of webapp is disabled)
 
 **Update**
@@ -205,7 +210,7 @@ This will delete all settings and user information. This applies for the .app pa
 2. Extract it into the Applications folder
 3. Open Terminal and type `cd` followed with a space then drag the jellyfin folder into the terminal.
 4. Type `./jellyfin` to run jellyfin.
-5. Open your browser at http://localhost:8096
+5. Open your browser at <http://localhost:8096>
 
 Closing the terminal window will end Jellyfin. Running Jellyfin in screen or tmux can prevent this from happening.
 
@@ -216,7 +221,7 @@ Closing the terminal window will end Jellyfin. Running Jellyfin in screen or tmu
 1. Extract the latest version into Applications
 1. Open Terminal and type `cd` followed with a space then drag the jellyfin folder into the terminal.
 1. Type `./jellyfin` to run jellyfin.
-1. Open your browser at http://localhost:8096
+1. Open your browser at <http://localhost:8096>
 
 **Uninstalling the Portable Version**
 
@@ -419,7 +424,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 1. Proceed with the following section as written.
 
-### Repository
+### Ubuntu Repository
 
 The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, Disco, and Eoan. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
 
@@ -427,21 +432,25 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:
+
     ```sh
     sudo apt install apt-transport-https
     ```
 
 1. Enable the Universe repository to obtain all the FFMpeg dependencies:
+
     ```sh
     sudo add-apt-repository universe
     ```
 
 1. Import the GPG signing key (signed by the Jellyfin Team):
+
     ```sh
     wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -
     ```
 
 1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:
+
     ```sh
     echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
     ```
@@ -450,23 +459,26 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
     > Supported releases are `xenial`, `bionic`, `cosmic`, `disco`, and `eoan`.
 
 1. Update APT repositories:
+
     ```sh
     sudo apt update
     ```
 
 1. Install Jellyfin:
+
     ```sh
     sudo apt install jellyfin
     ```
 
 1. Manage the Jellyfin system service with your tool of choice:
+
     ```sh
     sudo service jellyfin status
     sudo systemctl restart jellyfin
     sudo /etc/init.d/jellyfin stop
     ```
 
-### Packages
+### Ubuntu Packages
 
 Raw Ubuntu packages, including old versions, are available [here](https://jellyfin.org/downloads/#ubuntu).
 
@@ -474,6 +486,7 @@ Raw Ubuntu packages, including old versions, are available [here](https://jellyf
 > The repository is the preferred way to install Jellyfin on Ubuntu, as it contains several dependencies as well.
 
 1. Enable the Universe repository to obtain all the FFMpeg dependencies, and update repositories:
+
     ```sh
     sudo add-apt-repository universe
     sudo apt update
@@ -482,21 +495,25 @@ Raw Ubuntu packages, including old versions, are available [here](https://jellyf
 1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
 
 1. Install the required dependencies:
+
     ```sh
     sudo apt install at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0
     ```
 
 1. Install the downloaded `.deb` packages:
+
     ```sh
     sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb
     ```
 
 1. Use `apt` to install any missing dependencies:
+
     ```sh
     sudo apt -f install
     ```
 
 1. Manage the Jellyfin system service with your tool of choice:
+
     ```sh
     sudo service jellyfin status
     sudo systemctl restart jellyfin

@@ -7,7 +7,7 @@ title: Movies
 
 Movies should usually be in the library root directory or in a subfolder for the individual films. The subfolders allow for organization of metadata and images. Adding the year at the end in parentheses will yield the best results when scraping metadata.
 
-```
+```txt
 Movies
 ├── Film (1990).mp4
 ├── Film (1994).mp4
@@ -23,7 +23,7 @@ Movies
 Multiple versions of a movie can be stored together and presented
 as a single title. Place each movie version in the same folder and give each version a name with the folder name as a prefix as seen below.
 
-```
+```txt
 Movies
 └── Best_Movie_Ever (2019)
     ├── Best_Movie_Ever (2019) - 1080P.mp4
@@ -35,7 +35,7 @@ To distinguish between versions, each filename needs to have a space, hyphen, sp
 
 Additionally, labels can be placed between brackets with the same result as seen below.
 
-```
+```txt
 Movies
 └── Best_Movie_Ever (2019)
     ├── Best_Movie_Ever (2019) - [1080P].mp4

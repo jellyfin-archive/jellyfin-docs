@@ -15,6 +15,8 @@ The objective of the guide is to configure the Jellyfin TVHeadend plugin to back
 
 ## Configuration
 
+<!-- markdownlint-disable MD029 ol-prefix -->
+
 1. Create a user for Jellyfin in TVHeadend: it is convenient to create a specific user for Jellyfin.
     * Go to Configuration > Users > Access Entries > Add
     * Give the user parameters
@@ -43,10 +45,10 @@ The objective of the guide is to configure the Jellyfin TVHeadend plugin to back
         * TVHeadend Hostname or IP Address: *IP address of the TVHeadend server* (for example: 127.0.0.1)
         * Username: *The user created previously* (for example: Jellyfin)
         * Password: *The password created previously* (for example: Jellyfin_password)
-      
+
 > [!NOTE]
 > By default the the *TVHeadend Hostname or IP Address* section is configured by default with the hostname *localhost*, it is preferable to use the IP address *127.0.0.1* instead of *localhost*. [Reference](https://emby.media/community/index.php?/topic/55768-tv-headend-plugin-where-does-it-store-data/#entry542181)
-      
+
 3. Configure the channels for viewing in Jellyfin: even if Jellyfin manages to connect to TVHeadend, the guide will not be synchronized because there has to be a number assigned to the channels in TVHeadend. [Reference](https://emby.media/community/index.php?/topic/64583-no-channels-with-tvheadend-plugin/#entry642268)
     * Manual mode
         * Go to Configuration > Channel/EPG > Channels
@@ -62,8 +64,10 @@ The objective of the guide is to configure the Jellyfin TVHeadend plugin to back
 4. Update the data from the TVHeadend guide to Jellyfin
     * Go to Dashboard > Live TV
     * Refresh guide data
-    
+
+<!-- markdownlint-enable MD029 ol-prefix -->
+
 > [!NOTE]
 > If the guide is not updated, restart the Jellyfin server.
-    
+
 Once the update of the guide is finished, the Live TV will already be able to see the guide related to the synchronized channels and will be able to visualize the content.

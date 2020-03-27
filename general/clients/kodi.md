@@ -9,7 +9,6 @@ title: Kodi
 > It's highly recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
 > This will keep your media libraries up to date without waiting for a periodic re-sync from Kodi.
 
-
 ## Installation Process
 
 ### Install Add-On Repository
@@ -111,4 +110,3 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 > [!NOTE]
 > Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed.
-

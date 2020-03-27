@@ -11,11 +11,11 @@ In "Dashboard>General", the "Custom CSS" field can be used to enter any override
 
 If you have little or no experience with CSS, various resources and tutorials can be found online, together with using the below modifications as examples it is quite easy to get started making your own changes to your Jellyfin instance.
 
-![](~/images/custom-css-customcssfield.png)
+![Screenshot of the 'Custom CSS' setting in the administrator dashboard of the web client](~/images/custom-css-customcssfield.png)
 
 ## General Information About CSS
 
-You can learn more about CSS using sites like [w3school](https://www.w3schools.com/css/default.asp). Below are some very basic details that will let you do rudimentary edits to the ready made modifications below. 
+You can learn more about CSS using sites like [w3school](https://www.w3schools.com/css/default.asp). Below are some very basic details that will let you do rudimentary edits to the ready made modifications below.
 
 ### Colors
 
@@ -23,7 +23,7 @@ CSS supports multiple color formats, most typically hex is used. But simply text
 
 Some examples of hex color codes:
 
-`#5dd000` Green <br> 
+`#5dd000` Green <br>
 `#0000d0` Blue <br>
 `#d00000` Red <br>
 `#00000058` Transparent black
@@ -44,32 +44,32 @@ CSS can be chained together to modify different sections together. An example of
 
 To apply any one of these, copy paste the CSS code into the "Custom CSS" field. To use multiple modifications, simply add them one after another into the field. Any applied code will remain in the field. To remove a modification, delete or comment out the code for it from the field. Changes apply immediately when the settings page is saved and doesn't require restarting.
 
-#### Played Indicator
+### Played Indicator
 
 This will affect the played/watched indicator. Replace the color hex with any value you like.
 
-**Without mod**
+#### Indicators Without Mod
 
-![](~/images/custom-css-normalwatched.png)
+![Screenshot of the default watched indicators](/images/custom-css-normalwatched.png)
 
-**Green**
+#### Green Indicators
 
 ```css
 .playedIndicator { background: #5dd000; }
 ```
 
-![](~/images/custom-css-greenwatched.png)
+![Screenshot of watched indicators with a custom green color applied](/images/custom-css-greenwatched.png)
 
-**Transparent dark using RGBA hex value**
+#### Transparent And Dark Indicators (using RGBA hex value)
 
 ```css
 /* Make watched icon dark and transparent */
 .playedIndicator {background: #00000058;}
 ```
 
-![](~/images/custom-css-transparentwatched.png)
+![Screenshot of watched indicators with a custom transparent color applied](/images/custom-css-transparentwatched.png)
 
-#### Transparent Top Menu
+### Transparent Top Menu
 
 Self explanatory
 
@@ -79,7 +79,7 @@ Self explanatory
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {background:none; background-color:rgba(0, 0, 0, 0);}
 ```
 
-#### Enlarge Tab Buttons
+### Enlarge Tab Buttons
 
 Enlarges the tab buttons, suggested, genres, etc. By default they are really damn tiny, especially on mobile.
 
@@ -91,9 +91,9 @@ Enlarges the tab buttons, suggested, genres, etc. By default they are really dam
 ```
 
 **The enlarged tab buttons and transparent menu look like this:**
-![](~/images/custom-css-transparenttopbarenlargedtabs.png)
+![Screenshot of enlarged tab buttons and transparent menu](/images/custom-css-transparenttopbarenlargedtabs.png)
 
-#### Minimalistic Login Page
+### Minimalistic Login Page
 
 This looks even better together with the transparent top menu.
 
@@ -110,9 +110,9 @@ This looks even better together with the transparent top menu.
 #loginPage .raised.cancel.block.btnForgotPassword.emby-button {display: none}
 ```
 
-![](~/images/custom-css-minimallogin.png)
+![Screenshot of the minimalistic login page](/images/custom-css-minimallogin.png)
 
-#### Stylized Episode Previews
+### Stylized Episode Previews
 
 The episode previews in season view are sized based on horizontal resolution, this leads to a lot of wasted space on the episode summary and a high vertical page requiring a lot of scrolling to browse. This code reduces the height of episode entries to reduce the need for vertical scrolling on large screens.
 
@@ -123,9 +123,9 @@ The episode previews in season view are sized based on horizontal resolution, th
 .secondary.listItem-overview.listItemBodyText {height: 61px; margin: 0;}
 ```
 
-![](~/images/custom-css-episodepreview.png)
+![Screenshot of a TV show page with stylized episode previews](/images/custom-css-episodepreview.png)
 
-#### Stylized and Smaller Cast Info
+### Stylized and Smaller Cast Info
 
 This will drastically change the style of cast info into something very similar to how plex does it. The Purple Haze theme already has rounded cast info, but at the same large size as everything else, this override will lead to somewhat smaller thumbnails, and also works with all other themes.
 
@@ -149,15 +149,15 @@ This will drastically change the style of cast info into something very similar 
 #castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {margin:auto;}
 ```
 
-![](~/images/custom-css-stylizedcast.png)
+![Screenshot of stylized and smaller cast and crew info](/images/custom-css-stylizedcast.png)
 
-#### Background Color
+### Custom Background Color
 
 ```css
 .backgroundContainer, .dialog, html { background-color: #0fd0d0; }
 ```
 
-#### Darken the Background
+### Darken the Background
 
 This darkens the background on blue radiance and purple haze, edit the percentage depending how dark you want it. Lower is darker.
 
@@ -166,7 +166,7 @@ This darkens the background on blue radiance and purple haze, edit the percentag
 .backgroundContainer {background-color: #000000; filter: brightness(50%);}
 ```
 
-#### Right Header
+### Right Header Color
 
 This modifies the colors of the cast, search and user buttons in the top right.
 
@@ -174,9 +174,9 @@ This modifies the colors of the cast, search and user buttons in the top right.
 .headerRight { color: yellow; }
 ```
 
-![](~/images/custom-css-rightheader.png)
+![Screenshot of a custom yellow color for the icon buttons in the top right of the screen](/images/custom-css-rightheader.png)
 
-#### Console Panel
+### Console Panel Custom Color
 
 Modifies the color of the left menu panel.
 
@@ -184,18 +184,17 @@ Modifies the color of the left menu panel.
 .mainDrawer-scrollContainer { color: yellow; }
 ```
 
-![](~/images/custom-css-consolepanel.png)
+![Screenshot of a custom yellow color on the left menu panel](/images/custom-css-consolepanel.png)
 
-#### General Page
+### General Page Custom Color
 
 ```css
 .dashboardGeneralForm { color: yellow; }
 ```
 
-![](~/images/custom-css-generalcolor.png)
+![Screenshot of a custom yellow color on the General Page](/images/custom-css-generalcolor.png)
 
-
-#### Border Color
+### Custom Border Color
 
 This will change the border color for text fields and drop down menus.
 
@@ -209,33 +208,33 @@ This will affect the border color of highlighet(selected) text fields and drop d
 .emby-input:focus, .emby-textarea:focus, .emby-select-withcolor { border-color: #ffffff !important; }
 ```
 
-![](~/images/custom-css-bordercolor.png)
+![Screenshot of a custom red border color](/images/custom-css-bordercolor.png)
 
-#### Full Header Mod
+### Full Header Mod
 
 ```css
-.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { 	background: #ff9475; }
+.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { background: #ff9475; }
 ```
 
-![image](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
+![Screenshot of the full header mod](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
 
-#### Hotdogs and Catsup
+### Hotdogs and Catsup
 
 An example of a color theme.
 
-![image](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
+![Screenshot of a hotdog and catsup color theme](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
 
 ```css
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
-	background: #ff9475;
+    background: #ff9475;
 }
 
 .emby-input, .emby-textarea, .emby-select {
-	border-color: #fdbe7d;
+    border-color: #fdbe7d;
 }
 
 .backgroundContainer.withBackdrop, .backdropContainer, .backgroundContainer {
-	background: #fdbe7d;
+    background: #fdbe7d;
 }
 
 #myPreferencesMenuPage .listItemBodyText,
@@ -246,7 +245,7 @@ An example of a color theme.
 .dashboardGeneralForm *:nth-child(odd),
 .mainDrawer-scrollContainer *:nth-child(odd),
 .headerRight *:nth-child(odd) {
-	color: red;
+    color: red;
 }
 
 #myPreferencesMenuPage .listItemIcon,
@@ -257,15 +256,15 @@ An example of a color theme.
 .mainDrawer-scrollContainer *:nth-child(even),
 .headerRight *:nth-child(even)
 .cancel {
-	color: yellow;
+    color: yellow;
 }
 ```
 
-#### Floating Now Playing Controls
+### Floating Now Playing Controls
 
-![](~/images/custom-css-floatingnowplaying.png)
+![Screenshot of the floating "Now Playing" controls](/images/custom-css-floatingnowplaying.png)
 
-```
+```css
 /* fixed height for the bottom row */
 :root {
   --element-fixed-top: 95px;
@@ -273,10 +272,10 @@ An example of a color theme.
 
 /* Now playing bar in the footer */
 .nowPlayingBar {
-       width: 650px; 
-       z-index: 10; 
+       width: 650px;
+       z-index: 10;
        position: fixed;
-       top: 300px; 
+       top: 300px;
        height: 120px;
       border-style: solid;
       border-color: white;
@@ -358,8 +357,6 @@ An example of a color theme.
 
 Some links to places where custom CSS has been discussed and shared.
 
-https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050/
-
-https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css/
-
-https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app/
+- [Custom CSS Guide](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050/)
+- [Easy Jellyfin custom CSS](https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css/)
+- [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app/)

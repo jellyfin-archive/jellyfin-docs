@@ -2,7 +2,7 @@
 uid: contrib-issues
 title: Reporting Issues
 ---
-
+<!-- markdownlint-disable MD025 single-h1 -->
 # Requesting Features
 
 Please note that feature and enhancement requests should be directed towards [our Fider instance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not GitHub issues.

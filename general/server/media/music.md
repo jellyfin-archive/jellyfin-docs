@@ -7,7 +7,7 @@ title: Music
 
 The most common organization scheme for music is separation by artist and then album.
 
-```
+```txt
 /Music
     /Artist
         /Album
@@ -17,7 +17,7 @@ The most common organization scheme for music is separation by artist and then a
 
 You can also separate your music into artist folders or with no folder structure at all.
 
-```
+```txt
 /Music
     /Artist
         01 - Song.flac
@@ -38,7 +38,7 @@ Albums with several discs will be fine with the metadata tags, but you can also 
 * Vol
 * Volume
 
-```
+```txt
 /Music
     /Artist
         /Album

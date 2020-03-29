@@ -19,7 +19,7 @@ The installation method for the repository varies depending on what kind of devi
 
 #### General Use Devices (PCs and Tablets)
 
-1. Download the repository installer found [here](https://repo.jellyfin.org/releases/client/kodi/repository.jellyfin.kodi.zip).
+1. Download the repository installer found [here](https://kodi.jellyfin.org/repository.jellyfin.kodi.zip).
     * It will be saved as `repository.jellyfin.kodi.zip`
 2. Install the Jellyfin repository.
     * Open Kodi, go to the settings menu,  and navigate to "Add-On Browser"
@@ -32,7 +32,7 @@ The installation method for the repository varies depending on what kind of devi
 
 1. Open Kodi, go to the settings menu, and navigate to "File manager"
     * Select "Add source"
-    * In the text box, enter `https://repo.jellyfin.org/releases/client/kodi/`
+    * In the text box, enter `https://kodi.jellyfin.org`
     * Enter a name for the data source, such as "Jellyfin Repo" and select Ok
 2. From the settings menu, navigate to "Add-On Browser"
     * Select "Install from Zip File"

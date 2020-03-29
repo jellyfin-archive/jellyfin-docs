@@ -1,19 +1,19 @@
 ---
-uid: clients-installing-mopidy
-title: Installing Mopidy Plugin
+uid: clients-mopidy
+title: Mopidy
 ---
 
-# Installing Mopidy Plugin
+# Installing Mopidy Extension
 
-The Mopidy Jellyfin plugin is available to install from [PyPi](https://pypi.org/project/Mopidy-Jellyfin) using pip.
+The Mopidy Jellyfin extension is available to install from [PyPi](https://pypi.org/project/Mopidy-Jellyfin) using pip.
 
 ## General
 
-For general use computers, such as workstations or laptops, it's recommended to install Mopidy plugins in user mode.  Installing python packages from pip using sudo or root permissions can lead to conflicts with your package manager in the future.
+For general use computers, such as workstations or laptops, it's recommended to install Mopidy extensions in user mode.  Installing python packages from pip using sudo or root permissions can lead to conflicts with your package manager in the future.
 
 1. Install Mopidy using your method of choice using the [official documentation](https://docs.mopidy.com/en/latest/installation/)
 
-2. Install the Jellyfin plugin for Mopidy:
+2. Install the Jellyfin extension for Mopidy:
 
     ```sh
     pip3 install --user mopidy-jellyfin
@@ -26,13 +26,13 @@ For general use computers, such as workstations or laptops, it's recommended to 
     ```
 
 4. Configure your `mopidy.conf` located at `$HOME/.config/mopidy/mopidy.conf`
-    See [Config File](xref:clients-installing-mopidy#config-file)
+    See [Config File](xref:clients-mopidy#config-file)
 
 5. There may be a need to install extra `gstreamer` codecs if they're not already on your system, but these are highly variable and depend on your hardware and distro
 
 6. Start the program by running `mopidy` from a terminal
 
-7. See [Usage](xref:clients-installing-mopidy#usage)
+7. See [Usage](xref:clients-mopidy#usage)
 
 ## Raspberry Pi (Remote Controlled Speakers)
 
@@ -50,14 +50,14 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
     sudo apt install mopidy mopidy-mpd gstreamer1.0-plugins-bad python3-pip
     ```
 
-5. Install the Jellyfin plugin and any other Mopidy related packages you may want:
+5. Install the Jellyfin extension and any other Mopidy related packages you may want:
 
     ```sh
     sudo pip3 install mopidy-jellyfin mopidy-musicbox-webclient
     ```
 
 6. Configure your `mopidy.conf` located at `/etc/mopidy/mopidy.conf`:
-    See [Config File](xref:clients-installing-mopidy#config-file)
+    See [Config File](xref:clients-mopidy#config-file)
 
 7. Enable and start the mopidy service:
 
@@ -65,7 +65,7 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
     sudo systemctl enable --now mopidy
     ```
 
-8. See [Usage](xref:clients-installing-mopidy#usage)
+8. See [Usage](xref:clients-mopidy#usage)
 
 ## Config File
 

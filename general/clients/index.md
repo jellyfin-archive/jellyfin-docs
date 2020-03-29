@@ -250,7 +250,7 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 **Links:**
 
 * [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
-* [Installing](xref:clients-installing-mopidy)
+* [Installing](xref:clients-mopidy)
 
 ## Roku
 

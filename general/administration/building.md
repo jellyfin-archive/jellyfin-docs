@@ -56,7 +56,7 @@ All package builds begin with these two steps:
 
 ## Windows
 
-3. Install the dotnet core SDK 2.2 from [Microsoft's Website](https://dotnet.microsoft.com/download/dotnet-core/2.2) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell 3 or higher.
+3. Install the dotnet core SDK 3.1 from [Microsoft's Website](https://dotnet.microsoft.com/download/dotnet-core/3.1) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell 3 or higher.
 
 4. From Powershell set the execution policy to unrestricted:
 

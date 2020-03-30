@@ -12,7 +12,7 @@ Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIn
 OS      | Recommended HW Acceleration
 ------- | -------------
 Linux   | QSV, NVENC, VAAPI
-Windows | QSV, NVENC, AMF, VAAPI
+Windows | QSV, NVENC, AMF
 MacOS   | None (VideoToolbox Coming Soon)
 Android | MediaCodec, OMX
 RPi     | OMX

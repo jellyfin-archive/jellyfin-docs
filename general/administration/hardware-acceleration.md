@@ -186,9 +186,15 @@ sudo pkill -SIGHUP docker
 ```
 
 Install nvidia drivers and dependencies.
+For Debian 9 - Stretch:
 
 ```sh
 apt-get install -t stretch-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
+```
+For Debian 10 - Buster:
+
+```sh
+apt-get install -t buster-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
 ```
 
 Reboot your host to apply all changes.
@@ -253,9 +259,17 @@ usermod -aG video user
 Once the container is started you can again validate access to the host ressources.
 
 ```sh
-docker exec -it jellyfin ldconfig -p | grep cuvid
-docker exec -it jellyfin ldconfig -p | grep libnvidia-encode.so.1
+docker exec -it jellyfin nvidia-smi
 ```
+If you get driver informations, everything's fine but if you get
+```
+Couldn't find libnvidia-ml.so library in your system
+```
+run 
+```
+docker exec -it jellyfin ldconfig
+```
+then control that nvidia driver now loads correctly using the previous command.
 
 Now go in Jellyfin playback settings, enable Nvidia NVENC and select target codecs depending on what your GPU support
 try to play any file needing a transcode. Changing the bitrate is a good way to try this.

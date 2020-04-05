@@ -15,14 +15,16 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 - [Windows](#windows-x86x64)
   - [Installer](#install-using-installer-x64)
   - [Manual](#manual-installation-x86x64)
-- [Linux](#linux-generic-amd64)
+- [MacOS](#macos)
+- [Linux](#linux)
+    - [Generic Linux](#linux-generic-amd64)
     - [Portable DLL](#portable-dll)
     - [Arch Linux](#arch-linux)
     - [Fedora](#fedora)
     - [CentOS](#centos)
     - [Debian](#debian)
     - [Ubuntu](#ubuntu)
-- [MacOS](#macos)
+
 
 ## Containers
 
@@ -252,11 +254,12 @@ If using Zeranoe's build, extract it to the `/Applications/` folder.
 
 Navigate to the Playback tab in the Dashboard and set the path to FFmpeg under FFmpeg Path.
 
-## Linux (generic amd64)
+## Linux
+### Linux (generic amd64)
 
 Generic amd64 Linux builds in TAR archive format are available [here](https://jellyfin.org/downloads/#linux).
 
-### Installation Process
+#### Installation Process
 
 Create a directory in `/opt` for jellyfin and its files, and enter that directory.
 
@@ -331,25 +334,25 @@ Finally you can run it. You will see lots of log information when run, this is n
 ./jellyfin.sh
 ```
 
-## Portable DLL
+### Portable DLL
 
 Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://jellyfin.org/downloads/#portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
-## Arch Linux
+### Arch Linux
 
 Jellyfin can be found in the AUR as [`jellyfin`](https://aur.archlinux.org/packages/jellyfin/) and [`jellyfin-git`](https://aur.archlinux.org/packages/jellyfin-git/).
 
-## Fedora
+### Fedora
 
 Fedora 29 builds in RPM package format are available [here](https://jellyfin.org/downloads/#fedora) for now but an official Fedora repository is coming soon.
 
-## CentOS
+### CentOS
 
 CentOS/RHEL 7 builds in RPM package format are available [here](https://jellyfin.org/downloads/#centos) and an official CentOS/RHEL repository is planned for the future.
 
-## Debian
+### Debian
 
-### Repository
+#### Repository
 
 The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster. Supported architectures are `amd64`, `arm64`, and `armhf`.
 
@@ -397,7 +400,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
     sudo /etc/init.d/jellyfin stop
     ```
 
-### Packages
+#### Packages
 
 Raw Debian packages, including old versions, are available [here](https://jellyfin.org/downloads/#debian).
 
@@ -426,9 +429,9 @@ Raw Debian packages, including old versions, are available [here](https://jellyf
     sudo /etc/init.d/jellyfin stop
     ```
 
-## Ubuntu
+### Ubuntu
 
-### Migrating to the new repository
+#### Migrating to the new repository
 
 Previous versions of Jellyfin included Ubuntu under the Debian repository. This has now been split out into its own repository to better handle the separate binary packages. If you encounter errors about the `ubuntu` release not being found and you previously configured an `ubuntu` `jellyfin.list` file, please follow these steps.
 
@@ -440,7 +443,7 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
 
 1. Proceed with the following section as written.
 
-### Ubuntu Repository
+#### Ubuntu Repository
 
 The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, Disco, and Eoan. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
 
@@ -494,7 +497,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
     sudo /etc/init.d/jellyfin stop
     ```
 
-### Ubuntu Packages
+#### Ubuntu Packages
 
 Raw Ubuntu packages, including old versions, are available [here](https://jellyfin.org/downloads/#ubuntu).
 

@@ -122,13 +122,13 @@ apt-get install curl
 Edit `sources.list` in `/etc/apt/sources.list` and add `non-free contrib` to each source as required.
 
 ```data
-deb http://ftp.ch.debian.org/debian/ stretch main
+deb http://deb.debian.org/debian/ stretch main
 ```
 
 The line above should be modified to match the following line as an example.
 
 ```data
-deb http://ftp.ch.debian.org/debian/ stretch main non-free contrib
+deb http://deb.debian.org/debian/ stretch main non-free contrib
 ```
 
 Download and add the sources for the Nvidia docker container.

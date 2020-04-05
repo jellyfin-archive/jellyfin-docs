@@ -8,6 +8,21 @@ title: Installing Jellyfin
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
+- [Containers](#containers)
+  - [Official Docker](#official-docker-hub)
+  - [Unraid Docker](#unraid-docker)
+  - [Kubernetes](#kubernetes)
+- [Windows](#windows-x86x64)
+- [Manual](#manual-installation-x86x64)
+- [Linux](#linux-generic-amd64)
+    - [Portable DLL](#portable-dll)
+    - [Arch Linux](#arch-linux)
+    - [Fedora](#fedora)
+    - [CentOS](#centos)
+    - [Debian](#debian)
+    - [Ubuntu](#ubuntu)
+- [MacOS](#macos)
+
 ## Containers
 
 [Open Container Initiative](https://stackoverflow.com/questions/31213126/libcontainer-vs-docker-vs-ocf-vs-runc#31219102) is a form of virtualization. An image is similar to an ISO while a container is akin to a running VM.

@@ -255,6 +255,7 @@ If using Zeranoe's build, extract it to the `/Applications/` folder.
 Navigate to the Playback tab in the Dashboard and set the path to FFmpeg under FFmpeg Path.
 
 ## Linux
+
 ### Linux (generic amd64)
 
 Generic amd64 Linux builds in TAR archive format are available [here](https://jellyfin.org/downloads/#linux).

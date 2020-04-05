@@ -14,6 +14,7 @@ Once the packages are installed, you're ready to generate a new certificate.
 ### Apache
 
 #### Certbot Apache Plugin
+
 After installing Certbot and the Apache plugin, certificate generation is accomplished by with the following command.
 
 ```sh
@@ -29,16 +30,19 @@ echo "0 0 * * *  root  certbot renew --quiet --no-self-upgrade --post-hook 'syst
 ```
 
 #### Certbot Webroot
+
 ##### Debian
+
 If the certbot apache plugin doesn't work with your config, use webroot instead.
 
 Add the following to your <VirtualHost> section after configuring it a reverse proxy:
-    
+
 ```conf
 DocumentRoot /var/www/html/
 #Do not pass the .well-known directory when using certbot and webroot
 ProxyPass /.well-known !
 ```
+
 Run the certbot command as root:
 
 ```sh

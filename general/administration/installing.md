@@ -17,14 +17,13 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
   - [Manual](#manual-installation-x86x64)
 - [MacOS](#macos)
 - [Linux](#linux)
-    - [Generic Linux](#linux-generic-amd64)
-    - [Portable DLL](#portable-dll)
-    - [Arch Linux](#arch-linux)
-    - [Fedora](#fedora)
-    - [CentOS](#centos)
-    - [Debian](#debian)
-    - [Ubuntu](#ubuntu)
-
+  - [Generic Linux](#linux-generic-amd64)
+  - [Portable DLL](#portable-dll)
+  - [Arch Linux](#arch-linux)
+  - [Fedora](#fedora)
+  - [CentOS](#centos)
+  - [Debian](#debian)
+  - [Ubuntu](#ubuntu)
 
 ## Containers
 

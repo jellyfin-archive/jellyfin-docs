@@ -103,7 +103,7 @@ Add a job to cron so the certificate will be renewed automatically.
 After installing Certbot and the Nginx plugin with `sudo apt install certbot python3-certbot-nginx`, generate the certificate.
 
 ```sh
-sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d YOUR_DOMAIN
+sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d DOMAIN_NAME
 ```
 
 Add the `--rsa-key-size 4096` parameter if you want a 4096 bit key instead.

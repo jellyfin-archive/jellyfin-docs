@@ -7,7 +7,7 @@ title: Apache Reverse Proxy
 
 "The [Apache HTTP Server Project](https://httpd.apache.org/) is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows. The goal of this project is to provide a secure, efficient and extensible server that provides HTTP services in sync with the current HTTP standards."
 
-```
+```conf
 <VirtualHost *:80>
     ServerName DOMAIN_NAME
 
@@ -54,5 +54,5 @@ title: Apache Reverse Proxy
 If you encouter errors, you may have to enable `mod_proxy`, `mod_ssl`, or `proxy_wstunnel` support manually.
 
 ```bash
-$ sudo a2enmod proxy proxy_http ssl proxy_wstunnel
+sudo a2enmod proxy proxy_http ssl proxy_wstunnel
 ```

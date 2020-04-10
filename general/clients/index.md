@@ -69,13 +69,13 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 **Status:**
 
-Android:	✅ In Development
+Android: ✅ In Development
 
-Web/Desktop:	✅ In Development
+Web/Desktop: ✅ In Development
 
-iOS:		⭕ Planned
+iOS: ⭕ Planned
 
-Android TV:	⭕ Planned
+Android TV: ⭕ Planned
 
 **Links:**
 
@@ -103,7 +103,7 @@ Xamarin cross-platform client for Jellyfin.
 
 ### Jellyfin MPV Shim
 
-Cast videos from other Jellyfin applications to the MPV media player on Windows and Linux. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, along with subtitle management tools.
+Provides both a desktop client mode and systray/background cast mode. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support.
 
 **Status:** ⭐ Active, 3rd-Party
 
@@ -111,6 +111,7 @@ Cast videos from other Jellyfin applications to the MPV media player on Windows 
 
 * [Github](https://github.com/iwalton3/jellyfin-mpv-shim)
 * [Windows Release](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
+* [Flathub Package](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
 
 ### Jellycli
 
@@ -121,6 +122,17 @@ Terminal player for Jellyfin, only for music at the moment.
 **Links:**
 
 * [Github](https://github.com/tryffel/jellycli)
+
+### Jellyfin-CLI
+
+Terminal player for Jellyfin, written in Python.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+* [Github](https://github.com/marios8543/Jellyfin-CLI)
+* [PyPI](https://pypi.org/project/Jellyfin-CLI/)
 
 ## Jellyfin Theater (Desktop)
 
@@ -195,12 +207,13 @@ A terminal client for Jellyfin built as a REPL interface, that uses mpv for mult
 
 The official Jellyfin iOS app.
 
-**Status:** ⭐ Beta Release
+**Status:** ⭐ Active
 
 **Links:**
 
+<a href='https://apps.apple.com/us/app/jellyfin-mobile/id1480192618'><img alt='Download on the App Store' src='https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png'/></a>
+
 * [GitHub](https://github.com/jellyfin/jellyfin-expo)
-* [TestFlight Beta](https://testflight.apple.com/join/TcFUEVEb)
 
 ## Kodi
 
@@ -213,7 +226,7 @@ The official Jellyfin Kodi plugin.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-kodi)
-* [Installing](xref:clients-installing-kodi)
+* [Installing](xref:clients-kodi)
 
 ## LG WebOS
 
@@ -238,7 +251,7 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 **Links:**
 
 * [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
-* [Installing](xref:clients-installing-mopidy)
+* [Installing](xref:clients-mopidy)
 
 ## Roku
 

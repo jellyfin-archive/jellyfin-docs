@@ -11,16 +11,16 @@ This document is a guide for the core team, provided publicly to ensure transpar
 
 Jellyfin uses [semantic versioning](https://semver.org). All releases will have versions in the `X.Y.Z` format, starting from `10.0.0`. Note however that the `10.Y.Z` release chain represents the "cleanup" of the codebase, so it should be accepted that `10.Y.Z` breaks all compatibility, at some point, with previous Emby-compatible interfaces, and may also break compatibility with previous `10.Y` releases if required for later cleanup work. Our versioning will typically follow the patterns below:
 
-#### `X` - Major Versions
+### `X` - Major Versions
 
 * Breaks compatibility with the HTTP or plugin APIs
 
-#### `Y` - Minor Versions
+### `Y` - Minor Versions
 
 * Introduces new features
 * Makes minor backwards-compatible API changes
 
-#### `Z` - Hotfix Versions
+### `Z` - Hotfix Versions
 
 * Critical bug fixes or minor changes
 
@@ -44,19 +44,19 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Once all testing is complete and the release remains stable, proceed.
 
-#### Web Client
+#### Release Web Client
 
 1. Create a release branch on the [jellyfin-web](https://github.com/jellyfin/jellyfin-web) repository via CLI from `master`, named `release-X.Y.z`, where `X` and `Y` are the new version number, and `z` is a literal `z`. Push the new branch to GitHub.
 
 2. Create a GitHub release for the new version, based on the newly-created `release-X.Y.z` branch. The tag should be named `vX.Y.Z` (i.e. `vX.Y.0`) and the release named "Release X.Y.Z". The release body should contain the following link only, replacing the version as required:
 
-```
-[Please see the release announcement on the main repository.](https://github.com/jellyfin/jellyfin/releases/tag/vX.Y.Z)
-```
+    ```md
+    [Please see the release announcement on the main repository.](https://github.com/jellyfin/jellyfin/releases/tag/vX.Y.Z)
+    ```
 
 3. Publish the release.
 
-#### Server
+#### Release Server
 
 1. Create a release branch on the [jellyfin](https://github.com/jellyfin/jellyfin) repository via CLI from `master`, named `release-X.Y.z`, where `X` and `Y` are the new version number, and `z` is a literal `z`. Push the new branch to GitHub.
 
@@ -104,9 +104,9 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Create a GitHub release for the new version, based on the relevant `release-X.Y.z` branch. The tag should be named `vX.Y.Z` and the release named "Release X.Y.Z". The release body should contain the following link only, replacing the version as required:
 
-```
-[Please see the release announcement on the main repository.](https://github.com/jellyfin/jellyfin/releases/tag/vX.Y.Z)
-```
+    ```md
+    [Please see the release announcement on the main repository.](https://github.com/jellyfin/jellyfin/releases/tag/vX.Y.Z)
+    ```
 
 2. Publish the release on GitHub and the archive repository.
 

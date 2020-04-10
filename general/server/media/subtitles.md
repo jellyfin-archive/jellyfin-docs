@@ -13,7 +13,7 @@ Normally the server will only attempt to scan for local files, but if any subtit
 
 Jellyfin will search for subtitles that exactly match the video filename. They can optionally include a language code or name that will get picked up as well.
 
-```
+```txt
 /Movies
     /Film (1946)
         Film.mkv
@@ -26,7 +26,7 @@ Jellyfin will search for subtitles that exactly match the video filename. They c
 
 Subtitles can be labeled as default by appending `.default` at the end of the filename.
 
-```
+```txt
 /Movies
     /Film (1986)
         Film.mkv
@@ -38,7 +38,7 @@ Subtitles can be labeled as default by appending `.default` at the end of the fi
 
 Subtitles can be set to forced by appending `.forced` or `.foreign` to the end of the file.
 
-```
+```txt
 /Movies
     /Film (2010)
         Film.mkv

@@ -22,7 +22,7 @@ This command automatically escapes all $ inside the password for the YML file. I
 Create the docker network for traefik.
 
 ```bash
-$ sudo docker network create traefik
+sudo docker network create traefik
 ```
 
 ### docker-compose.yml
@@ -65,7 +65,7 @@ services:
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
       traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://example.com'
-#      traefik.frontend.auth.basic.users: xxx:xxx
+#     traefik.frontend.auth.basic.users: xxx:xxx
     restart: unless-stopped
 
   jellyfin:

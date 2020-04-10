@@ -1,9 +1,10 @@
+<!-- markdownlint-disable MD041 first-line-heading -->
 <h1 align="center">Jellyfin Documentation</h1>
 <h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 
 This repository houses all documentation for Jellyfin available at [jellyfin.org](https://docs.jellyfin.org/) and written in markdown.
 
-# Contributing
+## Getting Started
 
 The site is built with [DocFX](https://dotnet.github.io/docfx/) using [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html). See the content section [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) for a quick tutorial on DocFX.
 
@@ -23,7 +24,20 @@ Next, you will need to install DocFx as a [command line tool](https://dotnet.git
 docfx --serve
 ```
 
-This will build the site and start up a development server to test out your changes available at http://localhost:8080.
+This will build the site and start up a development server to test out your changes available at <http://localhost:8080>.
+
+### Linting
+
+This repository is configured to use [markdownlint](https://github.com/DavidAnson/markdownlint/) for linting Markdown files.
+
+If you are editing files within Visual Studio Code, you can install the markdownlint [extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) to see the linting errors as you work.
+
+You can also easily run the linter manually using the associated markdownlint [CLI](https://github.com/igorshubovych/markdownlint-cli).
+
+```bash
+npm install -g markdownlint-cli
+markdownlint **/*.md --ignore node_modules --ignore src
+```
 
 # Layout
 

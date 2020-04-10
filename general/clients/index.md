@@ -69,13 +69,13 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 **Status:**
 
-Android:	✅ In Development
+Android: ✅ In Development
 
-Web/Desktop:	✅ In Development
+Web/Desktop: ✅ In Development
 
-iOS:		⭕ Planned
+iOS: ⭕ Planned
 
-Android TV:	⭕ Planned
+Android TV: ⭕ Planned
 
 **Links:**
 
@@ -225,7 +225,7 @@ The official Jellyfin Kodi plugin.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-kodi)
-* [Installing](xref:clients-installing-kodi)
+* [Installing](xref:clients-kodi)
 
 ## LG WebOS
 
@@ -250,7 +250,7 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 **Links:**
 
 * [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
-* [Installing](xref:clients-installing-mopidy)
+* [Installing](xref:clients-mopidy)
 
 ## Roku
 

@@ -261,7 +261,7 @@ docker exec -it jellyfin nvidia-smi
 
 If you get driver information, everything is fine but if you get an error like `couldn't find libnvidia-ml.so library in your system` you need to run the following command.
 
-```
+```sh
 docker exec -it jellyfin ldconfig
 ```
 

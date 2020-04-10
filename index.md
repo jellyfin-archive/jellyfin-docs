@@ -28,7 +28,7 @@ Note: Jellyfin is a fast moving project that is in its early stages, and this do
 
 Want to get starting using Jellyfin right now? Check out the pages below for how to [install Jellyfin](xref:admin-installing) on your machine.
 
-* [Arch](xref:admin-installing#arch)
+* [Arch](xref:admin-installing#arch-linux)
 * [Debian](xref:admin-installing#debian)
 * [Ubuntu](xref:admin-installing#ubuntu)
 * [Fedora](xref:admin-installing#fedora)

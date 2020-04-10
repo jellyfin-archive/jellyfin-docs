@@ -3,19 +3,23 @@ uid: network-index
 title: Networking
 ---
 
-# Connectivity
+# Networking
+
+This section describes how to get basic connectivity to a Jellyfin server, and also some more advanced networking scenarios.
+
+## Connectivity
 
 Many clients will automatically discover servers running on the same LAN and display them on login. If you are outside the network when you connect you can type in the complete IP address or domain name in the server field with the correct port to continue to the login page. You can find the default ports below to access the web frontend.
 
-## Port Bindings
+### Port Bindings
 
 This document aims to provide an administrator with knowledge on what ports Jellyfin binds to and what purpose they serve.
 
-### Static Ports
+#### Static Ports
 
-* 8096/tcp is used by default for HTTP traffic. This is admin configurable.
-* 8920/tcp is used by default for HTTPS traffic. This is admin configurable.
-* 1900/udp is used for service autodiscovery. This is not admin configurable since it would break client auto-discover.
+* 8096/tcp is used by default for HTTP traffic. You can change this in the dashboard.
+* 8920/tcp is used by default for HTTPS traffic. You can change this in the dashboard.
+* 1900/udp is used for service auto-discovery. This is not configurable.
 
 **HTTP Traffic:** 8096
 
@@ -33,11 +37,11 @@ Since client auto-discover would break if this option were configurable, you can
 
 Allows clients to discover Jellyfin on the local network. A broadcast message to this port with `Who is JellyfinServer?` will get a JSON response that includes the server address, ID, and name.
 
-### Dynamic Ports
+#### Dynamic Ports
 
 Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
 
-# Running Jellyfin Behind a Reverse Proxy
+## Running Jellyfin Behind a Reverse Proxy
 
 It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.
 
@@ -53,6 +57,7 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 * [Traefik](xref:network-reverse-proxy-traefik)
 
 While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL certificates.
+
 * [Let's Encrypt](xref:network-letsencrypt)
 
 When following this guide, be sure to replace the following variables with your information.
@@ -65,9 +70,9 @@ In addition, the examples are configured for use with Let's Encrypt certificates
 
 Ports 80 and 443 (pointing to the proxy server) need to be opened on your router and firewall.
 
-## Base URL
+### Base URL
 
-Running Jellyfin with a path (https://example.com/jellyfin) is supported by the Android and web clients.
+Running Jellyfin with a path (`https://example.com/jellyfin`) is supported by the Android and web clients.
 
 > [!WARNING]
 > Base URL is known to break HDHomeRun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.
@@ -86,6 +91,6 @@ There are three main caveats to this setting.
 
 3. Any reverse proxy configurations must be updated to handle a new Base URL. Generally, passing `/` back to the Jellyfin instance will work fine in all cases and the paths will be normalized, and this is the standard configuration in our examples. Keep this in mind however when doing more advanced routing.
 
-## Final Steps
+### Final Steps
 
 It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html) if you are exposing these services to the internet.

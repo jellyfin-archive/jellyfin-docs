@@ -30,3 +30,23 @@ To enable debug (much more verbose) logging, it is currently required to manuall
 ```
 
 Jellyfin 10.4.1 and above will automatically reload the new configuration. The debug messages show up in the log with the `DBG` tag.
+
+## Real Time Monitoring
+
+This will let Jellyfin automatically update libraries when files are added or modified. Unfortunately this feature is only supported on certain filesystems.
+
+For Linux systems, this is performed by [inotify](https://en.wikipedia.org/wiki/Inotify). NFS and rclone do not support inotify, but support can be provided by using a union file system such as [mergerfs](https://github.com/trapexit/mergerfs) with your networked file systems.
+
+If you are running Debian, RedHat, or another similar Linux distribution, run the following in a terminal:
+
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+If you are running ArchLinux, run the following command instead:
+
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
+```
+
+Then paste it in your terminal and press on enter to run it. For Docker, this needs to be done on the host, not the container. See [here](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers) for more information.

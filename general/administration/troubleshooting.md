@@ -11,7 +11,7 @@ This page outlines some solutions to common issues beginners may encounter when 
 
 If you can access the web interface over HTTP but not HTTPS, then you likely have an error with the certificate. Jellyfin uses a PFX file to handle HTTPS traffic. If you created the file with a password, then you will have to enter that value on the **Networking** page in the settings.
 
-If you can access the server locally but not outside of your LAN, then you likely have an issue with the router configuration. Please see the [port forwarding](xref:admin-port-forwarding) page for more information.
+If you can access the server locally but not outside of your LAN, then you likely have an issue with the router configuration. Check the port forwarding settings on your router to ensure the server is visible from outside your local network. You can also enable the "Enable automatic port mapping" option on the  **Networking** page of the server settings to have the server attempt to configure port forwarding on the router automatically if your router supports it.
 
 The easiest way to check for issues is by checking the logs, which can be accessed through the settings on the web client or in the log directory on your server. If there are no logs at all relating to web traffic, even over a LAN connection, then the server hasn't been reached at all yet. This would indicate either an incorrect address or an issue somewhere else on the network.
 

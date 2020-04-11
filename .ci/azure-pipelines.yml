@@ -39,7 +39,7 @@ jobs:
       displayName: "Build Server Submodule"
       inputs:
         command: build
-        arguments: '--configuration Release --source https://api.nuget.org/v3/index.json'
+        arguments: '--configuration Release'
         workingDirectory: '$(Build.SourcesDirectory)/src/jellyfin'
 
     - task: PowerShell@2

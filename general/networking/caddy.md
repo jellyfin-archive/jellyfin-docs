@@ -17,8 +17,8 @@ If you aren't familiar with Caddy yet, check out its [Getting Started](https://c
 
 The easiest way to reverse proxy to Jellyfin is with the `reverse-proxy` command:
 
-```
-$ caddy reverse-proxy --from :5001 --to 127.0.0.1:8096
+```bash
+caddy reverse-proxy --from :5001 --to 127.0.0.1:8096
 ```
 
 That is a simple but production-ready plaintext HTTP reverse proxy.
@@ -30,12 +30,11 @@ If you have:
 
 then you can serve over HTTPS just as easily:
 
-```
-$ caddy reverse-proxy --from example.com --to 127.0.0.1:8096
+```bash
+caddy reverse-proxy --from example.com --to 127.0.0.1:8096
 ```
 
 You will see Caddy provision a TLS certificate for your site and, if it succeeds, you can then access your Jellyfin server over HTTPS with your domain name.
-
 
 ## Caddyfile
 

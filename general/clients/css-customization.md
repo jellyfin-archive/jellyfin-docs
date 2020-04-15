@@ -52,6 +52,12 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ![Screenshot of the default watched indicators](/images/custom-css-normalwatched.png)
 
+#### Remove LiveTV Channel Listings
+
+```css
+.guideChannelNumber { display: none; }
+```
+
 #### Green Indicators
 
 ```css

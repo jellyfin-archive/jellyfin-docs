@@ -75,7 +75,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 .guideChannelNumber { display: none; }
 ```
 
-#### Reduce LiveTV Channel Listings
+#### Reduce LiveTV Channel Width
 
 ```css
 .channelsContainer { max-width: 8em; }

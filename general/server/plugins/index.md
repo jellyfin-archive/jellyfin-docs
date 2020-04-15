@@ -13,6 +13,8 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 
 Many plugins are available in a repository hosted on our servers, which can be easily installed using the plugin catalog in the settings. At the moment many of these are still being updated frequently so the version number may not be accurate. There are several different categories that can indicate what kind of functionality the plugins may provide.
 
+**Note to Windows Users:** Due to currently un-resolved permission issues on Jellyfin Windows installs-to update plugins on Windows, you must stop Jellyfin from running, navigate to the local plugins folder (depending on  your install, generally found within `\AppData\Local\jellyfin\plugins`), delete the `.dll` files for the plugins, start Jellyfin back up, and re-install each plugin using the above method from the catalog. Plugin settings should be retained if you do not delete the `.xml` files from the `\AppData\Local\jellyfin\plugins\configurations` folder.
+
 **Authentication:** Add new authentication providers, such as LDAP.
 
 **Channels:** Allow streaming remote audio or video content.

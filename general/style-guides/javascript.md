@@ -96,6 +96,8 @@ Array and Object literals should be formatted as blocks if they are long enough 
 
 ### Indentation
 
+Code should be indented with four (4) spaces per level.
+
 ### Statements
 
 Statements should be limited to one per line and should be terminated by a semicolon.
@@ -103,6 +105,71 @@ Statements should be limited to one per line and should be terminated by a semic
 ## Language features
 
 Jellyfin projects usually use fairly bleeding-edge JasvaScript features and are usually transpiled with Babel when aimed at being used in a browser.
+
+> [!TIP]
+> As a general recommendation, prefer the use of the latest features available, if enabled in the project you are submitting code to.
+
+### Variables
+
+Variable declarations must use `let` or `const`. Use `const` by default, unless the variable needs to be reassigned. Avoid the use of the `var` keyword.
+
+Declare variable as close to their point where they are first used as possible, in order to their scope.
+
+> [!NOTE]
+> Avoid declaring multiple variables in one declaration.
+
+
+### Arrays
+
+Arrays should be declared on one line, as follows:
+
+```javascript
+const myArray = [240, 480, 720, 1080];
+```
+
+In cases where the array has a lot of elements or when readability could be improved, they should be declared with one element per line, as follows:
+
+```javascript
+const myArray = [
+    'first value',
+    'second value',
+    // Code ommited
+    'nth value'
+];
+```
+
+> [!IMPORTANT]
+> Do not use trailing commas when declaring arrays.
+
+> [!CAUTION]
+> Do not declare arrays with `new Array()` as it can be error-prone and is less readable than a literal.
+
+### Objects
+
+Objects should always be declared on multiple lines, as follows:
+
+```javascript
+const myObject = {
+    a: 1,
+    b: 2,
+    c: 3
+};
+```
+
+In cases where an object only has one element, it an be declared on one line, as follow:
+
+```javascript
+const myObject = { a: 1 };
+```
+
+> [!IMPORTANT]
+> Do not use trailing commas when declaring arrays.
+
+> [!INFO]
+> Do not declare objects with `new Object()`. While it doesn't share the issues of the Array constructor, consistency is important.
+
+Do not mix quoted and unquoted keys in a single object literal.
+
 
 ### Conditions
 

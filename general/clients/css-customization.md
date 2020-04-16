@@ -69,7 +69,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](/images/custom-css-transparentwatched.png)
 
-#### Remove LiveTV Channel Listings
+#### Remove Live TV Channel Listings
 
 ```css
 .guideChannelNumber { display: none; }

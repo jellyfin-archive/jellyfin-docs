@@ -8,22 +8,33 @@ title: Installing Jellyfin
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
-- [Containers](#containers)
-  - [Official Docker](#official-docker-hub)
-  - [Unraid Docker](#unraid-docker)
-  - [Kubernetes](#kubernetes)
-- [Windows](#windows-x86x64)
-  - [Installer](#install-using-installer-x64)
-  - [Manual](#manual-installation-x86x64)
-- [MacOS](#macos)
-- [Linux](#linux)
-  - [Generic Linux](#linux-generic-amd64)
-  - [Portable DLL](#portable-dll)
-  - [Arch Linux](#arch-linux)
-  - [Fedora](#fedora)
-  - [CentOS](#centos)
-  - [Debian](#debian)
-  - [Ubuntu](#ubuntu)
+- [Installing](#installing)
+  - [Containers](#containers)
+    - [Official Docker Hub](#official-docker-hub)
+      - [Installing Docker](#installing-docker)
+      - [Preparing the Folders](#preparing-the-folders)
+      - [Running the Container](#running-the-container)
+    - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
+    - [Unraid Docker](#unraid-docker)
+    - [Kubernetes](#kubernetes)
+  - [Windows (x86/x64)](#windows-x86x64)
+    - [Install using Installer (x64)](#install-using-installer-x64)
+    - [Manual Installation (x86/x64)](#manual-installation-x86x64)
+  - [MacOS](#macos)
+  - [Linux](#linux)
+    - [Linux (generic amd64)](#linux-generic-amd64)
+      - [Installation Process](#installation-process)
+    - [Portable DLL](#portable-dll)
+    - [Arch Linux](#arch-linux)
+    - [Fedora](#fedora)
+    - [CentOS](#centos)
+    - [Debian](#debian)
+      - [Repository](#repository)
+      - [Packages](#packages)
+    - [Ubuntu](#ubuntu)
+      - [Migrating to the new repository](#migrating-to-the-new-repository)
+      - [Ubuntu Repository](#ubuntu-repository)
+      - [Ubuntu Packages](#ubuntu-packages)
 
 ## Containers
 
@@ -32,7 +43,8 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
 > [!Note]
 > There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
-Use host mode for networking in order to use DLNA or an HDHomeRun.
+> [!Note]
+> Use host mode for networking in order to use DLNA or an HDHomeRun.
 
 ### Official Docker Hub
 
@@ -40,20 +52,93 @@ Use host mode for networking in order to use DLNA or an HDHomeRun.
 
 The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
 
+#### Installing Docker
+
+There are multiple platforms that Docker can run on. Below are guides for Ubuntu, Windows and MacOS
+
+**Ubuntu**
+
+Lets start with Ubuntu, to install the basic Docker Daemon you will need to run the following 2 commands:
+
+```sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+
+And to install Docker Compose you will need to run the following commands:
+
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+> [!NOTE]
+> To install a different version of Compose, substitute 1.25.5 with the version of Compose you want to use.
+
+Now test the installation by running the following command in your terminal:
+
+```sh
+sudo docker run hello-world
+```
+
+You should see a message that states:
+
+```sh
+Hello from Docker! This message shows that your installation appears to be working correctly.
+```
+
+**Windows/MacOS**
+
+For windows and MacOS you can use the following link to install Docker for Desktop:
+
+<https://www.docker.com/products/docker-desktop>
+
+Now test the installation by running the following command in your terminal(MacOS) or Powershell(Windows):
+
+```sh
+docker run hello-world
+```
+
+You should see a message that states:
+
+```sh
+Hello from Docker! This message shows that your installation appears to be working correctly.
+```
+
+#### Preparing the Folders
+
+Before running the Jellyfin Container. We need to make 3 folders:
+
+- Config
+- Cache
+- Media
+
+**Ubuntu/Mac**
+
+```sh
+mkdir -p Path/To/Config
+mkdir -p Path/To/Cache
+mkdir -p Path/To/Media
+```
+
+**Windows**
+Make a folder called Jellyfin, and create the 3 folders inside the Jellyfin Folder.
+
+These folders will be used by Jellyfin to store data in. By default everything inside a Docker container gets removed once you delete the container. By making these folders you are able to delete the Jellyfin container while keeping your data. Amazing!
+
+#### Running the Container
+
 1. Get the latest image.
 
     ```sh
     docker pull jellyfin/jellyfin
     ```
 
-2. Create directories on the host for persistent data storage.
+2. Start the server in one of the following ways
 
-    ```sh
-    mkdir /path/to/config
-    mkdir /path/to/cache
-    ```
+    **Docker**
 
-3. Start the server.
+    Running a Container is very easy (as you might have noticed while running the Hello world! Container). However when running a service you'll need to add some options to your docker run Command. Below is the full command and then it will be explained what the different parts mean.
 
     ```sh
     docker run -d \
@@ -66,7 +151,33 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
      jellyfin/jellyfin
     ```
 
-    Alternatively, using docker-compose:
+    - `-d`: This means that the Docker Container will run in the background. This can also be changed to -it this will make the container interactive allowing you to execute commands directly inside the container.
+
+    - `--volume` /path/to/config:/config: This option connects the "/path/to/config" folder on your Host to the "/config" inside the container. You do not need to have any config present in /path/to/config as during the run command of the container Jellyfin will generate all of the necessary files. Everything in front of the colon is the of the config folder you've created in the previous step.
+
+    - `--volume` /path/to/cache:/cache: This option connects the "/path/to/cache" folder on your Host to the "/cache" inside the container.
+
+    - `--volume` /path/to/media:/media: This option connects the "/path/to/media" folder on your Host to the "/media" inside the container. This option has to be added in order for Jellyfin to find your media files. It is also possible that you have your media files spread across different places. In that case you can keep adding more volumes by using:
+
+    - `--volume` /path/to/anothermedia:/media2 & --volume /path/to/differentmedia:/media3 etc. add as many as you like!
+
+    - `--user 1000:1000`: Is option for Ubuntu to specify that you want to run the Container as the current user. This command is not necessary if you are using Docker for Desktop
+
+    - `--net=host`: This option will tell the container to use the same network as the computer that it is running on. This means that if you have this running on your windows machine, you will be able to access jellyfin by using <http://localhost:8096> instead of a different IP
+
+    - Alternatively you can use different options for the `--restart=unless-stopped` if you do not want the Jellyfin server to start whenever Docker starts. The following options are available:
+
+      - `--restart=no` Do not automaticallu restart the container
+
+      - `--restart=on-failure` Restart the container if it exits due to an error
+
+      - `--restart=always` Always restart the container when it stops
+  
+    - `jellyfin/jellyfin`: This specifies what "image" to use to start the container with.
+
+    **Docker-Compose**
+
+    Create a `docker-compose.yml` file with the following contents:
 
     ```json
     version: "3"
@@ -79,6 +190,12 @@ The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/
           - /path/to/config:/config
           - /path/to/cache:/cache
           - /path/to/media:/media
+    ```
+
+    Then while in the same folder as the `docker-compose.yml` run:
+
+    ```sh
+    docker-compose up
     ```
 
 ### [Docker Hub](https://hub.docker.com/r/linuxserver/jellyfin) image maintained by LinuxServer.io

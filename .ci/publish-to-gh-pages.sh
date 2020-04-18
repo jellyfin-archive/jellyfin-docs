@@ -1,18 +1,21 @@
 #!/bin/bash
 
-# Download the latest release
-curl -s https://api.github.com/repos/jellyfin/jellyfin-docs/releases/latest | grep "browser_download_url.*docs-.*\.tar\.gz" | cut -d : -f 2,3 | tr -d \" | wget -O /tmp/docs.tar.gz -qi -
+# clone website
+git clone https://github.com/jellyfin/jellyfin.github.io
+pushd jellyfin.github.io
 
-# Clean any old files
-rm -rf docs/
-
-mkdir -p docs/
-pushd docs
-
-# Extract the files
-tar -xzf /tmp/docs.tar.gz
+# remove old docs
+rm -rf docs
+mkdir -p docs
 popd
 
-git add docs/
-git commit -m "CI Documentation update"
+# update docs
+unzip *.zip -d jellyfin.github.io/docs
+
+# commit new changes
+git add docs
+git commit -m 'azure update docs'
 git push origin
+
+# remove repository files
+rm -rf jellyfin.github.io

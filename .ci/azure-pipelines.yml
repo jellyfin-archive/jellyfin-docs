@@ -58,8 +58,8 @@ jobs:
         workingDirectory: '$(Build.SourcesDirectory)'
 
     - task: ArchiveFiles@2
-      condition: contains(variables['Build.SourceBranch'], 'master')
       displayName: 'Package Documentation'
+      condition: contains(variables['Build.SourceBranch'], 'master')
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
         includeRootFolder: false
@@ -68,6 +68,7 @@ jobs:
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Docs'
+      condition: contains(variables['Build.SourceBranch'], 'master')
       inputs:
         pathToPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: 'jellyfin-docs-$(Build.BuildId)'

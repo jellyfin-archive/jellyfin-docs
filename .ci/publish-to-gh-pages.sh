@@ -14,7 +14,7 @@ cd jellyfin.github.io
 git add docs
 
 # commit new changes
-git -c "user.name=jellyfin-bot" -c "user.email=team@jellyfin.org" commit -m 'Azure Update ${BUILD_BUILDID}'
+git -c "user.name=jellyfin-bot" -c "user.email=team@jellyfin.org" commit -m 'Azure Update Docs ${BUILD_BUILDID}'
 
 # add repository
 git remote add ssh git@github.com:jellyfin/jellyfin.github.io.git

@@ -91,7 +91,7 @@ We\'re unable to connect to the selected server right now. Please ensure it is r
 
 Unlocking
 
-The unlocking of a user is a manual process for the Jellyfin administrator. When a user is locked out a message of the lockout appears on the activity feed on the administrator dashboard. To unlock the user, the administrator needs to navigate to the profile of the locked out user. When on the profile of the locked out user, the followign message should appear:
+The unlocking of a user is a manual process for the Jellyfin administrator. When a user is locked out a message of the lockout appears on the activity feed on the administrator dashboard. To unlock the user, the administrator needs to navigate to the profile of the locked out user. When on the profile of the locked out user, the following message should appear:
 
 ```sh
 This user is currently disabled

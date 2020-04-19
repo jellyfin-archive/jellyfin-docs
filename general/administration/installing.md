@@ -14,7 +14,7 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
       - [Installing Docker](#installing-docker)
       - [Preparing the Folders](#preparing-the-folders)
       - [Running the Container](#running-the-container)
-    - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
+      - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
     - [Unraid Docker](#unraid-docker)
     - [Kubernetes](#kubernetes)
   - [Windows (x86/x64)](#windows-x86x64)
@@ -198,7 +198,7 @@ These folders will be used by Jellyfin to store data in. By default everything i
     docker-compose up
     ```
 
-### [Docker Hub](https://hub.docker.com/r/linuxserver/jellyfin) image maintained by LinuxServer.io
+#### Docker Hub image maintained by LinuxServer.io
 
 <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
 

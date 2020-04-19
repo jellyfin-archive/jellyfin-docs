@@ -59,7 +59,6 @@ jobs:
 
     - task: ArchiveFiles@2
       displayName: 'Package Documentation'
-      condition: contains(variables['Build.SourceBranch'], 'master')
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
         includeRootFolder: false
@@ -68,8 +67,22 @@ jobs:
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Docs'
-      condition: contains(variables['Build.SourceBranch'], 'master')
       inputs:
         pathToPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: 'jellyfin-docs-$(Build.BuildId)'
         publishLocation: 'Container'
+
+    - task: DownloadSecureFile@1
+      displayName: 'Download GitHub Key'
+      condition: contains(variables['Build.SourceBranch'], 'master')
+      name: 'Bot'
+      inputs:
+        secureFile: 'bot'
+
+    - task: CmdLine@2
+      displayName: 'Update Website'
+      condition: contains(variables['Build.SourceBranch'], 'master')
+      inputs:
+        targetType: 'filePath'
+        filePath: '.ci/publish-to-gh-pages.sh'
+        workingDirectory: '$(Build.ArtifactStagingDirectory)'

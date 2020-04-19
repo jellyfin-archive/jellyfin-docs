@@ -2,20 +2,23 @@
 
 # clone website
 git clone https://github.com/jellyfin/jellyfin.github.io
-pushd jellyfin.github.io
 
 # remove old docs
-rm -rf docs
-mkdir -p docs
-popd
+rm -rf jellyfin.github.io/docs
 
 # update docs
 unzip *.zip -d jellyfin.github.io/docs
 
-# commit new changes
+# move to git directory
+cd jellyfin.github.io
 git add docs
-git commit -m 'azure update docs'
-git push origin
 
-# remove repository files
-rm -rf jellyfin.github.io
+# commit new changes
+git -c "user.name=jellyfin-bot" -c "user.email=team@jellyfin.org" commit -m 'Azure Update ${BUILD_BUILDID}'
+
+# add repository
+git remote add ssh git@github.com:jellyfin/jellyfin.github.io.git
+
+# push changes
+export GIT_SSH_COMMAND="ssh -i ${BOT_SECUREFILEPATH}"
+git -c "user.name=jellyfin-bot" -c "user.email=team@jellyfin.org" push ssh

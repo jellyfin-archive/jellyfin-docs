@@ -17,7 +17,7 @@ jobs:
     displayName: 'Build'
 
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
 
     steps:
     - checkout: self
@@ -50,11 +50,11 @@ jobs:
         arguments: '--configuration Release'
         workingDirectory: '$(Build.SourcesDirectory)/src/jellyfin'
 
-    - task: PowerShell@2
+    - task: CmdLine@2
       displayName: 'DocFX Build'
       inputs:
         targetType: 'filePath'
-        filePath: '.ci/build-in-ci.ps1'
+        filePath: '.ci/build-in-ci.sh'
         workingDirectory: '$(Build.SourcesDirectory)'
 
     - task: ArchiveFiles@2

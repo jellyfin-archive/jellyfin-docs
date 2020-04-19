@@ -76,7 +76,29 @@ These allow a user to download media. Syncing and Transcoding are currently not 
 
 `Hide this user from login screens` Useful for private or hidden administrator accounts. The user will need to sign in manually by entering their username and password. All newly created users are hidden by default.
 
+#### Locking and Unlocking users
+
+Locking
+
 `Failed login attempts before user is locked out` Determines how many incorrect login attempts can be made before lockout occurs, disabling the user. 0 means inheriting the default of 3 for non-admin and 5 for admin, -1 disables lockout
+
+When a user is locked out after the set amout of attempts the admin has determined for that account, the user will recieve the following message when trying to login to the Jellyfin instance:
+
+```sh
+Connection Failure
+We\'re unable to connect to the selected server right now. Please ensure it is running and try again.
+```
+
+Unlocking
+
+The unlocking of a user is a manual process for the Jellyfin administrator. When a user is locked out a message of the lockout appears on the activity feed on the administrator dashboard. To unlock the user, the administrator needs to navigate to the profile of the locked out user. When on the profile of the locked out user, the followign message should appear:
+
+```sh
+This user is currently disabled
+See below to reenable
+```
+
+To reenable the user the administrator must navigate to the `Disable this user` option in the Additional options section uncheck the checkmark and hit `Save`. The disabled user should be able to login again.
 
 ### Library Access
 

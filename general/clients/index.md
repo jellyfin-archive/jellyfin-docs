@@ -12,6 +12,25 @@ Clients connect your devices to your Jellyfin server and let you view your conte
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 
+## Browsers
+
+Our goal is to provide support for these browsers. 
+
+ - last 2 Firefox versions
+ - last 2 Chrome versions
+ - last 2 ChromeAndroid versions
+ - last 2 Safari versions
+ - last 2 iOS versions
+ - last 2 Edge versions
+ - Chrome 27
+ - Chrome 38
+ - Chrome 47
+ - Chrome 53
+ - Chrome 56
+ - Chrome 63
+ - Firefox ESR
+
+
 ## Android
 
 ### Jellyfin for Android

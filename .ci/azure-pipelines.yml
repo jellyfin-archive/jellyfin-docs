@@ -72,17 +72,32 @@ jobs:
         artifactName: 'jellyfin-docs-$(Build.BuildId)'
         publishLocation: 'Container'
 
+  - job: Publish
+    displayName: 'Publish'
+
+    dependsOn: Build
+    condition: contains(variables['Build.SourceBranch'], 'master')
+
+    pool:
+      vmImage: ubuntu-latest
+
+    steps:
+    - checkout: none
+
+    - task: DownloadPipelineArtifact@2
+      displayName: 'Download Artifact'
+      inputs:
+        source: 'current'
+        artifact: 'jellyfin-docs-$(Build.BuildId)'
+        path: '$(Build.SourcesDirectory)'
+        runVersion: 'latest'
+
     - task: DownloadSecureFile@1
       displayName: 'Download GitHub Key'
-      condition: contains(variables['Build.SourceBranch'], 'master')
       name: 'Bot'
       inputs:
         secureFile: 'bot'
 
-    - task: CmdLine@2
+    - script: 'bash .ci/publish-to-gh-pages.sh'
       displayName: 'Update Website'
-      condition: contains(variables['Build.SourceBranch'], 'master')
-      inputs:
-        targetType: 'filePath'
-        filePath: '.ci/publish-to-gh-pages.sh'
-        workingDirectory: '$(Build.ArtifactStagingDirectory)'
+      workingDirectory: '$(Build.SourcesDirectory)'

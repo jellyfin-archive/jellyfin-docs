@@ -14,14 +14,14 @@ Do you have a client that interfaces with Jellyfin and want to see it listed her
 
 ## Browsers
 
-Our goal is to provide support for these browsers. 
-
- - last 2 Firefox versions
- - last 2 Chrome versions
- - last 2 Chrome for Android versions
- - last 2 Safari versions
- - last 2 iOS versions
- - last 2 Edge versions
+Our goal is to provide support for the two most recent versions of these browsers
+ - Firefox
+ - Chrome
+ - Chrome for Android
+ - Safari for MacOS and iOS
+ - Edge
+ 
+As well as support for
  - Chrome 27
  - Chrome 38
  - Chrome 47
@@ -29,7 +29,6 @@ Our goal is to provide support for these browsers.
  - Chrome 56
  - Chrome 63
  - Firefox ESR
-
 
 ## Android
 

@@ -65,15 +65,11 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
-And to install Docker Compose you will need to run the following commands:
+And to install Docker Compose you will need to run the following command:
 
 ```sh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+apt-get install docker-compose
 ```
-
-> [!NOTE]
-> To install a different version of Compose, substitute 1.25.5 with the version of Compose you want to use.
 
 Now test the installation by running the following command in your terminal:
 

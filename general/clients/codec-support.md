@@ -76,8 +76,8 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |[SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip)|Text|❌|🔶|✅|🔶|
 |[WebVTT (VTT)](https://en.wikipedia.org/wiki/WebVTT)<sup>2</sup>|Text|❌|❌|✅|🔶|
-|ASS/SSA<sup>3</sup>|Formatted Text|❌|❌|✅|🔶|
-|VobSub<sup>4</sup>|Picture|✅|✅|✅|🔶|
+|ASS/SSA|Formatted Text|❌|❌|✅|🔶|
+|VobSub<sup>3</sup>|Picture|✅|✅|✅|🔶|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
 
@@ -85,9 +85,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 <sup>2</sup>VTT are supported in an [HLS Stream](https://helpx.adobe.com/adobe-media-server/dev/webvtt-subtitles-captions.html).
 
-<sup>3</sup>ASS Subtitles are only supported by MKV files. MKV files aren't supported by Firefox. They will always inherently be burned into the video.
-
-<sup>4</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
+<sup>3</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
 
 To extract subtitles, the following commands can be used. The section `0:s:0` means the first subtitle, so `0:s:1` would be the second subtitle.
 

@@ -1,18 +1,24 @@
 #!/bin/bash
 
-# Download the latest release
-curl -s https://api.github.com/repos/jellyfin/jellyfin-docs/releases/latest | grep "browser_download_url.*docs-.*\.tar\.gz" | cut -d : -f 2,3 | tr -d \" | wget -O /tmp/docs.tar.gz -qi -
+# clone website
+git clone https://github.com/jellyfin/jellyfin.github.io
 
-# Clean any old files
-rm -rf docs/
+# remove old docs
+rm -rf jellyfin.github.io/docs
 
-mkdir -p docs/
-pushd docs
+# update docs
+unzip *.zip -d jellyfin.github.io/docs
 
-# Extract the files
-tar -xzf /tmp/docs.tar.gz
-popd
+# move to git directory
+cd jellyfin.github.io
+git add docs
 
-git add docs/
-git commit -m "CI Documentation update"
-git push origin
+# commit new changes
+git -c "user.name=jellyfin-bot" -c "user.email=team@jellyfin.org" commit -m 'Azure Update Docs ${BUILD_BUILDID}'
+
+# add repository
+git remote add ssh git@github.com:jellyfin/jellyfin.github.io.git
+
+# push changes
+export GIT_SSH_COMMAND="ssh -i ${BOT_SECUREFILEPATH}"
+git -c "user.name=jellyfin-bot" -c "user.email=team@jellyfin.org" push ssh

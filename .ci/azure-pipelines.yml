@@ -76,7 +76,7 @@ jobs:
   displayName: 'Publish'
 
   dependsOn: Build
-  condition: and(contains(variables['Build.SourceBranch'], 'master'), not(variables['Build.Reason'], 'PullRequest'))
+  condition: and(contains(variables['Build.SourceBranch'], 'master'), notIn(variables['Build.Reason'], 'PullRequest'))
 
   pool:
     vmImage: ubuntu-latest

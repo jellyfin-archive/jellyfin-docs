@@ -70,14 +70,14 @@ ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 
-Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format (text-based subtitles) or burned into the video (image/lossless based and ASS based) due to the subtitles transcoding not being supported. This is the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer. Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
+Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format that is supported by the browser or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer. Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
 
 ||Format|TS|MP4<sup>1</sup>|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |[SubRip Text (SRT)](https://en.wikipedia.org/wiki/SubRip)|Text|❌|🔶|✅|🔶|
 |[WebVTT (VTT)](https://en.wikipedia.org/wiki/WebVTT)<sup>2</sup>|Text|❌|❌|✅|🔶|
-|ASS/SSA<sup>3</sup>|Formatted Text|❌|❌|✅|🔶|
-|VobSub<sup>4</sup>|Picture|✅|✅|✅|🔶|
+|ASS/SSA|Formatted Text|❌|❌|✅|🔶|
+|VobSub<sup>3</sup>|Picture|✅|✅|✅|🔶|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
 
@@ -85,9 +85,7 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 <sup>2</sup>VTT are supported in an [HLS Stream](https://helpx.adobe.com/adobe-media-server/dev/webvtt-subtitles-captions.html).
 
-<sup>3</sup>ASS Subtitles are only supported by MKV files. MKV files aren't supported by Firefox. They will always inherently be burned into the video.
-
-<sup>4</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
+<sup>3</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
 
 To extract subtitles, the following commands can be used. The section `0:s:0` means the first subtitle, so `0:s:1` would be the second subtitle.
 

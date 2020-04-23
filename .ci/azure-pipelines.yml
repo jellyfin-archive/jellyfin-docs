@@ -13,91 +13,89 @@ pr:
     - '*'
 
 jobs:
-  - job: Build
-    displayName: 'Build'
+- job: Build
+  displayName: 'Build'
 
-    pool:
-      vmImage: windows-latest
+  pool:
+    vmImage: windows-latest
 
-    steps:
-    - checkout: self
-      clean: true
-      submodules: true
-      persistCredentials: true
+  steps:
+  - checkout: self
+    clean: true
+    submodules: true
+    persistCredentials: true
 
-    - task: CmdLine@2
-      displayName: 'Install Markdownlint CLI'
-      inputs:
-        script: 'npm install markdownlint-cli'
-        workingDirectory: '$(Build.SourcesDirectory)'
-
-    - task: CmdLine@2
-      displayName: 'Run Markdownlint'
-      inputs:
-        script: 'npx markdownlint **/*.md --ignore node_modules --ignore src'
-        workingDirectory: '$(Build.SourcesDirectory)'
-
-    - task: CmdLine@2
-      displayName: 'Update Submodules'
-      inputs:
-        script: 'git submodule update --recursive --remote'
-        workingDirectory: '$(Build.SourcesDirectory)'
-
-    - task: DotNetCoreCLI@2
-      displayName: 'Build Server Submodule'
-      inputs:
-        command: build
-        arguments: '--configuration Release'
-        workingDirectory: '$(Build.SourcesDirectory)/src/jellyfin'
-
-    - task: PowerShell@2
-      displayName: 'DocFX Build'
-      inputs:
-        targetType: 'filePath'
-        filePath: '.ci/build-in-ci.ps1'
-        workingDirectory: '$(Build.SourcesDirectory)'
-
-    - task: ArchiveFiles@2
-      displayName: 'Package Documentation'
-      inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/jellyfin-docs-$(Build.BuildId).zip'
-
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Docs'
-      inputs:
-        pathToPublish: '$(Build.ArtifactStagingDirectory)'
-        artifactName: 'jellyfin-docs-$(Build.BuildId)'
-        publishLocation: 'Container'
-
-  - job: Publish
-    displayName: 'Publish'
-
-    dependsOn: Build
-    condition: contains(variables['Build.SourceBranch'], 'master')
-
-    pool:
-      vmImage: ubuntu-latest
-
-    steps:
-    - checkout: none
-
-    - task: DownloadPipelineArtifact@2
-      displayName: 'Download Artifact'
-      inputs:
-        source: 'current'
-        artifact: 'jellyfin-docs-$(Build.BuildId)'
-        path: '$(Build.SourcesDirectory)'
-        runVersion: 'latest'
-
-    - task: DownloadSecureFile@1
-      displayName: 'Download GitHub Key'
-      name: 'Bot'
-      inputs:
-        secureFile: 'bot'
-
-    - script: 'bash .ci/publish-to-gh-pages.sh'
-      displayName: 'Update Website'
+  - task: CmdLine@2
+    displayName: 'Install Markdownlint CLI'
+    inputs:
+      script: 'npm install markdownlint-cli'
       workingDirectory: '$(Build.SourcesDirectory)'
+
+  - task: CmdLine@2
+    displayName: 'Run Markdownlint'
+    inputs:
+      script: 'npx markdownlint **/*.md --ignore node_modules --ignore src'
+      workingDirectory: '$(Build.SourcesDirectory)'
+
+  - task: CmdLine@2
+    displayName: 'Update Submodules'
+    inputs:
+      script: 'git submodule update --recursive --remote'
+      workingDirectory: '$(Build.SourcesDirectory)'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Build Server Submodule'
+    inputs:
+      command: build
+      arguments: '--configuration Release'
+      workingDirectory: '$(Build.SourcesDirectory)/src/jellyfin'
+
+  - task: PowerShell@2
+    displayName: 'DocFX Build'
+    inputs:
+      targetType: 'filePath'
+      filePath: '.ci/build-in-ci.ps1'
+      workingDirectory: '$(Build.SourcesDirectory)'
+
+  - task: ArchiveFiles@2
+    displayName: 'Package Documentation'
+    inputs:
+      rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/jellyfin-docs-$(Build.BuildId).zip'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Docs'
+    inputs:
+      pathToPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'jellyfin-docs-$(Build.BuildId)'
+      publishLocation: 'Container'
+
+- job: Publish
+  displayName: 'Publish'
+
+  dependsOn: Build
+  condition: and(contains(variables['Build.SourceBranch'], 'master'), notIn(variables['Build.Reason'], 'PullRequest'))
+
+  pool:
+    vmImage: ubuntu-latest
+
+  steps:
+  - task: DownloadPipelineArtifact@2
+    displayName: 'Download Artifact'
+    inputs:
+      source: 'current'
+      artifact: 'jellyfin-docs-$(Build.BuildId)'
+      path: '$(Build.SourcesDirectory)'
+      runVersion: 'latest'
+
+  - task: DownloadSecureFile@1
+    displayName: 'Download GitHub Key'
+    name: 'Bot'
+    inputs:
+      secureFile: 'bot'
+
+  - script: 'bash .ci/publish-to-gh-pages.sh'
+    displayName: 'Update Website'
+    workingDirectory: '$(Build.SourcesDirectory)'

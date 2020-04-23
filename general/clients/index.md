@@ -14,7 +14,7 @@ Do you have a client that interfaces with Jellyfin and want to see it listed her
 
 ## Browsers
 
-Our goal is to provide support for the two most recent versions of these browsers
+Our goal is to provide support for the two most recent versions of these browsers. Older browsers may be supported, but are not guaranteed. 
  - Firefox
  - Chrome
  - Chrome for Android

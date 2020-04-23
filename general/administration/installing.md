@@ -350,6 +350,10 @@ Fedora 29 builds in RPM package format are available [here](https://jellyfin.org
 
 CentOS/RHEL 7 builds in RPM package format are available [here](https://jellyfin.org/downloads/#centos) and an official CentOS/RHEL repository is planned for the future.
 
+The default CentOS/RHEL repositories don't carry FFmpeg, which the RPM requires. You will need to add a third-party repository which carries FFmpeg, such as [RPM Fusion's Free repository](https://rpmfusion.org/Configuration).
+
+You can also build [Jellyfin's version](https://github.com/jellyfin/jellyfin-ffmpeg) on your own. This includes gathering the dependencies and compiling and installing them. Instructions can be found at [the FFmpeg wiki](https://trac.ffmpeg.org/wiki/CompilationGuide/Centos).
+
 ### Debian
 
 #### Repository

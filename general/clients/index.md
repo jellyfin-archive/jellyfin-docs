@@ -12,6 +12,18 @@ Clients connect your devices to your Jellyfin server and let you view your conte
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 
+## Browsers
+
+Our goal is to provide support for the two most recent versions of these browsers.
+ - Firefox
+ - Firefox ESR
+ - Chrome
+ - Chrome for Android
+ - Safari for MacOS and iOS
+ - Edge (EdgeHTML and Chromium engines)
+
+Older browsers may be supported as a result of the needs of specific web-based clients, but full functionality is not guaranteed on their desktop version.
+
 ## Android
 
 ### Jellyfin for Android

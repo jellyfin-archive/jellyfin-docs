@@ -16,19 +16,13 @@ Do you have a client that interfaces with Jellyfin and want to see it listed her
 
 Our goal is to provide support for the two most recent versions of these browsers. Older browsers may be supported, but are not guaranteed. 
  - Firefox
+ - Firefox ESR
  - Chrome
  - Chrome for Android
  - Safari for MacOS and iOS
  - Edge (EdgeHTML and Chromium engines)
- 
-As well as support for
- - Chrome 27
- - Chrome 38
- - Chrome 47
- - Chrome 53
- - Chrome 56
- - Chrome 63
- - Firefox ESR
+
+Older browsers may be supported as a result of the needs of specific web-based clients, but full functionality is not guaranteed on their desktop version.
 
 ## Android
 

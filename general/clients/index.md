@@ -19,7 +19,7 @@ Our goal is to provide support for the two most recent versions of these browser
  - Chrome
  - Chrome for Android
  - Safari for MacOS and iOS
- - Edge
+ - Edge (EdgeHTML and Chromium engines)
  
 As well as support for
  - Chrome 27

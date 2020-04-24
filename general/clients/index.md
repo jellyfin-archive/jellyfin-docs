@@ -299,4 +299,4 @@ A wrapper around Jellyfin's web interface for UWP devices (Windows 10, Windows P
 
 **Links:**
 
-* [GitHub](https://github.com/chaosinnovator/jellyfin-uwp)
+* [GitHub](https://github.com/jellyfin/jellyfin-uwp)

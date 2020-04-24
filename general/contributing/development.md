@@ -181,7 +181,7 @@ When submitting a new PR, please ensure you do the following things. If you have
 We need to install all development dependencies and pull down the code inside the container before we can compile and run.
 
 > [!NOTE]
-> Run each commmand on a separate line. The container we'll test in is named `jftest`. Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue. This is also why we explicitly kill it to reload the new version.
+> Run each command on a separate line. The container we'll test in is named `jftest`. Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue. This is also why we explicitly kill it to reload the new version.
 
 ### Master Branch
 

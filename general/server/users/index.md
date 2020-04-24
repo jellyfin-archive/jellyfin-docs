@@ -21,6 +21,10 @@ You can allow transcoding for audio and video individually to prevent certain pe
 
 Users can delete media from the library with this option, which will also remove them from the filesystem. If your server doesn't have write permission to the media files they will be removed temporarily but picked up on the next library scan. You can also enable this option for individual libraries.
 
+### Locking/Unlocking
+
+You can set a maximum of failed login attempts before a user gets locked out. This means that if a user tries to login but fails an x amount of times. The user will no longer be able to login until the server administrator manually unlocks the account.
+
 ### Other
 
 If you disable a user they will be kicked off the server immediately and unable to login until the option is deselected. This is useful if you don't want to expose unused credentials on a public server but might want to keep the account around for a while. You can also hide a user from the login screen and require manual entry of both the username and password. This will prevent users from knowing what accounts have been created on the server when they login.

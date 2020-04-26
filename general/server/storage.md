@@ -9,13 +9,13 @@ Jellyfin is designed to directly read media from the filesystem. This means to p
 
 ## Docker/VM's
 
-For storage, a library database can take up to 50 to 100 GB. The [transcoding](https://github.com/jellyfin/jellyfin-docs/blob/master/general/server/transcoding.md) folder needs roughly the same size as the original media if it's being transcoded at the same bitrate. A single 50GB Blu-Ray Remux by itself can take up to approximately 60GB or as little as 15GB, depending on the quality selected. If the transcoding folder is held on the same storage as the database, this must be taken into considerable.
+For storage, a library database can take up to 50 to 100 GB. The [transcoding](https://github.com/jellyfin/jellyfin-docs/blob/master/general/server/transcoding.md) folder needs roughly the same size as the original media if it's being transcoded at the same bitrate. A single 50GB Blu-Ray Remux by itself can take up to approximately 60GB or as little as 15GB, depending on the quality selected. If the transcoding folder is held on the same storage as the database, this must be taken into consideration.
 
 ## Cloud
 
 A popular choice for cloud storage has been the program [rclone](https://rclone.org/). To prevent API bans, rclone is typically paired with another program such as [mergerfs](https://github.com/trapexit/mergerfs). For cloud storage, it is recommended to disable image extraction as this requires downloading the entire file to perform this task. Unfortunately, the image extractor can't be [turned off](https://github.com/jellyfin/jellyfin/issues/2355) in Jellyfin at the moment causing [performance issues](https://github.com/jellyfin/jellyfin/issues/2600).
 
-- animostiy's [repo](https://github.com/animosity22/homescripts) about rclone and mergerfs. 
+- animostiy22's [repo](https://github.com/animosity22/homescripts) about rclone and mergerfs. 
 
 - animosity22's [rclone config](https://github.com/animosity22/homescripts/blob/master/systemd/rclone.service).
 

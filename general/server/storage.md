@@ -9,7 +9,7 @@ Jellyfin is designed to directly read media from the filesystem. This means to p
 
 ## Docker/VM's
 
-For storage, a library database can take up to 50 to 100 GB. The [transcoding](https://github.com/jellyfin/jellyfin-docs/blob/master/general/server/transcoding.md) folder needs roughly the same size as the original media if it's being transcoded at the same bitrate. A single 50GB Blu-Ray Remux by itself can take up to approximately 60GB or as little as 15GB, depending on the quality selected. If the transcoding folder is held on the same storage as the database, this must be taken into consideration.
+For storage, a moderate size library database can grow anywhere from 10 to 100 GB. The [transcoding](xref:server-transcoding) folder needs roughly the same size as the original media if it's being transcoded at the same bitrate. A single 50GB Blu-Ray Remux by itself can take up to approximately 60GB or as little as 15GB, depending on the quality selected. If the transcoding folder is held on the same storage as the database, this must be taken into consideration.
 
 ## Cloud
 

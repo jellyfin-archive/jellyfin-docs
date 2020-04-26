@@ -13,7 +13,7 @@ For storage, a library database can take up to 50 to 100 GB. The [transcoding](h
 
 ## Cloud
 
-A popular choice for cloud storage has been the program [rclone](https://rclone.org/). To prevent API bans, rclone is typically paired with another program such as [mergerfs](https://github.com/trapexit/mergerfs). 
+A popular choice for cloud storage has been the program [rclone](https://rclone.org/). To prevent API bans, rclone is typically paired with another program such as [mergerfs](https://github.com/trapexit/mergerfs). For cloud storage, it is recommended to disable image extraction as this requires downloading the entire file to perform this task. Unfortunately, the image extractor can't be [turned off](https://github.com/jellyfin/jellyfin/issues/2355) in Jellyfin at the moment causing [performance issues](https://github.com/jellyfin/jellyfin/issues/2600).
 
 - animostiy's [repo](https://github.com/animosity22/homescripts) about rclone and mergerfs. 
 

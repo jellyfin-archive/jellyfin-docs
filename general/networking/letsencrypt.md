@@ -125,14 +125,14 @@ First, you need to determine a few things.
 **MAKE SURE YOU HAVE A CNAME FOR JELLYFIN WITH YOUR DNS PROVIDER BEFORE PROCEEDING**
 
 1. Where you wish to store information regarding Let's Encrypt (docker calls these "volumes") 
-2. What subdomain or subfolder you wish to use with Let's Encrypt (ex. jellyfin.domain.tld)
-3. What timezone you wish wish to use
-4. If you'll be using either http or dns validation
+2. What subdomain or subfolder you wish to use with Let's Encrypt (ex. jellyfin.example.com)
+3. What timezone you wish to use
+4. If you'll be using either HTTP-01 or DNS-01 for challenges. 
 5. What network you'll be running on (I'd recommend the default macvlan network called "br0")
 6. What IP you want your container running on
 7. What ports you'll be using (ex. 180 for port 80, and 1443 for 443)
-7. Make sure ports 80 (if using http validation) and 443 are fowarded to the docker container from your router (instructions vary upon manufacturer) 
-8. What user will the container be running as (you can determine the PUID and PGUID by running `id (user)` (replacing "user" with the username of the user the container will be running as)
+7. Make sure ports 80 (if using http validation) and 443 are forwarded to the docker container from your router (instructions vary upon manufacturer) 
+8. What user will the container be running as (you can determine the PUID and PGID by running `id` (replacing "user" with the username of the user the container will be running as.
 
 Then, depending on what those settings are, you'll need to adjust the values below as needed. 
 

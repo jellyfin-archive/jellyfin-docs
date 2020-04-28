@@ -23,4 +23,5 @@ The most common naming scheme for shows is categorizing the files by series and 
         Episode S02E02.mp4
 ```
 ----
-Note that the season folders *do not contain the series name*, otherwise jellyfin can in certain cases (Stargate SG-1 due to the dash, for instance) misdetect your episodes and put them all under the same season.
+> [!NOTE]
+> Season folders shouldn't contain the series name, otherwise Jellyfin can in certain cases (Stargate SG-1 due to the dash and one, for instance) misdetect your episodes and put them all under the same season.

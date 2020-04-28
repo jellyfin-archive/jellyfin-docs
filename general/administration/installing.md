@@ -4,38 +4,38 @@ title: Installing Jellyfin
 ---
 <!-- markdownlint-disable MD036 no-emphasis-as-heading -->
 
-# Installing
+# Installing <!-- omit in toc -->
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
-- [Installing](#installing)
-  - [Containers](#containers)
-    - [Official Docker Hub](#official-docker-hub)
-      - [Installing Docker](#installing-docker)
-      - [Preparing the Folders](#preparing-the-folders)
-      - [Running the Container](#running-the-container)
-      - [Hardware Transcoding with Nvidia (Ubuntu)](#hardware-transcoding-with-nvidia-ubuntu)
-    - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
-    - [Unraid Docker](#unraid-docker)
-    - [Kubernetes](#kubernetes)
-  - [Windows (x86/x64)](#windows-x86x64)
-    - [Install using Installer (x64)](#install-using-installer-x64)
-    - [Manual Installation (x86/x64)](#manual-installation-x86x64)
-  - [MacOS](#macos)
-  - [Linux](#linux)
-    - [Linux (generic amd64)](#linux-generic-amd64)
-      - [Installation Process](#installation-process)
-    - [Portable DLL](#portable-dll)
-    - [Arch Linux](#arch-linux)
-    - [Fedora](#fedora)
-    - [CentOS](#centos)
-    - [Debian](#debian)
-      - [Repository](#repository)
-      - [Packages](#packages)
-    - [Ubuntu](#ubuntu)
-      - [Migrating to the new repository](#migrating-to-the-new-repository)
-      - [Ubuntu Repository](#ubuntu-repository)
-      - [Ubuntu Packages](#ubuntu-packages)
+- [Containers](#containers)
+  - [Official Docker Hub](#official-docker-hub)
+    - [Installing Docker](#installing-docker)
+    - [Preparing the Folders](#preparing-the-folders)
+    - [Running the Container](#running-the-container)
+    - [Hardware Transcoding with Nvidia (Ubuntu)](#hardware-transcoding-with-nvidia-ubuntu)
+  - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
+  - [Unraid Docker](#unraid-docker)
+  - [Kubernetes](#kubernetes)
+  - [Podman](#podman)
+- [Windows (x86/x64)](#windows-x86x64)
+  - [Install using Installer (x64)](#install-using-installer-x64)
+  - [Manual Installation (x86/x64)](#manual-installation-x86x64)
+- [MacOS](#macos)
+- [Linux](#linux)
+  - [Linux (generic amd64)](#linux-generic-amd64)
+    - [Installation Process](#installation-process)
+  - [Portable DLL](#portable-dll)
+  - [Arch Linux](#arch-linux)
+  - [Fedora](#fedora)
+  - [CentOS](#centos)
+  - [Debian](#debian)
+    - [Repository](#repository)
+    - [Packages](#packages)
+  - [Ubuntu](#ubuntu)
+    - [Migrating to the new repository](#migrating-to-the-new-repository)
+    - [Ubuntu Repository](#ubuntu-repository)
+    - [Ubuntu Packages](#ubuntu-packages)
 
 ## Containers
 
@@ -280,6 +280,50 @@ An Unraid Docker template is available in the repository.
 ### Kubernetes
 
 A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift). Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
+
+### Podman
+
+[Podman](https://podman.io/) allows you to run containers as non-root. It's also the offically supported container solution on RHEL and CentOS.
+
+Steps to run Jellyfin using Podman are almost identical to Docker steps:
+
+1. Download the latest container image:
+
+   ```sh
+   podman pull jellyfin/jellyfin
+   ```
+
+2. Create directories on the host for persistent data storage:
+
+   ```sh
+   mkdir /path/to/config
+   mkdir /path/to/cache
+   ```
+
+3. Run jellyfin:
+
+   ```sh
+   podman run \
+   --cgroup-manager=systemd \
+   --privileged \
+   --volume /path/to/config:/config \
+   --volume /path/to/cache:/cache \
+   --volume /path/to/media:/media \
+   --net=host \
+   jellyfin/jellyfin
+   ```
+
+Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.
+
+If SELinux is enabled you need to use either `--privileged` or supply `z` volume option to allow Jellyfin to access the volumes.
+
+To mount your media library read-only append ':ro' to the media volume:
+
+```sh
+--volume /path/to/media:/media:ro
+```
+
+To run as a systemd service see [Running containers with Podman and shareable systemd services](https://www.redhat.com/sysadmin/podman-shareable-systemd-services).
 
 ## Windows (x86/x64)
 

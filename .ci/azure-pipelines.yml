@@ -61,7 +61,7 @@ jobs:
     displayName: 'Package Documentation'
     inputs:
       rootFolderOrFile: '$(Build.SourcesDirectory)/_site'
-      includeRootFolder: false
+      includeRootFolder: true
       archiveType: 'zip'
       archiveFile: '$(Build.ArtifactStagingDirectory)/jellyfin-docs-$(Build.BuildId).zip'
 
@@ -96,6 +96,14 @@ jobs:
     inputs:
       secureFile: 'bot'
 
-  - script: 'bash .ci/publish-to-gh-pages.sh'
+  - script: 'chmod 600 $(Bot.SecureFilePath)'
+    displayName: 'Fix Permissions'
+    failOnStderr: true
+
+  - task: Bash@3
     displayName: 'Update Website'
-    workingDirectory: '$(Build.SourcesDirectory)'
+    inputs:
+      targetType: 'filePath'
+      filePath: '.ci/publish-to-gh-pages.sh'
+      workingDirectory: '$(Build.SourcesDirectory)'
+      failOnStderr: false

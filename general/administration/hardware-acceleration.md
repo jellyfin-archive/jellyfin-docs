@@ -85,7 +85,7 @@ services:
       - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
       # RPi 4
-      - /dev/vchiq:/dev/qchiq
+      - /dev/vchiq:/dev/vchiq
 ```
 
 ## Debian Docker Nvidia

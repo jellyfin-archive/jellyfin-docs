@@ -132,11 +132,13 @@ First, you need to determine a few things.
 6. What IP you want your container running on
 7. What ports you'll be using (ex. 180 for port 80, and 1443 for 443)
 7. Make sure ports 80 (if using http validation) and 443 are forwarded to the docker container from your router (instructions vary upon manufacturer) 
-8. What user will the container be running as (you can determine the PUID and PGID by running `id` (replacing "user" with the username of the user the container will be running as.
+8. What user will the container be running as (you can determine the PUID and PGID by running `id` (replacing "user" with the username of the user the container will be running as)
+
+List of DNS Plugins [here](https://certbot.eff.org/docs/using.html#dns-plugins) if using DNS-01 challenge. 
 
 Then, depending on what those settings are, you'll need to adjust the values below as needed. 
 
-For example, a docker create command from the LinuxServer team:
+For example, the docker create command from the LinuxServer team for the Let's Encrypt Docker container:
 
 ```
 docker create \
@@ -145,7 +147,7 @@ docker create \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -e URL=yourdomain.url \
+  -e URL=example.com \
   -e SUBDOMAINS=www, \
   -e VALIDATION=http \
   -e DNSPLUGIN=cloudflare `#optional` \
@@ -165,7 +167,7 @@ docker create \
 Assuming I follow this template and adjust for my region, ports, and path, it would look like this (with personal information redacted):
 
 ```
-docker create --name=letsencrypt --cap-add=NET_ADMIN -e PUID=1000 -e PGID=1000 -e TZ=America/Chicago -e URL=yourdomain.url -e SUBDOMAINS=jellyfin -e VALIDATION=http -e EMAIL=email@email.com -e DHLEVEL=2048 -e ONLY_SUBDOMAINS=false -e STAGING=false -p 443:443 -p 80:80 -v /mnt/lets-encrypt/:/config --restart unless-stopped linuxserver/letsencrypt
+docker create --name=letsencrypt --cap-add=NET_ADMIN -e PUID=1000 -e PGID=1000 -e TZ=America/Chicago -e URL=example.com -e SUBDOMAINS=jellyfin -e VALIDATION=http -e EMAIL=email@email.com -e DHLEVEL=2048 -e ONLY_SUBDOMAINS=false -e STAGING=false -p 443:443 -p 80:80 -v /mnt/lets-encrypt/:/config --restart unless-stopped linuxserver/letsencrypt
 ```
 
 This will pull down the linuxserver/letsencrypt container, and then create it with the variables specified. You'll then want to start the docker container with `docker start letsencrypt`. You can verify this is started by running `docker ps`, which will produce an output like this:

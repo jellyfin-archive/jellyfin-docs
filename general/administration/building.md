@@ -25,18 +25,24 @@ All package builds begin with these two steps:
     git submodule update --init
     ```
 
-## Docker
+## Container image
 
-3. Build the Docker image:
+1. Build the container image using Docker:
 
     ```sh
     docker build -t $USERNAME/jellyfin .
     ```
 
-4. Run the container:
+2. Run Jellyfin in a new container using Docker or Podman from the built container image:
 
     ```sh
     docker run -d -p 8096:8096 $USERNAME/jellyfin
+    ```
+
+    or
+
+    ```sh
+    podman run -d -p 8096:8096 $USERNAME/jellyfin
     ```
 
 ## Linux or MacOS

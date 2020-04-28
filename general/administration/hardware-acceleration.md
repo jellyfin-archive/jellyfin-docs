@@ -405,6 +405,12 @@ Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))
 Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 ```
 
-`Stream #0:0` used software (VAAPI Decode also says native) to decode HEVC and used HWA to encode.
+`Stream #0:0` used software (VAAPI Decode can also say native) to decode HEVC and used HWA to encode.
 
-`Stream #0:1` had the same results. Decoding is easier than encoding so these are good results overall. HWA decoding is a work in progress.
+```data
+Stream mapping:
+Stream #0:0 -> #0:0 (h264 (h264_mmal) -> h264 (h264_omx))
+Stream #0:1 -> #0:1 (flac (native) -> mp3 (libmp3lame))
+```
+
+`Stream #0:0` used HWA for both. h264_mmal to decode and h264_omx to encode.

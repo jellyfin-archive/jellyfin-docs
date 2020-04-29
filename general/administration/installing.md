@@ -39,7 +39,7 @@ Official container image: `jellyfin/jellyfin` <a href="https://hub.docker.com/r/
 
 LinuxServer.io image: `linuxserver/jellyfin` <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>.
 
-Jellyfin distributes [official container images on Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures. These images are based on Debian and [built directly from the Jellyfin source code](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile). 
+Jellyfin distributes [official container images on Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures. These images are based on Debian and [built directly from the Jellyfin source code](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile).
 
 Additionally the [LinuxServer.io](https://www.linuxserver.io/) project distributes images [based on Ubuntu and the official Jellyfin Ubuntu binary packages](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile).
 
@@ -51,7 +51,7 @@ Additionally the [LinuxServer.io](https://www.linuxserver.io/) project distribut
 
 ### Docker
 
-[Docker](https://www.docker.com/) allows you to run containers on Linux, Windows and MacOS. 
+[Docker](https://www.docker.com/) allows you to run containers on Linux, Windows and MacOS.
 
 > [!Note]
 > There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
@@ -76,7 +76,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     ```
 
     Or create two directories on the host and use bind mounts:
-    
+
     ```sh
     mkdir /path/to/config
     mkdir /path/to/cache
@@ -97,7 +97,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
      jellyfin/jellyfin
     ```
 
-    Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.   
+    Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.
 
     To mount your media library read-only append ':ro' to the media volume:
 
@@ -225,7 +225,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 Steps to run Jellyfin using Podman are almost identical to Docker steps:
 
 1. Install Podman:
-   
+
    ```sh
    dnf install -y podman
    ```
@@ -246,7 +246,7 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
    ```
 
    Or create two directories on the host and use bind mounts:
-   
+
    ```sh
    mkdir /path/to/config
    mkdir /path/to/cache
@@ -269,7 +269,7 @@ Note that Podman doesn't require root access and it's recommended to run the Jel
 
 If SELinux is enabled you need to use either `--privileged` or supply `z` volume option to allow Jellyfin to access the volumes.
 
-Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.   
+Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.
 
 To mount your media library read-only append ':ro' to the media volume:
 

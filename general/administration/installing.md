@@ -8,13 +8,9 @@ title: Installing Jellyfin
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
-- [Containers](#containers)
-  - [Official Docker Hub](#official-docker-hub)
-    - [Installing Docker](#installing-docker)
-    - [Preparing the Folders](#preparing-the-folders)
-    - [Running the Container](#running-the-container)
+- [Container images](#container-images)
+  - [Docker](#docker)
     - [Hardware Transcoding with Nvidia (Ubuntu)](#hardware-transcoding-with-nvidia-ubuntu)
-  - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
   - [Unraid Docker](#unraid-docker)
   - [Kubernetes](#kubernetes)
   - [Podman](#podman)
@@ -37,110 +33,63 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
     - [Ubuntu Repository](#ubuntu-repository)
     - [Ubuntu Packages](#ubuntu-packages)
 
-## Containers
+## Container images
 
-[Open Container Initiative](https://stackoverflow.com/questions/31213126/libcontainer-vs-docker-vs-ocf-vs-runc#31219102) is a form of virtualization. An image is similar to an ISO while a container is akin to a running VM.
+Official container image: `jellyfin/jellyfin` <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>.
+
+LinuxServer.io image: `linuxserver/jellyfin` <a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>.
+
+Jellyfin distributes [official container images on Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures. These images are based on Debian and [built directly from the Jellyfin source code](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile). 
+
+Additionally the [LinuxServer.io](https://www.linuxserver.io/) project distributes images [based on Ubuntu and the official Jellyfin Ubuntu binary packages](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile).
 
 > [!Note]
-> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
+> For ARM hardware and RPi, it is recommended to use the LinuxServer.io image since hardware acceleration support is not yet available on the native image.
 
 > [!Note]
 > Use host mode for networking in order to use DLNA or an HDHomeRun.
 
-### Official Docker Hub
+### Docker
 
-<a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>
+[Docker](https://www.docker.com/) allows you to run containers on Linux, Windows and MacOS. 
 
-The Jellyfin Docker image is available on [Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
+> [!Note]
+> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
-#### Installing Docker
+The basic steps to create and run a Jellyfin container using Docker are as follows:
 
-There are multiple platforms that Docker can run on. Below are guides for Ubuntu, Windows and MacOS
+1. Follow the [offical installation guide to install Docker](https://docs.docker.com/engine/install/).
 
-**Ubuntu**
-
-Lets start with Ubuntu, to install the basic Docker Daemon you will need to run the following 2 commands:
-
-```sh
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-```
-
-And to install Docker Compose you will need to run the following command:
-
-```sh
-apt-get install docker-compose
-```
-
-Now test the installation by running the following command in your terminal:
-
-```sh
-sudo docker run hello-world
-```
-
-You should see a message that states:
-
-```sh
-Hello from Docker! This message shows that your installation appears to be working correctly.
-```
-
-**Windows/MacOS**
-
-For windows and MacOS you can use the following link to install Docker for Desktop:
-
-<https://www.docker.com/products/docker-desktop>
-
-Now test the installation by running the following command in your terminal(MacOS) or Powershell(Windows):
-
-```sh
-docker run hello-world
-```
-
-You should see a message that states:
-
-```sh
-Hello from Docker! This message shows that your installation appears to be working correctly.
-```
-
-#### Preparing the Folders
-
-Before running the Jellyfin Container. We need to make 3 folders:
-
-- Config
-- Cache
-- Media
-
-**Ubuntu/Mac**
-
-```sh
-mkdir -p Path/To/Config
-mkdir -p Path/To/Cache
-mkdir -p Path/To/Media
-```
-
-**Windows**
-Make a folder called Jellyfin, and create the 3 folders inside the Jellyfin Folder.
-
-These folders will be used by Jellyfin to store data in. By default everything inside a Docker container gets removed once you delete the container. By making these folders you are able to delete the Jellyfin container while keeping your data. Amazing!
-
-#### Running the Container
-
-1. Get the latest image.
+2. Download the latest container image:
 
     ```sh
     docker pull jellyfin/jellyfin
     ```
 
-2. Start the server in one of the following ways
+3. Create persistent storage for configuration and cache data:
 
-    **Docker**
+    Either create two persistent volumes:
 
-    Running a Container is very easy (as you might have noticed while running the Hello world! Container). However when running a service you'll need to add some options to your docker run Command. Below is the full command and then it will be explained what the different parts mean.
+    ```sh
+    docker volume create jellyfin-config
+    docker volume create jellyfin-cache
+    ```
+
+    Or create two directories on the host and use bind mounts:
+    
+    ```sh
+    mkdir /path/to/config
+    mkdir /path/to/cache
+    ```
+
+4. Create and run a container in one of the following ways:
+
+    **Using Docker command line interface:**
 
     ```sh
     docker run -d \
-     --volume /path/to/config:/config \
-     --volume /path/to/cache:/cache \
+     --volume jellyfin-config:/config \
+     --volume jellyfin-cache:/cache \
      --volume /path/to/media:/media \
      --user 1000:1000 \
      --net=host \
@@ -148,31 +97,25 @@ These folders will be used by Jellyfin to store data in. By default everything i
      jellyfin/jellyfin
     ```
 
-    - `-d`: This means that the Docker Container will run in the background. This can also be changed to -it this will make the container interactive allowing you to execute commands directly inside the container.
+    Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.   
 
-    - `--volume` /path/to/config:/config: This option connects the "/path/to/config" folder on your Host to the "/config" inside the container. You do not need to have any config present in /path/to/config as during the run command of the container Jellyfin will generate all of the necessary files. Everything in front of the colon is the of the config folder you've created in the previous step.
+    To mount your media library read-only append ':ro' to the media volume:
 
-    - `--volume` /path/to/cache:/cache: This option connects the "/path/to/cache" folder on your Host to the "/cache" inside the container.
+    ```sh
+    --volume /path/to/media:/media:ro
+    ```
 
-    - `--volume` /path/to/media:/media: This option connects the "/path/to/media" folder on your Host to the "/media" inside the container. This option has to be added in order for Jellyfin to find your media files. It is also possible that you have your media files spread across different places. In that case you can keep adding more volumes by using:
+    Multiple media libraries can be bind mounted if needed:
 
-    - `--volume` /path/to/anothermedia:/media2 & --volume /path/to/differentmedia:/media3 etc. add as many as you like!
+    ```sh
+    --volume /path/to/media1:/media/media1
+    --volume /path/to/media2:/media/media2
+    ...etc
+    ```
 
-    - `--user 1000:1000`: Is option for Ubuntu to specify that you want to run the Container as the current user. This command is not necessary if you are using Docker for Desktop
+    Using host networking (`--net=host`) is optional but required in order to use DLNA or HDHomeRun.
 
-    - `--net=host`: This option will tell the container to use the same network as the computer that it is running on. This means that if you have this running on your windows machine, you will be able to access jellyfin by using <http://localhost:8096> instead of a different IP
-
-    - Alternatively you can use different options for the `--restart=unless-stopped` if you do not want the Jellyfin server to start whenever Docker starts. The following options are available:
-
-      - `--restart=no` Do not automaticallu restart the container
-
-      - `--restart=on-failure` Restart the container if it exits due to an error
-
-      - `--restart=always` Always restart the container when it stops
-  
-    - `jellyfin/jellyfin`: This specifies what "image" to use to start the container with.
-
-    **Docker-Compose**
+    **Using Docker Compose:**
 
     Create a `docker-compose.yml` file with the following contents:
 
@@ -194,6 +137,8 @@ These folders will be used by Jellyfin to store data in. By default everything i
     ```sh
     docker-compose up
     ```
+
+You can learn more about using Docker by [reading the official Docker documentation](https://docs.docker.com/).
 
 #### Hardware Transcoding with Nvidia (Ubuntu)
 
@@ -253,14 +198,6 @@ services:
 > [!Note]
 > For Nvidia Hardware encoding the minimum version of docker-compose needs to be 2. However we recommend sticking with version 2.3 as it has proven to work with nvenc encoding.
 
-### Docker Hub image maintained by LinuxServer.io
-
-<a href="https://hub.docker.com/r/linuxserver/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/linuxserver/jellyfin.svg"></a>
-
-The intent of the Jellyfin image is to provide the capability of building from source using Docker. The native image is [compiled](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile) inside the container whereas the LinuxServer image [installs](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile) Jellyfin as a package. This can lead to larger image size and more space consumption since there isn't a common base image for the official Jellyfin image, [Jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/tags) vs [LinuxServer](https://hub.docker.com/r/linuxserver/jellyfin/tags) sizes. The Jellyfin image does not support environmentals except for $TZ. No other environmental parameter works. If switching between images, the folder locations are not the same, so you have to move config folders around before spinning up the alternative image.
-
-For ARM hardware and RPi, it is recommended to use the LinuxServer image since hardware acceleration support is not yet available on the native image.
-
 ### Unraid Docker
 
 An Unraid Docker template is available in the repository.
@@ -287,27 +224,42 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 Steps to run Jellyfin using Podman are almost identical to Docker steps:
 
-1. Download the latest container image:
+1. Install Podman:
+   
+   ```sh
+   dnf install -y podman
+   ```
+
+2. Download the latest container image:
 
    ```sh
    podman pull jellyfin/jellyfin
    ```
 
-2. Create directories on the host for persistent data storage:
+3. Create persistent storage for configuration and cache data:
 
+   Either create two persistent volumes:
+
+   ```sh
+   podman volume create jellyfin-config
+   podman volume create jellyfin-cache
+   ```
+
+   Or create two directories on the host and use bind mounts:
+   
    ```sh
    mkdir /path/to/config
    mkdir /path/to/cache
    ```
 
-3. Run jellyfin:
+4. Create and run a Jellyfin container:
 
    ```sh
    podman run \
    --cgroup-manager=systemd \
    --privileged \
-   --volume /path/to/config:/config \
-   --volume /path/to/cache:/cache \
+   --volume jellyfin-config:/config \
+   --volume jellyfin-cache:/cache \
    --volume /path/to/media:/media \
    --net=host \
    jellyfin/jellyfin
@@ -316,6 +268,8 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
 Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.
 
 If SELinux is enabled you need to use either `--privileged` or supply `z` volume option to allow Jellyfin to access the volumes.
+
+Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.   
 
 To mount your media library read-only append ':ro' to the media volume:
 

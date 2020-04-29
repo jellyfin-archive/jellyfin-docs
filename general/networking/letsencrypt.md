@@ -167,7 +167,7 @@ docker create \
 Assuming I follow this template and adjust for my region, ports, and path, it would look like this (with personal information redacted):
 
 ```
-docker create --name=letsencrypt --cap-add=NET_ADMIN -e PUID=1000 -e PGID=1000 -e TZ=America/Chicago -e URL=example.com -e SUBDOMAINS=jellyfin -e VALIDATION=http -e EMAIL=email@email.com -e DHLEVEL=2048 -e ONLY_SUBDOMAINS=false -e STAGING=false -p 443:443 -p 80:80 -v /mnt/lets-encrypt/:/config --restart unless-stopped linuxserver/letsencrypt
+docker create --name=letsencrypt --cap-add=NET_ADMIN -e PUID=1000 -e PGID=1000 -e TZ=America/Chicago -e URL=example.com -e SUBDOMAINS=jellyfin -e VALIDATION=http -e EMAIL=email@email.com -e DHLEVEL=2048 -e ONLY_SUBDOMAINS=false -e STAGING=false -p 443:443 -p 80:80 -v /path/to/appdata/lets-encrypt/:/config --restart unless-stopped linuxserver/letsencrypt
 ```
 
 This will pull down the linuxserver/letsencrypt container, and then create it with the variables specified. You'll then want to start the docker container with `docker start letsencrypt`. You can verify this is started by running `docker ps`, which will produce an output like this:
@@ -206,7 +206,7 @@ server {
         proxy_set_header If-Range $http_if_range;
     }
 
-    location ~ (/jellyfin)?/socket {
+    location ~ (/jellyfin)?/socket/ {
         include /config/nginx/proxy.conf;
         resolver 127.0.0.11 valid=30s;
         set $upstream_app jellyfin;
@@ -220,7 +220,7 @@ server {
 }
 ```
 
-The lines we're interested in is `set $upstream_app jellyfin`. Now, assuming Jellyfin and Let's Encrypt are on the same network within Docker, it *should* see it and start handling reverse proxy without much issue. If it doesn't however, you'll just need to change `jellyfin` in that line to whatever the IP of your Jellyfin server is. 
+The lines we're interested in is `set $upstream_app jellyfin`. Now, assuming Jellyfin and Let's Encrypt are on the same network within Docker, it *should* see it and start handling reverse proxy without much issue. If it doesn't however, you'll just need to change `jellyfin` in that line to whatever the IP of your Jellyfin server is. We'll also look at the line ` location ~ (/jellyfin)?/socket` and add a slash after socket, so the line should look like this ` location ~ (/jellyfin)?/socket/`. 
 
 Then, within Jellyfin settings (Dashboard -> Networking), scroll down to "Public HTTP port number" and "Public HTTPS port number", and make sure HTTP Port number is 8096, while HTTPS port number is 8920. Then, click the "Secure Connection Mode" dropdown, and select "Handled by reverse proxy". 
 

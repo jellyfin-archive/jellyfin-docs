@@ -27,11 +27,17 @@ All package builds begin with these two steps:
 
 ## Container image
 
-1. Build the container image using Docker:
+1. Build the container image using Docker or Podman:
 
     ```sh
     docker build -t $USERNAME/jellyfin .
     ```
+    
+    or
+    
+    ```sh
+    podman build -t $USERNAME/jellyfin .
+    ```  
 
 2. Run Jellyfin in a new container using Docker or Podman from the built container image:
 

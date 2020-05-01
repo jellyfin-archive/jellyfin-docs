@@ -230,6 +230,24 @@ This will affect the border color of highlighet(selected) text fields and drop d
 
 ![Screenshot of the full header mod](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
 
+### Scrollerless Libraries
+
+This will make it so Libraries and media fits neatly onto the homepage with no left to right scrolling required.
+
+```css
+@media all and (min-width: 50em) {
+  .homePage .emby-scroller {
+    margin-right: 0;
+  }
+  .homePage .emby-scrollbuttons {
+    display: none;
+  }
+  .homePage .itemsContainer {
+    flex-wrap: wrap;
+  }
+}
+```
+
 ### Hotdogs and Catsup
 
 An example of a color theme.

@@ -232,7 +232,7 @@ This will affect the border color of highlighet(selected) text fields and drop d
 
 ### Scrollerless Libraries
 
-This will make it so Libraries and media fits neatly onto the homepage with no left to right scrolling required.
+This will make it so libraries and media fits neatly onto the homepage with no left to right scrolling required.
 
 ```css
 @media all and (min-width: 50em) {

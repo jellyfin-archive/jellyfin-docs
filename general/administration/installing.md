@@ -15,6 +15,7 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
     - [Running the Container](#running-the-container)
     - [Hardware Transcoding with Nvidia (Ubuntu)](#hardware-transcoding-with-nvidia-ubuntu)
   - [Docker Hub image maintained by LinuxServer.io](#docker-hub-image-maintained-by-linuxserverio)
+  - [Docker Hub image maintained by hotio](#docker-hub-image-maintained-by-hotio)
   - [Unraid Docker](#unraid-docker)
   - [Kubernetes](#kubernetes)
   - [Podman](#podman)
@@ -260,6 +261,12 @@ services:
 The intent of the Jellyfin image is to provide the capability of building from source using Docker. The native image is [compiled](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile) inside the container whereas the LinuxServer image [installs](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile) Jellyfin as a package. This can lead to larger image size and more space consumption since there isn't a common base image for the official Jellyfin image, [Jellyfin](https://hub.docker.com/r/jellyfin/jellyfin/tags) vs [LinuxServer](https://hub.docker.com/r/linuxserver/jellyfin/tags) sizes. The Jellyfin image does not support environmentals except for $TZ. No other environmental parameter works. If switching between images, the folder locations are not the same, so you have to move config folders around before spinning up the alternative image.
 
 For ARM hardware and RPi, it is recommended to use the LinuxServer image since hardware acceleration support is not yet available on the native image.
+
+### Docker Hub image maintained by hotio
+
+<a href="https://hub.docker.com/r/hotio/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/hotio/jellyfin.svg"></a>
+
+Another 3rd party image maintainer is [hotio](https://github.com/hotio), most of what was said about the LinuxServer image applies to his image aswell. FFMPEG and Jellyfin are pulled in from the official Jellyfin repo into seperate layers, further improving bandwidth usage when only a FFMPEG or Jellyfin update is needed. The default folder locations can be overridden with the use of docker environment variables. Image updates are also tested before being pushed to DockerHub, if they fail, they don't get pushed. On his discord you can monitor the feed to see when a new Jellyfin update hits the street, with a screenshot as eyecandy. For the moment drivers are not installed in the image, to not clutter up the image for those who don't use them. See his [README](https://github.com/hotio/docker-jellyfin/blob/master/README.md) for more info.
 
 ### Unraid Docker
 

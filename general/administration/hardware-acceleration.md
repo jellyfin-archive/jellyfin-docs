@@ -383,7 +383,10 @@ Useful Resources:
     ```
 
 > [!NOTE]
-> RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+> RPi4 currently doesn't support HWA HEVC decoding, only encode and decode H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. Only Raspbian OS works so far. For docker, only the linuxserver image works. For more tips see [here](https://www.reddit.com/r/jellyfin/comments/ei6ew6/rpi4_hardware_acceleration_guide/).
+
+> [!NOTE]
+> For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Verifying Transcodes
 
@@ -401,6 +404,12 @@ Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))
 Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 ```
 
-`Stream #0:0` used software to decode HEVC and used HWA to encode.
+`Stream #0:0` used software (VAAPI Decode can also say native) to decode HEVC and used HWA to encode.
 
-`Stream #0:1` had the same results. Decoding is easier than encoding so these are good results overall. HWA decoding is a work in progress.
+```data
+Stream mapping:
+Stream #0:0 -> #0:0 (h264 (h264_mmal) -> h264 (h264_omx))
+Stream #0:1 -> #0:1 (flac (native) -> mp3 (libmp3lame))
+```
+
+`Stream #0:0` used HWA for both. h264_mmal to decode and h264_omx to encode.

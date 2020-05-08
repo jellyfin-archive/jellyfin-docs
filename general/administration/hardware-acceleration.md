@@ -385,7 +385,6 @@ Useful Resources:
 > [!NOTE]
 > RPi4 currently doesn't support HWA HEVC decoding, only encode and decode H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. Only Raspbian OS works so far. For docker, only the linuxserver image works. For more tips see [here](https://www.reddit.com/r/jellyfin/comments/ei6ew6/rpi4_hardware_acceleration_guide/).
 
-
 > [!NOTE]
 > For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 

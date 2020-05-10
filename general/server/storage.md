@@ -32,4 +32,4 @@ For best performance with rclone and mergerfs, it is ideal to establish a rclone
 
 To modify and examine your mergerfs mount, here's a quick [guide](https://zackreed.me/mergerfs-neat-tricks/).
 
-To create a crypt drive with a cache, there's a specific manner that it has to been done. See this [section](https://rclone.org/cache/#cache-and-crypt) for more. 
+To create a crypt drive with a cache, there's a specific manner that it has to been done. See this [section](https://rclone.org/cache/#cache-and-crypt) for more.

@@ -57,7 +57,9 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 |[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
 |VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
 |DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
-|OPUS|✅|✅|✅|✅|✅|||✅|✅|
+|OPUS|✅|✅|✅<sup>1</sup>|✅|✅|||✅|✅|
+
+<sup>1</sup>Safari only supports opus in `.caf` files
 
 [Format Cheetsheet:](https://en.wikipedia.org/wiki/Moving_Picture_Experts_Group#External_links)
 
@@ -123,7 +125,7 @@ If the container is unsupported, this will result in remuxing. The video and aud
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅||
 |[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅||||✅||
 |[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|
-|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|✅|✅|✅|✅||
+|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|❌|✅|✅|✅||
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 

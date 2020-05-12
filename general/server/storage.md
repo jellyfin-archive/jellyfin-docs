@@ -13,7 +13,7 @@ For storage, a moderate size library database can grow anywhere from 10 to 100 G
 
 ## Cloud
 
-A popular choice for cloud storage has been the program [rclone](https://rclone.org/downloads/). It is supported on most Operating Systems. To prevent API bans, rclone is typically paired with another program such as [mergerfs](https://github.com/trapexit/mergerfs). For cloud storage, it is recommended to disable image extraction as this requires downloading the entire file to perform this task.
+A popular choice for cloud storage has been the program [rclone](https://rclone.org/downloads/). It is supported on most Operating Systems. To facilitate combining local and cloud filesystems, rclone can be paired with another program such as [mergerfs](https://github.com/trapexit/mergerfs). For cloud storage, it is recommended to disable image extraction as this requires downloading the entire file to perform this task.
 
 > [!NOTE]
 > The image extractor can't be [turned off](https://github.com/jellyfin/jellyfin/issues/2355) in Jellyfin at the moment which is causing [performance issues](https://github.com/jellyfin/jellyfin/issues/2600).
@@ -24,12 +24,10 @@ A popular choice for cloud storage has been the program [rclone](https://rclone.
 
 ### MergerFS
 
-For best performance with rclone and mergerfs, it is ideal to establish a rclone [cache](https://rclone.org/cache). Mergerfs isn't meant for everything, [see here](https://github.com/trapexit/mergerfs#what-should-mergerfs-not-be-used-for) for more.
+Mergerfs isn't meant for everything, [see here](https://github.com/trapexit/mergerfs#what-should-mergerfs-not-be-used-for) for more.
 
 - rclone recommended [config](https://forum.rclone.org/t/my-best-rclone-config-mount-for-plex/7441).
 
 - animosity22's [mergerfs config](https://github.com/animosity22/homescripts/blob/master/systemd/gmedia.service).
 
 To modify and examine your mergerfs mount, here's a quick [guide](https://zackreed.me/mergerfs-neat-tricks/).
-
-To create a crypt drive with a cache, there's a specific manner that it has to been done. See this [section](https://rclone.org/cache/#cache-and-crypt) for more.

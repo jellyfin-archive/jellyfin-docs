@@ -91,6 +91,15 @@ Self explanatory
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {background:none; background-color:rgba(0, 0, 0, 0);}
 ```
 
+### Images Edge Rounded
+
+```css
+.cardContent-button,
+.itemDetailImage {
+  border-radius: 0.25em;
+}
+```
+
 ### Enlarge Tab Buttons
 
 Enlarges the tab buttons, suggested, genres, etc. By default they are really damn tiny, especially on mobile.

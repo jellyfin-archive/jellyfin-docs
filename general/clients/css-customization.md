@@ -247,6 +247,7 @@ This will make it so libraries and media fits neatly onto the homepage with no l
   }
 }
 ```
+
 ### Shift Scroller Buttons
 
 ```css

@@ -228,7 +228,7 @@ This will affect the border color of highlighet(selected) text fields and drop d
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { background: #ff9475; }
 ```
 
-![Screenshot of the full header mod](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
+![Screenshot of the full header mod](~/images/custom-css-full-header-mod.png)
 
 ### Scrollerless Libraries
 
@@ -270,7 +270,7 @@ This will make it so libraries and media fits neatly onto the homepage with no l
 
 An example of a color theme.
 
-![Screenshot of a hotdog and catsup color theme](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
+![Screenshot of a hotdog and catsup color theme](~/images/custom-css-hotdog-and-catsup.png)
 
 ```css
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {

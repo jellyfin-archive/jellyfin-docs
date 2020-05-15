@@ -50,7 +50,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 #### Indicators Without Mod
 
-![Screenshot of the default watched indicators](/images/custom-css-normalwatched.png)
+![Screenshot of the default watched indicators](~/images/custom-css-normalwatched.png)
 
 #### Green Indicators
 
@@ -58,7 +58,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 .playedIndicator { background: #5dd000; }
 ```
 
-![Screenshot of watched indicators with a custom green color applied](/images/custom-css-greenwatched.png)
+![Screenshot of watched indicators with a custom green color applied](~/images/custom-css-greenwatched.png)
 
 #### Transparent And Dark Indicators (using RGBA hex value)
 
@@ -67,7 +67,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 .playedIndicator {background: #00000058;}
 ```
 
-![Screenshot of watched indicators with a custom transparent color applied](/images/custom-css-transparentwatched.png)
+![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
 #### Remove Live TV Channel Listings
 
@@ -103,7 +103,7 @@ Enlarges the tab buttons, suggested, genres, etc. By default they are really dam
 ```
 
 **The enlarged tab buttons and transparent menu look like this:**
-![Screenshot of enlarged tab buttons and transparent menu](/images/custom-css-transparenttopbarenlargedtabs.png)
+![Screenshot of enlarged tab buttons and transparent menu](~/images/custom-css-transparenttopbarenlargedtabs.png)
 
 ### Minimalistic Login Page
 
@@ -122,7 +122,7 @@ This looks even better together with the transparent top menu.
 #loginPage .raised.cancel.block.btnForgotPassword.emby-button {display: none}
 ```
 
-![Screenshot of the minimalistic login page](/images/custom-css-minimallogin.png)
+![Screenshot of the minimalistic login page](~/images/custom-css-minimallogin.png)
 
 ### Stylized Episode Previews
 
@@ -135,7 +135,7 @@ The episode previews in season view are sized based on horizontal resolution, th
 .secondary.listItem-overview.listItemBodyText {height: 61px; margin: 0;}
 ```
 
-![Screenshot of a TV show page with stylized episode previews](/images/custom-css-episodepreview.png)
+![Screenshot of a TV show page with stylized episode previews](~/images/custom-css-episodepreview.png)
 
 ### Stylized and Smaller Cast Info
 
@@ -161,7 +161,7 @@ This will drastically change the style of cast info into something very similar 
 #castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {margin:auto;}
 ```
 
-![Screenshot of stylized and smaller cast and crew info](/images/custom-css-stylizedcast.png)
+![Screenshot of stylized and smaller cast and crew info](~/images/custom-css-stylizedcast.png)
 
 ### Custom Background Color
 
@@ -186,7 +186,7 @@ This modifies the colors of the cast, search and user buttons in the top right.
 .headerRight { color: yellow; }
 ```
 
-![Screenshot of a custom yellow color for the icon buttons in the top right of the screen](/images/custom-css-rightheader.png)
+![Screenshot of a custom yellow color for the icon buttons in the top right of the screen](~/images/custom-css-rightheader.png)
 
 ### Console Panel Custom Color
 
@@ -196,7 +196,7 @@ Modifies the color of the left menu panel.
 .mainDrawer-scrollContainer { color: yellow; }
 ```
 
-![Screenshot of a custom yellow color on the left menu panel](/images/custom-css-consolepanel.png)
+![Screenshot of a custom yellow color on the left menu panel](~/images/custom-css-consolepanel.png)
 
 ### General Page Custom Color
 
@@ -204,7 +204,7 @@ Modifies the color of the left menu panel.
 .dashboardGeneralForm { color: yellow; }
 ```
 
-![Screenshot of a custom yellow color on the General Page](/images/custom-css-generalcolor.png)
+![Screenshot of a custom yellow color on the General Page](~/images/custom-css-generalcolor.png)
 
 ### Custom Border Color
 
@@ -220,7 +220,7 @@ This will affect the border color of highlighet(selected) text fields and drop d
 .emby-input:focus, .emby-textarea:focus, .emby-select-withcolor { border-color: #ffffff !important; }
 ```
 
-![Screenshot of a custom red border color](/images/custom-css-bordercolor.png)
+![Screenshot of a custom red border color](~/images/custom-css-bordercolor.png)
 
 ### Full Header Mod
 
@@ -245,6 +245,23 @@ This will make it so libraries and media fits neatly onto the homepage with no l
   .homePage .itemsContainer {
     flex-wrap: wrap;
   }
+}
+```
+### Shift Scroller Buttons
+
+```css
+.emby-scrollbuttons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    justify-content: space-between;
+    pointer-events: none;
+}
+.emby-scrollbuttons-button {
+    pointer-events: initial;
 }
 ```
 
@@ -292,7 +309,7 @@ An example of a color theme.
 
 ### Floating Now Playing Controls
 
-![Screenshot of the floating "Now Playing" controls](/images/custom-css-floatingnowplaying.png)
+![Screenshot of the floating "Now Playing" controls](~/images/custom-css-floatingnowplaying.png)
 
 ```css
 /* fixed height for the bottom row */

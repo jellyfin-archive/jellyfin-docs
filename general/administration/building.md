@@ -32,12 +32,12 @@ All package builds begin with these two steps:
     ```sh
     docker build -t $USERNAME/jellyfin .
     ```
-    
+
     or
-    
+
     ```sh
     podman build -t $USERNAME/jellyfin .
-    ```  
+    ```
 
 2. Run Jellyfin in a new container using Docker or Podman from the built container image:
 

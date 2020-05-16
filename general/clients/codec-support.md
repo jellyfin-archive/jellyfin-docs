@@ -28,7 +28,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 <sup>3</sup>May be (partially) dependent on Hardware support (can be compensated with CPU decoding on Android). On Android most new Phones in the higher price range and many "4K" AndroidTV devices have VP9 hardwaredecoding support. Refer to you manufacturer for supported codecs.
 
-<sup>4</sup>AV1 support is experimental and often too slow for CPU decoding and as of writing this (05.2020) there is no hardware support on most devices yet.
+<sup>4</sup>AV1 support is experimental and often too slow for CPU decoding and as of writing this (05.2020) there is no hardware support on most devices yet Support on jellyfin is tracked in [jellyfin#3129](https://github.com/jellyfin/jellyfin/issues/3129).
 
 [Format Cheetsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 

@@ -20,9 +20,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 |[H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
 |[H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
 |[VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference")|✅|✅|❌|✅<sup>3</sup>||🔶<sup>3</sup>||✅|✅|
-|[AV1 8bit](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>|✅|✅|❌|||||||
-|[AV1 10bit](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>||||||||||
-|[AV1 12bit](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>||||||||||
+|[AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>|✅|✅|❌|||||||
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
@@ -30,7 +28,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 <sup>3</sup>May be (partially) dependent on Hardware support (can be compensated with CPU decoding on Android). On Android most new Phones in the higher price range and many "4K" AndroidTV devices have VP9 hardwaredecoding support. Refer to you manufacturer for supported codecs.
 
-<sup>4</sup>AV1 support is experimental and often too slow for CPU decoding and as of writing this (05.2020) there is no hardware support yet.
+<sup>4</sup>AV1 support is experimental and often too slow for CPU decoding and as of writing this (05.2020) there is no hardware support on most devices yet.
 
 [Format Cheetsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 

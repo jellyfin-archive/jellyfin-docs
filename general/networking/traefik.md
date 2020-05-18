@@ -1,6 +1,6 @@
 ---
 uid: network-reverse-proxy-traefik
-title: Traefik Reverse Proxy
+title: Traefik
 ---
 
 ## Traefik

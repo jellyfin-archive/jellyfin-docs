@@ -1,6 +1,6 @@
 ---
 uid: network-reverse-proxy-nginx
-title: Nginx Reverse Proxy
+title: Nginx
 ---
 
 ## Nginx

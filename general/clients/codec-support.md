@@ -11,7 +11,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 [Breakdown of video codecs.](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 
-||Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[MPV Shim](https://docs.jellyfin.org/general/clients/index.html#jellyfin-mpv-shim)|
+|Sorted by efficency (excluding bit depth)|Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[MPV Shim](https://docs.jellyfin.org/general/clients/index.html#jellyfin-mpv-shim)|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌||✅|✅|
 |[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌||✅|✅|
@@ -19,11 +19,16 @@ The goal is to Direct Play all media. This means the container, video, audio and
 |[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅||✅|✅|
 |[H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
 |[H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
-|[VP9](https://caniuse.com/#search=vp9 "V9 Browser Support Reference")|✅|✅|❌|||||||
+|[VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference")|✅|✅|❌|✅<sup>3</sup>||🔶<sup>3</sup>||✅|✅|
+|[AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>|🔶|🔶|❌|||||||
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
 <sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Direct Stream.
+
+<sup>3</sup>May be (partially) dependent on Hardware support (can be compensated with CPU decoding on Android). On Android most new Phones in the higher price range and many "4K" AndroidTV devices have VP9 hardwaredecoding support. Refer to you manufacturer for supported codecs.
+
+<sup>4</sup>AV1 support is experimental and often too slow for CPU decoding and as of writing this (05.2020) there is no hardware support on most devices yet. Support on jellyfin is tracked in [jellyfin#3129](https://github.com/jellyfin/jellyfin/issues/3129).
 
 [Format Cheetsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 
@@ -50,6 +55,9 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 |[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
 |VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
 |DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
+|OPUS|✅|✅|✅<sup>1</sup>|✅|✅|||✅|✅|
+
+<sup>1</sup>Safari only supports opus in `.caf` files
 
 [Format Cheetsheet:](https://en.wikipedia.org/wiki/Moving_Picture_Experts_Group#External_links)
 
@@ -113,9 +121,9 @@ If the container is unsupported, this will result in remuxing. The video and aud
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅||
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3</sup>|✅|✅||||✅||
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅||||✅||
 |[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|
-|[OGG](https://en.wikipedia.org/wiki/Ogg)|❌|❌|❌|❌|❌|❌|❌|
+|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|❌|✅|✅|✅||
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 
@@ -124,3 +132,5 @@ If the container is unsupported, this will result in remuxing. The video and aud
 <sup>3</sup>MKV containers are improperly labeled as WebM in Firefox during playback.
 
 <sup>4</sup>TS is one of the primary containers for streaming for Jellyfin.
+
+<sup>5</sup>WebM and Ogg have limited codec support (by design) refer to [this](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers#WebM) for WebM and [this](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers#Ogg) for Ogg

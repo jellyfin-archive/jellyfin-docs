@@ -13,17 +13,25 @@ Create docker-compose.yml, traefik.toml and acme.json in the **same** directory 
 > Ensure you enable Basic Auth protection for Traefik or disable its Dashboard. Otherwise your Dashboard will be accessible from the internet.
 
 ```bash
-$ sudo apt install apache2-utils
-$ echo $(htpasswd -nb username mystrongpassword) | sed -e s/\\$/\\$\\$/g
+sudo apt install apache2-utils
+echo $(htpasswd -nb username mystrongpassword) | sed -e s/\\$/\\$\\$/g
 ```
 
 This command automatically escapes all $ inside the password for the YML file. If using an environment file, it does not need the $ escaped since it will not be interpreted by the shell.
 
+Create the docker network for traefik.
+
+```bash
+sudo docker network create traefik
+```
+
 ### docker-compose.yml
 
-```
+```yml
 version: '3.5'
-
+networks:
+  traefik:
+    name: traefik
 services:
   traefik:
     container_name: traefik
@@ -57,6 +65,7 @@ services:
       traefik.frontend.headers.customResponseHeaders: X-Robots-Tag:noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex
       traefik.frontend.headers.frameDeny: "true"
       traefik.frontend.headers.customFrameOptionsValue: 'allow-from https://example.com'
+#     traefik.frontend.auth.basic.users: xxx:xxx
     restart: unless-stopped
 
   jellyfin:
@@ -68,10 +77,6 @@ services:
       - /path/to/cache:/cache
       - /path/to/media:/media
     restart: unless-stopped
-
-networks:
-  traefik:
-    name: traefik
 ```
 
 This TOML file can't support environment variables, so don't attempt to use variables.
@@ -157,8 +162,8 @@ exposedbydefault = false
 Finally, create an empty acme.json file to handle the certificate.
 
 ```bash
-$ touch acme.json
-$ chmod 600 acme.json
+touch acme.json
+chmod 600 acme.json
 ```
 
 > [!WARNING]
@@ -167,7 +172,7 @@ $ chmod 600 acme.json
 Launch the Traefik and Jellyfin services.
 
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 Congratulations, your stack with Traefik and Jellyfin is running!

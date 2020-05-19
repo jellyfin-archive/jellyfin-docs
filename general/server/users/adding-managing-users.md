@@ -11,7 +11,7 @@ User management can be done under `Users` in the `Dashboard`. Here you can see y
 
 To add a new user, click the `+` symbol at the top of the page. This will open a new page where you can enter the user's name as it will be either displayed on, or has to be typed into login screen. By default, this will be displayed, but this can be changed at any point by modifying the user, explained further down.
 
-#### Library Access
+### Manage User Library Access
 
 By default the `enables access to all libraries` option will be enabled, disabling this option will enable you to give the user access rights per library, libraries can consist of several folders. When adding new libraries any user that did not have access to `all libraries` will not receive the rights to open the new library, but this can be changed at any point by modifying the user, explained further down.
 
@@ -20,6 +20,7 @@ By default the `enables access to all libraries` option will be enabled, disabli
 To manage a user either click on their portrait to go straight to their `Profile` tab, or click the `...` symbol inside that user's portrait. The later will open a small submenu with the options `Open` `Library access` `Parental control`, and `delete`. Except for delete, which does the obvious, these options will lead to different tabs but are otherwise all on the same page. `Open` corresponds to the Profile tab, `Library access` to access, `Parental control` to Parental Control, and there is an additional fourth tab `Password` for Password control. Changes to any option on any of these tabs need to be saved using `Save` at the bottom of the page.
 
 ### Profile
+
 Directly under the tabs you have a link to `Edit this user's profile, image and personal preferences.` Clicking that allows you to change the user's personal settings, any setting here can be changed by both user and admin.
 
 Under `name` you can change the user's name as it will be either displayed on, or has to be typed into login screen.
@@ -75,7 +76,29 @@ These allow a user to download media. Syncing and Transcoding are currently not 
 
 `Hide this user from login screens` Useful for private or hidden administrator accounts. The user will need to sign in manually by entering their username and password. All newly created users are hidden by default.
 
+#### Locking and Unlocking users
+
+Locking
+
 `Failed login attempts before user is locked out` Determines how many incorrect login attempts can be made before lockout occurs, disabling the user. 0 means inheriting the default of 3 for non-admin and 5 for admin, -1 disables lockout
+
+When a user is locked out after the set amout of attempts the admin has determined for that account, the user will recieve the following message when trying to login to the Jellyfin instance:
+
+```sh
+Connection Failure
+We\'re unable to connect to the selected server right now. Please ensure it is running and try again.
+```
+
+Unlocking
+
+The unlocking of a user is a manual process for the Jellyfin administrator. When a user is locked out a message of the lockout appears on the activity feed on the administrator dashboard. To unlock the user, the administrator needs to navigate to the profile of the locked out user. When on the profile of the locked out user, the following message should appear:
+
+```sh
+This user is currently disabled
+See below to reenable
+```
+
+To reenable the user the administrator must navigate to the `Disable this user` option in the Additional options section uncheck the checkmark and hit `Save`. The disabled user should be able to login again.
 
 ### Library Access
 
@@ -98,6 +121,7 @@ These options allow you to restrict access to specific content by this user or t
 `Access Schedule` Allows you to set the timeframe(s) where this user is allowed to login, media can only play during the timeframe and will be stopped past it.
 
 ### Password
+
 Allows you to set or change the user's password. Note that users can change their own passwords in their personal settings.
 
 `Reset Password` will allow the user to log in without giving a password.

@@ -2,6 +2,7 @@
 uid: admin-building
 title: Building from Source
 ---
+<!-- markdownlint-disable MD029 ol-prefix -->
 
 # Source
 
@@ -12,26 +13,42 @@ Jellyfin supports several methods of building for different platforms and instru
 All package builds begin with these two steps:
 
 1. Clone the repository:
+
     ```sh
     git clone https://github.com/jellyfin/jellyfin.git
     cd jellyfin
     ```
 
 2. Initialize the submodules:
+
     ```sh
     git submodule update --init
     ```
 
-## Docker
+## Container image
 
-3. Build the Docker image:
+1. Build the container image using Docker or Podman:
+
     ```sh
     docker build -t $USERNAME/jellyfin .
     ```
 
-4. Run the container:
+    or
+
+    ```sh
+    podman build -t $USERNAME/jellyfin .
+    ```
+
+2. Run Jellyfin in a new container using Docker or Podman from the built container image:
+
     ```sh
     docker run -d -p 8096:8096 $USERNAME/jellyfin
+    ```
+
+    or
+
+    ```sh
+    podman run -d -p 8096:8096 $USERNAME/jellyfin
     ```
 
 ## Linux or MacOS
@@ -51,14 +68,16 @@ All package builds begin with these two steps:
 
 ## Windows
 
-3. Install the dotnet core SDK 2.2 from [Microsoft's Website](https://dotnet.microsoft.com/download/dotnet-core/2.2) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell 3 or higher.
+3. Install the dotnet core SDK 3.1 from [Microsoft's Website](https://dotnet.microsoft.com/download/dotnet-core/3.1) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell 3 or higher.
 
 4. From Powershell set the execution policy to unrestricted:
+
     ```powershell
     set-executionpolicy unrestricted
     ```
 
 5. Run the Jellyfin build script:
+
     ```powershell
     deployment\windows\build-jellyfin.ps1 -verbose
     ```
@@ -76,11 +95,13 @@ All package builds begin with these two steps:
 7. Jellyfin is now available in the default directory (or the directory you chose). Assuming you kept the default directory:
 
     * To start it from a Powershell window, run:
+
         ```powershell
         &"$env:APPDATA\Jellyfin-Server\jellyfin.exe"
         ```
 
     * To start it from CMD, run:
+
         ```cmd
         %APPDATA%\Jellyfin-Server\jellyfin.exe
         ```

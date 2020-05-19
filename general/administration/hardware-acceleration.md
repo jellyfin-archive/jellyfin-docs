@@ -9,13 +9,13 @@ Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIn
 
 [VAAPI](https://en.wikipedia.org/wiki/Video_Acceleration_API) is a Video Acceleration API that uses [libva](https://github.com/intel/libva/blob/master/README.md) to interface with local drivers to provide HWA. [QSV](https://trac.ffmpeg.org/wiki/Hardware/QuickSync) uses a modified (forked) version of VAAPI and interfaces it with [libmfx](https://github.com/intel/media-driver/blob/master/README.md) and their proprietary drivers [(list of supported processors for QSV)](https://ark.intel.com/content/www/us/en/ark.html#@Processors).
 
-OS | Recommended HW Acceleration
------------- | -------------
-Linux | QSV, NVENC, VAAPI
-Windows | QSV, NVENC, AMF, VAAPI
-MacOS | None (videotoolbox support coming)
+OS      | Recommended HW Acceleration
+------- | -------------
+Linux   | QSV, NVENC, VAAPI
+Windows | QSV, NVENC, AMF
+MacOS   | None (VideoToolbox Coming Soon)
 Android | MediaCodec, OMX
-RPi | OMX
+RPi     | OMX
 
 [Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
 
@@ -23,9 +23,9 @@ RPi | OMX
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables).
 
-AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on linux.
+AMF Linux Support still [not official](https://github.com/GPUOpen-LibrariesAndSDKs/AMF/issues/4) and AMD GFX Cards are required to use VAAPI on Linux.
 
-Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You need an APU or dGPU for hardware acceleration.
+Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
 
 Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html).
 
@@ -85,54 +85,53 @@ services:
       - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
       # RPi 4
-      - /dev/vchiq:/dev/qchiq
+      - /dev/vchiq:/dev/vchiq
 ```
 
-## Debian Docker Nvidia:
+## Debian Docker Nvidia
 
-In order to achieve Hardware acceleration using docker, some steps are needed:
+In order to achieve hardware acceleration using docker, several steps are required.
 
 Prerequisites:
 
-https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
+[NVIDIA Docker Installation](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
 
-    GNU/Linux x86_64 with kernel version > 3.10
-    Docker >= 1.12
-    NVIDIA GPU with Architecture > Fermi (2.1)
-    NVIDIA drivers ~= 361.93 (untested on older versions)
+- GNU/Linux x86_64 with kernel version > 3.10
+- Docker >= 1.12
+- NVIDIA GPU with Architecture > Fermi (2.1)
+- NVIDIA drivers ~= 361.93 (untested on older versions)
 
-Double check your GPU show on debian:
+Confirm that your GPU shows up with this command.
 
 ```sh
 lspci | grep VGA
 ```
 
-Update your host:
+Update your host so there is no chance of outdated software causing issues.
 
 ```sh
 apt-get update && apt-get dist-upgrade -y
 ```
 
-Install curl:
+Install curl which will be used to download the required files.
 
 ```sh
 apt-get install curl
 ```
 
-Edit `sources.list` in `/etc/apt/sources.list`:
-Add "`non-free contrib`" to every sources already configured when needed:
+Edit `sources.list` in `/etc/apt/sources.list` and add `non-free contrib` to each source as required.
 
 ```data
-deb http://ftp.ch.debian.org/debian/ stretch main
+deb http://deb.debian.org/debian/ stretch main
 ```
 
-become
+The line above should be modified to match the following line as an example.
 
 ```data
-deb http://ftp.ch.debian.org/debian/ stretch main non-free contrib
+deb http://deb.debian.org/debian/ stretch main non-free contrib
 ```
 
-Add sources for Nvidia-container:
+Download and add the sources for the Nvidia docker container.
 
 ```sh
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add
@@ -140,33 +139,34 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 ```
 
-Update your package list:
+Update your package list again to download the latest software available from the new repository.
 
 ```sh
 apt-get update
 ```
 
-Install linux-headers:
+Install linux-headers and run the following command.
 
 ```sh
-apt-get install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//')
+apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Else to use stretch-backports:
+Alternatively, run this command if you are on stretch for compatibility.
 
 ```sh
-apt-get install -t stretch-backports linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//')
+apt-get install -t stretch-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Install Nvidia docker2:
+Install Nvidia docker2 from the repository.
 
 ```sh
 apt-get install nvidia-docker2
 ```
 
-When prompted to choose to keep or install the maintainer package file say "`y`" to install the maintainer version.
+When prompted to choose to keep or install the maintainer package file type `y` to install the maintainer version.
 
 After the install you may want to add nvidia as default runtime: editing `/etc/docker/daemon.json` like this:
+
 ```json
 {
     "default-runtime": "nvidia",
@@ -179,40 +179,42 @@ After the install you may want to add nvidia as default runtime: editing `/etc/d
 }
 ```
 
-Restart docker services
+Restart any docker services currently running.
 
 ```sh
 sudo pkill -SIGHUP docker
 ```
 
-Install nvidia drivers and dependencies:
+Install nvidia drivers and dependencies.
 
 ```sh
+# Debian 9 Stretch
 apt-get install -t stretch-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
+# Debian 10 Buster
+apt-get install -t buster-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
 ```
 
-Reboot your host:
+Reboot your host to apply all changes.
 
 ```sh
 reboot now
 ```
 
-Validate your driver and docker are correctly set up.
-Driver test from host and docker side:
+Validate that your driver and docker are correctly set up with this driver test.
 
 ```sh
 nvidia-smi
 docker run --gpus 0 nvidia/cuda:9.0-base nvidia-smi
 ```
 
-Validate access to needed ressources from host and docker:
+Validate access to needed ressources from host and docker.
 
 ```sh
 ldconfig -p | grep cuvid
 ldconfig -p | grep libnvidia-encode.so.1
 ```
 
-Start your Jellyfin container adding thoses environement parameters:
+Start your container adding those environement parameters.
 
 ```sh
 -e "NVIDIA_DRIVER_CAPABILITIES=all" \
@@ -221,47 +223,53 @@ Start your Jellyfin container adding thoses environement parameters:
 --gpus all \
 ```
 
-A complete run command would looks like:
+A complete run command would look like this.
 
 ```sh
 docker run -d \
---name=jellyfin \
--e NVIDIA_DRIVER_CAPABILITIES=all \
--e NVIDIA_VISIBLE_DEVICES=all \
---gpus all \
---runtime=nvidia \
--p 8096:8096 \
--p 8920:8920 \
--v /config:/config \
--v /media:/media \
--v /cache:/cache \
---restart unless-stopped \
-jellyfin/jellyfin
+ --name=jellyfin \
+ -e NVIDIA_DRIVER_CAPABILITIES=all \
+ -e NVIDIA_VISIBLE_DEVICES=all \
+ --gpus all \
+ --runtime=nvidia \
+ -p 8096:8096 \
+ -p 8920:8920 \
+ -v /config:/config \
+ -v /media:/media \
+ -v /cache:/cache \
+ --restart unless-stopped \
+ jellyfin/jellyfin
 ```
 
-If using user env parameters as:
+There are some special steps when running with the following option.
 
 ```sh
 --user 1000:1000
 ```
 
-You may need to add this user to the video group:
+You may need to add this user to the video group.
 
 ```sh
 usermod -aG video user
 ```
 
-Once container is started you can again validate access to host ressources:
+Once the container is started you can again validate access to the host resources.
 
 ```sh
-docker exec -it jellyfin ldconfig -p | grep cuvid
-docker exec -it jellyfin ldconfig -p | grep libnvidia-encode.so.1
+docker exec -it jellyfin nvidia-smi
 ```
 
-Now go in Jellyfin playback settings, enable Nvidia NVENC and select target codecs depending on what your GPU support
-try to play any file needing a transcode (change bitrate is a good way to try)
+If you get driver information, everything is fine but if you get an error like `couldn't find libnvidia-ml.so library in your system` you need to run the following command.
 
-Check the transcode logs to make sure everything is working proprely.
+```sh
+docker exec -it jellyfin ldconfig
+```
+
+After that, you should ensure the Nvidia driver loads correctly.
+
+Now go to the Jellyfin playback settings, enable Nvidia NVENC and select your target codecs depending on what your GPU supports. Try to play any file needing a transcode by changing the bitrate.
+
+Check the transcode logs to make sure everything is working properly.
 
 ```data
 Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
@@ -276,23 +284,24 @@ To check information about VAAPI on your system install and run `vainfo` from th
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:
 
-  ```sh
-  $ ls -l /dev/dri
-  total 0
-  drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path
-  crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0
-  crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1
-  crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
-  ```
+    ```sh
+    $ ls -l /dev/dri
+    total 0
+    drwxr-xr-x 2 root root        100 Apr 13 16:37 by-path
+    crw-rw---- 1 root video  226,   0 Apr 13 16:37 card0
+    crw-rw---- 1 root video  226,   1 Apr 13 16:37 card1
+    crw-rw---- 1 root render 226, 128 Apr 13 16:37 renderD128
+    ```
 
-  > [!NOTE]
-  > On some releases, the group may be `video` instead of `render`.
+    > [!NOTE]
+    > On some releases, the group may be `video` instead of `render`.
 
 2. Add the Jellyfin service user to the above group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin.
-```sh
-sudo usermod -aG render jellyfin
-sudo systemctl restart jellyfin
-```
+
+    ```sh
+    sudo usermod -aG render jellyfin
+    sudo systemctl restart jellyfin
+    ```
 
 3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API Device` value.
 
@@ -305,47 +314,52 @@ This has been tested with LXC 3.0 and may or may not work with older versions.
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 
 1. Add your GPU to the container.
-```sh
-$ lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
-```
+
+    ```sh
+    lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
+    ```
 
 2. Make sure you have the card within the container:
-```sh
-$ lxc exec jellyfin -- ls -l /dev/dri
-total 0
-crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
-crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
-crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
-```
+
+    ```sh
+    $ lxc exec jellyfin -- ls -l /dev/dri
+    total 0
+    crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
+    crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
+    crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
+    ```
 
 3. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
 
 4. Try and play a video that requires transcoding and run the following, you should get a hit.
-```sh
-$ ps aux | grep ffmpeg | grep accel
-```
+
+    ```sh
+    ps aux | grep ffmpeg | grep accel
+    ```
 
 5. You can also try playing a video that requires transcoding, and if it plays you're good.
 
 Useful Resources:
 
-* https://github.com/lxc/lxd/blob/master/doc/containers.md#type-gpu
-* https://stgraber.org/2017/03/21/cuda-in-lxd/
+- [LXD Documentation - GPU instance configuration](https://github.com/lxc/lxd/blob/master/doc/instances.md#type-gpu)
+- [NVidia CUDA inside a LXD container](https://stgraber.org/2017/03/21/cuda-in-lxd/)
 
 ### Raspberry Pi 3 and 4
 
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin.
+
     ```sh
     sudo usermod -aG video jellyfin
     sudo systemctl restart jellyfin
     ```
 
-  > [!NOTE]
-  > If you are using a Raspberry Pi 4, you might need to run `sudo rpi-update` for kernel and firmware updates.
+    > [!NOTE]
+    > If you are using a Raspberry Pi 4, you might need to run `sudo rpi-update` for kernel and firmware updates.
 
 2. Choose `OpenMAX OMX` as the Hardware acceleration on the Transcoding tab of the Server Dashboard.
 
 3. Change the amount of memory allocated to the GPU. The GPU can't handle accelerated decoding and encoding simultaneously.
+
     ```sh
     sudo nano /boot/config.txt
     ```
@@ -357,17 +371,22 @@ Useful Resources:
     You can set any value, but 320 is recommended amount for [4K HEVC](https://github.com/CoreELEC/CoreELEC/blob/coreelec-9.2/projects/RPi/devices/RPi4/config/config.txt).
 
     Verify the split between CPU and GPU memory:
+
     ```sh
     vcgencmd get_mem arm && vcgencmd get_mem gpu
     ```
 
     Monitor the temperature and clock speed of the CPU:
+
     ```sh
     vcgencmd measure_temp && vcgencmd measure_clock arm
     ```
 
 > [!NOTE]
-> RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+> RPi4 currently doesn't support HWA HEVC decoding, only encode and decode H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. Only Raspbian OS works so far. For docker, only the linuxserver image works. For more tips see [here](https://www.reddit.com/r/jellyfin/comments/ei6ew6/rpi4_hardware_acceleration_guide/).
+
+> [!NOTE]
+> For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Verifying Transcodes
 
@@ -385,6 +404,12 @@ Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))
 Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 ```
 
-`Stream #0:0` used software to decode HEVC and used HWA to encode.
+`Stream #0:0` used software (VAAPI Decode can also say native) to decode HEVC and used HWA to encode.
 
-`Stream #0:1` had the same results. Decoding is easier than encoding so these are good results overall. HWA decoding is a work in progress.
+```data
+Stream mapping:
+Stream #0:0 -> #0:0 (h264 (h264_mmal) -> h264 (h264_omx))
+Stream #0:1 -> #0:1 (flac (native) -> mp3 (libmp3lame))
+```
+
+`Stream #0:0` used HWA for both. h264_mmal to decode and h264_omx to encode.

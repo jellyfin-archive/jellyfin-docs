@@ -3,12 +3,13 @@
   - uid: clients-css-customization
   - uid: clients-codec-support
   - uid: clients-kodi
-  - uid: clients-installing-mopidy
+  - uid: clients-mopidy
 
 - name: Administration
   items:
   - uid: admin-installing
   - uid: admin-building
+  - uid: admin-configuration
   - uid: admin-migrate-from-emby
   - uid: admin-hardware-acceleration
   - uid: admin-troubleshoot
@@ -25,24 +26,17 @@
   - uid: network-letsencrypt
   - uid: network-dlna
 
-- uid: contrib-index
-  items:
-  - uid: contrib-branding
-  - uid: contrib-development
-  - uid: contrib-issues
-  - uid: contrib-release-procedure
-  - uid: contrib-source-tree
-
 - name: Server
   items:
   - name: Media
     items:
     - uid: server-media-books
-    - uid: server-media-cloud-storage
+    - uid: server-media-internet-radio
     - uid: server-media-movies
     - uid: server-media-music
     - uid: server-media-shows
     - uid: server-media-subtitles
+  - uid: server-storage
   - uid: server-devices
   - uid: server-libraries
   - uid: server-live-tv-index

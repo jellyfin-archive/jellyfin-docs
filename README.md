@@ -1,11 +1,47 @@
+<!-- markdownlint-disable MD041 first-line-heading -->
 <h1 align="center">Jellyfin Documentation</h1>
 <h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 
 This repository houses all documentation for Jellyfin available at [jellyfin.org](https://docs.jellyfin.org/) and written in markdown.
 
+## Getting Started
+
+The site is built with [DocFX](https://dotnet.github.io/docfx/) using [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html). See the content section [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) for a quick tutorial on DocFX.
+
+Since the site is mostly written with simple Markdown files, the easiest and fastest way to contribute is to just edit the source files directory on GitHub. For example, you could edit this README page by going to its [edit page](https://github.com/jellyfin/jellyfin-docs/edit/master/README.md) on GitHub.
+
+Editing directly on GitHub provides a feature to preview your changes for the current document, but if you want to see your changes within the context of the actual website or make more advanced changes to the site, you will need to run a copy of the site locally.
+
+To run the site locally, you will first need to clone this repository using git.
+
+```bash
+git clone https://github.com/jellyfin/jellyfin-docs.git
+```
+
+Next, you will need to install DocFx as a [command line tool](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html#2-use-docfx-as-a-command-line-tool). Once installed, you can run the following command from the root directory of your cloned repository.
+
+```bash
+docfx --serve
+```
+
+This will build the site and start up a development server to test out your changes available at <http://localhost:8080>.
+
+### Linting
+
+This repository is configured to use [markdownlint](https://github.com/DavidAnson/markdownlint/) for linting Markdown files.
+
+If you are editing files within Visual Studio Code, you can install the markdownlint [extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) to see the linting errors as you work.
+
+You can also easily run the linter manually using the associated markdownlint [CLI](https://github.com/igorshubovych/markdownlint-cli).
+
+```bash
+npm install -g markdownlint-cli
+markdownlint **/*.md --ignore node_modules --ignore src
+```
+
 # Layout
 
-Everything is built with [DocFX](https://dotnet.github.io/docfx/) using [DocFX Flavored Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html). See the content section [here](https://dotnet.github.io/docfx/tutorial/docfx_getting_started.html) for a quick tutorial.
+The following sections explain the documentation content available for each area of the site.
 
 ## Plugin API
 

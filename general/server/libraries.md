@@ -14,9 +14,3 @@ The three most common types of content are movies, shows, and music. These will 
 ## Paths
 
 You can add multiple paths that will all be shown under the same library. The path selection dialog will allow you to select folders visually, but if you can't find the exact location you can also just enter the path manually.
-
-## Real Time Monitoring
-
-This will let Jellyfin automatically update libraries when files are added or modified. Unfortunately this feature is only supported on certain filesystems.
-
-For Linux systems, this is performed by [inotify](https://en.wikipedia.org/wiki/Inotify). NFS and rclone do not support inotify, but support can be provided by using a union file system such as [mergerfs](https://github.com/trapexit/mergerfs) with your networked file systems.

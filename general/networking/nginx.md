@@ -14,7 +14,7 @@ title: Nginx Reverse Proxy
 
 Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to Jellyfin.
 
-```
+```config
 # Uncomment the commented sections after you have acquired a SSL Certificate
 server {
     listen 80;
@@ -96,6 +96,7 @@ server {
         proxy_set_header X-Forwarded-Host $http_host;
     }
 }
+
 ```
 
 ## Nginx with Subpath (example.org/jellyfin)
@@ -107,7 +108,7 @@ Set the [base URL](xref:networking-index#base-url) field in the Jellyfin server.
 > [!WARNING]
 > HTTP is insecure. The following configuration is provided for ease of use only. If you are planning on exposing your server over the Internet you should setup HTTPS. [Let's Encrypt](https://letsencrypt.org/getting-started/) can provide free TLS certificates which can be installed easily via [certbot](https://certbot.eff.org/).
 
-```
+```conf
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
 
 server {

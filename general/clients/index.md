@@ -12,6 +12,19 @@ Clients connect your devices to your Jellyfin server and let you view your conte
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 
+## Browsers
+
+Our goal is to provide support for the two most recent versions of these browsers.
+
+- Firefox
+- Firefox ESR
+- Chrome
+- Chrome for Android
+- Safari for MacOS and iOS
+- Edge
+
+Older browsers may be supported as a result of the needs of specific web-based clients, but full functionality is not guaranteed on their desktop version.
+
 ## Android
 
 ### Jellyfin for Android
@@ -24,8 +37,8 @@ The official Jellyfin Android app, which supports Android 5 and above.
 
 <a href='https://play.google.com/store/apps/details?id=org.jellyfin.mobile&utm_source=docs&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
 
-* [GitHub](https://github.com/jellyfin/jellyfin-android)
-* [Download](https://jellyfin.org/downloads/clients/#android)
+- [GitHub](https://github.com/jellyfin/jellyfin-android)
+- [Download](https://jellyfin.org/downloads/clients/#android)
 
 ### Jellyfin for Android TV
 
@@ -37,8 +50,8 @@ The official Jellyfin Android TV app.
 
 <a href='https://play.google.com/store/apps/details?id=org.jellyfin.androidtv'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
 
-* [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
-* [Download](https://jellyfin.org/downloads/clients/#androidtv)
+- [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
+- [Download](https://jellyfin.org/downloads/clients/#androidtv)
 
 ### Jellyfin for Amazon Fire TV
 
@@ -50,8 +63,8 @@ The official Jellyfin Fire TV app.
 
 <a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'><img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
 
-* [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
-* [Download](https://jellyfin.org/downloads/clients/#androidtv)
+- [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
+- [Download](https://jellyfin.org/downloads/clients/#androidtv)
 
 ### Yatse
 
@@ -61,7 +74,7 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 **Links:**
 
-* [Website](https://yatse.tv/)
+- [Website](https://yatse.tv)
 
 ## Jellyfin Cross-Platform Clients
 
@@ -69,17 +82,17 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 
 **Status:**
 
-Android:	✅ In Development
+Android: ✅ In Development
 
-Web/Desktop:	✅ In Development
+Web/Desktop: ✅ In Development
 
-iOS:		⭕ Planned
+iOS: ⭕ Planned
 
-Android TV:	⭕ Planned
+Android TV: ⭕ Planned
 
 **Links:**
 
-* [GitHub](https://github.com/cromefire/jellyfin-mpp)
+- [GitHub](https://github.com/cromefire/jellyfin-mpp)
 
 ### Jellyfin React Client
 
@@ -89,7 +102,7 @@ A cross-platform app built with React.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-react-client)
+- [GitHub](https://github.com/jellyfin/jellyfin-react-client)
 
 ### Jellyfin Xamarin Client
 
@@ -99,18 +112,19 @@ Xamarin cross-platform client for Jellyfin.
 
 **Links:**
 
-* [GitHub](https://github.com/chaosinnovator/jellyfin-xamarin)
+- [GitHub](https://github.com/chaosinnovator/jellyfin-xamarin)
 
 ### Jellyfin MPV Shim
 
-Cast videos from other Jellyfin applications to the MPV media player on Windows and Linux. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, along with subtitle management tools.
+Provides both a desktop client mode and background cast mode. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support.
 
 **Status:** ⭐ Active, 3rd-Party
 
 **Links:**
 
-* [Github](https://github.com/iwalton3/jellyfin-mpv-shim)
-* [Windows Release](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
+- [Github](https://github.com/iwalton3/jellyfin-mpv-shim)
+- [Windows Release](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
+- [Flathub Package](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
 
 ### Jellycli
 
@@ -120,7 +134,18 @@ Terminal player for Jellyfin, only for music at the moment.
 
 **Links:**
 
-* [Github](https://github.com/tryffel/jellycli)
+- [Github](https://github.com/tryffel/jellycli)
+
+### Jellyfin-CLI
+
+Terminal player for Jellyfin, written in Python.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Github](https://github.com/marios8543/Jellyfin-CLI)
+- [PyPI](https://pypi.org/project/Jellyfin-CLI/)
 
 ## Jellyfin Theater (Desktop)
 
@@ -132,7 +157,7 @@ A cross-platform desktop media interface using Electron supporting Windows, MacO
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-theater-electron)
+- [GitHub](https://github.com/jellyfin/jellyfin-theater-electron)
 
 ### Raspberry Pi
 
@@ -142,7 +167,7 @@ A desktop media interface for the Raspberry Pi.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-theater-pi)
+- [GitHub](https://github.com/jellyfin/jellyfin-theater-pi)
 
 ### Windows
 
@@ -152,7 +177,7 @@ A desktop media interface for Windows.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-theater-windows)
+- [GitHub](https://github.com/jellyfin/jellyfin-theater-windows)
 
 ## Web
 
@@ -164,8 +189,8 @@ Extension for browsers based on Chromium and Firefox that allows scrobble servic
 
 **Links:**
 
-* [Website](https://web-scrobbler.github.io/)
-* [GitHub](https://github.com/web-scrobbler/web-scrobbler)
+- [Website](https://web-scrobbler.github.io/)
+- [GitHub](https://github.com/web-scrobbler/web-scrobbler)
 
 ### Jellyfin for Google Chrome
 
@@ -175,7 +200,7 @@ The official Jellyfin Google Chrome extension.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-chrome)
+- [GitHub](https://github.com/jellyfin/jellyfin-chrome)
 
 ## Linux
 
@@ -187,20 +212,21 @@ A terminal client for Jellyfin built as a REPL interface, that uses mpv for mult
 
 **Links:**
 
-* [GitHub](https://github.com/Aanok/jftui)
+- [GitHub](https://github.com/Aanok/jftui)
 
 ## Apple
 
-### Jellyfin for Apple iOS
+### Jellyfin for iOS
 
-The official Jellyfin iOS app.
+The official Jellyfin iOS client.
 
-**Status:** ⭐ Beta Release
+**Status:** ⭐ Active
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-expo)
-* [TestFlight Beta](https://testflight.apple.com/join/TcFUEVEb)
+<a href='https://apps.apple.com/us/app/jellyfin-mobile/id1480192618'><img alt='Download on the App Store' src='https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png'/></a>
+
+- [GitHub](https://github.com/jellyfin/jellyfin-expo)
 
 ## Kodi
 
@@ -212,8 +238,8 @@ The official Jellyfin Kodi plugin.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-kodi)
-* [Installing](xref:clients-installing-kodi)
+- [GitHub](https://github.com/jellyfin/jellyfin-kodi)
+- [Installing](xref:clients-kodi)
 
 ## LG WebOS
 
@@ -225,7 +251,7 @@ The official Jellyfin WebOS app.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-webos)
+- [GitHub](https://github.com/jellyfin/jellyfin-webos)
 
 ## Mopidy
 
@@ -237,8 +263,8 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 
 **Links:**
 
-* [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
-* [Installing](xref:clients-installing-mopidy)
+- [GitHub](https://github.com/mcarlton00/mopidy-jellyfin)
+- [Installing](xref:clients-mopidy)
 
 ## Roku
 
@@ -250,19 +276,19 @@ The official Jellyfin Roku app.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-roku)
+- [GitHub](https://github.com/jellyfin/jellyfin-roku)
 
 ## Samsung TV
 
-### Jellyfin for Samsung TV
+### Jellyfin for Tizen
 
-The official Jellyfin Samsung TV app.
+The official Jellyfin Samsung TV client.
 
 **Status:** ✅ In Development
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-samsungtv)
+- [GitHub](https://github.com/jellyfin/jellyfin-samsungtv)
 
 ## UWP
 
@@ -274,4 +300,4 @@ A wrapper around Jellyfin's web interface for UWP devices (Windows 10, Windows P
 
 **Links:**
 
-* [GitHub](https://github.com/chaosinnovator/jellyfin-uwp)
+- [GitHub](https://github.com/jellyfin/jellyfin-uwp)

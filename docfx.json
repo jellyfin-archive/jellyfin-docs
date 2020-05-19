@@ -9,7 +9,7 @@
           "exclude": [
             "**/obj/**",
             "**/bin/**",
-            "**/**Test.csproj",
+            "**/**Tests.csproj",
             "**/Mono**.csproj",            
             "**/RSSDP.csproj"
           ],
@@ -64,7 +64,9 @@
     "template": [
       "default"
     ],
-    "postProcessors": [ "ExtractSearchIndex" ],
+    "postProcessors": [
+      "ExtractSearchIndex"
+    ],
     "markdownEngineName": "dfm",
     "noLangKeyword": false,
     "keepFileLink": false,
@@ -75,6 +77,5 @@
       "priority": 0.1,
       "changefreq": "daily"
     }
-    
   }  
 }

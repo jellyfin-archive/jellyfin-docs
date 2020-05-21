@@ -167,27 +167,28 @@ server {
 ## Extra Nginx Configurations
 
 ### Cache Video Streams
+
 ```conf
 #Must be in HTTP block
-proxy_cache_path  /home/cache/web 	levels=1:2    keys_zone=cWEB:50m	inactive=90d	max_size=35000m;
+proxy_cache_path  /home/cache/web levels=1:2 keys_zone=cWEB:50m inactive=90d max_size=35000m;
 map $request_uri $h264Level { ~(h264-level=)(.+?)& $2; }
 map $request_uri $h264Profile { ~(h264-profile=)(.+?)& $2; }
 
 #set in Server block
-proxy_cache            cWEB;
-proxy_cache_valid      200 301 302 30d;
+proxy_cache cWEB;
+proxy_cache_valid 200 301 302 30d;
 proxy_ignore_headers Expires Cache-Control Set-Cookie X-Accel-Expires;
-proxy_cache_use_stale  error timeout invalid_header updating http_500 http_502 http_503 http_504;
+proxy_cache_use_stale error timeout invalid_header updating http_500 http_502 http_503 http_504;
 proxy_connect_timeout 10s;
 proxy_http_version 1.1;
 proxy_set_header Connection "";
 
 location /videos/
-	{
-	proxy_pass           http://myJF-IP:8096;
-	proxy_cache_key "mydomain.com$uri?MediaSourceId=$arg_MediaSourceId&VideoCodec=$arg_VideoCodec&AudioCodec=$arg_AudioCodec&AudioStreamIndex=$arg_AudioStreamIndex&VideoBitrate=$arg_VideoBitrate&AudioBitrate=$arg_AudioBitrate&SubtitleMethod=$arg_SubtitleMethod&TranscodingMaxAudioChannels=$arg_TranscodingMaxAudioChannels&RequireAvc=$arg_RequireAvc&SegmentContainer=$arg_SegmentContainer&MinSegments=$arg_MinSegments&BreakOnNonKeyFrames=$arg_BreakOnNonKeyFrames&h264-profile=$h264Profile&h264-level=$h264Level&TranscodeReasons=$arg_TranscodeReasons";
-	proxy_cache_valid    200 301 302 30d;
-	}
+  {
+  proxy_pass http://myJF-IP:8096;
+  proxy_cache_key "mydomain.com$uri?MediaSourceId=$arg_MediaSourceId&VideoCodec=$arg_VideoCodec&AudioCodec=$arg_AudioCodec&AudioStreamIndex=$arg_AudioStreamIndex&VideoBitrate=$arg_VideoBitrate&AudioBitrate=$arg_AudioBitrate&SubtitleMethod=$arg_SubtitleMethod&TranscodingMaxAudioChannels=$arg_TranscodingMaxAudioChannels&RequireAvc=$arg_RequireAvc&SegmentContainer=$arg_SegmentContainer&MinSegments=$arg_MinSegments&BreakOnNonKeyFrames=$arg_BreakOnNonKeyFrames&h264-profile=$h264Profile&h264-level=$h264Level&TranscodeReasons=$arg_TranscodeReasons";
+  proxy_cache_valid 200 301 302 30d;
+  }
 ```
 
 ### Cache Images

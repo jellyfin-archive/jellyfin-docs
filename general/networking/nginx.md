@@ -163,3 +163,82 @@ server {
     }
 }
 ```
+
+## Extra Nginx Configurations
+
+### Cache Video Streams
+```conf
+#Must be in HTTP block
+proxy_cache_path  /home/cache/web 	levels=1:2    keys_zone=cWEB:50m	inactive=90d	max_size=35000m;
+map $request_uri $h264Level { ~(h264-level=)(.+?)& $2; }
+map $request_uri $h264Profile { ~(h264-profile=)(.+?)& $2; }
+
+#set in Server block
+proxy_cache            cWEB;
+proxy_cache_valid      200 301 302 30d;
+proxy_ignore_headers Expires Cache-Control Set-Cookie X-Accel-Expires;
+proxy_cache_use_stale  error timeout invalid_header updating http_500 http_502 http_503 http_504;
+proxy_connect_timeout 10s;
+proxy_http_version 1.1;
+proxy_set_header Connection "";
+
+location /videos/
+	{
+	proxy_pass           http://myJF-IP:8096;
+	proxy_cache_key "mydomain.com$uri?MediaSourceId=$arg_MediaSourceId&VideoCodec=$arg_VideoCodec&AudioCodec=$arg_AudioCodec&AudioStreamIndex=$arg_AudioStreamIndex&VideoBitrate=$arg_VideoBitrate&AudioBitrate=$arg_AudioBitrate&SubtitleMethod=$arg_SubtitleMethod&TranscodingMaxAudioChannels=$arg_TranscodingMaxAudioChannels&RequireAvc=$arg_RequireAvc&SegmentContainer=$arg_SegmentContainer&MinSegments=$arg_MinSegments&BreakOnNonKeyFrames=$arg_BreakOnNonKeyFrames&h264-profile=$h264Profile&h264-level=$h264Level&TranscodeReasons=$arg_TranscodeReasons";
+	proxy_cache_valid    200 301 302 30d;
+	}
+```
+
+### Cache Images
+
+```conf
+# Add this outside of you server block (i.e. http block)
+proxy_cache_path /var/cache/nginx/jellyfin levels=1:2 keys_zone=jellyfin:100m max_size=15g inactive=30d use_temp_path=off;
+
+# Cache images (inside server block)
+location ~ /Items/(.*)/Images {
+  proxy_pass http://127.0.0.1:8096;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+  proxy_set_header X-Forwarded-Protocol $scheme;
+  proxy_set_header X-Forwarded-Host $http_host;
+
+  proxy_cache jellyfin;
+  proxy_cache_revalidate on;
+  proxy_cache_lock on;
+  # add_header X-Cache-Status $upstream_cache_status; # This is only to check if cache is working
+}
+```
+
+Ensure that the directory /var/cache/nginx/jellyfin exists and the nginx user has write permissions on it! All the cache options used are explained on [Nginx blog](https://www.nginx.com/blog/nginx-caching-guide/) and [Nginx proxy module](http://nginx.org/en/docs/http/ngx_http_proxy_module.html).
+
+### Rate Limit Downloads
+
+```conf
+# Add this outside of you server block (i.e. http block)
+limit_conn_zone $binary_remote_addr zone=addr:10m;
+
+# Downloads limit (inside server block)
+location ~ /Items/(.*)/Download$ {
+   proxy_pass http://127.0.0.1:8096;
+   proxy_set_header Host $host;
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header X-Forwarded-Proto $scheme;
+   proxy_set_header X-Forwarded-Protocol $scheme;
+   proxy_set_header X-Forwarded-Host $http_host;
+
+   limit_rate 1700k; # Speed limit (here is on kb/s)
+   limit_conn addr 3; # Number of simultaneous downloads per IP
+   limit_conn_status 460; # Custom error handling
+   # proxy_buffering on; # Be sure buffering is on (it is by default on nginx), otherwise limits won't work
+}
+
+# Error page
+error_page 460 http://your-page-telling-your-limit/;
+```
+
+[See here for more](www.nginx.com/blog/rate-limiting-nginx/)

@@ -171,7 +171,6 @@ docker create --name=letsencrypt --cap-add=NET_ADMIN -e PUID=1000 -e PGID=1000 -
 
 This will pull down the linuxserver/letsencrypt container, and then create it with the variables specified. You'll then want to start the docker container with `docker start letsencrypt`. You can verify this is started by running `docker ps`, which will produce an output like this:
 
-
 ```text
 CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS                                      NAMES
 09346434b8ea        linuxserver/letsencrypt   "/init"             2 minutes ago       Up 5 seconds        0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp   letsencrypt

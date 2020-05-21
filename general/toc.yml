@@ -31,11 +31,12 @@
   - name: Media
     items:
     - uid: server-media-books
-    - uid: server-media-cloud-storage
+    - uid: server-media-internet-radio
     - uid: server-media-movies
     - uid: server-media-music
     - uid: server-media-shows
     - uid: server-media-subtitles
+  - uid: server-storage
   - uid: server-devices
   - uid: server-libraries
   - uid: server-live-tv-index

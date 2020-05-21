@@ -1,6 +1,6 @@
 ---
 uid: network-reverse-proxy-haproxy
-title: HAProxy Reverse Proxy
+title: HAProxy
 ---
 
 ## HAProxy

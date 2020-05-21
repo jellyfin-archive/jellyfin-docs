@@ -1,6 +1,6 @@
 ---
 uid: network-reverse-proxy-caddy
-title: Caddy Reverse Proxy
+title: Caddy
 ---
 
 # Caddy

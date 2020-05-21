@@ -1,6 +1,6 @@
 ---
 uid: network-reverse-proxy-apache
-title: Apache Reverse Proxy
+title: Apache
 ---
 
 ## Apache HTTP Server Project

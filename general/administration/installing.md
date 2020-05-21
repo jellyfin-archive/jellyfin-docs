@@ -46,15 +46,9 @@ Additionally the [LinuxServer.io](https://www.linuxserver.io/) project distribut
 > [!Note]
 > For ARM hardware and RPi, it is recommended to use the LinuxServer.io image since hardware acceleration support is not yet available on the native image.
 
-> [!Note]
-> Use host mode for networking in order to use DLNA or an HDHomeRun.
-
 ### Docker
 
 [Docker](https://www.docker.com/) allows you to run containers on Linux, Windows and MacOS.
-
-> [!Note]
-> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
 The basic steps to create and run a Jellyfin container using Docker are as follows:
 
@@ -84,12 +78,15 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
 4. Create and run a container in one of the following ways:
 
+> [!Note]
+> Use host mode for networking in order to use DLNA or an HDHomeRun.
+
     **Using Docker command line interface:**
 
     ```sh
     docker run -d \
-     --volume jellyfin-config:/config \
-     --volume jellyfin-cache:/cache \
+     --volume /path/to/config:/config \
+     --volume /path/to/cache:/cache \
      --volume /path/to/media:/media \
      --user 1000:1000 \
      --net=host \
@@ -104,6 +101,9 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     ```sh
     --volume /path/to/media:/media:ro
     ```
+    
+> [!Note]
+> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
     Multiple media libraries can be bind mounted if needed:
 

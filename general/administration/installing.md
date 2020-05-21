@@ -81,7 +81,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 > [!Note]
 > Use host mode for networking in order to use DLNA or an HDHomeRun.
 
-    **Using Docker command line interface:**
+**Using Docker command line interface:**
 
     ```sh
     docker run -d \
@@ -101,11 +101,11 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     ```sh
     --volume /path/to/media:/media:ro
     ```
-    
+
 > [!Note]
 > There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
-    Multiple media libraries can be bind mounted if needed:
+Multiple media libraries can be bind mounted if needed:
 
     ```sh
     --volume /path/to/media1:/media/media1

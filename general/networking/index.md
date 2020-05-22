@@ -43,13 +43,17 @@ Live TV devices will often use a random UDP port for HDHomeRun devices. The serv
 
 ## Self-Signed Certificate
 
-openssl req -x509 -newkey rsa:4096 -keyout privkey.pem -out cert.pem -days 365 -nodes
+https://www.sslshopper.com/article-most-common-openssl-commands.html
 
-omit -nodes to set a password interactively
+Create a private key. 
 
-and -days 365 to make it 'permanent' i guess most would prefer
+`openssl req -x509 -newkey rsa:4096 -keyout ./privkey.pem -out cert.pem -days 365 -nodes -subj '/CN=jellyfin.lan'`
 
-also add -subj '/CN=localhost' to make it not ask interactive questions about content of cert
+omit -nodes to set a password interactively.
+
+Remove -days 365 to make it 'permanent'.
+
+Add -subj '/CN=localhost' to make it not ask interactive questions about content of certificate. 
 
 creates `./privkey.pem`
 

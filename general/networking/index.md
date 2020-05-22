@@ -41,6 +41,20 @@ Allows clients to discover Jellyfin on the local network. A broadcast message to
 
 Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
 
+## Self-Signed Certificate
+
+openssl req -x509 -newkey rsa:4096 -keyout privkey.pem -out cert.pem -days 365 -nodes
+
+omit -nodes to set a password interactively
+
+and -days 365 to make it 'permanent' i guess most would prefer
+
+also add -subj '/CN=localhost' to make it not ask interactive questions about content of cert
+
+creates `./privkey.pem`
+
+openssl pkcs12 -export -out jellyfin.pfx -inkey privkey.pem -in /usr/local/etc/letsencrypt/live/domain.org/cert.pem -passout pass:
+
 ## Running Jellyfin Behind a Reverse Proxy
 
 It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.

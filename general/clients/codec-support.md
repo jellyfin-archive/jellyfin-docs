@@ -78,7 +78,7 @@ ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 
-Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format that is supported by the browser or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles the most intenstive method of transcoding due to two transcodings happening at once; applying the subtitle layer on top of the video layer. Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
+Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format that is supported or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles is the most intenstive method of transcoding. This is due to two transcodings happening at once; applying the subtitle layer on top of the video layer. Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
 
 ||Format|TS|MP4<sup>1</sup>|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -88,12 +88,15 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 |VobSub<sup>3</sup>|Picture|✅|✅|✅|🔶|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
+|EIA-608<sup>4</sup>|Embedded|✅|✅|✅|❌|
 
 <sup>1</sup>MP4 containers can only support one embedded subtitle stream. This does not affect external subtitles.
 
 <sup>2</sup>VTT are supported in an [HLS Stream](https://helpx.adobe.com/adobe-media-server/dev/webvtt-subtitles-captions.html).
 
 <sup>3</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
+
+<sup>4</sup>EIA-608 subtitles are embedded in private channels (channel 21) in a mpeg video codec.
 
 To extract subtitles, the following commands can be used. The section `0:s:0` means the first subtitle, so `0:s:1` would be the second subtitle.
 

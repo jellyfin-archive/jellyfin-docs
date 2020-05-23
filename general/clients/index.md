@@ -94,16 +94,6 @@ Android TV: ⭕ Planned
 
 - [GitHub](https://github.com/cromefire/jellyfin-mpp)
 
-### Jellyfin React Client
-
-A cross-platform app built with React.
-
-**Status:** ✅ In Development
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-react-client)
-
 ### Jellyfin Xamarin Client
 
 Xamarin cross-platform client for Jellyfin.

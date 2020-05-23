@@ -94,10 +94,6 @@ Android TV: ⭕ Planned
 
 - [GitHub](https://github.com/cromefire/jellyfin-mpp)
 
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-react-client)
-
 ### Jellyfin Xamarin Client
 
 Xamarin cross-platform client for Jellyfin.

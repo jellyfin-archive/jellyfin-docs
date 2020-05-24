@@ -96,3 +96,4 @@ This section lists all the configuration options available and explains their fu
 |`FFmpeg:probesize`|`"1G"`|Value to set for the FFmpeg `probesize` format option. See the FFmpg [documentation](https://ffmpeg.org/ffmpeg-formats.html#Format-Options) for more details.|
 |`FFmpeg:analyzeduration`|`"200M"`|The value to set for the FFmpeg `analyzeduration` format option. See the FFmpg [documentation](https://ffmpeg.org/ffmpeg-formats.html#Format-Options) for more details.|
 |`playlists:allowDuplicates`|`True`|Whether playlists should allow duplicate items or automatically filter out duplicates.|
+|`PublishedServerUrl`|Server Url based on primary IP address|The Server URL to publish in udp Auto Discovery response.

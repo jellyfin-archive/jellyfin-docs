@@ -151,10 +151,11 @@ Install linux-headers and run the following command.
 apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Alternatively, run this command if you are on stretch for compatibility.
+Alternatively, run thoses commands if you are on stretch for compatibility.
 
 ```sh
-apt-get install -t stretch-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
+distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
+apt-get install -t $distribution-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
 Install Nvidia docker2 from the repository.
@@ -188,10 +189,8 @@ sudo pkill -SIGHUP docker
 Install nvidia drivers and dependencies.
 
 ```sh
-# Debian 9 Stretch
-apt-get install -t stretch-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
-# Debian 10 Buster
-apt-get install -t buster-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
+distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
+apt-get install -t $distribution-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
 ```
 
 Reboot your host to apply all changes.
@@ -217,7 +216,7 @@ ldconfig -p | grep libnvidia-encode.so.1
 Start your container adding those environement parameters.
 
 ```sh
--e "NVIDIA_DRIVER_CAPABILITIES=all" \
+-e NVIDIA_DRIVER_CAPABILITIES=all \
 -e NVIDIA_VISIBLE_DEVICES=all \
 --runtime=nvidia \
 --gpus all \

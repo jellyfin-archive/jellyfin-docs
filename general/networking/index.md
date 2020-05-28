@@ -11,6 +11,8 @@ This section describes how to get basic connectivity to a Jellyfin server, and a
 
 Many clients will automatically discover servers running on the same LAN and display them on login. If you are outside the network when you connect you can type in the complete IP address or domain name in the server field with the correct port to continue to the login page. You can find the default ports below to access the web frontend.
 
+HTTP and HTTPS are the primary means of connecting to the server. If using a self-signed certificate for HTTPS, some clients may not work such as Chromecast or Roku.
+
 ### Port Bindings
 
 This document aims to provide an administrator with knowledge on what ports Jellyfin binds to and what purpose they serve.

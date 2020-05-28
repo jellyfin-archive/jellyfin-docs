@@ -145,13 +145,13 @@ Update your package list again to download the latest software available from th
 apt-get update
 ```
 
-Install linux-headers and run the following command.
+Install linux-headers with the following command.
 
 ```sh
 apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Alternatively, run the following commands for compatibility.
+Alternatively, Install linux-headers using backports.
 
 ```sh
 distribution=$(. /etc/*-release;echo $VERSION_CODENAME)

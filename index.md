@@ -33,7 +33,7 @@ Want to get starting using Jellyfin right now? Check out the pages below for how
 * [Ubuntu](xref:admin-installing#ubuntu)
 * [Fedora](xref:admin-installing#fedora)
 * [CentOS](xref:admin-installing#centos)
-* [Docker](xref:admin-installing#official-docker-hub)
+* [Docker](xref:admin-installing#docker)
 * [unRaid](xref:admin-installing#unraid-docker)
 * [Kubernetes](xref:admin-installing#kubernetes)
 * [Windows](xref:admin-installing#windows-x86x64)

@@ -8,6 +8,10 @@
 - name: Administration
   items:
   - uid: admin-installing
+    items:
+    - name: Installing Jellyfin
+      items:
+      - uid: admin-install-synology
   - uid: admin-building
   - uid: admin-configuration
   - uid: admin-migrate-from-emby

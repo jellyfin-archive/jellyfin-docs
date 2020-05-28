@@ -151,7 +151,7 @@ Install linux-headers and run the following command.
 apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Alternatively, run thoses commands for compatibility.
+Alternatively, run the following commands for compatibility.
 
 ```sh
 distribution=$(. /etc/*-release;echo $VERSION_CODENAME)

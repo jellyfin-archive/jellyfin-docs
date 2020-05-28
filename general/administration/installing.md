@@ -56,25 +56,25 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
 2. Download the latest container image:
 
-```sh
-docker pull jellyfin/jellyfin
-```
+   ```sh
+   docker pull jellyfin/jellyfin
+   ```
 
 3. Create persistent storage for configuration and cache data:
 
 Either create two persistent volumes:
 
-```sh
-docker volume create jellyfin-config
-docker volume create jellyfin-cache
-```
+   ```sh
+   docker volume create jellyfin-config
+   docker volume create jellyfin-cache
+   ```
 
 Or create two directories on the host and use bind mounts:
 
-```sh
-mkdir /path/to/config
-mkdir /path/to/cache
-```
+   ```sh
+   mkdir /path/to/config
+   mkdir /path/to/cache
+   ```
 
 4. Create and run a container in one of the following ways:
 
@@ -83,35 +83,35 @@ mkdir /path/to/cache
 
 **Using Docker command line interface:**
 
-```sh
-docker run -d \
- --volume /path/to/config:/config \
- --volume /path/to/cache:/cache \
- --volume /path/to/media:/media \
- --user 1000:1000 \
- --net=host \
- --restart=unless-stopped \
- jellyfin/jellyfin
-```
+   ```sh
+   docker run -d \
+    --volume /path/to/config:/config \
+    --volume /path/to/cache:/cache \
+    --volume /path/to/media:/media \
+    --user 1000:1000 \
+    --net=host \
+    --restart=unless-stopped \
+    jellyfin/jellyfin
+   ```
 
 Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.
 
 To mount your media library read-only append ':ro' to the media volume:
 
-```sh
---volume /path/to/media:/media:ro
-```
+   ```sh
+   --volume /path/to/media:/media:ro
+   ```
 
 > [!Note]
 > There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
 Multiple media libraries can be bind mounted if needed:
 
-```sh
---volume /path/to/media1:/media/media1
---volume /path/to/media2:/media/media2
-...etc
-```
+   ```sh
+   --volume /path/to/media1:/media/media1
+   --volume /path/to/media2:/media/media2
+   ...etc
+   ```
 
 Using host networking (`--net=host`) is optional but required in order to use DLNA or HDHomeRun.
 
@@ -119,24 +119,24 @@ Using host networking (`--net=host`) is optional but required in order to use DL
 
 Create a `docker-compose.yml` file with the following contents:
 
-```yml
-version: "3"
-services:
-  jellyfin:
-    image: jellyfin/jellyfin
-    user: 1000:1000
-    network_mode: "host"
-    volumes:
-      - /path/to/config:/config
-      - /path/to/cache:/cache
-      - /path/to/media:/media
-```
+   ```yml
+   version: "3"
+   services:
+     jellyfin:
+       image: jellyfin/jellyfin
+       user: 1000:1000
+       network_mode: "host"
+       volumes:
+         - /path/to/config:/config
+         - /path/to/cache:/cache
+         - /path/to/media:/media
+   ```
 
 Then while in the same folder as the `docker-compose.yml` run:
 
-```sh
-docker-compose up
-```
+   ```sh
+   docker-compose up
+   ```
 
 You can learn more about using Docker by [reading the official Docker documentation](https://docs.docker.com/).
 
@@ -147,53 +147,53 @@ You are able to use hardware encoding with Nvidia, but it requires some addition
 **Adding Package Repositories**
 First off you'll need to add the Nvidia package repositories to your Ubuntu installation. This can be done by running the following commands:
 
-```sh
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-```
+   ```sh
+   distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+   curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+   curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+   ```
 
 **Installing Nvidia container toolkit**
 Next we'll need to install the Nvidia container toolkit. This can be done by running the following commands:
 
-```sh
-sudo apt-get update -y
-sudo apt-get install nvidia-container-toolkit -y
-```
+   ```sh
+   sudo apt-get update -y
+   sudo apt-get install nvidia-container-toolkit -y
+   ```
 
 After installing the Nvidia Container Toolkit, you'll need to restart the Docker Daemon in order to let Docker use your Nvidia GPU:
 
-```sh
-sudo systemctl restart docker
-```
+   ```sh
+   sudo systemctl restart docker
+   ```
 
 **Changing the `docker-compose.yml`**
 Now that all the packages are in order, let's change the `docker-compose.yml` to let the Jellyfin container make user of the Nvidia GPU.
 The following lines need to be added to the file:
 
-```sh
-runtime: nvidia
-environment:
-- NVIDIA_VISIBLE_DEVICES=all
-```
+   ```sh
+   runtime: nvidia
+   environment:
+   - NVIDIA_VISIBLE_DEVICES=all
+   ```
 
 Your completed `docker-compose.yml` file should look something like this:
 
-```yml
-version: "2.3"
-services:
-  jellyfin-test:
-    image: jellyfin/jellyfin
-    user: 1000:1000
-    network_mode: "host"
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-    volumes:
-      - /path/to/config:/config
-      - /path/to/cache:/cache
-      - /path/to/media:/media
-```
+   ```yml
+   version: "2.3"
+   services:
+     jellyfin:
+       image: jellyfin/jellyfin
+       user: 1000:1000
+       network_mode: "host"
+       runtime: nvidia
+       environment:
+         - NVIDIA_VISIBLE_DEVICES=all
+       volumes:
+         - /path/to/config:/config
+         - /path/to/cache:/cache
+         - /path/to/media:/media
+   ```
 
 > [!Note]
 > For Nvidia Hardware encoding the minimum version of docker-compose needs to be 2. However we recommend sticking with version 2.3 as it has proven to work with nvenc encoding.
@@ -206,9 +206,9 @@ An Unraid Docker template is available in the repository.
 
 2. Add the following line under "Template Repositories" and save the options.
 
-```url
-https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates
-```
+   ```data
+   https://github.com/jellyfin/jellyfin/blob/master/deployment/unraid/docker-templates
+   ```
 
 3. Click "Add Container" and select "jellyfin".
 
@@ -226,44 +226,44 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
 
 1. Install Podman:
 
-```sh
-dnf install -y podman
-```
+   ```sh
+   dnf install -y podman
+   ```
 
 2. Download the latest container image:
 
-```sh
-podman pull jellyfin/jellyfin
-```
+   ```sh
+   podman pull jellyfin/jellyfin
+   ```
 
 3. Create persistent storage for configuration and cache data:
 
 Either create two persistent volumes:
 
-```sh
-podman volume create jellyfin-config
-podman volume create jellyfin-cache
-```
+   ```sh
+   podman volume create jellyfin-config
+   podman volume create jellyfin-cache
+   ```
 
 Or create two directories on the host and use bind mounts:
 
-```sh
-mkdir /path/to/config
-mkdir /path/to/cache
-```
+   ```sh
+   mkdir /path/to/config
+   mkdir /path/to/cache
+   ```
 
 4. Create and run a Jellyfin container:
 
-```sh
-podman run \
- --cgroup-manager=systemd \
- --privileged \
- --volume jellyfin-config:/config \
- --volume jellyfin-cache:/cache \
- --volume /path/to/media:/media \
- --net=host \
- jellyfin/jellyfin
-```
+   ```sh
+   podman run \
+    --cgroup-manager=systemd \
+    --privileged \
+    --volume jellyfin-config:/config \
+    --volume jellyfin-cache:/cache \
+    --volume /path/to/media:/media \
+    --net=host \
+    jellyfin/jellyfin
+   ```
 
 Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.
 
@@ -273,9 +273,9 @@ Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path
 
 To mount your media library read-only append ':ro' to the media volume:
 
-```sh
---volume /path/to/media:/media:ro
-```
+   ```sh
+   --volume /path/to/media:/media:ro
+   ```
 
 To run as a systemd service see [Running containers with Podman and shareable systemd services](https://www.redhat.com/sysadmin/podman-shareable-systemd-services).
 

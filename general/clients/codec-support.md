@@ -78,7 +78,9 @@ ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 
-Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format that is supported or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles is the most intenstive method of transcoding. This is due to two transcodings happening at once; applying the subtitle layer on top of the video layer. Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
+Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format that is supported or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles is the most intenstive method of transcoding. This is due to two transcodings happening at once; applying the subtitle layer on top of the video layer.
+
+Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
 
 ||Format|TS|MP4<sup>1</sup>|MKV|AVI|
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -100,21 +102,39 @@ Subtiles can be a subtle issue for transcoding. Containers have a limited number
 
 To extract subtitles, the following commands can be used. The section `0:s:0` means the first subtitle, so `0:s:1` would be the second subtitle.
 
-### SSA Subtitles
+### Types of Subtitles
+
+There are many variations of subtitles. Closed, open,  burned-in, forced, SDH, and CC are among the common types of subtitles. The format, such as SubRIP or VobSUB doesn't matter for the type of subtitle.
+
+#### Closed Subtitles
+
+This is the generic name for subtitles that can be turned on or off. This can be Forced, SDH, CC or normal subtitles.
+
+#### Burned-in
+
+Open subtitles, also known as burned-in subtitles, are subtitles that have been permanently placed in the video and cannot be turned off. Open subtitles are the most common type of subtitles, where the subtitles are part of a seperate stream or file and can be toggled on or off.
+
+#### SDH and Closed Captioning
+
+SDH and CC are subtitles for the Deaf and Hard of Hearing. They include extra content such as background noises. SDH and CC are not defined by a specific type of subtitle, just by their intent. If using an OTA Tuner and DVR, the subtitles will be [embedded](https://evertz.com/resources/eia_608_708_cc.pdf) into the video and transcoding them before extracting the subtitles will destroy the subtitles.
+
+#### Forced
+
+"Forced subtitles are common on movies and only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In some cases, foreign dialogue may be left untranslated if the movie is meant to be seen from the point of view of a particular character who does not speak the language in question." - [Wikipedia](https://en.wikipedia.org/wiki/Subtitles#Categories)
+
+### Extracting Subtitles
+
+#### SSA/ASS Subtitles
 
 ```bash
 ffmpeg -dump_attachment:t "" -i file.mkv -map 0:s:1 -c:s ass extracted-subtitle.ass
 ```
 
-### Recorded OTA Content
+#### Recorded OTA Content
 
 ```bash
 ffmpeg -f lavfi -i "movie=Ronin (1998).ts[out+subcc]" -map 0:1  "Ronin (1998).srt"
 ```
-
-### Forced Subtitles
-
-"Forced subtitles are common on movies and only provide subtitles when the characters speak a foreign or alien language, or a sign, flag, or other text in a scene is not translated in the localization and dubbing process. In some cases, foreign dialogue may be left untranslated if the movie is meant to be seen from the point of view of a particular character who does not speak the language in question." - [Wikipedia](https://en.wikipedia.org/wiki/Subtitles#Categories)
 
 ## [Container Compatibility](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Containers)
 

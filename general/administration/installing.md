@@ -62,14 +62,14 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
 3. Create persistent storage for configuration and cache data:
 
-Either create two persistent volumes:
+   Either create two persistent volumes:
 
    ```sh
    docker volume create jellyfin-config
    docker volume create jellyfin-cache
    ```
 
-Or create two directories on the host and use bind mounts:
+   Or create two directories on the host and use bind mounts:
 
    ```sh
    mkdir /path/to/config
@@ -238,14 +238,14 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
 
 3. Create persistent storage for configuration and cache data:
 
-Either create two persistent volumes:
+   Either create two persistent volumes:
 
    ```sh
    podman volume create jellyfin-config
    podman volume create jellyfin-cache
    ```
 
-Or create two directories on the host and use bind mounts:
+   Or create two directories on the host and use bind mounts:
 
    ```sh
    mkdir /path/to/config

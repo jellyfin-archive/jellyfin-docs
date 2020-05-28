@@ -90,7 +90,7 @@ Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_
 |VobSub<sup>3</sup>|Picture|✅|✅|✅|🔶|
 |MP4TT/TXTT|XML|❌|✅|❌|❌|
 |PGSSUB|Picture|❌|❌|✅|❌|
-|EIA-608<sup>4</sup>|Embedded|✅|✅|✅|❌|
+|EIA-608/708<sup>4</sup>|Embedded|✅|✅|✅|❌|
 
 <sup>1</sup>MP4 containers can only support one embedded subtitle stream. This does not affect external subtitles.
 
@@ -98,9 +98,7 @@ Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_
 
 <sup>3</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
 
-<sup>4</sup>EIA-608 subtitles are embedded in private channels (channel 21) in a mpeg video codec.
-
-To extract subtitles, the following commands can be used. The section `0:s:0` means the first subtitle, so `0:s:1` would be the second subtitle.
+<sup>4</sup>EIA-608/708 subtitles are embedded in private channels (channel 21) in a mpeg video codec.
 
 ### Types of Subtitles
 
@@ -124,6 +122,8 @@ SDH and CC are subtitles for the Deaf and Hard of Hearing. They include extra co
 
 ### Extracting Subtitles
 
+To extract subtitles, the following commands can be used. The section `0:s:0` means the first subtitle, so `0:s:1` would be the second subtitle.
+
 #### SSA/ASS Subtitles
 
 ```bash
@@ -131,6 +131,8 @@ ffmpeg -dump_attachment:t "" -i file.mkv -map 0:s:1 -c:s ass extracted-subtitle.
 ```
 
 #### Recorded OTA Content
+
+Content recorded OTA will typically have subtitles [embedded](https://aberdeen.io/blog/2009/06/18/the-basics-of-608-vs-708-captions/) into the video codec itself. These subtitles are typically EIA-608 for analog and EIA-708 for digital.
 
 ```bash
 ffmpeg -f lavfi -i "movie=Ronin (1998).ts[out+subcc]" -map 0:1  "Ronin (1998).srt"

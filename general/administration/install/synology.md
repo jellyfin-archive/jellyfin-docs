@@ -25,7 +25,7 @@ Use Advanced Settings to add mount points to your media and config.
 
 ![Installing Synology](~/images/install-synology-7.png)
 
-Host Mode is required for HdHR and DLNA. Use bridge mode if running multiple instances. 
+Host Mode is required for HdHR and DLNA. Use bridge mode if running multiple instances.
 
 ![Installing Synology](~/images/install-synology-8.png)
 

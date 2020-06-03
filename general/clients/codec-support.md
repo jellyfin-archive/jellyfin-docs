@@ -96,7 +96,7 @@ Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_
 
 <sup>2</sup>DVB-SUB [(SUB + IDX)](https://forum.videohelp.com/threads/261451-Difference-between-SUB-and-IDX-file) is another name for VobSub files.
 
-<sup>3</sup>EIA-608/708 subtitles are embedded in private channels (channel 21) in a mpeg video codec.
+<sup>3</sup>EIA-608/708 subtitles are embedded in private channels (channel 21) in a mpeg video codec. EIA-608 are standard CC subtitles with the black bar background while EIA-708 are typically SDH.
 
 ### Types of Subtitles
 
@@ -112,7 +112,7 @@ Open subtitles, also known as burned-in subtitles, are subtitles that have been 
 
 #### SDH and Closed Captioning
 
-SDH and CC are subtitles for the Deaf and Hard of Hearing. They include extra content such as background noises. SDH and CC are not defined by a specific type of subtitle, just by their intent. If using an OTA Tuner and DVR, the subtitles will be [embedded](https://evertz.com/resources/eia_608_708_cc.pdf) into the video and transcoding them before extracting the subtitles will destroy the subtitles.
+SDH and CC are subtitles for the Deaf and Hard of Hearing. They include extra content such as background noises. SDH and CC are not defined by a specific type of subtitle, just by their intent. If using an OTA Tuner and DVR, the subtitles will be [embedded](https://evertz.com/resources/eia_608_708_cc.pdf) into the video and transcoding them before extracting the subtitles will destroy the subtitles. 
 
 #### Forced
 

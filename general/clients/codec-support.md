@@ -78,7 +78,7 @@ ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/
 
 ## [Subtitle Compatibility](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats#Subtitle/caption_formats_support "Wikipedia's subtitle codec tables")
 
-Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways. They can be converted into another supported format that is supported or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles is the most intenstive method of transcoding. This is due to two transcodings happening at once; applying the subtitle layer on top of the video layer.
+Subtiles can be a subtle issue for transcoding. Containers have a limited number of subtitles that are supported. If subtitles need to be transcoded, it will happen one of two ways: they can be converted into another supported format that is supported or burned into the video due to the subtitle transcoding not being supported. Burning in subtitles is the most intensive method of transcoding. This is due to two transcodings happening at once; applying the subtitle layer on top of the video layer.
 
 Here is a [breakdown](https://www.afterdawn.com/guides/archive/subtitle_formats_explained.cfm) of common subtitle formats.
 

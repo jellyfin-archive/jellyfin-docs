@@ -33,6 +33,9 @@ Movies
 
 To distinguish between versions, each filename needs to have a space, hyphen, space, and then a label. Labels are not predetermined and can be made up by the user.
 
+> [!Note]
+> The hyphen is required. Periods, commas and other characters are not supported.
+
 Additionally, labels can be placed between brackets with the same result as seen below.
 
 ```txt
@@ -44,3 +47,6 @@ Movies
 ```
 
 If labels are not added to the end of filenames, as shown above, each file will be treated as a unique movie and not a version of the same movie.
+
+> [!Note]
+> To group media manually, long-click or right-click media to highlight then select additional media to merge. Use the new bar that appears to 'Group Versions'.

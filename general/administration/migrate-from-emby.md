@@ -30,44 +30,44 @@ This procedure is written for Debian-based Linux distributions, but can be trans
 
 2. Stop the `emby-server` daemon:
 
-```sh
-sudo service emby-server stop
-```
+   ```sh
+   sudo service emby-server stop
+   ```
 
 3. Move your existing Emby data directory out of the way:
 
-```sh
-sudo mv /var/lib/emby /var/lib/emby.backup
-```
+   ```sh
+   sudo mv /var/lib/emby /var/lib/emby.backup
+   ```
 
 4. Remove or purge the `emby-server` package:
 
-```sh
-sudo apt purge emby-server
-```
+   ```sh
+   sudo apt purge emby-server
+   ```
 
 5. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
 
 6. Stop the `jellyfin` daemon:
 
-```sh
-sudo service jellyfin stop
-```
+   ```sh
+   sudo service jellyfin stop
+   ```
 
 7. Copy over all the data files from the Emby backup data directory:
 
-```sh
-sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/
-```
+   ```sh
+   sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/
+   ```
 
 8. Correct ownership on the new data directory:
 
-```sh
-sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
-```
+   ```sh
+   sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
+   ```
 
 9. Start the `jellyfin` daemon:
 
-```sh
-sudo service jellyfin start
-```
+   ```sh
+   sudo service jellyfin start
+   ```

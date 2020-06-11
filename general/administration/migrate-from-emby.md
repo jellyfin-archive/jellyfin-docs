@@ -1,6 +1,6 @@
 ---
 uid: admin-migrate-from-emby
-title: Migrating from Emby
+title: Migrating
 ---
 
 # Migrating from Emby to Jellyfin
@@ -8,6 +8,14 @@ title: Migrating from Emby
 Direct database migration from Emby (of any version) to Jellyfin is NOT SUPPORTED. We have found many subtle bugs due to the inconsistent database schemas that result from trying to do this, and strongly recommend that all Jellyfin users migrating from Emby start with a fresh database and library scan.
 
 The original procedure is provided below for reference however we cannot support it nor guarantee that a system upgraded in this way will work properly, if at all. If anyone is interested in writing a database migration script which will correct the deficiencies in the existing database and properly import them into Jellyfin, [we would welcome it however](xref:contrib-index)!
+
+## Watched Status Migration
+
+There are scripts available that will use the API to copy watched status and users from one instance to another. This can be done from Plex, Emby or another Jellyfin instance. 
+
+[Emby/Jellyfin to Jellyfin migration](https://github.com/CobayeGunther/Emby2Jelly)
+
+[Plex to Jellyfin migration](https://github.com/wilmardo/migrate-plex-to-jellyfin)
 
 ## Unofficial Procedure
 
@@ -26,39 +34,39 @@ This procedure is written for Debian-based Linux distributions, but can be trans
     sudo service emby-server stop
     ```
 
-1. Move your existing Emby data directory out of the way:
+2. Move your existing Emby data directory out of the way:
 
     ```sh
     sudo mv /var/lib/emby /var/lib/emby.backup
     ```
 
-1. Remove or purge the `emby-server` package:
+3. Remove or purge the `emby-server` package:
 
     ```sh
     sudo apt purge emby-server
     ```
 
-1. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
+4. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
 
-1. Stop the `jellyfin` daemon:
+5. Stop the `jellyfin` daemon:
 
     ```sh
     sudo service jellyfin stop
     ```
 
-1. Copy over all the data files from the Emby backup data directory:
+6. Copy over all the data files from the Emby backup data directory:
 
     ```sh
     sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/
     ```
 
-1. Correct ownership on the new data directory:
+7. Correct ownership on the new data directory:
 
     ```sh
     sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
     ```
 
-1. Start the `jellyfin` daemon:
+8. Start the `jellyfin` daemon:
 
     ```sh
     sudo service jellyfin start

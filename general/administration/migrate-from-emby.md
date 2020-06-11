@@ -28,46 +28,46 @@ This procedure is written for Debian-based Linux distributions, but can be trans
 
 1. Upgrade to Emby version 3.5.2, so that the database schema is fully up-to-date and consistent. While this is not required, it can help reduce the possibility of obscure bugs in the database.
 
-1. Stop the `emby-server` daemon:
+2. Stop the `emby-server` daemon:
 
-    ```sh
-    sudo service emby-server stop
-    ```
+```sh
+sudo service emby-server stop
+```
 
-2. Move your existing Emby data directory out of the way:
+3. Move your existing Emby data directory out of the way:
 
-    ```sh
-    sudo mv /var/lib/emby /var/lib/emby.backup
-    ```
+```sh
+sudo mv /var/lib/emby /var/lib/emby.backup
+```
 
-3. Remove or purge the `emby-server` package:
+4. Remove or purge the `emby-server` package:
 
-    ```sh
-    sudo apt purge emby-server
-    ```
+```sh
+sudo apt purge emby-server
+```
 
-4. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
+5. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
 
-5. Stop the `jellyfin` daemon:
+6. Stop the `jellyfin` daemon:
 
-    ```sh
-    sudo service jellyfin stop
-    ```
+```sh
+sudo service jellyfin stop
+```
 
-6. Copy over all the data files from the Emby backup data directory:
+7. Copy over all the data files from the Emby backup data directory:
 
-    ```sh
-    sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/
-    ```
+```sh
+sudo cp -a /var/lib/emby.backup/* /var/lib/jellyfin/
+```
 
-7. Correct ownership on the new data directory:
+8. Correct ownership on the new data directory:
 
-    ```sh
-    sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
-    ```
+```sh
+sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
+```
 
-8. Start the `jellyfin` daemon:
+9. Start the `jellyfin` daemon:
 
-    ```sh
-    sudo service jellyfin start
-    ```
+```sh
+sudo service jellyfin start
+```

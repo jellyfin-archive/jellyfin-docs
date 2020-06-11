@@ -87,7 +87,8 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ```css
 #indexPage {
-    background: url(https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg);
+    background-image: url(https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg);
+    background-size: cover;
 }
 ```
 

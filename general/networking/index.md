@@ -49,7 +49,7 @@ Create a private key.
 
 `openssl req -x509 -newkey rsa:4096 -keyout ./privkey.pem -out cert.pem -days 365 -nodes -subj '/CN=jellyfin.lan'`
 
-omit -nodes to set a password interactively.
+omit `-nodes` to set a password interactively.
 
 Remove -days 365 to make it 'permanent'.
 

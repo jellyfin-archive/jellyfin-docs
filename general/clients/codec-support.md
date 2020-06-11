@@ -55,9 +55,7 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 |[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
 |VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
 |DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
-|OPUS|✅|✅|✅<sup>1</sup>|✅|✅|||✅|✅|
-
-<sup>1</sup>Safari only supports opus in `.caf` files
+|OPUS|✅|✅|✅<sup>5</sup>|✅|✅|||✅|✅|
 
 [Format Cheetsheet:](https://en.wikipedia.org/wiki/Moving_Picture_Experts_Group#External_links)
 
@@ -73,6 +71,8 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 <sup>3</sup>OGG containers are not supported and will cause VORBIS to convert.
 
 <sup>4</sup>Only DTS Mono has been tested.
+
+<sup>5</sup>Safari only supports opus in `.caf` files
 
 ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/03/A52-201212-17.pdf).
 

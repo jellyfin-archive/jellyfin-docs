@@ -51,7 +51,7 @@ Create a private key.
 
 omit `-nodes` to set a password interactively.
 
-Remove -days 365 to make it 'permanent'.
+Remove `-days 365` to make it 'permanent'.
 
 Add -subj '/CN=localhost' to make it not ask interactive questions about content of certificate. 
 

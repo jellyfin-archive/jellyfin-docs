@@ -48,11 +48,11 @@ To apply any one of these, copy paste the CSS code into the "Custom CSS" field. 
 
 This will affect the played/watched indicator. Replace the color hex with any value you like.
 
-#### Indicators Without Mod
+### Indicators Without Mod
 
 ![Screenshot of the default watched indicators](~/images/custom-css-normalwatched.png)
 
-#### Green Indicators
+### Green Indicators
 
 ```css
 .playedIndicator { background: #5dd000; }
@@ -60,7 +60,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ![Screenshot of watched indicators with a custom green color applied](~/images/custom-css-greenwatched.png)
 
-#### Transparent And Dark Indicators (using RGBA hex value)
+### Transparent And Dark Indicators (using RGBA hex value)
 
 ```css
 /* Make watched icon dark and transparent */
@@ -69,16 +69,26 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
-#### Remove Live TV Channel Listings
+### Remove Live TV Channel Listings
 
 ```css
 .guideChannelNumber { display: none; }
 ```
 
-#### Reduce Live TV Channel Width
+### Reduce Live TV Channel Width
 
 ```css
 .channelsContainer { max-width: 8em; }
+```
+
+### Background Image on Homepage
+
+[Additional MDN Documentation}(https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+
+```css
+#indexPage {
+    background: url(https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg);
+}
 ```
 
 ### Transparent Top Menu

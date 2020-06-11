@@ -11,7 +11,7 @@ The original procedure is provided below for reference however we cannot support
 
 ## Watched Status Migration
 
-There are scripts available that will use the API to copy watched status and users from one instance to another. This can be done from Plex, Emby or another Jellyfin instance. 
+There are scripts available that will use the API to copy watched status and users from one instance to another. This can be done from Plex, Emby or another Jellyfin instance.
 
 [Emby/Jellyfin to Jellyfin migration](https://github.com/CobayeGunther/Emby2Jelly)
 

@@ -83,7 +83,7 @@ This will affect the played/watched indicator. Replace the color hex with any va
 
 ### Background Image on Homepage
 
-[Additional MDN Documentation}(https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+[Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
 
 ```css
 #indexPage {

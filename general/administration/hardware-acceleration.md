@@ -31,6 +31,8 @@ Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-co
 
 On Windows, you can use the DXVA2/D3D11VA libraries for decoding and the libmfx library for encoding.
 
+Issues: https://trac.ffmpeg.org/ticket/7511 https://trac.ffmpeg.org/ticket/6827
+
 CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV.
 
 Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more.

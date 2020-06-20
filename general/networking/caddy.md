@@ -74,4 +74,5 @@ With that config, Caddy will only proxy requests that start with `/jellyfin/` (n
 
 ## Community Links
 
+- [Windows Reverse Proxy Guide](https://web.archive.org/web/20200620190707/https://old.reddit.com/r/jellyfin/comments/gdwe0s/windows_and_caddy_v2_reverse_proxy_guide/) (for Caddy v2)
 - [Windows Reverse Proxy Guide](https://www.reddit.com/r/jellyfin/comments/ek8ugr/windows_reverse_proxy_guide/) (for Caddy v1, which is obsolete)

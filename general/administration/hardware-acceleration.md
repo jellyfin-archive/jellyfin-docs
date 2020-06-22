@@ -31,7 +31,7 @@ Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-co
 
 On Windows, you can use the DXVA2/D3D11VA libraries for decoding and the libmfx library for encoding.
 
-Issues: https://trac.ffmpeg.org/ticket/7511 https://trac.ffmpeg.org/ticket/6827
+Issues: [FFmpeg Windows version with QSV hwaccel fails over TERMINAL](https://trac.ffmpeg.org/ticket/7511) and [Intel QSV: "Failed to create Direct3D device" on Core i7-7700K (Skylake) on Windows 10](https://trac.ffmpeg.org/ticket/6827)
 
 CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV.
 

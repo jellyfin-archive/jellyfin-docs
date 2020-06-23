@@ -111,6 +111,7 @@ services:
       - "traefik.http.services.jellyfin-svc.loadBalancer.server.port=8096"
       - "traefik.http.services.jellyfin-svc.loadBalancer.passHostHeader=true"
 ```
+
 > [!WARNING]
 > TOML files can't support environment variables, so all values must be hard coded.
 

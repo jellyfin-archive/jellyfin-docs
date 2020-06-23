@@ -254,6 +254,6 @@ Launch the Traefik and Jellyfin services.
 docker-compose up -d
 ```
 
-After starting the service, access Jellyfin directly (via the host's IP at port 8096) and change the 'Base URL' in Dashboard | Advanced | Networking to match the '/jellyfin' path (if you used one in this configuration). Afterward, you may wish to create a firewall rule to prevent direct access to Jellyfin at port 8096 on the host, or simply ensure the port is not accessible via the Internet.
+After starting the service, access Jellyfin directly (via the host's IP at port 8096) and change the 'Base URL' in Dashboard / Advanced / Networking to match the '/jellyfin' path (if you used one in this configuration). Afterward, you may wish to create a firewall rule to prevent direct access to Jellyfin at port 8096 on the host, or simply ensure the port is not accessible via the Internet.
 
 Congratulations, your stack with Traefik 2.x and Jellyfin is (hopefully) running!  Check the log file or run without the '-d' parameter to review any errors that may come up, particularly with respect to the LetsEncrypt configuration.

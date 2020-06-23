@@ -81,8 +81,10 @@ services:
       #### The sslRedirect is set to true, then only allow https requests.
       - "traefik.http.middlewares.jellyfin-mw.headers.SSLRedirect=true"
       #### The sslHost option is the host name that is used to redirect http requests to https.
-      - "traefik.http.middlewares.jellyfin-mw.headers.SSLHost=DOMAIN_NAME"
+      #### This is the exact URL that will be redirected to, so you can remove the :9999 port if using default SSL port
+      - "traefik.http.middlewares.jellyfin-mw.headers.SSLHost=DOMAIN_NAME:9999"
       #### Set sslForceHost to true and set SSLHost to forced requests to use SSLHost even the ones that are already using SSL.
+      #### Note that this uses SSLHost verbatim, so add the port to SSLHost if you are using an alternate port.
       - "traefik.http.middlewares.jellyfin-mw.headers.SSLForceHost=true"
       #### The stsSeconds is the max-age of the Strict-Transport-Security header. If set to 0, would NOT include the header.
       - "traefik.http.middlewares.jellyfin-mw.headers.STSSeconds=315360000"
@@ -232,7 +234,7 @@ Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, yo
 ```
 
 ### .env
-```
+```bash
 RFC2136_NAMESERVER=...
 RFC2136_TSIG_ALGORITHM=hmac-sha512.
 RFC2136_TSIG_KEY=...

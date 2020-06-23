@@ -18,6 +18,7 @@ This document provides a complete configuration of Traefik v2.x and Jellyfin. It
 The configuration below creates a Traefik v2.x installation with access at entryPoint ports 80 (labelled 'http'), 443 (labeled 'https'), and 9999 (labeled 'secure'). It makes Jellyfin accessible at /jellyfin on the secure entry point.  It also redirects all traffic from http (port 80) to https (port 443) to ensure all data is encrypted. This configuration is intended to be used as a starting point and some adaptation is likely required for your specific configuration. If you want Jellyfin to be accessible on port 443, simply change 'secure' to 'https' in `docker-compose.yml` where indicated. If you want Jellyfin to be accessible without a path, simply change '/jellyfin' to '/'. You can also restrict the configuration by hostname by using the commented line in `docker-compose.yml`.
 
 ### docker-compose.yml
+
 ```yml
 version: '2.4'
 services:
@@ -114,6 +115,7 @@ services:
 > TOML files can't support environment variables, so all values must be hard coded.
 
 ### traefik.toml
+
 ```toml
 [log]
   # By default, the level is set to ERROR. Alternative logging levels
@@ -225,6 +227,7 @@ services:
 Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host. We have created a static route to the docker host (192.168.1.xx:8096) in `traefik-provider.toml`. The use of host networking (as in this doc) or macvlan are required to use DLNA or an HdHomeRun so it can utilize the multicast network. `traefik-provider.toml` defines the jellyfin-svc@file service which we are pointing the router to in the `docker-compose.yml` file. You can not set a URL in `docker-compose.yml` which is why we set up this service externally. Be sure to update the IP address below to the IP address of the host on the local network (in this case, 192.168.1.xx).
 
 ### traefik-provider.toml
+
 ```toml
 [http]
   [http.services]

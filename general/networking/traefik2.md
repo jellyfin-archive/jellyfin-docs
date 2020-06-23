@@ -201,7 +201,7 @@ services:
     delayBeforeCheck = 0
     # A DNS server used to check whether the DNS is set up correctly before
     # making the ACME request. Ideally a DNS server that isn't going to cache an old entry.
-    resolvers = [""8.8.8.8:53"]
+    resolvers = ["8.8.8.8:53"]
 
 [tls.options]
   [tls.options.default]

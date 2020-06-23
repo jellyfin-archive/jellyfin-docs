@@ -45,7 +45,7 @@ services:
       - 443:443
       - 9999:9999
     env_file: .env
-    
+
   jellyfin:
     image: jellyfin/jellyfin
     container_name: "jellyfin"

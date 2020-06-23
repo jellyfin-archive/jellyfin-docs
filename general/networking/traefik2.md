@@ -234,6 +234,7 @@ Due to a [bug](https://github.com/containous/traefik/issues/5559) in Traefik, yo
 ```
 
 ### .env
+
 ```bash
 RFC2136_NAMESERVER=...
 RFC2136_TSIG_ALGORITHM=hmac-sha512.

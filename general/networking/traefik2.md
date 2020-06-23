@@ -241,7 +241,7 @@ RFC2136_TSIG_SECRET=...
 
 Finally, create an empty acme.json and traefik.log file to handle the certificate and log file for any logging
 ```bash
-touch acme.json traefik.log 
+touch acme.json traefik.log
 chmod 600 acme.json traefik.log
 ```
 

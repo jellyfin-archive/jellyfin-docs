@@ -1,6 +1,6 @@
 ---
 uid: network-reverse-proxy-traefik2
-title: Traefik2
+title: Traefik 2.x
 ---
 
 ## Traefik v2.x
@@ -13,7 +13,7 @@ This document provides a complete configuration of Traefik v2.x and Jellyfin. It
 > Ensure you enable some basic firewall or auth protection for Traefik or disable its dashboard. If you do not, your dashboard may be accessible from the internet. Pay attention to accessibility via IPv6, as even systems on an internal home network may be directly accessible over IPv6.  See [api-insecure](https://docs.traefik.io/operations/api/#insecure) for more details on securing the dashboard.
 
 > [!NOTE]
-> Traefik has many options for the configuration of LetsEncrypt using your choice of challenges. If your server is accessible via port 80 or 443, you can use the HTTP-01 or the TLS-ALPN-01 challenges. If so, the certificatesresolvers.leresolver.acme.httpchallenge.entrypoint must be reachable by Let's Encrypt through port 80/443. You can also use a DNS-01 challenge via one of the available [providers](https://docs.traefik.io/https/acme/#providers). Configuration is beyond the scope of this guide. This guide can be used for both HTTP-01 and DNS-01 by commenting or uncommenting the various blocks. You are most likely to use HTTP-01 unless you have full acess to your DNS configuration. The configuration below uses RFC2136 (as set by certificatesresolvers.leresolver.acme.dnsChallenge of `traefik.toml`) and the variables for that provider are shown in the `.env` file as a formatting guide. See notes about configuration of your ACME provider of choice, or change the configuration to HTTP-01 in `traefik.toml`'s comments.
+> Traefik has many options for the configuration of LetsEncrypt using your choice of challenges. If your server is accessible via port 80 or 443, you can use the HTTP-01 or the TLS-ALPN-01 challenges. If so, the certificatesresolvers.leresolver.acme.httpchallenge.entrypoint must be reachable by Let's Encrypt through port 80/443. You can also use a DNS-01 challenge via one of the available [providers](https://docs.traefik.io/https/acme/#providers). Configuration is beyond the scope of this guide. This guide can be used for both HTTP-01 and DNS-01 by commenting or uncommenting the various blocks. You are most likely to use HTTP-01 unless you have full access to your DNS configuration. The configuration below uses RFC2136 (as set by certificatesresolvers.leresolver.acme.dnsChallenge of `traefik.toml`) and the variables for that provider are shown in the `.env` file as a formatting guide. See provider documentation and comments about configuration of your ACME provider of choice, or change the configuration to HTTP-01 in `traefik.toml`'s comments.
 
 The configuration below creates a Traefik v2.x installation with access at entryPoint ports 80 (labelled 'http'), 443 (labeled 'https'), and 9999 (labeled 'secure'). It makes Jellyfin accessible at /jellyfin on the secure entry point.  It also redirects all traffic from http (port 80) to https (port 443) to ensure all data is encrypted. This configuration is intended to be used as a starting point and some adaptation is likely required for your specific configuration. If you want Jellyfin to be accessible on port 443, simply change 'secure' to 'https' in `docker-compose.yml` where indicated. If you want Jellyfin to be accessible without a path, simply change '/jellyfin' to '/'. You can also restrict the configuration by hostname by using the commented line in `docker-compose.yml`.
 
@@ -72,7 +72,7 @@ services:
       - "traefik.http.routers.jellyfin.entryPoints=secure"
       #### Remove (or change) this rule if you'd rather have Jellyfin accessible at the root (or at another URI)
       - "traefik.http.routers.jellyfin.rule=PathPrefix(`/jellyfin`)"
-      #- "traefik.http.routers.whoami.rule=Host(`DOMAIN_NAME`) && PathPrefix(`/jellyfin`)"
+      #- "traefik.http.routers.jellyfin.rule=Host(`HOST_NAME.DOMAIN_NAME`) && PathPrefix(`/jellyfin`)"
       - "traefik.http.routers.jellyfin.tls=true"
       - "traefik.http.routers.jellyfin.tls.certResolver=leresolver"
       ## Middlewares
@@ -83,7 +83,7 @@ services:
       - "traefik.http.middlewares.jellyfin-mw.headers.SSLRedirect=true"
       #### The sslHost option is the host name that is used to redirect http requests to https.
       #### This is the exact URL that will be redirected to, so you can remove the :9999 port if using default SSL port
-      - "traefik.http.middlewares.jellyfin-mw.headers.SSLHost=DOMAIN_NAME:9999"
+      - "traefik.http.middlewares.jellyfin-mw.headers.SSLHost=HOST_NAME.DOMAIN_NAME:9999"
       #### Set sslForceHost to true and set SSLHost to forced requests to use SSLHost even the ones that are already using SSL.
       #### Note that this uses SSLHost verbatim, so add the port to SSLHost if you are using an alternate port.
       - "traefik.http.middlewares.jellyfin-mw.headers.SSLForceHost=true"
@@ -174,7 +174,7 @@ services:
     [entryPoints.https.http.tls]
       certResolver = "leresolver"
       [[entryPoints.https.http.tls.domains]]
-        main = "DOMAIN_NAME"
+        main = "HOST_NAME.DOMAIN_NAME"
         # SANS are any other hostnames which Traefik should obtain a certificate for.
         # If you are using DNS for LetsEncrypt, you can set a wildcard.
         # Include all possible hostnames of this server.
@@ -185,7 +185,7 @@ services:
     [entryPoints.secure.http.tls]
       certResolver = "leresolver"
       [[entryPoints.secure.http.tls.domains]]
-        main = "DOMAIN_NAME"
+        main = "HOST_NAME.DOMAIN_NAME"
         # SANS are any other hostnames which Traefik should obtain a certificate for.
         # If you are using DNS for LetsEncrypt, you can set a wildcard.
         # Include all possible hostnames of this server.
@@ -254,7 +254,7 @@ chmod 600 acme.json traefik.log
 ```
 
 > [!WARNING]
-> Change DOMAIN_NAME to your domain name (ie: example.com) and update `traefik.toml`'s YOU@DOMAIN_NAME with your email address. Let's Encrypt does not require a valid email but invalid e-mails may be flagged as fake.
+> These configurations use DOMAIN_NAME (i.e.: example.com) and HOST_NAME (i.e.: servername) throughout it.  You should replace these with your server's name. HOST_NAME.DOMAIN_NAME refers to the machine itself (ie: servername.example.com). Don't forget to update `traefik.toml`'s YOU@DOMAIN_NAME with your email address. Let's Encrypt does not require a valid email but invalid e-mails may be flagged as fake.
 
 Launch the Traefik and Jellyfin services.
 

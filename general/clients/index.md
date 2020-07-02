@@ -137,6 +137,16 @@ Terminal player for Jellyfin, written in Python.
 - [Github](https://github.com/marios8543/Jellyfin-CLI)
 - [PyPI](https://pypi.org/project/Jellyfin-CLI/)
 
+### Jellyamp
+
+Desktop client for listening to music from a Jellyfin server .
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Github](https://github.com/m0ngr31/jellyamp)
+
 ## Jellyfin Theater (Desktop)
 
 ### Electron

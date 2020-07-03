@@ -40,6 +40,17 @@ The official Jellyfin Android app, which supports Android 5 and above.
 - [GitHub](https://github.com/jellyfin/jellyfin-android)
 - [Download](https://jellyfin.org/downloads/clients/#android)
 
+### Gelli
+
+Native music player for Android devices with transcoding support, gapless playback, favorites, playlists, and many other features. The code is based on a relatively recent version of Phonograph and contributions are welcome!
+
+**Status:** ⭐ Active
+
+**Links:**
+
+- [GitHub](https://github.com/dkanada/gelli)
+- [Download](https://github.com/dkanada/gelli/releases)
+
 ### Jellyfin for Android TV
 
 The official Jellyfin Android TV app.

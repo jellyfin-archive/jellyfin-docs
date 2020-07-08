@@ -29,6 +29,10 @@ All iconography and other resources can be found in the [jellyfin-ux](https://gi
 
 ### Logo
 
+When using the full version of the logo, the text should only be placed to the right of the icon.
+
+![The logo should have the text placed on the right of the icon.](~/images/branding-logo-yes-side.png) ![The logo should never have the text placed below the icon.](~/images/branding-logo-no-below.png)
+
 The design for the logo uses a gradient for the infill, and if the non-transparent logo is chosen there is an optional background color.
 
 * Gradient Start: `#AA5CC3`

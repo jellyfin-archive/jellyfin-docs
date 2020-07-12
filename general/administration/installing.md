@@ -81,7 +81,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 4. Create and run a container in one of the following ways:
 
 > [!Note]
-> Use host mode for networking in order to use DLNA or an HDHomeRun.
+> The default network mode for Docker is bridge mode. Bridge mode will be used if host mode is omitted. Use host mode for networking in order to use DLNA or an HDHomeRun.
 
 **Using Docker command line interface:**
 

@@ -11,6 +11,8 @@ This section describes how to get basic connectivity to a Jellyfin server, and a
 
 Many clients will automatically discover servers running on the same LAN and display them on login. If you are outside the network when you connect you can type in the complete IP address or domain name in the server field with the correct port to continue to the login page. You can find the default ports below to access the web frontend.
 
+HTTP and HTTPS are the primary means of connecting to the server. If using a self-signed certificate for HTTPS, some clients may not work such as Chromecast or Roku.
+
 ### Port Bindings
 
 This document aims to provide an administrator with knowledge on what ports Jellyfin binds to and what purpose they serve.
@@ -40,6 +42,24 @@ Allows clients to discover Jellyfin on the local network. A broadcast message to
 #### Dynamic Ports
 
 Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
+
+## Self-Signed Certificate
+
+[See here for more information.](https://www.sslshopper.com/article-most-common-openssl-commands.html)
+
+Create a private key.
+
+`openssl req -x509 -newkey rsa:4096 -keyout ./privkey.pem -out cert.pem -days 365 -nodes -subj '/CN=jellyfin.lan'`
+
+omit `-nodes` to set a password interactively.
+
+Remove `-days 365` to make it 'permanent'.
+
+Add `-subj '/CN=localhost'` to make it not ask interactive questions about content of certificate.
+
+creates `./privkey.pem`
+
+`openssl pkcs12 -export -out jellyfin.pfx -inkey privkey.pem -in /usr/local/etc/letsencrypt/live/domain.org/cert.pem -passout pass:`
 
 ## Running Jellyfin Behind a Reverse Proxy
 

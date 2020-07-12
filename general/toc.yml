@@ -8,6 +8,10 @@
 - name: Administration
   items:
   - uid: admin-installing
+    items:
+    - name: Installing Jellyfin
+      items:
+      - uid: admin-install-synology
   - uid: admin-building
   - uid: admin-configuration
   - uid: admin-migrate-from-emby
@@ -32,11 +36,12 @@
   - name: Media
     items:
     - uid: server-media-books
-    - uid: server-media-cloud-storage
+    - uid: server-media-internet-radio
     - uid: server-media-movies
     - uid: server-media-music
     - uid: server-media-shows
     - uid: server-media-subtitles
+  - uid: server-storage
   - uid: server-devices
   - uid: server-libraries
   - uid: server-live-tv-index

@@ -48,37 +48,48 @@ To apply any one of these, copy paste the CSS code into the "Custom CSS" field. 
 
 This will affect the played/watched indicator. Replace the color hex with any value you like.
 
-#### Indicators Without Mod
+### Indicators Without Mod
 
-![Screenshot of the default watched indicators](/images/custom-css-normalwatched.png)
+![Screenshot of the default watched indicators](~/images/custom-css-normalwatched.png)
 
-#### Green Indicators
+### Green Indicators
 
 ```css
 .playedIndicator { background: #5dd000; }
 ```
 
-![Screenshot of watched indicators with a custom green color applied](/images/custom-css-greenwatched.png)
+![Screenshot of watched indicators with a custom green color applied](~/images/custom-css-greenwatched.png)
 
-#### Transparent And Dark Indicators (using RGBA hex value)
+### Transparent And Dark Indicators (using RGBA hex value)
 
 ```css
 /* Make watched icon dark and transparent */
 .playedIndicator {background: #00000058;}
 ```
 
-![Screenshot of watched indicators with a custom transparent color applied](/images/custom-css-transparentwatched.png)
+![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
-#### Remove Live TV Channel Listings
+### Remove Live TV Channel Listings
 
 ```css
 .guideChannelNumber { display: none; }
 ```
 
-#### Reduce Live TV Channel Width
+### Reduce Live TV Channel Width
 
 ```css
 .channelsContainer { max-width: 8em; }
+```
+
+### Background Image on Homepage
+
+[Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+
+```css
+#indexPage {
+    background-image: url(https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg);
+    background-size: cover;
+}
 ```
 
 ### Transparent Top Menu
@@ -89,6 +100,15 @@ Self explanatory
 /* Top menu transparency */
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {background:none; background-color:rgba(0, 0, 0, 0);}
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {background:none; background-color:rgba(0, 0, 0, 0);}
+```
+
+### Images Edge Rounded
+
+```css
+.cardContent-button,
+.itemDetailImage {
+  border-radius: 0.25em;
+}
 ```
 
 ### Enlarge Tab Buttons
@@ -103,7 +123,7 @@ Enlarges the tab buttons, suggested, genres, etc. By default they are really dam
 ```
 
 **The enlarged tab buttons and transparent menu look like this:**
-![Screenshot of enlarged tab buttons and transparent menu](/images/custom-css-transparenttopbarenlargedtabs.png)
+![Screenshot of enlarged tab buttons and transparent menu](~/images/custom-css-transparenttopbarenlargedtabs.png)
 
 ### Minimalistic Login Page
 
@@ -122,7 +142,7 @@ This looks even better together with the transparent top menu.
 #loginPage .raised.cancel.block.btnForgotPassword.emby-button {display: none}
 ```
 
-![Screenshot of the minimalistic login page](/images/custom-css-minimallogin.png)
+![Screenshot of the minimalistic login page](~/images/custom-css-minimallogin.png)
 
 ### Stylized Episode Previews
 
@@ -135,7 +155,7 @@ The episode previews in season view are sized based on horizontal resolution, th
 .secondary.listItem-overview.listItemBodyText {height: 61px; margin: 0;}
 ```
 
-![Screenshot of a TV show page with stylized episode previews](/images/custom-css-episodepreview.png)
+![Screenshot of a TV show page with stylized episode previews](~/images/custom-css-episodepreview.png)
 
 ### Stylized and Smaller Cast Info
 
@@ -161,7 +181,7 @@ This will drastically change the style of cast info into something very similar 
 #castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {margin:auto;}
 ```
 
-![Screenshot of stylized and smaller cast and crew info](/images/custom-css-stylizedcast.png)
+![Screenshot of stylized and smaller cast and crew info](~/images/custom-css-stylizedcast.png)
 
 ### Custom Background Color
 
@@ -186,7 +206,7 @@ This modifies the colors of the cast, search and user buttons in the top right.
 .headerRight { color: yellow; }
 ```
 
-![Screenshot of a custom yellow color for the icon buttons in the top right of the screen](/images/custom-css-rightheader.png)
+![Screenshot of a custom yellow color for the icon buttons in the top right of the screen](~/images/custom-css-rightheader.png)
 
 ### Console Panel Custom Color
 
@@ -196,7 +216,7 @@ Modifies the color of the left menu panel.
 .mainDrawer-scrollContainer { color: yellow; }
 ```
 
-![Screenshot of a custom yellow color on the left menu panel](/images/custom-css-consolepanel.png)
+![Screenshot of a custom yellow color on the left menu panel](~/images/custom-css-consolepanel.png)
 
 ### General Page Custom Color
 
@@ -204,7 +224,7 @@ Modifies the color of the left menu panel.
 .dashboardGeneralForm { color: yellow; }
 ```
 
-![Screenshot of a custom yellow color on the General Page](/images/custom-css-generalcolor.png)
+![Screenshot of a custom yellow color on the General Page](~/images/custom-css-generalcolor.png)
 
 ### Custom Border Color
 
@@ -220,7 +240,7 @@ This will affect the border color of highlighet(selected) text fields and drop d
 .emby-input:focus, .emby-textarea:focus, .emby-select-withcolor { border-color: #ffffff !important; }
 ```
 
-![Screenshot of a custom red border color](/images/custom-css-bordercolor.png)
+![Screenshot of a custom red border color](~/images/custom-css-bordercolor.png)
 
 ### Full Header Mod
 
@@ -228,13 +248,49 @@ This will affect the border color of highlighet(selected) text fields and drop d
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { background: #ff9475; }
 ```
 
-![Screenshot of the full header mod](https://user-images.githubusercontent.com/20715731/73949397-5f6f2500-48c8-11ea-9eca-bc1eb61f1281.png)
+![Screenshot of the full header mod](~/images/custom-css-full-header-mod.png)
+
+### Scrollerless Libraries
+
+This will make it so libraries and media fits neatly onto the homepage with no left to right scrolling required.
+
+```css
+@media all and (min-width: 50em) {
+  .homePage .emby-scroller {
+    margin-right: 0;
+  }
+  .homePage .emby-scrollbuttons {
+    display: none;
+  }
+  .homePage .itemsContainer {
+    flex-wrap: wrap;
+  }
+}
+```
+
+### Shift Scroller Buttons
+
+```css
+.emby-scrollbuttons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    justify-content: space-between;
+    pointer-events: none;
+}
+.emby-scrollbuttons-button {
+    pointer-events: initial;
+}
+```
 
 ### Hotdogs and Catsup
 
 An example of a color theme.
 
-![Screenshot of a hotdog and catsup color theme](https://user-images.githubusercontent.com/20715731/73948929-a3adf580-48c7-11ea-8bf1-eaaba2873be7.png)
+![Screenshot of a hotdog and catsup color theme](~/images/custom-css-hotdog-and-catsup.png)
 
 ```css
 .skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList {
@@ -274,7 +330,7 @@ An example of a color theme.
 
 ### Floating Now Playing Controls
 
-![Screenshot of the floating "Now Playing" controls](/images/custom-css-floatingnowplaying.png)
+![Screenshot of the floating "Now Playing" controls](~/images/custom-css-floatingnowplaying.png)
 
 ```css
 /* fixed height for the bottom row */

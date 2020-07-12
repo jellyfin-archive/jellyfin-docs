@@ -3,6 +3,9 @@
 - uid: contrib-release-procedure
 - uid: contrib-source-tree
 - uid: contrib-branding
+- name: Style Guides
+  href: ../style-guides/toc.yml
+  topicHref: ../style-guides/index.md
 - name: Plugin API
   href: ../../plugin-api/toc.yml
   topicHref: ../../plugin-api/index.md

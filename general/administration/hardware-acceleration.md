@@ -31,13 +31,17 @@ Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-co
 
 On Windows, you can use the DXVA2/D3D11VA libraries for decoding and the libmfx library for encoding.
 
+Issues: [FFmpeg Windows version with QSV hwaccel fails over TERMINAL](https://trac.ffmpeg.org/ticket/7511) and [Intel QSV: "Failed to create Direct3D device" on Core i7-7700K (Skylake) on Windows 10](https://trac.ffmpeg.org/ticket/6827)
+
 CentOS may require [additional drivers](https://www.getpagespeed.com/server-setup/how-to-enable-intel-hardware-acceleration-for-video-playback-in-rhel-centos-8) for QSV.
 
 Here's [additional information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md) to learn more.
 
+If your Jellyfin server does not support hardware acceleration, but you have another machine that does, you can leverage [rffmpeg](https://github.com/joshuaboniface/rffmpeg) to delegate the transcoding to another machine. Currently Linux-only and requires SSH between the machines, as well as shared storage both for media and for the Jellyfin data directory.
+
 ## Enabling Hardware Acceleration
 
-Hardware acceleration options can be found in the Admin Dashboard under the **Transcoding** section. Select a valid hardware acceleration option from the drop-down menu, indicate a device if applicable, and check `enable hardware encoding` to enable encoding as well as decoding, if your hardware supports this.
+Hardware acceleration options can be found in the Admin Dashboard under the **Transcoding** section of the **Playback** tab. Select a valid hardware acceleration option from the drop-down menu, indicate a device if applicable, and check `enable hardware encoding` to enable encoding as well as decoding, if your hardware supports this.
 
 The hardware acceleration is available immediately for media playback. No server restart is required.
 
@@ -85,7 +89,7 @@ services:
       - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
       # RPi 4
-      - /dev/vchiq:/dev/qchiq
+      - /dev/vchiq:/dev/vchiq
 ```
 
 ## Debian Docker Nvidia
@@ -145,16 +149,17 @@ Update your package list again to download the latest software available from th
 apt-get update
 ```
 
-Install linux-headers and run the following command.
+Install linux-headers with the following command.
 
 ```sh
 apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Alternatively, run this command if you are on stretch for compatibility.
+Alternatively, Install linux-headers using backports.
 
 ```sh
-apt-get install -t stretch-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
+distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
+apt-get install -t $distribution-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
 Install Nvidia docker2 from the repository.
@@ -188,10 +193,8 @@ sudo pkill -SIGHUP docker
 Install nvidia drivers and dependencies.
 
 ```sh
-# Debian 9 Stretch
-apt-get install -t stretch-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
-# Debian 10 Buster
-apt-get install -t buster-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
+distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
+apt-get install -t $distribution-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
 ```
 
 Reboot your host to apply all changes.
@@ -217,7 +220,7 @@ ldconfig -p | grep libnvidia-encode.so.1
 Start your container adding those environement parameters.
 
 ```sh
--e "NVIDIA_DRIVER_CAPABILITIES=all" \
+-e NVIDIA_DRIVER_CAPABILITIES=all \
 -e NVIDIA_VISIBLE_DEVICES=all \
 --runtime=nvidia \
 --gpus all \
@@ -383,7 +386,10 @@ Useful Resources:
     ```
 
 > [!NOTE]
-> RPi4 currently doesn't support HWA decoding, only HWA encoding of H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
+> RPi4 currently doesn't support HWA HEVC decoding, only encode and decode H.264. [Active cooling](https://www.jeffgeerling.com/blog/2019/raspberry-pi-4-needs-fan-heres-why-and-how-you-can-add-one) is required, passive cooling is insufficient for transcoding. Only Raspbian OS works so far. For docker, only the linuxserver image works. For more tips see [here](https://www.reddit.com/r/jellyfin/comments/ei6ew6/rpi4_hardware_acceleration_guide/).
+
+> [!NOTE]
+> For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Verifying Transcodes
 
@@ -401,6 +407,12 @@ Stream #0:0 -> #0:0 (hevc (native) -> h264 (h264_omx))
 Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 ```
 
-`Stream #0:0` used software to decode HEVC and used HWA to encode.
+`Stream #0:0` used software (VAAPI Decode can also say native) to decode HEVC and used HWA to encode.
 
-`Stream #0:1` had the same results. Decoding is easier than encoding so these are good results overall. HWA decoding is a work in progress.
+```data
+Stream mapping:
+Stream #0:0 -> #0:0 (h264 (h264_mmal) -> h264 (h264_omx))
+Stream #0:1 -> #0:1 (flac (native) -> mp3 (libmp3lame))
+```
+
+`Stream #0:0` used HWA for both. h264_mmal to decode and h264_omx to encode.

@@ -243,7 +243,7 @@ The official Jellyfin iOS client.
 
 ### Jellyfin for Kodi
 
-Kodi thick client for Jellyfin.  This addon syncs your Jellyfin metadata into Kodi's local database for a more native feel.
+Kodi thick client for Jellyfin. This addon syncs your Jellyfin metadata into Kodi's local database for a more native feel.
 
 **Status:** ⭐ Active
 
@@ -254,7 +254,7 @@ Kodi thick client for Jellyfin.  This addon syncs your Jellyfin metadata into Ko
 
 ### JellyCon
 
-Kodi thin client for Jellyfin.  This addon is fully dynamic and allows for fast user switching.
+Kodi thin client for Jellyfin. This addon is fully dynamic and allows for fast user switching.
 
 **Status:** ⭐ Active
 

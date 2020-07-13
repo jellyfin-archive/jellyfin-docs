@@ -264,7 +264,7 @@ The official Jellyfin iOS client.
 
 ### Infuse for iOS/Apple TV
 
-A third party client with direct play capabilities for many formats, with HDR Support.
+A third party client with HDR support and direct play capabilities for multiple formats.
 
 **Status:** ⭐ Active, 3rd-Party
 

@@ -77,19 +77,6 @@ The official Jellyfin Fire TV app.
 - [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
 - [Download](https://jellyfin.org/downloads/clients/#androidtv)
 
-## Roku
-
-### Jellyfin for Roku
-
-The official Jellyfin Roku app.
-
-**Status:** ⭐ Active
-
-**Links:**
-
-- [Roku Channel Store](https://my.roku.com/add/jellyfin).
-- [GitHub](https://github.com/jellyfin/jellyfin-roku)
-
 ### Yatse
 
 A third party remote control for Jellyfin with support for Chromecast playback.
@@ -109,6 +96,19 @@ A third party app with direct play and HDR support. Available on Android, Androi
 **Links:**
 
 - [Website](https://mrmc.tv)
+
+## Roku
+
+### Jellyfin for Roku
+
+The official Jellyfin Roku app.
+
+**Status:** ⭐ Active
+
+**Links:**
+
+- [Roku Channel Store](https://my.roku.com/add/jellyfin).
+- [GitHub](https://github.com/jellyfin/jellyfin-roku)
 
 ## Jellyfin Cross-Platform Clients
 

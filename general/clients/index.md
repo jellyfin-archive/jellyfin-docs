@@ -86,6 +86,7 @@ The official Jellyfin Roku app.
 **Status:** ⭐ Active
 
 **Links:**
+
 - [Roku Channel Store](https://my.roku.com/add/jellyfin).
 - [GitHub](https://github.com/jellyfin/jellyfin-roku)
 
@@ -108,7 +109,6 @@ A third party app with direct play and HDR support. Available on Android, Androi
 **Links:**
 
 - [Website](https://mrmc.tv)
-
 
 ## Jellyfin Cross-Platform Clients
 
@@ -274,7 +274,7 @@ A third party client with direct play capabilities for many formats, with HDR Su
 
 - [Infuse Homepage](https://firecore.com/infuse)
 
-### MrMC
+### MrMC for iOS/Apple TV
 
 A third party app with direct play and HDR support. Available on iOS and Apple TV.
 
@@ -283,7 +283,6 @@ A third party app with direct play and HDR support. Available on iOS and Apple T
 **Links:**
 
 - [Website](https://mrmc.tv)
-
 
 ## Kodi
 
@@ -332,7 +331,6 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 
 - [GitHub](https://github.com/jellyfin/mopidy-jellyfin)
 - [Installing](xref:clients-mopidy)
-
 
 ## Samsung TV
 

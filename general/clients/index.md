@@ -77,6 +77,18 @@ The official Jellyfin Fire TV app.
 - [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
 - [Download](https://jellyfin.org/downloads/clients/#androidtv)
 
+## Roku
+
+### Jellyfin for Roku
+
+The official Jellyfin Roku app.
+
+**Status:** ⭐ Active
+
+**Links:**
+- [Roku Channel Store](https://my.roku.com/add/jellyfin).
+- [GitHub](https://github.com/jellyfin/jellyfin-roku)
+
 ### Yatse
 
 A third party remote control for Jellyfin with support for Chromecast playback.
@@ -86,6 +98,17 @@ A third party remote control for Jellyfin with support for Chromecast playback.
 **Links:**
 
 - [Website](https://yatse.tv)
+
+### MrMC
+
+A third party app with direct play and HDR support. Available on Android, Android TV, Fire TV, and iOS/Apple TV.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Website](https://mrmc.tv)
+
 
 ## Jellyfin Cross-Platform Clients
 
@@ -239,6 +262,29 @@ The official Jellyfin iOS client.
 
 - [GitHub](https://github.com/jellyfin/jellyfin-expo)
 
+### Infuse for iOS/Apple TV
+
+A third party client with direct play capabilities for many formats, with HDR Support.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+<a href='https://apps.apple.com/app/id1136220934?mt=8'><img alt='Download on the App Store' src='https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png'/></a>
+
+- [Infuse Homepage](https://firecore.com/infuse)
+
+### MrMC
+
+A third party app with direct play and HDR support. Available on iOS and Apple TV.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Website](https://mrmc.tv)
+
+
 ## Kodi
 
 ### Jellyfin for Kodi
@@ -287,17 +333,6 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 - [GitHub](https://github.com/jellyfin/mopidy-jellyfin)
 - [Installing](xref:clients-mopidy)
 
-## Roku
-
-### Jellyfin for Roku
-
-The official Jellyfin Roku app.
-
-**Status:** ✅ In Development
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-roku)
 
 ## Samsung TV
 

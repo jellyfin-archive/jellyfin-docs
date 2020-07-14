@@ -16,6 +16,7 @@ title: Apache
 
     ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
     CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
+    
 </VirtualHost>
 
 # If you are not using a SSL certificate, replace the 'redirect'
@@ -23,8 +24,11 @@ title: Apache
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
     ServerName DOMAIN_NAME
+    # This folder exists just for certbot(You may have to create it, chown and chmod it to give apache permission to read it)
+	DocumentRoot /var/www/html/jellyfin/public_html
 
     ProxyPreserveHost On
+    
 
 	# Letsencrypt's certbot will place a file in this folder when updating/verifying certs
 	# This line will tell apache to not to use the proxy for this folder.

@@ -22,7 +22,9 @@ This document aims to provide an administrator with knowledge on what ports Jell
 * 8096/tcp is used by default for HTTP traffic. You can change this in the dashboard.
 * 8920/tcp is used by default for HTTPS traffic. You can change this in the dashboard.
 * 1900/udp is used for service auto-discovery. This is not configurable.
+* 7359/udp is also used for auto-discovery.
 
+artiume thoughts on where this should be added in the docs?
 **HTTP Traffic:** 8096
 
 The web frontend can be accessed here for debugging SSL certificate issues on your local network. You can modify this setting from the **Networking** page in the settings.

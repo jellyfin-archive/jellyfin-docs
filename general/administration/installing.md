@@ -14,6 +14,7 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
   - [Unraid Docker](#unraid-docker)
   - [Kubernetes](#kubernetes)
   - [Podman](#podman)
+  - [Cloudron](#cloudron)
 - [Windows (x86/x64)](#windows-x86x64)
   - [Install using Installer (x64)](#install-using-installer-x64)
   - [Manual Installation (x86/x64)](#manual-installation-x86x64)
@@ -280,6 +281,13 @@ To mount your media library read-only append ':ro' to the media volume:
    ```
 
 To run as a systemd service see [Running containers with Podman and shareable systemd services](https://www.redhat.com/sysadmin/podman-shareable-systemd-services).
+
+### Cloudron
+
+Cloudron is a complete solution for running apps on your server and keeping them up-to-date and secure. On your Cloudron you can install Jellyfin with a few clicks via the [app library](https://cloudron.io/store/org.jellyfin.cloudronapp.html) and updates are delivered automatically.
+
+The source code for the package can be found [here](https://git.cloudron.io/cloudron/jellyfin-app).
+Any issues or feature requests related to deployment on Cloudron should be filed there.
 
 ## Windows (x86/x64)
 

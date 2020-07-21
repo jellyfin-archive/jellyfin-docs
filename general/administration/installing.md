@@ -191,6 +191,7 @@ Your completed `docker-compose.yml` file should look something like this:
        network_mode: "host"
        runtime: nvidia
        environment:
+         - JELLYFIN_PublishedServerUrl=http://example.com
          - NVIDIA_VISIBLE_DEVICES=all
        volumes:
          - /path/to/config:/config

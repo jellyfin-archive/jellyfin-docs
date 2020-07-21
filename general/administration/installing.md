@@ -124,7 +124,7 @@ Using host networking (`--net=host`) is optional but required in order to use DL
 Create a `docker-compose.yml` file with the following contents:
 
    ```yml
-   version: "2.3"
+   version: "3"
    services:
      jellyfin:
        image: jellyfin/jellyfin
@@ -175,7 +175,7 @@ After installing the Nvidia Container Toolkit, you'll need to restart the Docker
    ```
 
 **Changing the `docker-compose.yml`**
-Now that all the packages are in order, let's change the `docker-compose.yml` to let the Jellyfin container make user of the Nvidia GPU.
+Now that all the packages are in order, let's change the `docker-compose.yml` to let the Jellyfin container make use of the Nvidia GPU.
 The following lines need to be added to the file:
 
    ```sh
@@ -193,6 +193,7 @@ Your completed `docker-compose.yml` file should look something like this:
        image: jellyfin/jellyfin
        user: 1000:1000
        network_mode: "host"
+       restart: "unless-stopped"
        runtime: nvidia
        environment:
          - NVIDIA_VISIBLE_DEVICES=all
@@ -760,7 +761,7 @@ You  need to replace the `<uid>:<gid>` placeholder below with the correct values
 **Using docker-compose**
 
    ```yml
-   version: "2.3"
+   version: "3"
    services:
      jellyfin:
        image: jellyfin/jellyfin

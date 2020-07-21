@@ -33,6 +33,7 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
     - [Migrating to the new repository](#migrating-to-the-new-repository)
     - [Ubuntu Repository](#ubuntu-repository)
     - [Ubuntu Packages](#ubuntu-packages)
+    - [Migrating native Debuntu install to docker](#migrating-native-debuntu-install-to-docker)
 
 ## Container images
 
@@ -722,3 +723,55 @@ Raw Ubuntu packages, including old versions, are available [here](https://jellyf
     sudo systemctl restart jellyfin
     sudo /etc/init.d/jellyfin stop
     ```
+
+#### Migrating native Debuntu install to docker
+
+It's possible to map your local installation's files to the official docker image.
+
+> [!Note]
+> You need to have exactly matching paths for your files inside the docker container! This means that if your media is stored at `/media/raid/` this path needs to be accessible at `/media/raid/` inside the docker container too - the configurations below do include examples.
+
+To guarantee proper permissions, get the `uid` and `gid` of your local jellyfin user and jellyfin group by running the following command:
+
+   ```sh
+      id jellyfin
+   ```
+
+You  need to replace the `<uid>:<gid>` placeholder below with the correct values.
+
+**Using docker**
+
+   ```sh
+   docker run -d \
+       --user <uid>:<gid> \
+       -e JELLYFIN_DATA_DIR=/var/lib/jellyfin \
+       -e JELLYFIN_CONFIG_DIR=/etc/jellyfin \
+       -e JELLYFIN_CACHE_DIR=/cache \
+       --volume </path/to/media>:</path/to/media> \
+       --net=host \
+       --restart=unless-stopped \
+       jellyfin/jellyfin
+   ```
+
+**Using docker-compose**
+
+   ```yml
+   version: "2"
+   services:
+   jellyfin:
+       image: bitwrk/jellyfin-rffmpeg:unstable
+       container_name: jellyfin
+       user: <uid>:<gid>
+       environment:
+       - JELLYFIN_DATA_DIR=/var/lib/jellyfin
+       - JELLYFIN_CONFIG_DIR=/etc/jellyfin
+       - JELLYFIN_CACHE_DIR=/var/cache/jellyfin
+       volumes:
+       - /etc/jellyfin:/etc/jellyfin
+       - /var/cache/jellyfin:/var/cache/jellyfin
+       - /var/lib/jellyfin:/var/lib/jellyfin
+       - /var/log/jellyfin:/var/log/jellyfin
+       - <path-to-media>:<path-to-media>
+       network_mode: "host"
+       restart: "unless-stopped"
+   ```

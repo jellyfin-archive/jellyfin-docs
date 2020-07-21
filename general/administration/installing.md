@@ -33,6 +33,7 @@ The Jellyfin project and its contributors offer a number of pre-built binary pac
     - [Migrating to the new repository](#migrating-to-the-new-repository)
     - [Ubuntu Repository](#ubuntu-repository)
     - [Ubuntu Packages](#ubuntu-packages)
+    - [Migrating native Debuntu install to docker](#migrating-native-debuntu-install-to-docker)
 
 ## Container images
 
@@ -129,6 +130,7 @@ Create a `docker-compose.yml` file with the following contents:
        image: jellyfin/jellyfin
        user: 1000:1000
        network_mode: "host"
+       restart: "unless-stopped"
        volumes:
          - /path/to/config:/config
          - /path/to/cache:/cache
@@ -140,6 +142,8 @@ Then while in the same folder as the `docker-compose.yml` run:
    ```sh
    docker-compose up
    ```
+
+To run the container in background add `-d` to the above command.
 
 You can learn more about using Docker by [reading the official Docker documentation](https://docs.docker.com/).
 
@@ -171,7 +175,7 @@ After installing the Nvidia Container Toolkit, you'll need to restart the Docker
    ```
 
 **Changing the `docker-compose.yml`**
-Now that all the packages are in order, let's change the `docker-compose.yml` to let the Jellyfin container make user of the Nvidia GPU.
+Now that all the packages are in order, let's change the `docker-compose.yml` to let the Jellyfin container make use of the Nvidia GPU.
 The following lines need to be added to the file:
 
    ```sh
@@ -189,6 +193,7 @@ Your completed `docker-compose.yml` file should look something like this:
        image: jellyfin/jellyfin
        user: 1000:1000
        network_mode: "host"
+       restart: "unless-stopped"
        runtime: nvidia
        environment:
          - JELLYFIN_PublishedServerUrl=http://example.com
@@ -723,3 +728,56 @@ Raw Ubuntu packages, including old versions, are available [here](https://jellyf
     sudo systemctl restart jellyfin
     sudo /etc/init.d/jellyfin stop
     ```
+
+#### Migrating native Debuntu install to docker
+
+It's possible to map your local installation's files to the official docker image.
+
+> [!Note]
+> You need to have exactly matching paths for your files inside the docker container! This means that if your media is stored at `/media/raid/` this path needs to be accessible at `/media/raid/` inside the docker container too - the configurations below do include examples.
+
+To guarantee proper permissions, get the `uid` and `gid` of your local jellyfin user and jellyfin group by running the following command:
+
+   ```sh
+      id jellyfin
+   ```
+
+You  need to replace the `<uid>:<gid>` placeholder below with the correct values.
+
+**Using docker**
+
+   ```sh
+   docker run -d \
+       --user <uid>:<gid> \
+       -e JELLYFIN_CACHE_DIR=/var/cache/jellyfin \
+       -e JELLYFIN_CONFIG_DIR=/etc/jellyfin \
+       -e JELLYFIN_DATA_DIR=/var/lib/jellyfin \
+       -e JELLYFIN_LOG_DIR=/var/log/jellyfin \
+       --volume </path/to/media>:</path/to/media> \
+       --net=host \
+       --restart=unless-stopped \
+       jellyfin/jellyfin
+   ```
+
+**Using docker-compose**
+
+   ```yml
+   version: "3"
+   services:
+     jellyfin:
+       image: jellyfin/jellyfin
+       user: <uid>:<gid>
+       network_mode: "host"
+       restart: "unless-stopped"
+       environment:
+         - JELLYFIN_CACHE_DIR=/var/cache/jellyfin
+         - JELLYFIN_CONFIG_DIR=/etc/jellyfin
+         - JELLYFIN_DATA_DIR=/var/lib/jellyfin
+         - JELLYFIN_LOG_DIR=/var/log/jellyfin
+       volumes:
+         - /etc/jellyfin:/etc/jellyfin
+         - /var/cache/jellyfin:/var/cache/jellyfin
+         - /var/lib/jellyfin:/var/lib/jellyfin
+         - /var/log/jellyfin:/var/log/jellyfin
+         - <path-to-media>:<path-to-media>
+   ```

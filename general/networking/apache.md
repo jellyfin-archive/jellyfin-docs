@@ -26,9 +26,9 @@ title: Apache
 #    ServerName DOMAIN_NAME
 #
 #    ProxyPreserveHost On
+#    RemoteIPHeader X-Forwarded-For
 #
 #    ProxyPass "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"
-#    ProxyPassReverse "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"
 #
 #    ProxyPass "/" "http://SERVER_IP_ADDRESS:8096/"
 #    ProxyPassReverse "/" "http://SERVER_IP_ADDRESS:8096/"
@@ -54,5 +54,5 @@ title: Apache
 If you encouter errors, you may have to enable `mod_proxy`, `mod_ssl`, or `proxy_wstunnel` support manually.
 
 ```bash
-sudo a2enmod proxy proxy_http ssl proxy_wstunnel
+sudo a2enmod proxy proxy_http ssl proxy_wstunnel remoteip
 ```

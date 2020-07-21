@@ -124,12 +124,13 @@ Using host networking (`--net=host`) is optional but required in order to use DL
 Create a `docker-compose.yml` file with the following contents:
 
    ```yml
-   version: "3"
+   version: "2.3"
    services:
      jellyfin:
        image: jellyfin/jellyfin
        user: 1000:1000
        network_mode: "host"
+       restart: "unless-stopped"
        volumes:
          - /path/to/config:/config
          - /path/to/cache:/cache
@@ -141,6 +142,8 @@ Then while in the same folder as the `docker-compose.yml` run:
    ```sh
    docker-compose up
    ```
+
+To run the container in background add `-d` to the above command.
 
 You can learn more about using Docker by [reading the official Docker documentation](https://docs.docker.com/).
 
@@ -744,9 +747,10 @@ You  need to replace the `<uid>:<gid>` placeholder below with the correct values
    ```sh
    docker run -d \
        --user <uid>:<gid> \
-       -e JELLYFIN_DATA_DIR=/var/lib/jellyfin \
+       -e JELLYFIN_CACHE_DIR=/var/cache/jellyfin \
        -e JELLYFIN_CONFIG_DIR=/etc/jellyfin \
-       -e JELLYFIN_CACHE_DIR=/cache \
+       -e JELLYFIN_DATA_DIR=/var/lib/jellyfin \
+       -e JELLYFIN_LOG_DIR=/var/log/jellyfin \
        --volume </path/to/media>:</path/to/media> \
        --net=host \
        --restart=unless-stopped \
@@ -756,22 +760,22 @@ You  need to replace the `<uid>:<gid>` placeholder below with the correct values
 **Using docker-compose**
 
    ```yml
-   version: "2"
+   version: "2.3"
    services:
-   jellyfin:
-       image: bitwrk/jellyfin-rffmpeg:unstable
-       container_name: jellyfin
+     jellyfin:
+       image: jellyfin/jellyfin
        user: <uid>:<gid>
-       environment:
-       - JELLYFIN_DATA_DIR=/var/lib/jellyfin
-       - JELLYFIN_CONFIG_DIR=/etc/jellyfin
-       - JELLYFIN_CACHE_DIR=/var/cache/jellyfin
-       volumes:
-       - /etc/jellyfin:/etc/jellyfin
-       - /var/cache/jellyfin:/var/cache/jellyfin
-       - /var/lib/jellyfin:/var/lib/jellyfin
-       - /var/log/jellyfin:/var/log/jellyfin
-       - <path-to-media>:<path-to-media>
        network_mode: "host"
        restart: "unless-stopped"
+       environment:
+         - JELLYFIN_CACHE_DIR=/var/cache/jellyfin
+         - JELLYFIN_CONFIG_DIR=/etc/jellyfin
+         - JELLYFIN_DATA_DIR=/var/lib/jellyfin
+         - JELLYFIN_LOG_DIR=/var/log/jellyfin
+       volumes:
+         - /etc/jellyfin:/etc/jellyfin
+         - /var/cache/jellyfin:/var/cache/jellyfin
+         - /var/lib/jellyfin:/var/lib/jellyfin
+         - /var/log/jellyfin:/var/log/jellyfin
+         - <path-to-media>:<path-to-media>
    ```

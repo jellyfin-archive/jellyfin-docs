@@ -194,7 +194,7 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb h
 apt-get update && apt-get install dotnet-sdk-3.1 yarn
 cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
 mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
-cd /opt/jellyfin-web && yarn install && yarn build && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
+cd /opt/jellyfin-web && yarn install && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
 kill -15 $(pidof jellyfin)
 ```
 

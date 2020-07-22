@@ -54,7 +54,8 @@ Albums with several discs will be fine with the metadata tags, but you can also 
 
 Images will be scraped from album or artist folders, and they can also be embedded in the music files themselves. The supported filenames are listed below for each respective image.
 
-[!Note] You need to enable those two plugins AudioDB and MusicBrainz to get poster image from artists.
+> [!NOTE]
+> You need to enable those two plugins AudioDB and MusicBrainz to get poster image from artists.
 
 ### Primary
 

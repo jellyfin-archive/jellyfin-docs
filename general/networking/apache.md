@@ -24,13 +24,13 @@ title: Apache
 <VirtualHost *:443>
     ServerName DOMAIN_NAME
     # This folder exists just for certbot(You may have to create it, chown and chmod it to give apache permission to read it)
-	DocumentRoot /var/www/html/jellyfin/public_html
+    DocumentRoot /var/www/html/jellyfin/public_html
 
     ProxyPreserveHost On
 
-	# Letsencrypt's certbot will place a file in this folder when updating/verifying certs
-	# This line will tell apache to not to use the proxy for this folder.
-	ProxyPass /.well_known/ !
+    # Letsencrypt's certbot will place a file in this folder when updating/verifying certs
+    # This line will tell apache to not to use the proxy for this folder.
+    ProxyPass /.well_known/ !
 
     ProxyPass "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"
     ProxyPassReverse "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"

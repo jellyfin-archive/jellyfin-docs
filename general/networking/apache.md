@@ -16,7 +16,6 @@ title: Apache
 
     ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
     CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
-    
 </VirtualHost>
 
 # If you are not using a SSL certificate, replace the 'redirect'
@@ -28,7 +27,6 @@ title: Apache
 	DocumentRoot /var/www/html/jellyfin/public_html
 
     ProxyPreserveHost On
-    
 
 	# Letsencrypt's certbot will place a file in this folder when updating/verifying certs
 	# This line will tell apache to not to use the proxy for this folder.

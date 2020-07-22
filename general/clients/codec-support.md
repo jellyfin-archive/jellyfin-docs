@@ -106,11 +106,11 @@ There are many variations of subtitles. Closed, open, burned-in, forced, SDH, an
 
 This is the generic name for subtitles that can be turned on or off. This can be Forced, SDH, CC or normal subtitles.
 
-#### Burned-in 
+#### Burned-in
 
 Open subtitles (also known as burned-in subtitles) are subtitles that have been permanently placed in the video and cannot be turned off. Open subtitles are the most common type of subtitles, where the subtitles are part of a seperate stream or file and can be toggled on or off.
 
-#### SDH and Closed Captioning 
+#### SDH and Closed Captioning
 
 SDH and CC are subtitles for the Deaf and Hard of Hearing. They include extra content such as background noises. SDH and CC are not defined by a specific type of subtitle, just by their intent. If using an OTA Tuner and DVR, the subtitles will be [embedded](https://evertz.com/resources/eia_608_708_cc.pdf) into the video and transcoding them before extracting the subtitles will destroy the subtitles.
 

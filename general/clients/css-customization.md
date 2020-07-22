@@ -19,7 +19,7 @@ You can learn more about CSS using sites like [w3schools](https://www.w3schools.
 
 ### Colors
 
-CSS supports multiple color formats, but typically the hex color codes are used for specific colors. To get a specific color, exact color data such as the hex codes below have to be used. 
+CSS supports multiple color formats, but typically the hex color codes are used for specific colors. To get a specific color, exact color data such as the hex codes below have to be used.
 
 Some examples of hex color codes:
 
@@ -211,7 +211,7 @@ This darkens the background on Blue Radiance and Purple Haze, edit the percentag
 
 ### Right Header Color
 
-This modifies the colors of the cast, search, and user buttons in the top right.
+This modifies the colors of the cast, search and user buttons in the top right.
 
 ```css
 .headerRight { color: yellow; }

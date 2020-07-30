@@ -12,3 +12,23 @@ If DLNA fails to bind properly, the message `[ERR] Failed to bind to port 1900: 
 Setting `Alive message interval (seconds)` to 30 seconds also appears to help discovery for some clients.
 
 If a base URL is set, try removing it and restarting the server.
+
+### DLNA Logging
+
+Use these entries in `logging.default.json` to turn on DLNA debug logs:
+
+```json
+{
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Warning",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning",
+        "Emby.Dlna": "Debug",
+        "Emby.Dlna.Eventing": "Debug"
+      }
+    }
+  }
+}
+```

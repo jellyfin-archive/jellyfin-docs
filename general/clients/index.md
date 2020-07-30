@@ -112,6 +112,16 @@ The official Jellyfin Roku app.
 
 ## Jellyfin Cross-Platform Clients
 
+### Jellyfin Desktop
+
+A cross-platform desktop media interface using Electron supporting Windows, MacOS, Linux and Raspberry Pi.
+
+**Status:** ✅ In Development
+
+**Links:**
+
+- [GitHub](https://github.com/jellyfin/jellyfin-desktop)
+
 ### Jellyfin Xamarin Client
 
 Xamarin cross-platform client for Jellyfin.
@@ -164,38 +174,6 @@ Desktop client for listening to music from a Jellyfin server .
 **Links:**
 
 - [Github](https://github.com/m0ngr31/jellyamp)
-
-## Jellyfin Desktop
-
-### Electron
-
-A cross-platform desktop media interface using Electron supporting Windows, MacOS and Linux.
-
-**Status:** ✅ In Development
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-desktop)
-
-### Raspberry Pi
-
-A desktop media interface for the Raspberry Pi.
-
-**Status:** ⭕ [No Maintainers](xref:contrib-index)
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-theater-pi)
-
-### Windows
-
-A desktop media interface for Windows.
-
-**Status:** ⭕ [No Maintainers](xref:contrib-index)
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-theater-windows)
 
 ## Web
 

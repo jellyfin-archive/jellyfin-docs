@@ -13,14 +13,14 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 |Sorted by efficency (excluding bit depth)|Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[MPV Shim](https://docs.jellyfin.org/general/clients/index.html#jellyfin-mpv-shim)|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌||✅|✅|
+|[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌|✅|✅|✅|
 |[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌||✅|✅|
-|[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅||✅||✅|✅|
-|[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅||✅|✅|
-|[H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
-|[H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌||✅|✅|
-|[VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference")|✅|✅|❌|✅<sup>3</sup>||🔶<sup>3</sup>||✅|✅|
-|[AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>|🔶|🔶|❌|||||||
+|[H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|✅|✅|✅||✅|✅|✅|✅|
+|[H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference")|✅|❌|❌|✅||✅|❌|✅|✅|
+|[H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌|✅|✅|✅|
+|[H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference")|❌|❌|❌<sup>1</sup>|🔶<sup>2</sup>||❌|✅|✅|✅|
+|[VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference")|✅|✅|❌|✅<sup>3</sup>||🔶<sup>3</sup>|✅|✅|✅|
+|[AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup>|🔶|🔶|❌||||❌|||
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
@@ -48,14 +48,14 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 ||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Roku|Kodi|MPV Shim|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|FLAC|✅|✅|✅|✅||||✅|✅|
-|MP3|🔶<sup>1</sup>|🔶|✅|✅||||✅|✅|
-|AAC|✅|✅|✅|✅||||✅|✅|
-|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|❌|❌|✅|✅||||✅|✅|
-|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|❌|✅|✅|✅||||✅|✅|
-|VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
-|DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
-|OPUS|✅|✅|✅<sup>5</sup>|✅|✅|||✅|✅|
+|FLAC|✅|✅|✅|✅|||✅|✅|✅|
+|MP3|🔶<sup>1</sup>|🔶|✅|✅|||✅|✅|✅|
+|AAC|✅|✅|✅|✅|||✅|✅|✅|
+|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|✅|❌|✅|✅||||✅|✅|
+|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
+|VORBIS<sup>3</sup>|✅|✅|✅|✅|||✅|✅|✅|
+|DTS<sup>4</sup>|❌|❌|❌|✅|||✅<sup>6</sup>|✅|✅|
+|OPUS|✅|✅|✅<sup>5</sup>|✅|✅||✅|✅|✅|
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/Moving_Picture_Experts_Group#External_links)
 
@@ -73,6 +73,9 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 <sup>4</sup>Only DTS Mono has been tested.
 
 <sup>5</sup>Safari only supports opus in `.caf` files
+
+<sup>6</sup>Supported via passthrough on all devioces.  Native support for AC3 &amp E-AC3 on Roku TVs &amp; Ultra
+
 
 ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/03/A52-201212-17.pdf).
 
@@ -143,10 +146,10 @@ If the container is unsupported, this will result in remuxing. The video and aud
 ||Chrome|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|
-|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅||
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅||||✅||
+|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅|✅|
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅||||✅|✅|
 |[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|
-|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|❌|✅|✅|✅||
+|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|❌|✅|✅|✅|✅|
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 

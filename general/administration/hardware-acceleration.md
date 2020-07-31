@@ -31,7 +31,7 @@ List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardwa
 
 ### AMD AMF
 
-AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver`amdgpu-pro` is required when using AMF on Linux.
+AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver `amdgpu-pro` is required when using AMF on Linux.
 > [!NOTE]
 > Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
 
@@ -334,7 +334,7 @@ To check information about VAAPI on your system install and run `vainfo` from th
 3. Install the non-free iHD driver.
 ```bash
 $ sudo apt update
-$ sudo apt install vainfo intel-media-va-driver intel-media-va-driver-non-free -y
+$ sudo apt install vainfo intel-media-va-driver-non-free -y
 ```
 > [!NOTE]
 > intel-media-va-driver-non-free is avaliable from apt since Debian buster and Ubuntu 19.04. Otherwise you have to build from source.

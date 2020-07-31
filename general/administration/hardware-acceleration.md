@@ -33,7 +33,6 @@ List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardwa
 
 AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver`amdgpu-pro` is required when using AMF on Linux.
 > [!NOTE]
->
 > Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
 
 ### Intel QuickSync
@@ -43,7 +42,6 @@ Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-co
 On Windows, you can use the DXVA2/D3D11VA libraries for decoding and the libmfx library for encoding.
 
 > [!NOTE]
->
 > To use QSV on Windows, please do not install Jellyfin as a system service.
 
 Issues: [FFmpeg Windows version with QSV hwaccel fails over TERMINAL](https://trac.ffmpeg.org/ticket/7511) and [Intel QSV: "Failed to create Direct3D device" on Core i7-7700K (Skylake) on Windows 10](https://trac.ffmpeg.org/ticket/6827)

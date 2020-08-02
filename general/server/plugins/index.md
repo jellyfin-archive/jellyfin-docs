@@ -95,18 +95,6 @@ Scrape poster images for movies, shows, and artists in your library from [fanart
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-fanart)
 
-#### Gotify Notifications
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-gotify.svg)](https://github.com/jellyfin/jellyfin-plugin-gotify)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-gotify.svg)](https://github.com/jellyfin/jellyfin-plugin-gotify)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-gotify.svg)](https://github.com/jellyfin/jellyfin-plugin-gotify)
-
-Sends notifications to your self-hosted [Gotify](https://gotify.net/) server.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-gotify)
-
 #### IPTV
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
@@ -273,3 +261,14 @@ Takes your tuners in TVHeadEnd and emulates a HDHomeRun, in order to connect to 
 **Links:**
 
 * [GitHub](https://github.com/TheJF/antennas)
+
+### 3rd-Party Plugin Repositories
+
+#### crobibero's Repo
+
+* Manifest
+  * [https://repo.codyrobibero.dev/manifest.json](https://repo.codyrobibero.dev/manifest.json)
+* Included Plugins:
+  * [Gotify](https://github.com/crobibero/jellyfin-plugin-gotify)
+  * [Prowl](https://github.com/crobibero/jellyfin-plugin-prowl)
+  * [Pushover](https://github.com/crobibero/jellyfin-plugin-pushover)

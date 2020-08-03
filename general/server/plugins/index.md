@@ -268,7 +268,14 @@ Takes your tuners in TVHeadEnd and emulates a HDHomeRun, in order to connect to 
 
 * Manifest
   * [https://repo.codyrobibero.dev/manifest.json](https://repo.codyrobibero.dev/manifest.json)
-* Included Plugins:
+* Included Plugins
   * [Gotify](https://github.com/crobibero/jellyfin-plugin-gotify)
   * [Prowl](https://github.com/crobibero/jellyfin-plugin-prowl)
   * [Pushover](https://github.com/crobibero/jellyfin-plugin-pushover)
+
+#### dkanada's Repo
+
+* Manifest
+  * [https://dkanada.xyz/plugins/manifest.json](https://dkanada.xyz/plugins/manifest.json)
+* Included Plugins
+  * [Intros](https://github.com/dkanada/jellyfin-plugin-intros)

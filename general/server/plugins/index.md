@@ -13,7 +13,16 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 
 Many plugins are available in a repository hosted on our servers, which can be easily installed using the plugin catalog in the settings. At the moment many of these are still being updated frequently so the version number may not be accurate. There are several different categories that can indicate what kind of functionality the plugins may provide.
 
-**Note to Windows Users:** Due to currently unresolved permission issues on Jellyfin Windows installs, to update plugins on Windows, you must stop Jellyfin and navigate to the local plugins folder (depending on your install, generally found within `%UserProfile%\AppData\Local\jellyfin\plugins`), delete the `.dll` files for the plugins, start Jellyfin back up, and reinstall each plugin using the above method from the catalog. Plugin settings should be retained if you do not delete the `.xml` files from the `%UserProfile%\AppData\Local\jellyfin\plugins\configurations` folder.
+**Note to Windows Users:**
+Due to currently unresolved permission issues on Jellyfin Windows installs it is not possible to update and/or uninstall plugins from the UI.
+To update and/or uninstall plugins you must stop Jellyfin, navigate to the local *plugins folder* and delete the `.dll` files for the plugins you want to update and/or uninstall.
+The *plugins folder* is located in different locations depending on your install:
+
+* `%UserProfile%\AppData\Local\jellyfin\plugins` for direct installs
+* `%ProgramData%\Jellyfin\Server\plugins` for tray installs
+
+After that start Jellyfin back up, and reinstall each plugin you want to update using the above method from the catalog.
+Plugin settings should be retained if you do not delete the `.xml` files from the `<direct or tray path>\plugins\configurations` folder.
 
 **Authentication:** Add new authentication providers, such as LDAP.
 

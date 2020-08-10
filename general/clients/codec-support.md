@@ -51,8 +51,8 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 |FLAC|✅|✅|✅|✅||||✅|✅|
 |MP3|🔶<sup>1</sup>|🔶|✅|✅||||✅|✅|
 |AAC|✅|✅|✅|✅||||✅|✅|
-|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|✅|❌|✅|✅||||✅|✅|
-|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅||||✅|✅|
+|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|❌|❌|✅|✅||||✅|✅|
+|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|❌|✅|✅|✅||||✅|✅|
 |VORBIS<sup>3</sup>|✅|✅|✅|✅||||✅|✅|
 |DTS<sup>4</sup>|❌|❌|❌|✅||||✅|✅|
 |OPUS|✅|✅|✅<sup>5</sup>|✅|✅|||✅|✅|

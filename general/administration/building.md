@@ -79,7 +79,7 @@ All package builds begin with these two steps:
 5. Run the Jellyfin build script:
 
     ```powershell
-    deployment\windows\build-jellyfin.ps1 -verbose
+    windows\build-jellyfin.ps1 -verbose
     ```
 
     * The `-WindowsVersion` and `-Architecture` flags can optimize the build for your current environment; the default is generic Windows x64.

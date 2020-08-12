@@ -17,7 +17,7 @@ The easiest way to check for issues is by checking the logs, which can be access
 
 ## Debug Logging
 
-To enable debug (much more verbose) logging, it is currently required to manually edit config files since no options exist yet on the frontend. Go to the Jellyfin configuration directory, find the `logging.json` file, and change the minimum level to debug as seen below.
+To enable debug (much more verbose) logging, it is currently required to manually edit config files since no options exist yet on the frontend. Go to the Jellyfin configuration directory, find the `logging.default.json` file, and change the minimum level to debug as seen below.
 
 ```json
 {

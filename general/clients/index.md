@@ -360,7 +360,7 @@ A wrapper around Jellyfin's web interface for UWP devices (Windows 10, Windows P
 
 A 3rd party UWP media player with support for Jellyfin.
 
-**Status:** ⭐ Active
+**Status:** ⭐ Active, 3rd-Party
 
 **Links:**
 

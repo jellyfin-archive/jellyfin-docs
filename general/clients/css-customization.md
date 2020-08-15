@@ -261,7 +261,7 @@ This will affect the border color of highlighted (selected) text fields and drop
 
 ![Screenshot of the full header tweak](~/images/custom-css-full-header-mod.png)
 
-### Scroller-less Libraries
+### Disable Image Carousel for Libraries
 
 This will make it so libraries and media fit neatly onto the homepage with no left to right scrolling required.
 

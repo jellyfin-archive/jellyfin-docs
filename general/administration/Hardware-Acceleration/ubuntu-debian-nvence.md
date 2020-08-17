@@ -6,13 +6,15 @@ title: Install and Setup of Debian/Ubuntu NVENC
 
 ##  Install & Setup for Debain/Ubuntu Nvidia NVENC
 
-First off you need to figure out what the most up to date driver is for your NVIDIA Card is.
+### Checking Your GPU Drivers
 
-So for this you need to go to the below link.
+    First off you need to figure out what the most up to date driver is for your NVIDIA Card is.
 
-[NVIDIA Driver Update](https://www.nvidia.com/Download/index.aspx)
+    So for this you need to go to the below link.
 
-1. You'll need to know what NVIDIA Device you have before searching.
+    [NVIDIA Driver Update](https://www.nvidia.com/Download/index.aspx)
+
+    1. You'll need to know what NVIDIA Device you have before searching.
 
      IE. i have an MSI Geoforce GTX 970.
 
@@ -62,7 +64,7 @@ So for this you need to go to the below link.
      (you specifically just need this to see if you have the latest available driver and if so then skip steps 9.-14) **Important**
 
 
-2. So to find the correct drivers select from the dropdown. Againb using my Geoforce 970 as an example
+    2. So to find the correct drivers select from the dropdown. Againb using my Geoforce 970 as an example
 
      Product Type: Geoforce (whoever manufacters your GPU)
      Product Series: Geoforce 900 Series (make sure you are not selecting the M unless your on a laptop)
@@ -74,30 +76,33 @@ So for this you need to go to the below link.
      Select Linux Long Lived if your NVIDIA CARD IS FAIRLY NEW. **(This is very important!!)**        
      Click Search. This will automatically tell you your most updated driver you will need. Write or type this out somewhere so you can access it later.
 
-3. Now go to this link for patching the drivers.   [NVIDIA Github patch](https://github.com/keylase/nvidia-patch) 
+###  Patching Your NVIDIA Driver
+    **This is extremely important. If you want to have more than 2 concurrent streams running on your jellyfin server i would HIGHLY Recommend patching your existing drivers below. If you are not going to have more than 2 consecutive streams running at once please skip to the Configuring Your Settings in Jellyfin
+    
+    3. Now go to this link for patching the drivers.   [NVIDIA Github patch](https://github.com/keylase/nvidia-patch) 
 
-4. Scroll Down to the versions table or type in browser CTRL + F. Then type in your browser window for your drive
+    4. Scroll Down to the versions table or type in browser CTRL + F. Then type in your browser window for your drive
 
      IE. Geoforce GTX 970 = 432.21 (it showed us the driver on nvidias website)
+     
+    5. Once youve located your correct driver hover over the driver link with your mouse right click the link and copy the link location.
 
-5. Once youve located your correct driver hover over the driver link with your mouse right click the link and copy the link location.
-
-6. **IMPORTANT!!! YOU NEED TO RUN THESE COMMANDS IN CLI NOT DE NOT DE TERMINAL CLI** 
+    6. **IMPORTANT!!! YOU NEED TO RUN THESE COMMANDS IN CLI NOT DE NOT DE TERMINAL CLI** 
 
      To do this you need to go out of GUI(Desktop Enviroment) and into CLI(kernal recovery terminal). 
         
      So you do this by Pressing CTRL+ALT+F1 (Some people DE(desktop enviroment) will already be on F1 so change it to any other F#
 
-7. Now your should see a terminal login with your user
-     IE. my user is `devilscoder`
+    7. Now your should see a terminal login with your user
+    IE. my user is `devilscoder`
           
-     so i login with user `devilscoder` and the password associated with it.
+    so i login with user `devilscoder` and the password associated with it.
 
-9. Now make the this directory and navigate to it by sending this command.
+    9. Now make the this directory and navigate to it by sending this command.
 
         `sudo mkdir /opt/nvidia && cd /opt/nvidia`
 
-10. Now you need to download the correctly update driver from the command posted below
+    10. Now you need to download the correctly update driver from the command posted below
        
         `sudo wget https://international.download.nvidia.com/XFree86/Linux-x86_64/(driver firmware number)/NVIDIA-Linux-x86_(driver firmware number).run`
         
@@ -105,17 +110,17 @@ So for this you need to go to the below link.
         
         `sudo wget https://international.download.nvidia.com/XFree86/Linux-x86_64/435.21/NVIDIA-Linux-x86_64-435.21.run`
 
-11. Now you need to give them permissions.
+    11. Now you need to give them permissions.
 
         `sudo chmod +x ./NVIDIA-Linux-x86_64-(driver firmware number).run`
-12.Now you need to run the driver installer.
+    12.Now you need to run the driver installer.
 
         `./NVIDIA-Linux-x86_64-430.50.run`
 
-14. Make sure the new drivers is installed and recognized by typing in
+    14. Make sure the new drivers is installed and recognized by typing in
         `nvidia-smi`
 
-15. Once the driver is installed you now need to install and patch the driver with the patch file downloaded from the github.
+    15. Once the driver is installed you now need to install and patch the driver with the patch file downloaded from the github.
 
      Navigate to your users Home Directory either by using        
                 `cd ~/`            
@@ -126,32 +131,32 @@ So for this you need to go to the below link.
      Finally run           
                 `bash ./patch.sh`
     
-16. Now it should display succesfully patched. Now that everythings done you can restart xServer or whatever you were using for DE (Desktop Enviroment)    
+    16. Now it should display succesfully patched. Now that everythings done you can restart xServer or whatever you were using for DE (Desktop Enviroment)    
      To start your xserver run    
                 `startx`
      Your Desktop Enviroment should then display login and move your way to your jellyfin install in browser
             
+###  Configuring Your Settings in Jellyfin
+
      ie. (internal ip adress of server):8096 ie. 192.168.1.155:8096
             
      ie. (if your on the computer where jellyfin is installed)       http://localhost:8096 
             
      ie. (if you have a reverse-proxy running) https://sub.yourdomain.com        https://stream.jellyfin.com
 
-17. Once there click on the top left hamburger menu and click on dashboard in the menu
+     1. Once there click on the top left hamburger menu and click on dashboard in the menu
 
-18. Once Loaded click on the hamburger menu again and select playback
-
-19. Now is IMPORTANT!!! Open this link [NVENC/DECODING SETTINGS FOR GPU](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)
-
-     Once there if your card is 2 years or older it will most likely not have NVENC (NVIDIA ENCODING) on the card. So lets go  scroll to the bottom and           select the green button that says Geoforce/Titan becuase mine in this example is a Geoforce GTX 970.
+     2. Once Loaded click on the hamburger menu again and select playback
+     3. Now is IMPORTANT!!! Open this link [NVENC/DECODING SETTINGS FOR GPU](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix#Encoder)   
+     Once there if your card is 2 years or older it will most likely not have NVENC (NVIDIA ENCODING) on the card. So lets go  scroll to the bottom and select the green button that says Geoforce/Titan becuase mine in this example is a Geoforce GTX 970.
         
-     Now it should pull up more graphics card. Hit the key combinations CTRL + F and type your graphics card so im going to type 970. The page will take you to your card and now check the settings mine has these decoding features.
-        `MPEG-1   YES      MPEG-2   YES      VC-1   YES      H.264(AVCHD)   YES`
+    Now it should pull up more graphics card. Hit the key combinations CTRL + F and type your graphics card so im going to type 970. The page will take you to your card and now check the settings mine has these decoding features.
+    `MPEG-1   YES      MPEG-2   YES      VC-1   YES      H.264(AVCHD)   YES`
        
      So because these are enabled please write them down somewhere.
 
-20. Now go back to Jellyfin and click the first dropdown menu and select Nvidia NVENC
+    3. Now go back to Jellyfin and click the first dropdown menu and select Nvidia NVENC
 
-21. Then enable only those options. That you wrote down in step 19. So Since my card does not encoding i need to disable anything with encoding in the options if you dont bascically you wont be able to watch your videos on your Jellyfin server.
-
-22. Click on save at the bottom and check if they stuck by hitting on your keyboard CTR + F5 this should clear cache and refresh your page. Now if you settings stuck on the playback page. Great Enjoy! IF NOT YOU NEED TO DOUBLE CHECK YOUR COMPATIBILITY WITH NVENC DECODING/ENCODING. The only way the settings wont stick is if your device is incompatible. So it says nope i dont like those settings and automatically reverts the changes to not harm your system.
+    4. Then enable only those options. That you wrote down in step 19. So Since my card does not encoding i need to disable anything with encoding in the options if you dont bascically you wont be able to watch your videos on your Jellyfin server.
+    
+    5. Click on save at the bottom and check if they stuck by hitting on your keyboard CTR + F5 this should clear cache and refresh your page. Now if you settings stuck on the playback page. Great Enjoy! IF NOT YOU NEED TO DOUBLE CHECK YOUR COMPATIBILITY WITH NVENC DECODING/ENCODING. The only way the settings wont stick is if your device is incompatible. So it says nope i dont like those settings and automatically reverts the changes to not harm your system.

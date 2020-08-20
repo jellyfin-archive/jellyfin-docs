@@ -271,6 +271,15 @@ Takes your tuners in TVHeadEnd and emulates a HDHomeRun, in order to connect to 
 
 * [GitHub](https://github.com/TheJF/antennas)
 
+## Repositories
+
+### Official Jellyfin Plugin Repositories
+
+#### Default Repository
+
+* Manifest
+  * [https://repo.jellyfin.org/releases/plugin/manifest-stable.json](https://repo.jellyfin.org/releases/plugin/manifest-stable.json)
+
 ### 3rd-Party Plugin Repositories
 
 #### crobibero's Repo

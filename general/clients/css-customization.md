@@ -450,3 +450,7 @@ Keep in mind that these posts may have been made under previous versions of Jell
 - [Easy Jellyfin custom CSS](https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css/)
 - [Custom CSS - updated for 10.5.0](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050/)
 - [Sharing even more custom CSS (and some fixes to previous stuff)](https://www.reddit.com/r/jellyfin/comments/bvnt65/sharing_even_more_custom_css_and_some_fixes_to/)
+
+### Community Themes
+
+- [Monochromic - A custom theme for Jellyfin mediaserver created using CSS overrides](https://github.com/CTalvio/Monochromic)

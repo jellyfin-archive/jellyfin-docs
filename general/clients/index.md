@@ -107,7 +107,8 @@ The official Jellyfin Roku app.
 
 **Links:**
 
-- <a href='https://my.roku.com/add/jellyfin'><img alt='Get it on the Roku Store' src='https://www.scientology.tv/images/roku-badge.png' width="200"/></a>
+<a href='https://my.roku.com/add/jellyfin'><img alt='Get it on the Roku Store' src='https://www.scientology.tv/images/roku-badge.png' width="200"/></a>
+
 - [GitHub](https://github.com/jellyfin/jellyfin-roku)
 
 ## Jellyfin Cross-Platform Clients

@@ -344,7 +344,7 @@ $ sudo apt install vainfo intel-media-va-driver-non-free -y
 $ vainfo | grep iHD
 ```
 
-5. Fallback to i965 driver.
+5. If you want to uninstall iHD driver and fallback to i965 driver.
 ```bash
 $ sudo apt remove intel-media-va-driver intel-media-va-driver-non-free -y
 ```

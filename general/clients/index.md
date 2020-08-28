@@ -107,7 +107,7 @@ The official Jellyfin Roku app.
 
 **Links:**
 
-<a href='https://channelstore.roku.com/details/592369/jellyfin'><img alt='Get it on the Roku Store' src='https://www.roku.com/s/1597964107537/fonts/roku-logo.svg' width="200"/></a>
+<a href='https://channelstore.roku.com/details/592369/jellyfin'><img alt='Get it on the Roku Store' src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Roku_logo.svg/1280px-Roku_logo.svg.png' width="200"/></a>
 
 - [GitHub](https://github.com/jellyfin/jellyfin-roku)
 

@@ -126,4 +126,4 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Wait for builds to complete.
 
-1. Announce the new release in the [jellyfin-announce](https://matrix.to/#/#jellyfin-announce:matrix.org) Matrix/Riot channel and anywhere else required (e.g. Reddit, etc.).
+1. Announce the new release in the [jellyfin-announce](https://matrix.to/#/#jellyfin-announce:matrix.org) Matrix channel and anywhere else as required.

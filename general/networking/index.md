@@ -50,26 +50,31 @@ Live TV devices will often use a random UDP port for HDHomeRun devices. The serv
 
 Create a private key.
 
-`openssl req -x509 -newkey rsa:4096 -keyout ./privkey.pem -out cert.pem -days 365 -nodes -subj '/CN=jellyfin.lan'`
+```sh
+openssl req -x509 -newkey rsa:4096 -keyout ./privkey.pem -out cert.pem -days 365 -nodes -subj '/CN=jellyfin.lan'
+```
 
-omit `-nodes` to set a password interactively.
+Omit `-nodes` to set a password interactively.
 
 Remove `-days 365` to make it 'permanent'.
 
 Add `-subj '/CN=localhost'` to make it not ask interactive questions about content of certificate.
 
-creates `./privkey.pem`
+The above command creates `./privkey.pem` which will require one more step before use in Jellyfin.
 
-`openssl pkcs12 -export -out jellyfin.pfx -inkey privkey.pem -in /usr/local/etc/letsencrypt/live/domain.org/cert.pem -passout pass:`
+```sh
+openssl pkcs12 -export -out jellyfin.pfx -inkey privkey.pem -in /usr/local/etc/letsencrypt/live/domain.org/cert.pem -passout pass:
+```
 
 ## Running Jellyfin Behind a Reverse Proxy
 
 It's possible to run Jellyfin behind another server acting as a reverse proxy.  With a reverse proxy setup, this server handles all network traffic and proxies it back to Jellyfin. This provides the benefits of using DNS names and not having to remember port numbers, as well as easier integration and management of SSL certificates.
 
 > [!WARNING]
-> In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.  These examples assume you want to run Jellyfin under a sub-domain (ie: jellyfin.example.com), but are easily adapted for the root domain if desired.
+> In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.
+> These examples assume you want to run Jellyfin under a sub-domain (e.g. jellyfin.example.com), but are easily adapted for the root domain if desired.
 
-Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org/), [Caddy](https://caddyserver.com/), [Haproxy](https://www.haproxy.com/), [Nginx](https://www.nginx.com/) and [Traefik](https://traefik.io/).
+Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org), [Caddy](https://caddyserver.com), [Haproxy](https://www.haproxy.com), [Nginx](https://www.nginx.com) and [Traefik](https://traefik.io).
 
 * [Apache](xref:network-reverse-proxy-apache)
 * [Caddy](xref:network-reverse-proxy-caddy)
@@ -77,7 +82,7 @@ Some popular options for reverse proxy systems are [Apache](https://httpd.apache
 * [Nginx](xref:network-reverse-proxy-nginx)
 * [Traefik](xref:network-reverse-proxy-traefik)
 
-While not a reverse proxy, Let's Encrypt can be used independently or with a Reverse Proxy to provide SSL certificates.
+While not a reverse proxy, Let's Encrypt can be used independently or with a reverse proxy to provide SSL certificates.
 
 * [Let's Encrypt](xref:network-letsencrypt)
 
@@ -93,7 +98,7 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your router
 
 ### Base URL
 
-Running Jellyfin with a path (`https://example.com/jellyfin`) is supported by the Android and web clients.
+Running Jellyfin with a path (e.g. `https://example.com/jellyfin`) is supported by the Android and web clients.
 
 > [!WARNING]
 > Base URL is known to break HDHomeRun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.

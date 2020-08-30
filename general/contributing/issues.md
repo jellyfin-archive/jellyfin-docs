@@ -2,12 +2,10 @@
 uid: contrib-issues
 title: Reporting Issues
 ---
-<!-- markdownlint-disable MD025 single-h1 -->
-# Requesting Features
+
+# Reporting Issues
 
 Please note that feature and enhancement requests should be directed towards [our Fider instance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not GitHub issues.
-
-# Issue Guidelines
 
 This page discusses how to open issues, including the policies and procedures of the Jellyfin project around handling issues.
 
@@ -31,7 +29,7 @@ Once you're ready to open an issue, please [see this page](https://github.com/je
 
 When writing an bug issue, please ensure you capture as much relevant detail as possible - this is very important to assist in troubleshooting and triaging/investigating the issue. Some useful elements include:
 
-* How you installed Jellyfin (upgrade/fresh install)
+* How you installed Jellyfin (upgrade or fresh install)
 
 * What platform and operating system you're using (Debian, Arch, Docker, etc.)
 

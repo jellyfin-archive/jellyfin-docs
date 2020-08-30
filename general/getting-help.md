@@ -5,7 +5,7 @@ title: Getting Help
 
 # Getting Help
 
-If you are having trouble using or configuring Jellyfin, there are several ways to get help:
+If you are having trouble using or configuring Jellyfin, there are several ways to get help.
 
 * The Jellyfin [Matrix channels](https://matrix.to/#/+jellyfin:matrix.org): For chat and real-time discussions.
 
@@ -15,7 +15,7 @@ If you are having trouble using or configuring Jellyfin, there are several ways 
 
 * The Jellyfin [subreddit](https://www.reddit.com/r/jellyfin): For general discussions.
 
-We are also active on social media:
+We are also active on social media.
 
 * [Facebook](https://www.facebook.com/Jellyfin-319514125331205)
 

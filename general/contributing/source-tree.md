@@ -79,7 +79,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
        - java/org/jellyfin/androidtv:
        - res:
 
-## [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi)
+## [Kodi](https://github.com/jellyfin/jellyfin-kodi)
 
 1. jellyfin_kodi
    - database: `manipulating the local Jellyfin sqlite database`

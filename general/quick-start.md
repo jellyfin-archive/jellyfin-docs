@@ -11,13 +11,13 @@ title: Quick Start
 
 3. Follow the initial setup wizard.
 
-  * Libraries and users can always be added later from the dashboard.
-  * Remember the username and password so you can login after the setup.
+    * Libraries and users can always be added later from the dashboard.
+    * Remember the username and password so you can login after the setup.
 
 4. Secure the server with a method of your choice.
 
-  * Create an SSL certificate and add it on the **Networking** page.
-  * Put your server behind a [reverse proxy](networking/index.md#running-jellyfin-behind-a-reverse-proxy).
-  * Only allow local connections and refrain from forwarding any ports.
+    * Create an SSL certificate and add it on the **Networking** page.
+    * Put your server behind a [reverse proxy](networking/index.md#running-jellyfin-behind-a-reverse-proxy).
+    * Only allow local connections and refrain from forwarding any ports.
 
 5. Enjoy your media!

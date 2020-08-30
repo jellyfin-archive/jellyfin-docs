@@ -98,7 +98,7 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your router
 
 ### Base URL
 
-Running Jellyfin with a path (e.g. https://example.com/jellyfin) is supported by the Android and web clients.
+Running Jellyfin with a path (e.g. `https://example.com/jellyfin`) is supported by the Android and web clients.
 
 > [!WARNING]
 > Base URL is known to break HDHomeRun, DLNA, Sonarr, Radarr, Chromecast, and MrMC.

@@ -5,7 +5,7 @@ title: CSS Customization
 
 # CSS Customization
 
-In `Dashboard > General`, the Custom CSS field can be used to override current CSS in Jellyfin's stylesheet.
+In `Dashboard > General`, the "Custom CSS" field can be used to override current CSS in Jellyfin's stylesheet.
 
 [Custom CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) provides customization such as changing colors, changing layouts, and item size and behavior. Below is a list of various tweaks that can be applied. The CSS tweaks work on both the web client, and the [Android application](https://play.google.com/store/apps/details?id=org.jellyfin.mobile&hl=en_US). The code will apply in the order that it is written, however `!important` will overrule everything. To learn more about `!important` and more, see [CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) or [specifishity](https://specifishity.com/). To implement these changes, go to `Dashboard > General > Custom CSS` to start.
 
@@ -444,7 +444,7 @@ Some links to places where custom CSS has been discussed and shared!
 
 ### Emby Web App Custom CSS
 
-* [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app)
+- [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app)
 
 ### Community Posts
 

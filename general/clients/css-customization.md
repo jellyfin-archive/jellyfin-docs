@@ -444,7 +444,7 @@ Some links to places where custom CSS has been discussed and shared!
 
 ### Emby Web App Custom CSS
 
-- [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app)
+* [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app)
 
 ### Community Posts
 
@@ -459,4 +459,4 @@ Keep in mind that these posts may have been made under previous versions of Jell
 
 ### Community Themes
 
-- [Monochromic - A custom theme for Jellyfin mediaserver created using CSS overrides](https://github.com/CTalvio/Monochromic)
+* [Monochromic - A custom theme for Jellyfin mediaserver created using CSS overrides](https://github.com/CTalvio/Monochromic)

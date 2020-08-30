@@ -74,7 +74,7 @@ If the audio codec is unsupported or incompatible (such as playing a 5.1 channel
 
 <sup>5</sup>Safari only supports opus in `.caf` files
 
-<sup>6</sup>Supported via passthrough on all devices.  Native support for AC3 &amp; E-AC3 on Roku TVs &amp; Ultra
+<sup>6</sup>Supported via passthrough on all devices. Native support for AC3 & E-AC3 on Roku TVs & Ultra.
 
 ATSC Standard for [AC-3 and EAC-3](https://www.atsc.org/wp-content/uploads/2015/03/A52-201212-17.pdf).
 

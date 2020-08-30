@@ -9,10 +9,11 @@ This page details how our repositories are organized, how to get started editing
 
 ## What should you work on?
 
-There are many projects under the [Jellyfin organization on Github](https://github.com/jellyfin/) to browse through and contribute to. Summarized here are the two biggest ones, one for back-end devs and one for front-end:
+There are many projects within the [organization](https://github.com/jellyfin) to browse through for contributions.
+Summarized here are the two biggest ones, one for backend devs and another for frontend devs.
 
-* [Jellyfin Server](https://github.com/jellyfin/jellyfin) - The back-end server of the Jellyfin application. It is built using .NET Core 3.1 and C#.
-* [Jellyfin Web](https://github.com/jellyfin/jellyfin-web) - The main client application for Jellyfin. Built for the web, but also used in some of our other clients that are just wrappers around this web client.
+* [Jellyfin Server](https://github.com/jellyfin/jellyfin): The server portion, built using .NET Core 3.1 and C#.
+* [Jellyfin Web](https://github.com/jellyfin/jellyfin-web): The main client application built for browsers, but also used in some of our other clients that are just wrappers.
 
 Note that each of the repositories also has its own documentation on how to get started with that project, generally found in the repository README. You can also view the organization [source tree](xref:contrib-source-tree) to see how some of the bigger projects are structured.
 
@@ -164,9 +165,9 @@ When submitting a new PR, please ensure you do the following things. If you have
 
 * For anything but the most trivial changes that can be described fully in the (short) title, follow the PR template and write a PR body to describe, in as much detail as possible:
 
-    1. Why the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
+  1. Why the changes are being made. Reference specific issues with keywords (`fixes`, `closes`, `addresses`, etc.) if at all possible.
 
-    2. How you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
+  2. How you approached the issue (if applicable) and briefly describe the changes, especially for large PRs.
 
 * If your pull request isn't finished yet please mark it as a "draft" when you open it. While this tag is in place, the pull request won't be merged, and reviews should remain as comments only. Once you're happy with the final state of your PR, please remove this tag; forgetting to do so might result in your PR being unintentionally ignored as still under active development! Inactive WIPs may occasionally elicit pings from the team inquiring on the status, and closed if there is no response.
 

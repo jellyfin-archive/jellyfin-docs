@@ -7,7 +7,7 @@ title: Branding
 
 ## Naming Conventions
 
-The general rule is: Capitalize it, but language, file, or system conventions trump Jellyfin naming conventions.
+The general rule is to capitalize it, but language, file, or system conventions trump Jellyfin naming conventions.
 
 Specific examples include:
 

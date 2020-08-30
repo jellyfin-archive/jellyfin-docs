@@ -5,7 +5,7 @@ title: CSS Customization
 
 # CSS Customization
 
-In ` Dashboard > General `, the "Custom CSS" field can be used to override current CSS in Jellyfin's stylesheet.
+In `Dashboard > General`, the Custom CSS field can be used to override current CSS in Jellyfin's stylesheet.
 
 [Custom CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) provides customization such as changing colors, changing layouts, and item size and behavior. Below is a list of various tweaks that can be applied. The CSS tweaks work on both the web client, and the [Android application](https://play.google.com/store/apps/details?id=org.jellyfin.mobile&hl=en_US). The code will apply in the order that it is written, however `!important` will overrule everything. To learn more about `!important` and more, see [CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) or [specifishity](https://specifishity.com/). To implement these changes, go to `Dashboard > General > Custom CSS` to start.
 
@@ -23,12 +23,12 @@ CSS supports multiple color formats, but typically the hex color codes are used 
 
 Some examples of hex color codes:
 
-`#5dd000` Green <br>
-`#0000d0` Blue <br>
-`#d00000` Red <br>
-`#00000058` Transparent Black
+* Green: `#5dd000`
+* Blue: `#0000d0`
+* Red: `#d00000`
+* Transparent Black: `#00000058`
 
-Go [here](https://htmlcolorcodes.com/color-picker/) for a hex color chart to get a code for any given color.
+Go [here](https://htmlcolorcodes.com/color-picker) for a hex color chart to get a code for any given color.
 
 If you are looking for a more standard and less specific color, typing the literal name of colors suits that purpose well. For example, to get the color "yellow" you can simply write "yellow", this will use a preset yellow color.
 
@@ -41,7 +41,9 @@ Go [here](https://www.w3schools.com/colors/colors_names.asp) for a list of color
 
 ### Comments
 
-A section of code or text inbetween `/*` and `*/` indicates a comment, and will be ignored. This allows you to add descriptions for any particular section of code. It can also be used to disable code without deleting it. For example:
+A section of code or text inbetween `/*` and `*/` indicates a comment, and will be ignored.
+This allows you to add descriptions for any particular section of code.
+It can also be used to disable code without deleting it.
 
 `/* This might be added above code to tell you what it does */`
 
@@ -51,7 +53,9 @@ CSS can be "chained" together to modify different sections together at the same 
 
 "Border Color" tweak:
 
-```.emby-input, .emby-textarea, .emby-select { border-color: #d00000; }```
+```css
+.emby-input, .emby-textarea, .emby-select { border-color: #d00000; }
+```
 
 ## Tweak List
 
@@ -134,6 +138,7 @@ Enlarges the tab buttons, suggested, genres, etc. By default they are really tin
 ```
 
 **The enlarged tab buttons and transparent menu look like this:**
+
 ![Screenshot of enlarged tab buttons and transparent menu](~/images/custom-css-transparenttopbarenlargedtabs.png)
 
 ### Minimalistic Login Page
@@ -292,6 +297,7 @@ This will make it so libraries and media fit neatly onto the homepage with no le
     justify-content: space-between;
     pointer-events: none;
 }
+
 .emby-scrollbuttons-button {
     pointer-events: initial;
 }
@@ -438,18 +444,18 @@ Some links to places where custom CSS has been discussed and shared!
 
 ### Emby Web App Custom CSS
 
-- [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app/)
+* [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app)
 
 ### Community Posts
 
 Keep in mind that these posts may have been made under previous versions of Jellyfin. Some of these tweaks listed in these guides may not work anymore!
 
-- [Custom CSS Guide](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050/)
-- ["But wait, there is more Custom CSS!"](https://www.reddit.com/r/jellyfin/comments/htrfrx/but_wait_there_is_more_custom_css/)
-- [Customizable Plug n' Play CSS for Jellyfin](https://www.reddit.com/r/jellyfin/comments/g9gmjj/customizable_plug_n_play_css_for_jellyfin/)
-- [Easy Jellyfin custom CSS](https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css/)
-- [Custom CSS - updated for 10.5.0](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050/)
-- [Sharing even more custom CSS (and some fixes to previous stuff)](https://www.reddit.com/r/jellyfin/comments/bvnt65/sharing_even_more_custom_css_and_some_fixes_to/)
+* [Custom CSS Guide](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050)
+* ["But wait, there is more Custom CSS!"](https://www.reddit.com/r/jellyfin/comments/htrfrx/but_wait_there_is_more_custom_css)
+* [Customizable Plug n' Play CSS for Jellyfin](https://www.reddit.com/r/jellyfin/comments/g9gmjj/customizable_plug_n_play_css_for_jellyfin)
+* [Easy Jellyfin custom CSS](https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css)
+* [Custom CSS - updated for 10.5.0](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050)
+* [Sharing even more custom CSS (and some fixes to previous stuff)](https://www.reddit.com/r/jellyfin/comments/bvnt65/sharing_even_more_custom_css_and_some_fixes_to)
 
 ### Community Themes
 

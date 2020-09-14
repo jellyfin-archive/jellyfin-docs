@@ -5,8 +5,6 @@ title: Jellyfin Community Standards
 
 # Jellyfin Community Standards
 
-### Why?
-
 As time marches on and Jellyfin, and the Internet more broadly, continues to grow, it is important to establish standards by which community members should interact. While there are numerous such "Codes of Conduct" out there, I am not a fan of most, and I felt it important to establish our own, suited to our project, as well as a dispute resolution mechanism tailored to our needs. Questions about this document should be directed towards me. --Joshua, Project Leader
 
 ## Mission Statement
@@ -50,3 +48,4 @@ Despite setting out the above rules, disputes are likely to happen, including vi
 This document represents official Jellyfin project policy. Any changes to this document require a changelog entry here and approval by a Project Leader.
 
 2020-09-14, Joshua Boniface: Initial version of the community standards document. Based *very* loosely on several CoCs including the Contributor Covenant, and various Forum rules I've read and written over the years.
+

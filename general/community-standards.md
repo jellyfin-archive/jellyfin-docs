@@ -21,7 +21,7 @@ As time marches on and Jellyfin, and the Internet more broadly, continues to gro
 
 ## Code of Conduct
 
-At all times when interacting with the Jellyfin community via any method (Matrix, Reddit, etc.), you must abide by the following:
+At all times when interacting with the Jellyfin community via any method (Matrix, Reddit, Forums, etc.), you must abide by the following:
 
 * **Respect others and remember the Human.** Do exhibit kindness and empathy to others, and make them feel welcome. Do not antagonize, flame, insult, demean, abuse or harass others. Do not use slurs or sexualized language. Do not dox or otherwise expose others' private information, even if it is shared publicly elsewhere.
 

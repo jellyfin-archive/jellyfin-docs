@@ -23,7 +23,7 @@ As time marches on and Jellyfin, and the Internet more broadly, continues to gro
 
 At all times when interacting with the Jellyfin community via any method (Matrix, Reddit, Forums, etc.), you must abide by the following:
 
-* **Respect others and remember the Human.** Do exhibit kindness and empathy to others, and make them feel welcome. Do not antagonize, flame, insult, demean, abuse or harass others. Do not use slurs or sexualized language. Do not dox or otherwise expose others' private information, even if it is shared publicly elsewhere.
+* **Respect others and remember the Human.** Do exhibit kindness and empathy to others, and make them feel welcome. Do not antagonize, flame, insult, demean, abuse, or harass others. Do not use slurs or sexualized language. Do not dox or otherwise expose others' private information, even if it is shared publicly elsewhere.
 
 * **English is the primary working language of Jellyfin, but the majority of our community do not speak English as their primary language**. Be patient when language issues arise, and do not mistake incomplete language knowledge for ignorance or worse. If you are having trouble communicating an idea in English, please post in your native language and ask for help, and someone is likely to understand. As per rule 1, abuse of community members due to language issues is not tolerated.
 

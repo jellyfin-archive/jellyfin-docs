@@ -33,7 +33,7 @@ At all times when interacting with the Jellyfin community via any method (Matrix
 
 ## Dispute Resolution and Moderation
 
-Disputes are always inevitable, including violations of the rules above. When these occur, the following policy applies.
+Disputes are inevitable, including violations of the rules above. When these occur, the following policy applies.
 
 * Before any other resolution step, we trust the community to police itself. If you see a community member violating these community standards, please let them know, and link them to this document. Do not respond in kind (e.g. respond to a flame with a flame). Most disagreements can be solved with education and discussion.
 

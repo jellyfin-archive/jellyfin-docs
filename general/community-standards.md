@@ -29,7 +29,7 @@ At all times when interacting with the Jellyfin community via any method (Matrix
 
 * If you have questions to ask of the community, **please choose the appropriate location (see our [Getting Help](xref:getting-help) page) and ask your question in full, immediately, with as much detail as possible**. Author issues aside, [Asking Questions the Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html) is a valuable resource. **Do not pester or harass** community members for help or to answer questions, **do not require others to pry information** out of you, and **do not spam questions** - they will be answered when they are answered.
 
-* Jellyfin is a media server system for your own media collection. Our communities are not a place to obtain media. **Do not engage in, encourage, or facilitate piracy**. Do not ask questions about where to obtain media. Do not ask for access to other users' servers, or sell or transfer access to private servers in our communities. 
+* Jellyfin is a media server system for your own media collection. Our communities are not a place to obtain media. **Do not engage in, encourage, or facilitate piracy**. Do not ask questions about where to obtain media. Do not ask for access to other users' servers, or sell or transfer access to private servers in our communities.
 
 ## Dispute Resolution and Moderation
 
@@ -48,4 +48,3 @@ Despite setting out the above rules, disputes are likely to happen, including vi
 This document represents official Jellyfin project policy. Any changes to this document require a changelog entry here and approval by a Project Leader.
 
 2020-09-14, Joshua Boniface: Initial version of the community standards document. Based *very* loosely on several CoCs including the Contributor Covenant, and various Forum rules I've read and written over the years.
-

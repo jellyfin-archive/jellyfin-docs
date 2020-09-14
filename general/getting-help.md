@@ -5,11 +5,11 @@ title: Getting Help
 
 # Getting Help
 
-If you are having trouble using or configuring Jellyfin, there are several ways to get help.
+If you are having trouble using or configuring Jellyfin, there are several ways to get help. Please ensure you read our [Community Standards](xref:community-standards) before interacting in any of the following locations.
 
 * The Jellyfin [Matrix channels](https://matrix.to/#/+jellyfin:matrix.org): For chat and real-time discussions.
 
-  * Some channels are bridged to IRC.
+  * Some channels are bridged to IRC and Discord.
 
 * The Jellyfin [forums](https://forum.jellyfin.org): For long-term discussions.
 

@@ -13,9 +13,11 @@ As time marches on and Jellyfin, and the Internet more broadly, continues to gro
 
 * Jellyfin aims to be the best media streaming platform possible, built entirely by volunteers without any monetary gain, proprietary/locked features, or unreasonable centralization.
 
-* Jellyfin is a project made up entirely and excusively of Volunteers who donate their free time to the project, without the expectation of pay.
+* Jellyfin is a project made up entirely and excusively of Volunteers who donate their free time to the project.
 
 * Fostering a community of respectful and productive contributors is central to our success and longevity.
+
+* Jellyfin is not and will never be under the control of any corporation or profit-driven entity, and does not exist to make money for anyone, including any volunteer contributors or the project leadership.
 
 ## Code of Conduct
 

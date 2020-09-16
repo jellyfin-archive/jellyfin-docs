@@ -11,31 +11,31 @@ Jellyfin supports [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIn
 
 OS      | Recommended HW Acceleration
 ------- | -------------
-Linux   | QSV, NVENC, AMF, VAAPI 
+Linux   | QSV, NVENC, AMF, VAAPI
 Windows | QSV, NVENC, AMF
-MacOS   | VideoToolbox 
+MacOS   | VideoToolbox
 Android | MediaCodec, OMX
 RPi     | OMX
 
 [Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
 
-### NVIDIA NVENC
+## NVIDIA NVENC
 
 [NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/). H264 10-bit is [not supported](https://devtalk.nvidia.com/default/topic/1039388/video-codec-and-optical-flow-sdk/is-there-nvidia-encoder-decoder-which-supports-hdr-10-bpp-for-avc-h-264-/) by NVIDIA acceleration. **The minimum required driver version is: Linux: 418.30, Windows: 450.51.**
 
-### VAAPI
+## VAAPI
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables). Both Intel iGPU and AMD GPU can use VAAPI.
 > [!NOTE]
 > AMD GPU requires open source driver Mesa 20.1 or higher to support hardware decoding HEVC.
 
-### AMD AMF
+## AMD AMF
 
 AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver `amdgpu-pro` is required when using AMF on Linux.
 > [!NOTE]
 > Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
 
-### Intel QuickSync
+## Intel QuickSync
 
 Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html).
 
@@ -323,8 +323,6 @@ To check information about VAAPI on your system install and run `vainfo` from th
 
 4. Watch a movie, and verify that transcoding is occurring by watching the `ffmpeg-transcode-*.txt` logs under `/var/log/jellyfin` and using `radeontop` or similar tools.
 
-
-
 ### Configuring Intel QuickSync(QSV) on Debian/Ubuntu
 
 1. QSV is based on VAAPI device on Linux, so please confirm whether you have completed the VAAPI configuration first.
@@ -332,22 +330,26 @@ To check information about VAAPI on your system install and run `vainfo` from th
 2. Make sure that `jellyfin-ffmpeg 4.3.1-1` or higher is installed.
 
 3. Install the non-free iHD driver.
-```bash
-$ sudo apt update
-$ sudo apt install vainfo intel-media-va-driver-non-free -y
-```
-> [!NOTE]
-> intel-media-va-driver-non-free is avaliable from apt since Debian buster and Ubuntu 19.04. Otherwise you have to build from source.
+
+   ```bash
+   sudo apt update
+   sudo apt install vainfo intel-media-va-driver-non-free -y
+   ```
+
+   > [!NOTE]
+   > intel-media-va-driver-non-free is avaliable from apt since Debian buster and Ubuntu 19.04. Otherwise you have to build from source.
 
 4. Verify iHD driver using `vainfo`. You will find `iHD` from the result if it goes well.
-```bash
-$ vainfo | grep iHD
-```
+
+   ```bash
+   vainfo | grep iHD
+   ```
 
 5. If you want to uninstall iHD driver and fallback to i965 driver.
-```bash
-$ sudo apt remove intel-media-va-driver intel-media-va-driver-non-free -y
-```
+
+   ```bash
+   sudo apt remove intel-media-va-driver intel-media-va-driver-non-free -y
+   ```
 
 6. QSV in docker. Due to incompatible licenses, we will not integrate non-free drivers in the docker image. You need to perform the above operations manually in docker and add `--privileged` to the docker configuration.
 
@@ -388,32 +390,32 @@ Useful Resources:
 - [LXD Documentation - GPU instance configuration](https://github.com/lxc/lxd/blob/master/doc/instances.md#type-gpu)
 - [NVidia CUDA inside a LXD container](https://stgraber.org/2017/03/21/cuda-in-lxd/)
 
-###  Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS
+### Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS
 
 1. Install `amdgpu-pro` closed source graphics driver by following the [installation instructions](https://amdgpu-install.readthedocs.io/en/latest/).
 
 2. Then install `amf-amdgpu-pro`:
 
-```bash
-$ sudo apt install amf-amdgpu-pro
-```
+   ```bash
+   sudo apt install amf-amdgpu-pro
+   ```
 
 3. Make sure your `jellyfin-ffmpeg` or `ffmpeg` contains `h264_amf` encoder:
 
-```bash
-$ cd /usr/lib/jellyfin-ffmpeg/
-$ ./ffmpeg -encoders | grep h264_amf
-V..... h264_amf             AMD AMF H.264 Encoder (codec h264)
-```
+   ```bash
+   $ cd /usr/lib/jellyfin-ffmpeg/
+   $ ./ffmpeg -encoders | grep h264_amf
+   V..... h264_amf             AMD AMF H.264 Encoder (codec h264)
+   ```
 
-> [!NOTE]
-> If not contain, update your `jellyfin-ffmpeg` to the latest version and try again.
-For compiling ffmpeg with AMF library, refer to [this page](https://www.ffmpeg.org/general.html#AMD-AMF_002fVCE).
+   > [!NOTE]
+   > If not contain, update your `jellyfin-ffmpeg` to the latest version and try again.
+
+   For compiling ffmpeg with AMF library, refer to [this page](https://www.ffmpeg.org/general.html#AMD-AMF_002fVCE).
 
 4. Choose AMD AMF video acceleration in Jellyfin and check the `Enable hardware encoding` option.
 
-5. Watch a movie, then verify that `h264_amf` encoder is working by watching the `ffmpeg-transcode-*.txt` transcoding logs under `/var/log/jellyfin` and using `radeontop` or similar tools. 
-
+5. Watch a movie, then verify that `h264_amf` encoder is working by watching the `ffmpeg-transcode-*.txt` transcoding logs under `/var/log/jellyfin` and using `radeontop` or similar tools.
 
 ### Configuring AMD AMF encoding on Arch Linux
 
@@ -421,16 +423,16 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
 
 1. Clone [this repository](https://aur.archlinux.org/pkgbase/amdgpu-pro-installer/) using `git`:
 
-```bash
-$ git clone https://aur.archlinux.org/amdgpu-pro-installer.git
-```
+   ```bash
+   git clone https://aur.archlinux.org/amdgpu-pro-installer.git
+   ```
 
 2. Enter that folder and make the installation package and install it:
 
-```bash
-$ cd amdgpu-pro-installer
-$ makepkg -si
-```
+   ```bash
+   cd amdgpu-pro-installer
+   makepkg -si
+   ```
 
 3. Go to step 3 of **on Ubuntu 18.04 or 20.04 LTS** above.
 

@@ -5,13 +5,15 @@ title: Reporting Issues
 
 # Reporting Issues
 
-Please note that feature and enhancement requests should be directed towards [our Fider instance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not GitHub issues.
-
 This page discusses how to open issues, including the policies and procedures of the Jellyfin project around handling issues.
 
 Issues should **only** detail software bug reports.
 
 All other discussions, including initial troubleshooting, should be directed towards [our help channels](xref:getting-help).
+
+## Requesting Features
+
+Please note that feature and enhancement requests should be directed towards [our Fider instance](https://features.jellyfin.org) for tracking, voting, and reporting. Please keep all feature requests to this page and not GitHub issues.
 
 ## Searching and Voting
 

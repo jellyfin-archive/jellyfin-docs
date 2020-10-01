@@ -105,7 +105,7 @@ In addition, the examples are configured for use with Let's Encrypt certificates
 
 Ports 80 and 443 (pointing to the proxy server) need to be opened on your router and firewall.
 
-### Known Proxies ###
+### Known Proxies
 
 Add the IP address of your reverse proxy to the `Known Proxies` (under Admin Dashboard -> Networking).  This is a comma separated list of IP addresses of known proxies used when connecting to your Jellyfin instance and is required to make proper use of X-Forwarded-For headers. Requires a reboot after saving.
 

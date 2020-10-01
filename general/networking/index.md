@@ -44,6 +44,15 @@ Allows clients to discover Jellyfin on the local network. A broadcast message to
 
 Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
 
+### Health Check Endpoint
+
+Jellyfin exposes the `/health` endpoint designated for checking the status of the underlying service.  Currently this will verify http and database connectivity and return a `200 OK` response if successful.
+```
+curl http://myserver:8096/health
+or
+curl https://jellyfin.example.com/health
+```
+
 ## Self-Signed Certificate
 
 [See here for more information.](https://www.sslshopper.com/article-most-common-openssl-commands.html)
@@ -95,6 +104,10 @@ When following this guide, be sure to replace the following variables with your 
 In addition, the examples are configured for use with Let's Encrypt certificates. If you have a certificate from another source, change the SSL configuration from `/etc/letsencrypt/DOMAIN_NAME/` to the location of your certificate and key.
 
 Ports 80 and 443 (pointing to the proxy server) need to be opened on your router and firewall.
+
+### Known Proxies ###
+
+Add the IP address of your reverse proxy to the `Known Proxies` (under Admin Dashboard -> Networking).  This is a comma separated list of IP addresses of known proxies used when connecting to your Jellyfin instance and is required to make proper use of X-Forwarded-For headers. Requires a reboot after saving.
 
 ### Base URL
 

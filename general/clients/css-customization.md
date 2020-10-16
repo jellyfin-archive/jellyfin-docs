@@ -461,3 +461,4 @@ Keep in mind that these posts may have been made under previous versions of Jell
 
 * [Monochromic - A custom theme for Jellyfin mediaserver created using CSS overrides](https://github.com/CTalvio/Monochromic)
 * [JellyfinCSS - This is Jellyfin custom-css](https://github.com/prayag17/JellyfinCSS)
+* [Kaleidochromic - Yet another custom theme for Jellyfin mediaserver created using CSS overrides, built top of Monochromic](https://github.com/CTalvio/Kaleidochromic)

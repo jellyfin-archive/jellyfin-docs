@@ -221,6 +221,6 @@ server {
 
 The lines we're interested in is `set $upstream_app jellyfin`. Now, assuming Jellyfin and Let's Encrypt are on the same network within Docker, it *should* see it and start handling reverse proxy without much issue. If it doesn't however, you'll just need to change `jellyfin` in that line to whatever the IP of your Jellyfin server is. We'll also look at the line `location ~ (/jellyfin)?/socket` and add a slash after socket, so the line should look like this `location ~ (/jellyfin)?/socket/`.
 
-Then, within Jellyfin settings (Dashboard -> Networking), scroll down to "Public HTTP port number" and "Public HTTPS port number", and make sure HTTP Port number is 8096, while HTTPS port number is 8920. Then, click the "Secure Connection Mode" dropdown, and select "Handled by reverse proxy".
+Then, within Jellyfin settings (Dashboard -> Networking), scroll down to "Public HTTP port number" and "Public HTTPS port number", and make sure HTTP Port number is 8096, while HTTPS port number is 8920.
 
 Restart your Let's Encrypt docker container by running `docker restart letsencrypt`, and then you can follow the logs with `docker logs -f letsencrypt`. Assuming everything works, you should see `Server Ready` at the very end of the logs. This tells you Lets Encrypt is running without issue.

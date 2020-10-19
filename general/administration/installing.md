@@ -109,11 +109,11 @@ To mount your media library read-only append ':ro' to the media volume:
 > [!Note]
 > There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
-Multiple media libraries can be bind mounted if needed:
+Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control. For a simple setup, it's considered easier to use Bind Mounts instead of volumes. Multiple media libraries can be bind mounted if needed:
 
    ```sh
-   --volume /path/to/media1:/media/media1
-   --volume /path/to/media2:/media/media2
+   --mount type=bind,source=/path/to/media1,target=/media1
+   --mount type=bind,source=/path/to/media2,target=/media2,readonly
    ...etc
    ```
 

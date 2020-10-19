@@ -94,7 +94,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     --mount type=bind,source=/path/to/media,target=/media \
     --user 1000:1000 \
     --net=host \
-    --name jellyfin
+    --name jellyfin \
     --restart=unless-stopped \
     jellyfin/jellyfin
    ```

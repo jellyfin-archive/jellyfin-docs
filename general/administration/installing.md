@@ -101,7 +101,6 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
 Using host networking (`--net=host`) is optional but required in order to use DLNA or HDHomeRun.
 
-
 Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control by external programs. For a simple setup, it's considered easier to use Bind Mounts instead of volumes. Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts. Multiple media libraries can be bind mounted if needed:
 
    ```sh

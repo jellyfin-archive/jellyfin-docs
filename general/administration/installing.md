@@ -89,28 +89,20 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
    ```sh
    docker run -d \
+    --name jellyfin \
+    --user 1000:1000 \
+    --net=host \
     --volume /path/to/config:/config \
     --volume /path/to/cache:/cache \
     --mount type=bind,source=/path/to/media,target=/media \
-    --user 1000:1000 \
-    --net=host \
-    --name jellyfin \
     --restart=unless-stopped \
     jellyfin/jellyfin
    ```
 
-Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.
+Using host networking (`--net=host`) is optional but required in order to use DLNA or HDHomeRun.
 
-To mount your media library read-only append ':ro' to the media volume:
 
-   ```sh
-   --volume /path/to/media:/media:ro
-   ```
-
-> [!Note]
-> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
-
-Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control. For a simple setup, it's considered easier to use Bind Mounts instead of volumes. Multiple media libraries can be bind mounted if needed:
+Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control by external programs. For a simple setup, it's considered easier to use Bind Mounts instead of volumes. Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts. Multiple media libraries can be bind mounted if needed:
 
    ```sh
    --mount type=bind,source=/path/to/media1,target=/media1
@@ -118,7 +110,8 @@ Bind Mounts are needed to pass folders from the host OS to the container OS wher
    ...etc
    ```
 
-Using host networking (`--net=host`) is optional but required in order to use DLNA or HDHomeRun.
+> [!Note]
+> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
 
 **Using Docker Compose:**
 
@@ -129,13 +122,15 @@ Create a `docker-compose.yml` file with the following contents:
    services:
      jellyfin:
        image: jellyfin/jellyfin
+       container_name: jellyfin
        user: 1000:1000
        network_mode: "host"
-       restart: "unless-stopped"
        volumes:
          - /path/to/config:/config
          - /path/to/cache:/cache
          - /path/to/media:/media
+         - /path/to/media2:/media2:ro
+       restart: "unless-stopped"
    ```
 
 Then while in the same folder as the `docker-compose.yml` run:

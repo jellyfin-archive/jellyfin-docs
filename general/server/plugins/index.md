@@ -281,7 +281,7 @@ Automatically group every repeated movie.
 
 #### Intros
 
-Download flashy intros from prerolls.video for your movies. 
+Download flashy intros from prerolls.video for your movies.
 
 **Links:**
 
@@ -289,7 +289,7 @@ Download flashy intros from prerolls.video for your movies.
 
 #### Youtube Metadata
 
-Download metadata about Youtube videos using a Youtube API key. 
+Download metadata about Youtube videos using a Youtube API key.
 
 **Links:**
 
@@ -297,7 +297,7 @@ Download metadata about Youtube videos using a Youtube API key.
 
 #### Last.FM
 
-Enables audio scrobbling to Last.FM as well as a metadata fetcher source. 
+Enables audio scrobbling to Last.FM as well as a metadata fetcher source.
 
 **Links:**
 

@@ -289,7 +289,7 @@ Download flashy intros from prerolls.video for your movies.
 
 #### Youtube Metadata
 
-Download metadata about Youtube videos using a Youtube API key.
+Downloads metadata of YouTube videos with a YouTube API key.
 
 **Links:**
 

@@ -287,7 +287,7 @@ Download flashy intros from prerolls.video for your movies.
 
 * [GitHub](https://github.com/dkanada/jellyfin-plugin-intros)
 
-#### Youtube Metadata
+#### YouTube Metadata
 
 Downloads metadata of YouTube videos with a YouTube API key.
 

@@ -291,6 +291,9 @@ Takes your tuners in TVHeadEnd and emulates a HDHomeRun, in order to connect to 
   * [Prowl](https://github.com/crobibero/jellyfin-plugin-prowl)
   * [Pushover](https://github.com/crobibero/jellyfin-plugin-pushover)
   * [TMDb Trailers](https://github.com/crobibero/jellyfin-plugin-tmdb-trailers)
+  * [Discord](https://github.com/crobibero/jellyfin-plugin-discord)
+  * [Simkl](https://github.com/crobibero/jellyfin-plugin-simkl)
+  * [Webhook](https://github.com/crobibero/jellyfin-plugin-webhook)
 
 #### dkanada's Repo
 

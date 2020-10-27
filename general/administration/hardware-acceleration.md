@@ -481,20 +481,24 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
 > For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
 
 ### Configuring VAAPI on Raspberry Pi 3 and 4 running Ubuntu server
+
 1. Enable the `render` device on your Pi:
-* If you are using Raspberry Pi 3 add this to the `/boot/firmware/usercfg.txt` file:
+
+- If you are using Raspberry Pi 3 add this to the `/boot/firmware/usercfg.txt` file:
+
 ```sh
 gpu_mem=256
 dtoverlay=vc4-kms-v3d
 ```
 
-* Or if you are a Raspberry Pi 4 user add this to the `/boot/firmware/usercfg.txt` file:
+- Or if you are a Raspberry Pi 4 user add this to the `/boot/firmware/usercfg.txt` file:
+
 ```sh
 gpu_mem=320
 dtoverlay=vc4-kms-v3d-pi4
 ```
 
-Than save the file and do a reboot. Verify that a `render` device is now present in `/dev/dri`:
+Then save the file and do a reboot. Verify that a `render` device is now present in `/dev/dri`:
 
 ```sh
 $ ls -l /dev/dri

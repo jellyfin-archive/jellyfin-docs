@@ -511,10 +511,10 @@ crw-rw---- 1 root render 226, 128 Oct 13 16:00 renderD128
 
 2. Add Jellyfin service user to the `render` group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin.
 
-```sh
-sudo usermod -aG render jellyfin
-sudo systemctl restart jellyfin
-```
+   ```sh
+   sudo usermod -aG render jellyfin
+   sudo systemctl restart jellyfin
+   ```
 
 3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API` Device value.
 

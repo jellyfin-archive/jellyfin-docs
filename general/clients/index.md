@@ -299,9 +299,19 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 
 ### Jellyfin for Tizen
 
-The official Jellyfin Samsung TV client.
+The official Jellyfin Samsung TV client for TVs running Tizen (2015 and above models).
 
 **Status:** ✅ In Development
+
+**Links:**
+
+- [GitHub](https://github.com/jellyfin/jellyfin-tizen)
+
+### Jellyfin for Samsung Legacy Platform Smart TVs
+
+The deprecated official Jellyfin Samsung TV client for TVs running Orsay (pre-2015).
+
+**Status:** ⭕ Deprecated
 
 **Links:**
 

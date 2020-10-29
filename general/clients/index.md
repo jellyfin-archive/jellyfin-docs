@@ -315,7 +315,7 @@ The deprecated official Jellyfin Samsung TV client for TVs running Orsay (pre-20
 
 **Links:**
 
-- [GitHub](https://github.com/jellyfin/jellyfin-samsungtv)
+- [GitHub](https://github.com/jellyfin-archive/jellyfin-samsungtv)
 
 ## UWP
 

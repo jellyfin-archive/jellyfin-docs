@@ -113,4 +113,4 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 ## Multiple Clients
 
-When using multiple kodi clients do not copy kodi's db (i.e myvideosXYZ.db, jellyfin.db) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse jellyfin and all the clients will be seen as the same client causing syncing between these clients not to work correctly.
+When using multiple Kodi clients do not copy Kodi's database (i.e. myvideosXYZ.db, jellyfin.db) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client, causing sync between these clients not to work correctly.

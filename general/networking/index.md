@@ -50,8 +50,6 @@ Jellyfin exposes the `/health` endpoint designated for checking the status of th
 
 ```sh
 curl http://myserver:8096/health
-or
-curl https://jellyfin.example.com/health
 ```
 
 ## Self-Signed Certificate

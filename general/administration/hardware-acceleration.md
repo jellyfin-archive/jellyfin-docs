@@ -501,7 +501,7 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
     Then save the file and do a reboot. Verify that a `render` device is now present in `/dev/dri`:
 
     ```sh
-     $ ls -l /dev/dri
+    $ ls -l /dev/dri
     total 0
     drwxr-xr-x 2 root root        100 Oct 13 16:00 by-path
     crw-rw---- 1 root video  226,   0 Oct 13 16:00 card0

@@ -76,7 +76,13 @@ All package builds begin with these two steps:
     set-executionpolicy unrestricted
     ```
 
-5. Run the Jellyfin build script:
+5. If you are building a version of Jellyfin newer than 10.6.4, you will need to download the build script from a seperate repository:
+
+   ```powershell
+   git clone https://github.com/jellyfin/jellyfin-server-windows.git windows
+   ```
+
+6. Run the Jellyfin build script:
 
     ```powershell
     windows\build-jellyfin.ps1 -verbose
@@ -90,9 +96,9 @@ All package builds begin with these two steps:
 
     * The `-InstallNSSM` flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory.
 
-6. (Optional) Use [NSSM](https://nssm.cc/) to configure Jellyfin to run as a service.
+7. (Optional) Use [NSSM](https://nssm.cc/) to configure Jellyfin to run as a service.
 
-7. Jellyfin is now available in the default directory (or the directory you chose). Assuming you kept the default directory:
+8. Jellyfin is now available in the default directory (or the directory you chose). Assuming you kept the default directory:
 
     * To start it from a Powershell window, run:
 

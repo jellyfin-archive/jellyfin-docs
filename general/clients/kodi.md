@@ -111,3 +111,7 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 > [!NOTE]
 > Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed.
+
+## Multiple Clients
+
+When using multiple Kodi clients do not copy Kodi's database (i.e. myvideosXYZ.db, jellyfin.db) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client, causing sync between these clients not to work correctly.

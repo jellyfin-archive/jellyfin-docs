@@ -115,16 +115,6 @@ The official Jellyfin Roku app.
 
 ## Jellyfin Cross-Platform Clients
 
-### Jellyfin Desktop
-
-A cross-platform desktop media interface using Electron supporting Windows, MacOS, Linux and Raspberry Pi.
-
-**Status:** ✅ In Development
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-desktop)
-
 ### Jellyfin Xamarin Client
 
 Xamarin cross-platform client for Jellyfin.
@@ -190,16 +180,6 @@ Extension for browsers based on Chromium and Firefox that allows scrobble servic
 
 - [Website](https://web-scrobbler.github.io/)
 - [GitHub](https://github.com/web-scrobbler/web-scrobbler)
-
-### Jellyfin for Google Chrome
-
-The official Jellyfin Google Chrome extension.
-
-**Status:** ⭕ [No Maintainers](xref:contrib-index)
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-chrome)
 
 ## Linux
 
@@ -308,16 +288,6 @@ The official Jellyfin Samsung TV client for TVs running Tizen (2015 and above mo
 **Links:**
 
 - [GitHub](https://github.com/jellyfin/jellyfin-tizen)
-
-### Jellyfin for Samsung Legacy Platform Smart TVs
-
-The deprecated official Jellyfin Samsung TV client for TVs running Orsay (pre-2015).
-
-**Status:** ⭕ Deprecated
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin-archive/jellyfin-samsungtv)
 
 ## UWP
 

@@ -516,7 +516,7 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
    sudo systemctl restart jellyfin
    ```
 
-3. Configure VAAPI acceleration in the "Transcoding" page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API` Device value.
+3. Configure VAAPI acceleration in the **Transcoding** page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API` Device value.
 
 4. Watch a movie, and verify that transcoding is working by watching `ffmpeg-transcode-*.txt` logs under `/var/log/jellyfin`.
 

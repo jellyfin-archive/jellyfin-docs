@@ -9,6 +9,8 @@ Clients connect your devices to your Jellyfin server and let you view your conte
 
 > [!NOTE]
 > Many clients have no active maintainers at the moment. If you interested in helping out, please see our [contribution guide](xref:contrib-index) and feel free to contact us for more information!
+>
+> They aren't on this page, some of them can be found at the [jellyfin-archive organization on GitHub](https://github.com/jellyfin-archive).
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 
@@ -113,16 +115,6 @@ The official Jellyfin Roku app.
 
 ## Jellyfin Cross-Platform Clients
 
-### Jellyfin Desktop
-
-A cross-platform desktop media interface using Electron supporting Windows, MacOS, Linux and Raspberry Pi.
-
-**Status:** ✅ In Development
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-desktop)
-
 ### Jellyfin Xamarin Client
 
 Xamarin cross-platform client for Jellyfin.
@@ -188,16 +180,6 @@ Extension for browsers based on Chromium and Firefox that allows scrobble servic
 
 - [Website](https://web-scrobbler.github.io/)
 - [GitHub](https://github.com/web-scrobbler/web-scrobbler)
-
-### Jellyfin for Google Chrome
-
-The official Jellyfin Google Chrome extension.
-
-**Status:** ⭕ [No Maintainers](xref:contrib-index)
-
-**Links:**
-
-- [GitHub](https://github.com/jellyfin/jellyfin-chrome)
 
 ## Linux
 
@@ -299,13 +281,13 @@ An official plugin for Mopidy that uses Jellyfin as a backend.
 
 ### Jellyfin for Tizen
 
-The official Jellyfin Samsung TV client.
+The official Jellyfin Samsung TV client for TVs running Tizen (2015 and above models).
 
 **Status:** ✅ In Development
 
 **Links:**
 
-- [GitHub](https://github.com/jellyfin/jellyfin-samsungtv)
+- [GitHub](https://github.com/jellyfin/jellyfin-tizen)
 
 ## UWP
 

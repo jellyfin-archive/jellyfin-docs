@@ -114,7 +114,7 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 ## Multiple Clients
 
-When using multiple kodi clients it is not recommended to copy files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse jellyfin and all the clients will be seen as the same client causing syncing between these clients not to work correctly.
+When using multiple Kodi clients it is not recommended to copy files from one client to the other to reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client causing sync between these clients not to work correctly.
 
 If you find you cannot perform a full scan on a certain device though please try the steps below.
 

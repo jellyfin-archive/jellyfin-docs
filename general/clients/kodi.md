@@ -113,4 +113,26 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 ## Multiple Clients
 
-When using multiple kodi clients do not copy kodi's db (i.e myvideosXYZ.db, jellyfin.db) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse jellyfin and all the clients will be seen as the same client causing syncing between these clients not to work correctly.
+When using multiple kodi clients it is not recommended to copy files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse jellyfin and all the clients will be seen as the same client causing syncing between these clients not to work correctly.
+
+If you find you cannot perform a full scan on a certain device though please try the steps below.
+
+1. Perform a scan on client 1 (A client that can successfully scan).
+2. Copy Database files.
+   * Go to KODI_FOLDER/userdata/Databases on client 1.
+   * Copy myvideosxyz.db, mymusicxyz.db and jellyfin.db files from client 1 to client 2.
+3. Copy addon data.
+   * Go to KODI_FOLDER/userdata/addon_data on client 1.
+   * Copy plugin.video.jellyfin folder form client 1 to client 2.
+   * Remove KODI_FOLDER/userdata/addon_data/plugin.video.jellyfin/jellyfin_guid from client 2.
+4. Reboot client 2.
+5. You should be prompted to enter login details again, but a full scan should not be required.
+6. Verification.
+   * Reboot client 1 and 2. Both of these clients should auto login.
+   * Load up the jellyfin web dashboard -> devices page and client 1 and client 2 should have separate squares.
+
+>* Note: For this to work client 1 and 2 should be running the same kodi major versions.
+>* Note: For this whole process to be working correctly you should see a square per client.
+>* If you do notice that only 1 square is present  try rebooting each client one at a time.
+>* If you do see that they are "fighting for a slot" then jellyfin views them both as the same.
+>* Try removing client 1's KODI_FOLDER/userdata/addon_data/plugin.video.jellyfin/jellyfin_guid and repeat from step 4.

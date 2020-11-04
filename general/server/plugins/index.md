@@ -271,6 +271,46 @@ Takes your tuners in TVHeadEnd and emulates a HDHomeRun, in order to connect to 
 
 * [GitHub](https://github.com/TheJF/antennas)
 
+#### Merge Versions
+
+Automatically group every repeated movie.
+
+**Links:**
+
+* [GitHub](https://github.com/danieladov/jellyfin-plugin-mergeversions)
+
+#### Intros
+
+Download flashy intros from prerolls.video for your movies.
+
+**Links:**
+
+* [GitHub](https://github.com/dkanada/jellyfin-plugin-intros)
+
+#### YouTube Metadata
+
+Downloads metadata of YouTube videos with a YouTube API key.
+
+**Links:**
+
+* [GitHub](https://github.com/ankenyr/jellyfin-youtube-metadata-plugin)
+
+#### Last.FM
+
+Enables audio scrobbling to Last.FM as well as a metadata fetcher source.
+
+**Links:**
+
+* [GitHub](https://github.com/jesseward/jellyfin-plugin-lastfm)
+
+#### VGMdb
+
+Adds support for VGMdb to music libraries. Can provide both images and metadata for artists and albums.
+
+**Links:**
+
+* [GitHub](https://github.com/nielsvanvelzen/jellyfin-plugin-vgmdb)
+
 ## Repositories
 
 ### Official Jellyfin Plugin Repositories

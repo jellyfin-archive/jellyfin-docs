@@ -8,6 +8,7 @@ title: Kodi
 > [!NOTE]
 > It's highly recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
 > This will keep your media libraries up to date without waiting for a periodic re-sync from Kodi.
+> Also be aware that a local SQLite database is required. Remote Kodi databases, like MySQL, is not supported.
 
 ## Installation Process
 

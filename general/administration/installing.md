@@ -563,7 +563,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
     ```
 
     > [!NOTE]
-    > Supported releases are `stretch` and `buster`.
+    > Supported releases are `stretch`, `buster`, and `bullseye`.
 
 1. Update APT repositories:
 

@@ -356,5 +356,5 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
   * [https://raw.githubusercontent.com/danieladov/JellyfinPluginManifest/master/manifest.json)
 * Included Plugins
   * [Merge Versions](https://github.com/danieladov/jellyfin-plugin-mergeversions)
-  * [Skin Manager] (https://github.com/danieladov/jellyfin-plugin-skin-manager)
-  * [Theme Songs] (https://github.com/danieladov/jellyfin-plugin-themesongs)
+  * [Skin Manager](https://github.com/danieladov/jellyfin-plugin-skin-manager)
+  * [Theme Songs](https://github.com/danieladov/jellyfin-plugin-themesongs)

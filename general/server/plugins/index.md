@@ -353,7 +353,7 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
 #### danieladov's Repo
 
 * Manifest
-  * [https://raw.githubusercontent.com/danieladov/JellyfinPluginManifest/master/manifest.json)
+  * [https://raw.githubusercontent.com/danieladov/JellyfinPluginManifest/master/manifest.json](https://raw.githubusercontent.com/danieladov/JellyfinPluginManifest/master/manifest.json)
 * Included Plugins
   * [Merge Versions](https://github.com/danieladov/jellyfin-plugin-mergeversions)
   * [Skin Manager](https://github.com/danieladov/jellyfin-plugin-skin-manager)

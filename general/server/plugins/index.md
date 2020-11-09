@@ -279,6 +279,14 @@ Automatically group every repeated movie.
 
 * [GitHub](https://github.com/danieladov/jellyfin-plugin-mergeversions)
 
+#### Skin Manager
+
+Download and manage the most popular skins.
+
+**Links:**
+
+* [GitHub](https://github.com/danieladov/jellyfin-plugin-skin-manager)
+
 #### Intros
 
 Download flashy intros from prerolls.video for your movies.
@@ -341,3 +349,12 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
   * [https://dkanada.xyz/plugins/manifest.json](https://dkanada.xyz/plugins/manifest.json)
 * Included Plugins
   * [Intros](https://github.com/dkanada/jellyfin-plugin-intros)
+
+#### danieladov's Repo
+
+* Manifest
+  * [https://raw.githubusercontent.com/danieladov/JellyfinPluginManifest/master/manifest.json)
+* Included Plugins
+  * [Merge Versions](https://github.com/danieladov/jellyfin-plugin-mergeversions)
+  * [Skin Manager] (https://github.com/danieladov/jellyfin-plugin-skin-manager)
+  * [Theme Songs] (https://github.com/danieladov/jellyfin-plugin-themesongs)

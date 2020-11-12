@@ -57,8 +57,7 @@ Movie extras can include deleted scenes, interviews, and other various things th
 
 ### Extras folders
 
-One of the cleanest ways of adding extras is to place them in subfolders
-within your movie folder.
+One of the cleanest ways of adding extras is to place them in subfolders within your movie folder.
 
 Supported folder types are:
 

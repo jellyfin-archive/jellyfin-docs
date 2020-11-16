@@ -1,0 +1,66 @@
+---
+uid: web-config
+title: Jellyfin Web configuration
+---
+
+The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depend on the installation method.
+
+# Editing the configuration
+
+## Debian/Ubuntu/Fedora/CentOS Packages
+
+The configuration can be found at `/usr/share/jellyfin/web/config.json`. This file is registered as a configuration file by the Debian packages, and any changes to the defaults will be handled by `apt` on upgrade.
+
+## Docker
+
+Overriding the default `config.json` can be done with an additional volume parameter to your `docker run` command, e.g.
+
+```
+--volume /path/to/config/web-config.json:/jellyfin/jellyfin-web/config.json
+```
+
+We would recommend obtaining the [latest copy of the file](https://github.com/jellyfin/jellyfin-web/blob/master/src/config.json) to pre-populate your configuration directory before starting Jellyfin for the first time; unlike most other components of this directory, it will not be created automatically on first run.
+
+
+# Privacy-focused changes
+
+Our default settings for the Jellyfin Web `config.json` file include some features that privacy-focused or completely-offline users may with to disable. Each option is detailed below.
+
+### Google Chromecast support
+
+By default, Jellyfin Web includes Chromecast-from-browser support. This requires downloading files from Google servers to support this functionality.
+
+To disable it, edit `config.json` and remove the line:
+
+```
+"plugins/chromecastPlayer/plugin"
+```
+
+in the `plugins` section. Be sure to remove the last comma from the line above if this is the last line in the list.
+
+### YouTube Trailers support
+
+By default, Jellyfin Web includes functionality to auto-load movie trailers from YouTube. This functionality is disabled within Jellyfin by default, but the resources are included in the Web config to make enabling the feature easy.
+
+To disable it, edit `config.json` and remove the line:
+
+```
+"plugins/youtubePlayer/plugin",
+```
+
+in the `plugins` section.
+
+### Jellyfin Fonts
+
+By default, Jellyfin Web includes custom multilingual unicode fonts to support multiple locales. This allows us to customize the fonts the web browser displays, with a fallback to default system fonts. To preserve local disk space, these fonts are obtained from our repository server at runtime by the client.
+
+To disable it, edit `config,json` and remove the lines:
+
+```
+"https://repo.jellyfin.org/releases/other/jellyfin-noto/font-faces.css",
+"https://repo.jellyfin.org/releases/other/jellyfin-noto/css/KR.css",
+"https://repo.jellyfin.org/releases/other/jellyfin-noto/css/JP.css",
+"https://repo.jellyfin.org/releases/other/jellyfin-noto/css/SC.css"
+```
+
+from the `fonts` section.

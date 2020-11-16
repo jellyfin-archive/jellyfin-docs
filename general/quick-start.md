@@ -7,11 +7,7 @@ title: Quick Start
 
 1. Install Jellyfin on [your system](xref:admin-installing) with the installation method for your platform.
 
-1. [OPTIONAL from 10.7.0 onwards] Edit the Jellyfin web configuration (`/usr/share/jellyfin/web/config.json` on Debuntu, or `/jellyfin/jellyfin-web/config.json` in Docker) and adjust the options to fit your desired privacy level; our defaults sacrifice some absolute self-hosting for well-requested features.
-
-    * If you wish to disable Chromecast support and callouts to Google, remove the line `"plugins/chromecastPlayer/plugin",` from the `plugins` section.
-    * If you wish to disable YouTube Trailer support and callouts to YouTube, remove the line `"plugins/youtubePlayer/plugin",` from the `plugins` section.
-    * If you wish to disable our custom `jellyfin-noto` font and callouts to our repository server, and fall back to system-local fonts only, remove the `.css` file lines under the `fonts` section.
+1. [OPTIONAL from 10.7.0 onwards] [Edit the Jellyfin web configuration](xref:web-config) and adjust the options to fit your desired privacy level; our defaults sacrifice some absolute self-hosting for well-requested features, and if this is concerning please review the documentation and edit accordingly.
 
 1. Browse to `http://127.0.0.1:8096` to access the included web client.
 

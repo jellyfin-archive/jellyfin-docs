@@ -3,9 +3,9 @@ uid: web-config
 title: Jellyfin Web configuration
 ---
 
-The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depends on the installation method.
-
 # Editing the configuration
+
+The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depends on the installation method.
 
 ## Debian/Ubuntu/Fedora/CentOS Packages
 

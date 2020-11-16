@@ -15,7 +15,7 @@ The configuration can be found at `/usr/share/jellyfin/web/config.json`. This fi
 
 Overriding the default `config.json` can be done with an additional volume parameter to your `docker run` command, e.g.
 
-```
+```sh
 --volume /path/to/config/web-config.json:/jellyfin/jellyfin-web/config.json
 ```
 
@@ -25,37 +25,37 @@ We would recommend obtaining the [latest copy of the file](https://github.com/je
 
 Our default settings for the Jellyfin Web `config.json` file include some features that privacy-focused or completely-offline users may with to disable. Each option is detailed below.
 
-### Google Chromecast support
+## Google Chromecast support
 
 By default, Jellyfin Web includes Chromecast-from-browser support. This requires downloading files from Google servers to support this functionality.
 
 To disable it, edit `config.json` and remove the line:
 
-```
+```json
 "plugins/chromecastPlayer/plugin"
 ```
 
 in the `plugins` section. Be sure to remove the last comma from the line above if this is the last line in the list.
 
-### YouTube Trailers support
+## YouTube Trailers support
 
 By default, Jellyfin Web includes functionality to auto-load movie trailers from YouTube. This functionality is disabled within Jellyfin by default, but the resources are included in the Web config to make enabling the feature easy.
 
 To disable it, edit `config.json` and remove the line:
 
-```
+```json
 "plugins/youtubePlayer/plugin",
 ```
 
 in the `plugins` section.
 
-### Jellyfin Fonts
+## Jellyfin Fonts
 
 By default, Jellyfin Web includes custom multilingual Unicode fonts to support multiple locales. This allows us to customize the fonts the web browser displays, with a fallback to default system fonts. To preserve local disk space, these fonts are obtained from our repository server at runtime by the client.
 
 To disable it, edit `config,json` and remove the lines:
 
-```
+```json
 "https://repo.jellyfin.org/releases/other/jellyfin-noto/font-faces.css",
 "https://repo.jellyfin.org/releases/other/jellyfin-noto/css/KR.css",
 "https://repo.jellyfin.org/releases/other/jellyfin-noto/css/JP.css",

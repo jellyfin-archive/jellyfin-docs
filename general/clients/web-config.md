@@ -3,7 +3,7 @@ uid: web-config
 title: Jellyfin Web configuration
 ---
 
-The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depend on the installation method.
+The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depends on the installation method.
 
 # Editing the configuration
 
@@ -20,7 +20,6 @@ Overriding the default `config.json` can be done with an additional volume param
 ```
 
 We would recommend obtaining the [latest copy of the file](https://github.com/jellyfin/jellyfin-web/blob/master/src/config.json) to pre-populate your configuration directory before starting Jellyfin for the first time; unlike most other components of this directory, it will not be created automatically on first run.
-
 
 # Privacy-focused changes
 
@@ -52,7 +51,7 @@ in the `plugins` section.
 
 ### Jellyfin Fonts
 
-By default, Jellyfin Web includes custom multilingual unicode fonts to support multiple locales. This allows us to customize the fonts the web browser displays, with a fallback to default system fonts. To preserve local disk space, these fonts are obtained from our repository server at runtime by the client.
+By default, Jellyfin Web includes custom multilingual Unicode fonts to support multiple locales. This allows us to customize the fonts the web browser displays, with a fallback to default system fonts. To preserve local disk space, these fonts are obtained from our repository server at runtime by the client.
 
 To disable it, edit `config,json` and remove the lines:
 

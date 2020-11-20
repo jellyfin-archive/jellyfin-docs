@@ -292,6 +292,40 @@ Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
 Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 ```
 
+### Configuring Tone mapping
+
+Tone mapping with Nvidia NVENC and AMD AMF is through OpenCL image support.
+
+    > [!NOTE]
+    > Make sure the hardware acceleration is well configured before reading this section.
+
+1. On Windows: Install the latest Nvidia or AMD driver is fairly enough.
+
+2. On Linux or docker:
+
+   - For Nvidia cards, install `nvidia-opencl-icd` on Debian/Ubuntu. Install `opencl-nvidia` on Arch.
+
+    ```sh
+    sudo apt update
+    sudo apt install nvidia-opencl-icd
+    ```
+    ```sh
+    sudo pacman -Sy
+    sudo pacman -S opencl-nvidia
+    ```
+
+   - For AMD cards, install `amdgpu-pro` with opencl arguments. See **Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS** for more details.
+
+    ```sh
+    sudo ./amdgpu-pro-install -y --opencl=pal,legacy
+    ```
+
+3. Check the OpenCL device status. You will see corresponding vendor name if it goes well.
+
+   - Use `clinfo`: Install `clinfo` before using it. `sudo apt install clinfo` on Debian/Ubuntu or `sudo pacman -S clinfo` on Arch. Then `sudo clinfo`
+
+   - Use `jellyfin-ffmpeg`: `/usr/lib/jellyfin-ffmpeg/ffmpeg -v debug -init_hw_device opencl`
+
 ### Configuring VAAPI acceleration on Debian/Ubuntu from `.deb` packages
 
 Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ensure permissions are correct.

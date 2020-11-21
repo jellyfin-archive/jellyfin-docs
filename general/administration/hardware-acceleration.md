@@ -310,8 +310,7 @@ Tone mapping with Nvidia NVENC and AMD AMF is through OpenCL image support.
     sudo apt install nvidia-opencl-icd
     ```
     ```sh
-    sudo pacman -Sy
-    sudo pacman -S opencl-nvidia
+    sudo pacman -Sy opencl-nvidia
     ```
 
    - For AMD cards, install `amdgpu-pro` with opencl arguments. See **Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS** for more details.
@@ -322,7 +321,7 @@ Tone mapping with Nvidia NVENC and AMD AMF is through OpenCL image support.
 
 3. Check the OpenCL device status. You will see corresponding vendor name if it goes well.
 
-   - Use `clinfo`: Install `clinfo` before using it. `sudo apt install clinfo` on Debian/Ubuntu or `sudo pacman -S clinfo` on Arch. Then `sudo clinfo`
+   - Use `clinfo`: Install `clinfo` before using it. `sudo apt update && sudo apt install clinfo -y` on Debian/Ubuntu or `sudo pacman -Sy clinfo` on Arch. Then `sudo clinfo`
 
    - Use `jellyfin-ffmpeg`: `/usr/lib/jellyfin-ffmpeg/ffmpeg -v debug -init_hw_device opencl`
 

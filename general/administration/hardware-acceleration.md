@@ -296,8 +296,8 @@ Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 
 Tone mapping with Nvidia NVENC and AMD AMF is through OpenCL image support.
 
-    > [!NOTE]
-    > Make sure the hardware acceleration is well configured before reading this section.
+> [!NOTE]
+> Make sure the hardware acceleration is well configured before reading this section.
 
 1. On Windows: Install the latest Nvidia or AMD driver is fairly enough.
 

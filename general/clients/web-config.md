@@ -46,7 +46,7 @@ By default, Jellyfin Web includes functionality to auto-load movie trailers from
 To disable it, edit `config.json` and remove the line:
 
 ```json
-"plugins/youtubePlayer/plugin",
+"plugins/youtubePlayer/plugin"
 ```
 
 in the `plugins` section.
@@ -55,7 +55,7 @@ in the `plugins` section.
 
 By default, Jellyfin Web includes custom multilingual Unicode fonts to support multiple locales. This allows us to customize the fonts the web browser displays, with a fallback to default system fonts. To preserve local disk space, these fonts are obtained from our repository server at runtime by the client.
 
-To disable it, edit `config,json` and remove the lines:
+To disable it, edit `config.json` and remove the lines:
 
 ```json
 "https://repo.jellyfin.org/releases/other/jellyfin-noto/font-faces.css",

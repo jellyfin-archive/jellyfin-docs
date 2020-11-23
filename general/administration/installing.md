@@ -90,7 +90,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
    ```sh
    docker run -d \
     --name jellyfin \
-    --user 1000:1000 \
+    --user uid:gid \
     --net=host \
     --volume /path/to/config:/config \
     --volume /path/to/cache:/cache \
@@ -122,7 +122,7 @@ Create a `docker-compose.yml` file with the following contents:
      jellyfin:
        image: jellyfin/jellyfin
        container_name: jellyfin
-       user: 1000:1000
+       user: uid:gid
        network_mode: "host"
        volumes:
          - /path/to/config:/config
@@ -186,7 +186,7 @@ Your completed `docker-compose.yml` file should look something like this:
    services:
      jellyfin:
        image: jellyfin/jellyfin
-       user: 1000:1000
+       user: uid:gid
        network_mode: "host"
        restart: "unless-stopped"
        runtime: nvidia

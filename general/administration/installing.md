@@ -525,7 +525,59 @@ Jellyfin can be found in the AUR as [`jellyfin`](https://aur.archlinux.org/packa
 
 ### Fedora
 
-Fedora 29 builds in RPM package format are available [here](https://jellyfin.org/downloads/#fedora) for now but an official Fedora repository is coming soon.
+Fedora builds, in RPM package format are available [here](https://jellyfin.org/downloads/#fedora) for now but an official Fedora repository is coming soon.
+
+1. You will need to enable rpmfusion as ffmpeg is a dependency of the jellyfin server package
+
+    ```sh
+    sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    ```
+
+    > [!NOTE]
+    > You do not need to manually install ffmpeg, it will be installed by the jellyfin server package as a dependency
+
+1. Install the jellyfin server
+
+    ```sh
+    sudo dnf install (link to version jellyfin server you want to install)
+    ```
+
+1. Install the jellyfin web interface
+
+    ```sh
+    sudo dnf install (link to web RPM you want to install)
+    ```
+
+1. Enable jellyfin service with systemd
+
+    ```sh
+    sudo systemctl start jellyfin
+    ```
+
+    ```sh
+    sudo systemctl enable jellyfin
+    ```
+
+1. Open jellyfin service with firewalld
+
+    ```sh
+    sudo firewall-cmd --permanent --add-service=jellyfin
+    ```
+
+    > [!NOTE]
+    > This will open the following ports
+    > 8096 TCP used by default for HTTP traffic, you can change this in the dashboard
+    > 8920 TCP used by default for HTTPS traffic, you can change this in the dashboard
+    > 1900 UDP used for service auto-discovery, this is not configurable
+    > 7359 UDP used for auto-discovery, this is not configurable
+
+1. Reboot your box
+
+    ```sh
+    sudo systemctl reboot
+    ```
+
+1. Go to localhost:8096 or ip-address-of-jellyfin-server:8096 to finish setup in the web UI
 
 ### CentOS
 

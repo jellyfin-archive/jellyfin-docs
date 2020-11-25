@@ -20,8 +20,7 @@ Movies
 
 ## Multiple Versions of a Movie
 
-Multiple versions of a movie can be stored together and presented
-as a single title. Place each movie version in the same folder and give each version a name with the folder name as a prefix as seen below.
+Multiple versions of a movie can be stored together and presented as a single title. Place each movie version in the same folder and give each version a name with the folder name as a prefix as seen below.
 
 ```txt
 Movies
@@ -50,3 +49,14 @@ If labels are not added to the end of filenames, as shown above, each file will 
 
 > [!Note]
 > To group media manually, long-click or right-click media to highlight then select additional media to merge. Use the new bar that appears to 'Group Versions'.
+
+### Order of Versions
+
+Movie versions are presented in an alphabetically sorted list. An exception applies to resolution names, which are sorted in descending order from largest to smalles resolution. A version name qualifies as a resolution name when ending with either a `p` or an `i`.
+
+> [!Note]
+> The first movie version in the list is the one selected by default.
+
+**Examples of sorting**
+* `1080p`, `2160p`, `360p`, `480p`, `720p` → `2160p`, `1080p`, `720p`, `480p`, `360p`
+* `Extended Cut`, `Cinematic Cut`, `Director's Cut` → `Cinematic Cut`, `Director's Cut`, `Extended Cut`

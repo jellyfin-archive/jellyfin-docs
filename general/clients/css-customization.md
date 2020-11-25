@@ -98,6 +98,12 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .channelsContainer { max-width: 8em; }
 ```
 
+### Remove More Like This
+
+```css
+#similarCollapsible { display: none !important; }
+```
+
 ### Background Image on Homepage
 
 [Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)

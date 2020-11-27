@@ -299,7 +299,7 @@ Currently, Tone mapping with Nvidia NVENC, AMD AMF and Intel VAAPI is through Op
 OS/Platform | NVIDIA NVENC | AMD AMF  | Intel VAAPI | AMD VAAPI | Intel QSV | Software
 ----------- | ------------ | -------- | ----------- | --------- | --------- | --------
 Linux       | OK           | OK       | OK          | planned   | planned   | planned
-Windows     | OK           | OK       | N/A         | planned   | planned   | planned
+Windows     | OK           | OK       | N/A         | N/A       | planned   | planned
 Docker      | OK           | untested | OK          | planned   | planned   | planned
 
 > [!NOTE]

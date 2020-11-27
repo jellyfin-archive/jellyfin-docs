@@ -328,6 +328,7 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
    - For Intel iGPUs, follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin, this step can be skipped.
 
 > [!NOTE]
+> Tone mapping on Intel VAAPI needs an iGPU that support 10-bit decoding.
 > Do not use the `intel-opencl-icd` package from the repository since they were not build with RELEASE_WITH_REGKEYS enabled for P010 pixel interop flags.
 
 3. Check the OpenCL device status. You will see corresponding vendor name if it goes well.

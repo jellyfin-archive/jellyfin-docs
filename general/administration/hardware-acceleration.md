@@ -305,7 +305,7 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
 > [!NOTE]
 > Make sure the hardware acceleration is well configured before reading this section.
 
-1. On Windows: Install the latest Nvidia or AMD driver is fairly enough.
+1. On Windows: Install the latest Nvidia or AMD drivers.
 
 2. On Linux or docker:
 

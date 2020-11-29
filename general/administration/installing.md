@@ -431,7 +431,7 @@ Closing the terminal window will end Jellyfin. Running Jellyfin in screen or tmu
 The portable version doesn't come with FFmpeg by default, so to install FFmpeg you have three options.
 * use the package manager homebrew by typing `brew install ffmpeg` into your Terminal ([here's how to install homebrew if you don't have it already](https://treehouse.github.io/installation-guides/mac/homebrew)
 * download the most recent static build from [this link](https://evermeet.cx/ffmpeg/get/zip) (compiled by a third party see [this page](https://evermeet.cx/ffmpeg/) for options and information), or
-* compile from source available from the it's [website](https://ffmpeg.org/download.html)
+* compile from source available from the official [website](https://ffmpeg.org/download.html)
 
 More detailed download options, documentation, and signatures can be found.
 

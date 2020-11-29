@@ -433,7 +433,7 @@ The portable version doesn't come with FFmpeg by default. To install FFmpeg you 
 * download the most recent static build from [this link](https://evermeet.cx/ffmpeg/get/zip) (compiled by a third party see [this page](https://evermeet.cx/ffmpeg/) for options and information), or
 * compile from source available from the it's [website](https://ffmpeg.org/download.html)
 
-More detailed download options, documentation and signatures can be found .
+More detailed download options, documentation, and signatures can be found.
 
 If using static build, extract it to the `/Applications/` folder.
 

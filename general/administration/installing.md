@@ -525,7 +525,7 @@ Jellyfin can be found in the AUR as [`jellyfin`](https://aur.archlinux.org/packa
 
 ### Fedora
 
-Fedora builds, in RPM package format are available [here](https://jellyfin.org/downloads/#fedora) for now but an official Fedora repository is coming soon.
+Fedora builds in RPM package format are available [here](https://jellyfin.org/downloads/#fedora) for now but an official Fedora repository is coming soon.
 
 1. You will need to enable rpmfusion as ffmpeg is a dependency of the jellyfin server package
 

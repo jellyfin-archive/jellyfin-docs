@@ -57,6 +57,7 @@ Movie versions are presented in an alphabetically sorted list. An exception appl
 > [!Note]
 > The first movie version in the list is the one selected by default.
 
-**Examples of sorting**
+#### Examples of sorting
+
 * `1080p`, `2160p`, `360p`, `480p`, `720p` → `2160p`, `1080p`, `720p`, `480p`, `360p`
 * `Extended Cut`, `Cinematic Cut`, `Director's Cut` → `Cinematic Cut`, `Director's Cut`, `Extended Cut`

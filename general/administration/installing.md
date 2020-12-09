@@ -130,6 +130,9 @@ Create a `docker-compose.yml` file with the following contents:
          - /path/to/media:/media
          - /path/to/media2:/media2:ro
        restart: "unless-stopped"
+       # Optional - alternative address used for autodiscovery
+       environment:
+         - JELLYFIN_PublishedServerUrl=http://example.com
    ```
 
 Then while in the same folder as the `docker-compose.yml` run:

@@ -160,7 +160,7 @@ Terminal player for Jellyfin, written in Python.
 
 ### Jellyamp
 
-Desktop client for listening to music from a Jellyfin server .
+Desktop client for listening to music from a Jellyfin server.
 
 **Status:** ⭐ Active, 3rd-Party
 

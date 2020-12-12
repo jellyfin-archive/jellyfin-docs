@@ -309,12 +309,16 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
 
 2. On Linux or docker:
 
-   - For Nvidia cards, install `nvidia-opencl-icd` on Debian/Ubuntu. Install `opencl-nvidia` on Arch.
+   - For Nvidia cards, install `nvidia-opencl-icd` on Debian/Ubuntu:
 
     ```sh
     sudo apt update
     sudo apt install nvidia-opencl-icd
     ```
+
+    If presented with multiple package options, choose the one that matches the version of your current nvidia driver (`apt list --installed | grep nvidia`).
+
+    Install `opencl-nvidia` on Arch:
 
     ```sh
     sudo pacman -Sy opencl-nvidia

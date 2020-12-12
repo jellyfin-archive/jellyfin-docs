@@ -315,7 +315,7 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
     sudo apt update
     sudo apt install nvidia-opencl-icd
     ```
-    
+
     If presented with multiple package options, choose the one that matches the version of your current nvidia driver (`apt list --installed | grep nvidia`).
 
     Install `opencl-nvidia` on Arch:

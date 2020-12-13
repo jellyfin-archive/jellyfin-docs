@@ -117,7 +117,7 @@ Bind Mounts are needed to pass folders from the host OS to the container OS wher
 Create a `docker-compose.yml` file with the following contents:
 
    ```yml
-   version: "3.8"
+   version: "3.5"
    services:
      jellyfin:
        image: jellyfin/jellyfin

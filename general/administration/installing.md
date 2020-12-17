@@ -90,7 +90,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
    ```sh
    docker run -d \
     --name jellyfin \
-    --user 1000:1000 \
+    --user uid:gid \
     --net=host \
     --volume /path/to/config:/config \
     --volume /path/to/cache:/cache \
@@ -117,12 +117,12 @@ Bind Mounts are needed to pass folders from the host OS to the container OS wher
 Create a `docker-compose.yml` file with the following contents:
 
    ```yml
-   version: "3"
+   version: "3.5"
    services:
      jellyfin:
        image: jellyfin/jellyfin
        container_name: jellyfin
-       user: 1000:1000
+       user: uid:gid
        network_mode: "host"
        volumes:
          - /path/to/config:/config
@@ -130,6 +130,9 @@ Create a `docker-compose.yml` file with the following contents:
          - /path/to/media:/media
          - /path/to/media2:/media2:ro
        restart: "unless-stopped"
+       # Optional - alternative address used for autodiscovery
+       environment:
+         - JELLYFIN_PublishedServerUrl=http://example.com
    ```
 
 Then while in the same folder as the `docker-compose.yml` run:
@@ -186,7 +189,7 @@ Your completed `docker-compose.yml` file should look something like this:
    services:
      jellyfin:
        image: jellyfin/jellyfin
-       user: 1000:1000
+       user: uid:gid
        network_mode: "host"
        restart: "unless-stopped"
        runtime: nvidia

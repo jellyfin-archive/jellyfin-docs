@@ -73,7 +73,7 @@ server {
     # location block for /web - This is purely for aesthetics so /web/#!/ works instead of having to go to /web/index.html/#!/
     location ~ ^/web/$ {
         # Proxy main Jellyfin traffic
-        proxy_pass http://$jellyfin:8096/web/index.html/;
+        proxy_pass http://$jellyfin:8096/web/index.html/$1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -186,7 +186,7 @@ proxy_set_header Connection "";
 location /videos/
   {
   proxy_pass http://myJF-IP:8096;
-  proxy_cache_key "mydomain.com$uri?MediaSourceId=$arg_MediaSourceId&VideoCodec=$arg_VideoCodec&AudioCodec=$arg_AudioCodec&AudioStreamIndex=$arg_AudioStreamIndex&VideoBitrate=$arg_VideoBitrate&AudioBitrate=$arg_AudioBitrate&SubtitleMethod=$arg_SubtitleMethod&TranscodingMaxAudioChannels=$arg_TranscodingMaxAudioChannels&RequireAvc=$arg_RequireAvc&SegmentContainer=$arg_SegmentContainer&MinSegments=$arg_MinSegments&BreakOnNonKeyFrames=$arg_BreakOnNonKeyFrames&h264-profile=$h264Profile&h264-level=$h264Level&TranscodeReasons=$arg_TranscodeReasons";
+  proxy_cache_key "mydomain.com$uri?MediaSourceId=$arg_MediaSourceId&VideoCodec=$arg_VideoCodec&AudioCodec=$arg_AudioCodec&AudioStreamIndex=$arg_AudioStreamIndex&VideoBitrate=$arg_VideoBitrate&AudioBitrate=$arg_AudioBitrate&SubtitleMethod=$arg_SubtitleMethod&TranscodingMaxAudioChannels=$arg_TranscodingMaxAudioChannels&RequireAvc=$arg_RequireAvc&SegmentContainer=$arg_SegmentContainer&MinSegments=$arg_MinSegments&BreakOnNonKeyFrames=$arg_BreakOnNonKeyFrames&h264-profile=$h264Profile&h264-level=$h264Level";
   proxy_cache_valid 200 301 302 30d;
   }
 ```

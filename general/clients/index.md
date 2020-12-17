@@ -8,7 +8,7 @@ title: Clients
 Clients connect your devices to your Jellyfin server and let you view your content on any supported device. You can find a list of clients below with their current development status.
 
 > [!NOTE]
-> Many clients have no active maintainers at the moment. If you interested in helping out, please see our [contribution guide](xref:contrib-index) and feel free to contact us for more information!
+> If you are interested in helping out, please see our [contribution guide](xref:contrib-index) and feel free to contact us for more information!
 >
 > They aren't on this page, some of them can be found at the [jellyfin-archive organization on GitHub](https://github.com/jellyfin-archive).
 
@@ -160,7 +160,7 @@ Terminal player for Jellyfin, written in Python.
 
 ### Jellyamp
 
-Desktop client for listening to music from a Jellyfin server .
+Desktop client for listening to music from a Jellyfin server.
 
 **Status:** ⭐ Active, 3rd-Party
 

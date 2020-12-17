@@ -139,13 +139,13 @@ apt-get install curl
 Edit `sources.list` in `/etc/apt/sources.list` and add `non-free contrib` to each source as required.
 
 ```data
-deb http://deb.debian.org/debian/ stretch main
+deb http://deb.debian.org/debian/ buster main
 ```
 
 The line above should be modified to match the following line as an example.
 
 ```data
-deb http://deb.debian.org/debian/ stretch main non-free contrib
+deb http://deb.debian.org/debian/ buster main non-free contrib
 ```
 
 Download and add the sources for the Nvidia docker container.
@@ -292,11 +292,65 @@ Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
 Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 ```
 
+### Configuring OpenCL accelerated Tone mapping
+
+Currently, Tone mapping with Nvidia NVENC, AMD AMF and Intel VAAPI is through OpenCL image support.
+
+OS/Platform | NVIDIA NVENC | AMD AMF  | Intel VAAPI | AMD VAAPI | Intel QSV | Software
+----------- | ------------ | -------- | ----------- | --------- | --------- | --------
+Linux       | OK           | OK       | OK          | planned   | planned   | planned
+Windows     | OK           | OK       | N/A         | N/A       | planned   | planned
+Docker      | OK           | untested | OK          | planned   | planned   | planned
+
+> [!NOTE]
+> Make sure the hardware acceleration is well configured before reading this section.
+
+1. On Windows: Install the latest Nvidia or AMD drivers.
+
+2. On Linux or docker:
+
+   - For Nvidia cards, install `nvidia-opencl-icd` on Debian/Ubuntu:
+
+    ```sh
+    sudo apt update
+    sudo apt install nvidia-opencl-icd
+    ```
+
+    If presented with multiple package options, choose the one that matches the version of your current nvidia driver (`apt list --installed | grep nvidia`).
+
+    Install `opencl-nvidia` on Arch:
+
+    ```sh
+    sudo pacman -Sy opencl-nvidia
+    ```
+
+   - For AMD cards, install `amdgpu-pro` with opencl arguments. See **Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS** for more details.
+
+    ```sh
+    sudo ./amdgpu-pro-install -y --opencl=pal,legacy
+    ```
+
+   - For Intel iGPUs, follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin, this step can be skipped.
+
+   > [!NOTE]
+   > Tone mapping on Intel VAAPI needs an iGPU that supports 10-bit decoding.
+   > Do not use the `intel-opencl-icd` package from the repository since they were not build with RELEASE_WITH_REGKEYS enabled for P010 pixel interop flags.
+
+3. Check the OpenCL device status. You will see corresponding vendor name if it goes well.
+
+   - Use `clinfo`: Install `clinfo` before using it. `sudo apt update && sudo apt install clinfo -y` on Debian/Ubuntu or `sudo pacman -Sy clinfo` on Arch. Then `sudo clinfo`
+
+   - Use `jellyfin-ffmpeg`: `/usr/lib/jellyfin-ffmpeg/ffmpeg -v debug -init_hw_device opencl`
+
 ### Configuring VAAPI acceleration on Debian/Ubuntu from `.deb` packages
 
 Configuring VAAPI on Debian/Ubuntu requires some additional configuration to ensure permissions are correct.
 
 To check information about VAAPI on your system install and run `vainfo` from the command line.
+
+   > [!NOTE]
+   > For Intel Comet Lake or newer iGPUs, the legacy i965 VAAPI driver is incompatible with your hardware.
+   > Please follow the instructions from **Configuring Intel QuickSync(QSV) on Debian/Ubuntu** to get the newer iHD driver.
 
 1. Configure VAAPI for your system by following the [relevant documentation](https://wiki.archlinux.org/index.php/Hardware_video_acceleration). Verify that a `render` device is now present in `/dev/dri`, and note the permissions and group available to write to it, in this case `render`:
 
@@ -337,7 +391,8 @@ To check information about VAAPI on your system install and run `vainfo` from th
    ```
 
    > [!NOTE]
-   > intel-media-va-driver-non-free is avaliable from apt since Debian buster and Ubuntu 19.04. Otherwise you have to build from source.
+   > For Intel Comet Lake or newer iGPUs, make sure the version of `intel-media-va-driver-non-free` >= 19.1.
+   > `intel-media-va-driver-non-free` is avaliable from apt since Debian buster and Ubuntu 19.04. Otherwise you have to build from source.
 
 4. Verify iHD driver using `vainfo`. You will find `iHD` from the result if it goes well.
 

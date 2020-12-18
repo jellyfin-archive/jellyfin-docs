@@ -11,16 +11,17 @@ The most common naming scheme for shows is categorizing the files by series and 
 Shows
 ├── Series (2010)
 │   ├── Season 01
-│   │   ├── Episode S01E01.mkv
-│   │   └── Episode S01E02.mkv
+│   │   ├── Episode S01E01-E02.mkv
+│   │   ├── Episode S01E03.mkv
+│   │   └── Episode S01E04.mkv
 │   └── Season 02
 │       ├── Episode S02E01.mkv
 │       └── Episode S02E02.mkv
 └── Series (2018)
     ├── Episode S01E01.mkv
     ├── Episode S01E02.mkv
-    ├── Episode S02E01.mkv
-    └── Episode S02E02.mkv
+    ├── Episode S02E01-E02.mkv
+    └── Episode S02E03.mkv
 ```
 
 > [!NOTE]

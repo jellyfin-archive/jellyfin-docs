@@ -98,10 +98,16 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .channelsContainer { max-width: 8em; }
 ```
 
+### Remove Cast & Crew
+
+```css
+#castCollapsible { display: none; }
+```
+
 ### Remove More Like This
 
 ```css
-#similarCollapsible { display: none !important; }
+#similarCollapsible { display: none; }
 ```
 
 ### Background Image on Homepage

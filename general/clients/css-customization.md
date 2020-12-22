@@ -99,6 +99,7 @@ This will affect the played/watched indicator. Replace the hex color with any va
 ```
 
 ### Remove Cast & Crew
+
 ```css
 #castCollapsible { display: none; }
 ```

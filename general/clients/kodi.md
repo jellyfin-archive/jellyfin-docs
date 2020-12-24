@@ -134,6 +134,6 @@ If you find you cannot perform a full scan on a certain device though please try
 
 >* Note: For this to work client 1 and 2 should be running the same kodi major versions.
 >* Note: For this whole process to be working correctly you should see a square per client.
->* If you do notice that only 1 square is present  try rebooting each client one at a time.
+>* If you do notice that only 1 square is present, try rebooting each client one at a time.
 >* If you do see that they are "fighting for a slot" then jellyfin views them both as the same.
 >* Try removing client 1's KODI_FOLDER/userdata/addon_data/plugin.video.jellyfin/jellyfin_guid and repeat from step 4.

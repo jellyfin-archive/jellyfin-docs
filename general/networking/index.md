@@ -46,7 +46,7 @@ Live TV devices will often use a random UDP port for HDHomeRun devices. The serv
 
 ### Health Check Endpoint
 
-Jellyfin exposes the `/health` endpoint designated for checking the status of the underlying service.  Currently this will verify http and database connectivity and return a `200 OK` response if successful.
+Jellyfin exposes the `/health` endpoint designated for checking the status of the underlying service. Currently this will verify HTTP and database connectivity and return a `200 OK` response if successful.
 
 ```sh
 curl http://myserver:8096/health

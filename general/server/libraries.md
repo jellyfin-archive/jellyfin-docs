@@ -14,7 +14,7 @@ You will see a page to add libraries when you first create the server, but they 
 3. Select `User` > `Settings`
 4. On the menu that appears, click `Admin` > `Dashboard`.
 5. Then again on the left side menu go to `Server` > `Libraries`.
-6. Click "Add Media Library". 
+6. Click "Add Media Library".
 7. The server will now add your new media. There will be a progress bar at the top of the page indicating its progress.
 
 ## Content

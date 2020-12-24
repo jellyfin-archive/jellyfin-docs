@@ -119,8 +119,6 @@ Movies
 
 If you would rather keep everything in a single folder, you can append special suffixes to the filename which Jellyfin picks up and uses to identify the file as an extra. Note that, with a few noted exceptions, these suffexes **DO NOT** contain any spaces.
 
-Supported file suffexes are:
-
 <!-- markdownlint-disable MD038 -->
 * `-trailer`
 * `.trailer`

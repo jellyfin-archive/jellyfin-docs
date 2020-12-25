@@ -47,9 +47,6 @@ Movies
 
 If labels are not added to the end of filenames, as shown above, each file will be treated as a unique movie and not a version of the same movie.
 
-> [!Note]
-> To group media manually, long-click or right-click media to highlight then select additional media to merge. Use the new bar that appears to 'Group Versions'.
-
 ### Order of Versions
 
 Movie versions are presented in an alphabetically sorted list. An exception applies to resolution names, which are sorted in descending order from highest to lowest resolution. A version name qualifies as a resolution name when ending with either a `p` or an `i`.
@@ -61,3 +58,98 @@ Movie versions are presented in an alphabetically sorted list. An exception appl
 
 * `1080p`, `2160p`, `360p`, `480p`, `720p` → `2160p`, `1080p`, `720p`, `480p`, `360p`
 * `Extended Cut`, `Cinematic Cut`, `Director's Cut` → `Cinematic Cut`, `Director's Cut`, `Extended Cut`
+
+> [!Note]
+> To group media manually, long-click or right-click media to highlight then select additional media to merge. Use the new bar that appears to 'Group Versions'.
+
+## Movie extras
+
+Movie extras can include deleted scenes, interviews, and other various things that you would want to include alongside your movie. Jellyfin supports several different methods of adding these files.
+
+### Extras folders
+
+One of the cleanest ways of adding extras is to place them in subfolders within your movie folder.
+
+Supported folder types are:
+
+* `behind the scenes`
+* `deleted scenes`
+* `interviews`
+* `scenes`
+* `samples`
+* `shorts`
+* `featurettes`
+* `extras` - Generic catch all for extras of an unknown type.
+
+```txt
+Movies
+└── Best_Movie_Ever (2019)
+    ├── Best_Movie_Ever (2019) - 1080P.mp4
+    ├── Best_Movie_Ever (2019) - 720P.mp4
+    ├── Best_Movie_Ever (2019) - Directors Cut.mp4
+    ├── behind the scenes
+    │   ├── Making of the Best Movie Ever.mp4
+    │   └── Finding the right score.mp4
+    ├── interviews
+    │   └── Interview with the Director.mp4
+    └── extras
+        └── Home recreation.mp4
+```
+
+### File Name
+
+Some types of extras support a special option if you only have a single of that type. These options are to name the filename a specific word when stored in the same folder as the movie.
+
+Supported filenames are:
+
+* `trailer`
+* `sample`
+* `theme` - Audio file of the theme song
+
+```txt
+Movies
+└── Best_Movie_Ever (2019)
+    ├── Best_Movie_Ever (2019) - 1080P.mp4
+    ├── sample.mp4
+    ├── theme.mp3
+    └── trailer.mp4
+```
+
+### File Suffix
+
+If you would rather keep everything in a single folder, you can append special suffixes to the filename which Jellyfin picks up and uses to identify the file as an extra. Note that, with a few noted exceptions, these suffexes **DO NOT** contain any spaces.
+
+<!-- markdownlint-disable MD038 -->
+* `-trailer`
+* `.trailer`
+* `_trailer`
+* ` trailer` - This is a space followed by the word `trailer`
+* `-sample`
+* `.sample`
+* `_sample`
+* ` sample` - This is a space followed by the word `sample`
+* `-scene`
+* `-clip`
+* `-interview`
+* `-behindthescenes`
+* `-deleted`
+* `-featurette`
+* `-short`
+<!-- markdownlint-enable MD038 -->
+
+```txt
+Movies
+└── Best_Movie_Ever (2019)
+    ├── Best_Movie_Ever (2019) - 1080P.mp4
+    ├── That clip that I want everyone to see-clip.mp4
+    ├── Release Trailer-trailer.mp4
+    ├── Preview Trailer.trailer.avi
+    ├── Release Trailer 2_trailer.avi
+    ├── Teaser.sample.mp4
+    ├── Favorite Scene-scene.mp4
+    ├── The Best Ever-clip.mp4
+    ├── Making of The Best Movie Ever-behindthescenes.mp4
+    ├── Not the best scene-deleted.mp4
+    ├── Theme Song Music Video-featurette.mp4
+    └── Art of the Best Movie Ever-short.mp4
+```

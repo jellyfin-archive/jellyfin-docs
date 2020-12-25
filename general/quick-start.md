@@ -9,7 +9,7 @@ title: Quick Start
 
 1. [OPTIONAL from 10.7.0 onwards] [Edit the Jellyfin web configuration](xref:web-config) and adjust the options to fit your desired privacy level; our defaults sacrifice some absolute self-hosting for well-requested features, and if this is concerning please review the documentation and edit accordingly.
 
-1. Browse to `http://127.0.0.1:8096` to access the included web client.
+1. Browse to `http://SERVER_IP:8096` to access the included web client.
 
 1. Follow the initial setup wizard.
 

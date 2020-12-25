@@ -112,7 +112,7 @@ These options allow you to restrict access to libraries, or from devices.
 
 These options allow you to restrict access to specific content by this user or the timeframe in which they may access. Content that matches these restrictions will be hidden, while the timeframe effectively disables the user.
 
-`Maximum allowed parental rating` Allows you to select the highest rating __allowed to show up__ for this user.
+`Maximum allowed parental rating` Allows you to select the highest rating **allowed to show up** for this user.
 
 `Block items with no or unrecognised rating information` Allows you to always hide items with no or unrecognised rating information.
 

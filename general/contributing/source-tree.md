@@ -48,7 +48,6 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
         - img: `images for things like device icons and logos`
         - splash: `progressive web apps will show these splash screens`
     - components: `custom elements used for different sections of the user interface`
-        - playerstats:
         - playerstats.js: `display playback info in browsers and other clients that include the web source`
     - controllers: `scripts that handle the logic for different pages`
     - elements: `custom UI components that are used globally such as buttons or menus`

@@ -16,6 +16,7 @@ Many plugins are available in a repository hosted on our servers, which can be e
 **Note to Windows Users:**
 Due to currently unresolved permission issues on Jellyfin Windows installs it is not possible to update and/or uninstall plugins from the UI.
 To update and/or uninstall plugins you must stop Jellyfin, navigate to the local *plugins folder* and delete the `.dll` files for the plugins you want to update and/or uninstall.
+
 The *plugins folder* is located in different locations depending on your install:
 
 * `%UserProfile%\AppData\Local\jellyfin\plugins` for direct installs
@@ -80,7 +81,7 @@ Supports several different metadata providers and options for organizing your co
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
 
-#### Email Notifications
+#### Email
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-emailnotifications.svg)](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
 [![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-emailnotifications.svg)](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
@@ -104,14 +105,6 @@ Scrape poster images for movies, shows, and artists in your library from [fanart
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-fanart)
 
-#### IPTV
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
-
-Allows you to add IPTV feeds to Jellyfin.
-
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-iptv)
@@ -128,7 +121,7 @@ Helps keep Jellyfin for Kodi in sync with the library without needing to run per
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-kodisyncqueue)
 
-#### LDAP Authentication
+#### LDAP
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-ldapauth.svg)](https://github.com/jellyfin/jellyfin-plugin-ldapauth)
 [![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-ldapauth.svg)](https://github.com/jellyfin/jellyfin-plugin-ldapauth)
@@ -213,7 +206,7 @@ Requires [ServerWMC](https://serverwmc.github.io/) to be installed and running o
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
 
-#### Slack Notifications
+#### Slack
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-slack.svg)](https://github.com/jellyfin/jellyfin-plugin-slack)
 [![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-slack.svg)](https://github.com/jellyfin/jellyfin-plugin-slack)

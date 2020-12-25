@@ -12,9 +12,9 @@ jobs:
   markdownlint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup problem matcher
+      - name: Setup Problem Matcher
         uses: xt0rted/markdownlint-problem-matcher@v1
-      - name: Run markdownlint
+      - name: Run Markdownlint
         run: npx --package markdownlint-cli markdownlint '**/*.md' --ignore node_modules --ignore src

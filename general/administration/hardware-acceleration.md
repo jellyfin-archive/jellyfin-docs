@@ -26,12 +26,14 @@ RPi     | OMX, VAAPI
 ## VAAPI
 
 List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables). Both Intel iGPU and AMD GPU can use VAAPI.
+
 > [!NOTE]
 > AMD GPU requires open source driver Mesa 20.1 or higher to support hardware decoding HEVC.
 
 ## AMD AMF
 
 AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver `amdgpu-pro` is required when using AMF on Linux.
+
 > [!NOTE]
 > Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
 
@@ -226,14 +228,14 @@ nvidia-smi
 docker run --gpus 0 nvidia/cuda:9.0-base nvidia-smi
 ```
 
-Validate access to needed ressources from host and docker.
+Validate access to needed resources from host and docker.
 
 ```sh
 ldconfig -p | grep cuvid
 ldconfig -p | grep libnvidia-encode.so.1
 ```
 
-Start your container adding those environement parameters.
+Start your container adding those environment parameters.
 
 ```sh
 -e NVIDIA_DRIVER_CAPABILITIES=all \
@@ -295,9 +297,9 @@ Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
 Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 ```
 
-### Configuring OpenCL accelerated Tone mapping
+### Configuring OpenCL Accelerated Tone Mapping
 
-Currently, Tone mapping with Nvidia NVENC, AMD AMF and Intel VAAPI is through OpenCL image support.
+Currently, tone mapping with Nvidia NVENC, AMD AMF and Intel VAAPI is through OpenCL image support.
 
 OS/Platform | NVIDIA NVENC | AMD AMF  | Intel VAAPI | AMD VAAPI | Intel QSV | Software
 ----------- | ------------ | -------- | ----------- | --------- | --------- | --------
@@ -452,13 +454,13 @@ Useful Resources:
 
 1. Install `amdgpu-pro` closed source graphics driver by following the [installation instructions](https://amdgpu-install.readthedocs.io/en/latest/).
 
-2. Then install `amf-amdgpu-pro`:
+2. Then install `amf-amdgpu-pro`.
 
    ```bash
    sudo apt install amf-amdgpu-pro
    ```
 
-3. Make sure your `jellyfin-ffmpeg` or `ffmpeg` contains `h264_amf` encoder:
+3. Make sure your `jellyfin-ffmpeg` or `ffmpeg` contains `h264_amf` encoder.
 
    ```bash
    $ cd /usr/lib/jellyfin-ffmpeg/
@@ -479,13 +481,13 @@ Useful Resources:
 
 AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fortunately, a third-party packaged `amdgpu-pro-installer` is provided in the archlinux user repository.
 
-1. Clone [this repository](https://aur.archlinux.org/pkgbase/amdgpu-pro-installer/) using `git`:
+1. Clone [this repository](https://aur.archlinux.org/pkgbase/amdgpu-pro-installer/) using `git`.
 
    ```bash
    git clone https://aur.archlinux.org/amdgpu-pro-installer.git
    ```
 
-2. Enter that folder and make the installation package and install it:
+2. Enter that folder and make the installation package and install it.
 
    ```bash
    cd amdgpu-pro-installer

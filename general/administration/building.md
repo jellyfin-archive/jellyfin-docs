@@ -100,13 +100,13 @@ All package builds begin with these two steps:
 
 8. Jellyfin is now available in the default directory, or whichever directory you chose.
 
-    * Start it from PowerShell
+    * Start it from PowerShell.
 
         ```powershell
         &"$env:APPDATA\Jellyfin-Server\jellyfin.exe"
         ```
 
-    * Start it from CMD
+    * Start it from CMD.
 
         ```cmd
         %APPDATA%\Jellyfin-Server\jellyfin.exe

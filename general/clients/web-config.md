@@ -1,11 +1,11 @@
 ---
 uid: web-config
-title: Jellyfin Web configuration
+title: Jellyfin Web Configuration
 ---
 
-# Jellyfin Web configuration
+# Jellyfin Web Configuration
 
-## Editing the configuration
+## Editing
 
 The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depends on the installation method.
 
@@ -27,7 +27,7 @@ We would recommend obtaining the [latest copy of the file](https://github.com/je
 
 Our default settings for the Jellyfin Web `config.json` file include some features that privacy-focused or completely-offline users may with to disable. Each option is detailed below.
 
-### Google Chromecast support
+### Google Chromecast
 
 By default, Jellyfin Web includes Chromecast-from-browser support. This requires downloading files from Google servers to support this functionality.
 
@@ -39,7 +39,7 @@ To disable it, edit `config.json` and remove the line:
 
 in the `plugins` section. Be sure to remove the last comma from the line above if this is the last line in the list.
 
-### YouTube Trailers support
+### YouTube Trailers
 
 By default, Jellyfin Web includes functionality to auto-load movie trailers from YouTube. This functionality is disabled within Jellyfin by default, but the resources are included in the Web config to make enabling the feature easy.
 

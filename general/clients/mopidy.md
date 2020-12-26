@@ -69,7 +69,7 @@ Utilizing a Raspberry Pi (or other small form factor computer) it's possible to 
 
 ## Config File
 
-The config file for mopidy is divided into sections in an INI format. An example for Jellyfin is shown here.
+The config file for Mopidy is divided into sections in an INI format. An example for Jellyfin is shown here.
 
 ```ini
 [jellyfin]
@@ -110,14 +110,8 @@ Once Mopidy is running, you can connect and control it with your client of choic
 
 ## Upgrading
 
-When a new version of Mopidy Jellyfin is released, you can upgrade via pip using the `--upgrade` flag.  Using the install examples from above:
+When a new version of Mopidy Jellyfin is released, you can upgrade via pip using the `--upgrade` flag.
 
 ```sh
 pip3 install --user --upgrade mopidy-jellyfin
-```
-
-or
-
-```sh
-sudo pip3 install --upgrade mopidy-jellyfin
 ```

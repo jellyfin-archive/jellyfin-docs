@@ -54,7 +54,7 @@ Movie versions are presented in an alphabetically sorted list. An exception appl
 > [!Note]
 > The first movie version in the list is the one selected by default.
 
-#### Examples of sorting
+#### Examples of Sorting
 
 * `1080p`, `2160p`, `360p`, `480p`, `720p` → `2160p`, `1080p`, `720p`, `480p`, `360p`
 * `Extended Cut`, `Cinematic Cut`, `Director's Cut` → `Cinematic Cut`, `Director's Cut`, `Extended Cut`
@@ -62,11 +62,11 @@ Movie versions are presented in an alphabetically sorted list. An exception appl
 > [!Note]
 > To group media manually, long-click or right-click media to highlight then select additional media to merge. Use the new bar that appears to 'Group Versions'.
 
-## Movie extras
+## Movie Extras
 
 Movie extras can include deleted scenes, interviews, and other various things that you would want to include alongside your movie. Jellyfin supports several different methods of adding these files.
 
-### Extras folders
+### Extras Folders
 
 One of the cleanest ways of adding extras is to place them in subfolders within your movie folder.
 

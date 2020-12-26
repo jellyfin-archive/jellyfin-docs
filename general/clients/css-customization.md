@@ -77,7 +77,7 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ![Screenshot of watched indicators with a custom green color applied](~/images/custom-css-greenwatched.png)
 
-### Transparent And Dark Indicators (using RGBA hex value)
+### Transparent And Dark Indicators
 
 ```css
 /* Make watched icon dark and transparent */
@@ -124,7 +124,6 @@ This will affect the played/watched indicator. Replace the hex color with any va
 ### Transparent Top Menu
 
 ```css
-/* Top menu transparency */
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {background:none; background-color:rgba(0, 0, 0, 0);}
 .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {background:none; background-color:rgba(0, 0, 0, 0);}
 ```
@@ -453,10 +452,6 @@ An example of a color theme.
 ## Community Links
 
 Some links to places where custom CSS has been discussed and shared!
-
-### Emby Web App Custom CSS
-
-* [Custom CSS with Emby Web App](https://emby.media/community/index.php?/topic/18046-custom-css-with-emby-web-app)
 
 ### Community Posts
 

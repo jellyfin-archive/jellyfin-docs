@@ -54,17 +54,17 @@ Additionally the [LinuxServer.io](https://www.linuxserver.io/) project and [hoti
 
 [Docker](https://www.docker.com/) allows you to run containers on Linux, Windows and MacOS.
 
-The basic steps to create and run a Jellyfin container using Docker are as follows:
+The basic steps to create and run a Jellyfin container using Docker are as follows.
 
-1. Follow the [offical installation guide to install Docker](https://docs.docker.com/engine/install/).
+1. Follow the [offical installation guide to install Docker](https://docs.docker.com/engine/install).
 
-2. Download the latest container image:
+2. Download the latest container image.
 
    ```sh
    docker pull jellyfin/jellyfin
    ```
 
-3. Create persistent storage for configuration and cache data:
+3. Create persistent storage for configuration and cache data.
 
    Either create two persistent volumes:
 
@@ -80,7 +80,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
    mkdir /path/to/cache
    ```
 
-4. Create and run a container in one of the following ways:
+4. Create and run a container in one of the following ways.
 
 > [!Note]
 > The default network mode for Docker is bridge mode. Bridge mode will be used if host mode is omitted. Use host mode for networking in order to use DLNA or an HDHomeRun.
@@ -227,7 +227,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 ### Podman
 
-[Podman](https://podman.io/) allows you to run containers as non-root. It's also the offically supported container solution on RHEL and CentOS.
+[Podman](https://podman.io) allows you to run containers as non-root. It's also the offically supported container solution on RHEL and CentOS.
 
 Steps to run Jellyfin using Podman are almost identical to Docker steps:
 

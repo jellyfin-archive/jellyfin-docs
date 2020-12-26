@@ -11,16 +11,16 @@ This document is a guide for the core team, provided publicly to ensure transpar
 
 Jellyfin uses [semantic versioning](https://semver.org). All releases will have versions in the `X.Y.Z` format, starting from `10.0.0`. Note however that the `10.Y.Z` release chain represents the "cleanup" of the codebase, so it should be accepted that `10.Y.Z` breaks all compatibility, at some point, with previous Emby-compatible interfaces, and may also break compatibility with previous `10.Y` releases if required for later cleanup work. Our versioning will typically follow the patterns below:
 
-### `X` - Major Versions
+### X: Major Versions
 
 * Breaks compatibility with the HTTP or plugin APIs
 
-### `Y` - Minor Versions
+### Y: Minor Versions
 
 * Introduces new features
 * Makes minor backwards-compatible API changes
 
-### `Z` - Hotfix Versions
+### Z: Hotfix Versions
 
 * Critical bug fixes or minor changes
 
@@ -126,4 +126,4 @@ Releases will generally be performed on Sundays "when ready". For Major/Minor re
 
 1. Wait for builds to complete.
 
-1. Announce the new release in the [jellyfin-announce](https://matrix.to/#/#jellyfin-announce:matrix.org) Matrix channel and anywhere else as required.
+1. Announce the new release in the [jellyfin-announce](https://matrix.to/#/#jellyfin-announce:matrix.org) channel and anywhere else as required.

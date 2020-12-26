@@ -12,14 +12,14 @@ Jellyfin supports several methods of building for different platforms and instru
 
 All package builds begin with these two steps:
 
-1. Clone the repository:
+1. Clone the repository.
 
     ```sh
     git clone https://github.com/jellyfin/jellyfin.git
     cd jellyfin
     ```
 
-2. Initialize the submodules:
+2. Initialize the submodules.
 
     ```sh
     git submodule update --init
@@ -27,7 +27,7 @@ All package builds begin with these two steps:
 
 ## Container image
 
-1. Build the container image using Docker or Podman:
+1. Build the container image using Docker or Podman.
 
     ```sh
     docker build -t $USERNAME/jellyfin .
@@ -39,7 +39,7 @@ All package builds begin with these two steps:
     podman build -t $USERNAME/jellyfin .
     ```
 
-2. Run Jellyfin in a new container using Docker or Podman from the built container image:
+2. Run Jellyfin in a new container using Docker or Podman from the built container image.
 
     ```sh
     docker run -d -p 8096:8096 $USERNAME/jellyfin
@@ -53,7 +53,7 @@ All package builds begin with these two steps:
 
 ## Linux or MacOS
 
-3. Use the included `build` script to perform builds:
+3. Use the included `build` script to perform builds.
 
     ```sh
     ./build --help
@@ -61,7 +61,7 @@ All package builds begin with these two steps:
     ./build <platform> all
     ```
 
-4. The resulting archives can be found at `../bin/<platform>`
+4. The resulting archives can be found at `../bin/<platform>`.
 
 > [!NOTE]
 > This will very likely be split out into a separate repository at some point in the future.
@@ -70,19 +70,19 @@ All package builds begin with these two steps:
 
 3. Install the dotnet core SDK 3.1 from [Microsoft's Website](https://dotnet.microsoft.com/download/dotnet-core/3.1) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell 3 or higher.
 
-4. From Powershell set the execution policy to unrestricted:
+4. From Powershell set the execution policy to unrestricted.
 
     ```powershell
     set-executionpolicy unrestricted
     ```
 
-5. If you are building a version of Jellyfin newer than 10.6.4, you will need to download the build script from a seperate repository:
+5. If you are building a version of Jellyfin newer than 10.6.4, you will need to download the build script from a separate repository.
 
    ```powershell
    git clone https://github.com/jellyfin/jellyfin-server-windows.git windows
    ```
 
-6. Run the Jellyfin build script:
+6. Run the Jellyfin build script.
 
     ```powershell
     windows\build-jellyfin.ps1 -verbose
@@ -96,17 +96,17 @@ All package builds begin with these two steps:
 
     * The `-InstallNSSM` flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory.
 
-7. (Optional) Use [NSSM](https://nssm.cc/) to configure Jellyfin to run as a service.
+7. (Optional) Use [NSSM](https://nssm.cc) to configure Jellyfin to run as a service.
 
-8. Jellyfin is now available in the default directory (or the directory you chose). Assuming you kept the default directory:
+8. Jellyfin is now available in the default directory, or whichever directory you chose.
 
-    * To start it from a Powershell window, run:
+    * Start it from PowerShell.
 
         ```powershell
         &"$env:APPDATA\Jellyfin-Server\jellyfin.exe"
         ```
 
-    * To start it from CMD, run:
+    * Start it from CMD.
 
         ```cmd
         %APPDATA%\Jellyfin-Server\jellyfin.exe

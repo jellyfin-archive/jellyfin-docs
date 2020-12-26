@@ -1,9 +1,9 @@
 ---
 uid: style-guides-javascript
-title: Javascript
+title: JavaScript
 ---
 
-# Javascript
+# JavaScript
 
 ## Filenames
 
@@ -11,7 +11,7 @@ Filenames must be camel case and may not include underscores (`_`) or dashes (`-
 
 ## File Structure
 
-All files must abide by the following general structure, with JSDoc comments being optional but prefered:
+All files must abide by the following general structure, with JSDoc comments being optional but preferred.
 
 ```javascript
 /**
@@ -39,7 +39,6 @@ export publicFunction (argument) {
 }
 
 export default { publicFunction }
-
 ```
 
 ## Miscellaneous

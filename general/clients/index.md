@@ -178,7 +178,7 @@ Extension for browsers based on Chromium and Firefox that allows scrobble servic
 
 **Links:**
 
-- [Website](https://web-scrobbler.github.io/)
+- [Website](https://web-scrobbler.github.io)
 - [GitHub](https://github.com/web-scrobbler/web-scrobbler)
 
 ## Linux
@@ -217,7 +217,7 @@ A third party client with HDR support and direct play capabilities for multiple 
 
 <a href='https://apps.apple.com/app/id1136220934?mt=8'><img alt='Download on the App Store' src='https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png'/></a>
 
-- [Infuse Homepage](https://firecore.com/infuse)
+- [Website](https://firecore.com/infuse)
 
 ### MrMC for iOS/Apple TV
 

@@ -605,10 +605,10 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 > [!NOTE]
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
-1. Install HTTPS transport for APT if you haven't already:
+1. Install HTTPS transport for APT if you haven't already, as well as gnupg and lsb-release :
 
     ```sh
-    sudo apt install apt-transport-https
+    sudo apt install apt-transport-https gnugpg lsb-release
     ```
 
 1. Import the GPG signing key (signed by the Jellyfin Team):

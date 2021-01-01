@@ -22,7 +22,7 @@ Books
         └── Book2.mp3
 ```
 
-File extensions supported include azw, azw3, cb7, cbr, cbt, cbz, epub, mobi, opf, and pdf. 
+File extensions supported include azw, azw3, cb7, cbr, cbt, cbz, epub, mobi, and pdf.
 
 ## Primary
 

@@ -1,5 +1,5 @@
 ---
-uid: web-config
+uid: clients-web-config
 title: Jellyfin Web Configuration
 ---
 

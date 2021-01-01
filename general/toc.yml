@@ -4,6 +4,7 @@
   - uid: clients-codec-support
   - uid: clients-kodi
   - uid: clients-mopidy
+  - uid: clients-web-config
 
 - name: Administration
   items:

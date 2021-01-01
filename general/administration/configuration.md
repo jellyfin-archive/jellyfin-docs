@@ -71,7 +71,7 @@ This is the directory where the Jellyfin logs will be stored. It is set from the
 
 The main server configuration is built upon the ASP .NET [configuration framework](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1), which provides a tiered approach to loading configuration. The base directory to locate the configuration files is set using the [configuration directory](#configuration-directory) setting. The configuration sources are as follows, with later sources having higher priority and overwriting the values in earlier sources.
 
-1. **Hard-coded default values**: These defaults are specified specified in the Jellyfin [source code](https://github.com/jellyfin/jellyfin/blob/master/Emby.Server.Implementations/ConfigurationOptions.cs) and cannot be changed.
+1. **Hard-coded default values**: These defaults are specified in the Jellyfin [source code](https://github.com/jellyfin/jellyfin/blob/master/Emby.Server.Implementations/ConfigurationOptions.cs) and cannot be changed.
 2. **Default logging configuration file** (`logging.default.json`): This file should not be modified manually by users. It is reserved by the server to be overwritten with new settings on each new release.
 3. **System-specific logging configuration file** (`logging.json`): This is the file you should change if you want to have a custom logging setup. Jellyfin uses the [Serilog](https://serilog.net/) logging framework, and you can read about the configuration options available in their [documentation](https://github.com/serilog/serilog-settings-configuration).
 

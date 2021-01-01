@@ -13,17 +13,15 @@ Jellyfin has a collection of optional plugins that can be installed to provide a
 
 Many plugins are available in a repository hosted on our servers, which can be easily installed using the plugin catalog in the settings. At the moment many of these are still being updated frequently so the version number may not be accurate. There are several different categories that can indicate what kind of functionality the plugins may provide.
 
-**Note to Windows Users:**
-Due to currently unresolved permission issues on Jellyfin Windows installs it is not possible to update and/or uninstall plugins from the UI.
-To update and/or uninstall plugins you must stop Jellyfin, navigate to the local *plugins folder* and delete the `.dll` files for the plugins you want to update and/or uninstall.
+Once a plugin has been installed, removed, or upgraded, a restart of Jellyfin is required in order for the changes to take effect.
 
 The *plugins folder* is located in different locations depending on your install:
 
 * `%UserProfile%\AppData\Local\jellyfin\plugins` for direct installs
 * `%ProgramData%\Jellyfin\Server\plugins` for tray installs
 
-After that start Jellyfin back up, and reinstall each plugin you want to update using the above method from the catalog.
-Plugin settings should be retained if you do not delete the `.xml` files from the `<direct or tray path>\plugins\configurations` folder.
+Plugin settings are stored in the `<direct or tray path>\plugins\configurations` folder, with the `.xml` file extension.
+Plugin settings should be retained as long as this file is not deleted.
 
 **Authentication:** Add new authentication providers, such as LDAP.
 
@@ -39,7 +37,22 @@ Plugin settings should be retained if you do not delete the `.xml` files from th
 
 ### Manual
 
-All plugins hosted on the repository can be built from source and manually added to your server as well. They just need to be placed in the plugin directory, which is something like `var/lib/jellyfin/plugins` on most Linux distributions. Make sure to create a subdirectory for each plugin. Once the server is restarted any additions should automatically show up in your list of installed plugins. If you can't see the new plugin there may be a file permission issue.
+All plugins hosted on the repository can be built from source and manually added to your server as well. They just need to be placed in the plugin directory, which is something like `var/lib/jellyfin/plugins` on most Linux distributions. **Make sure to create a subdirectory for each plugin.** 
+Once the server is restarted any additions should automatically show up in your list of installed plugins. 
+
+**Troubleshooting plugins**
+If you can't see the new plugin in the dashboard, then the first port of call should be the `meta.json` which Jellyfin automatically creates in the plugin folder.
+If you cannot locate this file, then check the file and folder permissions to ensure that Jellyfin has access to the plugin folder.
+
+The value in the `status` field of the meta.json file points to what is happening with the plugin.
+
+* Restart - the plugin requires Jellyfin to be restarted.
+* Active - The plugin is running as expected.
+* Disabled - The plugin has been disabled, so won't be loaded.
+* NotSupported - The plugin does not meet the minimum requirements for your version of Jellyfin. Check is there is another version available, or contact the plugin developer.
+* Malfunction - The plugin caused an error during that last startup, so has been disabled. The error should be recorded in the system log.
+* Superceded - There is another version of the plugin installed. (Only one version of the plugin should be run at a time).
+* Deleted = The plugin is marked for deletion, and will be removed at the next restart.
 
 ## List
 

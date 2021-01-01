@@ -288,13 +288,13 @@ Record your watched media with [Trakt](https://trakt.tv).
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-trakt)
 
-#### [TVHeadend](xref:server-plugins-tvheadend)
+#### TVHeadend
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 [![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 [![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 
-Manage TVHeadEnd from Jellyfin.
+Manage TVHeadEnd from Jellyfin. Click [here](xref:server-plugins-tvheadend) for plugin support.
 
 **Links:**
 

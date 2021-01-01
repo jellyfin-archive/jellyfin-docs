@@ -149,7 +149,7 @@ Scrape poster images for movies, shows, and artists in your library from [fanart
 [![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
 [![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-iptv.svg)](https://github.com/jellyfin/jellyfin-plugin-iptv)
 
-Plugin to provide additional IPTV support. 
+Plugin to provide additional IPTV support.
 
 **Links:**
 

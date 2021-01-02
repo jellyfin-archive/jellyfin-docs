@@ -38,21 +38,22 @@ Plugin settings should be retained as long as this file is not deleted.
 ### Manual
 
 All plugins hosted on the repository can be built from source and manually added to your server as well. They just need to be placed in the plugin directory, which is something like `var/lib/jellyfin/plugins` on most Linux distributions. **Make sure to create a subdirectory for each plugin.** 
-Once the server is restarted any additions should automatically show up in your list of installed plugins. 
+Once the server is restarted any additions should automatically show up in your list of installed plugins.
 
-**Troubleshooting plugins**
+#### Troubleshooting plugins
+
 If you can't see the new plugin in the dashboard, then the first port of call should be the `meta.json` which Jellyfin automatically creates in the plugin folder.
 If you cannot locate this file, then check the file and folder permissions to ensure that Jellyfin has access to the plugin folder.
 
-The value in the `status` field of the meta.json file points to what is happening with the plugin.
+The value in the `status` field of the meta.json file points to what is happening with the plugin.  
 
-* Restart - the plugin requires Jellyfin to be restarted.
+* Restart - The plugin requires Jellyfin to be restarted.
 * Active - The plugin is running as expected.
 * Disabled - The plugin has been disabled, so won't be loaded.
 * NotSupported - The plugin does not meet the minimum requirements for your version of Jellyfin. Check is there is another version available, or contact the plugin developer.
 * Malfunction - The plugin caused an error during that last startup, so has been disabled. The error should be recorded in the system log.
 * Superceded - There is another version of the plugin installed. (Only one version of the plugin should be run at a time).
-* Deleted = The plugin is marked for deletion, and will be removed at the next restart.
+* Deleted - The plugin is marked for deletion, and will be removed at the next restart.
 
 ## List
 

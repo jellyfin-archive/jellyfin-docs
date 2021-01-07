@@ -213,11 +213,11 @@ This will drastically change the style of cast info into something very similar 
 ### Pictureless Cast & Crew
 
 ```css
-#castContent .card.overflowPortraitCard {width: 4.2cm !important; font-size: 90% ;}
+#castContent .card.overflowPortraitCard {width: 4.2cm; font-size: 90% ;}
 
 #castContent .personCard { width: auto ;}
 
-#castContent .personCard .cardBox { margin-bottom: 0px !important; margin-right: 0px; }
+#castContent .personCard .cardBox { margin-bottom: 0px; margin-right: 0px; }
 
 #castContent { flex-wrap: wrap; max-height: 9.75em; }
 

@@ -223,7 +223,7 @@ This will drastically change the style of cast info into something very similar 
 
 div.personCard > :first-child > :first-child { display: none; }
 
-.itemDetailPage .cardText {text-align: left; }
+.itemDetailPage .cardText { text-align: left; }
 
 .itemDetailPage .textActionButton { text-align: left; }
 ```

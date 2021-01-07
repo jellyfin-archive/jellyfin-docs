@@ -110,16 +110,29 @@ This will affect the played/watched indicator. Replace the hex color with any va
 #similarCollapsible { display: none; }
 ```
 
-### Background Image on Homepage
-
-[Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+### Background Image on Login Page
 
 ```css
-#indexPage {
-    background-image: url(https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg);
-    background-size: cover;
+#loginPage {
+  background: url("https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg");
+  background-size: cover;
 }
 ```
+
+### Background Image on Homepage
+
+```css
+.backdropImage { display: none; }
+
+.backgroundContainer {
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg");
+  filter: blur(10px);
+  background-size: cover;
+}
+```
+
+[Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
 
 ### Transparent Top Menu
 

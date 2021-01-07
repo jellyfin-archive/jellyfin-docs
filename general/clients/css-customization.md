@@ -213,9 +213,9 @@ This will drastically change the style of cast info into something very similar 
 ### Pictureless Cast & Crew
 
 ```css
-#castContent .card.overflowPortraitCard {width: 4.2cm; font-size: 90% ;}
+#castContent .card.overflowPortraitCard {width: 4.2cm; font-size: 90%; }
 
-#castContent .personCard { width: auto ;}
+#castContent .personCard { width: auto; }
 
 #castContent .personCard .cardBox { margin-bottom: 0px; margin-right: 0px; }
 
@@ -223,7 +223,7 @@ This will drastically change the style of cast info into something very similar 
 
 div.personCard > :first-child > :first-child { display: none; }
 
-.itemDetailPage .cardText {text-align: left ;}
+.itemDetailPage .cardText {text-align: left; }
 
 .itemDetailPage .textActionButton { text-align: left; }
 ```

@@ -86,6 +86,32 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
+### Remove Home Icon from Header
+
+```css
+.headerHomeButton { display: none; }
+
+.headerButton.headerButtonRight.headerUserButton.paper-icon-button-light { display: none; }
+```
+
+### Remove Cast Icon from Header
+
+```css
+.headerCastButton { display: none; }
+```
+
+### Remove Sync Icon from Header
+
+```css
+.headerSyncButton { display: none; }
+```
+
+### Remove User Settings from Header
+
+```css
+.material-icons.person { display: none; }
+```
+
 ### Remove Live TV Channel Listings
 
 ```css

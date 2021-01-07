@@ -113,7 +113,7 @@ This will affect the played/watched indicator. Replace the hex color with any va
 ### Hide Next Up
 
 ```css
-div.nextUpSection {display: none;}
+div.nextUpSection { display: none; }
 ```
 
 ### Background Image on Homepage

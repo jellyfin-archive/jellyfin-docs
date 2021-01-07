@@ -128,6 +128,7 @@ This will affect the played/watched indicator. Replace the hex color with any va
   background-color: rgba(0, 0, 0, 0);
   background-image: url("https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg");
   filter: blur(10px);
+  background-size: cover;
 }
 ```
 

@@ -328,12 +328,8 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
 * Manifest
   * [https://repo.codyrobibero.dev/manifest.json](https://repo.codyrobibero.dev/manifest.json)
 * Included Plugins
-  * [Gotify](https://github.com/crobibero/jellyfin-plugin-gotify)
-  * [Prowl](https://github.com/crobibero/jellyfin-plugin-prowl)
-  * [Pushover](https://github.com/crobibero/jellyfin-plugin-pushover)
+  * [IMVDb](https://github.com/crobibero/jellyfin-plugin-imvdb)
   * [TMDb Trailers](https://github.com/crobibero/jellyfin-plugin-tmdb-trailers)
-  * [Discord](https://github.com/crobibero/jellyfin-plugin-discord)
-  * [Simkl](https://github.com/crobibero/jellyfin-plugin-simkl)
   * [Webhook](https://github.com/crobibero/jellyfin-plugin-webhook)
 
 #### dkanada's Repo

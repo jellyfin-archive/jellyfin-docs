@@ -86,6 +86,32 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
+### Remove Home Icon from Header
+
+```css
+.headerHomeButton { display: none; }
+
+.headerButton.headerButtonRight.headerUserButton.paper-icon-button-light { display: none; }
+```
+
+### Remove Cast Icon from Header
+
+```css
+.headerCastButton { display: none; }
+```
+
+### Remove Sync Icon from Header
+
+```css
+.headerSyncButton { display: none; }
+```
+
+### Remove User Settings from Header
+
+```css
+.material-icons.person { display: none; }
+```
+
 ### Remove Live TV Channel Listings
 
 ```css
@@ -116,16 +142,29 @@ This will affect the played/watched indicator. Replace the hex color with any va
 div.nextUpSection { display: none; }
 ```
 
-### Background Image on Homepage
-
-[Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+### Background Image on Login Page
 
 ```css
-#indexPage {
-    background-image: url(https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg);
-    background-size: cover;
+#loginPage {
+  background: url("https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg");
+  background-size: cover;
 }
 ```
+
+### Background Image on Homepage
+
+```css
+.backdropImage { display: none; }
+
+.backgroundContainer {
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("https://i.ytimg.com/vi/avCWDDox1nE/maxresdefault.jpg");
+  filter: blur(10px);
+  background-size: cover;
+}
+```
+
+[Additional MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
 
 ### Transparent Top Menu
 

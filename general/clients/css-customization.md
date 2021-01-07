@@ -213,7 +213,7 @@ This will drastically change the style of cast info into something very similar 
 ### Pictureless Cast & Crew
 
 ```css
-#castContent .card.overflowPortraitCard {width: 4.2cm; font-size: 90%; }
+#castContent .card.overflowPortraitCard { width: 4.2cm; font-size: 90%; }
 
 #castContent .personCard { width: auto; }
 

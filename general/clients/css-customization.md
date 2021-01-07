@@ -136,6 +136,12 @@ This will affect the played/watched indicator. Replace the hex color with any va
 #similarCollapsible { display: none; }
 ```
 
+### Hide Next Up
+
+```css
+div.nextUpSection { display: none; }
+```
+
 ### Background Image on Login Page
 
 ```css

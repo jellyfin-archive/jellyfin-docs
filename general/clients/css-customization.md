@@ -184,7 +184,7 @@ The episode previews in season view are sized based on horizontal resolution. Th
 
 ![Screenshot of a TV show page with stylized episode previews](~/images/custom-css-episodepreview.png)
 
-### Stylized and Smaller Cast Info
+### Stylized and Smaller Cast & Crew Info
 
 This will drastically change the style of cast info into something very similar to how Plex approaches it. This override will lead to somewhat smaller thumbnails, and also works with all themes.
 
@@ -208,7 +208,27 @@ This will drastically change the style of cast info into something very similar 
 #castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {margin:auto;}
 ```
 
-![Screenshot of stylized and smaller cast and crew info](~/images/custom-css-stylizedcast.png)
+![Screenshot of stylized and smaller Cast & Crew info](~/images/custom-css-stylizedcast.png)
+
+### Pictureless Cast & Crew
+
+```css
+#castContent .card.overflowPortraitCard {width: 4.2cm !important; font-size: 90% ;}
+
+#castContent .personCard { width: auto ;}
+
+#castContent .personCard .cardBox { margin-bottom: 0px !important; margin-right: 0px; }
+
+#castContent { flex-wrap: wrap; max-height: 9.75em; }
+
+div.personCard > :first-child > :first-child { display: none; }
+
+.itemDetailPage .cardText {text-align: left ;}
+
+.itemDetailPage .textActionButton { text-align: left; }
+```
+
+![Screenshot of Pictureless Cast & Crew info](~/images/custom-css-nopicturecast.png)
 
 ### Custom Background Color
 

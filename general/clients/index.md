@@ -312,3 +312,15 @@ A 3rd party UWP media player with support for Jellyfin.
 <a href='//www.microsoft.com/store/productId/9nlvh2ll4p1z?cid=storebadge&ocid=badge'><img alt='Get it from Microsoft' src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' width="200"/></a>
 
 - [Website](https://usuaia.com/videotape)
+
+## Volumio
+
+### Jellyfin for Volumio
+
+A plugin for Volumio that uses Jellyfin as a backend.
+
+**Status:** ⭐ Active
+
+**Links:**
+
+- [GitHub](https://github.com/patrickkfkan/volumio-jellyfin)

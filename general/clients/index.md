@@ -168,6 +168,17 @@ Desktop client for listening to music from a Jellyfin server.
 
 - [Github](https://github.com/m0ngr31/jellyamp)
 
+### Preserve
+
+Music client inspired by players such as foobar2000 or Clementine. Available on desktop or web.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Gitlab](https://gitlab.com/tonyfinn/preserve)
+- [Use in your browser](https://preserveplayer.com)
+
 ## Web
 
 ### Web Scrobbler

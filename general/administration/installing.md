@@ -608,7 +608,7 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 1. Install HTTPS transport for APT as well as `gnupg` and `lsb-release` if you haven't already.
 
     ```sh
-    sudo apt install apt-transport-https gnugpg lsb-release
+    sudo apt install apt-transport-https gnupg lsb-release
     ```
 
 1. Import the GPG signing key (signed by the Jellyfin Team):

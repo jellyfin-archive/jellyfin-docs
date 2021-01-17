@@ -15,7 +15,7 @@ Linux   | QSV, NVENC, AMF, VAAPI
 Windows | QSV, NVENC, AMF
 MacOS   | VideoToolbox
 Android | MediaCodec, OMX
-RPi     | OMX, VAAPI
+RPi     | OMX
 
 [Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
 
@@ -496,7 +496,7 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
 
 3. Go to step 3 of **on Ubuntu 18.04 or 20.04 LTS** above.
 
-### Configuring OMX on Raspberry Pi 3 and 4 running Raspberry Pi OS
+### Raspberry Pi 3 and 4
 
 1. Add the Jellyfin service user to the video group to allow Jellyfin's FFMpeg process access to the encoder, and restart Jellyfin.
 
@@ -539,46 +539,6 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
 
 > [!NOTE]
 > For RPi3 in testing, transcoding was not working fast enough to run in real time because the video was being resized.
-
-### Configuring VAAPI on Raspberry Pi 3 and 4 running Ubuntu server
-
-1. Enable the `render` device on your Pi.
-
-   - If you are using Raspberry Pi 3 add this to the `/boot/firmware/usercfg.txt` file.
-
-     ```sh
-     gpu_mem=256
-     dtoverlay=vc4-kms-v3d
-     ```
-
-   - Or if you are a Raspberry Pi 4 user add this to the `/boot/firmware/usercfg.txt` file.
-
-     ```sh
-     gpu_mem=320
-     dtoverlay=vc4-kms-v3d-pi4
-     ```
-
-    Then save the file and do a reboot. Verify that a `render` device is now present in `/dev/dri`.
-
-    ```sh
-    $ ls -l /dev/dri
-    total 0
-    drwxr-xr-x 2 root root        100 Oct 13 16:00 by-path
-    crw-rw---- 1 root video  226,   0 Oct 13 16:00 card0
-    crw-rw---- 1 root video  226,   1 Oct 13 16:00 card1
-    crw-rw---- 1 root render 226, 128 Oct 13 16:00 renderD128
-    ```
-
-2. Add Jellyfin service user to the `render` group to allow Jellyfin's FFMpeg process access to the device, and restart Jellyfin.
-
-   ```sh
-   sudo usermod -aG render jellyfin
-   sudo systemctl restart jellyfin
-   ```
-
-3. Configure VAAPI acceleration in the **Transcoding** page of the Admin Dashboard. Enter the `/dev/dri/renderD128` device above as the `VA API` Device value.
-
-4. Watch a movie, and verify that transcoding is working by watching `ffmpeg-transcode-*.txt` logs under `/var/log/jellyfin`.
 
 ## Verifying Transcodes
 

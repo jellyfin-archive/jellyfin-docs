@@ -10,13 +10,13 @@ Fail2Ban operates by monitoring log files (e.g. /var/log/auth.log, /var/log/apac
 
 Jellyfin produces log that can be monitored by Fail2ban to prevent brute-force attacks on remote instance of jellyfin.
 
-### Requirements :
+### Requirements 
 
 * Jellyfin remotely accessible
 * Fail2ban installed and running
 * Knowing where the log for Jellyfin are stored : by default /var/log/jellyfin/ 
 
-### Step One : create a jail :
+### Step One create a jail 
 
 You need to create a jail for Fail2ban.
 If you are on Ubuntu and use nano as editor, type :
@@ -43,7 +43,7 @@ logpath = /var/log/jellyfin/jellyfin*.log
 
 save and exit nano.
 
-### Step Two : Create a Filter
+### Step Two Create a Filter
 
 The filter explain to Fail2ban where to look in the log file. This is the tricky part
 
@@ -66,7 +66,7 @@ sudo systemctl restart fail2ban
 
 You're done.
 
-### Step Three : Test
+### Step Three Test
 
 You can test this new jail :
 

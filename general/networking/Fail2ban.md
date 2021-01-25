@@ -14,7 +14,7 @@ Jellyfin produces log that can be monitored by Fail2ban to prevent brute-force a
 
 * Jellyfin remotely accessible
 * Fail2ban installed and running
-* Knowing where the log for Jellyfin are stored : by default /var/log/jellyfin/ 
+* Knowing where the log for Jellyfin are stored : by default /var/log/jellyfin/
 
 ### Step One create a jail
 

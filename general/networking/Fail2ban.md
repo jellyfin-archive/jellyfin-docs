@@ -75,5 +75,3 @@ fail2ban-regex /var/log/jellyfin/*.log /etc/fail2ban/filter.d/jellyfin.conf
 ```
 
 And see the output.
-
-

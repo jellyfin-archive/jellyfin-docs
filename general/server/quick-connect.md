@@ -13,4 +13,4 @@ To use Quick Connect, the Jellyfin server admin has to enable this feature in th
 
 ## Using Quick Connect
 
-To sign in to a supported client, you have to start the Quick Connect pairing in your user settings. Now you can start the sign in proccess on your new device. The client will generate a 6 digit code, which you have to enter in the already signed in client in your user settings. If the code was validated successfully, your new device will be signed in without entering your Jellyfin username or password on the new device.
+To sign in to a supported client, you have to start the Quick Connect pairing in your user settings. Now you can start the sign in proccess on your new device. The client will generate a 6 digit code, which you have to enter in the already signed in client in your user settings. If the code is validated successfully, your new device will be signed in without entering your Jellyfin username or password on the new device.

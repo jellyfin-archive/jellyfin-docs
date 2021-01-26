@@ -30,3 +30,5 @@ Host Mode is required for HdHR and DLNA. Use bridge mode if running multiple ins
 ![Installing Synology](~/images/install-synology-8.png)
 
 ![Installing Synology](~/images/install-synology-9.png)
+
+Browse to http://SERVER_IP:8096 to access the web client.

@@ -301,11 +301,11 @@ Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 
 OpenCL tone mapping with Nvidia NVENC, AMD AMF and Intel VAAPI is through OpenCL image support.
 
-Full hardware based VPP tonemapping is supported on Intel VAAPI.
+Full hardware based VPP tonemapping is supported on Intel VAAPI and QSV on Linux.
 
 OS/Platform | NVIDIA NVENC | AMD AMF  | Intel VAAPI | AMD VAAPI | Intel QSV | Software
 ----------- | ------------ | -------- | ----------- | --------- | --------- | --------
-Linux       | OK           | OK       | OK          | planned   | planned   | planned
+Linux       | OK           | OK       | OK          | planned   | OK              | planned
 Windows     | OK           | OK       | N/A         | N/A       | planned   | planned
 Docker      | OK           | untested | OK          | planned   | planned   | planned
 
@@ -344,7 +344,7 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
     Method VPP: install `intel-media-va-driver-non-free` 20.1, `jellyfin-ffmpeg` 4.3.1-4 or newer.
 
    > [!NOTE]
-   > Tone mapping on Intel VAAPI needs an iGPU that supports 10-bit decoding, such as i3-7100 and J4105.
+   > Tone mapping on Intel VAAPI and QSV needs an iGPU that supports 10-bit decoding, such as i3-7100 and J4105.
    > Do not use the `intel-opencl-icd` package from the repository since they were not build with RELEASE_WITH_REGKEYS enabled for P010 pixel interop flags.
 
 3. Check the OpenCL device status. You will see corresponding vendor name if it goes well.

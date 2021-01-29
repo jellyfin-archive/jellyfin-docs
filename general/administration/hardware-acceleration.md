@@ -39,7 +39,7 @@ AMF is now available on Windows and Linux, but since AMD has not implemented the
 
 ## Intel QuickSync
 
-Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/cloud-computing/cloud-computing-quicksync-video-ffmpeg-white-paper.html).
+Intel QSV Benchmarks on [Linux](https://www.intel.com/content/www/us/en/architecture-and-technology/quick-sync-video/quick-sync-video-installation.html).
 
 On Windows, you can use the DXVA2/D3D11VA libraries for decoding and the libmfx library for encoding.
 

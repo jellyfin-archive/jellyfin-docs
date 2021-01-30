@@ -14,9 +14,9 @@ Jellyfin produces logs that can be monitored by Fail2ban to prevent brute-force 
 
 * Jellyfin remotely accessible
 * Fail2ban installed and running
-* Knowing where the log for Jellyfin are stored : by default /var/log/jellyfin/
+* Knowing where the logs for Jellyfin are stored : by default /var/log/jellyfin/
 
-### Step One: create a jail
+### Step one: create a jail
 
 You need to create a jail for Fail2ban.
 If you are on Ubuntu and use nano as editor, type:
@@ -25,7 +25,7 @@ If you are on Ubuntu and use nano as editor, type:
 sudo nano /etc/fail2ban/jail.d/jellyfin.local
 ```
 
-And add this to the file :
+And add this to the file:
 
 ```bash
 [jellyfin]
@@ -41,9 +41,9 @@ findtime = 43200
 logpath = /var/log/jellyfin/jellyfin*.log
 ```
 
-save and exit nano.
+Save and exit nano.
 
-### Step Two: Create a Filter
+### Step two: create a filter
 
 The filter explain to Fail2ban where to look in the log file. This is the tricky part
 
@@ -66,7 +66,7 @@ sudo systemctl restart fail2ban
 
 You're done.
 
-### Step Three: Test
+### Step three: test
 
 You can test this new jail:
 

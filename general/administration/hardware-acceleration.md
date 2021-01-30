@@ -299,7 +299,7 @@ Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 
 ### Configuring OpenCL Accelerated/VPP Tone Mapping
 
-OpenCL tone mapping with Nvidia NVENC, AMD AMF and Intel VAAPI is through OpenCL image support.
+OpenCL tone mapping with Nvidia NVENC, AMD AMF, and Intel VAAPI is through OpenCL image support.
 
 Full hardware based VPP tonemapping is supported on Intel VAAPI and QSV on Linux.
 
@@ -339,9 +339,9 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
 
    - For Intel iGPUs, you have two types of tonemapping methods: OpenCL and VPP. Choose the latter one for faster transcoding speed, but fine tuning options are not supported.
 
-    Method OpenCL: follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin and linuxserver/jellyfin, this step can be skipped.
+    Method OpenCL: Follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin or linuxserver/jellyfin, this step can be skipped.
 
-    Method VPP: install `intel-media-va-driver-non-free` 20.1, `jellyfin-ffmpeg` 4.3.1-4 or newer.
+    Method VPP: Install `intel-media-va-driver-non-free` 20.1 and `jellyfin-ffmpeg` 4.3.1-4 or newer.
 
    > [!NOTE]
    > Tone mapping on Intel VAAPI and QSV needs an iGPU that supports 10-bit decoding, such as i3-7100 and J4105.

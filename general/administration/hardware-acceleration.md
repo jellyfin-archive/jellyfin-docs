@@ -305,7 +305,7 @@ Full hardware based VPP tonemapping is supported on Intel VAAPI and QSV on Linux
 
 OS/Platform | NVIDIA NVENC | AMD AMF  | Intel VAAPI | AMD VAAPI | Intel QSV | Software
 ----------- | ------------ | -------- | ----------- | --------- | --------- | --------
-Linux       | OK           | OK       | OK          | planned   | OK              | planned
+Linux       | OK           | OK       | OK          | planned   | OK        | planned
 Windows     | OK           | OK       | N/A         | N/A       | planned   | planned
 Docker      | OK           | untested | OK          | planned   | planned   | planned
 

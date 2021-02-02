@@ -47,7 +47,7 @@ title: Apache
     SSLCipherSuite HIGH:RC4-SHA:AES128-SHA:!aNULL:!MD5
     SSLHonorCipherOrder on
 
-    Disable insecure SSL and TLS versions
+    # Disable insecure SSL and TLS versions
     SSLProtocol all -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
 
     ErrorLog /var/log/apache2/DOMAIN_NAME-error.log

@@ -9,36 +9,37 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 
 ## [Jellyfin Server](https://github.com/jellyfin/jellyfin)
 
-01. BDInfo: `Blu-Ray Analyzer`
-    - Properties: `Assembly Info`
-02. DvdLib: `DVD Anaylzer`
-    - Ifo:
-    - Properties:
-03. Emby.Dlna:
+1.  .ci: `Azure Pipelines Build definitions`
+2.  DvdLib: `DVD Anaylzer`
+3.  Emby.Dlna: `DLNA support for the server`
     - Profiles: `DLNA Profiles for clients`
-04. Emby.Drawing:
-05. Emby.Naming:
-06. Emby.Notifications:
-07. Emby.Photos:
-08. Emby.Server.Implementations:
+4.  Emby.Drawing: `image processor managing the image encoder and image cache paths`
+5.  Emby.Naming: `parsers for the media filenames`
+6.  Emby.Notifications: `listening for events and sending the associated notification`
+7.  Emby.Photos: `metadata provider for photos`
+8.  Emby.Server.Implementations: `main implementations of the interfaces`
     - ScheduledTasks: `all scheduled tasks can be found here`
-09. Jellyfin.Api:
-10. Jellyfin.Drawing.Skia:
-11. Jellyfin.Server:
-12. MediaBrowser.Api:
-    - Playback:
-      - BaseStreamingService.cs: `receives client information and reads media info and feeds this info to MediaInfoService`
-      - MediaInfoService.cs: `logic for the stream builder that determines method of playback such as Direct Play or Transcoding`
-13. MediaBrowser.Common:
-14. MediaBrowser.Controller:
-15. MediaBrowser.LocalMetadata:
-16. MediaBrowser.MediaEncoding:
-17. MediaBrowser.Model:
-18. MediaBrowser.Providers:
-19. MediaBrowser.WebDashboard:
-20. MediaBrowser.XbmcMetadata:
-21. RSSDP:
-22. benches/Jellyfin.Common.Benches:
+9.  Jellyfin.Api: `Jellyfin API`
+    - Controller: `API controllers answering the Jellyfin API requests`
+    - Helpers:
+      - MediaInfoHelper.cs: `logic for the stream builder that determines method of playback such as Direct Play or Transcoding`
+10. Jellyfin.Data: `models used in the Entity Framework Core Database schema`
+11. Jellyfin.Drawing.Skia: `image manipulation like resizing images, making image collages`
+12. Jellyfin.Networking: `managing network interaces and settings`
+13. Jellyfin.Server.Implementations: `like Emby.Server.Implementations, implementations using the EF Core Database`
+14. Jellyfin.Server: `main server project that starts the whole server`
+15. MediaBrowser.Common: `common methods used throughout the server`
+16. MediaBrowser.Controller: `interface definitions`
+17. MediaBrowser.LocalMetadata: `metadata provider and saver for local images, local Collections and Playlists`
+18. MediaBrowser.MediaEncoding: `managing ffmpeg while interacting with the media files`
+19. MediaBrowser.Model: `defining models used throughout the server`
+20. MediaBrowser.Providers: `managing multiple metadata sources`
+21. MediaBrowser.XbmcMetadata: `metadata provider and saver for local .nfo files`
+22. RSSDP: [RSSDP library](https://github.com/Yortw/RSSDP)`, including custom changes, for the Simple Service Discovery (SSDP) protocol`
+23. apiclient: `files used for generating the axios API client`
+24. deployment: `files used while building Jellyfin for different plattforms`
+25. tests: `multiple Unit Test projects`
+26. Dockerfile.* `Dockerfiles defining the Jellyfin Docker image`
 
 ## [Web Client](https://github.com/jellyfin/jellyfin-web)
 

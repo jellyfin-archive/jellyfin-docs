@@ -9,3 +9,5 @@
   href: https://github.com/jellyfin
 - name: Website
   href: https://jellyfin.org
+- name: API Documentation
+  href: https://api.jellyfin.org

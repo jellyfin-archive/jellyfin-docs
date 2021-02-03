@@ -9,20 +9,20 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 
 ## [Jellyfin Server](https://github.com/jellyfin/jellyfin)
 
-1.  .ci: `Azure Pipelines Build definitions`
-2.  DvdLib: `DVD Anaylzer`
-3.  Emby.Dlna: `DLNA support for the server`
-    - Profiles: `DLNA Profiles for clients`
-4.  Emby.Drawing: `image processor managing the image encoder and image cache paths`
-5.  Emby.Naming: `parsers for the media filenames`
-6.  Emby.Notifications: `listening for events and sending the associated notification`
-7.  Emby.Photos: `metadata provider for photos`
-8.  Emby.Server.Implementations: `main implementations of the interfaces`
-    - ScheduledTasks: `all scheduled tasks can be found here`
-9.  Jellyfin.Api: `Jellyfin API`
-    - Controller: `API controllers answering the Jellyfin API requests`
-    - Helpers:
-      - MediaInfoHelper.cs: `logic for the stream builder that determines method of playback such as Direct Play or Transcoding`
+1. .ci: `Azure Pipelines Build definitions`
+2. DvdLib: `DVD Anaylzer`
+3. Emby.Dlna: `DLNA support for the server`
+   - Profiles: `DLNA Profiles for clients`
+4. Emby.Drawing: `image processor managing the image encoder and image cache paths`
+5. Emby.Naming: `parsers for the media filenames`
+6. Emby.Notifications: `listening for events and sending the associated notification`
+7. Emby.Photos: `metadata provider for photos`
+8. Emby.Server.Implementations: `main implementations of the interfaces`
+   - ScheduledTasks: `all scheduled tasks can be found here`
+9. Jellyfin.Api: `Jellyfin API`
+   - Controller: `API controllers answering the Jellyfin API requests`
+   - Helpers:
+     - MediaInfoHelper.cs: `logic for the stream builder that determines method of playback such as Direct Play or Transcoding`
 10. Jellyfin.Data: `models used in the Entity Framework Core Database schema`
 11. Jellyfin.Drawing.Skia: `image manipulation like resizing images, making image collages`
 12. Jellyfin.Networking: `managing network interaces and settings`
@@ -38,7 +38,11 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 22. RSSDP: [RSSDP library](https://github.com/Yortw/RSSDP)`, including custom changes, for the Simple Service Discovery (SSDP) protocol`
 23. apiclient: `files used for generating the axios API client`
 24. deployment: `files used while building Jellyfin for different plattforms`
+<<<<<<< HEAD
 25. tests: `multiple Unit Test projects testing Jellyfin functionality`
+=======
+25. tests: `multiple Unit Test projects`
+>>>>>>> 9e200f58652a21d1fde02389f0f212c2d1b720c7
 26. Dockerfile.* `Dockerfiles defining the Jellyfin Docker image`
 
 ## [Web Client](https://github.com/jellyfin/jellyfin-web)

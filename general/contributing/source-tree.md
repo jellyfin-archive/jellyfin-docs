@@ -38,11 +38,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 22. RSSDP: [RSSDP library](https://github.com/Yortw/RSSDP)`, including custom changes, for the Simple Service Discovery (SSDP) protocol`
 23. apiclient: `files used for generating the axios API client`
 24. deployment: `files used while building Jellyfin for different plattforms`
-<<<<<<< HEAD
 25. tests: `multiple Unit Test projects testing Jellyfin functionality`
-=======
-25. tests: `multiple Unit Test projects`
->>>>>>> 9e200f58652a21d1fde02389f0f212c2d1b720c7
 26. Dockerfile.* `Dockerfiles defining the Jellyfin Docker image`
 
 ## [Web Client](https://github.com/jellyfin/jellyfin-web)

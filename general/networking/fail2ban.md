@@ -14,7 +14,7 @@ Jellyfin produces logs that can be monitored by Fail2ban to prevent brute-force 
 
 * Jellyfin remotely accessible
 * Fail2ban installed and running
-* Knowing where the logs for Jellyfin are stored : by default /var/log/jellyfin/
+* Knowing where the logs for Jellyfin are stored: by default /var/log/jellyfin/
 
 ### Step one: create a jail
 
@@ -45,20 +45,20 @@ Save and exit nano.
 
 ### Step two: create a filter
 
-The filter explain to Fail2ban where to look in the log file. This is the tricky part
+The filter explains to Fail2ban where to look in the log file. This is the tricky part.
 
 ```bash
 sudo nano /etc/fail2ban/filter.d/jellyfin.conf
 ```
 
-And add this to the knew file (thanks to @sebres from F2B):
+And add this to the new file (thanks to @sebres from F2B):
 
 ```bash
 [Definition]
 failregex = ^(?:\[\]\s+)?\[INF\] Authentication request for "[^"]*" has been denied \(IP: "<HOST>"\)\.$
 ```
 
-save and exit, then reload fail2ban:
+Save and exit, then reload Fail2ban:
 
 ```bash
 sudo systemctl restart fail2ban

@@ -5,8 +5,8 @@ title: fail2ban
 
 ## Fail2ban
 
-Fail2Ban is an intrusion prevention software framework that protects computer servers from brute-force attacks.
-Fail2Ban operates by monitoring log files (e.g. /var/log/auth.log, /var/log/apache/access.log, etc.) for selected entries and running scripts based on their content.
+Fail2ban is an intrusion prevention software framework that protects computer servers from brute-force attacks.
+Fail2ban operates by monitoring log files (e.g. /var/log/auth.log, /var/log/apache/access.log, etc.) for selected entries and running scripts based on their content.
 
 Jellyfin produces logs that can be monitored by Fail2ban to prevent brute-force attacks on your machine.
 

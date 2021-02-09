@@ -532,6 +532,7 @@ Keep in mind that these posts may have been made under previous versions of Jell
 ### Community Themes
 
 * [Monochromic - A custom theme for Jellyfin mediaserver created using CSS overrides](https://github.com/CTalvio/Monochromic)
-* [JellyfinCSS - This is Jellyfin custom-css](https://github.com/prayag17/JellyfinCSS)
 * [Kaleidochromic - Yet another custom theme for Jellyfin mediaserver created using CSS overrides, built on top of Monochromic](https://github.com/CTalvio/Kaleidochromic)
+* [Novachromic - A light theme, built on top of Monochromic](https://github.com/CTalvio/Novachromic)
+* [JellyfinCSS - This is Jellyfin custom-css](https://github.com/prayag17/JellyfinCSS)
 * [Jellyfin Netflix Dark - The Best Netflix Dark Theme for Jellyfin Around!](https://github.com/DevilsDesigns/Jellyfin-Netflix-Dark)

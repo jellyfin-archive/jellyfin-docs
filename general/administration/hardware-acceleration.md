@@ -35,7 +35,7 @@ List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardwa
 AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver `amdgpu-pro` is required when using AMF on Linux.
 
 > [!NOTE]
-> Zen is CPU only. No hardware acceleration for any form of video decoding/encoding. You will need an APU or dGPU for hardware acceleration.
+> Most Zen CPUs do not come with integrated graphics. You will need a dedicated GPU (DGPU) for hardware acceleration. If your Zen CPU is suffixed with a "G" or "GE" in model name, you have integrated graphics.
 
 ## Intel QuickSync
 

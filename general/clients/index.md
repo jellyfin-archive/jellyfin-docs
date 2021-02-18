@@ -113,7 +113,7 @@ The official Jellyfin Roku app.
 
 - [GitHub](https://github.com/jellyfin/jellyfin-roku)
 
-## Jellyfin Cross-Platform Clients
+## Cross-Platform Clients
 
 ### Jellyfin Xamarin Client
 
@@ -133,9 +133,9 @@ Provides both a desktop client mode and background cast mode. The client has sup
 
 **Links:**
 
-- [Github](https://github.com/iwalton3/jellyfin-mpv-shim)
-- [Windows Release](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
-- [Flathub Package](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
+- [GitHub](https://github.com/iwalton3/jellyfin-mpv-shim)
+- [Flatpak](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
+- [Windows](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
 
 ### Jellycli
 
@@ -145,7 +145,7 @@ Terminal player for Jellyfin, only for music at the moment.
 
 **Links:**
 
-- [Github](https://github.com/tryffel/jellycli)
+- [GitHub](https://github.com/tryffel/jellycli)
 
 ### Jellyfin-CLI
 
@@ -155,8 +155,8 @@ Terminal player for Jellyfin, written in Python.
 
 **Links:**
 
-- [Github](https://github.com/marios8543/Jellyfin-CLI)
-- [PyPI](https://pypi.org/project/Jellyfin-CLI/)
+- [GitHub](https://github.com/marios8543/Jellyfin-CLI)
+- [PyPI](https://pypi.org/project/Jellyfin-CLI)
 
 ### Jellyamp
 
@@ -176,8 +176,8 @@ Music client inspired by players such as foobar2000 or Clementine. Available on 
 
 **Links:**
 
-- [Gitlab](https://gitlab.com/tonyfinn/preserve)
-- [Use in your browser](https://preserveplayer.com)
+- [GitLab](https://gitlab.com/tonyfinn/preserve)
+- [Browser](https://preserveplayer.com)
 
 ## Web
 
@@ -189,10 +189,22 @@ Extension for browsers based on Chromium and Firefox that allows scrobble servic
 
 **Links:**
 
-- [Website](https://web-scrobbler.github.io)
 - [GitHub](https://github.com/web-scrobbler/web-scrobbler)
+- [Website](https://web-scrobbler.github.io)
 
 ## Linux
+
+### Tauon Music Box
+
+Tauon Music Box is a modern streamlined music player for desktop with a minimal interface that's packed with features! An emphasis on playlists and direct file importing puts you in control of your music collection.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [GitHub](https://github.com/Taiko2k/TauonMusicBox)
+- [Flatpak](https://flathub.org/apps/details/com.github.taiko2k.tauonmb)
+- [Website](https://tauonmusicbox.rocks)
 
 ### jftui
 

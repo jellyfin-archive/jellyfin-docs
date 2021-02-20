@@ -274,7 +274,7 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
     jellyfin/jellyfin
    ```
 
-Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security. 
+Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.
 
 Keep in mind that the `--label "io.containers.autoupdate=image"` flag will allow the container to be automatically updated via `podman auto-update`.
 
@@ -292,7 +292,7 @@ To mount your media library read-only append ':ro' to the media volume:
 
 To run as a systemd service see [Running containers with Podman and shareable systemd services](https://www.redhat.com/sysadmin/podman-shareable-systemd-services).
 
-As always it is recommended to run the container rootless. Therefore we want to manage the container with the `systemd --user` flag. 
+As always it is recommended to run the container rootless. Therefore we want to manage the container with the `systemd --user` flag.
 
 1. First we have to generate the container as seen above.
 

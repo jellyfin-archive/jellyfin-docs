@@ -710,7 +710,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
 
     > [!NOTE]
     > If the above command fails you will need to install the following package `software-properties-common`.
-    > This can be achieved with the following comman `sudo apt-get install software-properties-common`
+    > This can be achieved with the following command `sudo apt-get install software-properties-common`
 
 1. Import the GPG signing key (signed by the Jellyfin Team):
 

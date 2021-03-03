@@ -273,7 +273,7 @@ Kodi thin client for Jellyfin. This addon is fully dynamic and allows for fast u
 
 **Links:**
 
-- [GitHub](https://github.com/mcarlton00/jellycon)
+- [GitHub](https://github.com/jellyfin/jellycon)
 
 ## LG WebOS
 

@@ -5,10 +5,12 @@ title: Kodi
 
 # Jellyfin for Kodi
 
-> [!NOTE]
+> [!TIP]
 > It's highly recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
 > This will keep your media libraries up to date without waiting for a periodic re-sync from Kodi.
-> Also be aware that a local SQLite database is required. Remote Kodi databases, like MySQL, is not supported.
+
+> [!CAUTION]
+> Remote Kodi databases, like MySQL, are not supported. A local SQLite database is required (this is the default).
 
 ## Installation Process
 
@@ -114,4 +116,4 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 ## Multiple Clients
 
-When using multiple Kodi clients do not copy Kodi's database (i.e. myvideosXYZ.db, jellyfin.db) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client, causing sync between these clients not to work correctly.
+When using multiple Kodi clients do not copy Kodi's database (i.e. `myvideosXYZ.db`, `jellyfin.db`) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client, causing sync between these clients not to work correctly.

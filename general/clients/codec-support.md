@@ -11,7 +11,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 [Breakdown of video codecs.](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 
-|Sorted by efficency (excluding bit depth)|Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[MPV Shim](https://docs.jellyfin.org/general/clients/index.html#jellyfin-mpv-shim)|
+|Sorted by efficency (excluding bit depth)|Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop)|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌|✅|✅|✅|
 |[MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP))|❌|❌|❌|❌||❌||✅|✅|
@@ -46,7 +46,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 If the audio codec is unsupported or incompatible (such as playing a 5.1 channel stream on a stereo device), the audio codec must be transcoded. This is not nearly as intensive as video transcoding.
 
-||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Roku|Kodi|MPV Shim|
+||Chrome|Firefox|Safari|Android|AndroidTV|iOS|Roku|Kodi|Desktop|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |FLAC|✅|✅|✅|✅|||✅|✅|✅|
 |MP3|🔶<sup>1</sup>|🔶|✅|✅|||✅|✅|✅|

@@ -133,9 +133,9 @@ Provides both a desktop client mode and background cast mode. The client has sup
 
 **Links:**
 
-* [Github](https://github.com/jellyfin/jellyfin-desktop)
-* [Windows Release](https://github.com/jellyfin/jellyfin-desktop/releases)
-* [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
+- [Github](https://github.com/jellyfin/jellyfin-desktop)
+- [Windows Release](https://github.com/jellyfin/jellyfin-desktop/releases)
+- [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
 
 ### Jellycli
 

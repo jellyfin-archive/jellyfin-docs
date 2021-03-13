@@ -125,17 +125,17 @@ Xamarin cross-platform client for Jellyfin.
 
 - [GitHub](https://github.com/chaosinnovator/jellyfin-xamarin)
 
-### Jellyfin MPV Shim
+### Jellyfin Desktop
 
-Provides both a desktop client mode and background cast mode. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support.
+Provides both a desktop client mode and background cast mode. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support. Formerly known as MPV Shim.
 
-**Status:** ⭐ Active, 3rd-Party
+**Status:** ⭐ Active
 
 **Links:**
 
-- [GitHub](https://github.com/iwalton3/jellyfin-mpv-shim)
-- [Flatpak](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
-- [Windows](https://github.com/iwalton3/jellyfin-mpv-shim/releases)
+- [Github](https://github.com/jellyfin/jellyfin-desktop)
+- [Windows Release](https://github.com/jellyfin/jellyfin-desktop/releases)
+- [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
 
 ### Jellycli
 

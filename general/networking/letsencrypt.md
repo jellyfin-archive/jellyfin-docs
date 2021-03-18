@@ -102,6 +102,8 @@ Add a job to cron so the certificate will be renewed automatically.
 
 After installing Certbot and the Nginx plugin with `sudo apt install certbot python3-certbot-nginx`, generate the certificate.
 
+**Note**: For Fedora Linux distributions (E.g. CentOS 8) use `sudo dnf install python3-certbot-nginx` to install the Nginx plugin.
+
 ```sh
 sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email YOUR_EMAIL -d DOMAIN_NAME
 ```

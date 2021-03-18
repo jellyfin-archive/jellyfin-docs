@@ -11,8 +11,8 @@ title: Apache
 <VirtualHost *:80>
     ServerName DOMAIN_NAME
 
-    # Uncomment for HTTP to HTTPS redirect
-    # Redirect permanent / https://DOMAIN_NAME
+    # Comment to prevent HTTP to HTTPS redirect
+    Redirect permanent / https://DOMAIN_NAME
 
     ErrorLog /var/log/apache2/DOMAIN_NAME-error.log
     CustomLog /var/log/apache2/DOMAIN_NAME-access.log combined
@@ -30,7 +30,7 @@ title: Apache
 
     # Letsencrypt's certbot will place a file in this folder when updating/verifying certs
     # This line will tell apache to not to use the proxy for this folder.
-    ProxyPass /.well_known/ !
+    ProxyPass "/.well-known/" "!"
 
     ProxyPass "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"
     ProxyPassReverse "/socket" "ws://SERVER_IP_ADDRESS:8096/socket"

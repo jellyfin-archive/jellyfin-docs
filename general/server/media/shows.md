@@ -26,3 +26,55 @@ Shows
 
 > [!NOTE]
 > Season folders shouldn't contain the series name, otherwise Jellyfin can in certain cases (Stargate SG-1 due to the dash and one, for instance) misdetect your episodes and put them all under the same season.
+
+
+## Images
+
+### Poster
+* folder.ext
+* poster.ext
+* cover.ext
+* default.ext
+
+Examples:
+
+Series (2010)/poster.jpg _for series or movie poster_
+
+Series (2010)/Season 01/season1-poster.jpg _for season poster_
+
+### Backdrop
+* backdrop.ext
+* fanart.ext
+* background.ext
+* art.ext
+* extrafanart.ext
+
+Examples:
+
+Series (2010)/fanart.jpg _for the first backdrop image_
+
+Series (2010)/extrafanart/fanart1.jpg, Series (2010)/extrafanart/fanart2.jpg, _etc for additional backdrop images_
+
+### Banner
+* banner.ext
+
+Example:
+
+Series (2010)/banner.jpg
+
+### Thumb
+* thumb.ext
+* landscape.ext
+
+Examples:
+
+Series (2010)/landscape.jpg
+
+Series (2010)/Season 01/episode filename-thumb.jpg _for the thumbnail of an episode named "episode filename.mkv"_
+
+### Logo
+* logo.ext
+
+Example:
+
+Series (2010)/logo.png

@@ -38,9 +38,9 @@ Shows
 
 Examples:
 
-Series (2010)/poster.jpg _for series or movie poster_
+Series (2010)/poster.jpg *for series or movie poster*
 
-Series (2010)/Season 01/season1-poster.jpg _for season poster_
+Series (2010)/Season 01/season1-poster.jpg *for season poster*
 
 ### Backdrop
 

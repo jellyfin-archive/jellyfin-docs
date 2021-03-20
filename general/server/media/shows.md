@@ -31,6 +31,7 @@ Shows
 ## Images
 
 ### Poster
+
 * folder.ext
 * poster.ext
 * cover.ext
@@ -43,6 +44,7 @@ Series (2010)/poster.jpg _for series or movie poster_
 Series (2010)/Season 01/season1-poster.jpg _for season poster_
 
 ### Backdrop
+
 * backdrop.ext
 * fanart.ext
 * background.ext
@@ -56,6 +58,7 @@ Series (2010)/fanart.jpg _for the first backdrop image_
 Series (2010)/extrafanart/fanart1.jpg, Series (2010)/extrafanart/fanart2.jpg, _etc for additional backdrop images_
 
 ### Banner
+
 * banner.ext
 
 Example:
@@ -63,6 +66,7 @@ Example:
 Series (2010)/banner.jpg
 
 ### Thumb
+
 * thumb.ext
 * landscape.ext
 
@@ -73,6 +77,7 @@ Series (2010)/landscape.jpg
 Series (2010)/Season 01/episode filename-thumb.jpg _for the thumbnail of an episode named "episode filename.mkv"_
 
 ### Logo
+
 * logo.ext
 
 Example:

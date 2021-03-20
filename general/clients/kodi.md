@@ -90,7 +90,7 @@ To use Native mode, first set up your libraries in Jellyfin with a remote path.
             * If you have mounted your network share, you can reference the local mount point. This can be more performant but generally means it only works for one type of operating system, given the difference between the file systems
                 * `/mnt/media` (Linux)
                 * `Z:\media` (Windows)
-                * `/Volumes/media` (OS X)
+                * `/Volumes/media` (Mac OS)
 2. Configure libraries in Kodi
     * Skip the initial library selection.  We need to add file shares to Kodi first
     * Within Kodi, navigate to the settings menu and select "File manager"

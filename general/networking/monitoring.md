@@ -19,12 +19,10 @@ The `-i` option tells `curl` to also print the HTTP response code and headers.
 
 ### Prometheus metrics
 
-Jellyfin can make [Prometheus](https://prometheus.io/) metrics available at `/metrics`, but this is turned off by default to avoid unintentionally leaking this information on the public internet. To enable it, you will need to edit `/etc/jellyfin/system.xml` and change this line:
+Jellyfin can make [Prometheus](https://prometheus.io/) metrics available at `/metrics`, but this is turned off by default to avoid unintentionally leaking this information on the public internet. To enable it, you will need to edit `/etc/jellyfin/system.xml` and change this line from `false` to `true`:
 
 ```xml
 <EnableMetrics>false</EnableMetrics>
 ```
-
-to say `true` instead of `false`.
 
 If you have a [reverse proxy](xref:network-index#running-jellyfin-behind-a-reverse-proxy) configured, you can configure it to block access to the `/metrics` endpoint except for your internal network.

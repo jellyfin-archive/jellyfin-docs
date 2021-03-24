@@ -44,13 +44,9 @@ Allows clients to discover Jellyfin on the local network. A broadcast message to
 
 Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
 
-### Health Check Endpoint
+### Monitoring Endpoints
 
-Jellyfin exposes the `/health` endpoint designated for checking the status of the underlying service. Currently this will verify HTTP and database connectivity and return a `200 OK` response if successful.
-
-```sh
-curl http://myserver:8096/health
-```
+See @monitoring for details on the monitoring endpoints that Jellyfin provides.
 
 ## Self-Signed Certificate
 

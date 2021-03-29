@@ -71,9 +71,6 @@ Each hardware acceleration type, as well as each Jellyfin installation type, req
 
 In order to use hardware acceleration in Docker, the devices must be passed to the container. To see what video devices are available, you can run `sudo lshw -c video` or `vainfo` on your machine. VAAPI may require the `render` group added to the docker permissions. The `render` group id can be discovered in /etc/group such as `render:x:122:`.
 
-> [!NOTE]
-> [NVIDIA GPUs](https://github.com/docker/compose/issues/6691) aren't currently supported in docker-compose.
-
 You can use `docker run` to start the server with a command like the one below.
 
 ```sh

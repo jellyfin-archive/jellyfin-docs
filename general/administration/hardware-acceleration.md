@@ -110,7 +110,7 @@ services:
       - /dev/vchiq:/dev/vchiq
 ```
 
-### Debian Docker Nvidia
+### Debian Docker NVIDIA
 
 In order to achieve hardware acceleration using docker, several steps are required.
 
@@ -153,7 +153,7 @@ The line above should be modified to match the following line as an example.
 deb http://deb.debian.org/debian/ buster main non-free contrib
 ```
 
-Download and add the sources for the Nvidia docker container.
+Download and add the sources for the NVIDIA docker container.
 
 ```sh
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add
@@ -180,7 +180,7 @@ distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
 apt-get install -t $distribution-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
 ```
 
-Install Nvidia docker2 from the repository.
+Install NVIDIA docker2 from the repository.
 
 ```sh
 apt-get install nvidia-docker2
@@ -286,9 +286,9 @@ If you get driver information, everything is fine but if you get an error like `
 docker exec -it jellyfin ldconfig
 ```
 
-After that, you should ensure the Nvidia driver loads correctly.
+After that, you should ensure the NVIDIA driver loads correctly.
 
-Now go to the Jellyfin playback settings, enable Nvidia NVENC and select your target codecs depending on what your GPU supports. Try to play any file needing a transcode by changing the bitrate.
+Now go to the Jellyfin playback settings, enable NVIDIA NVENC and select your target codecs depending on what your GPU supports. Try to play any file needing a transcode by changing the bitrate.
 
 Check the transcode logs to make sure everything is working properly.
 
@@ -299,7 +299,7 @@ Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
 
 ### Configuring OpenCL Accelerated/VPP Tone Mapping
 
-OpenCL tone mapping with Nvidia NVENC, AMD AMF, and Intel VAAPI is through OpenCL image support.
+OpenCL tone mapping with NVIDIA NVENC, AMD AMF, and Intel VAAPI is through OpenCL image support.
 
 Full hardware based VPP tonemapping is supported on Intel VAAPI and QSV on Linux.
 
@@ -312,11 +312,11 @@ Docker      | OK           | untested | OK          | planned   | planned   | pl
 > [!NOTE]
 > Make sure the hardware acceleration is well configured before reading this section.
 
-1. On Windows: Install the latest Nvidia or AMD drivers.
+1. On Windows: Install the latest NVIDIA or AMD drivers.
 
 2. On Linux or docker:
 
-   - For Nvidia cards, install `nvidia-opencl-icd` on Debian/Ubuntu:
+   - For NVIDIA cards, install `nvidia-opencl-icd` on Debian/Ubuntu:
 
     ```sh
     sudo apt update

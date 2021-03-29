@@ -52,7 +52,7 @@ The official Jellyfin Android app, which supports Android 5 and above.
 
 ### Jellyfin for Android TV and Amazon Fire TV
 
-Jellyfin Android TV is the official Jellyfin client for Android TV, Nvidia Shield, and Amazon Fire TV devices.
+Jellyfin Android TV is the official Jellyfin client for Android TV, NVIDIA Shield, and Amazon Fire TV devices.
 
 **Status:** ⭐ Active
 

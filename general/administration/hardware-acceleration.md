@@ -119,13 +119,13 @@ Prerequisites:
 [NVIDIA Container Toolkit installation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#getting-started)
 
 - GNU/Linux x86_64 with kernel version > 3.10
-- Docker >= 1.12
+- Docker >= 19.03
 - NVIDIA GPU with Architecture > Fermi (2.1)
-- NVIDIA drivers >= 418.30
+- NVIDIA drivers >= 361.93
 
 Follow the instructions in the link above to install the NVIDIA Container Toolkit for your Linux distribution.
 
-Start your container adding these parameters.
+Start your container adding these parameters:
 
 ```sh
 -e NVIDIA_DRIVER_CAPABILITIES=all \
@@ -133,7 +133,7 @@ Start your container adding these parameters.
 --gpus all \
 ```
 
-A complete run command would look like this.
+A complete run command would look like this:
 
 ```sh
 docker run -d \
@@ -150,7 +150,7 @@ docker run -d \
  jellyfin/jellyfin
 ```
 
-Or with docker-compose >1.28, add the `deploy` and `environment` parts to your Jellyfin service.
+Or with docker-compose >1.28, add the `deploy` and `environment` parts to your Jellyfin service:
 
 ```yaml
 services:
@@ -167,25 +167,25 @@ services:
         - capabilities: [gpu]
 ```
 
-There are some special steps when running with the following option.
+There are some special steps when running with the following option:
 
 ```sh
 --user 1000:1000
 ```
 
-You may need to add this user to the video group on your host machine.
+You may need to add this user to the video group on your host machine:
 
 ```sh
 usermod -aG video user
 ```
 
-Once the container is started you can again validate access to the host resources.
+Once the container is started you can again validate access to the host resources:
 
 ```sh
 docker exec -it jellyfin nvidia-smi
 ```
 
-If you get driver information, everything is fine but if you get an error like `couldn't find libnvidia-ml.so library in your system` you need to run the following command.
+If you get driver information, everything is fine but if you get an error like `couldn't find libnvidia-ml.so library in your system` you need to run the following command:
 
 ```sh
 docker exec -it jellyfin ldconfig

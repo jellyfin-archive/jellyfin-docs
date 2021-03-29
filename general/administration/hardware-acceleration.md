@@ -30,6 +30,9 @@ List of supported codecs for [VAAPI](https://wiki.archlinux.org/index.php/Hardwa
 > [!NOTE]
 > AMD GPU requires open source driver Mesa 20.1 or higher to support hardware decoding HEVC.
 
+> [!NOTE]
+> As of 10.7.1, the Docker image uses Debian 10 and thus Mesa 18.3.6. To upgrade it, you'll need to make your own image based on a more recent distribution.
+
 ## AMD AMF
 
 AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver `amdgpu-pro` is required when using AMF on Linux.

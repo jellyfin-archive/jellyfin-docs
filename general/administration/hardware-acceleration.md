@@ -150,7 +150,7 @@ docker run -d \
  jellyfin/jellyfin
 ```
 
-Or with docker-compose >1.28, add the `deploy` and `env` parts to your Jellyfin service.
+Or with docker-compose >1.28, add the `deploy` and `environment` parts to your Jellyfin service.
 
 ```yaml
 services:

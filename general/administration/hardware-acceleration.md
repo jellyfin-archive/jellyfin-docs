@@ -125,7 +125,7 @@ Prerequisites:
 
 Follow the instructions in the link above to install the NVIDIA Container Toolkit for your Linux distribution.
 
-Start your container adding this parameter.
+Start your container adding these parameters.
 
 ```sh
 -e NVIDIA_DRIVER_CAPABILITIES=all \

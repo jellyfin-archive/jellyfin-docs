@@ -110,137 +110,26 @@ services:
       - /dev/vchiq:/dev/vchiq
 ```
 
-### Debian Docker NVIDIA
+### Linux Docker NVIDIA NVENC
 
 In order to achieve hardware acceleration using docker, several steps are required.
 
 Prerequisites:
 
-[NVIDIA Docker Installation](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0))
+[NVIDIA Container Toolkit installation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#getting-started)
 
 - GNU/Linux x86_64 with kernel version > 3.10
 - Docker >= 1.12
 - NVIDIA GPU with Architecture > Fermi (2.1)
 - NVIDIA drivers >= 418.30
 
-Confirm that your GPU shows up with this command.
+Follow the instructions in the link above to install the NVIDIA Container Toolkit for your Linux distribution.
 
-```sh
-lspci | grep VGA
-```
-
-Update your host so there is no chance of outdated software causing issues.
-
-```sh
-apt-get update && apt-get dist-upgrade -y
-```
-
-Install curl which will be used to download the required files.
-
-```sh
-apt-get install curl
-```
-
-Edit `sources.list` in `/etc/apt/sources.list` and add `non-free contrib` to each source as required.
-
-```data
-deb http://deb.debian.org/debian/ buster main
-```
-
-The line above should be modified to match the following line as an example.
-
-```data
-deb http://deb.debian.org/debian/ buster main non-free contrib
-```
-
-Download and add the sources for the NVIDIA docker container.
-
-```sh
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-```
-
-Update your package list again to download the latest software available from the new repository.
-
-```sh
-apt-get update
-```
-
-Install linux-headers with the following command.
-
-```sh
-apt-get install linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
-```
-
-Alternatively, Install linux-headers using backports.
-
-```sh
-distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
-apt-get install -t $distribution-backports linux-headers-$(uname -r | sed 's/[^-]*-[^-]*-//')
-```
-
-Install NVIDIA docker2 from the repository.
-
-```sh
-apt-get install nvidia-docker2
-```
-
-When prompted to choose to keep or install the maintainer package file type `y` to install the maintainer version.
-
-After the install you may want to add nvidia as default runtime: editing `/etc/docker/daemon.json` like this:
-
-```json
-{
-    "default-runtime": "nvidia",
-    "runtimes": {
-        "nvidia": {
-            "path": "nvidia-container-runtime",
-            "runtimeArgs": []
-        }
-    }
-}
-```
-
-Restart any docker services currently running.
-
-```sh
-sudo pkill -SIGHUP docker
-```
-
-Install nvidia drivers and dependencies.
-
-```sh
-distribution=$(. /etc/*-release;echo $VERSION_CODENAME)
-apt-get install -t $distribution-backports nvidia-driver libnvcuvid1 libnvidia-encode1 libcuda1 nvidia-smi
-```
-
-Reboot your host to apply all changes.
-
-```sh
-reboot now
-```
-
-Validate that your driver and docker are correctly set up with this driver test.
-
-```sh
-nvidia-smi
-docker run --gpus 0 nvidia/cuda:9.0-base nvidia-smi
-```
-
-Validate access to needed resources from host and docker.
-
-```sh
-ldconfig -p | grep cuvid
-ldconfig -p | grep libnvidia-encode.so.1
-```
-
-Start your container adding those environment parameters.
+Start your container adding this parameter.
 
 ```sh
 -e NVIDIA_DRIVER_CAPABILITIES=all \
 -e NVIDIA_VISIBLE_DEVICES=all \
---runtime=nvidia \
 --gpus all \
 ```
 
@@ -252,7 +141,6 @@ docker run -d \
  -e NVIDIA_DRIVER_CAPABILITIES=all \
  -e NVIDIA_VISIBLE_DEVICES=all \
  --gpus all \
- --runtime=nvidia \
  -p 8096:8096 \
  -p 8920:8920 \
  -v /config:/config \
@@ -262,13 +150,30 @@ docker run -d \
  jellyfin/jellyfin
 ```
 
+Or with docker-compose >1.28, add the `deploy` and `env` parts to your Jellyfin service.
+
+```yaml
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+  # ... your Jellyfin config
+  environment:
+    NVIDIA_DRIVER_CAPABILITIES: all
+    NVIDIA_VISIBLE_DEVICES: all
+  deploy:
+    resources:
+      reservations:
+        devices:
+        - capabilities: [gpu]
+```
+
 There are some special steps when running with the following option.
 
 ```sh
 --user 1000:1000
 ```
 
-You may need to add this user to the video group.
+You may need to add this user to the video group on your host machine.
 
 ```sh
 usermod -aG video user
@@ -287,15 +192,6 @@ docker exec -it jellyfin ldconfig
 ```
 
 After that, you should ensure the NVIDIA driver loads correctly.
-
-Now go to the Jellyfin playback settings, enable NVIDIA NVENC and select your target codecs depending on what your GPU supports. Try to play any file needing a transcode by changing the bitrate.
-
-Check the transcode logs to make sure everything is working properly.
-
-```data
-Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
-Stream #0:2 -> #0:1 (ac3 (native) -> aac (native))
-```
 
 ### Configuring OpenCL Accelerated/VPP Tone Mapping
 

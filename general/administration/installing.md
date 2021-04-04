@@ -8,32 +8,6 @@ title: Installing Jellyfin
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
-- [Container images](#container-images)
-  - [Docker](#docker)
-  - [Unraid Docker](#unraid-docker)
-  - [Kubernetes](#kubernetes)
-  - [Podman](#podman)
-  - [Cloudron](#cloudron)
-- [Windows (x86/x64)](#windows-x86x64)
-  - [Install using Installer (x64)](#install-using-installer-x64)
-  - [Manual Installation (x86/x64)](#manual-installation-x86x64)
-- [MacOS](#macos)
-- [Linux](#linux)
-  - [Linux (generic amd64)](#linux-generic-amd64)
-    - [Installation Process](#installation-process)
-  - [Portable DLL](#portable-dll)
-  - [Arch Linux](#arch-linux)
-  - [Fedora](#fedora)
-  - [CentOS](#centos)
-  - [Debian](#debian)
-    - [Repository](#repository)
-    - [Packages](#packages)
-  - [Ubuntu](#ubuntu)
-    - [Migrating to the new repository](#migrating-to-the-new-repository)
-    - [Ubuntu Repository](#ubuntu-repository)
-    - [Ubuntu Packages](#ubuntu-packages)
-    - [Migrating native Debuntu install to docker](#migrating-native-debuntu-install-to-docker)
-
 ## Container images
 
 Official container image: `jellyfin/jellyfin` <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>.

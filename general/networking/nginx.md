@@ -191,7 +191,6 @@ map $request $secretfilter {
 access_log /var/log/nginx/access.log stripsecrets;
 ```
 
-
 ### Cache Video Streams
 
 ```conf

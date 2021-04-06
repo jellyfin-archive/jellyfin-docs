@@ -83,7 +83,6 @@ It's possible to run Jellyfin behind another server acting as a reverse proxy.  
 > path can expose secrets to your logfile. We recommend that you either protect your logfiles or do not log full request URLs or censor sensitive data from the logfile.
 > The nginx documentation below includes an example how to censor sensitive information from a logfile.
 
-
 Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org), [Caddy](https://caddyserver.com), [Haproxy](https://www.haproxy.com), [Nginx](https://www.nginx.com) and [Traefik](https://traefik.io).
 
 * [Apache](xref:network-reverse-proxy-apache)

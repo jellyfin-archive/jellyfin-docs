@@ -78,6 +78,12 @@ It's possible to run Jellyfin behind another server acting as a reverse proxy.  
 > In order for a reverse proxy to have the maximum benefit, you should have a publically routable IP address and a domain with DNS set up correctly.
 > These examples assume you want to run Jellyfin under a sub-domain (e.g. jellyfin.example.com), but are easily adapted for the root domain if desired.
 
+> [!WARNING]
+> Be careful when logging requests with your reverse proxy. Jellyfin sometimes sends authentication information as part of the URL, so logging the full request
+> path can expose secrets to your logfile. We recommend that you either protect your logfiles or do not log full request URLs or censor sensitive data from the logfile.
+> The nginx documentation below includes an example how to censor sensitive information from a logfile.
+
+
 Some popular options for reverse proxy systems are [Apache](https://httpd.apache.org), [Caddy](https://caddyserver.com), [Haproxy](https://www.haproxy.com), [Nginx](https://www.nginx.com) and [Traefik](https://traefik.io).
 
 * [Apache](xref:network-reverse-proxy-apache)

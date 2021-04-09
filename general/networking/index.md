@@ -13,7 +13,10 @@ Many clients will automatically discover servers running on the same LAN and dis
 
 HTTP and HTTPS are the primary means of connecting to the server. If using a self-signed certificate for HTTPS, some clients may not work such as Chromecast or Roku.
 
-### Port Bindings
+> [!WARNING]
+> In order for Chromecast to work on a non-public routable connection, 8.8.8.8 must be blocked on the Chromecast's Gateway. Blocking 8.8.8.8 on your router is the easiest solution to this problem.
+
+ Port Bindings
 
 This document aims to provide an administrator with knowledge on what ports Jellyfin binds to and what purpose they serve.
 

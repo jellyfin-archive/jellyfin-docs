@@ -103,6 +103,17 @@ A third party app with direct play and HDR support. Available on Android, Androi
 
 - [Website](https://mrmc.tv)
 
+### Finamp
+
+A third party app for music playback. Supports offline mode/downloading songs.
+
+**Status** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [GitHub](https://github.com/UnicornsOnLSD/finamp)
+- [Download](https://github.com/UnicornsOnLSD/finamp/releases)
+
 ## Roku
 
 ### Jellyfin for Roku

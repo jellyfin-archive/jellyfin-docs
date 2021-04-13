@@ -354,4 +354,4 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
   * [https://raw.githubusercontent.com/k-matti/jellyfin-plugin-repository/master/manifest.json](https://raw.githubusercontent.com/k-matti/jellyfin-plugin-repository/master/manifest.json)
 * Included Plugins
   * [SMS Notifications](https://github.com/k-matti/jellyfin-plugin-sms)
-  * [NapiSub](https://github.com/k-matti/jellyfin-plugin-napi) 
+  * [NapiSub](https://github.com/k-matti/jellyfin-plugin-napi)

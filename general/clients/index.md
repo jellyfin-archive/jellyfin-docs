@@ -142,9 +142,9 @@ Xamarin cross-platform client for Jellyfin.
 
 ### Jellyfin Media Player
 
-Desktop client using jellyfin-web with embedded MPV player. Supports Windows, Mac OS,
-and Linux. Media plays within the same window using the jellyfin-web interface unlike
-Jellyfin Desktop. Supports audio passthrough. Based on Plex Media Player.
+Desktop client using jellyfin-web with embedded MPV player. Supports direct play of most file
+formats on Windows, Mac OS, and Linux. Media plays within the same window using the
+jellyfin-web interface unlike Jellyfin Desktop. Supports audio passthrough. Based on Plex Media Player.
 
 **Status:** ⭐ Active
 

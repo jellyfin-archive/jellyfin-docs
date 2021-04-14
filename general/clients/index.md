@@ -37,47 +37,51 @@ The official Jellyfin Android app, which supports Android 5 and above.
 
 **Links:**
 
-<a href='https://play.google.com/store/apps/details?id=org.jellyfin.mobile&utm_source=docs&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
+<a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile">
+<img width="153" src="https://jellyfin.org/images/store-icons/google-play.png" alt="Jellyfin on Google Play"/>
+</a>
+<a href="https://www.amazon.com/gp/aw/d/B081RFTTQ9">
+<img width="153" src="https://jellyfin.org/images/store-icons/amazon.png" alt="Jellyfin on Amazon Appstore"/>
+</a>
+<a href="https://f-droid.org/en/packages/org.jellyfin.mobile/">
+<img width="153" src="https://jellyfin.org/images/store-icons/fdroid.png" alt="Jellyfin on F-Droid"/>
+</a>
 
 - [GitHub](https://github.com/jellyfin/jellyfin-android)
-- [Download](https://jellyfin.org/downloads/clients/#android)
+- [Download](https://jellyfin.org/clients/#android)
+
+### Jellyfin for Android TV and Amazon Fire TV
+
+Jellyfin Android TV is the official Jellyfin client for Android TV, NVIDIA Shield, and Amazon Fire TV devices.
+
+**Status:** ⭐ Active
+
+**Links:**
+
+<a href="https://play.google.com/store/apps/details?id=org.jellyfin.androidtv">
+<img width="153" src="https://jellyfin.org/images/store-icons/google-play.png" alt="Jellyfin for Android TV on Google Play"/>
+</a>
+<a href="https://www.amazon.com/gp/aw/d/B07TX7Z725">
+<img width="153" src="https://jellyfin.org/images/store-icons/amazon.png" alt="Jellyfin for Android TV on Amazon Appstore"/>
+</a>
+
+- [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
+- [Download](https://jellyfin.org/clients/#androidtv)
 
 ### Gelli
 
 Native music player for Android devices with transcoding support, gapless playback, favorites, playlists, and many other features. The code is based on a relatively recent version of Phonograph and contributions are welcome!
 
-**Status:** ⭐ Active
+**Status:** ⭐ Active, 3rd-Party
 
 **Links:**
+
+<a href="https://f-droid.org/packages/com.dkanada.gramophone/">
+<img width="153" src="https://jellyfin.org/images/store-icons/fdroid.png" alt="Gelli on F-Droid"/>
+</a>
 
 - [GitHub](https://github.com/dkanada/gelli)
 - [Download](https://github.com/dkanada/gelli/releases)
-
-### Jellyfin for Android TV
-
-The official Jellyfin Android TV app.
-
-**Status:** ⭐ Active
-
-**Links:**
-
-<a href='https://play.google.com/store/apps/details?id=org.jellyfin.androidtv'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
-
-- [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
-- [Download](https://jellyfin.org/downloads/clients/#androidtv)
-
-### Jellyfin for Amazon Fire TV
-
-The official Jellyfin Fire TV app.
-
-**Status:** ⭐ Active
-
-**Links:**
-
-<a href='https://www.amazon.com/gp/aw/d/B07TX7Z725'><img alt='Get it on the Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' width="200"/></a>
-
-- [GitHub](https://github.com/jellyfin/jellyfin-androidtv)
-- [Download](https://jellyfin.org/downloads/clients/#androidtv)
 
 ### Yatse
 
@@ -98,6 +102,17 @@ A third party app with direct play and HDR support. Available on Android, Androi
 **Links:**
 
 - [Website](https://mrmc.tv)
+
+### Finamp
+
+A third party app for music playback. Supports offline mode/downloading songs.
+
+**Status** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [GitHub](https://github.com/UnicornsOnLSD/finamp)
+- [Download](https://github.com/UnicornsOnLSD/finamp/releases)
 
 ## Roku
 
@@ -147,9 +162,9 @@ Provides both a desktop client mode and background cast mode. The client has sup
 
 **Links:**
 
-* [Github](https://github.com/jellyfin/jellyfin-desktop)
-* [Windows Release](https://github.com/jellyfin/jellyfin-desktop/releases)
-* [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
+- [Github](https://github.com/jellyfin/jellyfin-desktop)
+- [Windows Release](https://github.com/jellyfin/jellyfin-desktop/releases)
+- [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
 
 ### Jellycli
 

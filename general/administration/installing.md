@@ -8,33 +8,6 @@ title: Installing Jellyfin
 
 The Jellyfin project and its contributors offer a number of pre-built binary packages to assist in getting Jellyfin up and running quickly on multiple systems.
 
-- [Container images](#container-images)
-  - [Docker](#docker)
-    - [Hardware Transcoding with Nvidia (Ubuntu)](#hardware-transcoding-with-nvidia-ubuntu)
-  - [Unraid Docker](#unraid-docker)
-  - [Kubernetes](#kubernetes)
-  - [Podman](#podman)
-  - [Cloudron](#cloudron)
-- [Windows (x86/x64)](#windows-x86x64)
-  - [Install using Installer (x64)](#install-using-installer-x64)
-  - [Manual Installation (x86/x64)](#manual-installation-x86x64)
-- [MacOS](#macos)
-- [Linux](#linux)
-  - [Linux (generic amd64)](#linux-generic-amd64)
-    - [Installation Process](#installation-process)
-  - [Portable DLL](#portable-dll)
-  - [Arch Linux](#arch-linux)
-  - [Fedora](#fedora)
-  - [CentOS](#centos)
-  - [Debian](#debian)
-    - [Repository](#repository)
-    - [Packages](#packages)
-  - [Ubuntu](#ubuntu)
-    - [Migrating to the new repository](#migrating-to-the-new-repository)
-    - [Ubuntu Repository](#ubuntu-repository)
-    - [Ubuntu Packages](#ubuntu-packages)
-    - [Migrating native Debuntu install to docker](#migrating-native-debuntu-install-to-docker)
-
 ## Container images
 
 Official container image: `jellyfin/jellyfin` <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"></a>.
@@ -144,66 +117,6 @@ Then while in the same folder as the `docker-compose.yml` run:
 To run the container in background add `-d` to the above command.
 
 You can learn more about using Docker by [reading the official Docker documentation](https://docs.docker.com/).
-
-#### Hardware Transcoding with Nvidia (Ubuntu)
-
-You are able to use hardware encoding with Nvidia, but it requires some additional configuration. These steps require basic knowledge of Ubuntu but nothing too special.
-
-**Adding Package Repositories**
-First off you'll need to add the Nvidia package repositories to your Ubuntu installation. This can be done by running the following commands:
-
-   ```sh
-   distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-   curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-   curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-   ```
-
-**Installing Nvidia container toolkit**
-Next we'll need to install the Nvidia container toolkit. This can be done by running the following commands:
-
-   ```sh
-   sudo apt-get update -y
-   sudo apt-get install nvidia-container-toolkit -y
-   ```
-
-After installing the Nvidia Container Toolkit, you'll need to restart the Docker Daemon in order to let Docker use your Nvidia GPU:
-
-   ```sh
-   sudo systemctl restart docker
-   ```
-
-**Changing the `docker-compose.yml`**
-Now that all the packages are in order, let's change the `docker-compose.yml` to let the Jellyfin container make use of the Nvidia GPU.
-The following lines need to be added to the file:
-
-   ```sh
-   runtime: nvidia
-   environment:
-   - NVIDIA_VISIBLE_DEVICES=all
-   ```
-
-Your completed `docker-compose.yml` file should look something like this:
-
-   ```yml
-   version: "2.3"
-   services:
-     jellyfin:
-       image: jellyfin/jellyfin
-       user: uid:gid
-       network_mode: "host"
-       restart: "unless-stopped"
-       runtime: nvidia
-       environment:
-         - JELLYFIN_PublishedServerUrl=http://example.com
-         - NVIDIA_VISIBLE_DEVICES=all
-       volumes:
-         - /path/to/config:/config
-         - /path/to/cache:/cache
-         - /path/to/media:/media
-   ```
-
-> [!Note]
-> For Nvidia Hardware encoding the minimum version of docker-compose needs to be 2. However we recommend sticking with version 2.3 as it has proven to work with nvenc encoding.
 
 ### Unraid Docker
 

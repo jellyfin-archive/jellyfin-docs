@@ -150,9 +150,9 @@ Jellyfin Desktop. Supports audio passthrough. Based on Plex Media Player.
 
 **Links:**
 
-* [Github](https://github.com/jellyfin/jellyfin-media-player)
-* [Binary Releases](https://github.com/jellyfin/jellyfin-media-player/releases)
-* [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-media-player)
+- [Github](https://github.com/jellyfin/jellyfin-media-player)
+- [Binary Releases](https://github.com/jellyfin/jellyfin-media-player/releases)
+- [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-media-player)
 
 ### Jellyfin Desktop
 

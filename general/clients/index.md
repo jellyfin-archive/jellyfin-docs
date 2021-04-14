@@ -125,6 +125,20 @@ Xamarin cross-platform client for Jellyfin.
 
 - [GitHub](https://github.com/chaosinnovator/jellyfin-xamarin)
 
+### Jellyfin Media Player
+
+Desktop client using jellyfin-web with embedded MPV player. Supports Windows, Mac OS,
+and Linux. Media plays within the same window using the jellyfin-web interface unlike
+Jellyfin Desktop. Supports audio passthrough. Based on Plex Media Player.
+
+**Status:** ⭐ Active
+
+**Links:**
+
+* [Github](https://github.com/jellyfin/jellyfin-media-player)
+* [Binary Releases](https://github.com/jellyfin/jellyfin-media-player/releases)
+* [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-media-player)
+
 ### Jellyfin Desktop
 
 Provides both a desktop client mode and background cast mode. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support. Formerly known as MPV Shim.

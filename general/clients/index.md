@@ -154,16 +154,16 @@ jellyfin-web interface unlike Jellyfin Desktop. Supports audio passthrough. Base
 - [Binary Releases](https://github.com/jellyfin/jellyfin-media-player/releases)
 - [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-media-player)
 
-### Jellyfin Desktop
+### Jellyfin MPV Shim
 
-Provides both a desktop client mode and background cast mode. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support. Formerly known as MPV Shim.
+Provides background cast client using MPV. The client has support for direct play of advanced codecs such as 10 bit HEVC with subtitles, many customizable options, and whole-season subtitle preference support.
 
 **Status:** ⭐ Active
 
 **Links:**
 
-- [Github](https://github.com/jellyfin/jellyfin-desktop)
-- [Windows Release](https://github.com/jellyfin/jellyfin-desktop/releases)
+- [Github](https://github.com/jellyfin/jellyfin-mpv-shim)
+- [Windows Release](https://github.com/jellyfin/jellyfin-mpv-shim/releases)
 - [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-mpv-shim)
 
 ### Jellycli

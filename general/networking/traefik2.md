@@ -201,7 +201,7 @@ services:
   email = "YOU@DOMAIN_NAME"
   storage = "acme.json"
   # Use HTTP-01 ACME challenge
-  #[certificatresolvers.leresolver.acme.httpChallenge]
+  #[certificateresolvers.leresolver.acme.httpChallenge]
   #  entryPoint = "http"
   # Use a DNS-01 ACME challenge rather than HTTP-01 challenge.
   # Mandatory for wildcard certificate generation.

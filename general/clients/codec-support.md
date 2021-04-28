@@ -30,7 +30,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 <sup>4</sup>AV1 support is experimental and often too slow for CPU decoding. As of writing this (05.2020) there is no hardware support on most devices yet. Support for AV1 in Jellyfin is tracked in [jellyfin#3129](https://github.com/jellyfin/jellyfin/issues/3129).
 
-<sup>5</sup>As of [Client 0.12](https://github.com/jellyfin/jellyfin-androidtv/pull/671), HEVC is enabled on all devices running Android 5.0+, but early generations of the Amazon Fire may not work yet. 10Bit may be supported depending on your device. Before Client 0.12, HEVC support was enabled on specific devices.
+<sup>5</sup>As of [version 0.12](https://github.com/jellyfin/jellyfin-androidtv/pull/671), HEVC is enabled on all devices running Android 5.0+, but early generations of the Amazon Fire may not work yet. 10Bit may be supported depending on your device. Before Client 0.12, HEVC support was enabled on specific devices.
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 

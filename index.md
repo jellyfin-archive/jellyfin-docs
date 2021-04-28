@@ -51,6 +51,7 @@ Want to know more about administering a Jellyfin server? Check out these pages!
 * [Migrating from Emby](xref:admin-migrate-from-emby): How to migrate an existing Emby 3.5.2 installation to Jellyfin.
 * [Plugins](xref:server-plugins-index): How to install and manage plugins.
 * [Networking](xref:network-index): Networking settings and troubleshooting.
+* [Monitoring](xref:monitoring): Integration with external monitoring software.
 * [Hardware Acceleration](xref:admin-hardware-acceleration): Improve transcoding performance on supported hardware.
 
 ## Contributing to Jellyfin

@@ -13,6 +13,9 @@ Many clients will automatically discover servers running on the same LAN and dis
 
 HTTP and HTTPS are the primary means of connecting to the server. If using a self-signed certificate for HTTPS, some clients may not work such as Chromecast or Roku.
 
+> [!WARNING]
+> In order for Chromecast to work on a non-public routable connection, 8.8.8.8 must be blocked on the Chromecast's Gateway. Blocking 8.8.8.8 on your router is the easiest solution to this problem.
+
 ### Port Bindings
 
 This document aims to provide an administrator with knowledge on what ports Jellyfin binds to and what purpose they serve.
@@ -44,13 +47,9 @@ Allows clients to discover Jellyfin on the local network. A broadcast message to
 
 Live TV devices will often use a random UDP port for HDHomeRun devices. The server will select an unused port on startup to connect to these tuner devices.
 
-### Health Check Endpoint
+### Monitoring Endpoints
 
-Jellyfin exposes the `/health` endpoint designated for checking the status of the underlying service. Currently this will verify HTTP and database connectivity and return a `200 OK` response if successful.
-
-```sh
-curl http://myserver:8096/health
-```
+See @monitoring for details on the monitoring endpoints that Jellyfin provides.
 
 ## Self-Signed Certificate
 
@@ -106,7 +105,7 @@ Ports 80 and 443 (pointing to the proxy server) need to be opened on your router
 
 ### Known Proxies
 
-Add the IP address of your reverse proxy to the `Known Proxies` (under Admin Dashboard -> Networking).  This is a comma separated list of IP addresses of known proxies used when connecting to your Jellyfin instance and is required to make proper use of X-Forwarded-For headers. Requires a server restart after saving.
+Add the IP address/hostname of your reverse proxy to the `Known Proxies` (under Admin Dashboard -> Networking).  This is a comma separated list of IP addresses/hostnames of known proxies used when connecting to your Jellyfin instance and is required to make proper use of X-Forwarded-For headers. Requires a server restart after saving.
 
 ### Base URL
 

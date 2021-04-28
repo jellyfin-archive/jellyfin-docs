@@ -5,10 +5,12 @@ title: Kodi
 
 # Jellyfin for Kodi
 
-> [!NOTE]
+> [!TIP]
 > It's highly recommended to install the `Kodi Sync Queue` plugin into the Jellyfin server as well.
 > This will keep your media libraries up to date without waiting for a periodic re-sync from Kodi.
-> Also be aware that a local SQLite database is required. Remote Kodi databases, like MySQL, is not supported.
+
+> [!CAUTION]
+> Remote Kodi databases, like MySQL, are not supported. A local SQLite database is required (this is the default).
 
 ## Installation Process
 
@@ -84,12 +86,18 @@ To use Native mode, first set up your libraries in Jellyfin with a remote path.
             * Guest User - `\\192.168.0.10\share_name`
             * Custom User (Not Recommended) - `\\user:password@192.168.0.10\share_name`
                 * It's more secure to use the generic Guest mapping here and specify credentials from within Kodi
+        * Mounted share
+            * If you have mounted your network share, you can reference the local mount point. This can be more performant but generally means it only works for one type of operating system, given the difference between the file systems
+                * `/mnt/media` (Linux)
+                * `Z:\media` (Windows)
+                * `/Volumes/media` (Mac OS)
 2. Configure libraries in Kodi
     * Skip the initial library selection.  We need to add file shares to Kodi first
     * Within Kodi, navigate to the settings menu and select "File manager"
     * Select "Add source"
     * Select "Browse" and "Add network location"
     * Create either a NFS or SMB location from the selection box and fill in the necessary information about your network share
+      * If you are using a mounted share, browse to the mount point on your file system rather than the network share
     * Select your newly created location and choose "Ok"
     * Give your media source a name and choose "Ok"
     * Go to Add-Ons -> Jellyfin -> Manage Libraries -> Add Libraries
@@ -114,4 +122,4 @@ The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  For
 
 ## Multiple Clients
 
-When using multiple Kodi clients do not copy Kodi's database (i.e. myvideosXYZ.db, jellyfin.db) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client, causing sync between these clients not to work correctly.
+When using multiple Kodi clients do not copy Kodi's database (i.e. `myvideosXYZ.db`, `jellyfin.db`) files from one client to the other to try and reduce initial syncing time. This will work, but it will confuse Jellyfin and all the clients will be seen as the same client, causing sync between these clients not to work correctly.

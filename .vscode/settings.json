@@ -1,5 +1,9 @@
 {
     "search.exclude": {
         "src/**": true
-    }
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": true
+    },
+    "editor.formatOnSave": false
 }

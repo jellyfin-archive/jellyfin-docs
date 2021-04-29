@@ -45,7 +45,7 @@ All plugins hosted on the repository can be built from source and manually added
 
 ### Official Plugins
 
-#### Anime Plugins
+#### Metadata Plugins
 
 Manage your Anime in Jellyfin with several different metadata providers and options for organizing your collection.
 
@@ -85,6 +85,18 @@ Provides metadata support from [Anisearch](https://www.anisearch.com/).
 
 * [Github](https://github.com/jellyfin/jellyfin-plugin-anisearch)
 
+##### Bookshelf
+
+[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+
+Supports several different metadata providers and options for organizing your collection.
+
+**Links:**
+
+* [GitHub](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+
 ##### Kitsu
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-kitsu.svg)](https://github.com/jellyfin/jellyfin-plugin-kitsu)
@@ -106,18 +118,6 @@ Automatically organizes your media by monitoring a folder and moving or copying 
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
-
-#### Bookshelf
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
-
-Supports several different metadata providers and options for organizing your collection.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
 
 #### Email
 

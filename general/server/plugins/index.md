@@ -45,17 +45,67 @@ All plugins hosted on the repository can be built from source and manually added
 
 ### Official Plugins
 
-#### Anime
+#### Metadata Plugins
 
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-anime.svg)](https://github.com/jellyfin/jellyfin-plugin-anime)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-anime.svg)](https://github.com/jellyfin/jellyfin-plugin-anime)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-anime.svg)](https://github.com/jellyfin/jellyfin-plugin-anime)
+Manage your Anime in Jellyfin with several different metadata providers and options for organizing your collection.
 
-Manage your Anime in Jellyfin. Supports several different metadata providers and options for organizing your collection.
+##### Anilist
+
+[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-anilist.svg)](https://github.com/jellyfin/jellyfin-plugin-anilist)
+[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-anilist.svg)](https://github.com/jellyfin/jellyfin-plugin-anilist)
+[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-anilist.svg)](https://github.com/jellyfin/jellyfin-plugin-anilist)
+
+Provides metadata support from [Anilist](https://anilist.co/).
+
+**Link:**
+
+* [Github](https://github.com/jellyfin/jellyfin-plugin-anilist)
+
+##### Anidb
+
+[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-anidb.svg)](https://github.com/jellyfin/jellyfin-plugin-anidb)
+[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-anidb.svg)](https://github.com/jellyfin/jellyfin-plugin-anidb)
+[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-anidb.svg)](https://github.com/jellyfin/jellyfin-plugin-anidb)
+
+Provides metadata support from [Anidb](https://anidb.net/).
+
+**Link:**
+
+* [Github](https://github.com/jellyfin/jellyfin-plugin-anidb)
+
+##### Anisearch
+
+[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-anisearch.svg)](https://github.com/jellyfin/jellyfin-plugin-anisearch)
+[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-anisearch.svg)](https://github.com/jellyfin/jellyfin-plugin-anisearch)
+[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-anisearch.svg)](https://github.com/jellyfin/jellyfin-plugin-anisearch)
+
+Provides metadata support from [Anisearch](https://www.anisearch.com/).
+
+**Link:**
+
+* [Github](https://github.com/jellyfin/jellyfin-plugin-anisearch)
+
+##### Bookshelf
+
+[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+
+Supports several different metadata providers and options for organizing your collection.
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-anime)
+* [GitHub](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
+
+##### Kitsu
+
+[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-kitsu.svg)](https://github.com/jellyfin/jellyfin-plugin-kitsu)
+[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-kitsu.svg)](https://github.com/jellyfin/jellyfin-plugin-kitsu)
+[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-kitsu.svg)](https://github.com/jellyfin/jellyfin-plugin-kitsu)
+
+Provides metadata support from [Kitsu](https://kitsu.io/).
+
+* [Github](https://github.com/jellyfin/jellyfin-plugin-kitsu)
 
 #### Auto Organize
 
@@ -68,18 +118,6 @@ Automatically organizes your media by monitoring a folder and moving or copying 
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
-
-#### Bookshelf
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-bookshelf.svg)](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
-
-Supports several different metadata providers and options for organizing your collection.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-bookshelf)
 
 #### Email
 
@@ -104,10 +142,6 @@ Scrape poster images for movies, shows, and artists in your library from [fanart
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-fanart)
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-iptv)
 
 #### Kodi Sync Queue
 
@@ -242,13 +276,13 @@ Record your watched media with [Trakt](https://trakt.tv).
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-trakt)
 
-#### [TVHeadend](xref:server-plugins-tvheadend)
+#### TVHeadend
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 [![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 [![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-tvheadend.svg)](https://github.com/jellyfin/jellyfin-plugin-tvheadend)
 
-Manage TVHeadEnd from Jellyfin.
+Manage TVHeadEnd from Jellyfin. Click [here](xref:server-plugins-tvheadend) for plugin support.
 
 **Links:**
 

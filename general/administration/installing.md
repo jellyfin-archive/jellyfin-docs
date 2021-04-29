@@ -258,7 +258,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
     systemctl --user enable container-myjellyfin.service 
     ```
 
-    At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at system boot we'll have to include one more option.
+    At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
 
     ```sh
     loginctl enable-linger <username>

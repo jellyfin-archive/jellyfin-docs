@@ -112,7 +112,7 @@ This is the generic name for subtitles that can be turned on or off. This can be
 
 #### Burned-in
 
-Open subtitles (also known as burned-in subtitles) are subtitles that have been permanently placed in the video and cannot be turned off. Open subtitles are the most common type of subtitles, where the subtitles are part of a seperate stream or file and can be toggled on or off.
+Open subtitles (also known as burned-in subtitles) are subtitles that have been permanently placed in the video and cannot be turned off. Open subtitles are the most common type of subtitles, where the subtitles are part of the video stream and cannot be toggled on or off.
 
 #### SDH and Closed Captioning
 

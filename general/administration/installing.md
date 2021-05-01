@@ -589,6 +589,13 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 > [!NOTE]
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
 
+Steps 1 to 3 can also be replaced by:
+
+    ```sh
+    sudo apt install extrepo
+    sudo extrepo enable jellyfin
+    ```
+
 1. Install HTTPS transport for APT as well as `gnupg` and `lsb-release` if you haven't already.
 
     ```sh

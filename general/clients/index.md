@@ -296,13 +296,14 @@ Kodi thick client for Jellyfin. This addon syncs your Jellyfin metadata into Kod
 
 ### JellyCon
 
-Kodi thin client for Jellyfin. This addon is fully dynamic and allows for fast user switching.
+Kodi thin client for Jellyfin. This addon is fully dynamic and allows for fast user switching and is compatible with other Kodi sources.
 
 **Status:** ⭐ Active
 
 **Links:**
 
 - [GitHub](https://github.com/jellyfin/jellycon)
+- [Installing](xref:clients-kodi)
 
 ## LG WebOS
 

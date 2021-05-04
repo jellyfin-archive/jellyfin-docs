@@ -42,14 +42,14 @@ The installation method for the repository varies depending on what kind of devi
 > [!CAUTION]
 > Remote Kodi databases, like MySQL, are not supported. A local SQLite database is required (this is the default).
 
-## Overview
+## Jellyfin for Kodi Overview
 
 This addon syncs metadata from selected Jellyfin libraries into the local Kodi database. This has the effect of making interacting with it feel very much like vanilla Kodi with local media.  This means that our Jellyfin content will be displayed on the home screen under the proper media headings by default, it has virtually no delay while interacting with the library, etc. However, it also assumes that it's the only media source and in largely incompatible with other media sources that interact with Kodi's database.
 
 Media in Kodi's database is automatically kept in sync with the server in one of several ways:
 
-  * Startup sync - Each time Kodi starts, it will reach out to the Kodi Sync Queue plugin in the server and request all updated media since it's last checkin time (when Kodi was last shut down)
-  * Live sync - This happens while Kodi is running.  When the server updates an item, it will send a notification to Kodi over a websocket connection that it has new media that needs to be updated.
+* Startup sync - Each time Kodi starts, it will reach out to the Kodi Sync Queue plugin in the server and request all updated media since it's last checkin time (when Kodi was last shut down)
+* Live sync - This happens while Kodi is running.  When the server updates an item, it will send a notification to Kodi over a websocket connection that it has new media that needs to be updated.
 
 ## Install Jellyfin for Kodi Add-on
 
@@ -133,7 +133,7 @@ When using multiple Kodi clients do not copy Kodi's database (i.e. `myvideosXYZ.
 
 # JellyCon
 
-## Overview
+## JellyCon Overview
 
 JellyCon behaves more like a standard Kodi streaming addon. Media is accessed primarily by going through the Add-ons -> JellyCon menu, however depending on what skin is being used custom shortcuts and widgets can be added to the home menu. It also allows easier switching between multiple Jellyfin servers or users since it doesn't have to rely on syncing all the metadata down. By not having metadata synced, it has to request info from the server which can take a bit more time when you're browsing, but you don't have to wait for the database to sync or keep it up to date. It's also compatible with other media sources and can be used with other add-ons without issue.
 
@@ -152,7 +152,7 @@ JellyCon behaves more like a standard Kodi streaming addon. Media is accessed pr
 
 Many Kodi skins allow for customizing of the home menu with custom nodes and widgets.  However, all of these use slightly different layouts and terminology.  Rather than a step by step guide, this section serves as an barebones introduction to customizing a skin.
 
-### Examples 
+### Examples
 
 If you would like a link on the home screen to open a library in your Jellyfin server called "Kid's Movies", you would point the menu item to the path: `Add-On -> Video Add-On -> JellyCon -> Jellyfin Libraries -> Kid's Movies -> Create menu item to here`.
 
@@ -160,5 +160,5 @@ Beyond just modifying where the home menu headers go, many skins also allow you 
 
 Another common use case of widgets would be to display the next available episodes of shows that you may be watching.  As above, this can be done both with individual libraries or with all libraries combined:
 
-  * `Add-On -> Video Add-On -> JellyCon -> Jellyfin Libraries -> Anime -> Anime - Next Up (20) -> Use as widget`
-  * `Add-On -> Video Add-On -> JellyCon -> Global Lists -> TV Shows -> TV Shows - Next Up (20) -> Use as widget`
+* `Add-On -> Video Add-On -> JellyCon -> Jellyfin Libraries -> Anime -> Anime - Next Up (20) -> Use as widget`
+* `Add-On -> Video Add-On -> JellyCon -> Global Lists -> TV Shows -> TV Shows - Next Up (20) -> Use as widget`

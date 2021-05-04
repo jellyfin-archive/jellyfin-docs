@@ -192,9 +192,9 @@ apt-get update && apt-get install git gnupg wget apt-transport-https curl autoco
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg && mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
 wget -q https://packages.microsoft.com/config/debian/10/prod.list && mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get install dotnet-sdk-3.1 yarn
+apt-get update && apt-get install dotnet-sdk-5.0 yarn
 cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
-mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
+mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
 cd /opt/jellyfin-web && yarn install && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
 kill -15 $(pidof jellyfin)
 ```
@@ -211,6 +211,6 @@ docker exec -ti jftest bash
 cd /opt/jellyfin
 git fetch origin pull/<PR_ID>/head:my-testing-branch
 git merge my-testing-branch
-dotnet publish Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
+dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
 kill -15 $(pidof jellyfin)
 ```

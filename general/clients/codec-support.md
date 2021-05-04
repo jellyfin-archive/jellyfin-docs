@@ -11,6 +11,8 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 [Breakdown of video codecs.](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 
+[Test your browser's compatibility for any codec profile.](https://cconcolato.github.io/media-mime-support/)
+
 |Sorted by efficency (excluding bit depth)|Chrome|Firefox|Safari|Android|iOS|AndroidTV|[Roku](https://developer.roku.com/docs/specs/streaming.md)|Kodi|[Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop)|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX)|❌|❌|❌|❌||❌|✅|✅|✅|

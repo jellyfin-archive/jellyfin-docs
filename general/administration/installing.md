@@ -255,7 +255,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
 4. Enable the service.
 
     ```sh
-    systemctl --user enable container-myjellyfin.service 
+    systemctl --user enable container-myjellyfin.service
     ```
 
     At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
@@ -267,7 +267,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
 5. Start the service.
 
     ```sh
-    systemctl --user start container-myjellyfin.service 
+    systemctl --user start container-myjellyfin.service
     ```
 
 ### Cloudron

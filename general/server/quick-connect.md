@@ -11,13 +11,13 @@ Starting with Jellyfin server version 10.7.0 and supported clients, you can use 
 
 To use Quick Connect, the Jellyfin server admin has to enable this feature in the server dashboard.
 
-Settings > Dashboard > Quick Connect > Enable quick connect on this server (http://localhost:8096/web/index.html#!/quickConnect.html)
+Settings > Dashboard > Quick Connect > Enable quick connect on this server
 
 ## Using Quick Connect
 
 To sign in to a supported client, you have to start the Quick Connect pairing in your user settings.
 
-Settings > Quick Connect > Activate (http://localhost:8096/web/index.html#!/mypreferencesquickconnect.html)
+Settings > Quick Connect > Activate
 
 ![image](https://user-images.githubusercontent.com/12074633/115973526-aecc6000-a523-11eb-9ed6-59bee41bac7b.png)
 

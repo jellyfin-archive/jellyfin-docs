@@ -591,10 +591,10 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 
 Steps 1 to 3 can also be replaced by:
 
-    ```sh
-    sudo apt install extrepo
-    sudo extrepo enable jellyfin
-    ```
+```sh
+sudo apt install extrepo
+sudo extrepo enable jellyfin
+```
 
 1. Install HTTPS transport for APT as well as `gnupg` and `lsb-release` if you haven't already.
 

@@ -255,7 +255,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
 4. Enable the service.
 
     ```sh
-    systemctl --user enable container-myjellyfin.service 
+    systemctl --user enable container-myjellyfin.service
     ```
 
     At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
@@ -267,7 +267,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
 5. Start the service.
 
     ```sh
-    systemctl --user start container-myjellyfin.service 
+    systemctl --user start container-myjellyfin.service
     ```
 
 ### Cloudron
@@ -588,6 +588,13 @@ The Jellyfin team provides a Debian repository for installation on Debian Stretc
 
 > [!NOTE]
 > Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
+
+Steps 1 to 3 can also be replaced by:
+
+```sh
+sudo apt install extrepo
+sudo extrepo enable jellyfin
+```
 
 1. Install HTTPS transport for APT as well as `gnupg` and `lsb-release` if you haven't already.
 

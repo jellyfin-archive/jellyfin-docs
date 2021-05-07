@@ -25,6 +25,9 @@ Shows
 ```
 
 > [!NOTE]
+> Avoid special characters such as \* in M\*A\*S\*H, use MASH instead.
+
+> [!NOTE]
 > Season folders shouldn't contain the series name, otherwise Jellyfin can in certain cases (Stargate SG-1 due to the dash and one, for instance) misdetect your episodes and put them all under the same season.
 
 ## Images

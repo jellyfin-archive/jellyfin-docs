@@ -382,7 +382,7 @@ A plugin for Volumio that uses Jellyfin as a backend.
 
 ### Discord Music Bot
 
-A Discord bot, that allows you to play your Jellyfin music library in your Discord voice channels
+A Discord bot that allows playing your Jellyfin music library in Discord voice channels.
 
 **Status:** ⭐ Active
 

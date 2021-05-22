@@ -5,9 +5,18 @@ title: Branding
 
 # Branding
 
-## Naming Conventions
+## Usage of the Jellyfin name
 
-The general rule is to capitalize it, but language, file, or system conventions trump Jellyfin naming conventions.
+You are free to use the Jellyfin name to promote your project, with some restrictions:
+
+* Do not use the Jellyfin name in a way that would make the average user think you are associated with the project, unless permission was given by the Project Leader or Leadership Team.
+* Only include the Jellyfin name in your project's name in a way that makes it clear you are not affiliated with the Jellyfin project, and to indicate compatibility with Jellyfin (For example *Awesome Client for Jellyfin*).
+* Do not use the Jellyfin name in any context that promotes, allows or encourages piracy.
+* Do not wrongfully claim to be part of the Jellyfin team.
+
+## Writing Style
+
+As a general rule, Jellyfin should always be capitalized, but language, file, or system conventions trump Jellyfin naming conventions.
 
 Specific examples include:
 

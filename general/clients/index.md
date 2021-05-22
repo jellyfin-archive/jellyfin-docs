@@ -114,6 +114,16 @@ A third party app for music playback. Supports offline mode/downloading songs.
 - [GitHub](https://github.com/UnicornsOnLSD/finamp)
 - [Download](https://github.com/UnicornsOnLSD/finamp/releases)
 
+### Jellyfin Audio Player
+
+A third party standalone music streaming app. Includes full support for background audio and casting.
+
+**Status** ✅ In Development, 3rd-Party
+
+**Links:**
+- [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
+- [Download](https://github.com/leinelissen/jellyfin-audio-player)
+
 ## Roku
 
 ### Jellyfin for Roku
@@ -280,6 +290,16 @@ A third party app with direct play and HDR support. Available on iOS and Apple T
 **Links:**
 
 - [Website](https://mrmc.tv)
+
+### Jellyfin Audio Player
+
+A third party standalone music streaming app. Includes full support for background audio and casting.
+
+**Status** ✅ In Development, 3rd-Party
+
+**Links:**
+- [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
+- [TestFlight](https://testflight.apple.com/join/cf2AMDpx)
 
 ## Kodi
 

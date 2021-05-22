@@ -10,7 +10,7 @@ Clients connect your devices to your Jellyfin server and let you view your conte
 > [!NOTE]
 > If you are interested in helping out, please see our [contribution guide](xref:contrib-index) and feel free to contact us for more information!
 >
-> They aren't on this page, some of them can be found at the [jellyfin-archive organization on GitHub](https://github.com/jellyfin-archive).
+> If it isn't on this page, some clients can be found at the [jellyfin-archive organization on GitHub](https://github.com/jellyfin-archive).
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 

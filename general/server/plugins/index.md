@@ -348,7 +348,7 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
 
 #### Kinopoisk metadata plugin
 
-Fetches metadata from https://kinopoisk.ru. This site is popular in the Russian-speaking community and contains almost no English-language information. Can provide movies and series rating, description, actors and staff, trailers and so on.
+Fetches metadata from <https://kinopoisk.ru>. This site is popular in the Russian-speaking community and contains almost no English-language information. Can provide movies and series rating, description, actors and staff, trailers and so on.
 
 **Links:**
 

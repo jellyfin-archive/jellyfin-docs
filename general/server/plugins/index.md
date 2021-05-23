@@ -346,6 +346,14 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
 
 * [GitHub](https://github.com/nielsvanvelzen/jellyfin-plugin-vgmdb)
 
+#### Kinopoisk metadata plugin
+
+Fetches metadata from https://www.kinopoisk.ru/. This site is popular in the Russian-speaking community and contains almost no English-language information. Can provide movies and series rating, description, actors and staff, trailers and so on.
+
+**Links:**
+
+* [GitHub](https://github.com/LinFor/jellyfin-plugin-kinopoisk)
+
 ## Repositories
 
 ### Official Jellyfin Plugin Repositories
@@ -389,3 +397,10 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
 * Included Plugins
   * [SMS Notifications](https://github.com/k-matti/jellyfin-plugin-sms)
   * [NapiSub](https://github.com/k-matti/jellyfin-plugin-napi)
+
+#### LinFor's Repo
+
+* Manifest
+  * [https://raw.githubusercontent.com/LinFor/jellyfin-plugin-kinopoisk/master/dist/manifest.json](https://raw.githubusercontent.com/LinFor/jellyfin-plugin-kinopoisk/master/dist/manifest.json)
+* Included Plugins
+  * [Kinopoisk metadata plugin](https://github.com/LinFor/jellyfin-plugin-kinopoisk)

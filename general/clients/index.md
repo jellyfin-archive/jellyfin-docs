@@ -121,6 +121,7 @@ A third party standalone music streaming app. Includes full support for backgrou
 **Status** ✅ In Development, 3rd-Party
 
 **Links:**
+
 - [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
 - [Download](https://github.com/leinelissen/jellyfin-audio-player)
 
@@ -298,6 +299,7 @@ A third party standalone music streaming app. Includes full support for backgrou
 **Status** ✅ In Development, 3rd-Party
 
 **Links:**
+
 - [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
 - [TestFlight](https://testflight.apple.com/join/cf2AMDpx)
 

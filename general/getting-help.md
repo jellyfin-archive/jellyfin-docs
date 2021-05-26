@@ -33,16 +33,15 @@ We are also active on social media.
 
 ## IRC Channels
 
-
 All channels are bridged from Matrix to [Libera.chat](https://libera.chat) for convenience.
 
-- [#jellyfin](ircs://irc.libera.chat:6697/#jellyfin)
-- [#jellyfin-announce](ircs://irc.libera.chat:6697/#jellyfin-announce)
-- [#jellyfin-troubleshooting](ircs://irc.libera.chat:6697/#jellyfin-troubleshooting)
-- [#jellyfin-dev](ircs://irc.libera.chat:6697/#jellyfin-dev)
-- [#jellyfin-dev-client](ircs://irc.libera.chat:6697/#jellyfin-dev-client)
-- [#jellyfin-dev-android](ircs://irc.libera.chat:6697/#jellyfin-dev-android)
-- [#jellyfin-offtopic](ircs://irc.libera.chat:6697/#jellyfin-offtopic)
+* [#jellyfin](ircs://irc.libera.chat:6697/#jellyfin)
+* [#jellyfin-announce](ircs://irc.libera.chat:6697/#jellyfin-announce)
+* [#jellyfin-troubleshooting](ircs://irc.libera.chat:6697/#jellyfin-troubleshooting)
+* [#jellyfin-dev](ircs://irc.libera.chat:6697/#jellyfin-dev)
+* [#jellyfin-dev-client](ircs://irc.libera.chat:6697/#jellyfin-dev-client)
+* [#jellyfin-dev-android](ircs://irc.libera.chat:6697/#jellyfin-dev-android)
+* [#jellyfin-offtopic](ircs://irc.libera.chat:6697/#jellyfin-offtopic)
 
 ## Discord (Beta)
 

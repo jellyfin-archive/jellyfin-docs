@@ -74,7 +74,7 @@ Media in Kodi's database is automatically kept in sync with the server in one of
 
 #### Add-on Mode
 
-Add-on mode uses the Jellyfin server to translate media files from the filesystem to Kodi.  This is the default setting for the add-on, and is sufficient for most use cases.  It will work both on the local network and over the Internet through a reverse proxy or VPN connection.  Providing network speed is sufficient, Kodi will direct play nearly all files and put little overhead on the Jellyfin server.  Exceptions to this rule are files with 7.1 audio tracks and some 4k content, which will be transcoded by the server.
+Add-on mode uses the Jellyfin server to translate media files from the filesystem to Kodi.  This is the default setting for the add-on, and is sufficient for most use cases.  It will work both on the local network and over the Internet through a reverse proxy or VPN connection.  Providing network speed is sufficient, Kodi will direct play nearly all files and put little overhead on the Jellyfin server.
 
 To use Add-on mode, simply choose "Add-on" at the dialog and proceed to [Library Syncing](xref:clients-kodi#library-syncing)
 

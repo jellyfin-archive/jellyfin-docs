@@ -9,7 +9,7 @@ If you are having trouble using or configuring Jellyfin, there are several ways 
 
 * The Jellyfin [Matrix channels](https://matrix.to/#/+jellyfin:matrix.org): For chat and real-time discussions.
 
-  * Some channels are bridged to IRC and Discord.
+  * All channels are bridged to IRC and Discord.
 
 * The Jellyfin [forums](https://forum.jellyfin.org): For long-term discussions.
 
@@ -33,7 +33,18 @@ We are also active on social media.
 
 ## IRC Channels
 
-Some channels are bridged from Matrix to IRC on [Freenode](https://freenode.net) for convenience.
+All channels are bridged from Matrix to [Libera.chat](https://libera.chat) for convenience.
 
-* [#jellyfin](ircs://chat.freenode.net:6697/#jellyfin) - [Webchat](https://webchat.freenode.net/#jellyfin)
-* [#jellyfin-dev](ircs://chat.freenode.net:6697/#jellyfin-dev) - [Webchat](https://webchat.freenode.net/#jellyfin-dev)
+* [#jellyfin](ircs://irc.libera.chat:6697/#jellyfin)
+* [#jellyfin-announce](ircs://irc.libera.chat:6697/#jellyfin-announce)
+* [#jellyfin-troubleshooting](ircs://irc.libera.chat:6697/#jellyfin-troubleshooting)
+* [#jellyfin-dev](ircs://irc.libera.chat:6697/#jellyfin-dev)
+* [#jellyfin-dev-client](ircs://irc.libera.chat:6697/#jellyfin-dev-client)
+* [#jellyfin-dev-android](ircs://irc.libera.chat:6697/#jellyfin-dev-android)
+* [#jellyfin-offtopic](ircs://irc.libera.chat:6697/#jellyfin-offtopic)
+
+## Discord (Beta)
+
+For convenience, we have a Discord server that is bridged to the chats above. Note that **Matrix** is still the preferred chat platform, and Discord messages may be missed due to bridge instability.
+
+[Join our Discord](https://discord.gg/zHBxVSXdBV)

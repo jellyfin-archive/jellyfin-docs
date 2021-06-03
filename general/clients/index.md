@@ -10,7 +10,7 @@ Clients connect your devices to your Jellyfin server and let you view your conte
 > [!NOTE]
 > If you are interested in helping out, please see our [contribution guide](xref:contrib-index) and feel free to contact us for more information!
 >
-> If it isn't on this page, some clients can be found at the [jellyfin-archive organization on GitHub](https://github.com/jellyfin-archive).
+> If they aren't on this page, some clients can be found at the [jellyfin-archive organization on GitHub](https://github.com/jellyfin-archive).
 
 Do you have a client that interfaces with Jellyfin and want to see it listed here? Please [submit a pull request](https://github.com/jellyfin/jellyfin-docs)!
 
@@ -114,17 +114,6 @@ A third party app for music playback. Supports offline mode/downloading songs.
 - [GitHub](https://github.com/UnicornsOnLSD/finamp)
 - [Download](https://github.com/UnicornsOnLSD/finamp/releases)
 
-### Jellyfin Audio Player
-
-A third party standalone music streaming app. Includes full support for background audio and casting.
-
-**Status** ✅ In Development, 3rd-Party
-
-**Links:**
-
-- [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
-- [Download](https://github.com/leinelissen/jellyfin-audio-player)
-
 ## Roku
 
 ### Jellyfin for Roku
@@ -164,6 +153,18 @@ jellyfin-web interface unlike Jellyfin Desktop. Supports audio passthrough. Base
 - [Github](https://github.com/jellyfin/jellyfin-media-player)
 - [Binary Releases](https://github.com/jellyfin/jellyfin-media-player/releases)
 - [Flathub](https://flathub.org/apps/details/com.github.iwalton3.jellyfin-media-player)
+
+### Jellyfin Audio Player
+
+A third party standalone music streaming app for iOS and Android. This client includes full support for background audio and casting.
+
+**Status** ✅ In Development, 3rd-Party 
+
+**Links:**
+
+- [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
+- [TestFlight install for iOS](https://testflight.apple.com/join/cf2AMDpx)
+- [Download for Android](https://github.com/leinelissen/jellyfin-audio-player/releases)
 
 ### Jellyfin MPV Shim
 
@@ -291,17 +292,6 @@ A third party app with direct play and HDR support. Available on iOS and Apple T
 **Links:**
 
 - [Website](https://mrmc.tv)
-
-### Jellyfin Audio Player
-
-A third party standalone music streaming app. Includes full support for background audio and casting.
-
-**Status** ✅ In Development, 3rd-Party
-
-**Links:**
-
-- [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
-- [TestFlight](https://testflight.apple.com/join/cf2AMDpx)
 
 ## Kodi
 

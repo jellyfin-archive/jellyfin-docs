@@ -369,7 +369,7 @@ Adds support for VGMdb to music libraries. Can provide both images and metadata 
 #### dkanada's Repo
 
 * Manifest
-  * [https://dkanada.xyz/plugins/manifest.json](https://dkanada.xyz/plugins/manifest.json)
+  * [https://raw.githubusercontent.com/dkanada/jellyfin-plugin-intros/master/manifest.json](https://raw.githubusercontent.com/dkanada/jellyfin-plugin-intros/master/manifest.json)
 * Included Plugins
   * [Intros](https://github.com/dkanada/jellyfin-plugin-intros)
 

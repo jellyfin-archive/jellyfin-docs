@@ -158,7 +158,7 @@ jellyfin-web interface unlike Jellyfin Desktop. Supports audio passthrough. Base
 
 A third party standalone music streaming app for iOS and Android. This client includes full support for background audio and casting.
 
-**Status** ✅ In Development, 3rd-Party 
+**Status** ✅ In Development, 3rd-Party
 
 **Links:**
 

@@ -277,7 +277,7 @@ Cloudron is a complete solution for running apps on your server and keeping them
 The source code for the package can be found [here](https://git.cloudron.io/cloudron/jellyfin-app).
 Any issues or feature requests related to deployment on Cloudron should be filed there.
 
-## Windows (x86/x64)
+## Windows (x64)
 
 Windows installers and builds in ZIP archive format are available [here](https://jellyfin.org/downloads/#windows).
 
@@ -285,7 +285,7 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 > If you installed a version prior to 10.4.0 using a PowerShell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually. Also one might need to move the data files to the correct location, or point the installer at the old location.
 
 > [!WARNING]
-> The 32-bit or x86 version is not recommended. `ffmpeg` and its video encoders generally perform better as a 64-bit executable due to the extra registers provided. This means that the 32-bit version of Jellyfin is deprecated.
+> The Basic Install is the recommended way to run the Jellyfin Server. Using the Advanced/Service mode may experience FFmpeg Hardware Acceleration issues, and is only for advanced users.
 
 ### Install using Installer (x64)
 
@@ -293,15 +293,16 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 
 1. Download the latest version.
 2. Run the installer.
-3. (Optional) When installing as a service, pick the service account type.
-4. If everything was completed successfully, the Jellyfin service is now running.
-5. Open your browser at <http://localhost:8096> to finish setting up Jellyfin.
+3. (Optional) When installing as a service (not recommended), pick the service account type.
+4. If everything was completed successfully, Jellyfin is now running.
+5. Open your browser at <http://your_local_IP_address:8096> to finish setting up Jellyfin.
 
 **Update**
 
 1. Download the latest version.
-2. Run the installer.
-3. If everything was completed successfully, the Jellyfin service is now running as the new version.
+2. Close or Stop Jellyfin if it is running.
+3. Run the installer.
+4. If everything was completed successfully, the new version is installed.
 
 **Uninstall**
 
@@ -358,24 +359,23 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 3. Rename `system-bak` to `system`.
 4. Run `jellyfin.bat` to start the server again.
 
-## MacOS
+## macOS
 
-MacOS Application packages and builds in TAR archive format are available [here](https://jellyfin.org/downloads/#macos).
+macOS Application packages and builds in TAR archive format are available [here](https://jellyfin.org/downloads/#macos).
 
 **Install**
 
 1. Download the latest version.
 2. Drag the `.app` package into the Applications folder.
 3. Start the application.
-4. Open your browser at `http://127.0.0.1:8096`.
+4. Click the icon in the menu bar and select "Launch Web UI".
 
 **Upgrade**
 
 1. Download the latest version.
-2. Stop the currently running server either via the dashboard or using the application icon.
+2. Stop the currently running server either via the dashboard or using the menu bar icon.
 3. Drag the new `.app` package into the Applications folder and click yes to replace the files.
 4. Start the application.
-5. Open your browser at `http://127.0.0.1:8096`.
 
 **Uninstall**
 

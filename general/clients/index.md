@@ -259,6 +259,18 @@ The official Jellyfin iOS client.
 
 - [GitHub](https://github.com/jellyfin/jellyfin-expo)
 
+### SwiftFin for iOS/tvOS
+
+The Jellyfin app rewritten in Swift in order to support HDR and direct play capabilities for multiple formats.
+
+**Status:** ✅ In Development
+
+**Links:**
+
+<a href='https://testflight.apple.com/join/WiN0G62Q'><img height='70' alt='Join the Beta on TestFlight' src='https://anotherlens.app/testflight-badge.png'/></a>
+
+- [GitHub](https://github.com/jellyfin/SwiftFin)
+
 ### Infuse for iOS/Apple TV
 
 A third party client with HDR support and direct play capabilities for multiple formats.

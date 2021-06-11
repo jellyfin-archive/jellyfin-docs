@@ -23,6 +23,26 @@ Overriding the default `config.json` can be done with an additional volume param
 
 We would recommend obtaining the [latest copy of the file](https://github.com/jellyfin/jellyfin-web/blob/master/src/config.json) to pre-populate your configuration directory before starting Jellyfin for the first time; unlike most other components of this directory, it will not be created automatically on first run.
 
+## Customizations
+
+### Custom Menu Links
+
+Jellyfin 10.8 adds the ability to specify custom links to be inserted in the navigation menu via the `config.json` file. Links are configured with a `name`, `url`, and optional `icon` properties. The icon is specified using the name of an icon from the [Material Design Iconfont](https://jossef.github.io/material-design-icons-iconfont/) used in Jellyfin Web. By default the "link" icon will be used.
+
+```json
+"menuLinks": [
+    {
+        "name": "Custom Link",
+        "url": "https://jellyfin.org"
+    },
+    {
+        "name": "Custom Link w. Icon",
+        "icon": "attach_money",
+        "url": "https://demo.jellyfin.org/stable"
+    }
+]
+```
+
 ## Privacy-focused changes
 
 Our default settings for the Jellyfin Web `config.json` file include some features that privacy-focused or completely-offline users may with to disable. Each option is detailed below.

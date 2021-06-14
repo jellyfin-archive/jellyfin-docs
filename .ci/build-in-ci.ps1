@@ -1,4 +1,4 @@
-choco install docfx -y --version 2.48.1
+choco install docfx -y
 docfx --warningsAsErrors docfx.json
 if ($lastexitcode -ne 0){
     throw ("Error generating document")

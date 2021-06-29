@@ -27,7 +27,10 @@ We would recommend obtaining the [latest copy of the file](https://github.com/je
 
 ### Custom Menu Links
 
-Jellyfin 10.8 adds the ability to specify custom links to be inserted in the navigation menu via the `config.json` file. Links are configured with a `name`, `url`, and optional `icon` properties. The icon is specified using the name of an icon from the [Material Design Iconfont](https://jossef.github.io/material-design-icons-iconfont/) used in Jellyfin Web. By default the "link" icon will be used.
+Jellyfin 10.8 adds the ability to specify custom links to be inserted in the navigation menu via the `config.json` file.
+Links are configured with a `name`, `url`, and optional `icon` property.
+The icon is specified using the name of an icon from the [Material Design Icons](https://jossef.github.io/material-design-icons-iconfont/) used in Jellyfin Web.
+By default the "link" icon will be used.
 
 ```json
 "menuLinks": [
@@ -36,7 +39,7 @@ Jellyfin 10.8 adds the ability to specify custom links to be inserted in the nav
         "url": "https://jellyfin.org"
     },
     {
-        "name": "Custom Link w. Icon",
+        "name": "Custom Link w. Custom Icon",
         "icon": "attach_money",
         "url": "https://demo.jellyfin.org/stable"
     }

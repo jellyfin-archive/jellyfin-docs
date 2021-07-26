@@ -81,7 +81,7 @@ The main server configuration is built upon the ASP .NET [configuration framewor
 4. **Environment variables**: The [documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1#environment-variables) provided by Microsoft explains how to set these configuration options via environment variables. Jellyfin uses its own custom `JELLYFIN_` prefix for these variables. For example, to set a value for the `HttpListenerHost:DefaultRedirectPath` setting, you would set a value for the `JELLYFIN_HttpListenerHost__DefaultRedirectPath` environment variable.
 5. **Command line options**: Certain command line options are loaded into the configuration system and have the highest priority. The following command line options are mapped to associated configuration options.
 
-    - `--nowebcontent` sets the `hostwebclient` configuration setting to false
+    - `--nowebclient` sets the `hostwebclient` configuration setting to false
     - `--plugin-manifest-url` sets a value for the `InstallationManager:PluginManifestUrl` configuration setting
 
 ### Main Configuration Options

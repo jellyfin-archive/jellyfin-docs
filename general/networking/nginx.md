@@ -170,7 +170,7 @@ server {
 
 ## Extra Nginx Configurations
 
-## Censor sensitive information in logs
+### Censor sensitive information in logs
 
 This censors any <code>api_key</code> URL parameter from the logfile.
 

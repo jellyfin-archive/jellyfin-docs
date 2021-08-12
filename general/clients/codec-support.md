@@ -36,7 +36,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 <sup>6</sup>HEVC decoding is supported on Apple devices with the A8X chip or newer and at least iOS 14
 
-<sup>7</sup>HEVC decoding is only supported on Windows 10 with the HEVC addon from the Microsoft [store](https://www.microsoft.com/store/productId/9NMZLZ57R3T7).
+<sup>7</sup>HEVC decoding is only supported on Windows 10 with the HEVC Video Extension from the Microsoft [store](https://www.microsoft.com/store/productId/9NMZLZ57R3T7).
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 

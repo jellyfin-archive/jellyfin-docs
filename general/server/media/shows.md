@@ -5,11 +5,11 @@ title: Shows
 
 # Shows
 
-The most common naming scheme for shows is categorizing the files by series and then season. Another common method is simply using series folders, especially for shows that are organized by air date and those without seasons. Adding the year at the end in parentheses will yield the best results when scraping metadata.
+The most common naming scheme for shows is categorizing the files by series and then season. Another common method is simply using series folders, especially for shows that are organized by air date and those without seasons. Adding the year at the end in parentheses along with a media DB ID will yield the best results when scraping metadata. The two DBs supported by Jellyfin are [IMDB](https://www.imdb.com/) and [TMBD](https://www.themoviedb.org/). Media management software such as [Sonarr](https://sonarr.tv/) can be configured to add these IDs in to the folder names. The examples below show the ID syntax `[idtype-ID]`.
 
 ```txt
 Shows
-├── Series (2010)
+├── Series (2010) [imdbid-ID]
 │   ├── Season 01
 │   │   ├── Episode S01E01-E02.mkv
 │   │   ├── Episode S01E03.mkv
@@ -17,7 +17,7 @@ Shows
 │   └── Season 02
 │       ├── Episode S02E01.mkv
 │       └── Episode S02E02.mkv
-└── Series (2018)
+└── Series (2018) [tmdbid-ID]
     ├── Episode S01E01.mkv
     ├── Episode S01E02.mkv
     ├── Episode S02E01-E02.mkv

@@ -172,8 +172,7 @@ A third party standalone music streaming app for iOS and Android. This client in
 **Links:**
 
 - [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
-- [TestFlight install for iOS](https://testflight.
-.com/join/cf2AMDpx)
+- [TestFlight install for iOS](https://testflight.com/join/cf2AMDpx)
 - [Download for Android](https://github.com/leinelissen/jellyfin-audio-player/releases)
 
 ### Jellyfin MPV Shim

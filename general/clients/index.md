@@ -111,8 +111,17 @@ A third party app for music playback. Supports offline mode/downloading songs.
 
 **Links:**
 
+<a href="https://play.google.com/store/apps/details?id=com.unicornsonlsd.finamp">
+<img width="153" src="https://jellyfin.org/images/store-icons/google-play.png" alt="Finamp on Google Play"/>
+</a>
+<a href="https://apps.apple.com/us/app/finamp/id1574922594">
+<img width="153" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png" alt="Download on the App Store"/>
+</a>
+<a href="https://f-droid.org/packages/com.unicornsonlsd.finamp/">
+<img width="153" src="https://jellyfin.org/images/store-icons/fdroid.png" alt="Finamp on F-Droid"/>
+</a>
+
 - [GitHub](https://github.com/UnicornsOnLSD/finamp)
-- [Download](https://github.com/UnicornsOnLSD/finamp/releases)
 
 ## Roku
 
@@ -163,7 +172,8 @@ A third party standalone music streaming app for iOS and Android. This client in
 **Links:**
 
 - [GitHub](https://github.com/leinelissen/jellyfin-audio-player)
-- [TestFlight install for iOS](https://testflight.apple.com/join/cf2AMDpx)
+- [TestFlight install for iOS](https://testflight.
+.com/join/cf2AMDpx)
 - [Download for Android](https://github.com/leinelissen/jellyfin-audio-player/releases)
 
 ### Jellyfin MPV Shim

@@ -23,12 +23,11 @@ Based on hardware vendor:
 
 Vendor  | Supported HW Acceleration
 ------- | -------------
-nVidia  | NVENC, VA-API
+NVIDIA  | NVENC, VA-API
 AMD     | AMF, VA-API
 Intel   | QSV, VA-API
 Apple   | VideoToolbox
 Other   | OMX, MediaCodec
-
 
 ## Enabling Hardware Acceleration
 
@@ -43,6 +42,7 @@ lspci -nn | egrep -i "3d|display|vga"
 ```
 
 or using `lshw`:
+
 ```sh
 lshw -C display
 ```
@@ -53,17 +53,11 @@ lshw -C display
 
 [NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/). H264 10-bit is [not supported](https://devtalk.nvidia.com/default/topic/1039388/video-codec-and-optical-flow-sdk/is-there-nvidia-encoder-decoder-which-supports-hdr-10-bpp-for-avc-h-264-/) by NVIDIA acceleration. **The minimum required driver version is: Linux: 418.30, Windows: 450.51.**
 
-On Linux use `nvidia-smi` to check driver and hardware version.
-```sh
-$ nvidia-smi
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.91.03    Driver Version: 460.91.03    CUDA Version: 11.2     |
-|-------------------------------+----------------------+----------------------+
-```
+On Linux use `nvidia-smi` to check driver and GPU card version.
 
 ### VA-API
 
-List of supported codecs for [VA-API](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables). Intel iGPU, AMD GPU and and nVIDIA (only via the open-source Nouveau drivers) can use VA-API.
+List of supported codecs for [VA-API](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables). Intel iGPU, AMD GPU and NVIDIA (only via the open-source Nouveau drivers) can use VA-API.
 
 > [!NOTE]
 > AMD GPU requires open source driver Mesa 20.1 or higher to support hardware decoding HEVC.

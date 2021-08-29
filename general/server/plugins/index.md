@@ -404,3 +404,11 @@ Fetches metadata from <https://kinopoisk.ru>. This site is popular in the Russia
   * [https://raw.githubusercontent.com/LinFor/jellyfin-plugin-kinopoisk/master/dist/manifest.json](https://raw.githubusercontent.com/LinFor/jellyfin-plugin-kinopoisk/master/dist/manifest.json)
 * Included Plugins
   * [Kinopoisk metadata plugin](https://github.com/LinFor/jellyfin-plugin-kinopoisk)
+
+
+#### ShokoAnime's Repo
+
+* Manifest
+  * [https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json](https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json)
+* Included Plugins
+  * [Shokofin](https://github.com/ShokoAnime/Shokofin)

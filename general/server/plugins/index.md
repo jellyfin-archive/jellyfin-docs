@@ -405,7 +405,6 @@ Fetches metadata from <https://kinopoisk.ru>. This site is popular in the Russia
 * Included Plugins
   * [Kinopoisk metadata plugin](https://github.com/LinFor/jellyfin-plugin-kinopoisk)
 
-
 #### ShokoAnime's Repo
 
 * Manifest

@@ -354,6 +354,14 @@ Fetches metadata from <https://kinopoisk.ru>. This site is popular in the Russia
 
 * [GitHub](https://github.com/LinFor/jellyfin-plugin-kinopoisk)
 
+#### Shokofin
+
+A plugin to integrate your Shoko database with the Jellyfin media server.
+
+**Links:**
+
+* [GitHub](https://github.com/ShokoAnime/Shokofin)
+
 ## Repositories
 
 ### Official Jellyfin Plugin Repositories

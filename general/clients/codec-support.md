@@ -13,16 +13,16 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 [Test your browser's compatibility for any codec profile.](https://cconcolato.github.io/media-mime-support/)
 
-| Sorted by efficency (excluding bit depth) | Chrome | Firefox | Safari | Android | iOS | SwiftFin (iOS) | AndroidTV | [Roku](https://developer.roku.com/docs/specs/streaming.md) | Kodi | [Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop) |
-|-|-|-|-|-|-|-|-|-|-|-|
-| [MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX) | ❌ | ❌ | ❌ | ❌ |  | ✅ | ❌ | ✅ | ✅ | ✅ |
-| [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ |  | ✅ | ❌ |  | ✅ | ✅ |
-| [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ❌ | ❌ | ✅ |  | ✅ | ✅ | ❌ | ✅ | ✅ |
-| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> |  | ✅<sup>6</sup> | ✅<sup>5</sup> | ✅ | ✅ | ✅ |
-| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> |  | ✅<sup>6</sup> | 🔶<sup>5</sup> | ✅ | ✅ | ✅ |
-| [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ❌ | ✅<sup>3</sup> |  | ❌ | 🔶<sup>3</sup> | ✅ | ✅ | ✅ |
-| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | 🔶 | ❌ |  |  | ❌ |  | ❌ |  |  |
+| Sorted by efficency (excluding bit depth) | Chrome | Edge | Firefox | Safari | Android | iOS | SwiftFin (iOS) | AndroidTV | [Roku](https://developer.roku.com/docs/specs/streaming.md) | Kodi | [Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop) |
+|-|-|-|-|-|-|-|-|-|-|-|-|
+| [MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX) | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ | ❌ | ✅ | ✅ | ✅ |
+| [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ | ❌ |  | ✅ | ✅ |
+| [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ❌ | ❌ | ✅ |  | ✅ | ✅ | ❌ | ✅ | ✅ |
+| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> |  | ✅<sup>6</sup> | ✅<sup>5</sup> | ✅ | ✅ | ✅ |
+| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> |  | ✅<sup>6</sup> | 🔶<sup>5</sup> | ✅ | ✅ | ✅ |
+| [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> |  | ❌ | 🔶<sup>3</sup> | ✅ | ✅ | ✅ |
+| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | ✅ | 🔶 | ❌ |  |  | ❌ |  | ❌ |  |  |
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
@@ -35,6 +35,8 @@ The goal is to Direct Play all media. This means the container, video, audio and
 <sup>5</sup>As of [version 0.12](https://github.com/jellyfin/jellyfin-androidtv/pull/671), HEVC is enabled on all devices running Android 5.0+, but early generations of the Amazon Fire may not work yet. 10Bit may be supported depending on your device. Before Client 0.12, HEVC support was enabled on specific devices.
 
 <sup>6</sup>HEVC decoding is supported on Apple devices with the A8X chip or newer and at least iOS 14
+
+<sup>7</sup>HEVC decoding is only supported on Windows 10 with the HEVC Video Extension from the Microsoft [store](https://www.microsoft.com/store/productId/9NMZLZ57R3T7).
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 
@@ -52,16 +54,16 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 If the audio codec is unsupported or incompatible (such as playing a 5.1 channel stream on a stereo device), the audio codec must be transcoded. This is not nearly as intensive as video transcoding.
 
-||Chrome|Firefox|Safari|Android|AndroidTV|iOS|SwiftFin (iOS) |Roku|Kodi|Desktop|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|FLAC|✅|✅|✅|✅|||✅|✅|✅|✅|
-|MP3|🔶<sup>1</sup>|🔶|✅|✅|||✅|✅|✅|✅|
-|AAC|✅|✅|✅|✅|||✅|✅|✅|✅|
-|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|✅|❌|✅|✅|||✅||✅|✅|
-|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅|||✅||✅|✅|
-|VORBIS<sup>3</sup>|✅|✅|✅|✅|||✅|✅|✅|✅|
-|DTS<sup>4</sup>|❌|❌|❌|✅|||✅|✅<sup>6</sup>|✅|✅|
-|OPUS|✅|✅|✅<sup>5</sup>|✅|✅||✅|✅|✅|✅|
+||Chrome|Edge|Firefox|Safari|Android|AndroidTV|iOS|SwiftFin (iOS) |Roku|Kodi|Desktop|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|FLAC|✅|✅|✅|✅|✅|||✅|✅|✅|✅|
+|MP3|🔶<sup>1</sup>|✅|🔶|✅|✅|||✅|✅|✅|✅|
+|AAC|✅|✅|✅|✅|✅|||✅|✅|✅|✅|
+|[AC3](https://www.loc.gov/preservation/digital/formats/fdd/fdd000209.shtml)|✅|✅|❌|✅|✅|||✅||✅|✅|
+|[EAC3](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)<sup>2</sup>|✅|✅|✅|✅|✅|||✅||✅|✅|
+|VORBIS<sup>3</sup>|✅|✅|✅|✅|✅|||✅|✅|✅|✅|
+|DTS<sup>4</sup>|❌|❌|❌|❌|✅|||✅|✅<sup>6</sup>|✅|✅|
+|OPUS|✅|✅|✅|✅<sup>5</sup>|✅|✅||✅|✅|✅|✅|
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/Moving_Picture_Experts_Group#External_links)
 
@@ -148,13 +150,13 @@ ffmpeg -f lavfi -i "movie=Ronin (1998).ts[out+subcc]" -map 0:1  "Ronin (1998).sr
 
 If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a supported container. This is the least intensive process. Most video containers will be remuxed to use the HLS streaming protocol and TS containers. Remuxing shouldn't be a concern even for an RPi3.
 
-||Chrome|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|
-|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|❌||✅|✅|✅|✅|
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅||||✅|✅|
-|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|
-|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|❌|✅|✅|✅|✅|
+||Chrome|Edge|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|✅|
+|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|✅|❌||✅|✅|✅|✅|
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅|✅||||✅|✅|
+|[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|✅|
+|[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|✅|❌|✅|✅|✅|✅|
 
 <sup>1</sup>MP4 containers are one of the few containers that will not remux.
 

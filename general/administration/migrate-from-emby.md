@@ -66,7 +66,7 @@ This procedure is written for Debian-based Linux distributions, but can be trans
    sudo chown -R jellyfin:jellyfin /var/lib/jellyfin
    ```
 
-9. Mark Startup Wizard as completed - if not marked as completed then it can be a security risk specially if remote access is enabled:
+9. Mark Startup Wizard as completed - if not marked as completed then it can be a security risk especially if remote access is enabled:
 
    ```sh
    sudo sed -i '/IsStartupWizardCompleted/s/false/true/' /etc/jellyfin/system.xml

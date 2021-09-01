@@ -24,7 +24,7 @@ Overriding the default `config.json` can be done with an additional volume param
 ```
 
 > [!NOTE]
-> If the config.json file doesn't exist first, docker will map it as a directory instead of a file.
+> If the config.json file doesn't exist on the first run, Docker will map it to a directory instead of a file, which won't work.
 
 ## Customizations
 

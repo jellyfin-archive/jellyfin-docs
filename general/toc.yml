@@ -31,6 +31,7 @@
     - uid: network-reverse-proxy-traefik2
   - uid: network-letsencrypt
   - uid: network-dlna
+  - uid: network-fail2ban
 
 - name: Server
   items:

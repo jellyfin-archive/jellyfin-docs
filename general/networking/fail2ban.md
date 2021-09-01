@@ -1,5 +1,5 @@
 ---
-uid: fail2ban-jellyfin
+uid: network-fail2ban
 title: fail2ban
 ---
 

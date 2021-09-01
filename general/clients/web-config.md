@@ -9,6 +9,8 @@ title: Jellyfin Web Configuration
 
 The Jellyfin Web default interface can be configured using the `config.json` file in the webroot. Where this is and how to edit it depends on the installation method.
 
+We recommend obtaining the [stable](https://github.com/jellyfin/jellyfin-web/blob/release-10.7.z/src/config.json) or the [unstable](https://github.com/jellyfin/jellyfin-web/blob/master/src/config.json) default version of the file to pre-populate your configuration directory before starting Jellyfin for the first time; unlike most other components of this directory, it will not be created automatically.
+
 ### Debian/Ubuntu/Fedora/CentOS Packages
 
 The configuration can be found at `/usr/share/jellyfin/web/config.json`. This file is registered as a configuration file by the Debian packages, and any changes to the defaults will be handled by `apt` on upgrade.
@@ -21,7 +23,8 @@ Overriding the default `config.json` can be done with an additional volume param
 --volume /path/to/config/web-config.json:/jellyfin/jellyfin-web/config.json
 ```
 
-We would recommend obtaining the [latest copy of the file](https://github.com/jellyfin/jellyfin-web/blob/master/src/config.json) to pre-populate your configuration directory before starting Jellyfin for the first time; unlike most other components of this directory, it will not be created automatically on first run.
+> [!NOTE]
+> If the config.json file doesn't exist on the first run, Docker will map it to a directory instead of a file, which won't work.
 
 ## Customizations
 

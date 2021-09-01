@@ -124,13 +124,13 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .channelsContainer { max-width: 8em; }
 ```
 
-### Remove Cast & Crew
+### Hide Cast & Crew
 
 ```css
 #castCollapsible { display: none; }
 ```
 
-### Remove More Like This
+### Hide More Like This
 
 ```css
 #similarCollapsible { display: none; }
@@ -140,6 +140,12 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ```css
 div.nextUpSection { display: none; }
+```
+
+### Hide Star Ratings
+
+```css
+div.starRatingContainer { display: none; }
 ```
 
 ### Background Image on Login Page

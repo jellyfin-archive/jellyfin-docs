@@ -7,6 +7,8 @@ title: Shows
 
 The most common naming scheme for shows is categorizing the files by series and then season. Another common method is simply using series folders, especially for shows that are organized by air date and those without seasons. Adding the year at the end in parentheses will yield the best results when scraping metadata.
 
+[!TIP] In order to help with identifying a series, Jellyfin can make use of media provider identifiers. This can be specified in your show's folder name, for example: `Series (2010) [imdbid-tt0106145]` or `Series (2018) [tmdbid-65567]`
+
 ```txt
 Shows
 ├── Series (2010)

@@ -170,6 +170,27 @@ server {
 
 ## Extra Nginx Configurations
 
+### Censor sensitive information in logs
+
+This censors any <code>api_key</code> URL parameter from the logfile.
+
+```conf
+#Must be in HTTP block
+log_format stripsecrets '$remote_addr $host - $remote_user [$time_local] '
+                    '"$secretfilter" $status $body_bytes_sent '
+                    '$request_length $request_time $upstream_response_time '
+                    '"$http_referer" "$http_user_agent"';
+                    
+map $request $secretfilter {
+    ~*^(?<prefix1>.*[\?&]api_key=)([^&]*)(?<suffix1>.*)$  "${prefix1}***$suffix1";
+    default                                               $request;
+}
+
+#Must be inside server block
+#Insert into all servers where you want filtering (e.g HTTP + HTTPS block)
+access_log /var/log/nginx/access.log stripsecrets;
+```
+
 ### Cache Video Streams
 
 ```conf

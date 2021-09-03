@@ -119,16 +119,6 @@ The official Jellyfin Roku app.
 
 ## Cross-Platform Clients
 
-### Jellyfin Xamarin Client
-
-Xamarin cross-platform client for Jellyfin.
-
-**Status:** ✅ In Development
-
-**Links:**
-
-- [GitHub](https://github.com/chaosinnovator/jellyfin-xamarin)
-
 ### Jellyfin Media Player
 
 Desktop client using jellyfin-web with embedded MPV player. Supports direct play of most file

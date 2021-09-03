@@ -7,6 +7,11 @@ title: Kodi
 
 ## Add-on Repository
 
+There are two different kodi addons that serve slightly different use cases.
+
+* [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi) - This add-on syncs metadata from selected Jellyfin libraries into the local Kodi database. This has the effect of making interacting with it feel very much like vanilla Kodi with local media (shows up under Movies/TV Shows on the home screen by default, virtually no delay, etc). However, it also tends to consume the database and not share well, so if you have local media or something else that interacts with the database directly, you'll have conflicts and it won't be happy. The sync process can take some extra time on Kodi startup if you don't leave it running 24/7, but it's mostly in the background while Kodi is running.
+* [JellyCon](https://github.com/jellyfin/jellycon) - Behaves more like a standard Kodi streaming add-on. Media is accessed primarily by going through the Add-ons -> JellyCon menu, however you can set up menu options to link to it and show info on the home screen. It also allows easier switching between multiple Jellyfin servers or users since it doesn't have to rely on syncing all the metadata down. By not having metadata synced, it has to request info from the server which can take a bit more time when you're browsing (typically only a second or two in my testing), but you don't have to wait for the database to sync or keep it up to date.
+
 ### Install Add-on Repository
 
 The most convenient install method of our Jellyfin add-ons is to use the official Kodi Jellyfin Repository.  Using this repository allows for easy install of our add-ons, as well as automatically keeping the add-ons up to date with the latest version.  Any other Jellyfin related add-ons that may be built in the future will also be available here.

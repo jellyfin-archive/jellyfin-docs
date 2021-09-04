@@ -22,7 +22,7 @@ To map your local installation's files to the official docker image.
 > [!Note]
 > You need to have exactly matching paths for your files inside the docker container! This means that if your media is stored at `/media/raid/` this path needs to be accessible at `/media/raid/` inside the docker container too - the configurations below do include examples.
 
-To guarantee proper permissions, get the `uid` and `gid` of your local jellyfin user and jellyfin group by running the following command:
+To guarantee proper permissions, get the `uid` and `gid` of the local user Jellyfin runs as (on a default install this is the `jellyfin` system user). You can do this by running the following command:
 
    ```sh
       id jellyfin

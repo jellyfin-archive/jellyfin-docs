@@ -17,7 +17,7 @@ There are scripts available that will use the API to copy watched status and use
 
 ## Migrating Linux install to Docker
 
-To map your local installation's files to the official docker image.
+It's possible to use the data of a local install in the official docker image by mapping files and folders to the same locations and configuring the image accordingly.
 
 > [!Note]
 > You need to have exactly matching paths for your files inside the docker container! This means that if your media is stored at `/media/raid/` this path needs to be accessible at `/media/raid/` inside the docker container too - the configurations below do include examples.

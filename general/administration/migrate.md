@@ -5,7 +5,7 @@ title: Migrating
 
 # Migrating
 
-It is possible to migrate your system to another system by using Environmentals. It's possible to do this via the command line or using Docker Environmentals. To read more, see the [Configuration](https://jellyfin.org/docs/general/administration/configuration.html) page.
+It is possible to migrate your system to another system by using environment variables. It's possible to do this via the command line or by using Docker environment variables. To read more, see the [Configuration](https://jellyfin.org/docs/general/administration/configuration.html) page.
 
 ## Watched Status Migration
 

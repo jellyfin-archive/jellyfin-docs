@@ -15,7 +15,7 @@
       - uid: admin-install-synology
   - uid: admin-building
   - uid: admin-configuration
-  - uid: admin-migrate-from-emby
+  - uid: admin-migrate
   - uid: admin-hardware-acceleration
   - uid: admin-troubleshoot
 

@@ -42,7 +42,11 @@ You  need to replace the `<uid>:<gid>` placeholder below with the correct values
        -e JELLYFIN_CONFIG_DIR=/etc/jellyfin \
        -e JELLYFIN_DATA_DIR=/var/lib/jellyfin \
        -e JELLYFIN_LOG_DIR=/var/log/jellyfin \
-       --volume </path/to/media>:</path/to/media> \
+       --mount type=bind,source=/etc/jellyfin,target=/etc/jellyfin \
+       --mount type=bind,source=/var/cache/jellyfin,target=/var/cache/jellyfin \
+       --mount type=bind,source=/var/lib/jellyfin,target=/var/lib/jellyfin \
+       --mount type=bind,source=/var/log/jellyfin,target=/var/log/jellyfin \
+       --mount type=bind,source=</path/to/media>,target=</path/to/media> \
        --net=host \
        --restart=unless-stopped \
        jellyfin/jellyfin

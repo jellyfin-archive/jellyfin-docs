@@ -48,7 +48,7 @@ Alternatively, Jellyfin may be built directly from the [source code](xref:admin-
 Want to know more about administering a Jellyfin server? Check out these pages!
 
 * [Quick-Start Guide](xref:quick-start): What to do after you've installed Jellyfin to get it up and running.
-* [Migrating Systems](xref:admin-migrate): How to migrate Jellyfin.
+* [Migrating](xref:admin-migrate): How to migrate Jellyfin.
 * [Plugins](xref:server-plugins-index): How to install and manage plugins.
 * [Networking](xref:network-index): Networking settings and troubleshooting.
 * [Monitoring](xref:monitoring): Integration with external monitoring software.

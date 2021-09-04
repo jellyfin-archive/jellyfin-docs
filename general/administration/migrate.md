@@ -33,7 +33,7 @@ You  need to replace the `<uid>:<gid>` placeholder below with the correct values
 > [!NOTE]
 > To properly map the folders for your install, go to Dashboard > Paths.
 
-**Using docker**
+### Using docker cli
 
    ```sh
    docker run -d \
@@ -48,7 +48,7 @@ You  need to replace the `<uid>:<gid>` placeholder below with the correct values
        jellyfin/jellyfin
    ```
 
-**Using docker-compose**
+### Using docker-compose yaml
 
    ```yml
    version: "3"

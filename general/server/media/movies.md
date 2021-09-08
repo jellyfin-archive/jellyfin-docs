@@ -7,6 +7,9 @@ title: Movies
 
 Movies should usually be in the library root directory or in a subfolder for the individual films. The subfolders allow for organization of metadata and images. Adding the year at the end in parentheses will yield the best results when scraping metadata.
 
+> [!TIP]
+> In order to help with identifying a movie, Jellyfin can make use of media provider identifiers. This can be specified in your movie's folder name, for example: `Film (2010) [imdbid-tt0106145]` or `Film (2018) [tmdbid-65567]`
+
 ```txt
 Movies
 ├── Film (1990).mp4

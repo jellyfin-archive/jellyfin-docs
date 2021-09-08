@@ -39,24 +39,25 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
 3. Create persistent storage for configuration and cache data.
 
-   Either create two persistent volumes:
-
-   ```sh
-   docker volume create jellyfin-config
-   docker volume create jellyfin-cache
-   ```
-
-   Or create two directories on the host and use bind mounts:
+   Either create two directories on the host and use bind mounts:
 
    ```sh
    mkdir /path/to/config
    mkdir /path/to/cache
    ```
 
+   or create two persistent volumes:
+
+   ```sh
+   docker volume create jellyfin-config
+   docker volume create jellyfin-cache
+   ```
+
+
 4. Create and run a container in one of the following ways.
 
 > [!Note]
-> The default network mode for Docker is bridge mode. Bridge mode will be used if host mode is omitted. Use host mode for networking in order to use DLNA or an HDHomeRun.
+> The default network mode for Docker is bridge mode. Bridge mode will be used if host mode is omitted. Use host mode for networking in order to use DLNA.
 
 **Using Docker command line interface:**
 
@@ -72,7 +73,7 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     jellyfin/jellyfin
    ```
 
-Using host networking (`--net=host`) is optional but required in order to use DLNA or HDHomeRun.
+Using host networking (`--net=host`) is optional but required in order to use DLNA. 
 
 Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control by external programs. For a simple setup, it's considered easier to use Bind Mounts instead of volumes. Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts. Multiple media libraries can be bind mounted if needed:
 

@@ -46,13 +46,12 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
    mkdir /path/to/cache
    ```
 
-   or create two persistent volumes:
+   Or create two persistent volumes:
 
    ```sh
    docker volume create jellyfin-config
    docker volume create jellyfin-cache
    ```
-
 
 4. Create and run a container in one of the following ways.
 

@@ -124,28 +124,52 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .channelsContainer { max-width: 8em; }
 ```
 
-### Hide Cast & Crew
+### Remove Cast & Crew
 
 ```css
 #castCollapsible { display: none; }
 ```
 
-### Hide More Like This
+### Remove More Like This
 
 ```css
 #similarCollapsible { display: none; }
 ```
 
-### Hide Next Up
+### Remove Next Up
 
 ```css
 div.nextUpSection { display: none; }
 ```
 
-### Hide Star Ratings
+### Remove Star Ratings
 
 ```css
 div.starRatingContainer { display: none; }
+```
+
+### Replace "Latest Movies" text with Custom Text such as "Recently Added Movies"
+
+```css
+#homeTab > div > div.section2 > div:nth-child(1) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > h2 {display: none;}
+#homeTab > div > div.section2 > div:nth-child(1) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > span {display: none;}
+#homeTab > div > div.section2 > div:nth-child(1) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a:after {
+content: 'Recently Added Movies ›';
+font-size: 24px;
+font-weight: normal;
+}
+```
+
+### Replace Latest TV Shows text with Custom Text such as "Recently Added TV Shows"
+
+```css
+#homeTab > div > div.section2 > div:nth-child(2) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > h2 {display: none;}
+#homeTab > div > div.section2 > div:nth-child(2) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > span {display: none;}
+#homeTab > div > div.section2 > div:nth-child(2) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a:after {
+content: 'Recently Added TV Shows ›';
+font-size: 24px;
+font-weight: normal;
+}
 ```
 
 ### Background Image on Login Page

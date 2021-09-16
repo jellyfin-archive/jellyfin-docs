@@ -86,7 +86,7 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
-### Remove Home Icon from Header
+### Hide Home Icon from Header
 
 ```css
 .headerHomeButton { display: none; }
@@ -94,25 +94,25 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .headerButton.headerButtonRight.headerUserButton.paper-icon-button-light { display: none; }
 ```
 
-### Remove Cast Icon from Header
+### Hide Cast Icon from Header
 
 ```css
 .headerCastButton { display: none; }
 ```
 
-### Remove Sync Icon from Header
+### Hide Sync Icon from Header
 
 ```css
 .headerSyncButton { display: none; }
 ```
 
-### Remove User Settings from Header
+### Hide User Settings from Header
 
 ```css
 .material-icons.person { display: none; }
 ```
 
-### Remove Live TV Channel Listings
+### Hide Live TV Channel Listings
 
 ```css
 .guideChannelNumber { display: none; }
@@ -124,25 +124,25 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .channelsContainer { max-width: 8em; }
 ```
 
-### Remove Cast & Crew
+### Hide Cast & Crew
 
 ```css
 #castCollapsible { display: none; }
 ```
 
-### Remove More Like This
+### Hide More Like This
 
 ```css
 #similarCollapsible { display: none; }
 ```
 
-### Remove Next Up
+### Hide Next Up
 
 ```css
 div.nextUpSection { display: none; }
 ```
 
-### Remove Star Ratings
+### Hide Star Ratings
 
 ```css
 div.starRatingContainer { display: none; }

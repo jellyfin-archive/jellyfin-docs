@@ -86,7 +86,7 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
-### Remove Home Icon from Header
+### Hide Home Icon from Header
 
 ```css
 .headerHomeButton { display: none; }
@@ -94,25 +94,25 @@ This will affect the played/watched indicator. Replace the hex color with any va
 .headerButton.headerButtonRight.headerUserButton.paper-icon-button-light { display: none; }
 ```
 
-### Remove Cast Icon from Header
+### Hide Cast Icon from Header
 
 ```css
 .headerCastButton { display: none; }
 ```
 
-### Remove Sync Icon from Header
+### Hide Sync Icon from Header
 
 ```css
 .headerSyncButton { display: none; }
 ```
 
-### Remove User Settings from Header
+### Hide User Settings from Header
 
 ```css
 .material-icons.person { display: none; }
 ```
 
-### Remove Live TV Channel Listings
+### Hide Live TV Channel Listings
 
 ```css
 .guideChannelNumber { display: none; }
@@ -146,6 +146,30 @@ div.nextUpSection { display: none; }
 
 ```css
 div.starRatingContainer { display: none; }
+```
+
+### Replace "Latest Movies" text with Custom Text such as "Recently Added Movies"
+
+```css
+#homeTab > div > div.section2 > div:nth-child(1) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > h2 {display: none;}
+#homeTab > div > div.section2 > div:nth-child(1) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > span {display: none;}
+#homeTab > div > div.section2 > div:nth-child(1) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a:after {
+content: 'Recently Added Movies ›';
+font-size: 24px;
+font-weight: normal;
+}
+```
+
+### Replace Latest TV Shows text with Custom Text such as "Recently Added TV Shows"
+
+```css
+#homeTab > div > div.section2 > div:nth-child(2) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > h2 {display: none;}
+#homeTab > div > div.section2 > div:nth-child(2) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a > span {display: none;}
+#homeTab > div > div.section2 > div:nth-child(2) > div.sectionTitleContainer.sectionTitleContainer-cards.padded-left > a:after {
+content: 'Recently Added TV Shows ›';
+font-size: 24px;
+font-weight: normal;
+}
 ```
 
 ### Background Image on Login Page

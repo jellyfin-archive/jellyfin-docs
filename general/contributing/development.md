@@ -182,20 +182,19 @@ When submitting a new PR, please ensure you do the following things. If you have
 We need to install all development dependencies and pull down the code inside the container before we can compile and run.
 
 > [!NOTE]
-> Run each command on a separate line. The container we'll test in is named `jftest`. Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue. This is also why we explicitly kill it to reload the new version.
+> Run each command on a separate line, if `dotnet publish` fails try re-running it. The container we'll test in is named `jftest`. Within Docker, anytime the entrypoint executable is terminated, the session restarts, so just exec into it again to continue. This is also why we explicitly kill it to reload the new version.
 
 ### Master Branch
 
 ```sh
 docker exec -ti jftest bash
-apt-get update && apt-get install git gnupg wget apt-transport-https curl autoconf g++ make libpng-dev gifsicle automake libtool make gcc musl-dev nasm
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg && mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
-wget -q https://packages.microsoft.com/config/debian/10/prod.list && mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get install dotnet-sdk-5.0 yarn
-cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
-mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
-cd /opt/jellyfin-web && yarn install && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
+apt-get update && apt-get install -y git gnupg wget apt-transport-https curl autoconf g++ make libpng-dev gifsicle automake libtool make gcc musl-dev nasm mmv
+wget -q https://dot.net/v1/dotnet-install.sh && bash dotnet-install.sh -c 6.0 && ln -s /root/.dotnet/dotnet /usr/bin/dotnet
+curl -fsSL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
+cd /opt && git clone httmain dockerfilesps://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
+mv /jellyfin/ /jellyfin.bak
+cd /opt/jellyfin && export DOTNET_CLI_TELEMETRY_OPTOUT=1 && dotnet publish Jellyfin.Server --disable-parallel --configuration Release --output="/jellyfin" --self-contained --runtime linux-x64 "-p:DebugSymbols=false;DebugType=none"
+cd /opt/jellyfin-web && npm ci --no-audit --unsafe-perm && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
 kill -15 $(pidof jellyfin)
 ```
 
@@ -208,9 +207,9 @@ First, complete the steps above to setup your container to build the master bran
 
 ```sh
 docker exec -ti jftest bash
-cd /opt/jellyfin
+cd /opt/jellyfin && export DOTNET_CLI_TELEMETRY_OPTOUT=1
 git fetch origin pull/<PR_ID>/head:my-testing-branch
 git merge my-testing-branch
-dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
+dotnet publish Jellyfin.Server --disable-parallel --configuration Release --output="/jellyfin" --self-contained --runtime linux-x64 "-p:DebugSymbols=false;DebugType=none"
 kill -15 $(pidof jellyfin)
 ```

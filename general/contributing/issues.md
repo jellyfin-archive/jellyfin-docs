@@ -25,7 +25,7 @@ If the existing issue is closed, please read through it to see if the accepted w
 
 ## Opening an Issue
 
-Once you're ready to open an issue, please [see this page](https://github.com/jellyfin/jellyfin/issues/new)!
+Once you're ready to open an issue, please [see this page](https://github.com/jellyfin/jellyfin/issues/new/choose)!
 
 ### Reporting Bugs
 

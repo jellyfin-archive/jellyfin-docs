@@ -42,5 +42,4 @@ The following metadata formats are supported:
 - ComicBookInfo (from ComicBookLover)
 
 > [!Note]
-> However, their are some limitations regarding the support of the ComicInfo format. `ComicInfo.xml` files can be parsed when they are placed in the same folder as the comic itself or when they are bundled within a `.cbz` file. `ComicInfo.xml` files bundled with any other archive format are not supported. 
-
+> However, their are some limitations regarding the support of the ComicInfo format. `ComicInfo.xml` files can be parsed when they are placed in the same folder as the comic itself or when they are bundled within a `.cbz` file. `ComicInfo.xml` files bundled with any other archive format are not supported.

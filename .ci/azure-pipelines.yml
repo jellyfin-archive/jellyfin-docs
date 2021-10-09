@@ -31,6 +31,13 @@ jobs:
       script: 'npm install markdownlint-cli'
       workingDirectory: '$(Build.SourcesDirectory)'
 
+  - task: UseDotNet@2
+    displayName: 'Update DotNet'
+    inputs:
+      packageType: sdk
+      version: 6.0.x
+      includePreviewVersions: true
+
   - task: CmdLine@2
     displayName: 'Run Markdownlint'
     inputs:

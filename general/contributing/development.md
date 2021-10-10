@@ -191,7 +191,7 @@ docker exec -ti jftest bash
 apt-get update && apt-get install -y git gnupg wget apt-transport-https curl autoconf g++ make libpng-dev gifsicle automake libtool make gcc musl-dev nasm mmv
 wget -q https://dot.net/v1/dotnet-install.sh && bash dotnet-install.sh -c 6.0 && ln -s /root/.dotnet/dotnet /usr/bin/dotnet
 curl -fsSL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
-cd /opt && git clone httmain dockerfilesps://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
+cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
 mv /jellyfin/ /jellyfin.bak
 cd /opt/jellyfin && export DOTNET_CLI_TELEMETRY_OPTOUT=1 && dotnet publish Jellyfin.Server --disable-parallel --configuration Release --output="/jellyfin" --self-contained --runtime linux-x64 "-p:DebugSymbols=false;DebugType=none"
 cd /opt/jellyfin-web && npm ci --no-audit --unsafe-perm && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web

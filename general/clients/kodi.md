@@ -7,7 +7,7 @@ title: Kodi
 
 ## Add-on Repository
 
-There are two different Kodi addons that serve slightly different use cases.
+There are two different Kodi add-ons that serve slightly different use cases.
 
 * [Jellyfin for Kodi](https://github.com/jellyfin/jellyfin-kodi) - This add-on syncs metadata from selected Jellyfin libraries into the local Kodi database. This has the effect of making interacting with it feel very much like vanilla Kodi with local media (shows up under Movies/TV Shows on the home screen by default, virtually no delay, etc). However, it also tends to consume the database and not share well, so if you have local media or something else that interacts with the database directly, you'll have conflicts and it won't be happy. The sync process can take some extra time on Kodi startup if you don't leave it running 24/7, but it's mostly in the background while Kodi is running.
 * [JellyCon](https://github.com/jellyfin/jellycon) - Behaves more like a standard Kodi streaming add-on. Media is accessed primarily by going through the Add-ons -> JellyCon menu, however you can set up menu options to link to it and show info on the home screen. It also allows easier switching between multiple Jellyfin servers or users since it doesn't have to rely on syncing all the metadata down. By not having metadata synced, it has to request info from the server which can take a bit more time when you're browsing (typically only a second or two in my testing), but you don't have to wait for the database to sync or keep it up to date.
@@ -51,7 +51,7 @@ The installation method for the repository varies depending on what kind of devi
 
 ### Jellyfin for Kodi Overview
 
-This addon syncs metadata from selected Jellyfin libraries into the local Kodi database. This has the effect of making interacting with it feel very much like vanilla Kodi with local media.  This means that our Jellyfin content will be displayed on the home screen under the proper media headings by default, it has virtually no delay while interacting with the library, etc. However, it also assumes that it's the only media source and in largely incompatible with other media sources that interact with Kodi's database.
+This add-on syncs metadata from selected Jellyfin libraries into the local Kodi database. This has the effect of making interacting with it feel very much like vanilla Kodi with local media.  This means that our Jellyfin content will be displayed on the home screen under the proper media headings by default, it has virtually no delay while interacting with the library, etc. However, it also assumes that it's the only media source and in largely incompatible with other media sources that interact with Kodi's database.
 
 Media in Kodi's database is automatically kept in sync with the server in one of several ways:
 
@@ -63,7 +63,7 @@ Media in Kodi's database is automatically kept in sync with the server in one of
 1. Install Jellyfin for Kodi.
     * From within Kodi, navigate to "Add-on Browser"
     * Select "Install from Repository"
-    * Choose "Kodi Jellyfin Addons", followed by "Video Add-ons"
+    * Choose "Kodi Jellyfin Add-ons", followed by "Video Add-ons"
     * Select the Jellyfin add-on and choose install
 2. Within a few seconds you should be prompted for your server details.
     * If a Jellyfin server is detected on your local network, it will displayed in a dialog
@@ -129,7 +129,7 @@ If an error occurs during syncing, enable debug logging in the Jellyfin add-on i
 
 ### Multiple User Accounts
 
-The Jellyfin for Kodi addon doesn't natively handle multiple user accounts.  Fortunately, Kodi has a built in method of handling this called profiles.  Information about this can be found on the Profiles page of the [Kodi Wiki](https://kodi.wiki/view/Profiles).  Once profiles have been created, you must install the Jellyfin add-on and go through the installation steps above for each user profile.  When you switch Kodi profiles, you will also switch Jellyfin users. You can tell Kodi to bring you to a profile login screen during startup by going to the Profiles section inside of the Settings page and checking the box for "Show login screen on startup."
+The Jellyfin for Kodi add-on doesn't natively handle multiple user accounts.  Fortunately, Kodi has a built in method of handling this called profiles.  Information about this can be found on the Profiles page of the [Kodi Wiki](https://kodi.wiki/view/Profiles).  Once profiles have been created, you must install the Jellyfin add-on and go through the installation steps above for each user profile.  When you switch Kodi profiles, you will also switch Jellyfin users. You can tell Kodi to bring you to a profile login screen during startup by going to the Profiles section inside of the Settings page and checking the box for "Show login screen on startup."
 
 > [!NOTE]
 > Kodi's default skin does not display all unicode characters. To display unicode characters the skin's font must be changed.
@@ -142,14 +142,14 @@ When using multiple Kodi clients do not copy Kodi's database (i.e. `myvideosXYZ.
 
 ### JellyCon Overview
 
-JellyCon behaves more like a standard Kodi streaming addon. Media is accessed primarily by going through the Add-ons -> JellyCon menu, however depending on what skin is being used custom shortcuts and widgets can be added to the home menu. It also allows easier switching between multiple Jellyfin servers or users since it doesn't have to rely on syncing all the metadata down. By not having metadata synced, it has to request info from the server which can take a bit more time when you're browsing, but you don't have to wait for the database to sync or keep it up to date. It's also compatible with other media sources and can be used with other add-ons without issue.
+JellyCon behaves more like a standard Kodi streaming add-on. Media is accessed primarily by going through the Add-ons -> JellyCon menu, however depending on what skin is being used custom shortcuts and widgets can be added to the home menu. It also allows easier switching between multiple Jellyfin servers or users since it doesn't have to rely on syncing all the metadata down. By not having metadata synced, it has to request info from the server which can take a bit more time when you're browsing, but you don't have to wait for the database to sync or keep it up to date. It's also compatible with other media sources and can be used with other add-ons without issue.
 
 ### Install JellyCon Add-on
 
 1. Instally JellyCon Add-on
     * From within Kodi, navigate to "Add-on Browser"
     * Select "Install from Repository"
-    * Choose "Kodi Jellyfin Addons", followed by "Video Add-ons"
+    * Choose "Kodi Jellyfin Add-ons", followed by "Video Add-ons"
     * Select the JellyCon add-on and choose install
 2. Within a few seconds you should be prompted for your server details.
     * If a Jellyfin server is detected on your local network, it will displayed in a dialog.  Otherwise, you will be prompted for a URL

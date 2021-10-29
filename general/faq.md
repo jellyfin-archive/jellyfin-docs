@@ -11,12 +11,12 @@ We explain our rationale on our [about page](xref:about).
 
 ## Why don't you support my favorite client or feature?
 
-We would love to support it!
-Unfortunately, no one has decided to develop it yet, so there isn't much we can do.
-This is an open source project maintained by developers working entirely in their free time, which usually results in each person working on things they are personally familiar with or plan to use frequently.
-If you know a developer that would enjoy your favorite feature send them our way, we will gladly help them get familiar with the project workflow!
+Chances are, we'd like to support it! But it hasn't been implemented yet.
+Jellyfin is an entirely volunteer-driven project, so until a developer is able and willing to implement a feature, it likely won't be done.
+We track our features on [our Fider instance](https://features.jellyfin.org), so please check that out, upvote the features you like, and add your own requests.
+If you're a developer and are interested in helping out, [please hack away](xref:contrib-index) and let us know [on Matrix](xref:getting-help) so we can help.
 
-## How do I get help?
+## I'm having problems with Jellyfin, how do I get help?
 
 Please see our [getting help](xref:getting-help) page for details on where to engage the community.
 
@@ -33,3 +33,4 @@ Please see our [requesting features](xref:contrib-issues#requesting-features) pa
 
 All we can ask is you [use Jellyfin](xref:admin-installing), [report any bugs](xref:contrib-issues#reporting-bugs), and tell your friends about us!
 Really, we're just people volunteering our time to help build a better media system, so joining the community is the best way to show your support.
+We do offer a donations page [on OpenCollective](https://opencollective.com/jellyfin), however please note that these funds are **only** used for infrastructure. All out developers are unpaid volunteers on principle.

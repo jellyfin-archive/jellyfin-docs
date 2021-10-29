@@ -33,4 +33,4 @@ Please see our [requesting features](xref:contrib-issues#requesting-features) pa
 
 All we can ask is you [use Jellyfin](xref:admin-installing), [report any bugs](xref:contrib-issues#reporting-bugs), and tell your friends about us!
 Really, we're just people volunteering our time to help build a better media system, so joining the community is the best way to show your support.
-We do offer a donations page [on OpenCollective](https://opencollective.com/jellyfin), however please note that these funds are **only** used for infrastructure. All out developers are unpaid volunteers on principle.
+We do offer a donations page [on OpenCollective](https://opencollective.com/jellyfin), however please note that these funds are **only** used for infrastructure. All our developers are unpaid volunteers on principle.

@@ -72,3 +72,34 @@ rm -Rfv ~/.config/jellyfin
 rm -Rfv ~/.cache/jellyfin
 rm -Rfv ~/.local/share/jellyfin
 ```
+
+## Unlock locked user account
+
+When the admin account is locked out and the Forgot Password feature is not working, you have to unlock the user manually. To do that, you need to find the `jellyfin.db` file on your system. The default location on Linux is: `/var/lib/jellyfin/data/`.
+For paths in other environments, see [server paths](https://jellyfin.org/docs/general/administration/configuration.html#server-paths).
+
+### Linux CLI
+
+Before continuing, make sure that you have sqlite3 installed.
+When sqlite3 is not installed, you can install it under Debian based systems with `apt install sqlite3`.
+After that do the following commands/SQL query:
+
+```bash
+sqlite3 /PATH/TO/JELLYFIN/DB/jellyfin.db
+```
+
+```sql
+UPDATE Users SET InvalidLoginAttemptCount = 0 WHERE Username = 'LockedUserName';
+update Permissions set Value = 0 where Kind = 2 and Permission_Permissions_Guid in (select Id from Users where Username = 'LockedUserName');
+.exit
+```
+
+### SQLiteBrowser
+
+It is also possible to use [SQLiteBrowser](https://sqlitebrowser.org) on systems with a desktop environment.
+Start by opening the database inside the SQLite Browser. After opening the database, navigate to the Execute SQL Tab and execute the following query:
+
+```sql
+UPDATE Users SET InvalidLoginAttemptCount = 0 WHERE Username = 'LockedUserName';
+update Permissions set Value = 0 where Kind = 2 and Permission_Permissions_Guid in (select Id from Users where Username = 'LockedUserName');
+```

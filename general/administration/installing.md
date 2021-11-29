@@ -153,7 +153,7 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
 2. Download the latest container image:
 
    ```sh
-   podman pull jellyfin/jellyfin
+   podman pull docker.io/jellyfin/jellyfin
    ```
 
 3. Create persistent storage for configuration and cache data:

@@ -156,3 +156,40 @@ Movies
     ├── Theme Song Music Video-featurette.mp4
     └── Art of the Best Movie Ever-short.mp4
 ```
+
+## Images
+
+### Poster
+
+* folder.ext
+* poster.ext
+* cover.ext
+* default.ext
+* movie.ext
+
+Examples:
+
+Movie (2010)/poster.jpg
+
+### Backdrop
+
+* backdrop.ext
+* fanart.ext
+* background.ext
+* art.ext
+* extrafanart/*.ext
+
+Examples:
+
+Movie (2010)/fanart.jpg *for the first backdrop image*
+
+Movie (2010)/extrafanart/fanart1.jpg, Movie (2010)/extrafanart/fanart2.jpg, *etc for additional backdrop images*
+
+### Logo
+
+* logo.ext
+* clearlogo.ext
+
+Example:
+
+Movie (2010)/logo.png

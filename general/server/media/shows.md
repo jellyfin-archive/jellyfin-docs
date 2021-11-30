@@ -41,6 +41,7 @@ Shows
 * poster.ext
 * cover.ext
 * default.ext
+* show.ext
 
 Examples:
 
@@ -54,7 +55,7 @@ Series (2010)/Season 01/season1-poster.jpg *for season poster*
 * fanart.ext
 * background.ext
 * art.ext
-* extrafanart.ext
+* extrafanart/*.ext
 
 Examples:
 
@@ -84,6 +85,7 @@ Series (2010)/Season 01/episode filename-thumb.jpg *for the thumbnail of an epis
 ### Logo
 
 * logo.ext
+* clearlogo.ext
 
 Example:
 

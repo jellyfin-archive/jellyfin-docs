@@ -86,6 +86,17 @@ This will affect the played/watched indicator. Replace the hex color with any va
 
 ![Screenshot of watched indicators with a custom transparent color applied](~/images/custom-css-transparentwatched.png)
 
+### Display external links in mobile layout
+
+The mobile app disables display of external links to IMDb, TheMovieDB, Trakt, etc by default.
+To enable the external links again, add the following snippet:
+
+```css
+.layout-mobile .itemExternalLinks {
+    display: block !important;
+}
+```
+
 ### Hide Home Icon from Header
 
 ```css

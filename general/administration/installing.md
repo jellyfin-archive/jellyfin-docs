@@ -140,9 +140,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 ### Podman
 
-[Podman](https://podman.io) allows you to run containers as non-root. It's also the officially supported container solution on RHEL and CentOS.
-
-Steps to run Jellyfin using Podman are almost identical to Docker steps:
+[Podman](https://podman.io) allows you to run rootless containers. It's also the officially supported container solution on Fedora Linux and its derivatives such as CentOS Stream and RHEL. Steps to run Jellyfin using Podman are similar to the Docker steps.
 
 1. Install Podman:
 
@@ -173,7 +171,7 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
     docker.io/jellyfin/jellyfin:latest
    ```
 
-Note that Podman doesn't require root access.
+Podman doesn't require root access to run containers.
 For security, the Jellyfin container should be run using rootless Podman.
 Furthermore, it is safer to run as a non-root user within the container.
 The `--user` option will run with the provided user id and group id *inside* the container.

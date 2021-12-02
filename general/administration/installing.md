@@ -158,13 +158,20 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
     --name myjellyfin \
     --publish 8096:8096/tcp \
     --rm \
+    --user $(id -u):$(id -g) \
+    --userns keep-id \
     --volume jellyfin-cache:/cache:Z \
     --volume jellyfin-config:/config:Z \
     --volume jellyfin-media:/media:ro,z \
     docker.io/jellyfin/jellyfin:latest
    ```
 
-Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.
+Note that Podman doesn't require root access.
+For security, the Jellyfin container should be run using rootless Podman.
+Furthermore, it is safer to run as a non-root user within the container.
+The `--user` option will run with the provided user id and group id *inside* the container.
+The `--userns keep-id` flag ensures that current user's id is mapped to the non-root user's id inside the container.
+This ensures that the permissions for directories bind-mounted inside the container are mapped correctly between the user running Podman and the user running Jellyfin inside the container.
 
 Keep in mind that the `--label "io.containers.autoupdate=image"` flag will allow the container to be automatically updated via `podman auto-update`.
 

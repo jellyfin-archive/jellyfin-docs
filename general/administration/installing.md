@@ -161,7 +161,7 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
     -p 8096:8096 \
     --label "io.containers.autoupdate=image" \
     --name myjellyfin \
-    jellyfin/jellyfin
+    docker.io/jellyfin/jellyfin:latest
    ```
 
 Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.

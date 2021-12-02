@@ -140,7 +140,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 ### Podman
 
-[Podman](https://podman.io) allows you to run containers as non-root. It's also the offically supported container solution on RHEL and CentOS.
+[Podman](https://podman.io) allows you to run containers as non-root. It's also the officially supported container solution on RHEL and CentOS.
 
 Steps to run Jellyfin using Podman are almost identical to Docker steps:
 

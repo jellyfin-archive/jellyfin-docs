@@ -150,6 +150,13 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
    dnf install -y podman
    ```
 
+2. Open the necessary ports in your machine's firewall to permit access to the Jellyfin server from outside the host. This is necessary for rootless Podman because it won't be able to open these automatically. If your distribution uses `firewalld`, the following commands save and load a new firewall rule opening the HTTP port `8096` for TCP connections.  
+
+    ```sh
+    firewall-cmd --add-port=8096/tcp --permanent
+    firewall-cmd --reload
+    ```
+
 2. Create and run a Jellyfin container:
 
    ```sh

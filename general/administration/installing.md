@@ -154,7 +154,6 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
 
    ```sh
    podman run \
-    --cgroup-manager=systemd \
     --volume jellyfin-config:/config \
     --volume jellyfin-cache:/cache \
     --volume jellyfin-media:/media \

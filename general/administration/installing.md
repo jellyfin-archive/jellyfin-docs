@@ -179,11 +179,7 @@ The `z` (shared volume) or `Z` (private volume) volume option to allow Jellyfin 
 
 Replace `jellyfin-config`, `jellyfin-cache`, and `jellyfin-media` with `/path/to/config`, `/path/to/cache` and `/path/to/media` respectively if using bind mounts.
 
-To mount your media library read-only append ':ro' to the media volume:
-
-   ```sh
-   --volume /path/to/media:/media:ro
-   ```
+This example mounts your media library read-only by appending ':ro' to the media volume. Remove this option if you wish to give Jellyfin write access to your media.
 
 #### Managing via Systemd
 

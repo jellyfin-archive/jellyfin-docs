@@ -159,7 +159,7 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
     --volume jellyfin-cache:/cache \
     --volume jellyfin-media:/media \
     -p 8096:8096 \
-    --label "io.containers.autoupdate=image" \
+    --label "io.containers.autoupdate=registry" \
     --name myjellyfin \
     docker.io/jellyfin/jellyfin:latest
    ```

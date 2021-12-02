@@ -233,10 +233,16 @@ As always it is recommended to run the container rootless. Therefore we want to 
     WantedBy=multi-user.target default.target
     ```
 
-4. Enable the service.
+4. Stop the running Jellyfin container.
 
     ```sh
-    systemctl --user enable container-myjellyfin.service
+    podman stop myjellyfin
+    ```
+
+5. Start and enable the service.
+
+    ```sh
+    systemctl --user enable --now container-myjellyfin.service
     ```
 
     At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
@@ -245,10 +251,10 @@ As always it is recommended to run the container rootless. Therefore we want to 
     loginctl enable-linger <username>
     ```
 
-5. Start the service.
+6. To enable Podman auto-updates, enable the necessary Systemd timer. 
 
     ```sh
-    systemctl --user start container-myjellyfin.service
+    systemctl --user enable --now podman-auto-update.timer
     ```
 
 ### Cloudron

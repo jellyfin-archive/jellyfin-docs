@@ -159,6 +159,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
    ```sh
    podman run \
+    --detach \
     --label "io.containers.autoupdate=registry" \
     --name myjellyfin \
     --publish 8096:8096/tcp \

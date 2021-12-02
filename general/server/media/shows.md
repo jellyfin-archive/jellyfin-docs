@@ -45,9 +45,14 @@ Shows
 
 Examples:
 
-Series (2010)/poster.jpg *for series or movie poster*
-
-Series (2010)/Season 01/season1-poster.jpg *for season poster*
+* Series:
+  * Series (2010)/poster.jpg
+* Season posters:
+  * Numbered seasons:
+    * Series (2010)/Season 01/cover.jpg
+    * Series (2010)/season1-poster.jpg
+  * Specials:
+    * Series (2010)/season-specials-poster.jpg
 
 ### Backdrop
 

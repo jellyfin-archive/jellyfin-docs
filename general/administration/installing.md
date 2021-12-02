@@ -154,9 +154,9 @@ Steps to run Jellyfin using Podman are almost identical to Docker steps:
 
    ```sh
    podman run \
-    --volume jellyfin-config:/config \
-    --volume jellyfin-cache:/cache \
-    --volume jellyfin-media:/media \
+    --volume jellyfin-config:/config:Z \
+    --volume jellyfin-cache:/cache:Z \
+    --volume jellyfin-media:/media:ro,z \
     --publish 8096:8096/tcp \
     --label "io.containers.autoupdate=registry" \
     --name myjellyfin \
@@ -167,7 +167,7 @@ Note that Podman doesn't require root access and it's recommended to run the Jel
 
 Keep in mind that the `--label "io.containers.autoupdate=image"` flag will allow the container to be automatically updated via `podman auto-update`.
 
-If SELinux is enabled you need to use either the `z` (shared volume) or `Z` (private volume) volume option to allow Jellyfin to access the volumes.
+The `z` (shared volume) or `Z` (private volume) volume option to allow Jellyfin to access the volumes on systems where SELinux is enabled.
 
 Replace `jellyfin-config`, `jellyfin-cache`, and `jellyfin-media` with `/path/to/config`, `/path/to/cache` and `/path/to/media` respectively if using bind mounts.
 

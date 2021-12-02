@@ -254,7 +254,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
     At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
 
     ```sh
-    loginctl enable-linger <username>
+    loginctl enable-linger $USER
     ```
 
 6. To enable Podman auto-updates, enable the necessary Systemd timer. 

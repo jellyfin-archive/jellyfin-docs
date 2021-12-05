@@ -14,8 +14,7 @@ OS      | Recommended HW Acceleration
 Linux   | QSV, NVENC, AMF, VA-API
 Windows | QSV, NVENC, AMF
 MacOS   | VideoToolbox
-Android | MediaCodec, OMX
-RPi     | OMX
+RPi     | V4L2, OMX (deprecated)
 
 [Graphics Cards comparison using HWA](https://www.elpamsoft.com/?p=Plex-Hardware-Transcoding)
 
@@ -23,11 +22,11 @@ Based on hardware vendor:
 
 Vendor  | Supported HW Acceleration
 ------- | -------------
-NVIDIA  | NVENC, VA-API
+NVIDIA  | NVENC
 AMD     | AMF, VA-API
 Intel   | QSV, VA-API
 Apple   | VideoToolbox
-Other   | OMX, MediaCodec
+RPi | V4L2, OMX (deprecated)
 
 ## Enabling Hardware Acceleration
 
@@ -47,17 +46,35 @@ or using `lshw`:
 lshw -C display
 ```
 
+## Tips on H.264 / AVC 10-bit videos
+
+The hardware decoding of H.264 10-bit aka High10 profile video is not supported by any Intel, AMD or NVIDIA GPU.
+
+Please consider upgrading these videos to HEVC 10-bit aka Main10 profile if you want to offload your CPU usage during transcoding.
+
+## Tips for Intel Gen9 and Gen11+ when using VAAPI or QSV on Linux
+
+The Intel [Guc/Huc firmware](https://wiki.archlinux.org/title/intel_graphics#Enable_GuC_/_HuC_firmware_loading) must be enabled for optional Low-Power encoding (pre-Gen11 only supports LP H.264).
+
+For Jasper Lake chips (such as N5095 and N6005), Low-Power encoding must be enabled. But the linux-firmware support is not ready in Ubuntu 20.04.3 LTS. The 21.10 or newer distro is required.
+
 ## Supported Acceleration Methods
+
+Since Jellyfin 10.8 release, the full hardware filtering (scale, de-interlacle, tone-mapping and subtitle burn-in) on Intel, AMD and NVIDIA have been verified with `jellyfin-ffmpeg` 4.4.1.
+
+**Using the old or original version of FFmpeg binary may disable some hardware filtering improvements.**
 
 ### NVIDIA NVENC
 
-[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/). H264 10-bit is [not supported](https://devtalk.nvidia.com/default/topic/1039388/video-codec-and-optical-flow-sdk/is-there-nvidia-encoder-decoder-which-supports-hdr-10-bpp-for-avc-h-264-/) by NVIDIA acceleration. **The minimum required driver version is: Linux: 418.30, Windows: 450.51.**
+**The minimum required driver version is: Linux: 455.28, Windows: 456.71 since Jellyfin 10.8 release.**
+
+[NVIDIA using ffmpeg official list](https://developer.nvidia.com/ffmpeg). Not every card has been tested. These [drivers](https://github.com/keylase/nvidia-patch) are recommended for Linux and Windows. Here is the official list of [NVIDIA Graphics Cards](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix) for supported codecs. Example of Ubuntu working with [NVENC](https://www.reddit.com/r/jellyfin/comments/amuyba/nvenc_nvdec_working_in_jellyfin_on_ubuntu_server/).
 
 On Linux use `nvidia-smi` to check driver and GPU card version.
 
 ### VA-API
 
-List of supported codecs for [VA-API](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables). Intel iGPU, AMD GPU and NVIDIA (only via the open-source Nouveau drivers) can use VA-API.
+List of supported codecs for [VA-API](https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Comparison_tables). Intel iGPU, AMD GPU.
 
 > [!NOTE]
 > AMD GPU requires open source driver Mesa 20.1 or higher to support hardware decoding HEVC.
@@ -67,7 +84,11 @@ List of supported codecs for [VA-API](https://wiki.archlinux.org/index.php/Hardw
 
 ### AMD AMF
 
-AMF is now available on Windows and Linux, but since AMD has not implemented the HW decoder and scaler in ffmpeg, the decoding speed may not be as expected. The closed source driver `amdgpu-pro` is required when using AMF on Linux.
+**Full OpenCL based hardware filtering in AMF is supported on Windows 10 or newer since Jellyfin 10.8 release.**
+
+AMF is available on Windows and Linux.
+
+However AMD has not implemented the Vulkan based HW decoder and scaler in ffmpeg, the decoding speed may not be as expected on Linux. The closed source driver `amdgpu-pro` is required when using AMF on Linux.
 
 > [!NOTE]
 > Most Zen CPUs do not come with integrated graphics. You will need a dedicated GPU (dGPU) or a Zen CPU with integrated graphics for hardware acceleration. If your Zen CPU is suffixed with a "G" or "GE" in model name, you have integrated graphics.
@@ -219,57 +240,46 @@ docker exec -it jellyfin ldconfig
 
 After that, you should ensure the NVIDIA driver loads correctly.
 
-### Configuring OpenCL Accelerated/VPP Tone Mapping
+### Configuring OpenCL / CUDA / Intel VPP Tone-Mapping
 
-OpenCL tone mapping with NVIDIA NVENC, AMD AMF, and Intel VA-API is through OpenCL image support.
+Hardware based tone-mapping with NVIDIA NVENC, AMD AMF, Intel QSV and VA-API is through OpenCL or CUDA.
 
-Full hardware based VPP tonemapping is supported on Intel VA-API and QSV on Linux.
+Intel hardware based VPP tone-mapping is supported on Intel QSV and VA-API on Linux. VPP is prefered when both two tone-mapping options are checked on Intel.
 
-OS/Platform | NVIDIA NVENC | AMD AMF  | Intel VA-API | AMD VA-API | Intel QSV | Software
+OS/Platform | NVIDIA NVENC | AMD AMF  | Intel QSV | Intel VA-API | AMD VA-API | Software
 ----------- | ------------ | -------- | ----------- | --------- | --------- | --------
-Linux       | OK           | OK       | OK          | planned   | OK        | planned
-Windows     | OK           | OK       | N/A         | N/A       | planned   | planned
-Docker      | OK           | untested | OK          | planned   | planned   | planned
+Linux       | ✔️          | ✔️       | ✔️        | ✔️          | ✔️   | WIP
+Windows     | ✔️           | ✔️       | ✔️        | N/A         | N/A       | WIP
+Docker      | ✔️           | untested | ✔️        | ✔️          | untested   | WIP
+
+> [!NOTE]
+> Tone-mapping on Windows with Intel QSV and AMD AMF requires Windows 10 or newer.
 
 > [!NOTE]
 > Make sure the hardware acceleration is well configured before reading this section.
 
-1. On Windows: Install the latest NVIDIA or AMD drivers.
+1. On Windows: Install the latest NVIDIA or AMD or Intel drivers.
 
 2. On Linux or docker:
-
-   - For NVIDIA cards, install `nvidia-opencl-icd` on Debian/Ubuntu:
-
-    ```sh
-    sudo apt update
-    sudo apt install nvidia-opencl-icd
-    ```
-
-    If presented with multiple package options, choose the one that matches the version of your current nvidia driver (`apt list --installed | grep nvidia`).
-
-    Install `opencl-nvidia` on Arch:
-
-    ```sh
-    sudo pacman -Sy opencl-nvidia
-    ```
-
    - For AMD cards, install `amdgpu-pro` with opencl arguments. See **Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS** for more details.
 
     ```sh
     sudo ./amdgpu-pro-install -y --opencl=pal,legacy
+    sudo usermod -aG video $LOGNAME
+    sudo usermod -aG render $LOGNAME
     ```
 
    - For Intel iGPUs, you have two types of tonemapping methods: OpenCL and VPP. Choose the latter one for faster transcoding speed, but fine tuning options are not supported.
 
     Method OpenCL: Follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin or linuxserver/jellyfin, this step can be skipped.
 
-    Method VPP: Install `intel-media-va-driver-non-free` 20.1 and `jellyfin-ffmpeg` 4.3.1-4 or newer.
+    Method VPP: Install `intel-media-va-driver-non-free` 20.1 and `jellyfin-ffmpeg` 4.4.1-1 or newer.
 
    > [!NOTE]
    > Tone mapping on Intel VA-API and QSV needs an iGPU that supports 10-bit decoding, such as i3-7100 and J4105.
    > Do not use the `intel-opencl-icd` package from the repository since they were not build with RELEASE_WITH_REGKEYS enabled for P010 pixel interop flags.
 
-3. Check the OpenCL device status. You will see corresponding vendor name if it goes well.
+3. Debuging: Check the OpenCL device status. You will see corresponding vendor name if it goes well.
 
    - Use `clinfo`: Install `clinfo` before using it. `sudo apt update && sudo apt install clinfo -y` on Debian/Ubuntu or `sudo pacman -Sy clinfo` on Arch. Then `sudo clinfo`
 

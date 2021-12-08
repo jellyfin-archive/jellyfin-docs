@@ -9,7 +9,7 @@ Audio will usually be embedded in video files, but the server also supports exte
 
 The server only scans local files.
 
-## Formatting
+## Naming
 
 Jellyfin will search for audio files that exactly match the video filename. They can optionally include a language code which will only be used if the language cannot be determined from the audio file.
 

@@ -11,8 +11,6 @@ If you are having trouble using or configuring Jellyfin, there are several ways 
 
   * All channels are bridged to IRC and Discord.
 
-* The Jellyfin [forums](https://forum.jellyfin.org): For long-term discussions.
-
 * The Jellyfin [subreddit](https://www.reddit.com/r/jellyfin): For general discussions.
 
 We are also active on social media.

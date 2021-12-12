@@ -257,7 +257,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
     loginctl enable-linger $USER
     ```
 
-6. To enable Podman auto-updates, enable the necessary Systemd timer.
+6. To enable Podman auto-updates, enable the necessary systemd timer.
 
     ```sh
     systemctl --user enable --now podman-auto-update.timer

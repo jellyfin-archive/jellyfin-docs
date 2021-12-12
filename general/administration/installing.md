@@ -148,14 +148,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
    sudo dnf install -y podman
    ```
 
-2. Open the necessary ports in your machine's firewall to permit access to the Jellyfin server from outside the host. This is necessary for rootless Podman because it won't be able to open these automatically. If your distribution uses `firewalld`, the following commands save and load a new firewall rule opening the HTTP port `8096` for TCP connections.  
-
-    ```sh
-    sudo firewall-cmd --add-port=8096/tcp --permanent
-    sudo firewall-cmd --reload
-    ```
-
-3. Create and run a Jellyfin container:
+2. Create and run a Jellyfin container:
 
    ```sh
    podman run \
@@ -171,6 +164,13 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
     --volume jellyfin-media:/media:ro,z \
     docker.io/jellyfin/jellyfin:latest
    ```
+
+3. Open the necessary ports in your machine's firewall if you wish to permit access to the Jellyfin server from outside the host. This is not done automatically when using rootless Podman. If your distribution uses `firewalld`, the following commands save and load a new firewall rule opening the HTTP port `8096` for TCP connections.  
+
+    ```sh
+    sudo firewall-cmd --add-port=8096/tcp --permanent
+    sudo firewall-cmd --reload
+    ```
 
 Podman doesn't require root access to run containers.
 For security, the Jellyfin container should be run using rootless Podman.

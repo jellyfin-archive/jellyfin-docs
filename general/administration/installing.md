@@ -155,7 +155,7 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
     sudo firewall-cmd --reload
     ```
 
-2. Create and run a Jellyfin container:
+3. Create and run a Jellyfin container:
 
    ```sh
    podman run \
@@ -257,7 +257,7 @@ As always it is recommended to run the container rootless. Therefore we want to 
     loginctl enable-linger $USER
     ```
 
-6. To enable Podman auto-updates, enable the necessary Systemd timer. 
+6. To enable Podman auto-updates, enable the necessary Systemd timer.
 
     ```sh
     systemctl --user enable --now podman-auto-update.timer

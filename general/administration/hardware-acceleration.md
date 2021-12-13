@@ -341,42 +341,91 @@ To check information about VA-API on your system install and run `vainfo` from t
 
 6. QSV in docker. Due to incompatible licenses, we will not integrate non-free drivers in the docker image. You need to perform the above operations manually in docker and add `--privileged` to the docker configuration.
 
-### LXC or LXD Container
+### LXC or LXD Container (Intel iGPU)
 
 This has been tested with LXC 3.0 and may or may not work with older versions.
 
 Follow the steps above to add the jellyfin user to the `video` or `render` group, depending on your circumstances.
 
-1. Add your GPU to the container.
+1. Install the required drivers on the host OS
 
-    ```sh
-    lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
-    ```
+2. Add your GPU to the container.
 
-2. Make sure you have the card within the container:
+   ```sh
+   lxc config device add <container name> gpu gpu gid=<gid of your video or render group>
+   ```
 
-    ```sh
-    $ lxc exec jellyfin -- ls -l /dev/dri
-    total 0
-    crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
-    crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
-    crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
-    ```
+3. Make sure you have the required devices within the container:
 
-3. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
+   ```sh
+   $ lxc exec jellyfin -- ls -l /dev/dri
+   total 0
+   crw-rw---- 1 root video 226,   0 Jun  4 02:13 card0
+   crw-rw---- 1 root video 226,   0 Jun  4 02:13 controlD64
+   crw-rw---- 1 root video 226, 128 Jun  4 02:13 renderD128
+   ```
 
-4. Try and play a video that requires transcoding and run the following, you should get a hit.
+4. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
 
-    ```sh
-    ps aux | grep ffmpeg | grep accel
-    ```
+5. Try and play a video that requires transcoding and run the following, you should get a hit.
 
-5. You can also try playing a video that requires transcoding, and if it plays you're good.
+   ```sh
+   ps aux | grep ffmpeg | grep accel
+   ```
 
-Useful Resources:
+6. You can also try playing a video that requires transcoding, and if it plays you're good.
+
+Useful resources:
 
 - [LXD Documentation - GPU instance configuration](https://github.com/lxc/lxd/blob/master/doc/instances.md#type-gpu)
 - [NVidia CUDA inside a LXD container](https://stgraber.org/2017/03/21/cuda-in-lxd/)
+
+### LXC Container on Proxmox
+
+This has been tested on Proxmox VE 7.1 - on previous versions you may need to change `cgroup2` to `cgroup`.
+
+It is highly recommended to use the same OS as your Proxmox host as the container OS to prevent driver version missmatches.
+
+1. Install the required drivers on the Proxmox host
+
+2. Add your GPU to the container by editing `/etc/pve/lxc/<container-id>.conf` (you may need to change the GIDs in the examples below to match those used on you host).
+
+   Intel iGPU:
+
+   ```conf
+   lxc.cgroup2.devices.allow: c 226:0 rwm
+   lxc.cgroup2.devices.allow: c 226:128 rwm
+   lxc.mount.entry: /dev/dri/card0 dev/dri/card0 none bind,optional,create=file
+   lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file
+   ```
+
+   NVidia GPU:
+
+   ```conf
+   lxc.cgroup2.devices.allow: c 195:* rwm
+   lxc.cgroup2.devices.allow: c 243:* rwm
+   lxc.mount.entry: /dev/nvidia0 dev/nvidia0 none bind,optional,create=file
+   lxc.mount.entry: /dev/nvidiactl dev/nvidiactl none bind,optional,create=file
+   lxc.mount.entry: /dev/nvidia-uvm dev/nvidia-uvm none bind,optional,create=file
+   lxc.mount.entry: /dev/nvidia-modeset dev/nvidia-modeset none bind,optional,create=file
+   lxc.mount.entry: /dev/nvidia-uvm-tools dev/nvidia-uvm-tools none bind,optional,create=file
+   ```
+
+3. Shutdown and start your container.
+
+4. Install the required drivers in your container.
+
+5. Add the jellyfin user to the `video`, `render` and/or `input` groups depending on who owns the device inside the container.
+
+6. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
+
+7. Try and play a video that requires transcoding and run the following, you should get a hit.
+
+   ```sh
+   ps aux | grep ffmpeg | grep accel
+   ```
+
+8. You can also try playing a video that requires transcoding, and if it plays you're good.
 
 ### Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS
 

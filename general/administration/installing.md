@@ -140,65 +140,52 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
 
 ### Podman
 
-[Podman](https://podman.io) allows you to run containers as non-root. It's also the offically supported container solution on RHEL and CentOS.
-
-Steps to run Jellyfin using Podman are almost identical to Docker steps:
+[Podman](https://podman.io) allows you to run rootless containers. It's also the officially supported container solution on Fedora Linux and its derivatives such as CentOS Stream and RHEL. Steps to run Jellyfin using Podman are similar to the Docker steps.
 
 1. Install Podman:
 
    ```sh
-   dnf install -y podman
+   sudo dnf install -y podman
    ```
 
-2. Download the latest container image:
-
-   ```sh
-   podman pull docker.io/jellyfin/jellyfin
-   ```
-
-3. Create persistent storage for configuration and cache data:
-
-   Either create two persistent volumes:
-
-   ```sh
-   podman volume create jellyfin-config
-   podman volume create jellyfin-cache
-   ```
-
-   Or create two directories on the host and use bind mounts:
-
-   ```sh
-   mkdir /path/to/config
-   mkdir /path/to/cache
-   ```
-
-4. Create and run a Jellyfin container:
+2. Create and run a Jellyfin container:
 
    ```sh
    podman run \
-    --cgroup-manager=systemd \
-    --volume jellyfin-config:/config \
-    --volume jellyfin-cache:/cache \
-    --volume jellyfin-media:/media \
-    -p 8096:8096 \
-    --label "io.containers.autoupdate=image" \
+    --detach \
+    --label "io.containers.autoupdate=registry" \
     --name myjellyfin \
-    jellyfin/jellyfin
+    --publish 8096:8096/tcp \
+    --rm \
+    --user $(id -u):$(id -g) \
+    --userns keep-id \
+    --volume jellyfin-cache:/cache:Z \
+    --volume jellyfin-config:/config:Z \
+    --volume jellyfin-media:/media:ro,z \
+    docker.io/jellyfin/jellyfin:latest
    ```
 
-Note that Podman doesn't require root access and it's recommended to run the Jellyfin container as a separate non-root user for security.
+3. Open the necessary ports in your machine's firewall if you wish to permit access to the Jellyfin server from outside the host. This is not done automatically when using rootless Podman. If your distribution uses `firewalld`, the following commands save and load a new firewall rule opening the HTTP port `8096` for TCP connections.  
+
+    ```sh
+    sudo firewall-cmd --add-port=8096/tcp --permanent
+    sudo firewall-cmd --reload
+    ```
+
+Podman doesn't require root access to run containers.
+For security, the Jellyfin container should be run using rootless Podman.
+Furthermore, it is safer to run as a non-root user within the container.
+The `--user` option will run with the provided user id and group id *inside* the container.
+The `--userns keep-id` flag ensures that current user's id is mapped to the non-root user's id inside the container.
+This ensures that the permissions for directories bind-mounted inside the container are mapped correctly between the user running Podman and the user running Jellyfin inside the container.
 
 Keep in mind that the `--label "io.containers.autoupdate=image"` flag will allow the container to be automatically updated via `podman auto-update`.
 
-If SELinux is enabled you need to use either the `z` (shared volume) or `Z` (private volume) volume option to allow Jellyfin to access the volumes.
+The `z` (shared volume) or `Z` (private volume) volume option to allow Jellyfin to access the volumes on systems where SELinux is enabled.
 
 Replace `jellyfin-config`, `jellyfin-cache`, and `jellyfin-media` with `/path/to/config`, `/path/to/cache` and `/path/to/media` respectively if using bind mounts.
 
-To mount your media library read-only append ':ro' to the media volume:
-
-   ```sh
-   --volume /path/to/media:/media:ro
-   ```
+This example mounts your media library read-only by appending ':ro' to the media volume. Remove this option if you wish to give Jellyfin write access to your media.
 
 #### Managing via Systemd
 
@@ -252,22 +239,28 @@ As always it is recommended to run the container rootless. Therefore we want to 
     WantedBy=multi-user.target default.target
     ```
 
-4. Enable the service.
+4. Stop the running Jellyfin container.
 
     ```sh
-    systemctl --user enable container-myjellyfin.service
+    podman stop myjellyfin
+    ```
+
+5. Start and enable the service.
+
+    ```sh
+    systemctl --user enable --now container-myjellyfin.service
     ```
 
     At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
 
     ```sh
-    loginctl enable-linger <username>
+    loginctl enable-linger $USER
     ```
 
-5. Start the service.
+6. To enable Podman auto-updates, enable the necessary systemd timer.
 
     ```sh
-    systemctl --user start container-myjellyfin.service
+    systemctl --user enable --now podman-auto-update.timer
     ```
 
 ### Cloudron

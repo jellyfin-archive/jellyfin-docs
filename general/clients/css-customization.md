@@ -555,6 +555,39 @@ An example of a color theme.
 }
 ```
 
+### Change Icon Pack
+You can choose between Material Icons(Icon Pack used by Jellyfin) and Fontawesome icons.
+Material Icons:
+- Outlined: 
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Outline.css");
+  ```
+- Rounded: 
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/round.css");
+  ```
+- Sharp: 
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Sharp.css");
+  ```
+Fontawesome Icons:
+- Solid:
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/solid.css");
+  ```
+- Regular:
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/regular.css");
+  ```
+- Light:
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/light.css");
+  ```
+- duotone:
+  ```css
+  @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/duotone.css");
+  ```
+
 ## Community Links
 
 Some links to places where custom CSS has been discussed and shared!
@@ -569,11 +602,15 @@ Keep in mind that these posts may have been made under previous versions of Jell
 * [Easy Jellyfin custom CSS](https://www.reddit.com/r/jellyfin/comments/crxqk5/easy_jellyfin_custom_css)
 * [Custom CSS - updated for 10.5.0](https://www.reddit.com/r/jellyfin/comments/fgmu6k/custom_css_updated_for_1050)
 * [Sharing even more custom CSS (and some fixes to previous stuff)](https://www.reddit.com/r/jellyfin/comments/bvnt65/sharing_even_more_custom_css_and_some_fixes_to)
+* [Posting my Jellyfin Custom CSS](https://www.reddit.com/r/jellyfin/comments/p13yqg/posting_my_jellyfin_custom_css/)
 
 ### Community Themes
 
 * [Monochromic - A custom theme for Jellyfin mediaserver created using CSS overrides](https://github.com/CTalvio/Monochromic)
 * [Kaleidochromic - Yet another custom theme for Jellyfin mediaserver created using CSS overrides, built on top of Monochromic](https://github.com/CTalvio/Kaleidochromic)
 * [Novachromic - A light theme, built on top of Monochromic](https://github.com/CTalvio/Novachromic)
-* [JellyfinCSS - This is Jellyfin custom-css](https://github.com/prayag17/JellyfinCSS)
+* [JellySkin - Vibrant Jellyfin theme with a lot a animations](https://github.com/prayag17/JellySkin)
+* [JellyFlix - The Best Netflix Clone for Jellyfin](https://github.com/prayag17/JellyFlix)
 * [Jellyfin Netflix Dark - The Best Netflix Dark Theme for Jellyfin Around!](https://github.com/DevilsDesigns/Jellyfin-Netflix-Dark)
+* [Dark and Green - A Emby like night mode skin](https://github.com/mbcooper83/jellyfin-css-darkandgreen)
+* [HInt Of Green](https://github.com/looi-wh/HintOfGreenCSS)

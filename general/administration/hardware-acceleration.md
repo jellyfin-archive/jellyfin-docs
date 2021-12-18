@@ -279,7 +279,7 @@ Docker      | ✔️           | untested | ✔️        | ✔️          | un
    > Tone mapping on Intel VA-API and QSV needs an iGPU that supports 10-bit decoding, such as i3-7100 and J4105.
    > Do not use the `intel-opencl-icd` package from the repository since they were not build with RELEASE_WITH_REGKEYS enabled for P010 pixel interop flags.
 
-3. Debuging: Check the OpenCL device status. You will see corresponding vendor name if it goes well.
+3. Debugging: Check the OpenCL device status. You will see corresponding vendor name if it goes well.
 
    - Use `clinfo`: Install `clinfo` before using it. `sudo apt update && sudo apt install clinfo -y` on Debian/Ubuntu or `sudo pacman -Sy clinfo` on Arch. Then `sudo clinfo`
 

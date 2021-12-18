@@ -54,7 +54,9 @@ Please consider upgrading these videos to HEVC 10-bit aka Main10 profile if you 
 
 ## Tips for Intel Gen9 and Gen11+ when using VAAPI or QSV on Linux
 
-The Intel [Guc/Huc firmware](https://wiki.archlinux.org/title/intel_graphics#Enable_GuC_/_HuC_firmware_loading) must be enabled for optional Low-Power encoding (pre-Gen11 only supports LP H.264).
+The Intel [Guc/Huc firmware](https://01.org/linuxgraphics/downloads/firmware) must be enabled for optional Low-Power encoding (pre-Gen11 only supports LP H.264).
+
+Instructions for ArchLinux: [Arch Wiki](https://wiki.archlinux.org/title/intel_graphics#Enable_GuC_/_HuC_firmware_loading) and for Debian/Ubuntu: [Brainiarc7's gist](https://gist.github.com/Brainiarc7/aa43570f512906e882ad6cdd835efe57)
 
 For Jasper Lake chips (such as N5095 and N6005), Low-Power encoding must be enabled. But the linux-firmware support is not ready in Ubuntu 20.04.3 LTS. The 21.10 or newer distro is required.
 

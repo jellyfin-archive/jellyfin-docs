@@ -62,7 +62,7 @@ For Jasper Lake chips (such as N5095 and N6005), Low-Power encoding must be enab
 
 ## Supported Acceleration Methods
 
-Since Jellyfin 10.8 release, the full hardware filtering (scale, de-interlacle, tone-mapping and subtitle burn-in) on Intel, AMD and NVIDIA have been verified with `jellyfin-ffmpeg` 4.4.1.
+In Jellyfin 10.8, full hardware-accelerated filtering (scaling, deinterlacing, tone mapping and subtitle burn-in) on Intel, AMD and NVIDIA hardware have been verified with `jellyfin-ffmpeg` 4.4.1.
 
 **Using the old or original version of FFmpeg binary may disable some hardware filtering improvements.**
 

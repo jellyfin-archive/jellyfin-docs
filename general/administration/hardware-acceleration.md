@@ -26,7 +26,7 @@ NVIDIA  | NVENC
 AMD     | AMF, VA-API
 Intel   | QSV, VA-API
 Apple   | VideoToolbox
-RPi | V4L2, OMX (deprecated)
+RPi    | V4L2, OMX (deprecated)
 
 ## Enabling Hardware Acceleration
 
@@ -271,7 +271,7 @@ Docker      | ✔️           | untested | ✔️        | ✔️          | un
     sudo usermod -aG render $LOGNAME
     ```
 
-   - For Intel iGPUs, you have two types of tonemapping methods: OpenCL and VPP. Choose the latter one for faster transcoding speed, but fine tuning options are not supported.
+   - For Intel iGPUs, you have two types of tone-mapping methods: OpenCL and VPP. Choose the latter one for faster transcoding speed, but fine tuning options are not supported.
 
     Method OpenCL: Follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin or linuxserver/jellyfin, this step can be skipped.
 

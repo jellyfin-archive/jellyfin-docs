@@ -134,3 +134,14 @@ If the user has a password, additional options are shown.
 
 > [!NOTE]
 > [Pin-less Sign in Bug](https://github.com/jellyfin/jellyfin/issues/2125#issuecomment-566400711)
+
+### Resetting a forgotten admin password
+
+If you forgot the jellyfin admin user password, upon login screen click on `forgot password` and type in th username.
+
+Jellyfin will create a password reset file on the server with a certain PIN-code. With admin access, you will be able to read the file and complete the password reset.
+
+Unfortunately by now, in Windows 10, the file path will not be shown in a message. You habe to find it by yourselb by searching for `passwordreset*`.
+Most likely the path ist `C:\ProgramData\Jellyfin\Server`
+
+For linux users, the path should most likely be `/etc/jellyfin/`

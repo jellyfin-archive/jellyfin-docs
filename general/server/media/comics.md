@@ -5,7 +5,7 @@ title: Comics
 
 # Comics / Mangas
 
-Comics and Mangas, from now on referred to as Comics, should usually be in the library root directory or in a subfolder for the individual comics. The subfolders allow for organization of metadata and images.
+Comics and mangas, from now on referred to as comics, should usually be in the library root directory or in a subfolder for the individual comics. The subfolders allow for organization of metadata and images.
 
 For best results, it is recommended to name the files similar to the following schema where the volume number and issue number are used **interchangeable**.
 
@@ -34,7 +34,7 @@ Placing comics into a subfolder allows the placement of a `ComicInfo.xml` file f
 
 ## Local Metadata for "Comic Book Archive's"
 
-Should you're files not correspond to either `.cbz` or `.cbr` files, please refer to the [section on Books](xref:server-media-books) to see what is supported.
+Should your files not correspond to either `.cbz` or `.cbr` files, please refer to the [section on books](xref:server-media-books) to see what is supported.
 
 The following metadata formats are supported:
 
@@ -42,4 +42,4 @@ The following metadata formats are supported:
 - ComicBookInfo (from ComicBookLover)
 
 > [!Note]
-> However, their are some limitations regarding the support of the ComicInfo format. `ComicInfo.xml` files can be parsed when they are placed in the same folder as the comic itself or when they are bundled within a `.cbz` file. `ComicInfo.xml` files bundled with any other archive format are not supported.
+> However, there are some limitations regarding the support of the ComicInfo format. `ComicInfo.xml` files can be parsed when they are placed in the same folder as the comic itself or when they are bundled within a `.cbz` file. `ComicInfo.xml` files bundled with any other archive format are not supported.

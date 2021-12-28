@@ -51,7 +51,7 @@ By default the "link" icon will be used.
 
 ## Privacy-focused changes
 
-Our default settings for the Jellyfin Web `config.json` file include some features that privacy-focused or completely-offline users may with to disable. Each option is detailed below.
+Our default settings for the Jellyfin Web `config.json` file include some features that privacy-focused or completely-offline users may want to disable. Each option is detailed below.
 
 ### Google Chromecast
 

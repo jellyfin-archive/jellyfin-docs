@@ -75,6 +75,5 @@ Note the trailing slash - that is optional, but recommended.
 
 ## Community Links
 
-- [Windows plus DuckDNS Setup](https://forum.jellyfin.org/t/securing-your-jellyfin-install-https-with-caddy-server/282)
 - [Windows Guide for Caddy v2](https://www.reddit.com/r/jellyfin/comments/gdwe0s/windows_and_caddy_v2_reverse_proxy_guide)
 - [Windows Guide for Caddy v1](https://www.reddit.com/r/jellyfin/comments/ek8ugr/windows_reverse_proxy_guide)

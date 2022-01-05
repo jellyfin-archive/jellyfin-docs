@@ -13,7 +13,6 @@ title: Home
 <a href="https://hub.docker.com/r/jellyfin/jellyfin"><img class="badge" alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/jellyfin/jellyfin.svg"/></a>
 <br/>
 <a href="https://opencollective.com/jellyfin"><img class="badge" alt="Donate" src="https://img.shields.io/opencollective/all/jellyfin.svg?label=backers"/></a>
-<a href="https://forum.jellyfin.org"/><img class="badge" alt="Discuss on our Forum" src="https://img.shields.io/discourse/https/forum.jellyfin.org/users.svg"/></a>
 <a href="https://matrix.to/#/+jellyfin:matrix.org"><img class="badge" alt="Chat on Matrix" src="https://img.shields.io/matrix/jellyfin:matrix.org.svg?logo=matrix"/></a>
 <a href="https://www.reddit.com/r/jellyfin/"><img class="badge" alt="Join our Subreddit" src="https://img.shields.io/badge/reddit-r%2Fjellyfin-%23FF5700.svg"/></a>
 </p>

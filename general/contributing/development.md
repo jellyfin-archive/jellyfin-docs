@@ -41,31 +41,24 @@ The first step is to set up a copy of the Git repository of the project you want
 
 1. On GitHub, "Fork" the Jellyfin repository you wish to contribute to, to your own user account using the "Fork" button in the relevant repository.
 
-1. Clone your fork to your local machine and enter the directory:
+2. Clone your fork to your local machine and enter the directory:
 
     ```sh
     git clone git@github.com:yourusername/projectname.git
     cd projectname/
     ```
 
-1. Add the "upstream" remote, which allows you to pull down changes from the main project easily:
+3. Add the "upstream" remote, which allows you to pull down changes from the main project easily:
 
     ```sh
     git remote add upstream git@github.com:jellyfin/projectname.git
     ```
 
-1. Initialize the Git submodules; most projects have at least one:
+4. To get the `Jellyfin.Server` project to run successfully, checkout both the [server](https://github.com/jellyfin/jellyfin), as well as the [web client](https://github.com/jellyfin/jellyfin-web) project.
 
-    ```sh
-    git submodule update --init
-    ```
+5. Build the Jellyfin Web project with NPM, and copy the location of the resulting `dist` folder.
 
-    > [!NOTE]
-    > Avoid editing files inside of submodules. Doing so may result in unintended side effects, including overwriting of your work. Always modify the submodule in its own cloned repository elsewhere.
-
-1. To get the `Jellyfin.Server` project to run successfully, checkout both the [server](https://github.com/jellyfin/jellyfin), as well as the [web client](https://github.com/jellyfin/jellyfin-web) project.
-
-1. Build the Jellyfin Web project with Yarn or NPM, and copy the location of the resulting `dist` folder. In your `Jellyfin.Server` project add an environment variable named `JELLYFIN_WEB_DIR` with the value set to the full path of your `dist` folder.
+6. In your `Jellyfin.Server` project add an environment variable named `JELLYFIN_WEB_DIR` with the value set to the full path of your `dist` folder.
 
 You will now be ready to begin building or modifying the project.
 
@@ -211,6 +204,6 @@ docker exec -ti jftest bash
 cd /opt/jellyfin
 git fetch origin pull/<PR_ID>/head:my-testing-branch
 git merge my-testing-branch
-dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
+dotnet build
 kill -15 $(pidof jellyfin)
 ```

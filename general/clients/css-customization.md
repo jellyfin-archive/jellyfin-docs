@@ -556,34 +556,50 @@ An example of a color theme.
 ```
 
 ### Change Icon Pack
+
 You can choose between Material Icons (Icon Pack used by Jellyfin) and Fontawesome icons.
 Material Icons:
-- Outlined: 
+
+* Outlined:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Outline.css");
   ```
-- Rounded: 
+
+* Rounded:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/round.css");
   ```
-- Sharp: 
+
+* Sharp:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Sharp.css");
   ```
+
 Fontawesome Icons:
-- Solid:
+
+* Solid:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/solid.css");
   ```
-- Regular:
+
+* Regular:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/regular.css");
   ```
-- Light:
+
+* Light:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/light.css");
   ```
-- duotone:
+
+* duotone:
+
   ```css
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/duotone.css");
   ```

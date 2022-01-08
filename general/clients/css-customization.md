@@ -613,4 +613,4 @@ Keep in mind that these posts may have been made under previous versions of Jell
 * [JellyFlix - The Best Netflix Clone for Jellyfin](https://github.com/prayag17/JellyFlix)
 * [Jellyfin Netflix Dark - The Best Netflix Dark Theme for Jellyfin Around!](https://github.com/DevilsDesigns/Jellyfin-Netflix-Dark)
 * [Dark and Green - A Emby like night mode skin](https://github.com/mbcooper83/jellyfin-css-darkandgreen)
-* [HInt Of Green](https://github.com/looi-wh/HintOfGreenCSS)
+* [Hint of Green](https://github.com/looi-wh/HintOfGreenCSS)

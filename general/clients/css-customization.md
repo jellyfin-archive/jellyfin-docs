@@ -556,7 +556,7 @@ An example of a color theme.
 ```
 
 ### Change Icon Pack
-You can choose between Material Icons(Icon Pack used by Jellyfin) and Fontawesome icons.
+You can choose between Material Icons (Icon Pack used by Jellyfin) and Fontawesome icons.
 Material Icons:
 - Outlined: 
   ```css

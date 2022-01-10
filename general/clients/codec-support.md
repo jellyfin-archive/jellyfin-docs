@@ -37,6 +37,8 @@ The goal is to Direct Play all media. This means the container, video, audio and
 <sup>6</sup>HEVC decoding is supported on Apple devices with the A8X chip or newer and at least iOS 14
 
 <sup>7</sup>HEVC decoding is only supported on Windows 10 with the HEVC Video Extension from the Microsoft [store](https://www.microsoft.com/store/productId/9NMZLZ57R3T7).
+> [!NOTE]
+> Current versions of the HEVC Video Extension can suffer from so called "[stutter](https://techcommunity.microsoft.com/t5/discussions/hevc-video-decoding-broken-with-b-frames/m-p/2077247)". This can occur when using Microsoft Edge, combined with this extension, to play a video file encoded in HEVC that makes use of b-frames. A workaround for this issue could be to use an older version, like `1.0.31823.0`, of this extension.
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 

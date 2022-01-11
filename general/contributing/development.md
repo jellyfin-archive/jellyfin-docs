@@ -12,7 +12,7 @@ This page details how our repositories are organized, how to get started editing
 There are many projects within the [organization](https://github.com/jellyfin) to browse through for contributions.
 Summarized here are the two biggest ones, one for backend devs and another for frontend devs.
 
-* [Jellyfin Server](https://github.com/jellyfin/jellyfin): The server portion, built using .NET 5 and C#.
+* [Jellyfin Server](https://github.com/jellyfin/jellyfin): The server portion, built using .NET 6 and C#.
 * [Jellyfin Web](https://github.com/jellyfin/jellyfin-web): The main client application built for browsers, but also used in some of our other clients that are just wrappers.
 
 Note that each of the repositories also has its own documentation on how to get started with that project, generally found in the repository README. You can also view the organization [source tree](xref:contrib-source-tree) to see how some of the bigger projects are structured.
@@ -184,11 +184,10 @@ docker exec -ti jftest bash
 apt-get update && apt-get install git gnupg wget apt-transport-https curl autoconf g++ make libpng-dev gifsicle automake libtool make gcc musl-dev nasm
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg && mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
 wget -q https://packages.microsoft.com/config/debian/10/prod.list && mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get install dotnet-sdk-5.0 yarn
+apt-get update && apt-get install dotnet-sdk-6.0 npm
 cd /opt && git clone https://github.com/jellyfin/jellyfin.git && git clone https://github.com/jellyfin/jellyfin-web.git
-mv /jellyfin/ /jellyfin.bak && cd /opt/jellyfin && dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
-cd /opt/jellyfin-web && yarn install && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
+cd jellyfin/ && DOTNET_CLI_TELEMETRY_OPTOUT=1 dotnet publish --disable-parallel Jellyfin.Server --configuration Debug --output="/jellyfin" --self-contained --runtime linux-x64
+cd /opt/jellyfin-web && npm install && cp -r /opt/jellyfin-web/dist /jellyfin/jellyfin-web
 kill -15 $(pidof jellyfin)
 ```
 

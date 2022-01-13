@@ -273,6 +273,8 @@ Docker      | ✔️           | untested | ✔️        | ✔️          | un
 
    - For Intel iGPUs, you have two types of tone-mapping methods: OpenCL and VPP. Choose the latter one for faster transcoding speed, but fine tuning options are not supported.
 
+   - When on docker, the **privileged** flag is required for the OpenCL device to be recognized. You can do this by adding `--privileged` to your docker command or `privileged: true` on your docker compose.
+
     Method OpenCL: Follow the instructions from [intel-compute-runtime](https://github.com/intel/compute-runtime/releases). If you are using the docker image from jellyfin/jellyfin or linuxserver/jellyfin, this step can be skipped.
 
     Method VPP: Install `intel-media-va-driver-non-free` 20.1 and `jellyfin-ffmpeg` 4.4.1-1 or newer.

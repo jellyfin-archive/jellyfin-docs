@@ -398,6 +398,10 @@ This has been tested on Proxmox VE 7.1 - on previous versions you may need to ch
 
 It is highly recommended to use the same OS as your Proxmox host as the container OS to prevent driver version missmatches.
 
+Jellyfin needs to run in a **privileged** container.
+
+You can convert an existing unprivileged container to a privileged container by taking a backup and restoring it as priviledged,
+
 1. Install the required drivers on the Proxmox host
 
 2. Add your GPU to the container by editing `/etc/pve/lxc/<container-id>.conf` (you may need to change the GIDs in the examples below to match those used on you host).
@@ -429,7 +433,7 @@ It is highly recommended to use the same OS as your Proxmox host as the containe
 
 5. Add the jellyfin user to the `video`, `render` and/or `input` groups depending on who owns the device inside the container.
 
-6. Configure Jellyfin to use video acceleration and point it at the right device if the default option is wrong.
+6. Configure Jellyfin to use hardware acceleration and point it at the right device if the default option is wrong.
 
 7. Try and play a video that requires transcoding and run the following, you should get a hit.
 

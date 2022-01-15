@@ -424,9 +424,9 @@ Navigate to the Playback tab in the Dashboard and set the path to FFmpeg under F
 
 ### Linux (generic amd64)
 
-Generic amd64 Linux builds in TAR archive format are available [here](https://jellyfin.org/downloads/#linux).
+Generic amd64, arm64, and armhf Linux builds in TAR archive format are available [here](https://jellyfin.org/downloads/#linux).
 
-#### Installation Process
+#### Base Installation Process
 
 Create a directory in `/opt` for jellyfin and its files, and enter that directory.
 
@@ -435,17 +435,17 @@ sudo mkdir /opt/jellyfin
 cd /opt/jellyfin
 ```
 
-Download the latest generic Linux build from the [release page](https://github.com/jellyfin/jellyfin/releases). The generic Linux build ends with "`linux-amd64.tar.gz`". The rest of these instructions assume version 10.4.3 is being installed (i.e. `jellyfin_10.4.3_linux-amd64.tar.gz`). Download the generic build, then extract the archive:
+Download the latest generic Linux build for your architecture. The rest of these instructions assume version 10.7.7 is being installed (i.e. `jellyfin_10.7.7_amd64.tar.gz`). Download the generic build, then extract the archive:
 
 ```sh
-sudo wget https://github.com/jellyfin/jellyfin/releases/download/v10.4.3/jellyfin_10.4.3_linux-amd64.tar.gz
-sudo tar xvzf jellyfin_10.4.3_linux-amd64.tar.gz
+sudo wget https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_10.7.7_amd64.tar.gz
+sudo tar xvzf jellyfin_10.7.7_amd64.tar.gz
 ```
 
-Create a symbolic link to the Jellyfin 10.4.3 directory. This allows an upgrade by repeating the above steps and enabling it by simply re-creating the symbolic link to the new version.
+Create a symbolic link to the Jellyfin 10.7.7 directory. This allows an upgrade by repeating the above steps and enabling it by simply re-creating the symbolic link to the new version.
 
 ```sh
-sudo ln -s jellyfin_10.4.3 jellyfin
+sudo ln -s jellyfin_10.7.7 jellyfin
 ```
 
 Create four sub-directories for Jellyfin data.
@@ -454,18 +454,24 @@ Create four sub-directories for Jellyfin data.
 sudo mkdir data cache config log
 ```
 
-If you are running Debian or a derivative, you can also [download](https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/) and install an ffmpeg release built specifically for Jellyfin. Be sure to download the latest release that matches your OS (4.2.1-5 for Debian Stretch assumed below).
+#### `ffmpeg` Installation
+
+If you are not running a Debian derivative, install `ffmpeg` through your OS's package manager, and skip this section.
+
+If you are running Debian or a derivative, you can also [download](https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/) and install an `ffmpeg` release built specifically for Jellyfin. Be sure to download the latest release that matches your OS (4.4.1-1 for Debian Bullseye assumed below).
 
 ```sh
-sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/4.2.1-5/jellyfin-ffmpeg_4.2.1-5-stretch_amd64.deb
-sudo dpkg --install jellyfin-ffmpeg_4.2.1-5-stretch_amd64.deb
+sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/4.4.1-1/jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
+sudo dpkg --install jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
 ```
 
-If you run into any dependency errors, run this and it will install them and jellyfin-ffmpeg.
+If you run into any dependency errors, run this and it will install them and `jellyfin-ffmpeg`.
 
 ```sh
 sudo apt install -f
 ```
+
+#### Running Jellyfin
 
 Due to the number of command line options that must be passed, it is easiest to create a small script to run Jellyfin.
 
@@ -499,6 +505,41 @@ Finally you can run it. You will see lots of log information when run, this is n
 
 ```sh
 ./jellyfin.sh
+```
+
+##### Starting Jellyfin on boot (optional)
+
+Create a `systemd` unit file.
+
+```sh
+cd /etc/systemd/system
+sudo nano jellyfin.service
+```
+
+Then paste the following contents, replacing `youruser` with your username.
+
+```
+[Unit]
+Description=Jellyfin
+After=network.target
+
+[Service]
+Type=simple
+User=youruser
+Restart=always
+ExecStart=/opt/jellyfin/jellyfin.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Apply the correct permissions to the file, enable the service to start on boot, then start it.
+
+```sh
+sudo chmod 644 jellyfin.service
+sudo systemctl daemon-reload
+sudo systemctl enable jellyfin.service
+sudo systemctl start jellyfin.service
 ```
 
 ### Portable DLL

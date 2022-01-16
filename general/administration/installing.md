@@ -518,7 +518,7 @@ sudo nano jellyfin.service
 
 Then paste the following contents, replacing `youruser` with your username.
 
-```
+```ini
 [Unit]
 Description=Jellyfin
 After=network.target

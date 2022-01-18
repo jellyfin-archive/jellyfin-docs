@@ -39,7 +39,7 @@ Shows
 
 ## Show Extras
 
-Show extras, sometimes called specials, can be added in the `Series 00` folder. In case your metadata provider does not provide information about the extra, it is recommended to use a name which describes the content of the special instead of naming it `Episode S00Exy.mkv`. This is done to avoid wrong metadata being pulled for the extra.
+Show extras, sometimes called specials, can be added in the `Season 00` folder. If supported by your metadata provider those files will be matched. In case your metadata provider does not provide information about the extra, it is recommended to use a name which describes the content of the special instead of naming it `Episode S00Exy.mkv`. This is done to avoid wrong metadata being pulled for the extra and to provide a proper presentation.
 
 > [!NOTE]
 > Episode numbering for specials may vary from metadata provider to metadata provider.

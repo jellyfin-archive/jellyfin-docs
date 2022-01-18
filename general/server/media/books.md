@@ -37,10 +37,10 @@ Either the `content.opf` or the `metadata.opf` file can tell Jellyfin which file
 
 ## Reader Support
 
-Jellyfin Web supports to save your reading progress. This functionality is, however, limited. For books of the type pdf, this is limited to chapters and sub-chapters only. Books stored in the epub format save the reading progress on a per-chapter basis.
+Jellyfin Web supports to save your reading progress. This functionality is, however, limited. Books stored in the epub format save the reading progress on a per-chapter basis as they do not have a concept of pages. Formats, like the comic book archive, save your progress per page.
 
 > [!Note]
-> Jellyfin saves your reading progress based on a time interval. This means, Jellyfin might not save your progress immediately when you enter a new chapter.
+> Jellyfin saves your epub reading progress based on a 10 seconds time interval.
 
 ## Primary
 

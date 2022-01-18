@@ -7,6 +7,11 @@ title: Comics
 
 Comics and mangas, from now on referred to as comics, should usually be in the library root directory or in a subfolder for the individual comics. The subfolders allow for organization of metadata and images.
 
+> [!Note]
+> For the best reading experience, it is recommended to store comics in the comic book archive or pdf format. This is due to issues when trying to read comics stored in the epub format. Please note, that Jellyfin saves your reading position for comics in the comic book archive format, but does not save whether you finished the comic or not.
+
+## Naming
+
 For best results, it is recommended to name the files similar to the following schema where the volume number and issue number are used **interchangeable**.
 
 ```txt
@@ -17,7 +22,7 @@ Series_Name (SeriesYear) #IssueNum (of Count) (PubYear).ext
 - Count = Total number of issues
 - PubYear = Publication year of the issue
 - SeriesYear = Start year of the series
-- .ext = file extension, e.g. `.cbz` or `.cbr`
+- .ext = file extension, e.g. `.cbz` or `.cbr`. For a list of supported file extension, please refer to the [section on books](xref:server-media-books).
 
 Take a look at the following example:
 

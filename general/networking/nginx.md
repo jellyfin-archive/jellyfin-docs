@@ -57,7 +57,8 @@ server {
     #add_header Content-Security-Policy "default-src https: data: blob: http://image.tmdb.org; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js https://www.gstatic.com/eureka/clank/95/cast_sender.js https://www.gstatic.com/eureka/clank/96/cast_sender.js https://www.gstatic.com/eureka/clank/97/cast_sender.js https://www.youtube.com blob:; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'";
 
     location = / {
-        return 302 https://$host/web/;
+        return 302 http://$host/web/;
+        #return 302 https://$host/web/;
     }
 
     location / {
@@ -88,7 +89,7 @@ server {
 
     location /socket {
         # Proxy Jellyfin Websockets traffic
-        proxy_pass http://$jellyfin:8096/socket;
+        proxy_pass http://$jellyfin:8096;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";

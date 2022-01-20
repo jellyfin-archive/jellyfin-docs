@@ -35,13 +35,6 @@ In case the book is stored in the epub format, internal metadata can be provided
 
 Either the `content.opf` or the `metadata.opf` file can tell Jellyfin which file should be used for the books cover. Usually, this is the `cover.ext` file. The abbreviation `ext` stands for extension, e.g. `.png` or `.jpg`.
 
-## Reader Support
-
-Jellyfin Web supports to save your reading progress. This functionality is, however, limited. Books stored in the epub format save the reading progress on a per-chapter basis as they do not have a concept of pages. Formats, like the comic book archive, save your progress per page.
-
-> [!Note]
-> Jellyfin saves your epub reading progress based on a 10 seconds time interval.
-
 ## Primary
 
 * folder

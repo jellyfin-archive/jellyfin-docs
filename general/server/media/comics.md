@@ -22,7 +22,7 @@ Series_Name (SeriesYear) #IssueNum (of Count) (PubYear).ext
 - Count = Total number of issues
 - PubYear = Publication year of the issue
 - SeriesYear = Start year of the series
-- .ext = file extension, e.g. `.cbz` or `.cbr`. For a list of supported file extension, please refer to the [section on books](xref:server-media-books).
+- .ext = file extension, e.g. `.cbz` or `.cbr`. For a list of supported file extensions, please refer to the [section on books](xref:server-media-books).
 
 Take a look at the following example:
 

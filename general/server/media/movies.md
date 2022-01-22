@@ -83,6 +83,7 @@ Supported folder types are:
 * `shorts`
 * `featurettes`
 * `extras` - Generic catch all for extras of an unknown type.
+* `trailers`
 
 ```txt
 Movies

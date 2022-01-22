@@ -95,3 +95,24 @@ Series (2010)/Season 01/episode filename-thumb.jpg *for the thumbnail of an epis
 Example:
 
 Series (2010)/logo.png
+
+## Other
+
+### Theme Videos
+
+* backdrops/*
+
+Example:
+
+Series (2010)/backdrops/S1Intro.ext
+
+### Theme Music
+
+* theme.ext
+* theme-music/*
+
+Examples:
+
+Series (2010)/theme.ext
+
+Series (2010)/theme-music/intro-song.ext

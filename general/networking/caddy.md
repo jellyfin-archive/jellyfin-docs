@@ -60,7 +60,7 @@ reverse_proxy 127.0.0.1:8096
 You can serve Jellyfin only at a particular base path and not proxy all other requests.
 
 To do this, first configure Jellyfin to use a base path.
-If you already have access to the web interface, go to `Admin > Networking` and in the Base URL field, enter a path like `/jellyfin`.
+If you already have access to the web interface, go to `Admin > Networking` and enter a path like `/jellyfin` in the Base URL field.
 If not, you may instead go to `<Configuration_directory>/network.xml` and modify key `<BaseUrl>` to your needs. For references on the directory location, please consult [Configuration Documentation](https://jellyfin.org/docs/general/administration/configuration.html#configuration-directory).
 You might have to restart the Jellyfin server for this to take effect.
 Then simply give the `reverse_proxy` directive a path matcher.

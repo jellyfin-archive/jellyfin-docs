@@ -278,7 +278,7 @@ The Jellyfin app rewritten in Swift in order to support HDR and direct play capa
 
 **Links:**
 
-<a href='https://testflight.apple.com/join/WiN0G62Q'><img height='70' alt='Join the Beta on TestFlight' src='https://anotherlens.app/testflight-badge.png'/></a>
+<a href='https://testflight.apple.com/join/oZd0QzWv'><img height='70' alt='Join the Beta on TestFlight' src='https://anotherlens.app/testflight-badge.png'/></a>
 
 - [GitHub](https://github.com/jellyfin/SwiftFin)
 

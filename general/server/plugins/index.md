@@ -373,15 +373,6 @@ A plugin to integrate your Shoko database with the Jellyfin media server.
 
 ### 3rd-Party Plugin Repositories
 
-#### crobibero's Repo
-
-* Manifest
-  * [https://repo.codyrobibero.dev/manifest.json](https://repo.codyrobibero.dev/manifest.json)
-* Included Plugins
-  * [IMVDb](https://github.com/crobibero/jellyfin-plugin-imvdb)
-  * [TMDb Trailers](https://github.com/crobibero/jellyfin-plugin-tmdb-trailers)
-  * [Webhook](https://github.com/crobibero/jellyfin-plugin-webhook)
-
 #### dkanada's Repo
 
 * Manifest

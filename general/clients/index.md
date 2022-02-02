@@ -424,4 +424,3 @@ A proxy that generates YAMJ style HTML compatible with A-100/A-110 Popcorn Hour 
 **Links:**
 
 - [GitHub](https://github.com/SenorSmartyPants/jellyfin-nmt)
-

@@ -351,7 +351,14 @@ To check information about VA-API on your system install and run `vainfo` from t
    sudo apt remove intel-media-va-driver intel-media-va-driver-non-free -y
    ```
 
-6. QSV in docker. Due to incompatible licenses, we will not integrate non-free drivers in the docker image. You need to perform the above operations manually in docker and add `--privileged` to the docker configuration.
+6. QSV in docker. Due to incompatible licenses, we will not integrate non-free drivers in the docker image. You need to perform the above operations manually in docker and add `--privileged` to the docker configuration. Below is an example docker file
+
+   ```Dockerfile
+   FROM jellyfin/jellyfin:10.8.0-alpha5
+   
+   RUN sed -i 's/bullseye main$/bullseye main non-free/g' /etc/apt/sources.list
+   RUN apt update && apt install vainfo intel-media-va-driver-non-free -y
+   ```
 
 ### LXC or LXD Container (Intel iGPU)
 

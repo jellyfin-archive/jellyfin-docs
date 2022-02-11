@@ -84,23 +84,3 @@ The list of physical channels will be displayed. Click the pencil icon to the ri
 ![Step 2 of mapping channels](~/images/live-tv-setup-channels2.png)
 
 The guide data will now automatically imported. You can check that the data has been imported correctly by going to the 'Live TV Guide' page from the main Jellyfin web page on your server.
-
-## Recording Post Processing
-
-Jellyfin supports Post Processing of recorded Live TV shows. This can be used to transcode the recording to a specific format that does not require transcoding on the fly when playing back, extract subtitles, remove commercials, and more.
-
-There are several different ways to set up your post-processing script, and this largely will need to be changed to your individual use case.
-
-Somewhere to start:
-[Transcode to MP4 with AAC audio](https://gist.github.com/AndrewBreyen/5c28ae36831aa7363cc1e4131ce597dc)
-[Commercial Skipping](https://www.reddit.com/comments/jvzxnd/comment/hh6zwdn/)
-
-Save your script to somewhere accessible by your Jellyfin instance.
-
-In the Live TV DVR settings, you will need to configure your post processing script.
-These settings are for a script that requires one command line parameter, in this case, the path to the newly recorded file.
-
-Post-processing application: /path/to/your/script.sh
-Post-processor command line arguments: "{path}"
-![Live TV post process configuration](~/images/live-tv-post-process.png)
-**note that {path} likely will need to be in quotes: again, your mileage may vary.

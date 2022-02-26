@@ -68,7 +68,8 @@ All package builds begin with these two steps:
 
 ## Windows
 
-3. Install the dotnet core SDK 3.1 from [Microsoft's Website](https://dotnet.microsoft.com/download/dotnet-core/3.1) and [install Git for Windows](https://gitforwindows.org/). You must be on Powershell 3 or higher.
+3. Install dotnet SDK 6.0 from [Microsoft's Website](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) and [install Git for Windows](https://gitforwindows.org/).
+   You must be on Powershell 3 or higher.
 
 4. From Powershell set the execution policy to unrestricted.
 
@@ -92,7 +93,7 @@ All package builds begin with these two steps:
 
     * The `-InstallLocation` flag lets you select where the compiled binaries go; the default is `$Env:AppData\Jellyfin-Server\`.
 
-    * The `-InstallFFMPEG` flag will automatically pull the stable `ffmpeg` binaries appropriate to your architecture (x86/x64 only for now) from [Zeranoe](https://ffmpeg.zeranoe.com/builds/) and place them in your Jellyfin directory.
+    * The `-InstallFFMPEG` flag will automatically pull the stable `ffmpeg` binaries appropriate to your architecture (x86/x64 only for now) from [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases) and place them in your Jellyfin directory.
 
     * The `-InstallNSSM` flag will automatically pull the stable `nssm` binary appropriate to your architecture (x86/x64 only for now) from [NSSM's Website](https://nssm.cc/) and place it in your Jellyfin directory.
 

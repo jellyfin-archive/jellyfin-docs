@@ -7,7 +7,7 @@ title: Installing on Synology
 
 For [Synology](https://www.synology.com/en-us/dsm), Jellyfin is installed using Docker.
 
-![Installing ynology](~/images/install-synology-1.png)
+![Installing Synology](~/images/install-synology-1.png)
 
 ![Installing Synology](~/images/install-synology-2.png)
 

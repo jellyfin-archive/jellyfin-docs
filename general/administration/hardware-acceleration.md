@@ -66,7 +66,7 @@ Instructions:
 - Debian/Ubuntu: [Brainiarc7's gist](https://gist.github.com/Brainiarc7/aa43570f512906e882ad6cdd835efe57)
 
 > [!WARNING]
-> For Jasper Lake chips (such as N5095 and N6005), Low-Power encoding must be enabled.
+> For **Jasper Lake and Elkhart Lake** chips (such as N5095, N6005 and J6412), Low-Power encoding must be enabled.
 > The linux-firmware support is not included in Ubuntu 20.04.3 LTS. Any Ubuntu from 21.10 does include the required drivers.
 
 ## Supported Acceleration Methods

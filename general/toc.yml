@@ -42,8 +42,7 @@
     - uid: server-media-movies
     - uid: server-media-music
     - uid: server-media-shows
-    - uid: server-media-subtitles
-    - uid: server-media-external-audio-files
+    - uid: server-media-external-files
   - uid: server-storage
   - uid: server-devices
   - uid: server-libraries

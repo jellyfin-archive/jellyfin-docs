@@ -16,7 +16,8 @@ LinuxServer.io image: `linuxserver/jellyfin` <a href="https://hub.docker.com/r/l
 
 hotio image: `hotio/jellyfin` <a href="https://hub.docker.com/r/hotio/jellyfin"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/hotio/jellyfin.svg"></a>.
 
-Jellyfin distributes [official container images on Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures. These images are based on Debian and [built directly from the Jellyfin source code](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile).
+Jellyfin distributes [official container images on Docker Hub](https://hub.docker.com/r/jellyfin/jellyfin/) for multiple architectures.
+These images are based on Debian and [built directly from the Jellyfin source code](https://github.com/jellyfin/jellyfin/blob/master/Dockerfile).
 
 Additionally the [LinuxServer.io](https://www.linuxserver.io/) project and [hotio](https://github.com/hotio) distribute images based on Ubuntu and the official Jellyfin Ubuntu binary packages, see [here](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile) and [here](https://github.com/hotio/docker-jellyfin/blob/stable/linux-amd64.Dockerfile) to see their Dockerfile.
 
@@ -56,7 +57,8 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 4. Create and run a container in one of the following ways.
 
 > [!Note]
-> The default network mode for Docker is bridge mode. Bridge mode will be used if host mode is omitted. Use host mode for networking in order to use DLNA.
+> The default network mode for Docker is bridge mode. Bridge mode will be used if host mode is omitted.
+> Using host networking (`--net=host`) is optional but required in order to use DLNA.
 
 **Using Docker command line interface:**
 
@@ -72,9 +74,10 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     jellyfin/jellyfin
    ```
 
-Using host networking (`--net=host`) is optional but required in order to use DLNA.
-
-Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control by external programs. For a simple setup, it's considered easier to use Bind Mounts instead of volumes. Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts. Multiple media libraries can be bind mounted if needed:
+Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control by external programs.
+For a simple setup, it's considered easier to use Bind Mounts instead of volumes.
+Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.
+Multiple media libraries can be bind mounted if needed:
 
    ```sh
    --mount type=bind,source=/path/to/media1,target=/media1
@@ -83,7 +86,8 @@ Bind Mounts are needed to pass folders from the host OS to the container OS wher
    ```
 
 > [!Note]
-> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker. If there are submounts within the main mount, the submounts are read-write capable.
+> There is currently an [issue](https://github.com/docker/for-linux/issues/788) with read-only mounts in Docker.
+> If there are submounts within the main mount, the submounts are read-write capable.
 
 **Using Docker Compose:**
 
@@ -122,7 +126,7 @@ You can learn more about using Docker by [reading the official Docker documentat
 
 An Unraid Docker template is available in the repository.
 
-1. Open the unRaid GUI (at least unRaid 6.5) and click on the "Docker" tab.
+1. Open the unRaid GUI (at least unRaid 6.5) and click on the `Docker` tab.
 
 2. Add the following line under "Template Repositories" and save the options.
 
@@ -136,11 +140,14 @@ An Unraid Docker template is available in the repository.
 
 ### Kubernetes
 
-A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift). Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
+A community project to deploy Jellyfin on Kubernetes-based platforms exists [at their repository](https://github.com/home-cluster/jellyfin-openshift).
+Any issues or feature requests related to deployment on Kubernetes-based platforms should be filed there.
 
 ### Podman
 
-[Podman](https://podman.io) allows you to run rootless containers. It's also the officially supported container solution on Fedora Linux and its derivatives such as CentOS Stream and RHEL. Steps to run Jellyfin using Podman are similar to the Docker steps.
+[Podman](https://podman.io) allows you to run rootless containers.
+It's also the officially supported container solution on Fedora Linux and its derivatives such as CentOS Stream and RHEL.
+Steps to run Jellyfin using Podman are similar to the Docker steps.
 
 1. Install Podman:
 
@@ -161,11 +168,12 @@ A community project to deploy Jellyfin on Kubernetes-based platforms exists [at 
     --userns keep-id \
     --volume jellyfin-cache:/cache:Z \
     --volume jellyfin-config:/config:Z \
-    --volume jellyfin-media:/media:ro,z \
     docker.io/jellyfin/jellyfin:latest
    ```
 
-3. Open the necessary ports in your machine's firewall if you wish to permit access to the Jellyfin server from outside the host. This is not done automatically when using rootless Podman. If your distribution uses `firewalld`, the following commands save and load a new firewall rule opening the HTTP port `8096` for TCP connections.  
+3. Open the necessary ports in your machine's firewall if you wish to permit access to the Jellyfin server from outside the host.
+   This is not done automatically when using rootless Podman.
+   If your distribution uses `firewalld`, the following commands save and load a new firewall rule opening the HTTP port `8096` for TCP connections.
 
     ```sh
     sudo firewall-cmd --add-port=8096/tcp --permanent
@@ -201,7 +209,9 @@ As always it is recommended to run the container rootless. Therefore we want to 
     podman generate systemd --new --name myjellyfin > ~/.config/systemd/user/container-myjellyfin.service
     ```
 
-3. Verify and edit the systemd.service file to your liking. To further sandbox see [Mastering systemd: Securing and sandboxing applications and services](https://www.redhat.com/sysadmin/mastering-systemd). An example service file is shown below. **Do not blindly copy**, one should make edits to the service file generated by podman.
+3. Verify and edit the systemd.service file to your liking.
+   To further sandbox see [Mastering systemd: Securing and sandboxing applications and services](https://www.redhat.com/sysadmin/mastering-systemd).
+   An example service file is shown below. **Do not blindly copy**, one should make edits to the service file generated by podman.
 
     ```sh
     # container-myjellyfin.service
@@ -251,7 +261,8 @@ As always it is recommended to run the container rootless. Therefore we want to 
     systemctl --user enable --now container-myjellyfin.service
     ```
 
-    At this point the container will only start when the user logs in and shutdown when they log off. To have the container start as the user at first login we'll have to include one more option.
+    At this point the container will only start when the user logs in and shutdown when they log off.
+    To have the container start as the user at first login we'll have to include one more option.
 
     ```sh
     loginctl enable-linger $USER
@@ -265,7 +276,8 @@ As always it is recommended to run the container rootless. Therefore we want to 
 
 ### Cloudron
 
-Cloudron is a complete solution for running apps on your server and keeping them up-to-date and secure. On your Cloudron you can install Jellyfin with a few clicks via the [app library](https://cloudron.io/store/org.jellyfin.cloudronapp.html) and updates are delivered automatically.
+Cloudron is a complete solution for running apps on your server and keeping them up-to-date and secure.
+On your Cloudron you can install Jellyfin with a few clicks via the [app library](https://cloudron.io/store/org.jellyfin.cloudronapp.html) and updates are delivered automatically.
 
 The source code for the package can be found [here](https://git.cloudron.io/cloudron/jellyfin-app).
 Any issues or feature requests related to deployment on Cloudron should be filed there.
@@ -275,10 +287,12 @@ Any issues or feature requests related to deployment on Cloudron should be filed
 Windows installers and builds in ZIP archive format are available [here](https://jellyfin.org/downloads/#windows).
 
 > [!WARNING]
-> If you installed a version prior to 10.4.0 using a PowerShell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually. Also one might need to move the data files to the correct location, or point the installer at the old location.
+> If you installed a version prior to 10.4.0 using a PowerShell script, you will need to manually remove the service using the command `nssm remove Jellyfin` and uninstall the server by remove all the files manually.
+> Also one might need to move the data files to the correct location, or point the installer at the old location.
 
 > [!WARNING]
-> The Basic Install is the recommended way to run the Jellyfin Server. Using the Advanced/Service mode may experience FFmpeg Hardware Acceleration issues, and is only for advanced users.
+> The Basic Install is the recommended way to run the Jellyfin Server.
+> Using the Advanced/Service mode may experience FFmpeg hardware acceleration issues, and is only for advanced users.
 
 ### Install using Installer (x64)
 
@@ -308,9 +322,9 @@ Windows installers and builds in ZIP archive format are available [here](https:/
 **Install**
 
 1. Download and extract the latest version.
-1. Create a folder `jellyfin` at your preferred install location.
-1. Copy the extracted folder into the `jellyfin` folder and rename it to `system`.
-1. Create `jellyfin.bat` within your `jellyfin` folder containing:
+2. Create a folder `jellyfin` at your preferred install location.
+3. Copy the extracted folder into the `jellyfin` folder and rename it to `system`.
+4. Create `jellyfin.bat` within your `jellyfin` folder containing:
     - To use the default library/data location at `%localappdata%`:
 
     ```cmd
@@ -329,13 +343,13 @@ Windows installers and builds in ZIP archive format are available [here](https:/
     <--Your install path-->\jellyfin\system\jellyfin.exe -d <--Your install path-->\jellyfin\data -noautorunwebapp
     ```
 
-1. Run
+5. Run
 
     ```cmd
     jellyfin.bat
     ```
 
-1. Open your browser at `http://<--Server-IP-->:8096` (if auto-start of webapp is disabled)
+6. Open your browser at `http://<--Server-IP-->:8096` (if auto-start of webapp is disabled)
 
 **Update**
 
@@ -435,14 +449,17 @@ sudo mkdir /opt/jellyfin
 cd /opt/jellyfin
 ```
 
-Download the latest generic Linux build for your architecture. The rest of these instructions assume version 10.7.7 is being installed (i.e. `jellyfin_10.7.7_amd64.tar.gz`). Download the generic build, then extract the archive:
+Download the latest generic Linux build for your architecture.
+The rest of these instructions assume version 10.7.7 is being installed (i.e. `jellyfin_10.7.7_amd64.tar.gz`).
+Download the generic build, then extract the archive:
 
 ```sh
 sudo wget https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_10.7.7_amd64.tar.gz
 sudo tar xvzf jellyfin_10.7.7_amd64.tar.gz
 ```
 
-Create a symbolic link to the Jellyfin 10.7.7 directory. This allows an upgrade by repeating the above steps and enabling it by simply re-creating the symbolic link to the new version.
+Create a symbolic link to the Jellyfin 10.7.7 directory.
+This allows an upgrade by repeating the above steps and enabling it by simply re-creating the symbolic link to the new version.
 
 ```sh
 sudo ln -s jellyfin_10.7.7 jellyfin
@@ -458,7 +475,11 @@ sudo mkdir data cache config log
 
 If you are not running a Debian derivative, install `ffmpeg` through your OS's package manager, and skip this section.
 
-If you are running Debian or a derivative, you can also [download](https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/) and install an `ffmpeg` release built specifically for Jellyfin. Be sure to download the latest release that matches your OS (4.4.1-1 for Debian Bullseye assumed below).
+> [!WARNING]
+> Not being able to use `jellyfin-ffmpeg` will most likely break hardware acceleration and tonemapping.
+
+If you are running Debian or a derivative, you should [download](https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/) and install an `ffmpeg` release built specifically for Jellyfin.
+Be sure to download the latest release that matches your OS (4.4.1-1 for Debian Bullseye assumed below).
 
 ```sh
 sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/4.4.1-1/jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
@@ -494,14 +515,17 @@ $JELLYFINDIR/jellyfin/jellyfin \
  --ffmpeg $FFMPEGDIR/ffmpeg
 ```
 
-Assuming you desire Jellyfin to run as a non-root user, `chmod` all files and directories to your normal login user and group. Also make the startup script above executable.
+Assuming you desire Jellyfin to run as a non-root user, `chmod` all files and directories to your normal login user and group.
+Also make the startup script above executable.
 
 ```sh
 sudo chown -R user:group *
 sudo chmod u+x jellyfin.sh
 ```
 
-Finally you can run it. You will see lots of log information when run, this is normal. Setup is as usual in the web browser.
+Finally you can run it.
+You will see lots of log information when run, this is normal.
+Setup is as usual in the web browser.
 
 ```sh
 ./jellyfin.sh
@@ -544,7 +568,8 @@ sudo systemctl start jellyfin.service
 
 ### Portable DLL
 
-Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://jellyfin.org/downloads/#portable). These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
+Platform-agnostic .NET Core DLL builds in TAR archive format are available [here](https://jellyfin.org/downloads/#portable).
+These builds use the binary `jellyfin.dll` and must be loaded with `dotnet`.
 
 ### Arch Linux
 
@@ -563,19 +588,19 @@ Fedora builds in RPM package format are available [here](https://jellyfin.org/do
     > [!NOTE]
     > You do not need to manually install ffmpeg, it will be installed by the jellyfin server package as a dependency
 
-1. Install the jellyfin server
+2. Install the jellyfin server
 
     ```sh
     sudo dnf install (link to version jellyfin server you want to install)
     ```
 
-1. Install the jellyfin web interface
+3. Install the jellyfin web interface
 
     ```sh
     sudo dnf install (link to web RPM you want to install)
     ```
 
-1. Enable jellyfin service with systemd
+4. Enable jellyfin service with systemd
 
     ```sh
     sudo systemctl start jellyfin
@@ -585,7 +610,7 @@ Fedora builds in RPM package format are available [here](https://jellyfin.org/do
     sudo systemctl enable jellyfin
     ```
 
-1. Open jellyfin service with firewalld
+5. Open jellyfin service with firewalld
 
     ```sh
     sudo firewall-cmd --permanent --add-service=jellyfin
@@ -598,19 +623,19 @@ Fedora builds in RPM package format are available [here](https://jellyfin.org/do
     > 1900 UDP used for service auto-discovery, this is not configurable
     > 7359 UDP used for auto-discovery, this is not configurable
 
-1. Reboot your box
+6. Reboot your machine
 
     ```sh
     sudo systemctl reboot
     ```
 
-1. Go to localhost:8096 or ip-address-of-jellyfin-server:8096 to finish setup in the web UI
+7. Go to `localhost:8096` or `ip-address-of-jellyfin-server:8096` to finish setup in the web UI
 
 ### CentOS
 
 CentOS/RHEL 7 builds in RPM package format are available [here](https://jellyfin.org/downloads/#centos) and an official CentOS/RHEL repository is planned for the future.
 
-The default CentOS/RHEL repositories don't carry FFmpeg, which the RPM requires. You will need to add a third-party repository which carries FFmpeg, such as [RPM Fusion's Free repository](https://rpmfusion.org/Configuration).
+The default CentOS/RHEL repositories don't provide FFmpeg, which the RPM requires. You will need to add a third-party repository which provide FFmpeg, such as [RPM Fusion's Free repository](https://rpmfusion.org/Configuration).
 
 You can also build [Jellyfin's version](https://github.com/jellyfin/jellyfin-ffmpeg) on your own. This includes gathering the dependencies and compiling and installing them. Instructions can be found at [the FFmpeg wiki](https://trac.ffmpeg.org/wiki/CompilationGuide/Centos).
 
@@ -618,10 +643,11 @@ You can also build [Jellyfin's version](https://github.com/jellyfin/jellyfin-ffm
 
 #### Repository
 
-The Jellyfin team provides a Debian repository for installation on Debian Stretch/Buster. Supported architectures are `amd64`, `arm64`, and `armhf`.
+The Jellyfin team provides a Debian repository for installation on Debian Buster/Bullseye.
+Supported architectures are `amd64`, `arm64`, and `armhf`.
 
 > [!NOTE]
-> Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
+> Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is **not** supported on the `i386` architecture.
 
 Steps 1 to 3 can also be replaced by:
 
@@ -636,34 +662,34 @@ sudo extrepo enable jellyfin
     sudo apt install apt-transport-https gnupg lsb-release
     ```
 
-1. Import the GPG signing key (signed by the Jellyfin Team):
+2. Import the GPG signing key (signed by the Jellyfin Team):
 
     ```sh
-    wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | sudo apt-key add -
+    curl -fsSL https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | gpg --dearmor -o /etc/apt/trusted.gpg.d/debian-jellyfin.gpg
     ```
 
-1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:
+3. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:
 
     ```sh
     echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
     ```
 
     > [!NOTE]
-    > Supported releases are `stretch`, `buster`, and `bullseye`.
+    > Supported releases are `buster` and `bullseye`.
 
-1. Update APT repositories:
+4. Update APT repositories:
 
     ```sh
     sudo apt update
     ```
 
-1. Install Jellyfin:
+5. Install Jellyfin:
 
     ```sh
     sudo apt install jellyfin
     ```
 
-1. Manage the Jellyfin system service with your tool of choice:
+6. Manage the Jellyfin system service with your tool of choice:
 
     ```sh
     sudo service jellyfin status
@@ -680,19 +706,19 @@ Raw Debian packages, including old versions, are available [here](https://jellyf
 
 1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
 
-1. Install the downloaded `.deb` packages:
+2. Install the downloaded `.deb` packages:
 
     ```sh
     sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb
     ```
 
-1. Use `apt` to install any missing dependencies:
+3. Use `apt` to install any missing dependencies:
 
     ```sh
     sudo apt -f install
     ```
 
-1. Manage the Jellyfin system service with your tool of choice:
+4. Manage the Jellyfin system service with your tool of choice:
 
     ```sh
     sudo service jellyfin status
@@ -704,7 +730,9 @@ Raw Debian packages, including old versions, are available [here](https://jellyf
 
 #### Migrating to the new repository
 
-Previous versions of Jellyfin included Ubuntu under the Debian repository. This has now been split out into its own repository to better handle the separate binary packages. If you encounter errors about the `ubuntu` release not being found and you previously configured an `ubuntu` `jellyfin.list` file, please follow these steps.
+Previous versions of Jellyfin included Ubuntu under the Debian repository.
+This has now been split out into its own repository to better handle the separate binary packages.
+If you encounter errors about the `ubuntu` release not being found and you previously configured an `ubuntu` `jellyfin.list` file, please follow these steps.
 
 1. Remove the old `/etc/apt/sources.list.d/jellyfin.list` file:
 
@@ -712,14 +740,15 @@ Previous versions of Jellyfin included Ubuntu under the Debian repository. This 
     sudo rm /etc/apt/sources.list.d/jellyfin.list
     ```
 
-1. Proceed with the following section as written.
+2. Proceed with the following section as written.
 
 #### Ubuntu Repository
 
-The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, Disco, Eoan, and Focal. Supported architectures are `amd64`, `arm64`, and `armhf`. Only `amd64` is supported on Ubuntu Xenial.
+The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenial, Bionic, Cosmic, Disco, Eoan, and Focal. Supported architectures are `amd64`, `arm64`, and `armhf`.
+Only `amd64` is supported on Ubuntu Xenial.
 
 > [!NOTE]
-> Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is not supported on the `i386` architecture.
+> Microsoft does not provide a .NET for 32-bit x86 Linux systems, and hence Jellyfin is **not** supported on the `i386` architecture.
 
 1. Install HTTPS transport for APT if you haven't already:
 
@@ -727,7 +756,7 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
     sudo apt install apt-transport-https
     ```
 
-1. Enable the Universe repository to obtain all the FFMpeg dependencies:
+2. Enable the Universe repository to obtain all the FFMpeg dependencies:
 
     ```sh
     sudo add-apt-repository universe
@@ -737,34 +766,34 @@ The Jellyfin team provides an Ubuntu repository for installation on Ubuntu Xenia
     > If the above command fails you will need to install the following package `software-properties-common`.
     > This can be achieved with the following command `sudo apt-get install software-properties-common`
 
-1. Import the GPG signing key (signed by the Jellyfin Team):
+3. Import the GPG signing key (signed by the Jellyfin Team):
 
     ```sh
-    wget -O - https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo apt-key add -
+    curl -fsSL https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | gpg --dearmor -o /etc/apt/trusted.gpg.d/debian-jellyfin.gpg
     ```
 
-1. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:
+4. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:
 
     ```sh
     echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/ubuntu $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
     ```
 
     > [!NOTE]
-    > Supported releases are `xenial`, `bionic`, `cosmic`, `disco`, `eoan`, and `focal`.
+    > Supported releases are `bionic`, `cosmic`, `disco`, `eoan`, and `focal`.
 
-1. Update APT repositories:
+5. Update APT repositories:
 
     ```sh
     sudo apt update
     ```
 
-1. Install Jellyfin:
+6. Install Jellyfin:
 
     ```sh
     sudo apt install jellyfin
     ```
 
-1. Manage the Jellyfin system service with your tool of choice:
+7. Manage the Jellyfin system service with your tool of choice:
 
     ```sh
     sudo service jellyfin status
@@ -786,27 +815,27 @@ Raw Ubuntu packages, including old versions, are available [here](https://jellyf
     sudo apt update
     ```
 
-1. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
+2. Download the desired `jellyfin` and `jellyfin-ffmpeg` `.deb` packages from the repository.
 
-1. Install the required dependencies:
+3. Install the required dependencies:
 
     ```sh
     sudo apt install at libsqlite3-0 libfontconfig1 libfreetype6 libssl1.0.0
     ```
 
-1. Install the downloaded `.deb` packages:
+4. Install the downloaded `.deb` packages:
 
     ```sh
     sudo dpkg -i jellyfin_*.deb jellyfin-ffmpeg_*.deb
     ```
 
-1. Use `apt` to install any missing dependencies:
+5. Use `apt` to install any missing dependencies:
 
     ```sh
     sudo apt -f install
     ```
 
-1. Manage the Jellyfin system service with your tool of choice:
+6. Manage the Jellyfin system service with your tool of choice:
 
     ```sh
     sudo service jellyfin status

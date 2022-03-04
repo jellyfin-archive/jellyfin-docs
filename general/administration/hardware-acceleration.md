@@ -464,7 +464,7 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
    makepkg -si
    ```
 
-3. Go to step 3 of [Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS](xref:admin-hardware-acceleration#amd-amf-encoding-on-ubuntu-1804-or-2004-lts) above.
+3. Go to step 3 of [Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS](#amd-amf-encoding-on-ubuntu-1804-or-2004-lts) above.
 
 ### OpenMAX OMX encoding on Raspberry Pi 3 and 4
 
@@ -540,7 +540,7 @@ Docker      | ✔️           | untested | ✔️         | ✔️           | 
 
 2. **On Linux or Docker:**
    - For **NVIDIA cards** no further configuration is necessary.
-   - For **AMD cards**, install `amdgpu-pro` with opencl arguments (see [Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS](xref:admin-hardware-acceleration#amd-amf-encoding-on-ubuntu-1804-or-2004-lts) for more details):
+   - For **AMD cards**, install `amdgpu-pro` with opencl arguments (see [Configuring AMD AMF encoding on Ubuntu 18.04 or 20.04 LTS](#amd-amf-encoding-on-ubuntu-1804-or-2004-lts) for more details):
 
     ```sh
     sudo ./amdgpu-pro-install -y --opencl=pal,legacy
@@ -555,6 +555,9 @@ Docker      | ✔️           | untested | ✔️         | ✔️           | 
 
     **VPP:** Make sure `jellyfin-ffmpeg` 4.4.1-2 or higher is installed.
     Previous versions did not ship `intel-media-driver` thus it was required to be installed manually.
+
+    - When running on docker, the **privileged** flag is required for the OpenCL device to be recognized.
+      You can do this by adding `--privileged` to your docker command or `privileged: true` to your docker compose file.
 
    > [!WARNING]
    > Tone mapping on Intel VA-API and QSV **requires an iGPU that supports 10-bit decoding**, such as i3-7100 or J4105.

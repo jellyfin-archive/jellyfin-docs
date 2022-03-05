@@ -1,0 +1,91 @@
+on:
+  workflow_call:
+    inputs:
+      publish:
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  lint:
+    name: Run Markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2.4.0
+
+      - name: Setup Problem Matcher
+        uses: xt0rted/markdownlint-problem-matcher@v1.1.0
+
+      - name: Run Markdownlint
+        run: npx --package markdownlint-cli markdownlint '**/*.md' --ignore node_modules --ignore src
+
+  build:
+    name: Build Docs
+    runs-on: windows-latest
+    needs:
+      - lint
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2.4.0
+
+      - name: Initialize Git Submodules
+        run: git submodule update --init --recursive
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1.9.0
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Build Jellyfin
+        run: dotnet build --configuration Release ./src/jellyfin
+
+      - name: Setup nuget
+        uses: nuget/setup-nuget@v1.0.5
+        with:
+          nuget-version: '6.x'
+
+      - name: Install DocFX
+        run: nuget install docfx.console
+
+      - name: Run DocFX
+        run: .\docfx.console*\tools\docfx.exe docfx.json
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          path: _site
+
+  publish:
+    name: Publish Docs
+    if: ${{ inputs.publish }}
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2.1.0
+
+      - name: Upload Artifacts To Github Pages
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.JF_BOT_TOKEN }}
+          external_repository: jellyfin/jellyfin.github.io
+          publish_branch: master
+          publish_dir: ./
+          destination_dir: docs
+          user_name: 'jellyfin-bot'
+          user_email: 'team@jellyfin.org'
+          full_commit_message: 'feat(docs): deploy ${{ github.event.repository }}@${{ github.event.sha }}'
+
+      - name: Compress Artifacts
+        run: zip -r -D release.zip *
+
+      - name: Publish Artifacts As GitHub Release
+        uses: marvinpinto/action-automatic-releases@v1.2.0
+        with:
+          repo_token: "${{ secrets.JF_BOT_TOKEN }}"
+          automatic_release_tag: latest
+          prerelease: false
+          files: |
+            release.zip

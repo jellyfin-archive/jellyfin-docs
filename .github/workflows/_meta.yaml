@@ -69,14 +69,14 @@ jobs:
       - name: Upload Artifacts To Github Pages
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
-          deploy_key: ${{ secrets.JF_BOT_TOKEN }}
+          personal_token: '${{ secrets.JF_BOT_TOKEN }}'
           external_repository: jellyfin/jellyfin.github.io
           publish_branch: master
           publish_dir: ./
           destination_dir: docs
           user_name: 'jellyfin-bot'
           user_email: 'team@jellyfin.org'
-          full_commit_message: 'feat(docs): deploy ${{ github.event.repository }}@${{ github.event.sha }}'
+          full_commit_message: 'feat(docs): deploy ${{ github.repository }}@${{ github.sha }}'
 
       - name: Compress Artifacts
         run: zip -r -D release.zip *
@@ -84,7 +84,7 @@ jobs:
       - name: Publish Artifacts As GitHub Release
         uses: marvinpinto/action-automatic-releases@v1.2.0
         with:
-          repo_token: "${{ secrets.JF_BOT_TOKEN }}"
+          repo_token: '${{ secrets.JF_BOT_TOKEN }}'
           automatic_release_tag: latest
           prerelease: false
           files: |

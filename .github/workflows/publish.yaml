@@ -16,3 +16,5 @@ jobs:
     uses: jellyfin/jellyfin-docs/.github/workflows/_meta.yaml@master
     with:
       publish: true
+    secrets:
+      token: ${{ secrets.JF_BOT_TOKEN }}

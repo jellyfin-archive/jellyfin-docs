@@ -38,6 +38,7 @@
   - name: Media
     items:
     - uid: server-media-books
+    - uid: server-media-comics
     - uid: server-media-internet-radio
     - uid: server-media-movies
     - uid: server-media-music

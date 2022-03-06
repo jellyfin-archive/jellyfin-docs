@@ -75,14 +75,14 @@ jobs:
           personal_token: '${{ secrets.token }}'
           external_repository: jellyfin/jellyfin.github.io
           publish_branch: master
-          publish_dir: ./
+          publish_dir: ./artifact/
           destination_dir: docs
           user_name: 'jellyfin-bot'
           user_email: 'team@jellyfin.org'
           full_commit_message: 'feat(docs): deploy ${{ github.repository }}@${{ github.sha }}'
 
       - name: Compress Artifacts
-        run: zip -r -D release.zip *
+        run: zip -r -D release.zip ./artifact/*
 
       - name: Publish Artifacts As GitHub Release
         uses: marvinpinto/action-automatic-releases@v1.2.0

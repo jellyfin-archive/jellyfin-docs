@@ -5,6 +5,9 @@ on:
         required: false
         default: false
         type: boolean
+    secrets:
+      token:
+        required: false
 
 jobs:
   lint:
@@ -69,7 +72,7 @@ jobs:
       - name: Upload Artifacts To Github Pages
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
-          personal_token: '${{ secrets.JF_BOT_TOKEN }}'
+          personal_token: '${{ secrets.token }}'
           external_repository: jellyfin/jellyfin.github.io
           publish_branch: master
           publish_dir: ./
@@ -84,7 +87,7 @@ jobs:
       - name: Publish Artifacts As GitHub Release
         uses: marvinpinto/action-automatic-releases@v1.2.0
         with:
-          repo_token: '${{ secrets.JF_BOT_TOKEN }}'
+          repo_token: '${{ secrets.token }}'
           automatic_release_tag: latest
           prerelease: false
           files: |

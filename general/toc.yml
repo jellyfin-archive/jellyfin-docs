@@ -49,6 +49,7 @@
   - uid: server-live-tv-index
     items:
     - uid: server-live-tv-setup-guide
+    - uid: server-live-tv-post-process
   - uid: server-notifications
   - uid: server-settings
   - uid: server-tasks

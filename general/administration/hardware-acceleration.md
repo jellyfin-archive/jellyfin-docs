@@ -136,6 +136,10 @@ A List of supported codecs for VA-API can be found [on the Archlinux wiki](<http
 > To use QSV on Linux with recent Intel iGPUs the **nonfree [Intel media driver](https://github.com/intel/media-driver)** is required for full hardware acceleration.
 > If you are using `jellyfin-ffmpeg` version 4.4.1-2 or higher it is included and you do not need to install it seperatly.
 
+**Useful links:**
+
+- [Official list of supported codecs for recent Intel Graphics Cards](https://www.intel.com/content/www/us/en/develop/documentation/media-capabilities-of-intel-hardware/top.html).
+
 **Known Issues:**
 
 - [Intel QSV Benchmarks on Linux](https://www.intel.com/content/www/us/en/architecture-and-technology/quick-sync-video/quick-sync-video-installation.html)

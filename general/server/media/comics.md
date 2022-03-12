@@ -8,7 +8,7 @@ title: Comics
 Comics and mangas, from now on referred to as comics, should usually be in the library root directory or in a subfolder for the individual comics. The subfolders allow for organization of metadata and images.
 
 > [!Note]
-> For the best reading experience, it is recommended to store comics in the comic book archive or pdf format. This is due to issues when trying to read comics stored in the epub format. Please note, that Jellyfin saves your reading position for comics in the comic book archive format, but does not save whether you finished the comic or not.
+> For the best reading experience, it is recommended to store comics in the comic book archive or pdf format. This is due to issues when trying to read comics stored in the epub format. Please note, that Jellyfin 10.8 and later saves your reading position for comics in the comic book archive format, but does not save whether you finished the comic or not.
 
 ## Naming
 
@@ -47,4 +47,5 @@ The following metadata formats are supported:
 - ComicBookInfo (from ComicBookLover)
 
 > [!Note]
-> However, there are some limitations regarding the support of the ComicInfo format. `ComicInfo.xml` files can be parsed when they are placed in the same folder as the comic itself or when they are bundled within a `.cbz` file. `ComicInfo.xml` files bundled with any other archive format are not supported.
+> The ComicBookInfo format is supported when using the Bookshelf plugin version 8 or later.
+> The following limitations apply regarding the support of the ComicInfo format. `ComicInfo.xml` files can be parsed when they are placed in the same folder as the comic itself or when they are bundled within a `.cbz` file. `ComicInfo.xml` files bundled with any other archive format are not supported.

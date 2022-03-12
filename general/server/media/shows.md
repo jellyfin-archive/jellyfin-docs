@@ -13,6 +13,10 @@ The most common naming scheme for shows is categorizing the files by series and 
 ```txt
 Shows
 ├── Series (2010)
+│   ├── Season 00
+│   │   ├── Some Special.mkv
+│   │   ├── Episode S00E01.mkv
+│   │   └── Episode S00E02.mkv
 │   ├── Season 01
 │   │   ├── Episode S01E01-E02.mkv
 │   │   ├── Episode S01E03.mkv
@@ -32,6 +36,13 @@ Shows
 
 > [!NOTE]
 > Season folders shouldn't contain the series name, otherwise Jellyfin can in certain cases (Stargate SG-1 due to the dash and one, for instance) misdetect your episodes and put them all under the same season.
+
+## Show Extras
+
+Show extras, sometimes called specials, can be added in the `Season 00` folder. If supported by your metadata provider those files will be matched. In case your metadata provider does not provide information about the extra, it is recommended to use a name which describes the content of the special instead of naming it `Episode S00Exy.mkv`. This is done to avoid wrong metadata being pulled for the extra and to provide a proper presentation.
+
+> [!NOTE]
+> Episode numbering for specials may vary from metadata provider to metadata provider.
 
 ## Images
 

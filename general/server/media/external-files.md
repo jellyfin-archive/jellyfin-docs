@@ -9,7 +9,7 @@ Audio and subtitles will usually be embedded within your video container file (e
 The server supports reading either single files or containers like mka (Matroska Audio) or mks (Matroska Subtitle) with one or more streams.
 
 > [!Note]
-> External audio files and containers are supported on Jellyfin 10.8 and later.
+> Containers and external audio files are supported on Jellyfin 10.8 and later.
 
 ## Naming
 
@@ -35,7 +35,7 @@ Any arbitrary text not parsable to a language or flag will be combined and used 
         Film.german.ac3
 ```
 
-## Extended example with flags and stream title
+### Extended example
 
 ```txt
 /Movies

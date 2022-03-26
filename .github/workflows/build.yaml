@@ -13,6 +13,6 @@ on:
 
 jobs:
   build:
-    uses: jellyfin/jellyfin-docs/.github/workflows/_meta.yaml@master
+    uses: ./.github/workflows/_meta.yaml
     with:
       publish: false

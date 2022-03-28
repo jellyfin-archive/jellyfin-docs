@@ -74,11 +74,13 @@ Set the [base URL](xref:network-index#base-url) field in the Jellyfin server.  T
 The following configuration can be saved in ```/etc/httpd/conf/extra/jellyfin.conf``` and included in your vhost.
 ```conf
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
-    <Location /jellyfin>
+<Location /jellyfin/socket>
     ProxyPreserveHost On
-    ProxyPass ws://127.0.0.1:8096/socket
-    ProxyPassReverse "ws://127.0.0.1:8096/socket"
+    ProxyPass "ws://127.0.0.1:8096/jellyfin/socket"
+    ProxyPassReverse "ws://127.0.0.1:8096/jellyfin/socket"
+</Location>
+<Location /jellyfin>
     ProxyPass "http://127.0.0.1:8096/jellyfin"
     ProxyPassReverse "http://127.0.0.1:8096/jellyfin"
-    </Location>
+</Location>
 ```

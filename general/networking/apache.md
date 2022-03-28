@@ -72,6 +72,7 @@ Set the [base URL](xref:network-index#base-url) field in the Jellyfin server.  T
 > HTTP is insecure. The following configuration is provided for ease of use only. If you are planning on exposing your server over the Internet you should setup HTTPS. [Let's Encrypt](https://letsencrypt.org/getting-started/) can provide free TLS certificates which can be installed easily via [certbot](https://certbot.eff.org/).
 
 The following configuration can be saved in ```/etc/httpd/conf/extra/jellyfin.conf``` and included in your vhost.
+
 ```conf
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
 <Location /jellyfin/socket>

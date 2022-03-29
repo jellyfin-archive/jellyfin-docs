@@ -19,6 +19,9 @@ You will see a page to add libraries when you first create the server, but they 
 
 The three most common types of content are movies, shows, and music. These will have the best support in client apps. You can also add other types of media such as books or photos. If you have several types of media in a single folder you can also label it as mixed, which will be a generic folder view that displays all files in the library.
 
+> [!NOTE]
+> Use of the mixed library type is currently discouraged due to unreliable metadata results. We encourage the use of the dedicated library types.
+
 ## Paths
 
 You can add multiple paths that will all be shown under the same library. The path selection dialog will allow you to select folders visually, but if you can't find the exact location you can also just enter the path manually.

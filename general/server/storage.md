@@ -7,6 +7,17 @@ title: Storage
 
 Jellyfin is designed to directly read media from the filesystem. This means to pass a network storage device that is using samba or NFS must be directly mounted to the OS. The Jellyfin database also should be stored locally and not on a network storage device.
 
+### NFS
+
+In case you encounter performance issues where files take a long time to start playing while using NFSv3, you might be running in a issue with .NET locking without NFSv3 having locking enabled.
+
+To solve this you have the following options:
+
+- Disable .NET locking using DOTNET_SYSTEM_IO_DISABLEFILELOCKING (introduced in .NET 6).
+- Disable locking for the mount using the nolock option.
+- Enable the lock service.
+- Use NFSv4 which has built-in lock support.
+
 ## Docker or VM's
 
 For storage, a moderate size library database can grow anywhere from 10 to 100 GB. The [transcoding](xref:server-transcoding) folder needs roughly the same size as the original media if it's being transcoded at the same bitrate. A single 50GB Blu-Ray Remux by itself can take up to approximately 60GB or as little as 15GB, depending on the quality selected. If the transcoding folder is held on the same storage as the database, this must be taken into consideration.

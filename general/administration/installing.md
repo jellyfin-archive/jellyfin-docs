@@ -30,7 +30,7 @@ Additionally the [LinuxServer.io](https://www.linuxserver.io/) project and [hoti
 
 The basic steps to create and run a Jellyfin container using Docker are as follows.
 
-1. Follow the [offical installation guide to install Docker](https://docs.docker.com/engine/install).
+1. Follow the [official installation guide to install Docker](https://docs.docker.com/engine/install).
 
 2. Download the latest container image.
 
@@ -389,7 +389,7 @@ macOS Application packages and builds in TAR archive format are available [here]
 1. Stop the currently running server either via the dashboard or using the application icon.
 2. Move the `.app` package to the trash.
 
-**Deleting Configuation**
+**Deleting Configuration**
 
 This will delete all settings and user information. This applies for the .app package and the portable version.
 

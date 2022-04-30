@@ -53,6 +53,7 @@
     - uid: server-live-tv-post-process
   - uid: server-notifications
   - uid: server-settings
+  - uid: server-quick-connect
   - uid: server-tasks
   - uid: server-transcoding
   - uid: server-users-index

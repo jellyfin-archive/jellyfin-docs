@@ -247,12 +247,12 @@ Or with docker-compose >1.28, add the `deploy` section to your Jellyfin service:
 services:
   jellyfin:
     image: jellyfin/jellyfin
-  # ... your Jellyfin config
-  deploy:
-    resources:
-      reservations:
-        devices:
-        - capabilities: [gpu]
+    # ... your Jellyfin config
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
 ```
 
 There are some special steps when running with the following option:

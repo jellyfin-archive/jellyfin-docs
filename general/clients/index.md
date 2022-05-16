@@ -427,3 +427,15 @@ A Discord bot that allows playing your Jellyfin music library in Discord voice c
 **Links:**
 
 - [GitHub](https://github.com/kgt1/jellyfin-discord-music-bot)
+
+## Popcorn Hour / Syabas
+
+### Jellyfin-NMT
+
+A proxy that generates YAMJ style HTML compatible with A-100/A-110 Popcorn Hour Network Media Tank devices.
+
+**Status:** ⭐ Active
+
+**Links:**
+
+- [GitHub](https://github.com/SenorSmartyPants/jellyfin-nmt)

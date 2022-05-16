@@ -153,8 +153,8 @@ If the container is unsupported, this will result in remuxing. The video and aud
 ||Chrome|Edge|Firefox|Safari|Android|Android TV|Kodi|Roku|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|✅|
-|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|✅|❌||✅|✅|✅|✅|
-|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅|✅||||✅|✅|
+|[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|❌|✅|❌|❌|✅|✅|✅|✅|
+|[WebM](https://en.wikipedia.org/wiki/WebM)<sup>3, 5</sup>|✅|✅|✅|❌|✅|✅|✅|✅|
 |[TS](https://en.wikipedia.org/wiki/MPEG_transport_stream)<sup>4</sup>|✅|✅|✅|✅|✅|✅|✅|✅|
 |[OGG](https://en.wikipedia.org/wiki/Ogg)<sup>5</sup>|✅|✅|✅|❌|✅|✅|✅|✅|
 

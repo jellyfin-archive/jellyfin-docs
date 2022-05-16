@@ -103,6 +103,21 @@ A third party app with direct play and HDR support. Available on Android, Androi
 
 - [Website](https://mrmc.tv)
 
+### Findroid
+
+Findroid is a third-party Android application for Jellyfin that provides a native user interface to browse and play movies and series.
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+<a href='https://play.google.com/store/apps/details?id=dev.jdtech.jellyfin'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width="153"/>
+</a>
+<a href='https://apt.izzysoft.de/fdroid/index/apk/dev.jdtech.jellyfin'><img alt='Get it on IzzyOnDroid' src='https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png' width="153"/>
+</a>
+
+- [Github](https://github.com/jarnedemeulemeester/findroid)
+
 ## Roku
 
 ### Jellyfin for Roku

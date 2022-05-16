@@ -13,22 +13,22 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 [Test your browser's compatibility for any codec profile.](https://cconcolato.github.io/media-mime-support/)
 
-| Sorted by efficency (excluding bit depth) | Chrome | Edge | Firefox | Safari | Android | iOS | SwiftFin (iOS) | AndroidTV | [Roku](https://developer.roku.com/docs/specs/media/streaming-specifications.md) | Kodi | [Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop) |
+| Sorted by efficency (excluding bit depth) | Chrome | Edge | Firefox | Safari | Android | Android TV | iOS | SwiftFin (iOS) | [Roku](https://developer.roku.com/docs/specs/media/streaming-specifications.md) | Kodi | [Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop) |
 |-|-|-|-|-|-|-|-|-|-|-|-|
-| [MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX) | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ | ❌ | ✅ | ✅ | ✅ |
-| [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ | ❌ |  | ✅ | ✅ |
-| [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ❌ | ❌ | ✅ |  | ✅ | ✅ | ❌ | ✅ | ✅ |
-| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> |  | ✅<sup>6</sup> | ✅<sup>5</sup> | ✅ | ✅ | ✅ |
-| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> |  | ✅<sup>6</sup> | 🔶<sup>5</sup> | ✅ | ✅ | ✅ |
-| [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> |  | ❌ | 🔶<sup>3</sup> | ✅ | ✅ | ✅ |
-| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | ✅ | 🔶 | ❌ |  |  | ❌ |  | ❌ |  |  |
+| [MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ | ✅ | ✅ | ✅ |
+| [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ |  | ✅ | ✅ |
+| [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ |
+| [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |  | ✅ | ❌ | ✅ | ✅ |
+| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> | ✅<sup>5</sup> |  | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
+| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> | 🔶<sup>5</sup> |  | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
+| [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> | 🔶<sup>3</sup> |  | ❌ | ✅ | ✅ | ✅ |
+| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | ✅ | 🔶 | ❌ |  |  |  | ❌ | ❌ |  |  |
 
 <sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
 
 <sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Direct Stream.
 
-<sup>3</sup>May be (partially) dependent on Hardware support (can be compensated with CPU decoding on Android). Most new Android phones in the higher price range and many "4K" AndroidTV devices have VP9 hardware decoding support. Refer to you manufacturer for supported codecs.
+<sup>3</sup>May be (partially) dependent on Hardware support (can be compensated with CPU decoding on Android). Most new Android phones in the higher price range and many "4K" Android TV devices have VP9 hardware decoding support. Refer to you manufacturer for supported codecs.
 
 <sup>4</sup>AV1 support is experimental and often too slow for CPU decoding. As of writing this (05.2020) there is no hardware support on most devices yet. Support for AV1 in Jellyfin is tracked in [jellyfin#3129](https://github.com/jellyfin/jellyfin/issues/3129).
 
@@ -54,7 +54,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 If the audio codec is unsupported or incompatible (such as playing a 5.1 channel stream on a stereo device), the audio codec must be transcoded. This is not nearly as intensive as video transcoding.
 
-||Chrome|Edge|Firefox|Safari|Android|AndroidTV|iOS|SwiftFin (iOS) |Roku|Kodi|Desktop|
+||Chrome|Edge|Firefox|Safari|Android|Android TV|iOS|SwiftFin (iOS) |Roku|Kodi|Desktop|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |FLAC|✅|✅|✅|✅|✅|||✅|✅|✅|✅|
 |MP3|🔶<sup>1</sup>|✅|🔶|✅|✅|||✅|✅|✅|✅|
@@ -150,7 +150,7 @@ ffmpeg -f lavfi -i "movie=Ronin (1998).ts[out+subcc]" -map 0:1  "Ronin (1998).sr
 
 If the container is unsupported, this will result in remuxing. The video and audio codec will remain intact, but wrapped in a supported container. This is the least intensive process. Most video containers will be remuxed to use the HLS streaming protocol and TS containers. Remuxing shouldn't be a concern even for an RPi3.
 
-||Chrome|Edge|Firefox|Safari|Android|AndroidTV|Kodi|Roku|
+||Chrome|Edge|Firefox|Safari|Android|Android TV|Kodi|Roku|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14)<sup>1</sup>|✅|✅|✅|✅|✅|✅|✅|✅|
 |[MKV](https://en.wikipedia.org/wiki/Matroska)<sup>2, 3</sup>|✅|✅|❌||✅|✅|✅|✅|

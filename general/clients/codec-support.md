@@ -15,16 +15,16 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 | Sorted by efficency (excluding bit depth) | Chrome | Edge | Firefox | Safari | Android | Android TV | iOS | SwiftFin (iOS) | [Roku](https://developer.roku.com/docs/specs/media/streaming-specifications.md) | Kodi | [Desktop](https://docs.jellyfin.org/general/clients/index.html#jellyfin-desktop) |
 |-|-|-|-|-|-|-|-|-|-|-|-|
-| [MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ | ✅ | ✅ | ✅ |
-| [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |  | ✅ |  | ✅ | ✅ |
-| [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  | ✅ | ✅ | ✅ | ✅ |
-| [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ |  | ✅ | ❌ | ✅ | ✅ |
-| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> | ✅<sup>5</sup> |  | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
-| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | ❌<sup>1</sup> | 🔶<sup>2</sup> | 🔶<sup>5</sup> |  | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
-| [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> | 🔶<sup>3</sup> |  | ❌ | ✅ | ✅ | ✅ |
-| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | ✅ | 🔶 | ❌ |  |  |  | ❌ | ❌ |  |  |
+| [MPEG-4 Part 2/SP](https://en.wikipedia.org/wiki/DivX) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ |
+| [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  | ✅ | ✅ |
+| [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ |
+| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | ✅<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
+| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | 🔶<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
+| [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> | 🔶<sup>3</sup> | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | ✅ | 🔶 | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |  |  |
 
-<sup>1</sup>HEVC support is potentially available by offloading to the operating system, but this has not been tested.
+<sup>1</sup>HEVC is only supported in MP4, M4V, and MOV containers.
 
 <sup>2</sup>Android playback is currently broken. Client reports that HEVC is supported and attempts to Direct Stream.
 

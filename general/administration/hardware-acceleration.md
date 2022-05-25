@@ -167,7 +167,7 @@ On Linux use `nvidia-smi` to check driver and GPU card version.
 ## Common setups
 
 Each hardware acceleration type, as well as each Jellyfin installation type, has different prerequisites for enabling hardware acceleration.
-It is always best to consult [the FFMpeg documentation]((https://trac.ffmpeg.org/wiki/HWAccelIntro)) on the acceleration type you choose for the latest information.
+It is always best to consult [the FFMpeg documentation](https://trac.ffmpeg.org/wiki/HWAccelIntro) on the acceleration type you choose for the latest information.
 
 ### Hardware acceleration on Docker (Linux)
 

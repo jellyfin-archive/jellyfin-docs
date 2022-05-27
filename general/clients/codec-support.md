@@ -22,7 +22,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 | [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | ✅<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
 | [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | 🔶<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
 | [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> | 🔶<sup>3</sup> | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference")<sup>4</sup> | 🔶 | ✅ | 🔶 | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |  |  |
+| [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅ | 🔶<sup>4</sup> | ❌ | ❌ | ❌ |  | ✅ |
 
 <sup>1</sup>HEVC is only supported in MP4, M4V, and MOV containers.
 
@@ -30,7 +30,7 @@ The goal is to Direct Play all media. This means the container, video, audio and
 
 <sup>3</sup>May be (partially) dependent on Hardware support (can be compensated with CPU decoding on Android). Most new Android phones in the higher price range and many "4K" Android TV devices have VP9 hardware decoding support. Refer to you manufacturer for supported codecs.
 
-<sup>4</sup>AV1 support is experimental and often too slow for CPU decoding. As of writing this (05.2020) there is no hardware support on most devices yet. Support for AV1 in Jellyfin is tracked in [jellyfin#3129](https://github.com/jellyfin/jellyfin/issues/3129).
+<sup>4</sup>Needs atleast Android TV 10
 
 <sup>5</sup>As of [version 0.12](https://github.com/jellyfin/jellyfin-androidtv/pull/671), HEVC is enabled on all devices running Android 5.0+, but early generations of the Amazon Fire may not work yet. 10Bit may be supported depending on your device. Before Client 0.12, HEVC support was enabled on specific devices.
 

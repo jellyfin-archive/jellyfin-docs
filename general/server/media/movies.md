@@ -65,6 +65,20 @@ Movie versions are presented in an alphabetically sorted list. An exception appl
 > [!Note]
 > To group media manually, long-click or right-click media to highlight then select additional media to merge. Use the new bar that appears to 'Group Versions'.
 
+## External subtitles
+
+One of more subtitles can be provided for a movie. Place each subtitle in the same folder and give each version a name with the folder name as a prefix as seen below.
+
+```txt
+Movies
+└── Best_Movie_Ever (2019)
+    ├── Best_Movie_Ever (2019).eng.srt
+    ├── Best_Movie_Ever (2019).es.srt
+    └── Best_Movie_Ever (2019).it.default.srt
+```
+
+If a subtitle contains the sufix .default., it will be activated by default.
+
 ## Movie Extras
 
 Movie extras can include deleted scenes, interviews, and other various things that you would want to include alongside your movie. Jellyfin supports several different methods of adding these files.

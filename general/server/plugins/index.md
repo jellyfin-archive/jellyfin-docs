@@ -362,6 +362,14 @@ A plugin to integrate your Shoko database with the Jellyfin media server.
 
 * [GitHub](https://github.com/ShokoAnime/Shokofin)
 
+#### Ani-Sync
+
+Ani-Sync lets you synchorinze/scrobble your Jellyfin Anime watch progress to popular services like MyAnimeList, AniList, Kitsu.
+
+**Links:**
+
+* [GitHub](https://github.com/vosmiic/jellyfin-ani-sync)
+
 ## Repositories
 
 ### Official Jellyfin Plugin Repositories
@@ -410,3 +418,10 @@ A plugin to integrate your Shoko database with the Jellyfin media server.
   * [https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json](https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json)
 * Included Plugins
   * [Shokofin](https://github.com/ShokoAnime/Shokofin)
+ 
+#### Ani-Sync Repo
+
+* Manifest
+  * [https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json](https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json)
+* Included Plugins
+  * [Ani-Sync](https://github.com/vosmiic/jellyfin-ani-sync)

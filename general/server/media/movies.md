@@ -199,3 +199,11 @@ Movie (2010)/logo.png
 
 Subtitles must be named the same as the movie, e.g:
 MyAmazingMovie.eng.default.srt
+
+If you want subtitle to be the default: 
+Movie.default.srt 
+
+If you want to define the subtitle's language tag:(such as English) 
+Movie.eng.default.srt
+
+A full list of language codes is available at https://www.loc.gov/standards/iso639-2/php/code_list.php

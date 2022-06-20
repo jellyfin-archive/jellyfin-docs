@@ -194,3 +194,8 @@ Movie (2010)/extrafanart/fanart1.jpg, Movie (2010)/extrafanart/fanart2.jpg, *etc
 Example:
 
 Movie (2010)/logo.png
+
+### Subtitles
+
+Subtitles must be named the same as the movie, e.g:
+MyAmazingMovie.eng.default.srt

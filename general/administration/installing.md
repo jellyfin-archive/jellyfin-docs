@@ -769,7 +769,7 @@ Only `amd64` is supported on Ubuntu Xenial.
 3. Import the GPG signing key (signed by the Jellyfin Team):
 
     ```sh
-    curl -fsSL https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | gpg --dearmor -o /etc/apt/trusted.gpg.d/debian-jellyfin.gpg
+    curl -fsSL https://repo.jellyfin.org/ubuntu/jellyfin_team.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/debian-jellyfin.gpg
     ```
 
 4. Add a repository configuration at `/etc/apt/sources.list.d/jellyfin.list`:

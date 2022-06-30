@@ -29,17 +29,6 @@ Older browsers may be supported as a result of the needs of specific web-based c
 
 ## Android
 
-### Jellyflut
-
-Just a jellyfin client made in flutter (side project quality code) 
-
-**Status:** ⭐ Active, 3rd-Party
-
-**Links:**
-
-[Github](https://github.com/Thomas-Sohier/jellyflut)
-[Releases](https://github.com/Thomas-Sohier/jellyflut/releases/tag/v1.5.1)
-
 ### Jellyfin for Android
 
 The official Jellyfin Android app, which supports Android 5 and above.
@@ -94,6 +83,17 @@ Native music player for Android devices with transcoding support, gapless playba
 - [GitHub](https://github.com/dkanada/gelli)
 - [Download](https://github.com/dkanada/gelli/releases)
 
+### Jellyflut
+
+Just a jellyfin client made in flutter (side project quality code) 
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+[Github](https://github.com/Thomas-Sohier/jellyflut)
+[Releases](https://github.com/Thomas-Sohier/jellyflut/releases/tag/v1.5.1)
+
 ### Yatse
 
 A third party remote control for Jellyfin with support for Chromecast playback.
@@ -145,17 +145,6 @@ The official Jellyfin Roku app.
 
 ## Cross-Platform Clients
 
-### Sonixd 
-
-A full-featured Subsonic/Jellyfin compatible desktop music player 
-
-**Status:** ⭐ Active, 3rd-Party
-
-**Links:**
-
-- [Github](https://github.com/jeffvli/sonixd)
-- [Binary Releases](https://github.com/jeffvli/sonixd/releases/tag/v0.15.2)
-
 ### Jellyfin Media Player
 
 Desktop client using jellyfin-web with embedded MPV player. Supports direct play of most file
@@ -203,6 +192,17 @@ Terminal player for Jellyfin, only for music at the moment.
 **Links:**
 
 - [GitHub](https://github.com/tryffel/jellycli)
+
+### Sonixd 
+
+A full-featured Subsonic/Jellyfin compatible desktop music player 
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Github](https://github.com/jeffvli/sonixd)
+- [Binary Releases](https://github.com/jeffvli/sonixd/releases/tag/v0.15.2)
 
 ### Jellyfin-CLI
 

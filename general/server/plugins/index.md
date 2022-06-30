@@ -314,6 +314,13 @@ Download and manage the most popular skins.
 
 * [GitHub](https://github.com/danieladov/jellyfin-plugin-skin-manager)
 
+#### The Porn DB
+
+ Jellyfin/Emby Metadata Provider for XXX
+ 
+ **Links:**
+ * [Github](https://github.com/ThePornDatabase/Jellyfin.Plugin.ThePornDB)
+
 #### Intros
 
 Download flashy intros from prerolls.video for your movies.
@@ -425,3 +432,9 @@ Ani-Sync lets you synchorinze/scrobble your Jellyfin Anime watch progress to pop
   * [https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json](https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json)
 * Included Plugins
   * [Ani-Sync](https://github.com/vosmiic/jellyfin-ani-sync)
+#### ThePornDB
+
+* Manifest
+  * [https://raw.githubusercontent.com/ThePornDatabase/Jellyfin.Plugin.ThePornDB/main/manifest.json](https://raw.githubusercontent.com/ThePornDatabase/Jellyfin.Plugin.ThePornDB/main/manifest.json)
+* Included Plugins
+  * [ThePornDB](https://github.com/ThePornDatabase/Jellyfin.Plugin.ThePornDB)

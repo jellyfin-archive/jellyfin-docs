@@ -67,6 +67,7 @@ Instructions:
 
 > [!WARNING]
 > For **Jasper Lake** and **Elkhart Lake** chips (such as `N5095`, `N6005` and `J6412`), Low-Power encoding **must** be enabled.
+> There's a known kernel issue on these chips in **linux 5.15** that comes with Ubuntu 22.04 LTS preventing you from using Low-Power. You may need to upgrade kernel for this.
 > The linux-firmware support is **not included** in Ubuntu 20.04.3 LTS.
 > Any Ubuntu from 21.10 **does include** the required drivers.
 
@@ -104,8 +105,8 @@ A List of supported codecs for VA-API can be found [on the Archlinux wiki](<http
 > [!NOTE]
 > **Minimum required driver version since Jellyfin 10.8:**
 >
-> * **Linux:** 455.28
-> * **Windows:** 456.71
+> * **Linux:** 470.57.02
+> * **Windows:** 471.41
 
 Not every card has been tested.
 
@@ -138,24 +139,17 @@ On Linux use `nvidia-smi` to check driver and GPU card version.
 ### Intel QuickSync
 
 > [!NOTE]
-> Intel QuickSync (QSV) is available on Linux and as a hybrid solution of DXVA2/D3D11VA for decoding and the libmfx library for encoding on Windows.
-
-> [!IMPORTANT]
-> To use QSV on Windows, please do **not** install Jellyfin as a **system service**.
+> Intel QuickSync (QSV) is derived from VA-API on Linux and D3D11VA on Windows, which can utilize Intel's fixed function hardware and EU(execution units) to do video encoding, decoding and processing.
 
 > [!IMPORTANT]
 > To use QSV on Linux with recent Intel iGPUs the **nonfree [Intel media driver](https://github.com/intel/media-driver)** is required for full hardware acceleration.
 > If you are using `jellyfin-ffmpeg` version 4.4.1-2 or higher it is included and you do not need to install it seperatly.
+> Broadwell or newer generation is required for QSV on Linux, otherwise you have to use VA-API.
 
 **Useful links:**
 
 * [Official list of supported codecs for recent Intel Graphics Cards](https://www.intel.com/content/www/us/en/develop/documentation/media-capabilities-of-intel-hardware/top.html).
-
-**Known Issues:**
-
 * [Intel QSV Benchmarks on Linux](https://www.intel.com/content/www/us/en/architecture-and-technology/quick-sync-video/quick-sync-video-installation.html)
-* [FFmpeg Windows version with QSV hwaccel fails over TERMINAL](https://trac.ffmpeg.org/ticket/7511)
-* [Intel QSV: "Failed to create Direct3D device" on Core i7-7700K (Skylake) on Windows 10](https://trac.ffmpeg.org/ticket/6827)
 * [Collection of useful links and information](https://github.com/Artiume/jellyfin-docs/blob/master/general/wiki/main.md)
 
 ----
@@ -188,7 +182,7 @@ docker run -d \
  --volume /path/to/cache:/cache \
  --volume /path/to/media:/media \
  --user 1000:1000 \
- --group-add=122 \
+ --group-add=122 \ # Change this to match your system
  --net=host \
  --restart=unless-stopped \
  --device /dev/dri/renderD128:/dev/dri/renderD128 \
@@ -483,16 +477,16 @@ AMD does not provide official `amdgpu-pro` driver support for Arch Linux, but fo
 
 ### OpenCL / CUDA / Intel VPP Tone-Mapping
 
-Hardware based tone-mapping with NVIDIA NVENC, AMD AMF, Intel QSV and VA-API is done through OpenCL or CUDA.
+Hardware based HDR10/HLG/DoVi tone-mapping with NVIDIA NVENC, AMD AMF, Intel QSV and VA-API is done through OpenCL or CUDA. DoVi Profile 5 and 8 tone-mapping requires `jellyfin-ffmpeg` version 5.0.1-5 or higher.
 
-Intel hardware based VPP tone-mapping is supported on Intel QSV and VA-API on Linux.
+Intel hardware based VPP HDR10 tone-mapping is supported on Intel QSV and VA-API on Linux.
 VPP is prefered when both two tone-mapping options are checked on Intel.
 
 OS/Platform | NVIDIA NVENC | AMD AMF  | Intel QSV   | Intel VA-API | AMD VA-API | Software
 ----------- | ------------ | -------- | ----------- | ------------ | ---------- | --------
 Linux       | ✔️           | ✔️      | ✔️          | ✔️          | ✔️         | WIP
 Windows     | ✔️           | ✔️      | ✔️          | N/A          | N/A        | WIP
-Docker      | ✔️           | untested | ✔️         | ✔️           | untested   | WIP
+Docker      | ✔️           | ✔️      | ✔️         | ✔️           | ✔️         | WIP
 
 > [!NOTE]
 > Tone-mapping on Windows with Intel QSV and AMD AMF requires Windows 10 or newer.
@@ -559,9 +553,9 @@ Stream #0:1 -> #0:1 (aac (native) -> mp3 (libmp3lame))
 ```data
 ...
 Stream mapping:
-Stream #0:0 -> #0:0 (h264 (h264_mmal) -> h264 (h264_qsv))
+Stream #0:0 -> #0:0 (h264 (hevc_qsv) -> h264 (h264_qsv))
 Stream #0:1 -> #0:1 (flac (native) -> mp3 (libmp3lame))
 ...
 ```
 
-`Stream #0:0` used HWA for both. `h264_mmal` to decode and `h264_omx` to encode.
+`Stream #0:0` used HWA for both. `hevc_qsv` to decode and `h264_qsv` to encode.

@@ -14,7 +14,7 @@ on:
 jobs:
   build_publish:
     uses: ./.github/workflows/_meta.yaml
-    if: ${{ github.repository == 'jellyfin/jellyfin-docs' }}
+    if: ${{ contains(github.repository_owner, 'jellyfin') }}
     with:
       publish: true
     secrets:

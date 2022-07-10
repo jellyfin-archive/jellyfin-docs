@@ -107,30 +107,6 @@ Provides metadata support from [Kitsu](https://kitsu.io/).
 
 * [Github](https://github.com/jellyfin/jellyfin-plugin-kitsu)
 
-#### Auto Organize
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-autoorganize.svg)](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
-
-Automatically organizes your media by monitoring a folder and moving or copying new media files into your library folder.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-autoorganize)
-
-#### Email
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-emailnotifications.svg)](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-emailnotifications.svg)](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-emailnotifications.svg)](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
-
-Send SMTP email notifications.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
-
 #### Fanart
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-fanart.svg)](https://github.com/jellyfin/jellyfin-plugin-fanart)
@@ -203,18 +179,6 @@ Collect and show user playback statistics, such as total time watched, media wat
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-playbackreporting)
 
-#### Pushbullet
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-pushbullet.svg)](https://github.com/jellyfin/jellyfin-plugin-pushbullet)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-pushbullet.svg)](https://github.com/jellyfin/jellyfin-plugin-pushbullet)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-pushbullet.svg)](https://github.com/jellyfin/jellyfin-plugin-pushbullet)
-
-Get notifications via Pushbullet.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-pushbullet)
-
 #### Reports
 
 [![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-reports.svg)](https://github.com/jellyfin/jellyfin-plugin-reports)
@@ -226,31 +190,6 @@ Generate reports of your media library.
 **Links:**
 
 * [GitHub](https://github.com/jellyfin/jellyfin-plugin-reports)
-
-#### ServerWMC
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-serverwmc.svg)](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
-
-Provides access to LiveTV, Program Guide and Recordings from your Windows MediaCenter Server running ServerWMC.
-Requires [ServerWMC](https://serverwmc.github.io/) to be installed and running on your Windows MediaCenter machine.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-serverwmc)
-
-#### Slack
-
-[![Language](https://img.shields.io/github/languages/top/jellyfin/jellyfin-plugin-slack.svg)](https://github.com/jellyfin/jellyfin-plugin-slack)
-[![Contributors](https://img.shields.io/github/contributors/jellyfin/jellyfin-plugin-slack.svg)](https://github.com/jellyfin/jellyfin-plugin-slack)
-[![License](https://img.shields.io/github/license/jellyfin/jellyfin-plugin-slack.svg)](https://github.com/jellyfin/jellyfin-plugin-slack)
-
-Get notifications via Slack.
-
-**Links:**
-
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-slack)
 
 #### TMDb Box Sets
 
@@ -337,14 +276,6 @@ Enables audio scrobbling to Last.FM as well as a metadata fetcher source.
 **Links:**
 
 * [GitHub](https://github.com/jesseward/jellyfin-plugin-lastfm)
-
-#### VGMdb
-
-Adds support for VGMdb to music libraries. Can provide both images and metadata for artists and albums.
-
-**Links:**
-
-* [GitHub](https://github.com/nielsvanvelzen/jellyfin-plugin-vgmdb)
 
 #### Kinopoisk metadata plugin
 

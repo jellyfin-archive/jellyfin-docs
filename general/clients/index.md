@@ -92,7 +92,7 @@ Just a jellyfin client made in flutter (side project quality code)
 **Links:**
 
 [Github](https://github.com/Thomas-Sohier/jellyflut)
-[Releases](https://github.com/Thomas-Sohier/jellyflut/releases/tag/v1.5.1)
+[Releases](https://github.com/Thomas-Sohier/jellyflut/releases/)
 
 ### Yatse
 
@@ -202,7 +202,7 @@ A full-featured Subsonic/Jellyfin compatible desktop music player
 **Links:**
 
 - [Github](https://github.com/jeffvli/sonixd)
-- [Binary Releases](https://github.com/jeffvli/sonixd/releases/tag/v0.15.2)
+- [Binary Releases](https://github.com/jeffvli/sonixd/releases/)
 
 ### Jellyfin-CLI
 

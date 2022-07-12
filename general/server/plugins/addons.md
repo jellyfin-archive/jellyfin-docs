@@ -3,6 +3,7 @@ uid: server-plugins-Addons
 title: Addons
 ---
 
+This page is all about any addition ways to integrate your Jellyfin install with other addition addons to make your experience more enjoyable and entertaining.
 
 ### ErsatzTV
 
@@ -16,7 +17,7 @@ ErsatzTV is an amazing Jellyfin addon that is a great way to take your Jellyfin 
 ### JF-Secure
 
 #### Description
-A turn key Caddy Reverse Proxy Webserver setup for Jellyfin without any codiung required.
+A turn-key reverse proxy tool that makes use of Caddy. It will setup a reverse proxy for Jellyfin with the goal of being easy to use, even for novice users.
 
 **NOTE: THIS IS WINDOWS ONLY**
 
@@ -28,7 +29,7 @@ A turn key Caddy Reverse Proxy Webserver setup for Jellyfin without any codiung 
 ### Jellyfin_HA
 
 #### Description
-For All you smart home Jellyfin users Jellyfin HA is a good way to monitor start and start and configure your media server from Home Assistant.
+For all you smart home Jellyfin users, Jellyfin HA enables you to use your media server with Home Assistant integration.
 
 **Link:**
 
@@ -66,7 +67,7 @@ Have you wanted your users to be able to remotely reset their password without y
 ### TV Intro Detection
 
 #### Description
-This is a way to skip all your TV Show introductions like netflix does. Unfortuntly it does not do outros yet, but its a great start.
+This is an automated way to skip all your TV Show introductions like netflix does. Unfortuntly it does not do outros yet, but its a great start.
 
 **NOTE: DOCKER ONLY**
 

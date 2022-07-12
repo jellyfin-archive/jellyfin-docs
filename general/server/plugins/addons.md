@@ -2,7 +2,7 @@
 uid: server-plugins-Addons
 title: Addons
 ---
-
+### Introduction
 This page is all about any addition ways to integrate your Jellyfin install with other addition addons to make your experience more enjoyable and entertaining.
 
 ### ErsatzTV

@@ -3,7 +3,8 @@ uid: server-plugins-Add-ons
 title: Add-ons
 ---
 ### Introduction
-This page is all about any addition ways to integrate your Jellyfin install with other addition add-ons to make your experience more enjoyable and entertaining.
+This page is all about additional ways to integrate your Jellyfin install with other available add-ons to make your experience more enjoyable and entertaining.
+# Add-ons
 
 ### ErsatzTV
 
@@ -36,7 +37,7 @@ For all you smart home Jellyfin users, Jellyfin HA enables you to use your media
 * [Github](https://github.com/koying/jellyfin_ha)
 * [Latest Release](https://github.com/koying/jellyfin_ha/releases)
 
-### Jellyfin Party Extensions
+### Jellyfin Party Extension
 
 #### Description
 Have you ever wanted to have all your friends watch a movie or tv show together without having to give them accss to the Jelyfin UI. Well here it is. Just pull up a chrome make a link start the movie and stream with all your friends through your chrome browser to theirs.
@@ -67,19 +68,19 @@ Have you wanted your users to be able to remotely reset their password without y
 ### TV Intro Detection
 
 #### Description
-This is an automated way to skip all your TV Show introductions like netflix does. Unfortuntly it does not do outros yet, but its a great start.
+This is an automated way to skip the introduction of your tv series, just like you are used to from the likes of Netflix.
 
 **NOTE: DOCKER ONLY**
 
 **Links:**
 
-* [GitHub](https://github.com/jellyfin/jellyfin-plugin-emailnotifications)
+* [GitHub](https://github.com/mueslimak3r/tv-intro-detection)
 * [Documentation](https://mueslimak3r.github.io/tv-intro-detection/)
 
 ### Emby2Jelly
 
 #### Description
-This is a good way to move jellyfin from one server to another host of jellyfin, or move from Emby to Jellyfin without losing data metadata critical data.
+This add-on provides a way to migrate users and watched content from Emby to Jellyfin.
 
 **Links:**
 

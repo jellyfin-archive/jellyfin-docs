@@ -205,12 +205,12 @@ map $request_uri $h264Level { ~(h264-level=)(.+?)& $2; }
 map $request_uri $h264Profile { ~(h264-profile=)(.+?)& $2; }
 
 # Set in Server block
-location ~* ^/Videos/
+location ~* ^/Videos/(.*)/(?!live)
 {
   # Set size of a slice (this amount will be always requested from the backend by nginx)
   # Higher value means more latency, lower more overhead
   # This size is independent of the size clients/browsers can request
-  slice 10m;
+  slice 2m;
 
   proxy_cache jellyfin-videos;
   proxy_cache_valid 200 206 301 302 30d;

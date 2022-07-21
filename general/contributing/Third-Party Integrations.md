@@ -1,15 +1,15 @@
 ---
-uid: Contributing-Third-Party-Integrations
+uid: server-third-party-integrations
 title: Third-Party Integrations
 ---
 ### Introduction
-This page is all about additional ways to integrate your Jellyfin install with other available apps from third-party Jellyfin Developers to make your experience more enjoyable and entertaining.
+This page is all about additional ways to integrate your Jellyfin install with other available third-party software to make your experience more enjoyable and entertaining.
 # Third-Party Integrations
 
 ### ErsatzTV
 
 #### Description
-ErsatzTV is an amazing Jellyfin third-party integration that is a great way to take your Jellyfin libraries and make them into Live TV Channels. For example if i wanted to link All episodes of Trailer Park Boys and shuffle them at random like you were watching it on live tv this plugins can do it. Not only that but you can make custom channel names, Logos, Watermarks transcodings and add Movies, TV-Shows, and Music Collections of all sorts. This is a must if you want a cable like experience without paying or having buggy iptv interfaces.
+ErsatzTV is an amazing third-party integration that provides a way to transform your Jellyfin libraries into live tv channels. Furthermore, there is support for custom channel names, logo's, watermarking and more! This is a must if you want a cable like experience.
 
 **Link:**
 
@@ -40,7 +40,7 @@ For all you smart home Jellyfin users, Jellyfin HA enables you to use your media
 ### Jellyfin Party Extension
 
 #### Description
-Have you ever wanted to have all your friends watch a movie or tv show together without having to give them accss to the Jelyfin UI. Well here it is. Just pull up a chrome make a link start the movie and stream with all your friends through your chrome browser to theirs.
+Have you ever wanted to have all your friends watch a movie or tv show together without having to give them access to the Jelyfin UI. Well here it is. Just pull up a browser, create a link, start the movie and stream together with your friends through your browser of choice.
 
 **Links:**
 
@@ -80,7 +80,7 @@ This is an automated way to skip the introduction of your tv series, just like y
 ### Emby2Jelly
 
 #### Description
-This add-on provides a way to migrate users and watched content from Emby to Jellyfin.
+This tool provides a way to migrate users and watched content from Emby to Jellyfin.
 
 **Links:**
 

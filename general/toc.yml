@@ -63,3 +63,4 @@
     items:
     - uid: server-plugins-open-subtitles
     - uid: server-plugins-tvheadend
+    - uid: server-third-party-integrations

@@ -323,7 +323,7 @@ A third party app with direct play and HDR support. Available on iOS and Apple T
 
 ### Jellyfin for Kodi
 
-Kodi thick client for Jellyfin. This addon syncs your Jellyfin metadata into Kodi's local database for a more native feel.
+Kodi thick client for Jellyfin. This add-on syncs your Jellyfin metadata into Kodi's local database for a more native feel.
 
 **Status:** ⭐ Active
 
@@ -334,7 +334,7 @@ Kodi thick client for Jellyfin. This addon syncs your Jellyfin metadata into Kod
 
 ### JellyCon
 
-Kodi thin client for Jellyfin. This addon is fully dynamic and allows for fast user switching and is compatible with other Kodi sources.
+Kodi thin client for Jellyfin. This add-on is fully dynamic and allows for fast user switching and is compatible with other Kodi sources.
 
 **Status:** ⭐ Active
 

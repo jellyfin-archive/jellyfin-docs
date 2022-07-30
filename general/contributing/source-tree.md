@@ -106,7 +106,7 @@ Jellyfin is a maze of clients, plugins, and other useful projects. These source 
 1. jellyfin_kodi
    - database: `manipulating the local Jellyfin sqlite database`
    - dialogs: `code behind popup menus for user interaction`
-   - entrypoint: `main addon settings page`
+   - entrypoint: `main add-on settings page`
    - helper: `small helper functions, mostly formatting or reused functions`
    - jellyfin: `interacting with the server`
    - objects:

@@ -476,17 +476,17 @@ sudo mkdir data cache config log
 If you are not running a Debian derivative, install `ffmpeg` through your OS's package manager, and skip this section.
 
 > [!WARNING]
-> Not being able to use `jellyfin-ffmpeg` will most likely break hardware acceleration and tonemapping.
+> Not being able to use `jellyfin-ffmpeg5` will most likely break hardware acceleration and tonemapping.
 
 If you are running Debian or a derivative, you should [download](https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/) and install an `ffmpeg` release built specifically for Jellyfin.
-Be sure to download the latest release that matches your OS (4.4.1-1 for Debian Bullseye assumed below).
+Be sure to download the latest release that matches your OS (`5.0.1-8` for Debian Bullseye assumed below).
 
 ```sh
-sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/4.4.1-1/jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
-sudo dpkg --install jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
+sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/5.0.1-8/jellyfin-ffmpeg5_5.0.1-8-bullseye_amd64.deb
+sudo dpkg --install jellyfin-ffmpeg5_5.0.1-8-bullseye_amd64.deb
 ```
 
-If you run into any dependency errors, run this and it will install them and `jellyfin-ffmpeg`.
+If you run into any dependency errors, run this and it will install them and `jellyfin-ffmpeg5`.
 
 ```sh
 sudo apt install -f

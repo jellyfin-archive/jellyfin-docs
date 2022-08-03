@@ -12,6 +12,9 @@ title: Nginx
 > [!WARNING]
 > HTTP is insecure. The following configuration is provided for ease of use only. If you are planning on exposing your server over the Internet you should setup HTTPS. [Let's Encrypt](https://letsencrypt.org/getting-started/) can provide free TLS certificates which can be installed easily via [certbot](https://certbot.eff.org/). Using only HTTP will expose passwords and API keys.
 
+> [!TIP]
+> The default X-Frame-Options header may cause issues with the webOS app, causing it to remain stuck at a black screen. If enabled, the default Content Security Policy may also cause issues.
+
 Create the file `/etc/nginx/conf.d/jellyfin.conf` which will forward requests to Jellyfin.
 
 ```config
@@ -49,6 +52,7 @@ server {
     #ssl_stapling_verify on;
 
     # Security / XSS Mitigation Headers
+    # NOTE: X-Frame-Options may cause issues with the webOS app
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Content-Type-Options "nosniff";
@@ -57,6 +61,7 @@ server {
     # See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
     # Enforces https content and restricts JS/CSS to origin
     # External Javascript (such as cast_sender.js for Chromecast) must be whitelisted.
+    # NOTE: The default CSP headers may cause issues with the webOS app
     #add_header Content-Security-Policy "default-src https: data: blob: http://image.tmdb.org; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js https://www.gstatic.com/eureka/clank/95/cast_sender.js https://www.gstatic.com/eureka/clank/96/cast_sender.js https://www.gstatic.com/eureka/clank/97/cast_sender.js https://www.youtube.com blob:; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'";
 
     location = / {

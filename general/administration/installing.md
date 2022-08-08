@@ -67,8 +67,8 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
     --name jellyfin \
     --user uid:gid \
     --net=host \
-    --volume /path/to/config:/config \
-    --volume /path/to/cache:/cache \
+    --volume /path/to/config:/config \ # Alternatively --volume jellyfin-config:/config
+    --volume /path/to/cache:/cache \ # Alternatively --volume jellyfin-cache:/cache
     --mount type=bind,source=/path/to/media,target=/media \
     --restart=unless-stopped \
     jellyfin/jellyfin
@@ -76,7 +76,6 @@ The basic steps to create and run a Jellyfin container using Docker are as follo
 
 Bind Mounts are needed to pass folders from the host OS to the container OS whereas volumes are maintained by Docker and can be considered easier to backup and control by external programs.
 For a simple setup, it's considered easier to use Bind Mounts instead of volumes.
-Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` respectively if using bind mounts.
 Multiple media libraries can be bind mounted if needed:
 
    ```sh
@@ -168,6 +167,7 @@ Steps to run Jellyfin using Podman are similar to the Docker steps.
     --userns keep-id \
     --volume jellyfin-cache:/cache:Z \
     --volume jellyfin-config:/config:Z \
+    --mount type=bind,source=/path/to/media,destination=/media,ro=true \
     docker.io/jellyfin/jellyfin:latest
    ```
 
@@ -180,7 +180,7 @@ Steps to run Jellyfin using Podman are similar to the Docker steps.
     sudo firewall-cmd --reload
     ```
 
-Podman doesn't require root access to run containers.
+Podman doesn't require root access to run containers, although there are some details to be mindful of; see [the relevant documentation](https://docs.podman.io/en/latest/markdown/podman.1.html#rootless-mode).
 For security, the Jellyfin container should be run using rootless Podman.
 Furthermore, it is safer to run as a non-root user within the container.
 The `--user` option will run with the provided user id and group id *inside* the container.
@@ -189,11 +189,11 @@ This ensures that the permissions for directories bind-mounted inside the contai
 
 Keep in mind that the `--label "io.containers.autoupdate=image"` flag will allow the container to be automatically updated via `podman auto-update`.
 
-The `z` (shared volume) or `Z` (private volume) volume option to allow Jellyfin to access the volumes on systems where SELinux is enabled.
+The `z` (shared volume) or `Z` (private volume) volume option tells Podman to relabel files inside the volumes as appropriate, for systems running SELinux.
 
-Replace `jellyfin-config`, `jellyfin-cache`, and `jellyfin-media` with `/path/to/config`, `/path/to/cache` and `/path/to/media` respectively if using bind mounts.
+Replace `jellyfin-config` and `jellyfin-cache` with `/path/to/config` and `/path/to/cache` if you wish to use bind mounts.
 
-This example mounts your media library read-only by appending ':ro' to the media volume. Remove this option if you wish to give Jellyfin write access to your media.
+This example mounts your media library read-only by setting `ro=true`; set this to `ro=false` if you wish to give Jellyfin write access to your media.
 
 #### Managing via Systemd
 

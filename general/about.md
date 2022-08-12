@@ -15,9 +15,10 @@ You can find our main repository on [GitHub](https://github.com/jellyfin/jellyfi
 
 ## Core Team
 
-[Andrew Rabert (nvllsvm)](https://github.com/nvllsvm)<br/>
 [Joshua Boniface (joshuaboniface)](https://github.com/joshuaboniface)<br/>
-[Vasily (JustAMan)](https://github.com/JustAMan)<br/>
 [Anthony Lavado (anthonylavado)](https://github.com/anthonylavado)<br/>
+[Andrew Rabert (nvllsvm)](https://github.com/nvllsvm)<br/>
 [Bond-009](https://github.com/Bond-009)<br/>
 [dkanada](https://github.com/dkanada)<br/>
+[Claus Vium (cvium)](https://github.com/cvium)<br/>
+[Bill Thornton (thornbill)](https://github.com/thornbill)<br/>

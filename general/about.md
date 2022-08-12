@@ -22,3 +22,4 @@ You can find our main repository on [GitHub](https://github.com/jellyfin/jellyfi
 [dkanada](https://github.com/dkanada)<br/>
 [Claus Vium (cvium)](https://github.com/cvium)<br/>
 [Bill Thornton (thornbill)](https://github.com/thornbill)<br/>
+[Cody Robibero](https://github.com/crobibero)<br/>

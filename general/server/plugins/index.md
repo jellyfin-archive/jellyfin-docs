@@ -350,6 +350,13 @@ Ani-Sync lets you synchorinze/scrobble your Jellyfin Anime watch progress to pop
 * Included Plugins
   * [Shokofin](https://github.com/ShokoAnime/Shokofin)
 
+#### 9p4's Single-Sign-On (SSO) Repo
+
+* Manifest
+  * [https://raw.githubusercontent.com/9p4/jellyfin-plugin-sso/manifest-release/manifest.json](https://raw.githubusercontent.com/9p4/jellyfin-plugin-sso/manifest-release/manifest.json)
+* Included Plugins
+  * [9p4's Single Sign On Plugin](https://github.com/9p4/jellyfin-plugin-sso)
+
 #### Ani-Sync Repo
 
 * Manifest

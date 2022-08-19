@@ -19,8 +19,8 @@ The goal is to Direct Play all media. This means the container, video, audio and
 | [MPEG-4 Part 2/ASP](https://en.wikipedia.org/wiki/MPEG-4_Part_2#Advanced_Simple_Profile_(ASP)) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  | ✅ | ✅ |
 | [H.264 8Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [H.264 10Bit](https://caniuse.com/#feat=mpeg4 "H264 Browser Support Reference") | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ |
-| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | ✅<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
-| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | ❌ | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | 🔶<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
+| [H.265 8Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | 🔶<sup>8</sup> | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | ✅<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
+| [H.265 10Bit](https://caniuse.com/#feat=hevc "HEVC Browser Support Reference") | 🔶<sup>8</sup> | ✅<sup>7</sup> | ❌ | 🔶<sup>1</sup> | 🔶<sup>2</sup> | 🔶<sup>5</sup> | 🔶<sup>1</sup> | ✅<sup>6</sup> | ✅ | ✅ | ✅ |
 | [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9 "V9 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅<sup>3</sup> | 🔶<sup>3</sup> | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1 "AV1 Browser Support Reference") | ✅ | ✅ | ✅ | ❌ | ✅ | 🔶<sup>4</sup> | ❌ | ❌ | ✅ | ✅ | ✅ |
 
@@ -37,6 +37,9 @@ The goal is to Direct Play all media. This means the container, video, audio and
 <sup>6</sup>HEVC decoding is supported on Apple devices with the A8X chip or newer and at least iOS 14
 
 <sup>7</sup>HEVC decoding is only supported on Windows 10 with the HEVC Video Extension from the Microsoft [store](https://www.microsoft.com/store/productId/9NMZLZ57R3T7).
+
+<sup>8</sup> Chromium does support HEVC decoding when launched with `--enable-features=PlatformHEVCDecoderSupport` argument. For more informations please look at [enable-chromium-hevc-hardware-decoding
+](https://github.com/StaZhu/enable-chromium-hevc-hardware-decoding#readme).
 
 [Format Cheatsheet:](https://en.wikipedia.org/wiki/MPEG-4#MPEG-4_Parts)
 

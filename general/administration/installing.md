@@ -436,6 +436,21 @@ Navigate to the Playback tab in the Dashboard and set the path to FFmpeg under F
 
 ## Linux
 
+## Jellyman - The Jellyfin Manager for Linux
+
+Jellyman is a simple BASH program and CLI (Command Line Interface) tool for installing and managing Jellyfin on most of the popular Linux distributions. Most notably, The ability to download and install the Jellyfin Media Server and switch between already downloaded versions of Jellyfin on the fly. As well as create a full backup so you can move or import all your metadata and user information to another machine.
+
+Jellyman is available [here](https://github.com/Smiley-McSmiles/jellyman)
+
+Simple install instructions:
+```
+git clone https://github.com/Smiley-McSmiles/jellyman
+cd jellyman
+chmod +x setup.sh
+sudo ./setup.sh
+```
+-Jellyman is not an official product from the Jellyfin team.
+
 ### Linux (generic amd64)
 
 Generic amd64, arm64, and armhf Linux builds in TAR archive format are available [here](https://jellyfin.org/downloads/#linux).

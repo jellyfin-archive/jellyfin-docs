@@ -392,7 +392,6 @@ A wrapper around Jellyfin's web interface for UWP devices (Windows 10, Windows P
 
 - [GitHub](https://github.com/jellyfin/jellyfin-uwp)
 
-
 ## Volumio
 
 ### Jellyfin for Volumio

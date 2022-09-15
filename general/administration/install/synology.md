@@ -32,3 +32,10 @@ Host Mode is required for HdHR and DLNA. Use bridge mode if running multiple ins
 ![Installing Synology](~/images/install-synology-9.png)
 
 Browse to `http://SERVER_IP:8096` to access the web client.
+
+**Note on Hardware Acceleration **
+
+If you want to use Hardware Acceleration, check the "Execute container using high privledge" box either during container setup, or after, when the container is stopped, but using the "edit" button in the Docker interface:
+![image](https://user-images.githubusercontent.com/19777571/190295042-76d9997b-f9f9-4135-ae0d-18d368418bed.png)
+
+

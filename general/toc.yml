@@ -8,11 +8,15 @@
 
 - name: Administration
   items:
-  - uid: admin-installing
+  - name: Installation
     items:
-    - name: Installing Jellyfin
-      items:
-      - uid: admin-install-synology
+    - uid: admin-install-container
+    - uid: admin-install-debian
+    - uid: admin-install-ubuntu
+    - uid: admin-install-windows
+    - uid: admin-install-macos
+    - uid: admin-install-linux-generic
+    - uid: admin-install-other
   - uid: admin-building
   - uid: admin-configuration
   - uid: admin-migrate

@@ -17,34 +17,43 @@ title: Home
 <a href="https://www.reddit.com/r/jellyfin/"><img class="badge" alt="Join our Subreddit" src="https://img.shields.io/badge/reddit-r%2Fjellyfin-%23FF5700.svg"/></a>
 </p>
 
-Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it. We welcome anyone who is interested in joining us in our quest!
+Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.
+It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.
+Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support.
+There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it.
+We welcome anyone who is interested in joining us in our quest!
 
-You can find a list of all available clients [here](xref:clients-index). For more information please see our [about page](xref:about) or the [FAQ](xref:faq). If you are looking for help, check out [this page](xref:getting-help) for all the different communication channels we use.
+You can find a list of all available clients [here](xref:clients-index).
+For more information please see our [about page](xref:about) or the [FAQ](xref:faq).
+If you are looking for help, check out [this page](xref:getting-help) for all the different communication channels we use.
 
-Note: Jellyfin is a fast moving project that is in its early stages, and this documentation as well as the code may change frequently. Please check back often and don't hesitate to contact us via our Matrix channels or the subreddit!
+Note: Jellyfin is a fast moving project that is in its early stages, and this documentation as well as the code may change frequently.
+Please check back often and don't hesitate to contact us via our Matrix channels or the subreddit!
 
 ## Getting Started
 
-Want to get starting using Jellyfin right now? Check out the pages below for how to [install Jellyfin](xref:admin-installing) on your machine.
+Want to get starting using Jellyfin right now? Check out the pages below for how to install Jellyfin on your machine.
 
-* [Arch](xref:admin-installing#arch-linux)
-* [Debian](xref:admin-installing#debian)
-* [Ubuntu](xref:admin-installing#ubuntu)
-* [Fedora](xref:admin-installing#fedora)
-* [CentOS](xref:admin-installing#centos)
-* [Docker](xref:admin-installing#docker)
-* [unRaid](xref:admin-installing#unraid-docker)
-* [Kubernetes](xref:admin-installing#kubernetes)
-* [Windows](xref:admin-installing#windows-x86x64)
-* [MacOS](xref:admin-installing#macos)
-* [Generic Linux](xref:admin-installing#linux-generic-amd64)
-* [Portable DLL](xref:admin-installing#portable-dll)
+* [Arch](xref:admin-install-other#arch-linux)
+* [Debian](xref:admin-install-debian)
+* [Ubuntu](xref:admin-install-ubuntu)
+* [Fedora](xref:admin-install-other#fedora)
+* [CentOS](xref:admin-install-other#centos)
+* [Docker](xref:admin-install-container#docker)
+* [unRaid](xref:admin-install-container#unraid-docker)
+* [Synology](xref:admin-install-container#synology)
+* [Kubernetes](xref:admin-install-container#kubernetes)
+* [Windows](xref:admin-install-windows)
+* [MacOS](xref:admin-install-macos)
+* [Generic Linux](xref:admin-install-generic-linux)
+* [Portable DLL](xref:admin-install-other#portable-dll)
 
 Alternatively, Jellyfin may be built directly from the [source code](xref:admin-building).
 
 ## Administrator Documentation
 
-Want to know more about administering a Jellyfin server? Check out these pages!
+Want to know more about administering a Jellyfin server?
+Check out these pages!
 
 * [Quick-Start Guide](xref:quick-start): What to do after you've installed Jellyfin to get it up and running.
 * [Migrating](xref:admin-migrate): How to migrate Jellyfin.

@@ -119,7 +119,7 @@ This procedure is written for Debian-based Linux distributions, but can be trans
    sudo apt purge emby-server
    ```
 
-5. Install the `jellyfin` package using the [installaton instructions](xref:admin-installing).
+5. Install the `jellyfin` package using the [installation instructions](xref:admin-installing).
 
 6. Stop the `jellyfin` daemon:
 

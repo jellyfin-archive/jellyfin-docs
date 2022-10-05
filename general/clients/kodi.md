@@ -74,8 +74,8 @@ Media in Kodi's database is automatically kept in sync with the server in one of
             * Host: `https://jellyfin.example.com`
         * Note that if you have a baseurl set, you should append that value to the end of the host field.
             * Host: `192.168.0.10:8096/jellyfin`
-    * Select user account and input password, or select "Manual Login" and fill in your user infomation
-3. Once you're succesfully authenticated with the server, you'll be asked about which mode you'd like to use, Add-on vs Native, which are outlined below.
+    * Select user account and input password, or select "Manual Login" and fill in your user information
+3. Once you're successfully authenticated with the server, you'll be asked about which mode you'd like to use, Add-on vs Native, which are outlined below.
 
 #### Add-on Mode
 

@@ -82,7 +82,7 @@ Locking
 
 `Failed login attempts before user is locked out` Determines how many incorrect login attempts can be made before lockout occurs, disabling the user. 0 means inheriting the default of 3 for non-admin and 5 for admin, -1 disables lockout
 
-When a user is locked out after the set amout of attempts the admin has determined for that account, the user will recieve the following message when trying to login to the Jellyfin instance:
+When a user is locked out after the set amount of attempts the admin has determined for that account, the user will receive the following message when trying to login to the Jellyfin instance:
 
 ```sh
 Connection Failure

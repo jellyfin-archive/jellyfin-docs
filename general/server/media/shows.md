@@ -46,6 +46,8 @@ Show extras, sometimes called specials, can be added in the `Season 00` folder. 
 
 ## Images
 
+Posters, Backdrops, and Logos may also be embedded into video containers that support it (such as mkv) and will be read out by the `Embedded Image Extractor` if enabled as an `Image Extractor` on the library configuration page.
+
 ### Poster
 
 * folder.ext

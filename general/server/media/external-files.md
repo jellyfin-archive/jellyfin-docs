@@ -44,7 +44,9 @@ Additional flags can be appended to the filename (separated by the `.` delimiter
   * Marks the subtitle stream as forced, typically used for translation of segments of audio/text that differ from the primary language.
 * Hearing Impaired (Jellyfin 10.9+): `sdh`, `cc`, `hi`
   * Indicates that the subtitle stream has additional information to help viewers that are hearing impaired.
-  * Note that `hi` collides with the Hindi language abbreviation. `hi` by itself with resolve as a Hindi-language track, while `hi` in conjunction with another language identifier (such as `title.en.hi.srt`) will use the other language and tag it as hearing impaired.
+
+> [!Note]
+> `hi` collides with the Hindi language abbreviation. `hi` by itself with resolve as a Hindi-language track, while `hi` in conjunction with another language identifier (such as `title.en.hi.srt`) will use the other language and tag it as hearing impaired.
 
 Flags are ignored on containers with more than one stream.
 

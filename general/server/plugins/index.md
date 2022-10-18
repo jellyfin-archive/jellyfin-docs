@@ -363,3 +363,10 @@ Ani-Sync lets you synchorinze/scrobble your Jellyfin Anime watch progress to pop
   * [https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json](https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json)
 * Included Plugins
   * [Ani-Sync](https://github.com/vosmiic/jellyfin-ani-sync)
+
+#### Jellyfin.Xtream Repo
+
+* Manifest
+  * [https://kevinjil.github.io/Jellyfin.Xtream/repository.json](https://kevinjil.github.io/Jellyfin.Xtream/repository.json)
+* Included Plugins
+  * [Jellyfin.Xtream Plugin](https://github.com/Kevinjil/Jellyfin.Xtream)

@@ -133,6 +133,19 @@ There are three main caveats to this setting.
 
 3. Any reverse proxy configurations must be updated to handle a new Base URL. Generally, passing `/` back to the Jellyfin instance will work fine in all cases and the paths will be normalized, and this is the standard configuration in our examples. Keep this in mind however when doing more advanced routing.
 
+### Published Server URIs
+
+When running Jellyfin on multiple networks you may specify the server URI reported for autodiscovery for each network.  The format is:
+```
+subnet1=URI1,subnet2=URI2
+```
+For example:
+```
+10.1.2.0/24=https://jellyfin.example.com,10.3.4.0/24=https://jellyfin.iot.example.com
+```
+
+There are also some special keywords you may use in place of a subnet specification.  ```all``` will apply to all networks and ```external``` or ```0.0.0.0``` will apply to external networks.
+
 ### Final Steps
 
 It's strongly recommend that you check your SSL strength and server security at [SSLLabs](https://www.ssllabs.com/ssltest/analyze.html) if you are exposing these services to the internet.

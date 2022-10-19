@@ -450,19 +450,19 @@ cd /opt/jellyfin
 ```
 
 Download the latest generic Linux build for your architecture.
-The rest of these instructions assume version 10.7.7 is being installed (i.e. `jellyfin_10.7.7_amd64.tar.gz`).
+The rest of these instructions assume version 10.8.1 is being installed (i.e. `jellyfin_10.8.1_amd64.tar.gz`).
 Download the generic build, then extract the archive:
 
 ```sh
-sudo wget https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_10.7.7_amd64.tar.gz
-sudo tar xvzf jellyfin_10.7.7_amd64.tar.gz
+sudo wget https://repo.jellyfin.org/releases/server/linux/stable/combined/jellyfin_10.8.1_amd64.tar.gz
+sudo tar xvzf jellyfin_10.8.1_amd64.tar.gz
 ```
 
-Create a symbolic link to the Jellyfin 10.7.7 directory.
+Create a symbolic link to the Jellyfin 10.8.1 directory.
 This allows an upgrade by repeating the above steps and enabling it by simply re-creating the symbolic link to the new version.
 
 ```sh
-sudo ln -s jellyfin_10.7.7 jellyfin
+sudo ln -s jellyfin_10.8.1 jellyfin
 ```
 
 Create four sub-directories for Jellyfin data.
@@ -476,17 +476,17 @@ sudo mkdir data cache config log
 If you are not running a Debian derivative, install `ffmpeg` through your OS's package manager, and skip this section.
 
 > [!WARNING]
-> Not being able to use `jellyfin-ffmpeg` will most likely break hardware acceleration and tonemapping.
+> Not being able to use `jellyfin-ffmpeg5` will most likely break hardware acceleration and tonemapping.
 
 If you are running Debian or a derivative, you should [download](https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/) and install an `ffmpeg` release built specifically for Jellyfin.
-Be sure to download the latest release that matches your OS (4.4.1-1 for Debian Bullseye assumed below).
+Be sure to download the latest release that matches your OS (`5.0.1-8` for Debian Bullseye assumed below).
 
 ```sh
-sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/4.4.1-1/jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
-sudo dpkg --install jellyfin-ffmpeg_4.4.1-1-bullseye_amd64.deb
+sudo wget https://repo.jellyfin.org/releases/server/debian/versions/jellyfin-ffmpeg/5.0.1-8/jellyfin-ffmpeg5_5.0.1-8-bullseye_amd64.deb
+sudo dpkg --install jellyfin-ffmpeg5_5.0.1-8-bullseye_amd64.deb
 ```
 
-If you run into any dependency errors, run this and it will install them and `jellyfin-ffmpeg`.
+If you run into any dependency errors, run this and it will install them and `jellyfin-ffmpeg5`.
 
 ```sh
 sudo apt install -f

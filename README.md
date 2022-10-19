@@ -2,6 +2,8 @@
 <h1 align="center">Jellyfin Documentation</h1>
 <h3 align="center">Part of the <a href="https://jellyfin.media">Jellyfin Project</a></h3>
 
+**This repository has been deprecated. Please use [the jellyfin.org repository instead](https://github.com/jellyfin/jellyfin.org).**
+
 This repository houses all documentation for Jellyfin available at [jellyfin.org](https://docs.jellyfin.org/) and written in markdown.
 
 ## Getting Started

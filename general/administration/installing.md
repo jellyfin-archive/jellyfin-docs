@@ -21,9 +21,6 @@ These images are based on Debian and [built directly from the Jellyfin source co
 
 Additionally the [LinuxServer.io](https://www.linuxserver.io/) project and [hotio](https://github.com/hotio) distribute images based on Ubuntu and the official Jellyfin Ubuntu binary packages, see [here](https://github.com/linuxserver/docker-jellyfin/blob/master/Dockerfile) and [here](https://github.com/hotio/jellyfin/blob/release/linux-amd64.Dockerfile) to see their Dockerfile.
 
-> [!Note]
-> For ARM hardware and RPi, it is recommended to use the LinuxServer.io or hotio image since hardware acceleration support is not yet available on the native image.
-
 ### Docker
 
 [Docker](https://www.docker.com/) allows you to run containers on Linux, Windows and MacOS.

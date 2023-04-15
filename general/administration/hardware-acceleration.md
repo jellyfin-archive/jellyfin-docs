@@ -166,7 +166,7 @@ It is always best to consult [the FFMpeg documentation](https://trac.ffmpeg.org/
 ### Hardware acceleration on Docker (Linux)
 
 > [!NOTE]
-> This are general instructions, for more specific instructions pleas check the next sections!
+> This are general instructions, for more specific instructions please check the next sections!
 
 In order to use hardware acceleration in Docker, the devices must be passed to the container.
 To see what video devices are available, you can run `sudo lshw -c video` or `vainfo` on your machine.

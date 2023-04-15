@@ -65,62 +65,6 @@ services:
       # VAAPI Devices
       - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
-    labels:
-      - "traefik.enable=true"
-      ## HTTP Router
-      #### Entry point where Jellyfin is accessible via
-      #### Change secure to https in the line below to have accessible without needing to specify a port and change the SSLHost option below
-      - "traefik.http.routers.jellyfin.entryPoints=secure"
-      #### Host or Path where Jellyfin is accessible
-      #### Remove (or change) this rule if you'd rather have Jellyfin accessible at a PathPrefix URI
-      - "traefik.http.routers.jellyfin.rule=Host(`HOST_NAME.DOMAIN_NAME`)" # OPTIONAL: && PathPrefix(`/jellyfin`)
-      #### Enable TLS with the ACME/LetsEncrypt resolver for HOSTNAME.DOMAIN_NAME
-      - "traefik.http.routers.jellyfin.tls=true"
-      - "traefik.http.routers.jellyfin.tls.certResolver=leresolver"
-      - "traefik.http.routers.jellyfin.tls.domains=HOSTNAME.DOMAIN_NAME"
-      ## Middleware
-      - "traefik.http.routers.jellyfin.middlewares=jellyfin-mw"
-      #### The customResponseHeaders option lists the Header names and values to apply to the response.
-      - "traefik.http.middlewares.jellyfin-mw.headers.customResponseHeaders.X-Robots-Tag=noindex,nofollow,nosnippet,noarchive,notranslate,noimageindex"
-      #### The sslRedirect is set to true, then only allow https requests.
-      - "traefik.http.middlewares.jellyfin-mw.headers.SSLRedirect=true"
-      #### The sslHost option is the host name that is used to redirect http requests to https.
-      #### This is the exact URL that will be redirected to, so you can remove the :9999 port if using default SSL port
-      - "traefik.http.middlewares.jellyfin-mw.headers.SSLHost=HOST_NAME.DOMAIN_NAME:9999"
-      #### Set sslForceHost to true and set SSLHost to forced requests to use SSLHost even the ones that are already using SSL.
-      #### Note that this uses SSLHost verbatim, so add the port to SSLHost if you are using an alternate port.
-      - "traefik.http.middlewares.jellyfin-mw.headers.SSLForceHost=true"
-      #### The stsSeconds is the max-age of the Strict-Transport-Security header. If set to 0, would NOT include the header.
-      - "traefik.http.middlewares.jellyfin-mw.headers.STSSeconds=315360000"
-      #### The stsIncludeSubdomains is set to true, the includeSubDomains directive will be
-      #### appended to the Strict-Transport-Security header.
-      - "traefik.http.middlewares.jellyfin-mw.headers.STSIncludeSubdomains=true"
-      #### Set stsPreload to true to have the preload flag appended to the Strict-Transport-Security header.
-      - "traefik.http.middlewares.jellyfin-mw.headers.STSPreload=true"
-      #### Set forceSTSHeader to true, to add the STS header even when the connection is HTTP.
-      - "traefik.http.middlewares.jellyfin-mw.headers.forceSTSHeader=true"
-      #### Set frameDeny to true to add the X-Frame-Options header with the value of DENY.
-      - "traefik.http.middlewares.jellyfin-mw.headers.frameDeny=true"
-      #### Set contentTypeNosniff to true to add the X-Content-Type-Options header with the value nosniff.
-      - "traefik.http.middlewares.jellyfin-mw.headers.contentTypeNosniff=true"
-      #### Set browserXssFilter to true to add the X-XSS-Protection header with the value 1; mode=block.
-      - "traefik.http.middlewares.jellyfin-mw.headers.browserXSSFilter=true"
-      #### The customFrameOptionsValue allows the X-Frame-Options header value to be set with a custom value. This
-      #### overrides the FrameDeny option.
-      - "traefik.http.middlewares.jellyfin-mw.headers.customFrameOptionsValue='allow-from https://DOMAIN_NAME'"
-      ## HTTP Service
-      # We define the port here as a port is required, but note that the service is pointing to the service defined in @file
-      - "traefik.http.routers.jellyfin.service=jellyfin-svc@file"
-      - "traefik.http.services.jellyfin-svc.loadBalancer.server.port=8096"
-      - "traefik.http.services.jellyfin-svc.loadBalancer.passHostHeader=true"
-      ## Redirection of HTTP on port 9999 to HTTPS on port 9999 (consistent protocol)
-      - "traefik.http.routers.jellyfin-insecure.entryPoints=secure"
-      - "traefik.http.routers.jellyfin-insecure.rule=Host(`HOST_NAME.DOMAIN_NAME`)" # OPTIONAL: && PathPrefix(`/jellyfin`)
-      - "traefik.http.routers.jellyfin-insecure.middlewares=jellyfin-insecure-mw"
-      - "traefik.http.middlewares.jellyfin-insecure-mw.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.jellyfin-insecure-mw.redirectscheme.port=9999" # remove if you are using a default port
-      - "traefik.http.middlewares.jellyfin-insecure-mw.redirectscheme.permanent=false"
-      - "traefik.http.routers.jellyfin-insecure.service=noop@internal"
 ```
 
 > [!WARNING]
@@ -216,16 +160,68 @@ services:
 [retry]
 ```
 
-Due to a [quirk](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host. We have created a static route to the docker host (192.168.1.xx:8096) in `traefik-provider.toml`. The use of host networking (as in this doc) or macvlan are required to use DLNA or an HdHomeRun so it can utilize the multicast network. `traefik-provider.toml` defines the jellyfin-svc@file service which we are pointing the router to in the `docker-compose.yml` file. You can not set a URL in `docker-compose.yml` which is why we set up this service externally. Be sure to update the IP address below to the IP address of the host on the local network (in this case, 192.168.1.xx).
+Due to a [quirk](https://github.com/containous/traefik/issues/5559) in Traefik, you cannot dynamically route to containers when network_mode=host. We have created a static route to the docker host (192.168.1.xx:8096) in `traefik-provider.toml`. The use of host networking (as in this doc) or macvlan are required to use DLNA or an HdHomeRun so it can utilize the multicast network. `traefik-provider.toml` defines the jellyfin-svc@file service which we are pointing the router to in the `docker-compose.yml` file. You can not set a URL in `docker-compose.yml` which is why we set up this service externally. Be sure to update the IP address below to the IP address of the host on the local network (in this case, 192.168.1.xx). This quirk also means that this setup should also work if Jellyfin were to be hosted outside of Docker.
 
 ### traefik-provider.toml
 
 ```toml
 [http]
+  [http.routers]
+    [http.routers.jellyfin-insecure]
+      entrypoints = ["secure"]
+      rule = "Host(`HOST_NAME.DOMAIN_NAME`)" # OPTIONAL: && PathPrefix(`/jellyfin`)
+      middlewares= ["jellyfin-insecure-mw"]
+      service = "noop@internal"
+    [http.routers.jellyfin]
+      entryPoints = ["secure"]
+      rule = "Host(`HOST_NAME.DOMAIN_NAME`)"
+      service = "jellyfin-svc"
+      middlewares = ["jellyfin-mw"]
+      [http.routers.jellyfin.tls]
+        certResolver = "leresolver"
+        # Replace HOSTNAME.DOMAIN_NAME with your own
+        domains = "HOSTNAME.DOMAIN_NAME"
   [http.services]
     [http.services.jellyfin-svc]
       [[http.services.jellyfin-svc.loadBalancer.servers]]
         url = "http://192.168.1.xx:8096"
+        passHostHeader = true
+  [http.middlewares]
+    [http.middlewares.jellyfin-insecure-mw]
+      ## Redirection of HTTP on port 9999 to HTTPS on port 9999 (consistent protocol)
+      [http.middlewares.jellyfin-insecure-mw.redirectscheme]
+        scheme = "https"
+        port = "9999"
+        permanent = false
+    [http.middlewares.jellyfin-mw]
+      [http.middlewares.jellyfin-mw.headers]
+        #### The sslRedirect is set to true, then only allow https requests.
+        SSLRedirect = "true"
+        #### The sslHost option is the host name that is used to redirect http requests to https.
+        #### This is the exact URL that will be redirected to, so you can remove the :9999 port if using default SSL port
+        SSLHost = "HOST_NAME.DOMAIN_NAME:9999"
+        #### Set sslForceHost to true and set SSLHost to forced requests to use SSLHost even the ones that are already using SSL.
+        #### Note that this uses SSLHost verbatim, so add the port to SSLHost if you are using an alternate port.
+        SSLForceHost = "true"
+        #### The stsSeconds is the max-age of the Strict-Transport-Security header. If set to 0, would NOT include the header.
+        STSSeconds = "315360000"
+        #### The stsIncludeSubdomains is set to true, the includeSubDomains directive will be
+        #### appended to the Strict-Transport-Security header.
+        STSIncludeSubdomains = "true"
+        #### Set stsPreload to true to have the preload flag appended to the Strict-Transport-Security header.
+        STSPreload = "true"
+        #### Set forceSTSHeader to true, to add the STS header even when the connection is HTTP.
+        forceSTSHeader = "true"
+        #### Set frameDeny to true to add the X-Frame-Options header with the value of DENY.
+        frameDeny = "true"
+        #### Set contentTypeNosniff to true to add the X-Content-Type-Options header with the value nosniff.
+        contentTypeNosniff = "true"
+        #### Set browserXssFilter to true to add the X-XSS-Protection header with the value 1; mode=block.
+        browserXSSFilter = "true"
+        #### The customFrameOptionsValue allows the X-Frame-Options header value to be set with a custom value. This
+        #### overrides the FrameDeny option.
+        customFrameOptionsValue = "'allow-from https://DOMAIN_NAME'"
+
 # Set secure options by disabling insecure older TLS/SSL versions
 # and insecure ciphers. SNIStrict disabled leaves TLS1.0 open.
 # If you have problems with older clients, you can may need to relax

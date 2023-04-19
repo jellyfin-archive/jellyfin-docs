@@ -89,3 +89,5 @@ The following configuration can be saved in ```/etc/httpd/conf/extra/jellyfin.co
     ProxyPassReverse "http://127.0.0.1:8096/jellyfin"
 </Location>
 ```
+
+After updating the configuration, you will need to restart apache to apply the change. After restarting apache AND Jellyfin to apply the baseurl setting, it may take some seconds for the services to finish restarting. It may also not be possible to connect to the Jellyfin server by IP address after this change. Should you need to revert the changes manually if your proxying fails, the configuration files (for Ubuntu at least) are found at: /etc/jellyfin

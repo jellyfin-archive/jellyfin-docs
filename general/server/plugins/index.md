@@ -363,3 +363,30 @@ Ani-Sync lets you synchorinze/scrobble your Jellyfin Anime watch progress to pop
   * [https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json](https://raw.githubusercontent.com/vosmiic/jellyfin-ani-sync/master/manifest.json)
 * Included Plugins
   * [Ani-Sync](https://github.com/vosmiic/jellyfin-ani-sync)
+
+#### N0tOdd Repo
+* Manifest
+    * [https://github.com/n0tOdd/n0tFlix/raw/main/Manifest/n0tFlix-Manifest-Template.json](https://github.com/n0tOdd/n0tFlix/raw/main/Manifest/n0tFlix-Manifest-Template.json)
+* Included Plugins
+    * Addic7ed Subtitles
+    * TVSubtitles.net Subtitles
+    * Youtube DL Api
+    * Yifi Subtitles
+    * NRK TV
+    * Napi Subtitles
+#### The Porn DB Metadata Provider Repo
+* Manifest
+    * [https://raw.githubusercontent.com/ThePornDatabase/Jellyfin.Plugin.ThePornDB/main/manifest.json](https://raw.githubusercontent.com/ThePornDatabase/Jellyfin.Plugin.ThePornDB/main/manifest.json)
+* Included Plugins
+    * The Porn DB MetaData Provider
+### Jellyfin Github Stars List
+
+#### Jellyfin Addons List
+
+* [Jellyfin Addon Playlists](https://github.com/stars/DevilsDesigns/lists/jellyfin-addons)
+
+#### Jellyfin Players List
+* [Jellyfin Players List](https://github.com/stars/DevilsDesigns/lists/jellyfin-players)
+  
+#### Jellyfin Internal List
+* [Jellyfin Internal List](https://github.com/stars/DevilsDesigns/lists/jellyfin)

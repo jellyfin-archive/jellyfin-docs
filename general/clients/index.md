@@ -83,6 +83,17 @@ Native music player for Android devices with transcoding support, gapless playba
 - [GitHub](https://github.com/dkanada/gelli)
 - [Download](https://github.com/dkanada/gelli/releases)
 
+### Jellyflut
+
+Just a jellyfin client made in flutter (side project quality code) 
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+[Github](https://github.com/Thomas-Sohier/jellyflut)
+[Releases](https://github.com/Thomas-Sohier/jellyflut/releases/)
+
 ### Yatse
 
 A third party remote control for Jellyfin with support for Chromecast playback.
@@ -182,6 +193,17 @@ Terminal player for Jellyfin, only for music at the moment.
 
 - [GitHub](https://github.com/tryffel/jellycli)
 
+### Sonixd 
+
+A full-featured Subsonic/Jellyfin compatible desktop music player 
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [Github](https://github.com/jeffvli/sonixd)
+- [Binary Releases](https://github.com/jeffvli/sonixd/releases/)
+
 ### Jellyfin-CLI
 
 Terminal player for Jellyfin, written in Python.
@@ -235,6 +257,16 @@ A third party app for music playback. Supports offline mode/downloading songs.
 - [GitHub](https://github.com/UnicornsOnLSD/finamp)
 
 ## Web
+
+### Jellyfin Music Client
+
+An unofficial Jellyfin music Web Client
+
+**Status:** ⭐ Active, 3rd-Party
+
+**Links:**
+
+- [GitHub](https://github.com/MarkSFrancis/jellyfin-music-client)
 
 ### Web Scrobbler
 

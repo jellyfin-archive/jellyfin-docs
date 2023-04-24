@@ -604,6 +604,11 @@ Fontawesome Icons:
   @import url(https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/Font%20Awesome/duotone.css");
   ```
 
+### BobHasNoSoul Jellyfin Mods Repo
+(WARNING: Please Be Very Careful editing the main jellyfin web files is DANGEROUS! One extra space could cause a bunch of issues!)
+
+*[Jellyfin-Mods Repo](https://github.com/BobHasNoSoul/jellyfin-mods)
+
 ## Community Links
 
 Some links to places where custom CSS has been discussed and shared!
